@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Movie Recommendation System</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- Auto Complete -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/css/autoComplete.min.css">
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+
+  <style>
+    #movie_list {
+        max-height: 200px; /* Adjust the height as needed */
+        overflow-y: auto;
+        background-color: white;
+        padding: 0; /* Remove any padding */
+    }
+
+    #movie_list li {
+        padding: 5px;
+        cursor: pointer;
+        list-style-type: none; /* Remove bullet points */
+        margin: 0; /* Remove any margin */
+    }
+
+    #movie_list li:hover {
+        background-color: #f0f0f0;
+    }
+
+    #top_movies {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .top-movie-card {
+        width: 15rem;
+        margin: 1rem;
+        text-align: center;
+        color: #fff;
+    }
+
+    .top-movie-card img {
+        border-radius: 10px;
+    }
+
+    .top-movie-card h5 {
+        margin: 0.3rem 0;
+        color: black;
+    }
+
+    .top-movie-card p {
+      margin: 0.3rem;
+      color: black;
+    }
+
+    /* Genre card styling */
+.genre-card {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.genre-card:hover {
+  background-color: #555;
+  transform: scale(1.05);
+}
+
+/* Genre card image styling */
+.genre-card img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Genre card title styling */
+/* .genre-card .card-title {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+/* Genre info section styling */
+/* #genre-info {
+  background-color: #222;
+  color: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+#genre-info h4 {
+  margin-top: 0;
+}
+
+#genre-info p {
+  margin-bottom: 0;
+} */ */
+
+/* .action {
+  padding: 15px;
+  width: 150px;
+  margin-left: 105px;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.action:hover {
+  background-color: #555;
+  transform: scale(1.05);
+}
+
+/* .pi {
+  padding-left: 39%;
+  align-self: center;
+} */ */
+
+.pi {
+  padding-left: 39%;
+  align-self: center;
+}
+
+.scroll-container {
+  display: flex;
+  align-items: center;
+}
+
+.scrollmenu { 
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+  flex-grow: 1;
+  scrollbar-width: 10px; /* Firefox */
+}
+
+.scroll-button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 5px;
+  user-select: none;
+}
+
+.left {
+  margin-right: 10px;
+}
+
+.right {
+  margin-left: 10px;
+}
+
+/* .scrollmenu::-webkit-scrollbar {
+  /* display: none; Hide the scrollbar */
+/* } */ 
+
+.genres-card {
+  display: flex;
+}
+
+.card {
+  width: 300px;
+  height: auto;
+  box-shadow: 0px 1px 15px 4px rgba(250, 250, 250, 1);
+  border-radius: 20px;
+  transition: 0.3s;
+  background-color: #333;
+  color: white;
+  margin: 20px;
+
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0 , 0 , 0 , 0.2);
+}
+
+.genres {
+  padding: 2px 16px;
+}
+
+.action-img {
+  max-width: 300px;
+  height: auto;
+  border-radius: 15px;
+}
+
+.horror-img {
+  max-width: 350px;
+  height: 166px;
+  border-radius: 15px;
+}
+
+.scroll-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.watchlist {
+  position: relative;
+  top: -168px;
+  left: 1251px;
+  gap: 8px;
+  display: flex;
+  align-items: center; /* Align text and image vertically */
+  background-color: #333; /* Dark background */
+  box-shadow: 0px 1px 15px 4px rgba(250, 250, 250, 1);
+  border-radius: 20px;
+  transition: 0.3s;
+  padding: 10px;
+  border-radius: 8px; /* Rounded corners */
+  color: #fff; /* White text for contrast */
+  font-size: 18px; /* Adjust font size */
+  width: fit-content; /* Adjust width to content */
+}
+
+.watchlist:hover {
+  box-shadow: 0 8px 16px 0 rgba(0 , 0 , 0 , 0.2);
+}
+
+.watchlist p {
+  margin: 0; /* Remove default margin from <p> */
+  margin-right: 10px; /* Add some space between text and image */
+  /* font-weight: bold; Make text bold */
+}
+
+.watchlist img {
+  display: block; /* Ensure the image is not affected by line-height */
+  filter: invert(1); /* Invert colors for better visibility on dark background */
+  width: 30px; /* Set the width of the image */
+  height: auto; /* Keep aspect ratio */
+}
+
+.from_watchlist {
+  padding: 10px;
+  margin-left: 20px;
+}
+
+.movie-card {
+            /* display: flex; */
+            width: 15rem;
+            margin: 27px;
+            padding: 1px;
+            background-color: #333;
+            text-align: center;
+            /* border: 1px solid white; */
+            border-radius: 10px;
+            height: auto;
+            /* display: inline-block; */
+            position: relative;
+            cursor: pointer;
+        }
+
+        .movie-poster {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            /* box-shadow: 0px 1px 15px 4px rgba(250, 250, 250, 1); */
+        }
+
+        .movie-title {
+            text-align: center;
+            margin-top: 25px;
+            padding-left: 6%;
+            margin-bottom: 5px;
+            white-space: nowrap; /* Prevents text from wrapping to the next line */
+            overflow: hidden;    /* Hides the overflow if the text is too long */
+            /* text-overflow: ellipsis; Adds '...' if the text is too long */
+        }
+
+        .movie-status {
+            padding-left: 21px;
+        }
+
+        .movie-date {
+            padding-left: 40px;
+        }
+
+        .movie-runtime {
+            padding-left: 21px;
+        }
+
+        .movie-rating {
+            padding-left: 0px;
+            padding-top: 8px;
+        }
+
+        .flex {
+            display: flex;
+            margin-bottom: -10px;
+        }
+
+        .movie-overview {
+            position: absolute;
+            top: 166px;
+            left: 9px;
+            padding-left: 3px;
+            padding-right: 3px;
+        }
+
+        /* .movie-card:hover {
+            transform: scale(1.2);
+        } */
+
+        .delete-btn1 {
+            position: absolute;
+            top: 0px;
+            right: 209px;
+            background-color: yellow;
+            color: #fff;
+            border: none;
+            /* border-radius: 50%; */
+            width: 30px;
+            height: 37px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .delete-btn {
+            position: absolute;
+            top: 0px;
+            right: 294px;
+            background-color: #e74c3c;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .message {
+            display: none;
+            background-color: #28a745;
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .undo-message {
+            display: none;
+            background-color: #333;
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 20px;
+            left: 10%;
+            transform: translateX(-50%);
+            z-index: 1000;
+        }
+
+        .undo-btn {
+            color: rgb(4, 4, 255);
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .undo-btn:hover {
+            background-color: #585858;
+            border-radius: 5px;
+        }
+    
+</style>
+
+
+
+  <script type="text/javascript">
+    var films = {{suggestions|tojson}};
+  </script>
+
+</head>
+
+<body id="content" style="font-family: 'Noto Sans JP', sans-serif;">
+
+	<div class="ml-container" style="display: block;">
+		      <svg data-toggle="tooltip"
+		      data-placement="left" width="80" height="80" viewBox="0 0 250 250"
+			style="fill:#e50914; color:#fff; position: fixed;z-index:100; top: 0; border: 0; right: 0;" aria-hidden="true">
+			<path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+			<path
+			  d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+			  fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+			<path
+			  d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+			  fill="currentColor" class="octo-body"></path>
+		      </svg>
+		    </a>
+    <center><h1> Movie Recommendation System</h1></center>
+    <div class="form-group shadow-textarea" style="margin-top: 30px;text-align: center;color: white;">
+        <input type="text" name="movie" class="movie form-control" id="autoComplete" autocomplete="off" placeholder="Enter the Movie Name" style="background-color: #ffffff;border-color:#ffffff;width: 60%;color: #181818" required="required" />
+        <br>
+    </div>
+
+    <div class="watchlist" onclick="window.location.href='/watchlist';">
+      <img src="{{ url_for('static', filename='images/add_bookmark.svg') }}" width="30px" height="auto" alt="">
+      <p>WatchList</p>
+    </div>
+
+    <div class="form-group" style="text-align: center;">
+      <button class="btn btn-primary btn-block movie-button" style="background-color: #e50914;text-align: center;border-color: #e50914;width:120px;" disabled="true" >Enter</button><br><br>
+    </div>
+	</div>
+
+  <div id="loader" class="text-center"></div>
+  
+  <div class="fail">
+    <center><h3>Sorry! The movie you requested is not in our database. 
+    Please check the spelling or try with other movies!</h3></center>
+  </div>
+
+	<div class="results">
+    <center>
+      <h2 id="name" class="text-uppercase"></h2>
+    </center>
+	</div>
+
+  <!-- <div class="container mt-5">
+    <h3 class="text-center text-uppercase" style="color:white;">Popular Genres</h3>
+    <div class="row mt-4" id="genre-cards">
+        <!-- Genre cards will be inserted here dynamically -->
+    </div>
+</div> -->
+
+<center><h1 class="pi">Popular Interests</h1></center>
+<div class="scroll-container">
+  <button class="scroll-button left" onclick="scrollLeft()">&#8249;</button>
+  <div class="scrollmenu">
+    <div class="genres-card">
+      <div class="card" onclick="window.location.href='/action';">
+        <img src="{{ url_for('static', filename='images/action1.jpg') }}" alt="" class="horror-img">
+        <div class="genres">
+          <p>Action</p>
+        </div>
+      </div>
+      
+      <div class="card" onclick="window.location.href='/horror';">
+        <img src="{{ url_for('static', filename='images/horror.jpg') }}" alt="" class="horror-img">
+        <div class="genres">
+          <p>Horror</p>
+        </div>
+      </div>
+      
+      <div class="card" onclick="window.location.href='/romance';">
+        <img src="{{ url_for('static', filename='images/Romance.jpg') }}" alt="" class="horror-img">
+        <div class="genres">
+          <p>Romance</p>
+        </div>
+      </div>
+      
+      <div class="card" onclick="window.location.href='/mystery';">
+        <img src="{{ url_for('static', filename='images/mystery.jpg') }}" alt="" class="horror-img">
+        <div class="genres">
+          <p>Mystery</p>
+        </div>
+      </div>
+  
+      <div class="card" onclick="window.location.href='/history';">
+        <img src="{{ url_for('static', filename='images/history.jpg') }}" alt="" class="horror-img">
+        <div class="genres">
+          <p>History</p>
+        </div>
+      </div>
+
+      <div class="card" onclick="window.location.href='/thriller';">
+        <img src="{{ url_for('static', filename='images/Thriller.jpg') }}" alt="" class="horror-img">
+        <div class="genres">
+          <p>Thriller</p>
+        </div>
+      </div>
+
+      <div class="card" onclick="window.location.href='/comedy';">
+        <img src="{{ url_for('static', filename='images/Comedy.jpg') }}" alt="" class="horror-img">
+        <div class="genres">
+          <p>Comedy</p>
+        </div>
+      </div>
+
+      <div class="card" onclick="window.location.href='/fantasy';">
+        <img src="{{ url_for('static', filename='images/fantasy.jpg') }}" alt="" class="horror-img">
+        <div class="genres">
+          <p>Fantasy</p>
+        </div>
+      </div>
+
+      <div class="card" onclick="window.location.href='/adventure';">
+        <img src="{{ url_for('static', filename='images/Adventure.jpg') }}" alt="" class="horror-img">
+        <div class="genres">
+          <p>Adventure</p>
+        </div>
+      </div>
+
+      <div class="card" onclick="window.location.href='/documentary';">
+        <img src="{{ url_for('static', filename='images/Documentary.jpg') }}" alt="" class="horror-img">
+        <div class="genres">
+          <p>Documentary</p>
+        </div>
+      </div>
+
+      <div class="card" onclick="window.location.href='/sci_fi';">
+        <img src="{{ url_for('static', filename='images/Sci-Fi.jpg') }}" alt="" class="horror-img">
+        <div class="genres">
+          <p>Sci-Fi</p>
+        </div>
+      </div>
+      </div>
+  </div>
+
+  <button class="scroll-button right" onclick="scrollRight()">&#8250;</button>
+</div>
+
+  <!-- <div class="container">
+    <center><h1>Top Movies</h1></center>
+    <div id="top_movies" class="row"></div>
+  </div> -->
+
+  <center><h1>From Your Watchlist</h1></center>
+  <center><p style="color: white; font-size: 1.22rem;">(Movies and TV Shows that you have shortlisted)</p></center>
+
+
+  <div id="watchlist-container" class="d-flex flex-wrap justify-content-center">
+    <!-- Watchlist movie cards will be dynamically inserted here -->
+</div>
+
+<!-- Hidden message elements -->
+<div class="message" id="message">
+    <p>Saved to Watchlist</p>
+</div>
+<div class="undo-message" id="undo-message">
+    <p>Movie removed from Watchlist.</p>
+    <p class="undo-btn" id="undo-btn">Undo</p>
+</div>
+
+
+
+  <!-- Existing content here -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/js/autoComplete.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static', filename='recommend.js')}}"></script>
+
+  <script>
+//     $(document).ready(function() {
+//       var api_key = 'fce0af3409e6113c9b3c75aaf49341bb';
+
+//       function fetchTopMovies() {
+//         $.ajax({
+//           type: 'GET',
+//           url: 'https://api.themoviedb.org/3/movie/top_rated?api_key=' + api_key,
+//           success: function(response) {
+//             var topMovies = response.results;
+//             displayTopMovies(topMovies);
+//           },
+//           error: function() {
+//             console.error('Error fetching top movies');
+//           }
+//         });
+//       }
+
+//       function displayTopMovies(movies) {
+//         var movieContainer = $('#top_movies');
+//         movieContainer.empty();
+//         movies.forEach(function(movie) {
+//           var movieCard = `
+//   <div class="top-movie-card card">
+//     <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" class="card-img-top" alt="${movie.title}">
+//     <div class="card-body">
+//       <h5 class="card-title">${movie.title}</h5>
+//       <p class="card-text">Rating: ${movie.vote_average}</p>
+//     </div>
+//   </div>
+// `;
+
+//           movieContainer.append(movieCard);
+//         });
+//       }
+
+//       fetchTopMovies();
+//     });
+
+    function scrollLeft() {
+  const scrollMenu = document.querySelector('.scrollmenu');
+  scrollMenu.scrollBy({ left: -200, behavior: 'smooth' });
+  setTimeout(checkScrollButtons, 500); // Delay to allow smooth scrolling before checking
+}
+
+function scrollRight() {
+  const scrollMenu = document.querySelector('.scrollmenu');
+  scrollMenu.scrollBy({ left: 200, behavior: 'smooth' });
+  setTimeout(checkScrollButtons, 500); // Delay to allow smooth scrolling before checking
+}
+
+function checkScrollButtons() {
+  const scrollMenu = document.querySelector('.scrollmenu');
+  const leftButton = document.querySelector('.scroll-button.left');
+  const rightButton = document.querySelector('.scroll-button.right');
+
+  // Check if the left end is reached
+  if (scrollMenu.scrollLeft <= 0) {
+    leftButton.disabled = true;
+  } else {
+    leftButton.disabled = false;
+  }
+
+  // Check if the right end is reached
+  if (scrollMenu.scrollLeft + scrollMenu.clientWidth >= scrollMenu.scrollWidth) {
+    rightButton.disabled = true;
+  } else {
+    rightButton.disabled = false;
+  }
+}
+
+// Initialize the buttons on page load
+window.addEventListener('load', checkScrollButtons);
+
+
+  </script>
+
+<script>
+  let lastRemovedMovie = null;
+  let lastRemovedIndex = null;
+
+  document.addEventListener('DOMContentLoaded', function() {
+      const watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
+      const container = document.getElementById('watchlist-container');
+
+      if (watchlist.length === 0) {
+          container.innerHTML = '<p>Your watchlist is empty.</p>';
+      } else {
+          watchlist.forEach((movie, index) => {
+              const movieCard = document.createElement('div');
+              movieCard.classList.add('movie-card');
+
+              movieCard.innerHTML = `
+                  <div><img src="${movie.poster}" alt="${movie.title} Poster" class="movie-poster"></div>
+                  <div>
+                    <p class="movie-rating" style="color: white">★  ${movie.rating}   (${movie.count})</p>
+                  <div><h5 class="movie-title" style="color: white">${movie.title}</h5></div>
+                  <div class="flex">
+                  <img src="{{ url_for('static', filename='images/bookmark_tick.svg') }}" alt="" <img src="{{ url_for('static', filename='images/Sci-Fi.jpg') }}" alt=""  class="delete-btn1">></button>
+                  <div>
+              `;
+
+              container.appendChild(movieCard);
+          });
+      }
+  });
+
+  function showMessage(message) {
+      const messageElement = document.getElementById('message');
+      messageElement.textContent = message;
+      messageElement.style.display = 'block';
+      setTimeout(() => {
+          messageElement.style.display = 'none';
+      }, 2000);
+  }
+
+  function showUndoMessage() {
+      const undoMessageElement = document.getElementById('undo-message');
+      undoMessageElement.style.display = 'block';
+      setTimeout(() => {
+          undoMessageElement.style.display = 'none';
+          lastRemovedMovie = null;
+          lastRemovedIndex = null;
+      }, 2000);
+  }
+
+  document.getElementById('undo-btn').addEventListener('click', function() {
+      if (lastRemovedMovie && lastRemovedIndex !== null) {
+          let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
+          watchlist.splice(lastRemovedIndex, 0, lastRemovedMovie);
+          localStorage.setItem('watchlist', JSON.stringify(watchlist));
+
+          document.getElementById('watchlist-container').innerHTML = '';
+          document.dispatchEvent(new Event('DOMContentLoaded'));
+
+          showMessage('Movie restored to Watchlist');
+          lastRemovedMovie = null;
+          lastRemovedIndex = null;
+      }
+  });
+
+  function removeFromWatchlist(index) {
+      let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
+      lastRemovedMovie = watchlist.splice(index, 1)[0];  // Remove and store the removed movie
+      lastRemovedIndex = index;  // Store the index of the removed movie
+      localStorage.setItem('watchlist', JSON.stringify(watchlist));
+
+      // Refresh the watchlist display
+      document.getElementById('watchlist-container').innerHTML = '';
+      document.dispatchEvent(new Event('DOMContentLoaded'));
+
+      showUndoMessage();
+  }
+</script>
+
+
+	<!-- <div class="footer">Made with<span style="font-size:150%;color:red;"> &hearts; </span>by Paras</div> -->
+	
+	<script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/js/autoComplete.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static', filename='autocomplete.js')}}"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="{{url_for('static', filename='recommend.js')}}"></script>
+
+</body>
+</html>

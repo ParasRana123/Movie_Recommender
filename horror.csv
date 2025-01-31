@@ -1,0 +1,934 @@
+,director_name,actor_1_name,actor_2_name,actor_3_name,genres,movie_title,comb
+0,Marc Forster,Peter Capaldi,Brad Pitt,Mireille Enos,Action Adventure Horror Sci-Fi Thriller,world war z,Peter Capaldi Brad Pitt Mireille Enos Marc Forster Action Adventure Horror Sci-Fi Thriller
+1,Rob Cohen,Jet Li,Brendan Fraser,Russell Wong,Action Adventure Fantasy Horror Thriller,the mummy: tomb of the dragon emperor,Jet Li Brendan Fraser Russell Wong Rob Cohen Action Adventure Fantasy Horror Thriller
+2,Francis Lawrence,Will Smith,Alice Braga,Willow Smith,Drama Horror Sci-Fi,i am legend,Will Smith Alice Braga Willow Smith Francis Lawrence Drama Horror Sci-Fi
+3,Tim Burton,Johnny Depp,ChloÃÂ« Grace Moretz,Christopher Lee,Comedy Fantasy Horror,dark shadows,Johnny Depp ChloÃÂ« Grace Moretz Christopher Lee Tim Burton Comedy Fantasy Horror
+4,Joe Johnston,Anthony Hopkins,Simon Merrells,Art Malik,Drama Fantasy Horror Thriller,the wolfman,Anthony Hopkins Simon Merrells Art Malik Joe Johnston Drama Fantasy Horror Thriller
+5,Hideaki Anno,Mark Chinnery,Shin'ya Tsukamoto,Atsuko Maeda,Action Adventure Drama Horror Sci-Fi,godzilla resurgence,Mark Chinnery Shin'ya Tsukamoto Atsuko Maeda Hideaki Anno Action Adventure Drama Horror Sci-Fi
+6,Peter Hyams,CCH Pounder,Mark Margolis,Udo Kier,Action Fantasy Horror Mystery,end of days,CCH Pounder Mark Margolis Udo Kier Peter Hyams Action Fantasy Horror Mystery
+7,Robert Zemeckis,Harrison Ford,Amber Valletta,Miranda Otto,Drama Fantasy Horror Mystery Thriller,what lies beneath,Harrison Ford Amber Valletta Miranda Otto Robert Zemeckis Drama Fantasy Horror Mystery Thriller
+8,Rob Minkoff,Marsha Thomason,Rachael Harris,Marc John Jefferies,Comedy Family Fantasy Horror Mystery,the haunted mansion,Marsha Thomason Rachael Harris Marc John Jefferies Rob Minkoff Comedy Family Fantasy Horror Mystery
+9,Paul Verhoeven,Greg Grunberg,Kim Dickens,Joey Slotnick,Action Horror Sci-Fi Thriller,hollow man,Greg Grunberg Kim Dickens Joey Slotnick Paul Verhoeven Action Horror Sci-Fi Thriller
+10,unknown,Caroline Dhavernas,Scott Thompson,Hettienne Park,Crime Drama Horror Mystery Thriller,hannibal,Caroline Dhavernas Scott Thompson Hettienne Park unknown Crime Drama Horror Mystery Thriller
+11,Guillermo del Toro,Seth MacFarlane,IvÃÂ¡n KamarÃÂ¡s,Brian Steele,Action Adventure Fantasy Horror Sci-Fi,hellboy ii: the golden army,Seth MacFarlane IvÃÂ¡n KamarÃÂ¡s Brian Steele Guillermo del Toro Action Adventure Fantasy Horror Sci-Fi
+12,Jan de Bont,Liam Neeson,Lili Taylor,Virginia Madsen,Fantasy Horror Mystery Thriller,the haunting,Liam Neeson Lili Taylor Virginia Madsen Jan de Bont Fantasy Horror Mystery Thriller
+13,Lucile Hadzihalilovic,Nissim Renard,Roxane Duran,Julie-Marie Parmentier,Drama Horror Mystery Sci-Fi,evolution,Nissim Renard Roxane Duran Julie-Marie Parmentier Lucile Hadzihalilovic Drama Horror Mystery Sci-Fi
+14,Peter Hyams,David Oyelowo,Catherine McCormack,Jemima Rooper,Action Adventure Horror Sci-Fi Thriller,a sound of thunder,David Oyelowo Catherine McCormack Jemima Rooper Peter Hyams Action Adventure Horror Sci-Fi Thriller
+15,Renny Harlin,James D'Arcy,Alan Ford,Izabella Scorupco,Horror Mystery Thriller,exorcist: the beginning,James D'Arcy Alan Ford Izabella Scorupco Renny Harlin Horror Mystery Thriller
+16,unknown,Harold Perrineau,Matt Ryan,Charles Halford,Drama Fantasy Horror Thriller,constantine      ,Harold Perrineau Matt Ryan Charles Halford unknown Drama Fantasy Horror Thriller
+17,David Pastor,Christopher Meloni,Kiernan Shipka,Lou Taylor Pucci,Drama Horror Sci-Fi Thriller,carriers,Christopher Meloni Kiernan Shipka Lou Taylor Pucci David Pastor Drama Horror Sci-Fi Thriller
+18,Paul W.S. Anderson,Sanaa Lathan,Colin Salmon,Raoul Bova,Action Horror Sci-Fi Thriller,avp: alien vs. predator,Sanaa Lathan Colin Salmon Raoul Bova Paul W.S. Anderson Action Horror Sci-Fi Thriller
+19,Mike Nichols,David Hyde Pierce,Peter Gerety,Ron Rifkin,Drama Horror Romance Thriller,wolf,David Hyde Pierce Peter Gerety Ron Rifkin Mike Nichols Drama Horror Romance Thriller
+20,Gary Shore,Dominic Cooper,Sarah Gadon,Zach McGowan,Action Drama Fantasy Horror War,dracula untold,Dominic Cooper Sarah Gadon Zach McGowan Gary Shore Action Drama Fantasy Horror War
+21,Andrzej Bartkowiak,Dwayne Johnson,Ben Daniels,Dexter Fletcher,Action Adventure Horror Sci-Fi,doom,Dwayne Johnson Ben Daniels Dexter Fletcher Andrzej Bartkowiak Action Adventure Horror Sci-Fi
+22,MÃÂ¥ns MÃÂ¥rlind,Theo James,Stephen Rea,Sandrine Holt,Action Fantasy Horror,underworld: awakening,Theo James Stephen Rea Sandrine Holt MÃÂ¥ns MÃÂ¥rlind Action Fantasy Horror
+23,Timur Bekmambetov,Rufus Sewell,Dominic Cooper,Benjamin Walker,Action Fantasy Horror,abraham lincoln: vampire hunter,Rufus Sewell Dominic Cooper Benjamin Walker Timur Bekmambetov Action Fantasy Horror
+24,Lawrence Kasdan,Morgan Freeman,Michael O'Neill,Reece Thompson,Drama Horror Sci-Fi Thriller,dreamcatcher,Morgan Freeman Michael O'Neill Reece Thompson Lawrence Kasdan Drama Horror Sci-Fi Thriller
+25,David S. Goyer,Ryan Reynolds,Natasha Lyonne,John Michael Higgins,Action Adventure Fantasy Horror Sci-Fi Thriller,blade: trinity,Ryan Reynolds Natasha Lyonne John Michael Higgins David S. Goyer Action Adventure Fantasy Horror Sci-Fi Thriller
+26,Paul W.S. Anderson,Milla Jovovich,Boris Kodjoe,Bingbing Li,Action Horror Sci-Fi Thriller,resident evil: retribution,Milla Jovovich Boris Kodjoe Bingbing Li Paul W.S. Anderson Action Horror Sci-Fi Thriller
+27,Guillermo del Toro,James Babson,Rupert Evans,Brian Steele,Action Fantasy Horror Sci-Fi,hellboy,James Babson Rupert Evans Brian Steele Guillermo del Toro Action Fantasy Horror Sci-Fi
+28,Jean-Pierre Jeunet,Gary Dourdan,Michael Wincott,Raymond Cruz,Action Horror Sci-Fi,alien: resurrection,Gary Dourdan Michael Wincott Raymond Cruz Jean-Pierre Jeunet Action Horror Sci-Fi
+29,Peter Hyams,John Kapelos,Penelope Ann Miller,Chi Muoi Lo,Horror Mystery Sci-Fi Thriller,the relic,John Kapelos Penelope Ann Miller Chi Muoi Lo Peter Hyams Horror Mystery Sci-Fi Thriller
+30,Scott Stewart,Josh Wingate,Alan Dale,Jacob Hopkins,Action Fantasy Horror Sci-Fi Thriller,priest,Josh Wingate Alan Dale Jacob Hopkins Scott Stewart Action Fantasy Horror Sci-Fi Thriller
+31,Paul W.S. Anderson,Sean Pertwee,Joely Richardson,Kathleen Quinlan,Horror Sci-Fi Thriller,event horizon,Sean Pertwee Joely Richardson Kathleen Quinlan Paul W.S. Anderson Horror Sci-Fi Thriller
+32,Walter Hill,Robert Forster,Wilson Cruz,Vanessa Marshall,Horror Sci-Fi Thriller,supernova,Robert Forster Wilson Cruz Vanessa Marshall Walter Hill Horror Sci-Fi Thriller
+33,Harald Zwart,Aidan Turner,Kevin Zegers,CCH Pounder,Fantasy Horror Mystery Romance,the mortal instruments: city of bones,Aidan Turner Kevin Zegers CCH Pounder Harald Zwart Fantasy Horror Mystery Romance
+34,Walter Salles,Dougray Scott,Camryn Manheim,Ariel Gade,Drama Horror Thriller,dark water,Dougray Scott Camryn Manheim Ariel Gade Walter Salles Drama Horror Thriller
+35,Paul W.S. Anderson,Milla Jovovich,Boris Kodjoe,Shawn Roberts,Action Adventure Horror Sci-Fi,resident evil: afterlife,Milla Jovovich Boris Kodjoe Shawn Roberts Paul W.S. Anderson Action Adventure Horror Sci-Fi
+36,Robert Zemeckis,Bruce Willis,Meryl Streep,Isabella Rossellini,Comedy Fantasy Horror,death becomes her,Bruce Willis Meryl Streep Isabella Rossellini Robert Zemeckis Comedy Fantasy Horror
+37,David Fincher,Charles S. Dutton,Holt McCallany,Paul McGann,Action Horror Sci-Fi,alien 3,Charles S. Dutton Holt McCallany Paul McGann David Fincher Action Horror Sci-Fi
+38,Stephen Hopkins,Tom Wilkinson,Bernard Hill,Om Puri,Adventure Drama Horror Thriller,the ghost and the darkness,Tom Wilkinson Bernard Hill Om Puri Stephen Hopkins Adventure Drama Horror Thriller
+39,Jim Gillespie,Sylvester Stallone,Tom Berenger,Charles S. Dutton,Crime Horror Mystery Thriller,eye see you,Sylvester Stallone Tom Berenger Charles S. Dutton Jim Gillespie Crime Horror Mystery Thriller
+40,Guillermo del Toro,Norman Reedus,Thomas Kretschmann,Tony Curran,Action Horror Sci-Fi Thriller,blade ii,Norman Reedus Thomas Kretschmann Tony Curran Guillermo del Toro Action Horror Sci-Fi Thriller
+41,Robert Rodriguez,Quentin Tarantino,Rosario Dawson,ZoÃÂ« Bell,Action Horror Thriller,grindhouse,Quentin Tarantino Rosario Dawson ZoÃÂ« Bell Robert Rodriguez Action Horror Thriller
+42,Jonathan Demme,Oprah Winfrey,Kimberly Elise,Hill Harper,Drama History Horror,beloved,Oprah Winfrey Kimberly Elise Hill Harper Jonathan Demme Drama History Horror
+43,Neil Jordan,Brad Pitt,Tom Cruise,Kirsten Dunst,Drama Fantasy Horror,interview with the vampire: the vampire chronicles,Brad Pitt Tom Cruise Kirsten Dunst Neil Jordan Drama Fantasy Horror
+44,Hideo Nakata,Naomi Watts,Gary Cole,Sissy Spacek,Horror Mystery,the ring two,Naomi Watts Gary Cole Sissy Spacek Hideo Nakata Horror Mystery
+45,Tommy Wirkola,Jeremy Renner,Derek Mears,Ingrid BolsÃÂ¸ Berdal,Action Fantasy Horror,hansel & gretel: witch hunters,Jeremy Renner Derek Mears Ingrid BolsÃÂ¸ Berdal Tommy Wirkola Action Fantasy Horror
+46,Christophe Gans,Radha Mitchell,Deborah Kara Unger,Alice Krige,Adventure Horror Mystery,silent hill,Radha Mitchell Deborah Kara Unger Alice Krige Christophe Gans Adventure Horror Mystery
+47,Joe Dante,Christopher Lee,Robert Picardo,Phoebe Cates,Comedy Fantasy Horror,gremlins 2: the new batch,Christopher Lee Robert Picardo Phoebe Cates Joe Dante Comedy Fantasy Horror
+48,Alexander Witt,Milla Jovovich,Thomas Kretschmann,Mike Epps,Action Horror Sci-Fi Thriller,resident evil: apocalypse,Milla Jovovich Thomas Kretschmann Mike Epps Alexander Witt Action Horror Sci-Fi Thriller
+49,Chuck Bowman,P.J. Soles,Lochlyn Munro,Steve Bacic,Horror Thriller,the tooth fairy,P.J. Soles Lochlyn Munro Steve Bacic Chuck Bowman Horror Thriller
+50,Stephen Frears,Julia Roberts,Bronagh Gallagher,George Cole,Drama Horror Romance Thriller,mary reilly,Julia Roberts Bronagh Gallagher George Cole Stephen Frears Drama Horror Romance Thriller
+51,Stephen Norrington,Sanaa Lathan,Traci Lords,Udo Kier,Action Horror,blade,Sanaa Lathan Traci Lords Udo Kier Stephen Norrington Action Horror
+52,Luis Llosa,Frank Welker,Eric Stoltz,Kari Wuhrer,Action Adventure Horror Thriller,anaconda,Frank Welker Eric Stoltz Kari Wuhrer Luis Llosa Action Adventure Horror Thriller
+53,Russell Mulcahy,Milla Jovovich,Mike Epps,James Tumminia,Action Horror Sci-Fi Thriller,resident evil: extinction,Milla Jovovich Mike Epps James Tumminia Russell Mulcahy Action Horror Sci-Fi Thriller
+54,Stephen Sommers,Djimon Hounsou,Jason Flemyng,Wes Studi,Action Adventure Horror Sci-Fi,deep rising,Djimon Hounsou Jason Flemyng Wes Studi Stephen Sommers Action Adventure Horror Sci-Fi
+55,unknown,Pierre Perrier,Clotilde Hesme,CÃÂ©line Sallette,Drama Fantasy Horror Mystery,the returnedÃÂ            ,Pierre Perrier Clotilde Hesme CÃÂ©line Sallette unknown Drama Fantasy Horror Mystery
+56,Mark Pellington,Debra Messing,Will Patton,David Eigenberg,Drama Horror Mystery Thriller,the mothman prophecies,Debra Messing Will Patton David Eigenberg Mark Pellington Drama Horror Mystery Thriller
+57,Catherine Hardwicke,Gary Oldman,Billy Burke,Virginia Madsen,Fantasy Horror Mystery Thriller,red riding hood,Gary Oldman Billy Burke Virginia Madsen Catherine Hardwicke Fantasy Horror Mystery Thriller
+58,James Wan,Javier Botet,Frances O'Connor,Robin Atkin Downes,Horror Mystery Thriller,the conjuring 2,Javier Botet Frances O'Connor Robin Atkin Downes James Wan Horror Mystery Thriller
+59,Wes Craven,Kelly Rutherford,Roger Jackson,Nancy O'Dell,Horror Mystery,scream 3,Kelly Rutherford Roger Jackson Nancy O'Dell Wes Craven Horror Mystery
+60,Francis Ford Coppola,Keanu Reeves,Anthony Hopkins,Gary Oldman,Fantasy Horror Romance,bram stoker's dracula,Keanu Reeves Anthony Hopkins Gary Oldman Francis Ford Coppola Fantasy Horror Romance
+61,David R. Ellis,Krista Allen,Andrew Fiscella,Shantel VanSanten,Horror,the final destination,Krista Allen Andrew Fiscella Shantel VanSanten David R. Ellis Horror
+62,Mark A.Z. DippÃÂ©,Michael Jai White,Frank Welker,Miko Hughes,Action Horror,spawn,Michael Jai White Frank Welker Miko Hughes Mark A.Z. DippÃÂ© Action Horror
+63,Iain Softley,Gena Rowlands,Deneen Tyler,Joy Bryant,Horror Mystery Thriller,the skeleton key,Gena Rowlands Deneen Tyler Joy Bryant Iain Softley Horror Mystery Thriller
+64,Mathieu Kassovitz,Robert Downey Jr.,Charles S. Dutton,Bernard Hill,Horror Mystery Thriller,gothika,Robert Downey Jr. Charles S. Dutton Bernard Hill Mathieu Kassovitz Horror Mystery Thriller
+65,Colin Strause,Sam Trammell,Johnny Lewis,Ian Whyte,Action Horror Sci-Fi Thriller,aliens vs. predator: requiem,Sam Trammell Johnny Lewis Ian Whyte Colin Strause Action Horror Sci-Fi Thriller
+66,Wes Craven,Alison Brie,Aimee Teegarden,Shenae Grimes-Beech,Horror Mystery,scream 4,Alison Brie Aimee Teegarden Shenae Grimes-Beech Wes Craven Horror Mystery
+67,Steven Quale,Emma Bell,Jacqueline MacInnes Wood,Courtney B. Vance,Horror,final destination 5,Emma Bell Jacqueline MacInnes Wood Courtney B. Vance Steven Quale Horror
+68,Chuck Russell,Rufus Sewell,Jimmy Smits,Angela Bettis,Crime Drama Horror Thriller,bless the child,Rufus Sewell Jimmy Smits Angela Bettis Chuck Russell Crime Drama Horror Thriller
+69,John Frankenheimer,Marlon Brando,Temuera Morrison,Marco Hofschneider,Horror Sci-Fi Thriller,the island of dr. moreau,Marlon Brando Temuera Morrison Marco Hofschneider John Frankenheimer Horror Sci-Fi Thriller
+70,Stephen Hopkins,Stephen Rea,Andrea Frankle,William Ragsdale,Horror Thriller,the reaping,Stephen Rea Andrea Frankle William Ragsdale Stephen Hopkins Horror Thriller
+71,William Malone,Natascha McElhone,Jeffrey Combs,Udo Kier,Crime Horror Thriller,feardotcom,Natascha McElhone Jeffrey Combs Udo Kier William Malone Crime Horror Thriller
+72,Christian Alvart,Norman Reedus,Dennis Quaid,Eddie Rouse,Action Horror Mystery Sci-Fi Thriller,pandorum,Norman Reedus Dennis Quaid Eddie Rouse Christian Alvart Action Horror Mystery Sci-Fi Thriller
+73,Tim Burton,Martin Landau,Catherine O'Hara,Atticus Shaffer,Animation Comedy Family Horror Sci-Fi,frankenweenie,Martin Landau Catherine O'Hara Atticus Shaffer Tim Burton Animation Comedy Family Horror Sci-Fi
+74,John Carpenter,Wilford Brimley,Richard Masur,David Clennon,Horror Mystery Sci-Fi,the thing,Wilford Brimley Richard Masur David Clennon John Carpenter Horror Mystery Sci-Fi
+75,Mikael HÃÂ¥fstrÃÂ¶m,Anthony Hopkins,Colin O'Donoghue,Toby Jones,Drama Horror Mystery Thriller,the rite,Anthony Hopkins Colin O'Donoghue Toby Jones Mikael HÃÂ¥fstrÃÂ¶m Drama Horror Mystery Thriller
+76,Roger Donaldson,Natasha Henstridge,Marg Helgenberger,Jordan Lund,Action Horror Sci-Fi Thriller,species,Natasha Henstridge Marg Helgenberger Jordan Lund Roger Donaldson Action Horror Sci-Fi Thriller
+77,Tarsem Singh,Dylan Baker,Jake Weber,James Gammon,Horror Sci-Fi Thriller,the cell,Dylan Baker Jake Weber James Gammon Tarsem Singh Horror Sci-Fi Thriller
+78,Paul W.S. Anderson,Milla Jovovich,Jaymes Butler,Colin Salmon,Action Horror Sci-Fi,resident evil,Milla Jovovich Jaymes Butler Colin Salmon Paul W.S. Anderson Action Horror Sci-Fi
+79,Albert Hughes,Johnny Depp,Jason Flemyng,Ian Richardson,Horror Mystery Thriller,from hell,Johnny Depp Jason Flemyng Ian Richardson Albert Hughes Horror Mystery Thriller
+80,Alexandre Aja,Jason Flemyng,Cameron Boyce,Julian Glover,Horror Mystery,mirrors,Jason Flemyng Cameron Boyce Julian Glover Alexandre Aja Horror Mystery
+81,Michael Rymer,Aaliyah,Lena Olin,Bruce Spence,Drama Fantasy Horror,queen of the damned,Aaliyah Lena Olin Bruce Spence Michael Rymer Drama Fantasy Horror
+82,Stephen Hopkins,Adam Baldwin,Robert Davi,Kevin Peter Hall,Action Horror Sci-Fi,predator 2,Adam Baldwin Robert Davi Kevin Peter Hall Stephen Hopkins Action Horror Sci-Fi
+83,Wes Craven,Shannon Elizabeth,Portia de Rossi,Derek Mears,Comedy Horror,cursed,Shannon Elizabeth Portia de Rossi Derek Mears Wes Craven Comedy Horror
+84,Kimble Rendall,Alex Russell,Cariba Heine,Richard Brancatisano,Action Horror Sci-Fi,bait,Alex Russell Cariba Heine Richard Brancatisano Kimble Rendall Action Horror Sci-Fi
+85,Chris Gorak,Max Minghella,Veronika Vernadskaya,Dato Bakhtadze,Action Adventure Horror Sci-Fi Thriller,the darkest hour,Max Minghella Veronika Vernadskaya Dato Bakhtadze Chris Gorak Action Adventure Horror Sci-Fi Thriller
+86,Joe Charbanic,Keanu Reeves,Joseph Sikora,Chris Ellis,Crime Horror Mystery Thriller,the watcher,Keanu Reeves Joseph Sikora Chris Ellis Joe Charbanic Crime Horror Mystery Thriller
+87,Rupert Wainwright,Nia Long,Enrico Colantoni,Portia de Rossi,Horror,stigmata,Nia Long Enrico Colantoni Portia de Rossi Rupert Wainwright Horror
+88,Hyung-rae Shim,Robert Forster,Aimee Garcia,Chris Mulkey,Action Drama Fantasy Horror Thriller,dragon wars: d-war,Robert Forster Aimee Garcia Chris Mulkey Hyung-rae Shim Action Drama Fantasy Horror Thriller
+89,Frank Marshall,Julian Sands,Peter Jason,Brian McNamara,Comedy Fantasy Horror Thriller,arachnophobia,Julian Sands Peter Jason Brian McNamara Frank Marshall Comedy Fantasy Horror Thriller
+90,Jonathan Levine,Cory Hardrict,Vincent Leclerc,Daniel Rindress-Kay,Comedy Horror Romance,warm bodies,Cory Hardrict Vincent Leclerc Daniel Rindress-Kay Jonathan Levine Comedy Horror Romance
+91,Sam Raimi,Bojana Novakovic,Alison Lohman,Reggie Lee,Horror Thriller,drag me to hell,Bojana Novakovic Alison Lohman Reggie Lee Sam Raimi Horror Thriller
+92,David Slade,Danny Huston,Mark Rendall,Megan Franich,Horror,30 days of night,Danny Huston Mark Rendall Megan Franich David Slade Horror
+93,Drew Goddard,Chris Hemsworth,Bradley Whitford,Kristen Connolly,Fantasy Horror Mystery Thriller,the cabin in the woods,Chris Hemsworth Bradley Whitford Kristen Connolly Drew Goddard Fantasy Horror Mystery Thriller
+94,Frank Oz,Bill Murray,Jim Belushi,Tisha Campbell-Martin,Comedy Horror Musical Sci-Fi,little shop of horrors,Bill Murray Jim Belushi Tisha Campbell-Martin Frank Oz Comedy Horror Musical Sci-Fi
+95,Scott Derrickson,Olivia Munn,Dorian Missick,Edgar RamÃÂ­rez,Horror Mystery Thriller,deliver us from evil,Olivia Munn Dorian Missick Edgar RamÃÂ­rez Scott Derrickson Horror Mystery Thriller
+96,Kurt Wimmer,Milla Jovovich,Cameron Bright,Nick Chinlund,Action Horror Sci-Fi Thriller,ultraviolet,Milla Jovovich Cameron Bright Nick Chinlund Kurt Wimmer Action Horror Sci-Fi Thriller
+97,Ellory Elkayem,Scarlett Johansson,Doug E. Doug,Riley Smith,Action Comedy Horror,eight legged freaks,Scarlett Johansson Doug E. Doug Riley Smith Ellory Elkayem Action Comedy Horror
+98,Vincenzo Natali,Sarah Polley,David Hewlett,Delphine ChanÃÂ©ac,Drama Horror Sci-Fi,splice,Sarah Polley David Hewlett Delphine ChanÃÂ©ac Vincenzo Natali Drama Horror Sci-Fi
+99,Bruce Hunt,Eddie Cibrian,Cole Hauser,Marcel Iures,Adventure Horror Thriller,the cave,Eddie Cibrian Cole Hauser Marcel Iures Bruce Hunt Adventure Horror Thriller
+100,Craig Gillespie,Grace Phipps,Reid Ewing,Sandra Vergara,Comedy Horror,fright night,Grace Phipps Reid Ewing Sandra Vergara Craig Gillespie Comedy Horror
+101,Nick Hamm,Robert De Niro,Cameron Bright,Munro Chambers,Drama Horror Sci-Fi Thriller,godsend,Robert De Niro Cameron Bright Munro Chambers Nick Hamm Drama Horror Sci-Fi Thriller
+102,Don Mancini,Jason Flemyng,Billy Boyd,Hannah Spearritt,Comedy Fantasy Horror Thriller,seed of chucky,Jason Flemyng Billy Boyd Hannah Spearritt Don Mancini Comedy Fantasy Horror Thriller
+103,Patrick Lussier,Gerard Butler,Danny Masterson,Jeri Ryan,Action Fantasy Horror Thriller,dracula 2000,Gerard Butler Danny Masterson Jeri Ryan Patrick Lussier Action Fantasy Horror Thriller
+104,Janusz Kaminski,Philip Baker Hall,Bob Clendenin,Ben Chaplin,Drama Horror Thriller,lost souls,Philip Baker Hall Bob Clendenin Ben Chaplin Janusz Kaminski Drama Horror Thriller
+105,John Carpenter,Jason Statham,Clea DuVall,Natasha Henstridge,Action Horror Sci-Fi,ghosts of mars,Jason Statham Clea DuVall Natasha Henstridge John Carpenter Action Horror Sci-Fi
+106,Burr Steers,Matt Smith,Bella Heathcote,Sam Riley,Action Horror Romance,pride and prejudice and zombies,Matt Smith Bella Heathcote Sam Riley Burr Steers Action Horror Romance
+107,Steve Miner,Oliver Platt,Bridget Fonda,Ty Olsson,Action Comedy Horror,lake placid,Oliver Platt Bridget Fonda Ty Olsson Steve Miner Action Comedy Horror
+108,Walter Murch,Piper Laurie,Jean Marsh,Tim Rose,Adventure Family Fantasy Horror Mystery,return to oz,Piper Laurie Jean Marsh Tim Rose Walter Murch Adventure Family Fantasy Horror Mystery
+109,Christian Alvart,Bradley Cooper,Callum Rennie,Vanesa Tomasino,Horror Mystery Thriller,case 39,Bradley Cooper Callum Rennie Vanesa Tomasino Christian Alvart Horror Mystery Thriller
+110,Renny Harlin,LL Cool J,Clifton Collins Jr.,Eion Bailey,Crime Horror Mystery Thriller,mindhunters,LL Cool J Clifton Collins Jr. Eion Bailey Renny Harlin Crime Horror Mystery Thriller
+111,Joel Schumacher,Julia Roberts,Oliver Platt,Hope Davis,Drama Horror Sci-Fi Thriller,flatliners,Julia Roberts Oliver Platt Hope Davis Joel Schumacher Drama Horror Sci-Fi Thriller
+112,David R. Ellis,Sarah Carter,Michael Landes,Keegan Connor Tracy,Horror Thriller,final destination 2,Sarah Carter Michael Landes Keegan Connor Tracy David R. Ellis Horror Thriller
+113,Scott Stewart,Dennis Quaid,Kate Walsh,Charles S. Dutton,Action Fantasy Horror,legion,Dennis Quaid Kate Walsh Charles S. Dutton Scott Stewart Action Fantasy Horror
+114,Michael Cohn,David Conrad,Chris Bauer,Monica Keena,Fantasy Horror,snow white: a tale of terror,David Conrad Chris Bauer Monica Keena Michael Cohn Fantasy Horror
+115,Raja Gosnell,Sarah Michelle Gellar,Linda Cardellini,Tim Blake Nelson,Adventure Comedy Family Fantasy Horror Mystery,scooby-doo 2: monsters unleashed,Sarah Michelle Gellar Linda Cardellini Tim Blake Nelson Raja Gosnell Adventure Comedy Family Fantasy Horror Mystery
+116,Ronny Yu,Katharine Isabelle,Jason Ritter,Zack Ward,Action Horror Thriller,freddy vs. jason,Katharine Isabelle Jason Ritter Zack Ward Ronny Yu Action Horror Thriller
+117,Matt Reeves,Mike Vogel,Ben Feldman,Liza Lapira,Action Adventure Horror Sci-Fi,cloverfield,Mike Vogel Ben Feldman Liza Lapira Matt Reeves Action Adventure Horror Sci-Fi
+118,James Wong,Chelan Simmons,Gina Holden,Crystal Lowe,Horror,final destination 3,Chelan Simmons Gina Holden Crystal Lowe James Wong Horror
+119,John Polson,Robert De Niro,Dylan Baker,Robert John Burke,Drama Horror Mystery Thriller,hide and seek,Robert De Niro Dylan Baker Robert John Burke John Polson Drama Horror Mystery Thriller
+120,Victor Salva,Nicki Aycox,Jonathan Breck,Billy Aaron Brown,Horror,jeepers creepers ii,Nicki Aycox Jonathan Breck Billy Aaron Brown Victor Salva Horror
+121,Dwight H. Little,Nicholas Gonzalez,Salli Richardson-Whitfield,Johnny Messner,Action Adventure Horror Thriller,anacondas: the hunt for the blood orchid,Nicholas Gonzalez Salli Richardson-Whitfield Johnny Messner Dwight H. Little Action Adventure Horror Thriller
+122,Ronny Yu,Alexis Arquette,Park Bench,Vince Corazza,Comedy Fantasy Horror Romance,bride of chucky,Alexis Arquette Park Bench Vince Corazza Ronny Yu Comedy Fantasy Horror Romance
+123,Troy Nixey,Bailee Madison,Alan Dale,Jack Thompson,Fantasy Horror Thriller,don't be afraid of the dark,Bailee Madison Alan Dale Jack Thompson Troy Nixey Fantasy Horror Thriller
+124,Carter Smith,Laura Ramsey,Jonathan Tucker,Sergio CalderÃÂ³n,Horror,the ruins,Laura Ramsey Jonathan Tucker Sergio CalderÃÂ³n Carter Smith Horror
+125,David R. Ellis,Chris Zylka,Joel David Moore,Katharine McPhee,Horror Thriller,shark night 3d,Chris Zylka Joel David Moore Katharine McPhee David R. Ellis Horror Thriller
+126,Tobe Hooper,Frank Finlay,Steve Railsback,Peter Firth,Action Horror Sci-Fi Thriller,lifeforce,Frank Finlay Steve Railsback Peter Firth Tobe Hooper Action Horror Sci-Fi Thriller
+127,Uwe Boll,Meat Loaf,Udo Kier,Michael ParÃÂ©,Action Adventure Fantasy Horror,bloodrayne,Meat Loaf Udo Kier Michael ParÃÂ© Uwe Boll Action Adventure Fantasy Horror
+128,Wes Craven,Omar Epps,Jada Pinkett Smith,Kevin Williamson,Horror Mystery,scream 2,Omar Epps Jada Pinkett Smith Kevin Williamson Wes Craven Horror Mystery
+129,Danny Cannon,Muse Watson,Mekhi Phifer,Bill Cobbs,Horror Mystery,i still know what you did last summer,Muse Watson Mekhi Phifer Bill Cobbs Danny Cannon Horror Mystery
+130,Alexandre Aja,Adam Scott,Kelly Brook,Jessica Szohr,Comedy Horror,piranha 3d,Adam Scott Kelly Brook Jessica Szohr Alexandre Aja Comedy Horror
+131,Ruben Fleischer,Emma Stone,Bill Murray,Derek Graf,Adventure Comedy Horror Sci-Fi,zombieland,Emma Stone Bill Murray Derek Graf Ruben Fleischer Adventure Comedy Horror Sci-Fi
+132,James Wong,Daniel Roebuck,Brendan Fehr,Kerr Smith,Horror Thriller,final destination,Daniel Roebuck Brendan Fehr Kerr Smith James Wong Horror Thriller
+133,David Twohy,Vin Diesel,Radha Mitchell,Cole Hauser,Horror Sci-Fi,pitch black,Vin Diesel Radha Mitchell Cole Hauser David Twohy Horror Sci-Fi
+134,Joseph Sargent,Judith Barsi,Mario Van Peebles,Lynn Whitfield,Adventure Horror Thriller,jaws: the revenge,Judith Barsi Mario Van Peebles Lynn Whitfield Joseph Sargent Adventure Horror Thriller
+135,Mikael HÃÂ¥fstrÃÂ¶m,Drew Powell,Kim Thomson,Alexandra Silber,Fantasy Horror,1408,Drew Powell Kim Thomson Alexandra Silber Mikael HÃÂ¥fstrÃÂ¶m Fantasy Horror
+136,Paul McGuigan,Daniel Radcliffe,Spencer Wilding,Daniel Mays,Drama Horror Sci-Fi Thriller,victor frankenstein,Daniel Radcliffe Spencer Wilding Daniel Mays Paul McGuigan Drama Horror Sci-Fi Thriller
+137,Katt Shea,Jason London,Rachel Blanchard,Eddie Kaye Thomas,Horror Sci-Fi Thriller,the rage: carrie 2,Jason London Rachel Blanchard Eddie Kaye Thomas Katt Shea Horror Sci-Fi Thriller
+138,David Cronenberg,Jennifer Jason Leigh,Sarah Polley,Callum Rennie,Horror Sci-Fi Thriller,existenz,Jennifer Jason Leigh Sarah Polley Callum Rennie David Cronenberg Horror Sci-Fi Thriller
+139,Jim Sonzero,Ian Somerhalder,Christina Milian,Rick Gonzalez,Drama Horror Sci-Fi Thriller,pulse,Ian Somerhalder Christina Milian Rick Gonzalez Jim Sonzero Drama Horror Sci-Fi Thriller
+140,Jonathan Demme,Anthony Hopkins,Scott Glenn,Anthony Heald,Crime Drama Horror Thriller,the silence of the lambs,Anthony Hopkins Scott Glenn Anthony Heald Jonathan Demme Crime Drama Horror Thriller
+141,Jeannot Szwarc,Roy Scheider,Murray Hamilton,Joseph Mascolo,Adventure Horror Thriller,jaws 2,Roy Scheider Murray Hamilton Joseph Mascolo Jeannot Szwarc Adventure Horror Thriller
+142,James Wan,Mackenzie Foy,Lili Taylor,Hayley McFarland,Horror Mystery Thriller,the conjuring,Mackenzie Foy Lili Taylor Hayley McFarland James Wan Horror Mystery Thriller
+143,Stephen Kay,Barry Watson,Skye McCole Bartusiak,Charles Mesure,Drama Horror Mystery Thriller,boogeyman,Barry Watson Skye McCole Bartusiak Charles Mesure Stephen Kay Drama Horror Mystery Thriller
+144,Takashi Shimizu,Sarah Michelle Gellar,Sarah Roemer,Matthew Knight,Horror Thriller,the grudge 2,Sarah Michelle Gellar Sarah Roemer Matthew Knight Takashi Shimizu Horror Thriller
+145,John Luessenhop,Gunnar Hansen,Keram Malicki-SÃÂ¡nchez,Shaun Sipos,Horror Thriller,texas chainsaw 3d,Gunnar Hansen Keram Malicki-SÃÂ¡nchez Shaun Sipos John Luessenhop Horror Thriller
+146,Steve Beck,Isaiah Washington,Ron Eldard,Francesca Rettondini,Horror,ghost ship,Isaiah Washington Ron Eldard Francesca Rettondini Steve Beck Horror
+147,Eric Valette,Johnny Lewis,Jason Beghe,Margaret Cho,Horror Mystery,one missed call,Johnny Lewis Jason Beghe Margaret Cho Eric Valette Horror Mystery
+148,Michael Spierig,Jay Laga'aia,Damien Garvey,Tiffany Lamb,Action Horror Sci-Fi Thriller,daybreakers,Jay Laga'aia Damien Garvey Tiffany Lamb Michael Spierig Action Horror Sci-Fi Thriller
+149,William Brent Bell,Adam Goldberg,Frankie Muniz,Samaire Armstrong,Horror Thriller,stay alive,Adam Goldberg Frankie Muniz Samaire Armstrong William Brent Bell Horror Thriller
+150,John Carpenter,Sheryl Lee,Cary-Hiroyuki Tagawa,Maximilian Schell,Action Horror Thriller,vampires,Sheryl Lee Cary-Hiroyuki Tagawa Maximilian Schell John Carpenter Action Horror Thriller
+151,Alfred Hitchcock,Janet Leigh,Vera Miles,John Gavin,Horror Mystery Thriller,psycho,Janet Leigh Vera Miles John Gavin Alfred Hitchcock Horror Mystery Thriller
+152,Michael J. Bassett,Radha Mitchell,Deborah Kara Unger,Martin Donovan,Adventure Drama Horror Mystery Thriller,silent hill: revelation 3d,Radha Mitchell Deborah Kara Unger Martin Donovan Michael J. Bassett Adventure Drama Horror Mystery Thriller
+153,Robert Rodriguez,Quentin Tarantino,Salma Hayek,Cheech Marin,Crime Fantasy Horror,from dusk till dawn,Quentin Tarantino Salma Hayek Cheech Marin Robert Rodriguez Crime Fantasy Horror
+154,Matt Reeves,ChloÃÂ« Grace Moretz,Dylan Minnette,Kodi Smit-McPhee,Drama Fantasy Horror Mystery,let me in,ChloÃÂ« Grace Moretz Dylan Minnette Kodi Smit-McPhee Matt Reeves Drama Fantasy Horror Mystery
+155,Glen Morgan,Laura Harring,Ty Olsson,Jackie Burroughs,Drama Horror Sci-Fi Thriller,willard,Laura Harring Ty Olsson Jackie Burroughs Glen Morgan Drama Horror Sci-Fi Thriller
+156,Uwe Boll,Catherine Lough Haggquist,Darren Shahlavi,Karin Konoval,Horror Sci-Fi,alone in the dark,Catherine Lough Haggquist Darren Shahlavi Karin Konoval Uwe Boll Horror Sci-Fi
+157,Kevin Munroe,Marco St. John,Laura Spencer,Anita Briem,Action Comedy Crime Fantasy Horror Mystery Sci-Fi Thriller,dylan dog: dead of night,Marco St. John Laura Spencer Anita Briem Kevin Munroe Action Comedy Crime Fantasy Horror Mystery Sci-Fi Thriller
+158,Wes Craven,David Arquette,W. Earl Brown,Roger Jackson,Horror Mystery,scream,David Arquette W. Earl Brown Roger Jackson Wes Craven Horror Mystery
+159,Steve Beck,Shannon Elizabeth,Embeth Davidtz,F. Murray Abraham,Horror,thir13en ghosts,Shannon Elizabeth Embeth Davidtz F. Murray Abraham Steve Beck Horror
+160,Stanley Kubrick,Scatman Crothers,Shelley Duvall,Joe Turkel,Drama Horror,the shining,Scatman Crothers Shelley Duvall Joe Turkel Stanley Kubrick Drama Horror
+161,William Malone,Jeffrey Combs,Peter Gallagher,Bridgette Wilson-Sampras,Horror Mystery Thriller,house on haunted hill,Jeffrey Combs Peter Gallagher Bridgette Wilson-Sampras William Malone Horror Mystery Thriller
+162,Breck Eisner,Radha Mitchell,Glenn Morshower,John Aylward,Horror Thriller,the crazies,Radha Mitchell Glenn Morshower John Aylward Breck Eisner Horror Thriller
+163,Andrew Douglas,Jimmy Bennett,ChloÃÂ« Grace Moretz,Ryan Reynolds,Drama Horror Mystery Thriller,the amityville horror,Jimmy Bennett ChloÃÂ« Grace Moretz Ryan Reynolds Andrew Douglas Drama Horror Mystery Thriller
+164,George A. Romero,Tony Nappo,Shawn Roberts,Pedro Miguel Arce,Horror,land of the dead,Tony Nappo Shawn Roberts Pedro Miguel Arce George A. Romero Horror
+165,Scott Derrickson,Tom Wilkinson,Colm Feore,JR Bourne,Drama Horror Thriller,the exorcism of emily rose,Tom Wilkinson Colm Feore JR Bourne Scott Derrickson Drama Horror Thriller
+166,John McTiernan,Shane Black,Bill Duke,Carl Weathers,Action Horror Sci-Fi,predator,Shane Black Bill Duke Carl Weathers John McTiernan Action Horror Sci-Fi
+167,Nelson McCormick,Ming-Na Wen,Scott Porter,Collins Pennie,Horror Mystery,prom night,Ming-Na Wen Scott Porter Collins Pennie Nelson McCormick Horror Mystery
+168,Zack Ward,Zack Ward,Anna Harr,James Cullen Bressack,Horror,restoration,Zack Ward Anna Harr James Cullen Bressack Zack Ward Horror
+169,Mike Marvin,Clint Howard,Randy Quaid,Nick Cassavetes,Action Horror Romance Sci-Fi Thriller,the wraith,Clint Howard Randy Quaid Nick Cassavetes Mike Marvin Action Horror Romance Sci-Fi Thriller
+170,Rodrigo CortÃÂ©s,Robert De Niro,Toby Jones,Craig Roberts,Drama Horror Mystery Thriller,red lights,Robert De Niro Toby Jones Craig Roberts Rodrigo CortÃÂ©s Drama Horror Mystery Thriller
+171,David Hayter,Jason Momoa,Jennifer Hale,Stephen McHattie,Action Horror,wolves,Jason Momoa Jennifer Hale Stephen McHattie David Hayter Action Horror
+172,Alejandro AmenÃÂ¡bar,Fionnula Flanagan,Elaine Cassidy,Eric Sykes,Fantasy Horror Thriller,the others,Fionnula Flanagan Elaine Cassidy Eric Sykes Alejandro AmenÃÂ¡bar Fantasy Horror Thriller
+173,Jim Gillespie,Muse Watson,Sarah Michelle Gellar,Anne Heche,Horror Mystery Thriller,i know what you did last summer,Muse Watson Sarah Michelle Gellar Anne Heche Jim Gillespie Horror Mystery Thriller
+174,Kevin Greutert,Costas Mandylor,Gina Holden,Betsy Russell,Horror Mystery,saw 3d: the final chapter,Costas Mandylor Gina Holden Betsy Russell Kevin Greutert Horror Mystery
+175,Alexandre Aja,Dan Byrd,Greg Nicotero,Vinessa Shaw,Horror,the hills have eyes,Dan Byrd Greg Nicotero Vinessa Shaw Alexandre Aja Horror
+176,Robert Harmon,Alexander Gould,Ethan Embry,Marc Blucas,Horror Mystery Thriller,they,Alexander Gould Ethan Embry Marc Blucas Robert Harmon Horror Mystery Thriller
+177,Fede Alvarez,Lou Taylor Pucci,Elizabeth Blackmore,Ellen Sandweiss,Horror,evil dead,Lou Taylor Pucci Elizabeth Blackmore Ellen Sandweiss Fede Alvarez Horror
+178,Noel Marshall,Tippi Hedren,Melanie Griffith,Zakes Mokae,Adventure Horror Thriller,roar,Tippi Hedren Melanie Griffith Zakes Mokae Noel Marshall Adventure Horror Thriller
+179,Todd Lincoln,Julianna Guill,Rick Gomez,Tim Williams,Horror Thriller,the apparition,Julianna Guill Rick Gomez Tim Williams Todd Lincoln Horror Thriller
+180,Jonathan Liebesman,Matt Bomer,Jordana Brewster,Lew Temple,Horror,the texas chainsaw massacre: the beginning,Matt Bomer Jordana Brewster Lew Temple Jonathan Liebesman Horror
+181,Christian E. Christiansen,Leighton Meester,Danneel Ackles,Frances Fisher,Drama Horror Thriller,the roommate,Leighton Meester Danneel Ackles Frances Fisher Christian E. Christiansen Drama Horror Thriller
+182,Karyn Kusama,J.K. Simmons,Amy Sedaris,Cynthia Stevenson,Comedy Fantasy Horror,jennifer's body,J.K. Simmons Amy Sedaris Cynthia Stevenson Karyn Kusama Comedy Fantasy Horror
+183,James Gunn,Dustin Milligan,Gregg Henry,Tania Saulnier,Comedy Horror Sci-Fi,slither,Dustin Milligan Gregg Henry Tania Saulnier James Gunn Comedy Horror Sci-Fi
+184,unknown,Bex Taylor-Klaus,Bobby Campo,Jason Wiles,Crime Drama Horror Mystery Thriller,scream: the tv seriesÃÂ            ,Bex Taylor-Klaus Bobby Campo Jason Wiles unknown Crime Drama Horror Mystery Thriller
+185,AndrÃÂ©s Muschietti,Javier Botet,Megan Charpentier,Isabelle NÃÂ©lisse,Fantasy Horror,mama,Javier Botet Megan Charpentier Isabelle NÃÂ©lisse AndrÃÂ©s Muschietti Fantasy Horror
+186,James Watkins,Daniel Radcliffe,Roger Allam,Jessica Raine,Drama Fantasy Horror Thriller,the woman in black,Daniel Radcliffe Roger Allam Jessica Raine James Watkins Drama Fantasy Horror Thriller
+187,Simon West,Madeline Carroll,Tessa Thompson,Brian Geraghty,Horror Thriller,when a stranger calls,Madeline Carroll Tessa Thompson Brian Geraghty Simon West Horror Thriller
+188,Michael Dougherty,Adam Scott,Conchata Ferrell,Allison Tolman,Comedy Fantasy Horror,krampus,Adam Scott Conchata Ferrell Allison Tolman Michael Dougherty Comedy Fantasy Horror
+189,Robert Rodriguez,Jordana Brewster,Salma Hayek,Clea DuVall,Horror Mystery Sci-Fi,the faculty,Jordana Brewster Salma Hayek Clea DuVall Robert Rodriguez Horror Mystery Sci-Fi
+190,Rick Rosenthal,Jamie Lee Curtis,Thomas Ian Nicholas,Bianca Kajlich,Comedy Horror Thriller,halloween: resurrection,Jamie Lee Curtis Thomas Ian Nicholas Bianca Kajlich Rick Rosenthal Comedy Horror Thriller
+191,Juan Carlos Fresnadillo,Jeremy Renner,Harold Perrineau,Catherine McCormack,Drama Horror Sci-Fi,28 weeks later,Jeremy Renner Harold Perrineau Catherine McCormack Juan Carlos Fresnadillo Drama Horror Sci-Fi
+192,Joe Berlinger,Kim Director,Erica Leerhsen,Kurt Loder,Adventure Fantasy Horror Mystery Thriller,book of shadows: blair witch 2,Kim Director Erica Leerhsen Kurt Loder Joe Berlinger Adventure Fantasy Horror Mystery Thriller
+193,Andrew Fleming,Christine Taylor,Rachel True,Brenda Strong,Drama Fantasy Horror Thriller,the craft,Christine Taylor Rachel True Brenda Strong Andrew Fleming Drama Fantasy Horror Thriller
+194,Martin Weisz,Jeff Kober,Daniella Alonso,Jacob Vargas,Horror,the hills have eyes ii,Jeff Kober Daniella Alonso Jacob Vargas Martin Weisz Horror
+195,John Ottman,Loretta Devine,Joey Lawrence,Jacinda Barrett,Horror Mystery Thriller,urban legends: final cut,Loretta Devine Joey Lawrence Jacinda Barrett John Ottman Horror Mystery Thriller
+196,David Nutter,Bruce Greenwood,Ethan Embry,Katharine Isabelle,Horror Mystery Sci-Fi Thriller,disturbing behavior,Bruce Greenwood Ethan Embry Katharine Isabelle David Nutter Horror Mystery Sci-Fi Thriller
+197,Mark L. Lester,Heather Locklear,George C. Scott,David Keith,Action Horror Sci-Fi Thriller,firestarter,Heather Locklear George C. Scott David Keith Mark L. Lester Action Horror Sci-Fi Thriller
+198,Rodman Flender,Vivica A. Fox,Fred Willard,Elden Henson,Comedy Fantasy Horror Thriller,idle hands,Vivica A. Fox Fred Willard Elden Henson Rodman Flender Comedy Fantasy Horror Thriller
+199,Katja von Garnier,Olivier Martinez,Agnes Bruckner,Chris Geere,Drama Fantasy Horror Romance,blood and chocolate,Olivier Martinez Agnes Bruckner Chris Geere Katja von Garnier Drama Fantasy Horror Romance
+200,Michael Haneke,Naomi Watts,Siobhan Fallon Hogan,Brady Corbet,Crime Drama Horror Thriller,funny games,Naomi Watts Siobhan Fallon Hogan Brady Corbet Michael Haneke Crime Drama Horror Thriller
+201,RyÃÂ»hei Kitamura,Bradley Cooper,Brooke Shields,Leslie Bibb,Fantasy Horror Mystery,the midnight meat train,Bradley Cooper Brooke Shields Leslie Bibb RyÃÂ»hei Kitamura Fantasy Horror Mystery
+202,Patrick Lussier,Jensen Ackles,Jaime King,Edi Gathegi,Horror Thriller,my bloody valentine,Jensen Ackles Jaime King Edi Gathegi Patrick Lussier Horror Thriller
+203,Ole Bornedal,Kyra Sedgwick,Madison Davenport,Natasha Calis,Horror Thriller,the possession,Kyra Sedgwick Madison Davenport Natasha Calis Ole Bornedal Horror Thriller
+204,Jamie Blanks,Alicia Witt,Loretta Devine,Julian Richings,Horror Mystery Thriller,urban legend,Alicia Witt Loretta Devine Julian Richings Jamie Blanks Horror Mystery Thriller
+205,Wes Craven,John Witherspoon,W. Earl Brown,Allen Payne,Comedy Fantasy Horror Romance,vampire in brooklyn,John Witherspoon W. Earl Brown Allen Payne Wes Craven Comedy Fantasy Horror Romance
+206,John Boorman,Linda Blair,Richard Burton,Ned Beatty,Horror,exorcist ii: the heretic,Linda Blair Richard Burton Ned Beatty John Boorman Horror
+207,Courtney Solomon,Sissy Spacek,James D'Arcy,Vernon Dobtcheff,Horror Mystery Thriller,an american haunting,Sissy Spacek James D'Arcy Vernon Dobtcheff Courtney Solomon Horror Mystery Thriller
+208,Tom Holland,Joe Mantegna,Bethany Joy Lenz,Kari Wuhrer,Fantasy Horror,thinner,Joe Mantegna Bethany Joy Lenz Kari Wuhrer Tom Holland Fantasy Horror
+209,James Isaac,Peter Mensah,Kane Hodder,Lexa Doig,Action Horror Sci-Fi Thriller,jason x,Peter Mensah Kane Hodder Lexa Doig James Isaac Action Horror Sci-Fi Thriller
+210,Stephen Carpenter,Melissa Sagemiller,Angela Featherstone,Candace Kroslak,Drama Horror Mystery Thriller,soul survivors,Melissa Sagemiller Angela Featherstone Candace Kroslak Stephen Carpenter Drama Horror Mystery Thriller
+211,Bo Zenga,Steve Howey,Kenan Thompson,Diora Baird,Comedy Horror,stan helsing,Steve Howey Kenan Thompson Diora Baird Bo Zenga Comedy Horror
+212,Jonathan Glazer,Scarlett Johansson,Paul Brannigan,Alison Chand,Drama Horror Sci-Fi Thriller,under the skin,Scarlett Johansson Paul Brannigan Alison Chand Jonathan Glazer Drama Horror Sci-Fi Thriller
+213,Renny Harlin,Tuesday Knight,Rodney Eastman,Brooke Bundy,Fantasy Horror Thriller,a nightmare on elm street 4: the dream master,Tuesday Knight Rodney Eastman Brooke Bundy Renny Harlin Fantasy Horror Thriller
+214,Jaume Collet-Serra,ÃÂscar Jaenada,Brett Cullen,Sedona Legge,Drama Horror Thriller,the shallows,ÃÂscar Jaenada Brett Cullen Sedona Legge Jaume Collet-Serra Drama Horror Thriller
+215,John Lafia,Jenny Agutter,Beth Grant,Greg Germann,Fantasy Horror,child's play 2,Jenny Agutter Beth Grant Greg Germann John Lafia Fantasy Horror
+216,Frank Darabont,Toby Jones,Alexa Davalos,Jeffrey DeMunn,Horror,the mist,Toby Jones Alexa Davalos Jeffrey DeMunn Frank Darabont Horror
+217,Mark Neveldine,Djimon Hounsou,Alison Lohman,Dougray Scott,Horror Thriller,the vatican tapes,Djimon Hounsou Alison Lohman Dougray Scott Mark Neveldine Horror Thriller
+218,Stewart Hendler,Julian Morris,Margo Harshman,Rumer Willis,Horror Mystery,sorority row,Julian Morris Margo Harshman Rumer Willis Stewart Hendler Horror Mystery
+219,William Friedkin,Ellen Burstyn,Linda Blair,Lee J. Cobb,Horror,the exorcist,Ellen Burstyn Linda Blair Lee J. Cobb William Friedkin Horror
+220,John Erick Dowdle,Andrew Fiscella,Jay Hernandez,Dania Ramirez,Horror Sci-Fi Thriller,quarantine,Andrew Fiscella Jay Hernandez Dania Ramirez John Erick Dowdle Horror Sci-Fi Thriller
+221,David Moreau,ChloÃÂ« Grace Moretz,Alessandro Nivola,Obba BabatundÃÂ©,Horror Mystery,the eye,ChloÃÂ« Grace Moretz Alessandro Nivola Obba BabatundÃÂ© David Moreau Horror Mystery
+222,John Frankenheimer,Talia Shire,Richard Dysart,Robert Foxworth,Horror Sci-Fi,prophecy,Talia Shire Richard Dysart Robert Foxworth John Frankenheimer Horror Sci-Fi
+223,David Koepp,Illeana Douglas,Kathryn Erbe,Lusia Strus,Horror Mystery Thriller,stir of echoes,Illeana Douglas Kathryn Erbe Lusia Strus David Koepp Horror Mystery Thriller
+224,Ernest R. Dickerson,CCH Pounder,Jada Pinkett Smith,Gary Farmer,Action Fantasy Horror Thriller,tales from the crypt: demon knight,CCH Pounder Jada Pinkett Smith Gary Farmer Ernest R. Dickerson Action Fantasy Horror Thriller
+225,Joon-ho Bong,Doona Bae,Kang-ho Song,Ah-sung Ko,Comedy Drama Horror Sci-Fi,the host,Doona Bae Kang-ho Song Ah-sung Ko Joon-ho Bong Comedy Drama Horror Sci-Fi
+226,Antonia Bird,Jeremy Davies,Jeffrey Jones,David Arquette,Fantasy Horror Thriller,ravenous,Jeremy Davies Jeffrey Jones David Arquette Antonia Bird Fantasy Horror Thriller
+227,Mary Lambert,Miko Hughes,Fred Gwynne,Denise Crosby,Fantasy Horror,pet sematary,Miko Hughes Fred Gwynne Denise Crosby Mary Lambert Fantasy Horror
+228,Joe Dante,Phoebe Cates,Harry Carey Jr.,Zach Galligan,Comedy Fantasy Horror,gremlins,Phoebe Cates Harry Carey Jr. Zach Galligan Joe Dante Comedy Fantasy Horror
+229,Kevin Greutert,Costas Mandylor,Shawnee Smith,George Newbern,Horror Mystery,saw vi,Costas Mandylor Shawnee Smith George Newbern Kevin Greutert Horror Mystery
+230,Tobe Hooper,Louise Fletcher,Bud Cort,William Bassett,Horror Sci-Fi,invaders from mars,Louise Fletcher Bud Cort William Bassett Tobe Hooper Horror Sci-Fi
+231,Sam Raimi,Patricia Tallman,Bridget Fonda,Embeth Davidtz,Comedy Fantasy Horror,army of darkness,Patricia Tallman Bridget Fonda Embeth Davidtz Sam Raimi Comedy Fantasy Horror
+232,Tobe Hooper,Heather O'Rourke,Zelda Rubinstein,Craig T. Nelson,Fantasy Horror,poltergeist,Heather O'Rourke Zelda Rubinstein Craig T. Nelson Tobe Hooper Fantasy Horror
+233,David Hackl,Julie Benz,Costas Mandylor,Scott Patterson,Horror Mystery,saw v,Julie Benz Costas Mandylor Scott Patterson David Hackl Horror Mystery
+234,Ruairi Robinson,Romola Garai,Olivia Williams,Tom Cullen,Horror Sci-Fi Thriller,the last days on mars,Romola Garai Olivia Williams Tom Cullen Ruairi Robinson Horror Sci-Fi Thriller
+235,Jaume BalaguerÃÂ³,Lena Olin,Giancarlo Giannini,Francesc PagÃÂ¨s,Horror,darkness,Lena Olin Giancarlo Giannini Francesc PagÃÂ¨s Jaume BalaguerÃÂ³ Horror
+236,Darren Lynn Bousman,Costas Mandylor,Shawnee Smith,Leigh Whannell,Horror Mystery,saw iii,Costas Mandylor Shawnee Smith Leigh Whannell Darren Lynn Bousman Horror Mystery
+237,James DeMonaco,Frank Grillo,Joseph Julian Soria,Mykelti Williamson,Action Horror Sci-Fi Thriller,the purge: election year,Frank Grillo Joseph Julian Soria Mykelti Williamson James DeMonaco Action Horror Sci-Fi Thriller
+238,Darren Lynn Bousman,Costas Mandylor,Shawnee Smith,Angus Macfadyen,Horror Mystery,saw iv,Costas Mandylor Shawnee Smith Angus Macfadyen Darren Lynn Bousman Horror Mystery
+239,Geoffrey Sax,Deborah Kara Unger,Keegan Connor Tracy,Mike Dopud,Drama Horror Mystery Thriller,white noise,Deborah Kara Unger Keegan Connor Tracy Mike Dopud Geoffrey Sax Drama Horror Mystery Thriller
+240,Takashi Shimizu,Sarah Michelle Gellar,Clea DuVall,Ted Raimi,Horror Mystery Thriller,the grudge,Sarah Michelle Gellar Clea DuVall Ted Raimi Takashi Shimizu Horror Mystery Thriller
+241,Victor Salva,Eileen Brennan,Patricia Belcher,Jonathan Breck,Horror Mystery,jeepers creepers,Eileen Brennan Patricia Belcher Jonathan Breck Victor Salva Horror Mystery
+242,William Brent Bell,Lauren Cohan,Rupert Evans,Stephanie Lemelin,Horror Mystery Thriller,the boy,Lauren Cohan Rupert Evans Stephanie Lemelin William Brent Bell Horror Mystery Thriller
+243,John Erick Dowdle,Bojana Novakovic,Bokeem Woodbine,Geoffrey Arend,Horror Mystery Thriller,devil,Bojana Novakovic Bokeem Woodbine Geoffrey Arend John Erick Dowdle Horror Mystery Thriller
+244,Leigh Whannell,Lin Shaye,Hayley Kiyoko,Leigh Whannell,Fantasy Horror Thriller,insidious: chapter 3,Lin Shaye Hayley Kiyoko Leigh Whannell Leigh Whannell Fantasy Horror Thriller
+245,Brett Leonard,Jeff Fahey,Austin O'Brien,Troy Evans,Horror Sci-Fi,the lawnmower man,Jeff Fahey Austin O'Brien Troy Evans Brett Leonard Horror Sci-Fi
+246,Joe Dante,Albert Brooks,Al Leong,Vic Morrow,Fantasy Horror Sci-Fi,twilight zone: the movie,Albert Brooks Al Leong Vic Morrow Joe Dante Fantasy Horror Sci-Fi
+247,David Cronenberg,Tom Skerritt,Herbert Lom,Anthony Zerbe,Horror Sci-Fi Thriller,the dead zone,Tom Skerritt Herbert Lom Anthony Zerbe David Cronenberg Horror Sci-Fi Thriller
+248,CiarÃÂ¡n Foy,Laila Haley,James Ransone,Jaden Klein,Horror Mystery Thriller,sinister 2,Laila Haley James Ransone Jaden Klein CiarÃÂ¡n Foy Horror Mystery Thriller
+249,Jamie Blanks,Marley Shelton,Jessica Capshaw,Johnny Whitworth,Horror Mystery Thriller,valentine,Marley Shelton Jessica Capshaw Johnny Whitworth Jamie Blanks Horror Mystery Thriller
+250,Ron Underwood,Reba McEntire,Ariana Richards,Michael Gross,Comedy Horror Sci-Fi,tremors,Reba McEntire Ariana Richards Michael Gross Ron Underwood Comedy Horror Sci-Fi
+251,Rob Schmidt,Kevin Zegers,Lindy Booth,Julian Richings,Horror Thriller,wrong turn,Kevin Zegers Lindy Booth Julian Richings Rob Schmidt Horror Thriller
+252,Marcus Dunstan,Daniel Sharman,Johanna Braddy,Lee Tergesen,Action Horror Thriller,the collection,Daniel Sharman Johanna Braddy Lee Tergesen Marcus Dunstan Action Horror Thriller
+253,Jason Zada,Eoin Macken,Stephanie Vogt,Gen Seto,Horror Mystery Thriller,the forest,Eoin Macken Stephanie Vogt Gen Seto Jason Zada Horror Mystery Thriller
+254,Christopher Smith,Danny Dyer,Toby Stephens,Laura Harris,Comedy Horror Thriller,severance,Danny Dyer Toby Stephens Laura Harris Christopher Smith Comedy Horror Thriller
+255,Andrew Traucki,Damian Walshe-Howling,Gyton Grantley,Adrienne Pickering,Horror Thriller,the reef,Damian Walshe-Howling Gyton Grantley Adrienne Pickering Andrew Traucki Horror Thriller
+256,Patrick Lussier,Teryl Rothery,Craig Fairbrass,Adrian Holmes,Drama Fantasy Horror Thriller,white noise 2: the light,Teryl Rothery Craig Fairbrass Adrian Holmes Patrick Lussier Drama Fantasy Horror Thriller
+257,Gurinder Chadha,Sendhil Ramamurthy,Mark Addy,Shabana Azmi,Comedy Drama Horror Romance,it's a wonderful afterlife,Sendhil Ramamurthy Mark Addy Shabana Azmi Gurinder Chadha Comedy Drama Horror Romance
+258,Jason Connery,Ray Winstone,Henry Rollins,Jason London,Action Horror Sci-Fi,the devil's tomb,Ray Winstone Henry Rollins Jason London Jason Connery Action Horror Sci-Fi
+259,Douglas Aarniokoski,Boris Kodjoe,Katrina Bowden,Kathleen Turner,Horror Thriller,nurse 3d,Boris Kodjoe Katrina Bowden Kathleen Turner Douglas Aarniokoski Horror Thriller
+260,Gary Sherman,Tom Skerritt,Heather O'Rourke,Zelda Rubinstein,Horror Thriller,poltergeist iii,Tom Skerritt Heather O'Rourke Zelda Rubinstein Gary Sherman Horror Thriller
+261,Valeri Milev,Daniella Alonso,Roger Cross,Jesse Garcia,Action Horror,re-kill,Daniella Alonso Roger Cross Jesse Garcia Valeri Milev Action Horror
+262,Gerald Potterton,John Vernon,Joe Flaherty,Don Francks,Adventure Animation Fantasy Horror Sci-Fi,heavy metal,John Vernon Joe Flaherty Don Francks Gerald Potterton Adventure Animation Fantasy Horror Sci-Fi
+263,David Hackl,Scott Glenn,Michaela McManus,Luisa D'Oliveira,Action Horror Thriller,into the grizzly maze,Scott Glenn Michaela McManus Luisa D'Oliveira David Hackl Action Horror Thriller
+264,Ridley Scott,Tom Skerritt,Yaphet Kotto,Bolaji Badejo,Horror Sci-Fi,alien,Tom Skerritt Yaphet Kotto Bolaji Badejo Ridley Scott Horror Sci-Fi
+265,Joseph Kahn,Josh Hutcherson,Shanley Caswell,Parker Bagley,Comedy Horror Sci-Fi,detention,Josh Hutcherson Shanley Caswell Parker Bagley Joseph Kahn Comedy Horror Sci-Fi
+266,Tom Holland,Catherine Hicks,Alex Vincent,Dinah Manoff,Fantasy Horror,child's play,Catherine Hicks Alex Vincent Dinah Manoff Tom Holland Fantasy Horror
+267,James DeMonaco,Noel Gugliemi,Zach Gilford,Roberta Valderrama,Action Horror Sci-Fi Thriller,the purge: anarchy,Noel Gugliemi Zach Gilford Roberta Valderrama James DeMonaco Action Horror Sci-Fi Thriller
+268,Glen Morgan,Oliver Hudson,Crystal Lowe,Andrea Martin,Horror,black christmas,Oliver Hudson Crystal Lowe Andrea Martin Glen Morgan Horror
+269,Hong-jin Na,Jung-min Hwang,Jun Kunimura,Woo-hee Chun,Fantasy Horror Mystery Thriller,the wailing,Jung-min Hwang Jun Kunimura Woo-hee Chun Hong-jin Na Fantasy Horror Mystery Thriller
+270,Dario Argento,John Amos,Adrienne Barbeau,Sally Kirkland,Horror,two evil eyes,John Amos Adrienne Barbeau Sally Kirkland Dario Argento Horror
+271,Martyn Pick,Sean Pertwee,Steven Waddington,Donald Sumpter,Action Animation Fantasy Horror Mystery Sci-Fi Thriller,"ultramarines: a warhammer 40,000 movie",Sean Pertwee Steven Waddington Donald Sumpter Martyn Pick Action Animation Fantasy Horror Mystery Sci-Fi Thriller
+272,Joel Schumacher,Dianne Wiest,Jami Gertz,Jason Patric,Comedy Fantasy Horror,the lost boys,Dianne Wiest Jami Gertz Jason Patric Joel Schumacher Comedy Fantasy Horror
+273,Tom Elkins,Abigail Spencer,Cicely Tyson,Brad James,Drama Horror Mystery Thriller,the haunting in connecticut 2: ghosts of georgia,Abigail Spencer Cicely Tyson Brad James Tom Elkins Drama Horror Mystery Thriller
+274,Darren Lynn Bousman,Alexa PenaVega,Paris Hilton,Paul Sorvino,Horror Musical Sci-Fi,repo! the genetic opera,Alexa PenaVega Paris Hilton Paul Sorvino Darren Lynn Bousman Horror Musical Sci-Fi
+275,Jay Chandrasekhar,Brittany Daniel,Lindsay Price,Jay Chandrasekhar,Comedy Horror Thriller,club dread,Brittany Daniel Lindsay Price Jay Chandrasekhar Jay Chandrasekhar Comedy Horror Thriller
+276,Danny Boyle,Noah Huntley,Megan Burns,David Schneider,Drama Horror Sci-Fi Thriller,28 days later...,Noah Huntley Megan Burns David Schneider Danny Boyle Drama Horror Sci-Fi Thriller
+277,Masayuki Ochiai,James Kyson,David Denman,Daisy Betts,Horror Mystery Thriller,shutter,James Kyson David Denman Daisy Betts Masayuki Ochiai Horror Mystery Thriller
+278,George A. Romero,Ted Danson,Hal Holbrook,Adrienne Barbeau,Comedy Fantasy Horror,creepshow,Ted Danson Hal Holbrook Adrienne Barbeau George A. Romero Comedy Fantasy Horror
+279,Wes Craven,Miko Hughes,Heather Langenkamp,Tracy Middendorf,Fantasy Horror Mystery Thriller,new nightmare,Miko Hughes Heather Langenkamp Tracy Middendorf Wes Craven Fantasy Horror Mystery Thriller
+280,E. Elias Merhige,Eddie Izzard,Udo Kier,Catherine McCormack,Drama Horror,shadow of the vampire,Eddie Izzard Udo Kier Catherine McCormack E. Elias Merhige Drama Horror
+281,Andrew Currie,Alexia Fast,Henry Czerny,Kesun Loder,Comedy Drama Horror Sci-Fi,fido,Alexia Fast Henry Czerny Kesun Loder Andrew Currie Comedy Drama Horror Sci-Fi
+282,Marc SchÃÂ¶lermann,John de Lancie,Larry Drake,Johnny Whitworth,Crime Horror Thriller,pathology,John de Lancie Larry Drake Johnny Whitworth Marc SchÃÂ¶lermann Crime Horror Thriller
+283,Eli Roth,Jay Hernandez,Lauren German,Stanislav Ianevski,Horror,hostel: part ii,Jay Hernandez Lauren German Stanislav Ianevski Eli Roth Horror
+284,Nicolas Winding Refn,Keanu Reeves,Bella Heathcote,Charles Baker,Horror Thriller,the neon demon,Keanu Reeves Bella Heathcote Charles Baker Nicolas Winding Refn Horror Thriller
+285,Jonathan Liebesman,Sullivan Stapleton,Emma Caulfield,Angus Sampson,Horror Mystery Thriller,darkness falls,Sullivan Stapleton Emma Caulfield Angus Sampson Jonathan Liebesman Horror Mystery Thriller
+286,Neil Marshall,MyAnna Buring,Shauna Macdonald,Craig Conway,Adventure Horror Thriller,the descent,MyAnna Buring Shauna Macdonald Craig Conway Neil Marshall Adventure Horror Thriller
+287,Matt Bettinelli-Olpin,Zach Gilford,Allison Miller,Vanessa Ray,Horror Mystery,devil's due,Zach Gilford Allison Miller Vanessa Ray Matt Bettinelli-Olpin Horror Mystery
+288,Rob Zombie,Sid Haig,Ken Foree,Lew Temple,Crime Horror,the devil's rejects,Sid Haig Ken Foree Lew Temple Rob Zombie Crime Horror
+289,Rob Zombie,Sid Haig,Matthew McGrory,Erin Daniels,Horror,house of 1000 corpses,Sid Haig Matthew McGrory Erin Daniels Rob Zombie Horror
+290,Sharron Miller,Bernard Fox,Elizabeth MacRae,Charles Aidman,Horror,alien zone,Bernard Fox Elizabeth MacRae Charles Aidman Sharron Miller Horror
+291,Steve Miner,Julian Sands,Richard E. Grant,Lori Singer,Action Fantasy Horror Thriller,warlock,Julian Sands Richard E. Grant Lori Singer Steve Miner Action Fantasy Horror Thriller
+292,Tony Maylam,Michael J. Pollard,Alun Armstrong,Alastair Duncan,Action Crime Horror Sci-Fi Thriller,split second,Michael J. Pollard Alun Armstrong Alastair Duncan Tony Maylam Action Crime Horror Sci-Fi Thriller
+293,Francis Ford Coppola,Alden Ehrenreich,Bruce Dern,Joanne Whalley,Comedy Fantasy Horror Mystery,twixt,Alden Ehrenreich Bruce Dern Joanne Whalley Francis Ford Coppola Comedy Fantasy Horror Mystery
+294,Mark Tonderai,Jennifer Lawrence,Nolan Gerard Funk,Gil Bellows,Drama Horror Thriller,house at the end of the street,Jennifer Lawrence Nolan Gerard Funk Gil Bellows Mark Tonderai Drama Horror Thriller
+295,John R. Leonetti,Alfre Woodard,Annabelle Wallis,Gabriel Bateman,Horror Mystery,annabelle,Alfre Woodard Annabelle Wallis Gabriel Bateman John R. Leonetti Horror Mystery
+296,Louis Morneau,Leon,Bob Gunton,Ned Bellamy,Horror Sci-Fi Thriller,bats,Leon Bob Gunton Ned Bellamy Louis Morneau Horror Sci-Fi Thriller
+297,Stephen Hopkins,Lisa Wilcox,Kelly Jo Minter,Matthew Borlenghi,Fantasy Horror Romance Thriller,a nightmare on elm street 5: the dream child,Lisa Wilcox Kelly Jo Minter Matthew Borlenghi Stephen Hopkins Fantasy Horror Romance Thriller
+298,Rusty Cundieff,Corbin Bernsen,Clarence Williams III,David Alan Grier,Comedy Horror Thriller,tales from the hood,Corbin Bernsen Clarence Williams III David Alan Grier Rusty Cundieff Comedy Horror Thriller
+299,Dominique Othenin-Girard,Donald Pleasence,Tamara Glynn,Troy Evans,Horror Thriller,halloween 5,Donald Pleasence Tamara Glynn Troy Evans Dominique Othenin-Girard Horror Thriller
+300,Jon Knautz,Rachel Alig,Monda Scott,Alexis Kendra,Drama Horror Mystery Thriller,goddess of love,Rachel Alig Monda Scott Alexis Kendra Jon Knautz Drama Horror Mystery Thriller
+301,David Cronenberg,Debbie Harry,Leslie Carlson,Reiner Schwarz,Horror Mystery Sci-Fi Thriller,videodrome,Debbie Harry Leslie Carlson Reiner Schwarz David Cronenberg Horror Mystery Sci-Fi Thriller
+302,Jaume BalaguerÃÂ³,Jonathan D. Mellor,Pablo Rosso,Andrea Ros,Horror,[rec] 2,Jonathan D. Mellor Pablo Rosso Andrea Ros Jaume BalaguerÃÂ³ Horror
+303,Jon Wright,Russell Tovey,Richard Coyle,Bronagh Gallagher,Comedy Horror Sci-Fi Thriller,grabbers,Russell Tovey Richard Coyle Bronagh Gallagher Jon Wright Comedy Horror Sci-Fi Thriller
+304,James Wan,Lin Shaye,Barbara Hershey,Leigh Whannell,Fantasy Horror Thriller,insidious: chapter 2,Lin Shaye Barbara Hershey Leigh Whannell James Wan Fantasy Horror Thriller
+305,Darren Lynn Bousman,Emmanuelle Vaugier,Tony Nappo,Shawnee Smith,Horror Mystery,saw ii,Emmanuelle Vaugier Tony Nappo Shawnee Smith Darren Lynn Bousman Horror Mystery
+306,Dan Trachtenberg,Bradley Cooper,John Gallagher Jr.,Sumalee Montano,Drama Horror Mystery Sci-Fi Thriller,10 cloverfield lane,Bradley Cooper John Gallagher Jr. Sumalee Montano Dan Trachtenberg Drama Horror Mystery Sci-Fi Thriller
+307,David F. Sandberg,Billy Burke,Amiah Miller,Gabriel Bateman,Horror,lights out,Billy Burke Amiah Miller Gabriel Bateman David F. Sandberg Horror
+308,Henry Joost,Johanna Braddy,Sprague Grayden,Christopher Nicholas Smith,Horror,paranormal activity 3,Johanna Braddy Sprague Grayden Christopher Nicholas Smith Henry Joost Horror
+309,Stiles White,Lin Shaye,Shelley Hennig,Daren Kagasoff,Fantasy Horror,ouija,Lin Shaye Shelley Hennig Daren Kagasoff Stiles White Fantasy Horror
+310,Chuck Russell,John Saxon,Heather Langenkamp,Jennifer Rubin,Action Fantasy Horror Thriller,a nightmare on elm street 3: dream warriors,John Saxon Heather Langenkamp Jennifer Rubin Chuck Russell Action Fantasy Horror Thriller
+311,Henry Joost,Matt Shively,Brendon Eggertsen,Alisha Boe,Horror,paranormal activity 4,Matt Shively Brendon Eggertsen Alisha Boe Henry Joost Horror
+312,Rachel Talalay,Johnny Depp,Tom Arnold,Yaphet Kotto,Comedy Fantasy Horror Thriller,freddy's dead: the final nightmare,Johnny Depp Tom Arnold Yaphet Kotto Rachel Talalay Comedy Fantasy Horror Thriller
+313,Christopher Landon,Richard Cabral,Gloria Sandoval,Molly Ephraim,Fantasy Horror Thriller,paranormal activity: the marked ones,Richard Cabral Gloria Sandoval Molly Ephraim Christopher Landon Fantasy Horror Thriller
+314,David Gelb,Olivia Wilde,Mark Duplass,Donald Glover,Horror Sci-Fi Thriller,the lazarus effect,Olivia Wilde Mark Duplass Donald Glover David Gelb Horror Sci-Fi Thriller
+315,Mike Flanagan,James Lafferty,Rory Cochrane,Garrett Ryan,Horror Mystery,oculus,James Lafferty Rory Cochrane Garrett Ryan Mike Flanagan Horror Mystery
+316,John Erick Dowdle,Ben Feldman,Edwin Hodge,Perdita Weeks,Horror Mystery Thriller,"as above, so below",Ben Feldman Edwin Hodge Perdita Weeks John Erick Dowdle Horror Mystery Thriller
+317,Rob Hedden,Kane Hodder,Peter Mark Richman,Scott Reeves,Adventure Horror,friday the 13th part viii: jason takes manhattan,Kane Hodder Peter Mark Richman Scott Reeves Rob Hedden Adventure Horror
+318,Joe Chappelle,Donald Pleasence,Kim Darby,Mitchell Ryan,Horror Thriller,halloween: the curse of michael myers,Donald Pleasence Kim Darby Mitchell Ryan Joe Chappelle Horror Thriller
+319,Edgar Wright,Peter Serafinowicz,Dylan Moran,Rafe Spall,Comedy Horror,shaun of the dead,Peter Serafinowicz Dylan Moran Rafe Spall Edgar Wright Comedy Horror
+320,Mickey Liddell,Jessica Lowndes,Randy Wayne,Haley Bennett,Drama Horror Thriller,the haunting of molly hartley,Jessica Lowndes Randy Wayne Haley Bennett Mickey Liddell Drama Horror Thriller
+321,Dwight H. Little,Donald Pleasence,Kathleen Kinmont,Ellie Cornell,Horror Thriller,halloween 4: the return of michael myers,Donald Pleasence Kathleen Kinmont Ellie Cornell Dwight H. Little Horror Thriller
+322,Fred Walton,Thomas F. Wilson,Deborah Foreman,Clayton Rohner,Horror Mystery,april fool's day,Thomas F. Wilson Deborah Foreman Clayton Rohner Fred Walton Horror Mystery
+323,Gonzalo LÃÂ³pez-Gallego,Warren Christie,Ryan Robbins,Andrew Airlie,Horror Mystery Sci-Fi Thriller,apollo 18,Warren Christie Ryan Robbins Andrew Airlie Gonzalo LÃÂ³pez-Gallego Horror Mystery Sci-Fi Thriller
+324,J.S. Cardone,Brendan Fehr,Kerr Smith,Izabella Miko,Horror Thriller,the forsaken,Brendan Fehr Kerr Smith Izabella Miko J.S. Cardone Horror Thriller
+325,Jeremy Saulnier,Alia Shawkat,Mark Webber,Joe Cole,Crime Horror Music Thriller,green room,Alia Shawkat Mark Webber Joe Cole Jeremy Saulnier Crime Horror Music Thriller
+326,Eli Craig,Katrina Bowden,Tyler Labine,Chelan Simmons,Comedy Horror,tucker and dale vs evil,Katrina Bowden Tyler Labine Chelan Simmons Eli Craig Comedy Horror
+327,Matthew Hastings,Meghan Ory,Marc Trottier,Corey Sevier,Comedy Horror Sci-Fi,decoys,Meghan Ory Marc Trottier Corey Sevier Matthew Hastings Comedy Horror Sci-Fi
+328,M. Night Shyamalan,Ocean James,Patch Darragh,Olivia DeJonge,Horror Thriller,the visit,Ocean James Patch Darragh Olivia DeJonge M. Night Shyamalan Horror Thriller
+329,Oren Peli,Glenn Campbell,Sandra Staggs,Jelena Nik,Horror Sci-Fi Thriller,area 51,Glenn Campbell Sandra Staggs Jelena Nik Oren Peli Horror Sci-Fi Thriller
+330,Jaume BalaguerÃÂ³,Luis Tosar,Tony Corvillo,Marta Etura,Drama Horror Thriller,sleep tight,Luis Tosar Tony Corvillo Marta Etura Jaume BalaguerÃÂ³ Drama Horror Thriller
+331,Paul Andrew Williams,Dave Legeno,Doug Bradley,Georgia Groome,Comedy Crime Horror Thriller,the cottage,Dave Legeno Doug Bradley Georgia Groome Paul Andrew Williams Comedy Crime Horror Thriller
+332,Kevin Smith,Johnny Depp,Haley Joel Osment,Natasha Lyonne,Comedy Fantasy Horror Thriller,yoga hosers,Johnny Depp Haley Joel Osment Natasha Lyonne Kevin Smith Comedy Fantasy Horror Thriller
+333,Stanton Barrett,Mikal Vega,Michael Dudikoff,Ed Quinn,Action Horror,navy seals vs. zombies,Mikal Vega Michael Dudikoff Ed Quinn Stanton Barrett Action Horror
+334,Nick Murphy,Isaac Hempstead Wright,Imelda Staunton,Joseph Mawle,Horror Thriller,the awakening,Isaac Hempstead Wright Imelda Staunton Joseph Mawle Nick Murphy Horror Thriller
+335,Eli Roth,Jay Hernandez,Takashi Miike,Rick Hoffman,Horror,hostel,Jay Hernandez Takashi Miike Rick Hoffman Eli Roth Horror
+336,Frank LaLoggia,Alex Rocco,Lukas Haas,Katherine Helmond,Fantasy Horror Mystery Thriller,lady in white,Alex Rocco Lukas Haas Katherine Helmond Frank LaLoggia Fantasy Horror Mystery Thriller
+337,Tobe Hooper,Bill Johnson,Lou Perryman,Jim Siedow,Comedy Horror,the texas chainsaw massacre 2,Bill Johnson Lou Perryman Jim Siedow Tobe Hooper Comedy Horror
+338,Agnieszka Wojtowicz-Vosloo,Liam Neeson,Josh Charles,Chandler Canterbury,Drama Horror Mystery Thriller,after.life,Liam Neeson Josh Charles Chandler Canterbury Agnieszka Wojtowicz-Vosloo Drama Horror Mystery Thriller
+339,George A. Romero,Julian Richings,Shawn Roberts,Kathleen Munroe,Horror,survival of the dead,Julian Richings Shawn Roberts Kathleen Munroe George A. Romero Horror
+340,Henry Hobson,Joely Richardson,J.D. Evermore,David A Cole,Drama Horror,maggie,Joely Richardson J.D. Evermore David A Cole Henry Hobson Drama Horror
+341,Duane Journey,Molly C. Quinn,Lara Flynn Boyle,Lochlyn Munro,Comedy Horror,hansel & gretel get baked,Molly C. Quinn Lara Flynn Boyle Lochlyn Munro Duane Journey Comedy Horror
+342,Dan O'Bannon,Linnea Quigley,Clu Gulager,Beverly Randolph,Comedy Horror Sci-Fi,the return of the living dead,Linnea Quigley Clu Gulager Beverly Randolph Dan O'Bannon Comedy Horror Sci-Fi
+343,John Carpenter,Meg Foster,Peter Jason,George 'Buck' Flower,Horror Sci-Fi Thriller,they live,Meg Foster Peter Jason George 'Buck' Flower John Carpenter Horror Sci-Fi Thriller
+344,Ed Gass-Donnelly,Muse Watson,Spencer Treat Clark,Ashley Bell,Drama Horror Thriller,the last exorcism part ii,Muse Watson Spencer Treat Clark Ashley Bell Ed Gass-Donnelly Drama Horror Thriller
+345,Wes Craven,Frank Grillo,Emily Meade,Zena Grey,Horror Mystery Thriller,my soul to take,Frank Grillo Emily Meade Zena Grey Wes Craven Horror Mystery Thriller
+346,Kevin Smith,Anna Gunn,Michael Angarano,Stephen Root,Action Crime Horror Thriller,red state,Anna Gunn Michael Angarano Stephen Root Kevin Smith Action Crime Horror Thriller
+347,Renny Harlin,Viggo Mortensen,Lane Smith,Hal Landon Jr.,Crime Drama Horror Thriller,prison,Viggo Mortensen Lane Smith Hal Landon Jr. Renny Harlin Crime Drama Horror Thriller
+348,Robert Lee King,Lauren Ambrose,Kathleen Robertson,Beth Broderick,Comedy Horror Mystery,psycho beach party,Lauren Ambrose Kathleen Robertson Beth Broderick Robert Lee King Comedy Horror Mystery
+349,Jim Mickle,Connor Paolo,Michael Cerveris,Nick Damici,Drama Horror Sci-Fi,stake land,Connor Paolo Michael Cerveris Nick Damici Jim Mickle Drama Horror Sci-Fi
+350,Phil Joanou,Lily Rabe,Shannon Woodward,Kira McLean,Horror,the veil,Lily Rabe Shannon Woodward Kira McLean Phil Joanou Horror
+351,Sean Byrne,Robin McLeavy,Jessica McNamee,Victoria Thaine,Horror Thriller,the loved ones,Robin McLeavy Jessica McNamee Victoria Thaine Sean Byrne Horror Thriller
+352,Chris Stokes,Kristen Quintrall,Rachel Sterling,Black Thomas,Horror,no vacancy,Kristen Quintrall Rachel Sterling Black Thomas Chris Stokes Horror
+353,Michael Gornick,George Kennedy,Holt McCallany,Dorothy Lamour,Comedy Fantasy Horror Thriller,creepshow 2,George Kennedy Holt McCallany Dorothy Lamour Michael Gornick Comedy Fantasy Horror Thriller
+354,Robert Eggers,Julian Richings,Kate Dickie,Ralph Ineson,Horror Mystery,the witch,Julian Richings Kate Dickie Ralph Ineson Robert Eggers Horror Mystery
+355,George A. Romero,Greg Nicotero,John Amplas,Joseph Pilato,Horror,day of the dead,Greg Nicotero John Amplas Joseph Pilato George A. Romero Horror
+356,Gideon Raff,Gideon Emery,Gloria Votsis,Derek Magyar,Horror Thriller,train,Gideon Emery Gloria Votsis Derek Magyar Gideon Raff Horror Thriller
+357,Sam Raimi,Ted Raimi,Dan Hicks,Kassie Wesley DePaiva,Comedy Fantasy Horror Thriller,evil dead ii,Ted Raimi Dan Hicks Kassie Wesley DePaiva Sam Raimi Comedy Fantasy Horror Thriller
+358,Anthony C. Ferrante,Ian Ziering,John Heard,Cassandra Scerbo,Horror,sharknado,Ian Ziering John Heard Cassandra Scerbo Anthony C. Ferrante Horror
+359,AndrÃÂ© ÃÂvredal,Otto Jespersen,Johanna MÃÂ¸rck,Glenn Erland Tosterud,Comedy Drama Fantasy Horror,trollhunter,Otto Jespersen Johanna MÃÂ¸rck Glenn Erland Tosterud AndrÃÂ© ÃÂvredal Comedy Drama Fantasy Horror
+360,Charles Adelman,Teri Polo,Kevin Pollak,Jere Burns,Horror Thriller,02:13,Teri Polo Kevin Pollak Jere Burns Charles Adelman Horror Thriller
+361,Roman Polanski,John Cassavetes,Mia Farrow,Charles Grodin,Drama Horror,rosemary's baby,John Cassavetes Mia Farrow Charles Grodin Roman Polanski Drama Horror
+362,John Gulager,Krista Allen,Eric Dane,Henry Rollins,Action Comedy Horror Thriller,feast,Krista Allen Eric Dane Henry Rollins John Gulager Action Comedy Horror Thriller
+363,Brandon Cronenberg,Sarah Gadon,Douglas Smith,Caleb Landry Jones,Horror Sci-Fi Thriller,antiviral,Sarah Gadon Douglas Smith Caleb Landry Jones Brandon Cronenberg Horror Sci-Fi Thriller
+364,Tod Williams,Sprague Grayden,Molly Ephraim,Micah Sloat,Horror,paranormal activity 2,Sprague Grayden Molly Ephraim Micah Sloat Tod Williams Horror
+365,Jack Sholder,Clu Gulager,Robert Rusler,Marshall Bell,Fantasy Horror,a nightmare on elm street 2: freddy's revenge,Clu Gulager Robert Rusler Marshall Bell Jack Sholder Fantasy Horror
+366,James DeMonaco,Rhys Wakefield,Adelaide Kane,Chris Mulkey,Horror Sci-Fi Thriller,the purge,Rhys Wakefield Adelaide Kane Chris Mulkey James DeMonaco Horror Sci-Fi Thriller
+367,Scott Derrickson,Danielle Kotch,Victoria Leigh,James Ransone,Horror Mystery,sinister,Danielle Kotch Victoria Leigh James Ransone Scott Derrickson Horror Mystery
+368,Tom McLoughlin,Tony Goldwyn,Ron Palillo,Vincent Guastaferro,Horror Thriller,jason lives: friday the 13th part vi,Tony Goldwyn Ron Palillo Vincent Guastaferro Tom McLoughlin Horror Thriller
+369,Adam Marcus,Kane Hodder,Leslie Jordan,Erin Gray,Fantasy Horror Thriller,jason goes to hell: the final friday,Kane Hodder Leslie Jordan Erin Gray Adam Marcus Fantasy Horror Thriller
+370,Don Coscarelli,Angus Scrimm,A. Michael Baldwin,James Le Gros,Action Fantasy Horror Sci-Fi Thriller,phantasm ii,Angus Scrimm A. Michael Baldwin James Le Gros Don Coscarelli Action Fantasy Horror Sci-Fi Thriller
+371,Anthony Hickox,Julian Sands,Zach Galligan,Paula Marshall,Fantasy Horror,warlock: the armageddon,Julian Sands Zach Galligan Paula Marshall Anthony Hickox Fantasy Horror
+372,Kevin Smith,Johnny Depp,Haley Joel Osment,Michael Parks,Comedy Drama Horror,tusk,Johnny Depp Haley Joel Osment Michael Parks Kevin Smith Comedy Drama Horror
+373,unknown,Craig T. Nelson,Colm Feore,Megalyn Echikunwoke,Horror Sci-Fi Thriller,creatureÃÂ            ,Craig T. Nelson Colm Feore Megalyn Echikunwoke unknown Horror Sci-Fi Thriller
+374,unknown,Danny Pino,Megan Hilty,Zach Grenier,Comedy Drama Horror Sci-Fi Thriller,braindeadÃÂ            ,Danny Pino Megan Hilty Zach Grenier unknown Comedy Drama Horror Sci-Fi Thriller
+375,Deon Taylor,Matt Cohen,Betsy Russell,Noah Segan,Horror Thriller,chain letter,Matt Cohen Betsy Russell Noah Segan Deon Taylor Horror Thriller
+376,Conor McPherson,Aidan Quinn,Iben Hjejle,Jim Norton,Drama Horror Romance,the eclipse,Aidan Quinn Iben Hjejle Jim Norton Conor McPherson Drama Horror Romance
+377,Will Canon,Frank Grillo,Scott Mechlowicz,Aaron Yoo,Horror Thriller,demonic,Frank Grillo Scott Mechlowicz Aaron Yoo Will Canon Horror Thriller
+378,Darin Scott,Julian Morris,Shantel VanSanten,John Robinson,Drama Horror Mystery Thriller,something wicked,Julian Morris Shantel VanSanten John Robinson Darin Scott Drama Horror Mystery Thriller
+379,Michael Polish,Olivia Rose Keegan,Patrick Bauchau,Mia Barron,Drama Horror Mystery Thriller,amnesiac,Olivia Rose Keegan Patrick Bauchau Mia Barron Michael Polish Drama Horror Mystery Thriller
+380,Richard Donner,Lee Remick,Patrick Troughton,Billie Whitelaw,Fantasy Horror Mystery,the omen,Lee Remick Patrick Troughton Billie Whitelaw Richard Donner Fantasy Horror Mystery
+381,Alexandre Aja,CÃÂ©cile De France,MaÃÂ¯wenn,Oana Pellea,Horror,high tension,CÃÂ©cile De France MaÃÂ¯wenn Oana Pellea Alexandre Aja Horror
+382,Hank Braxtan,Q'orianka Kilcher,Gregory Cruz,Allegra Carpenter,Action Horror Thriller,unnatural,Q'orianka Kilcher Gregory Cruz Allegra Carpenter Hank Braxtan Action Horror Thriller
+383,John Carl Buechler,Kane Hodder,Terry Kiser,William Butler,Horror,friday the 13th part vii: the new blood,Kane Hodder Terry Kiser William Butler John Carl Buechler Horror
+384,George A. Romero,Megan Park,Shawn Roberts,Joe Dinicol,Horror,diary of the dead,Megan Park Shawn Roberts Joe Dinicol George A. Romero Horror
+385,Joseph Zito,Judie Aronson,Tom Everett,Kimberly Beck,Horror Thriller,friday the 13th: the final chapter,Judie Aronson Tom Everett Kimberly Beck Joseph Zito Horror Thriller
+386,Nacho Vigalondo,Karra Elejalde,Nacho Vigalondo,BÃÂ¡rbara Goenaga,Horror Mystery Sci-Fi Thriller,timecrimes,Karra Elejalde Nacho Vigalondo BÃÂ¡rbara Goenaga Nacho Vigalondo Horror Mystery Sci-Fi Thriller
+387,Tony Giglio,Brianna Brown,Nick Searcy,Beth Broderick,Horror Thriller,timber falls,Brianna Brown Nick Searcy Beth Broderick Tony Giglio Horror Thriller
+388,Rob Zombie,Scout Taylor-Compton,Tyler Mane,Margot Kidder,Horror,halloween ii,Scout Taylor-Compton Tyler Mane Margot Kidder Rob Zombie Horror
+389,Tommy Lee Wallace,Tom Atkins,Dan O'Herlihy,Nancy Kyes,Horror Mystery Sci-Fi,halloween iii: season of the witch,Tom Atkins Dan O'Herlihy Nancy Kyes Tommy Lee Wallace Horror Mystery Sci-Fi
+390,ÃÂric Tessier,Patrick Huard,Michel CÃÂ´tÃÂ©,Jean Pierre Bergeron,Action Drama Horror Thriller,sur le seuil,Patrick Huard Michel CÃÂ´tÃÂ© Jean Pierre Bergeron ÃÂric Tessier Action Drama Horror Thriller
+391,Stefan Ruzowitzky,Benno FÃÂ¼rmann,RÃÂ¼diger Vogler,Sebastian Blomberg,Horror Thriller,anatomy,Benno FÃÂ¼rmann RÃÂ¼diger Vogler Sebastian Blomberg Stefan Ruzowitzky Horror Thriller
+392,Benni Diez,Clifton Collins Jr.,Cecilia Pillado,David Masterson,Comedy Horror,stung,Clifton Collins Jr. Cecilia Pillado David Masterson Benni Diez Comedy Horror
+393,Danny Perez,Natasha Lyonne,Emmanuel Kabongo,Mark Webber,Horror,antibirth,Natasha Lyonne Emmanuel Kabongo Mark Webber Danny Perez Horror
+394,Robby Henson,Marc Blucas,Max Ryan,Justine Waddell,Drama Horror Mystery Thriller,thr3e,Marc Blucas Max Ryan Justine Waddell Robby Henson Drama Horror Mystery Thriller
+395,Steve Miner,Richard Brooker,Dana Kimmell,Catherine Parks,Horror Thriller,friday the 13th part iii,Richard Brooker Dana Kimmell Catherine Parks Steve Miner Horror Thriller
+396,Danny Steinmann,Tiffany Helm,Melanie Kinnaman,Dominick Brascia,Horror Mystery Thriller,friday the 13th: a new beginning,Tiffany Helm Melanie Kinnaman Dominick Brascia Danny Steinmann Horror Mystery Thriller
+397,Jon Knautz,Rachel Skarsten,Daniel Kash,Stefanie Drummond,Action Comedy Horror,jack brooks: monster slayer,Rachel Skarsten Daniel Kash Stefanie Drummond Jon Knautz Action Comedy Horror
+398,Jaume BalaguerÃÂ³,Manuela Velasco,Pablo Rosso,Carlos Lasarte,Horror,[rec],Manuela Velasco Pablo Rosso Carlos Lasarte Jaume BalaguerÃÂ³ Horror
+399,Neil Mcenery-West,Walter Hendrix III,Michael Chapman,Louise Brealey,Horror Sci-Fi Thriller,containment,Walter Hendrix III Michael Chapman Louise Brealey Neil Mcenery-West Horror Sci-Fi Thriller
+400,Michael Herz,Phoebe Legere,Jessica Dublin,Lisa Gaye,Action Comedy Horror Sci-Fi,the toxic avenger part ii,Phoebe Legere Jessica Dublin Lisa Gaye Michael Herz Action Comedy Horror Sci-Fi
+401,David Robert Mitchell,Maika Monroe,Ruby Harris,Jake Weary,Horror Mystery,it follows,Maika Monroe Ruby Harris Jake Weary David Robert Mitchell Horror Mystery
+402,Chris Kentis,Eric Sheffer Stevens,Julia Taylor Ross,Adam Trese,Drama Horror Mystery Thriller,silent house,Eric Sheffer Stevens Julia Taylor Ross Adam Trese Chris Kentis Drama Horror Mystery Thriller
+403,Kevin Tenney,Kathleen Wilhoite,Tawny Kitaen,Rose Marie,Horror Mystery Thriller,witchboard,Kathleen Wilhoite Tawny Kitaen Rose Marie Kevin Tenney Horror Mystery Thriller
+404,Mitchell Lichtenstein,Jess Weixler,Nathan Parsons,John Hensley,Comedy Fantasy Horror Thriller,teeth,Jess Weixler Nathan Parsons John Hensley Mitchell Lichtenstein Comedy Fantasy Horror Thriller
+405,Brian Yuzna,Melinda Clarke,Kent McCord,Sarah Douglas,Horror Romance Sci-Fi,return of the living dead iii,Melinda Clarke Kent McCord Sarah Douglas Brian Yuzna Horror Romance Sci-Fi
+406,Aaron Hann,Jordi Vilasuso,Michael McLafferty,Kaiwi Lyman-Mersereau,Drama Horror Mystery Sci-Fi Thriller,circle,Jordi Vilasuso Michael McLafferty Kaiwi Lyman-Mersereau Aaron Hann Drama Horror Mystery Sci-Fi Thriller
+407,James Watkins,Michael Fassbender,Jack O'Connell,Lorraine Stanley,Horror Thriller,eden lake,Michael Fassbender Jack O'Connell Lorraine Stanley James Watkins Horror Thriller
+408,Phil Claydon,MyAnna Buring,James Corden,Silvia Colloca,Action Comedy Fantasy Horror,vampire killers,MyAnna Buring James Corden Silvia Colloca Phil Claydon Action Comedy Fantasy Horror
+409,Colin Minihan,Mackenzie Gray,Sean Rogerson,Ashleigh Gryzko,Horror,grave encounters,Mackenzie Gray Sean Rogerson Ashleigh Gryzko Colin Minihan Horror
+410,Conor McMahon,Peter McQuinn,Tommy Knight,Jemma Curran,Comedy Horror,stitches,Peter McQuinn Tommy Knight Jemma Curran Conor McMahon Comedy Horror
+411,Chris Shadley,Daniel Baldwin,William Lee Scott,Marc Macaulay,Crime Drama Horror Mystery Thriller,nine dead,Daniel Baldwin William Lee Scott Marc Macaulay Chris Shadley Crime Drama Horror Mystery Thriller
+412,Dave Payne,Mircea Monroe,Lew Temple,Robert Pine,Horror Thriller,no man's land: the rise of reeker,Mircea Monroe Lew Temple Robert Pine Dave Payne Horror Thriller
+413,Harald Reinl,Christopher Lee,Lex Barker,Karin Dor,Horror Mystery,the torture chamber of dr. sadism,Christopher Lee Lex Barker Karin Dor Harald Reinl Horror Mystery
+414,Scott Dow,Trenton Rostedt,Wray Crawford,Dave Sheridan,Comedy Horror,the walking deceased,Trenton Rostedt Wray Crawford Dave Sheridan Scott Dow Comedy Horror
+415,Derick Martini,Kevin Zegers,Bella Heathcote,Tom Arnold,Drama Horror Mystery Thriller,the curse of downers grove,Kevin Zegers Bella Heathcote Tom Arnold Derick Martini Drama Horror Mystery Thriller
+416,Kimberly Peirce,ChloÃÂ« Grace Moretz,Judy Greer,Portia Doubleday,Drama Fantasy Horror,carrie,ChloÃÂ« Grace Moretz Judy Greer Portia Doubleday Kimberly Peirce Drama Fantasy Horror
+417,Wes Craven,Johnny Depp,Lin Shaye,Amanda Wyss,Horror,a nightmare on elm street,Johnny Depp Lin Shaye Amanda Wyss Wes Craven Horror
+418,Daniel Stamm,Caleb Landry Jones,Ashley Bell,Patrick Fabian,Drama Horror Thriller,the last exorcism,Caleb Landry Jones Ashley Bell Patrick Fabian Daniel Stamm Drama Horror Thriller
+419,Jonathan Wacks,Steve Buscemi,Gary Farmer,Jon Gries,Comedy Horror,ed and his dead mother,Steve Buscemi Gary Farmer Jon Gries Jonathan Wacks Comedy Horror
+420,Tony Krantz,George Newbern,Tom Cavanagh,Cas Anvar,Horror Thriller,sublime,George Newbern Tom Cavanagh Cas Anvar Tony Krantz Horror Thriller
+421,Mitchell Altieri,Kimberley Crossman,Luke Edwards,Bree Williamson,Comedy Horror Thriller,a beginner's guide to snuff,Kimberley Crossman Luke Edwards Bree Williamson Mitchell Altieri Comedy Horror Thriller
+422,Lucky McKee,James Duval,Will Estes,Nora Zehetner,Drama Horror,may,James Duval Will Estes Nora Zehetner Lucky McKee Drama Horror
+423,David Hunt,Matthew Alan,Chris Cleveland,Circus-Szalewski,Horror,living dark: the story of ted the caver,Matthew Alan Chris Cleveland Circus-Szalewski David Hunt Horror
+424,Steven R. Monroe,Sarah Butler,Chad Lindberg,Daniel Franzese,Horror Thriller,i spit on your grave,Sarah Butler Chad Lindberg Daniel Franzese Steven R. Monroe Horror Thriller
+425,LluÃÂ­s QuÃÂ­lez,Stephen Rea,Pixie Davies,Alejandro Furth,Horror Thriller,out of the dark,Stephen Rea Pixie Davies Alejandro Furth LluÃÂ­s QuÃÂ­lez Horror Thriller
+426,Travis Zariwny,Dustin Ingram,Gage Golightly,Samuel Davis,Horror,cabin fever,Dustin Ingram Gage Golightly Samuel Davis Travis Zariwny Horror
+427,Zack Snyder,Ty Burrell,Kevin Zegers,Mekhi Phifer,Action Horror Thriller,dawn of the dead,Ty Burrell Kevin Zegers Mekhi Phifer Zack Snyder Action Horror Thriller
+428,James Wan,Lin Shaye,Barbara Hershey,Philip Friedman,Fantasy Horror Mystery Thriller,insidious,Lin Shaye Barbara Hershey Philip Friedman James Wan Fantasy Horror Mystery Thriller
+429,Simeon Rice,Ward G. Smith,Lisa Brave,Malone Thomas,Action Horror Thriller,unsullied,Ward G. Smith Lisa Brave Malone Thomas Simeon Rice Action Horror Thriller
+430,Brad Anderson,Paul Guilfoyle,Brendan Sexton III,Larry Fessenden,Horror Mystery,session 9,Paul Guilfoyle Brendan Sexton III Larry Fessenden Brad Anderson Horror Mystery
+431,Adam Green,Joel David Moore,Kane Hodder,Joel Murray,Comedy Horror,hatchet,Joel David Moore Kane Hodder Joel Murray Adam Green Comedy Horror
+432,Bruce McDonald,Stephen McHattie,Georgina Reilly,Boyd Banks,Fantasy Horror,pontypool,Stephen McHattie Georgina Reilly Boyd Banks Bruce McDonald Fantasy Horror
+433,Rob Zombie,Sid Haig,Dee Wallace,Michael Berryman,Drama Fantasy Horror Thriller,the lords of salem,Sid Haig Dee Wallace Michael Berryman Rob Zombie Drama Fantasy Horror Thriller
+434,Gerard Johnstone,Morgana O'Reilly,Bruce Hopkins,Cameron Rhodes,Comedy Horror Mystery,housebound,Morgana O'Reilly Bruce Hopkins Cameron Rhodes Gerard Johnstone Comedy Horror Mystery
+435,Tara Subkoff,Timothy Hutton,Balthazar Getty,Lydia Hearst,Drama Horror Mystery Thriller,#horror,Timothy Hutton Balthazar Getty Lydia Hearst Tara Subkoff Drama Horror Mystery Thriller
+436,Russell Friedenberg,Rudy Youngblood,Glen Powell,Kiowa Gordon,Action Horror Thriller,wind walkers,Rudy Youngblood Glen Powell Kiowa Gordon Russell Friedenberg Action Horror Thriller
+437,Zak Penn,Zak Penn,Gabriel Beristain,John Bailey,Adventure Comedy Horror,incident at loch ness,Zak Penn Gabriel Beristain John Bailey Zak Penn Adventure Comedy Horror
+438,Jon Knautz,Camren Bicondova,Adam DiMarco,Chasty Ballesteros,Horror Thriller,girl house,Camren Bicondova Adam DiMarco Chasty Ballesteros Jon Knautz Horror Thriller
+439,David Worth,Jessica Szohr,Jonathan Mangum,Angela Jones,Horror Thriller,house at the end of the drive,Jessica Szohr Jonathan Mangum Angela Jones David Worth Horror Thriller
+440,Boris Rodriguez,Stephen McHattie,Thure Lindhardt,Georgina Reilly,Comedy Horror,eddie: the sleepwalking cannibal,Stephen McHattie Thure Lindhardt Georgina Reilly Boris Rodriguez Comedy Horror
+441,Tyler Oliver,Bella Thorne,Chloe Bridges,Christopher Atkins,Horror Romance Thriller,forget me not,Bella Thorne Chloe Bridges Christopher Atkins Tyler Oliver Horror Romance Thriller
+442,Steve Miner,Betsy Palmer,Adrienne King,Amy Steel,Horror Mystery Thriller,friday the 13th part 2,Betsy Palmer Adrienne King Amy Steel Steve Miner Horror Mystery Thriller
+443,Douglas Cheek,Daniel Stern,John Heard,Sam McMurray,Horror Sci-Fi,c.h.u.d.,Daniel Stern John Heard Sam McMurray Douglas Cheek Horror Sci-Fi
+444,James Wan,Michael Emerson,Monica Potter,Shawnee Smith,Horror Mystery Thriller,saw,Michael Emerson Monica Potter Shawnee Smith James Wan Horror Mystery Thriller
+445,Brenton Spencer,Christie Burke,Victor Zinck Jr.,Chelsey Reist,Action Horror Mystery Thriller,crowsnest,Christie Burke Victor Zinck Jr. Chelsey Reist Brenton Spencer Action Horror Mystery Thriller
+446,Jay Alaimo,William McNamara,Sabrina Carmichael,Patrick Muldoon,Horror,the wicked within,William McNamara Sabrina Carmichael Patrick Muldoon Jay Alaimo Horror
+447,Dylan Bank,Seregon O'Dassey,Deirdre Lorenz,Dustin Diamond,Horror,bleeding hearts,Seregon O'Dassey Deirdre Lorenz Dustin Diamond Dylan Bank Horror
+448,unknown,Richard Cawthorne,John Jarratt,Lucy Fry,Drama Horror Thriller,wolf creekÃÂ            ,Richard Cawthorne John Jarratt Lucy Fry unknown Drama Horror Thriller
+449,Jeff Burr,Terry Kiser,Clu Gulager,Susan Tyrrell,Action Drama Horror Thriller,from a whisper to a scream,Terry Kiser Clu Gulager Susan Tyrrell Jeff Burr Action Drama Horror Thriller
+450,Guy Maddin,Sarah Murphy-Dyson,CindyMarie Small,Brent Neale,Comedy Horror Musical,dracula: pages from a virgin's diary,Sarah Murphy-Dyson CindyMarie Small Brent Neale Guy Maddin Comedy Horror Musical
+451,Matthew R. Anderson,Johnny Pacar,Vernon Wells,Matthew R. Anderson,Action Horror Sci-Fi,the dead undead,Johnny Pacar Vernon Wells Matthew R. Anderson Matthew R. Anderson Action Horror Sci-Fi
+452,Joe Marino,Piero MaggiÃÂ²,Anella Vastola,Joe Marino,Horror,the vatican exorcisms,Piero MaggiÃÂ² Anella Vastola Joe Marino Joe Marino Horror
+453,Joel Anderson,Talia Zucker,Rosie Traynor,Martin Sharpe,Drama Horror Mystery Thriller,lake mungo,Talia Zucker Rosie Traynor Martin Sharpe Joel Anderson Drama Horror Mystery Thriller
+454,John Carpenter,Jamie Lee Curtis,Hal Holbrook,Janet Leigh,Fantasy Horror,the fog,Jamie Lee Curtis Hal Holbrook Janet Leigh John Carpenter Fantasy Horror
+455,Levan Gabriadze,Shelley Hennig,Renee Olstead,Heather Sossaman,Horror Mystery Thriller,unfriended,Shelley Hennig Renee Olstead Heather Sossaman Levan Gabriadze Horror Mystery Thriller
+456,Joe Dante,Patrick Macnee,Robert Picardo,Dee Wallace,Horror,the howling,Patrick Macnee Robert Picardo Dee Wallace Joe Dante Horror
+457,Bradley Parker,Jesse McCartney,Ingrid BolsÃÂ¸ Berdal,Jonathan Sadowski,Horror Mystery Sci-Fi Thriller,chernobyl diaries,Jesse McCartney Ingrid BolsÃÂ¸ Berdal Jonathan Sadowski Bradley Parker Horror Mystery Sci-Fi Thriller
+458,Clive Barker,Andrew Robinson,Ashley Laurence,Clare Higgins,Fantasy Horror,hellraiser,Andrew Robinson Ashley Laurence Clare Higgins Clive Barker Fantasy Horror
+459,Jeff Wadlow,Julian Morris,Gary Cole,Lindy Booth,Drama Horror Mystery Thriller,cry_wolf,Julian Morris Gary Cole Lindy Booth Jeff Wadlow Drama Horror Mystery Thriller
+460,William Brent Bell,Fernanda Andrade,Claudiu Trandafir,Brian Johnson,Horror,the devil inside,Fernanda Andrade Claudiu Trandafir Brian Johnson William Brent Bell Horror
+461,Eli Roth,Daryl Sabara,Richard Burgi,Magda Apanowicz,Adventure Horror,the green inferno,Daryl Sabara Richard Burgi Magda Apanowicz Eli Roth Adventure Horror
+462,Rob Letterman,Odeya Rush,Dylan Minnette,Ken Marino,Adventure Comedy Family Fantasy Horror,goosebumps,Odeya Rush Dylan Minnette Ken Marino Rob Letterman Adventure Comedy Family Fantasy Horror
+463,Ti West,Lena Dunham,Greta Gerwig,Dee Wallace,Horror,the house of the devil,Lena Dunham Greta Gerwig Dee Wallace Ti West Horror
+464,Kevin Hamedani,Russell Hodgkinson,Janette Armand,Kevin Hamedani,Comedy Horror Sci-Fi,zmd: zombies of mass destruction,Russell Hodgkinson Janette Armand Kevin Hamedani Kevin Hamedani Comedy Horror Sci-Fi
+465,David DeCoteau,Maureen McCormick,Shanley Caswell,Tim Abell,Horror,snow white: a deadly summer,Maureen McCormick Shanley Caswell Tim Abell David DeCoteau Horror
+466,Katie Aselton,Katie Aselton,Anslem Richardson,Jay Paulson,Horror Thriller,black rock,Katie Aselton Anslem Richardson Jay Paulson Katie Aselton Horror Thriller
+467,Robert Heath,David Oakes,Alexander Vlahos,Jennie Jacques,Horror Mystery,truth or die,David Oakes Alexander Vlahos Jennie Jacques Robert Heath Horror Mystery
+468,Robert Hall,Angelina Armani,Kevin Gage,Fiona Dourif,Horror,fear clinic,Angelina Armani Kevin Gage Fiona Dourif Robert Hall Horror
+469,K. King,Jason K. Wixom,Shona Kay,Jarrod Phillips,Action Comedy Horror,zombie hunter,Jason K. Wixom Shona Kay Jarrod Phillips K. King Action Comedy Horror
+470,Blair Erickson,Monique Candelaria,Katia Winter,Michael McMillian,Horror Thriller,banshee chapter,Monique Candelaria Katia Winter Michael McMillian Blair Erickson Horror Thriller
+471,Brian Dorton,Javier Botet,Brian Dorton,Jan Cornet,Horror,the horror network vol. 1,Javier Botet Brian Dorton Jan Cornet Brian Dorton Horror
+472,Tommy Wirkola,BjÃÂ¸rn Sundquist,Stig Frode Henriksen,Ane Dahl Torp,Comedy Horror,dead snow,BjÃÂ¸rn Sundquist Stig Frode Henriksen Ane Dahl Torp Tommy Wirkola Comedy Horror
+473,Clark Baker,Taylor Pigeon,Alan Pietruszewski,Whit Spurgeon,Horror Sci-Fi Short Thriller,vessel,Taylor Pigeon Alan Pietruszewski Whit Spurgeon Clark Baker Horror Sci-Fi Short Thriller
+474,Ben Wheatley,MyAnna Buring,Ben Crompton,Neil Maskell,Crime Horror Thriller,kill list,MyAnna Buring Ben Crompton Neil Maskell Ben Wheatley Crime Horror Thriller
+475,Ti West,Lena Dunham,Jake Ryan,Pat Healy,Horror,the innkeepers,Lena Dunham Jake Ryan Pat Healy Ti West Horror
+476,David S. Goyer,Gary Oldman,Atticus Shaffer,Rachel Brosnahan,Drama Fantasy Horror Mystery Thriller,the unborn,Gary Oldman Atticus Shaffer Rachel Brosnahan David S. Goyer Drama Fantasy Horror Mystery Thriller
+477,Oliver Blackburn,Julian Morris,Nichola Burley,Tom Burke,Crime Drama Horror Thriller,donkey punch,Julian Morris Nichola Burley Tom Burke Oliver Blackburn Crime Drama Horror Thriller
+478,Jonathan Levine,Luke Grimes,Michael Welch,Whitney Able,Horror,all the boys love mandy lane,Luke Grimes Michael Welch Whitney Able Jonathan Levine Horror
+479,Christopher Hutson,Dichen Lachman,Jennifer Lee Wiggins,Michele Morrow,Horror,bled,Dichen Lachman Jennifer Lee Wiggins Michele Morrow Christopher Hutson Horror
+480,Jaume Collet-Serra,Robert Ri'chard,Paris Hilton,Brian Van Holt,Horror,house of wax,Robert Ri'chard Paris Hilton Brian Van Holt Jaume Collet-Serra Horror
+481,Randy Moore,Trey Loney,Lee Armstrong,Amy Lucas,Fantasy Horror,escape from tomorrow,Trey Loney Lee Armstrong Amy Lucas Randy Moore Fantasy Horror
+482,Ryan Smith,Sandra Ellis Lafferty,Madison Lintz,Karolina Wydra,Fantasy Horror Mystery Thriller,after,Sandra Ellis Lafferty Madison Lintz Karolina Wydra Ryan Smith Fantasy Horror Mystery Thriller
+483,Daniel Myrick,Heather Donahue,Joshua Leonard,Michael C. Williams,Horror,the blair witch project,Heather Donahue Joshua Leonard Michael C. Williams Daniel Myrick Horror
+484,Chris Kentis,Blanchard Ryan,Saul Stein,Daniel Travis,Adventure Biography Drama Horror Thriller,open water,Blanchard Ryan Saul Stein Daniel Travis Chris Kentis Adventure Biography Drama Horror Thriller
+485,John 'Bud' Cardos,Woody Strode,Hoke Howell,Tiffany Bolling,Horror Sci-Fi,kingdom of the spiders,Woody Strode Hoke Howell Tiffany Bolling John 'Bud' Cardos Horror Sci-Fi
+486,Quentin Dupieux,Haley Ramm,Jack Plotnick,Cecelia Antoinette,Comedy Fantasy Horror,rubber,Haley Ramm Jack Plotnick Cecelia Antoinette Quentin Dupieux Comedy Fantasy Horror
+487,Alex Craig Mann,Justin Chon,Christa B. Allen,Max Adler,Comedy Horror,detention of the dead,Justin Chon Christa B. Allen Max Adler Alex Craig Mann Comedy Horror
+488,Michael Hoffman Jr.,Vincent Chimato,John McGlothlin,Al Sapienza,Comedy Horror,girls gone dead,Vincent Chimato John McGlothlin Al Sapienza Michael Hoffman Jr. Comedy Horror
+489,Darren Lynn Bousman,Paul Sorvino,Barry Bostwick,Terrance Zdunich,Horror Musical,alleluia! the devil's carnival,Paul Sorvino Barry Bostwick Terrance Zdunich Darren Lynn Bousman Horror Musical
+490,Michael Herz,Patrick Kilpatrick,Mark Torgl,Pat Ryan,Action Comedy Horror Sci-Fi,the toxic avenger,Patrick Kilpatrick Mark Torgl Pat Ryan Michael Herz Action Comedy Horror Sci-Fi
+491,Lloyd Kaufman,John Karyus,Lloyd Kaufman,Kate Graham,Comedy Horror Musical,poultrygeist: night of the chicken dead,John Karyus Lloyd Kaufman Kate Graham Lloyd Kaufman Comedy Horror Musical
+492,Eric England,Jack E. Curenton,Ace Marrero,Alan Pietruszewski,Drama Horror Mystery Thriller,roadside,Jack E. Curenton Ace Marrero Alan Pietruszewski Eric England Drama Horror Mystery Thriller
+493,Oren Peli,Micah Sloat,Ashley Palmer,Amber Armstrong,Horror,paranormal activity,Micah Sloat Ashley Palmer Amber Armstrong Oren Peli Horror
+494,Sue Corcoran,Tony Doupe,Sue Corcoran,David Frederick White,Comedy Fantasy Horror Musical,gory gory hallelujah,Tony Doupe Sue Corcoran David Frederick White Sue Corcoran Comedy Fantasy Horror Musical
+495,Matt Jackson,Kane Hodder,Paul Elia,Alex Sanborn,Comedy Horror,love in the time of monsters,Kane Hodder Paul Elia Alex Sanborn Matt Jackson Comedy Horror
+496,Lucio Fulci,Catriona MacColl,David Warbeck,Al Cliver,Horror,the beyond,Catriona MacColl David Warbeck Al Cliver Lucio Fulci Horror
+497,Paul Fox,Dov Tiefenbach,Jeff Seymour,Gordon Currie,Horror Thriller,the dark hours,Dov Tiefenbach Jeff Seymour Gordon Currie Paul Fox Horror Thriller
+498,Ari Kirschenbaum,R. Brandon Johnson,Adam LeFevre,Desmond Askew,Drama Horror Mystery Thriller,fabled,R. Brandon Johnson Adam LeFevre Desmond Askew Ari Kirschenbaum Drama Horror Mystery Thriller
+499,Sam Raimi,Ted Raimi,Betsy Baker,Ellen Sandweiss,Fantasy Horror,the evil dead,Ted Raimi Betsy Baker Ellen Sandweiss Sam Raimi Fantasy Horror
+500,Franck Khalfoun,America Olivo,Nora Arnezeder,Liane Balaban,Horror Thriller,maniac,America Olivo Nora Arnezeder Liane Balaban Franck Khalfoun Horror Thriller
+501,John Carpenter,Jamie Lee Curtis,Donald Pleasence,P.J. Soles,Horror Thriller,halloween,Jamie Lee Curtis Donald Pleasence P.J. Soles John Carpenter Horror Thriller
+502,Gregory Widen,Viggo Mortensen,Adam Goldberg,Virginia Madsen,Action Fantasy Horror Mystery Thriller,the prophecy,Viggo Mortensen Adam Goldberg Virginia Madsen Gregory Widen Action Fantasy Horror Mystery Thriller
+503,Pece Dingo,Michael Des Barres,Wilhelm von Homburg,Thom Mathews,Horror,midnight cabaret,Michael Des Barres Wilhelm von Homburg Thom Mathews Pece Dingo Horror
+504,Herb Freed,Linnea Quigley,Carmen Argenziano,Vanna White,Horror Mystery,graduation day,Linnea Quigley Carmen Argenziano Vanna White Herb Freed Horror Mystery
+505,Jack Perez,Kevin Corrigan,Barry Bostwick,Ahmed Best,Comedy Crime Drama Horror Mystery Thriller,some guy who kills people,Kevin Corrigan Barry Bostwick Ahmed Best Jack Perez Comedy Crime Drama Horror Mystery Thriller
+506,Al Franklin,Marshal Hilton,Steffinnie Phrommany,Clint Jung,Horror,teeth and blood,Marshal Hilton Steffinnie Phrommany Clint Jung Al Franklin Horror
+507,Andrew Hyatt,Noah Segan,Brit Morgan,Sedona James,Horror Thriller,the frozen,Noah Segan Brit Morgan Sedona James Andrew Hyatt Horror Thriller
+508,EugÃÂ¨ne LouriÃÂ©,Kenneth Tobey,Cecil Kellaway,Ross Elliott,Adventure Horror Sci-Fi,"the beast from 20,000 fathoms",Kenneth Tobey Cecil Kellaway Ross Elliott EugÃÂ¨ne LouriÃÂ© Adventure Horror Sci-Fi
+509,Stevan Mena,R. Brandon Johnson,Stevan Mena,Richard Glover,Crime Horror Mystery Thriller,malevolence,R. Brandon Johnson Stevan Mena Richard Glover Stevan Mena Crime Horror Mystery Thriller
+510,Eric Valette,Melanie Papalia,Ryan Kennedy,John Reardon,Horror Sci-Fi Thriller,super hybrid,Melanie Papalia Ryan Kennedy John Reardon Eric Valette Horror Sci-Fi Thriller
+511,Jay Duplass,Greta Gerwig,Jennifer Lafleur,Elise Muller,Comedy Drama Horror Romance,baghead,Greta Gerwig Jennifer Lafleur Elise Muller Jay Duplass Comedy Drama Horror Romance
+512,Livingston Oden,Susan Chambers,Victoria Lachelle,Ali Daniels,Comedy Horror Mystery Thriller,solitude,Susan Chambers Victoria Lachelle Ali Daniels Livingston Oden Comedy Horror Mystery Thriller
+513,Pat Holden,Alan Brent,Martin Compston,Kate Ashfield,Horror,when the lights went out,Alan Brent Martin Compston Kate Ashfield Pat Holden Horror
+514,Tobe Hooper,Gunnar Hansen,Edwin Neal,Marilyn Burns,Horror Thriller,the texas chain saw massacre,Gunnar Hansen Edwin Neal Marilyn Burns Tobe Hooper Horror Thriller
+515,Paul Schrader,Ed Begley Jr.,Ruby Dee,John Heard,Fantasy Horror Thriller,cat people,Ed Begley Jr. Ruby Dee John Heard Paul Schrader Fantasy Horror Thriller
+516,George A. Romero,Judith O'Dea,Duane Jones,S. William Hinzman,Drama Horror Mystery,night of the living dead,Judith O'Dea Duane Jones S. William Hinzman George A. Romero Drama Horror Mystery
+517,Travis Cluff,Pfeifer Brown,Cassidy Gifford,Reese Mishler,Horror Thriller,the gallows,Pfeifer Brown Cassidy Gifford Reese Mishler Travis Cluff Horror Thriller
+518,David Lynch,Hal Landon Jr.,Jack Nance,Charlotte Stewart,Fantasy Horror Sci-Fi,eraserhead,Hal Landon Jr. Jack Nance Charlotte Stewart David Lynch Fantasy Horror Sci-Fi
+519,Larry Blamire,Fay Masterson,Brian Howe,Larry Blamire,Comedy Horror Sci-Fi,the lost skeleton of cadavra,Fay Masterson Brian Howe Larry Blamire Larry Blamire Comedy Horror Sci-Fi
+520,E.L. Katz,Brighton Sharbino,Ethan Embry,Elissa Dowling,Comedy Crime Drama Horror Thriller,cheap thrills,Brighton Sharbino Ethan Embry Elissa Dowling E.L. Katz Comedy Crime Drama Horror Thriller
+521,Laslo Benedek,Liv Ullmann,Trevor Howard,Andrew Keir,Crime Horror Thriller,the night visitor,Liv Ullmann Trevor Howard Andrew Keir Laslo Benedek Crime Horror Thriller
+522,Dennis Iliadis,Tony Goldwyn,Monica Potter,Martha MacIsaac,Crime Horror Thriller,the last house on the left,Tony Goldwyn Monica Potter Martha MacIsaac Dennis Iliadis Crime Horror Thriller
+523,Joseph Green,Virginia Leith,Jason Evers,Bruce Kerr,Horror Sci-Fi,the brain that wouldn't die,Virginia Leith Jason Evers Bruce Kerr Joseph Green Horror Sci-Fi
+524,Mike Flanagan,Justin Gordon,Courtney Bell,Erin Cipolletti,Drama Horror Mystery,absentia,Justin Gordon Courtney Bell Erin Cipolletti Mike Flanagan Drama Horror Mystery
+525,Terron R. Parsons,Richard Tyson,Jeremy Sande,Corlandos Scott,Crime Drama Horror,hayride,Richard Tyson Jeremy Sande Corlandos Scott Terron R. Parsons Crime Drama Horror
+526,Andrew Leman,Dan Novy,David Mersault,Barry Lynch,Fantasy Horror Mystery Thriller,the call of cthulhu,Dan Novy David Mersault Barry Lynch Andrew Leman Fantasy Horror Mystery Thriller
+527,Travis Legge,Elissa Dowling,Patricia Raven,Lindsay Felton,Horror,raymond did it,Elissa Dowling Patricia Raven Lindsay Felton Travis Legge Horror
+528,Collin Joseph Neal,Julianne Gabert,Thomas Brophy,Ronee Collins,Horror Thriller,"run, hide, die",Julianne Gabert Thomas Brophy Ronee Collins Collin Joseph Neal Horror Thriller
+529,Damir Catic,Nichole Ceballos,Ron Gelner,Parker Riggs,Horror,her cry: la llorona investigation,Nichole Ceballos Ron Gelner Parker Riggs Damir Catic Horror
+530,Marcus Nispel,Ashley Tramonte,Brittany Curran,Lindsay MacDonald,Horror Mystery Thriller,exeter,Ashley Tramonte Brittany Curran Lindsay MacDonald Marcus Nispel Horror Mystery Thriller
+531,Brandon Landers,Robbie Barnes,Alana Kaniewski,Brandon Landers,Drama Horror Thriller,the ridges,Robbie Barnes Alana Kaniewski Brandon Landers Brandon Landers Drama Horror Thriller
+532,John Waters,Divine,Mink Stole,Edith Massey,Comedy Crime Horror,pink flamingos,Divine Mink Stole Edith Massey John Waters Comedy Crime Horror
+533,Ivan Kavanagh,Patrick O'Donnell,Michael Parle,Emma Eliza Regan,Horror,tin can man,Patrick O'Donnell Michael Parle Emma Eliza Regan Ivan Kavanagh Horror
+534,Kiyoshi Kurosawa,KÃÂ´ji Yakusho,Anna Nakagawa,Denden,Crime Horror Mystery Thriller,the cure,KÃÂ´ji Yakusho Anna Nakagawa Denden Kiyoshi Kurosawa Crime Horror Mystery Thriller
+535,Thomas L. Phillips,Julianna Pitt,Joe Coffey,John Lucas,Comedy Horror Thriller,sanctuary; quite a conundrum,Julianna Pitt Joe Coffey John Lucas Thomas L. Phillips Comedy Horror Thriller
+536,Benjamin Roberds,Eva Boehnke,Maxwell Moody,David Chandler,Drama Horror Thriller,a plague so pleasant,Eva Boehnke Maxwell Moody David Chandler Benjamin Roberds Drama Horror Thriller
+537,Sean Byrne,Ethan Embry,Shiri Appleby,Kiara Glasco,Horror,the devil's candy,Ethan Embry Shiri Appleby Kiara Glasco Sean Byrne Horror
+538,Lloyd Kaufman,Asta Paredes,Catherine Corcoran,Zac Amino,Comedy Horror,"return to return to nuke 'em high, aka volume 2",Asta Paredes Catherine Corcoran Zac Amino Lloyd Kaufman Comedy Horror
+539,Alexandre Bustillo Julien Maury,Stephen Dorff,Lili Taylor,Sam Strike,Horror,leatherface,Stephen Dorff Lili Taylor Sam Strike Alexandre Bustillo Julien Maury Horror
+540,Johannes Roberts,Claire Holt,Mandy Moore,Chris Johnson,Drama Thriller Horror Adventure,47 meters down,Claire Holt Mandy Moore Chris Johnson Johannes Roberts Drama Thriller Horror Adventure
+541,Gore Verbinski,Dane DeHaan,Jason Isaacs,Mia Goth,Mystery Thriller Horror Sci-Fi,a cure for wellness,Dane DeHaan Jason Isaacs Mia Goth Gore Verbinski Mystery Thriller Horror Sci-Fi
+542,Stacy Title,Douglas Smith,Lucien Laviscount,Cressida Bonas,Horror Thriller,the bye bye man,Douglas Smith Lucien Laviscount Cressida Bonas Stacy Title Horror Thriller
+543,Alice Lowe,Alice Lowe,Jo Hartley,Kate Dickie,Horror Comedy Drama Thriller Fantasy,prevenge,Alice Lowe Jo Hartley Kate Dickie Alice Lowe Horror Comedy Drama Thriller Fantasy
+544,F. Javier GutiÃÂ©rrez,Matilda Anna Ingrid Lutz,Alex Roe,Johnny Galecki,Horror,rings,Matilda Anna Ingrid Lutz Alex Roe Johnny Galecki F. Javier GutiÃÂ©rrez Horror
+545,Jordan Peele,Daniel Kaluuya,Allison Williams,Bradley Whitford,Mystery Thriller Horror,get out,Daniel Kaluuya Allison Williams Bradley Whitford Jordan Peele Mystery Thriller Horror
+546,Karyn Kusama Jovanka Vuckovic Roxanne Benjamin St. Vincent,Natalie Brown,Melanie Lynskey,Breeda Wool,Horror,xx,Natalie Brown Melanie Lynskey Breeda Wool Karyn Kusama Jovanka Vuckovic Roxanne Benjamin St. Vincent Horror
+547,Caradog W. James,Katee Sackhoff,Lucy Boynton,Javier Botet,Horror,don't knock twice,Katee Sackhoff Lucy Boynton Javier Botet Caradog W. James Horror
+548,Cate Shortland,Teresa Palmer,Max Riemelt,Matthias Habich,Mystery Thriller Drama Horror,berlin syndrome,Teresa Palmer Max Riemelt Matthias Habich Cate Shortland Mystery Thriller Drama Horror
+549,Mike Dudko,Rachel Barrer,Gleb Kaminer,Shaun Rey,Horror Comedy,zombie pizza,Rachel Barrer Gleb Kaminer Shaun Rey Mike Dudko Horror Comedy
+550,Svyatoslav Podgayevskiy,Victoria Agalakova,Vyacheslav Chepurchenko,Alexandra Rebenok,Mystery Horror Thriller,the bride,Victoria Agalakova Vyacheslav Chepurchenko Alexandra Rebenok Svyatoslav Podgayevskiy Mystery Horror Thriller
+551,Daniel Espinosa,Jake Gyllenhaal,Rebecca Ferguson,Ryan Reynolds,Horror Sci-Fi Thriller,life,Jake Gyllenhaal Rebecca Ferguson Ryan Reynolds Daniel Espinosa Horror Sci-Fi Thriller
+552,Bryan Brewer,Cree Kelly,Allie Rivera,Thatcher Robinson,Horror,the raking,Cree Kelly Allie Rivera Thatcher Robinson Bryan Brewer Horror
+553,David Ryan Keith,Michael Koltes,Paul Flannery,Lisa Livingstone,Horror,ghosts of darkness,Michael Koltes Paul Flannery Lisa Livingstone David Ryan Keith Horror
+554,Ridley Scott,Michael Fassbender,Katherine Waterston,Billy Crudup,Horror Sci-Fi Thriller,alien: covenant,Michael Fassbender Katherine Waterston Billy Crudup Ridley Scott Horror Sci-Fi Thriller
+555,Andrew Getty,Fred Koehler,Sean Patrick Flanery,Brianna Brown,Horror,the evil within,Fred Koehler Sean Patrick Flanery Brianna Brown Andrew Getty Horror
+556,Ãlex de la Iglesia,Mario Casas,Blanca SuÃ¡rez,Carmen Machi,Horror Thriller Comedy,the bar,Mario Casas Blanca SuÃ¡rez Carmen Machi Ãlex de la Iglesia Horror Thriller Comedy
+557,Robert Legato,Eliza Dushku,Robert Patrick,Chace Crawford,Horror Mystery Thriller,eloise,Eliza Dushku Robert Patrick Chace Crawford Robert Legato Horror Mystery Thriller
+558,Alastair Orr,Sharni Vinson,Carlyn Burchell,Steve John Ward,Action Horror,from a house on willow street,Sharni Vinson Carlyn Burchell Steve John Ward Alastair Orr Action Horror
+559,Michael O'Shea,Eric Ruffin,Chloe Levine,Aaron Moten,Horror Drama,the transfiguration,Eric Ruffin Chloe Levine Aaron Moten Michael O'Shea Horror Drama
+560,Carson D. Mell,Steve Zissis,Mark Proksch,Jennifer Irwin,Comedy Horror,another evil,Steve Zissis Mark Proksch Jennifer Irwin Carson D. Mell Comedy Horror
+561,Trey Edward Shults,Joel Edgerton,Christopher Abbott,Carmen Ejogo,Horror Mystery Thriller,it comes at night,Joel Edgerton Christopher Abbott Carmen Ejogo Trey Edward Shults Horror Mystery Thriller
+562,Takanori Tsujimoto,Kevin Dorman,Matthew Mercer,Erin Cahill,Action Adventure Animation Horror Mystery Sci-Fi,resident evil: vendetta,Kevin Dorman Matthew Mercer Erin Cahill Takanori Tsujimoto Action Adventure Animation Horror Mystery Sci-Fi
+563,Robert Conway,Monica Engesser,Clint James,Maria Olsen,Horror,the covenant,Monica Engesser Clint James Maria Olsen Robert Conway Horror
+564,Justin Barber,Florence Hartigan,Jeanine Jackson,Chelsea Lopez,Horror Mystery Sci-Fi,phoenix forgotten,Florence Hartigan Jeanine Jackson Chelsea Lopez Justin Barber Horror Mystery Sci-Fi
+565,Vincent J. Guastini Michael McQuown,Cortney Palm,David Hull,Emilia Zoryan,Horror Sci-Fi Thriller,the dark tapes,Cortney Palm David Hull Emilia Zoryan Vincent J. Guastini Michael McQuown Horror Sci-Fi Thriller
+566,Jamie Cymbal Ryan Simons,Jimmy Allen,Lindsay Bennett,Chris Blackwood,Horror,seizure,Jimmy Allen Lindsay Bennett Chris Blackwood Jamie Cymbal Ryan Simons Horror
+567,Franck Khalfoun,Bella Thorne,Cameron Monaghan,Jennifer Morrison,Thriller Horror,amityville: the awakening,Bella Thorne Cameron Monaghan Jennifer Morrison Franck Khalfoun Thriller Horror
+568,Jay Woelfel,Tim Thomerson,Richard Hatch,Tiffany Shepis,Horror,asylum of darkness,Tim Thomerson Richard Hatch Tiffany Shepis Jay Woelfel Horror
+569,Tony E. Valenzuela,Robert Adamson,Alex Frnka,Conchata Ferrell,Horror,the axe murders of villisca,Robert Adamson Alex Frnka Conchata Ferrell Tony E. Valenzuela Horror
+570,Phillip Guzman,Lori Petty,Jesse Bradford,Brea Grant,Horror Thriller,dead awake,Lori Petty Jesse Bradford Brea Grant Phillip Guzman Horror Thriller
+571,Hiroyuki Seshita,Takahiro Sakurai,Kana Hanazawa,Sora Amamiya,Action Animation Drama Horror Sci-Fi,blame!,Takahiro Sakurai Kana Hanazawa Sora Amamiya Hiroyuki Seshita Action Animation Drama Horror Sci-Fi
+572,Mathieu Ratthe,Alex C. Nachi,Mathieu Ratthe,Victor Andres Turgeon-Trelles,Horror Sci-Fi Action,the gracefield incident,Alex C. Nachi Mathieu Ratthe Victor Andres Turgeon-Trelles Mathieu Ratthe Horror Sci-Fi Action
+573,Sergey Ginzburg,Konstantin Kryukov,Lera Arefyeva,Aglaya Shilovskaya,Horror Action Fantasy Thriller,vamps,Konstantin Kryukov Lera Arefyeva Aglaya Shilovskaya Sergey Ginzburg Horror Action Fantasy Thriller
+574,Bob Schultz Robert Conway,Whitney Moore,William 'Bill' Connor,Owen Conway,Drama Horror Thriller,breakdown lane,Whitney Moore William 'Bill' Connor Owen Conway Bob Schultz Robert Conway Drama Horror Thriller
+575,Kentaro Hagiwara,Masataka Kubota,Yu Aoi,Fumika Shimizu,Action Drama Horror Thriller,tokyo ghoul,Masataka Kubota Yu Aoi Fumika Shimizu Kentaro Hagiwara Action Drama Horror Thriller
+576,Tommy Stovall,James Martinez,Trevor Sterling Stovall,Michael Chieffo,Drama Horror Mystery Thriller,aaron's blood,James Martinez Trevor Sterling Stovall Michael Chieffo Tommy Stovall Drama Horror Mystery Thriller
+577,Phil Guidry Simon Herbert David Whelan,Monica Davis,Edward L. Green,Patrick Pedraza,Horror Mystery,savageland,Monica Davis Edward L. Green Patrick Pedraza Phil Guidry Simon Herbert David Whelan Horror Mystery
+578,Jason Flemyng,Charlie Cox,Tony Curran,Mackenzie Crook,Action Comedy Horror,eat locals,Charlie Cox Tony Curran Mackenzie Crook Jason Flemyng Action Comedy Horror
+579,Nikolaj Arcel,Idris Elba,Matthew McConaughey,Tom Taylor,Action Western Sci-Fi Fantasy Horror,the dark tower,Idris Elba Matthew McConaughey Tom Taylor Nikolaj Arcel Action Western Sci-Fi Fantasy Horror
+580,Abel Vang Burlee Vang,Saxon Sharbino,Bonnie Morgan,Brandon Soo Hoo,Horror Thriller,bedeviled,Saxon Sharbino Bonnie Morgan Brandon Soo Hoo Abel Vang Burlee Vang Horror Thriller
+581,John R. Leonetti,Joey King,Ryan Phillippe,Sherilyn Fenn,Fantasy Horror Thriller,wish upon,Joey King Ryan Phillippe Sherilyn Fenn John R. Leonetti Fantasy Horror Thriller
+582,Adam Robitel,Lin Shaye,Angus Sampson,Leigh Whannell,Horror,insidious: the last key,Lin Shaye Angus Sampson Leigh Whannell Adam Robitel Horror
+583,The Spierig Brothers,Helen Mirren,Jason Clarke,Sarah Snook,Horror,winchester,Helen Mirren Jason Clarke Sarah Snook The Spierig Brothers Horror
+584,Julius Onah,Gugu Mbatha-Raw,Elizabeth Debicki,Aksel Hennie,Horror,the cloverfield paradox,Gugu Mbatha-Raw Elizabeth Debicki Aksel Hennie Julius Onah Horror
+585,David Freyne,Ellen Page,Sam Keeley,Tom Vaughan-Lawlor,Horror,the cured,Ellen Page Sam Keeley Tom Vaughan-Lawlor David Freyne Horror
+586,Johannes Roberts,Christina Hendricks,Martin Henderson,Bailee Madison,Horror,the strangers: prey at night,Christina Hendricks Martin Henderson Bailee Madison Johannes Roberts Horror
+587,Steven Soderbergh,Claire Foy,Joshua Leonard,Jay Pharoah,Horror,unsane,Claire Foy Joshua Leonard Jay Pharoah Steven Soderbergh Horror
+588,John Krasinski,Emily Blunt,John Krasinski,Millicent Simmonds,Horror,a quiet place,Emily Blunt John Krasinski Millicent Simmonds John Krasinski Horror
+589,Deon Taylor,Paula Patton,Omar Epps,Laz Alonso,Horror,traffik,Paula Patton Omar Epps Laz Alonso Deon Taylor Horror
+590,Ari Aster,Toni Collette,Alex Wolff,Milly Shapiro,Horror,hereditary,Toni Collette Alex Wolff Milly Shapiro Ari Aster Horror
+591,Richie Moore,Russell Geoffrey Banks,Sara Malakul Lane,Margaret Roche,Horror,who's watching oliver,Russell Geoffrey Banks Sara Malakul Lane Margaret Roche Richie Moore Horror
+592,Gerard McMurray,Y'lan Noel,Lex Scott Davis,Joivan Wade,Horror,the first purge,Y'lan Noel Lex Scott Davis Joivan Wade Gerard McMurray Horror
+593,Stephen Susco,Colin Woodell,Rebecca Rittenhouse,Betty Gabriel,Horror,unfriended: dark web,Colin Woodell Rebecca Rittenhouse Betty Gabriel Stephen Susco Horror
+594,Ben Young,Michael PeÃ±a,Lizzy Caplan,Mike Colter,Horror,extinction,Michael PeÃ±a Lizzy Caplan Mike Colter Ben Young Horror
+595,Sylvain White,Julia Goldani Telles,Joey King,Jaz Sinclair,Horror,slender man,Julia Goldani Telles Joey King Jaz Sinclair Sylvain White Horror
+596,Rodrigo CortÃ©s,AnnaSophia Robb,Isabelle Fuhrman,Victoria Moroles,Horror,down a dark hall,AnnaSophia Robb Isabelle Fuhrman Victoria Moroles Rodrigo CortÃ©s Horror
+597,Corin Hardy,DemiÃ¡n Bichir,Taissa Farmiga,Jonas Bloquet,Horror,the nun,DemiÃ¡n Bichir Taissa Farmiga Jonas Bloquet Corin Hardy Horror
+598,Stephen Cognetti,Vasile Flutur,Jillian Geurts,Joy Shatz,Horror,hell house llc ii: the abaddon hotel,Vasile Flutur Jillian Geurts Joy Shatz Stephen Cognetti Horror
+599,Gregory Plotkin,Amy Forsyth,Reign Edwards,Bex Taylor-Klaus,Horror,hell fest,Amy Forsyth Reign Edwards Bex Taylor-Klaus Gregory Plotkin Horror
+600,David Gordon Green,Jamie Lee Curtis,Judy Greer,Andi Matichak,Horror,halloween,Jamie Lee Curtis Judy Greer Andi Matichak David Gordon Green Horror
+601,Luca Guadagnino,Dakota Johnson,Tilda Swinton,Mia Goth,Horror,suspiria,Dakota Johnson Tilda Swinton Mia Goth Luca Guadagnino Horror
+602,Julius Avery,Jovan Adepo,Wyatt Russell,Mathilde Ollivier,Horror,overlord,Jovan Adepo Wyatt Russell Mathilde Ollivier Julius Avery Horror
+603,Diederik van Rooijen,Shay Mitchell,Grey Damon,Kirby Johnson,Horror,the possession of hannah grace,Shay Mitchell Grey Damon Kirby Johnson Diederik van Rooijen Horror
+604,Adam Robitel ,Taylor Russell,Logan Miller,Deborah Ann Woll,Horror,escape room,Taylor Russell Logan Miller Deborah Ann Woll Adam Robitel  Horror
+605,Timothy Woodward Jr. ,Lin Shaye,Michael Welch,Melissa Bolona,Horror,the final wish,Lin Shaye Michael Welch Melissa Bolona Timothy Woodward Jr.  Horror
+606,Nicholas McCarthy ,Taylor Schilling,Peter Mooney,Colm Feore,Horror,the prodigy,Taylor Schilling Peter Mooney Colm Feore Nicholas McCarthy  Horror
+607,Jordan Peele,Lupita Nyong'o,Winston Duke,Shahadi Wright Joseph,Horror,us,Lupita Nyong'o Winston Duke Shahadi Wright Joseph Jordan Peele Horror
+608,"Kevin Kolsch, Dennis Widmyer",Jason Clarke,Amy Seimetz,John Lithgow,Horror,pet sematary,"Jason Clarke Amy Seimetz John Lithgow Kevin Kolsch, Dennis Widmyer Horror"
+609,Daniel Farrands,Hilary Duff,Jonathan Bennett,Lydia Hearst,Horror,the haunting of sharon tate,Hilary Duff Jonathan Bennett Lydia Hearst Daniel Farrands Horror
+610,John R. Leonetti ,Kiernan Shipka,Stanley Tucci,Miranda Otto,Horror,the silence,Kiernan Shipka Stanley Tucci Miranda Otto John R. Leonetti  Horror
+611,Michael Chaves ,Linda Cardellini,Raymond Cruz,Patricia Velasquez,Horror,the curse of la llorona,Linda Cardellini Raymond Cruz Patricia Velasquez Michael Chaves  Horror
+612,Josh Lobo,A. J. Bowen,Scott Poythress,Susan Burke,Horror,i trapped the devil,A. J. Bowen Scott Poythress Susan Burke Josh Lobo Horror
+613,Roxanne Benjamin,Karina Fontes,Casey Adams,Emily Althaus,Horror,body at brighton rock,Karina Fontes Casey Adams Emily Althaus Roxanne Benjamin Horror
+614,David Yarovesky ,Elizabeth Banks,David Denman,Jackson A. Dunn,Horror,brightburn,Elizabeth Banks David Denman Jackson A. Dunn David Yarovesky  Horror
+615,Richard Shepard,Allison Williams,Logan Browning,Steven Weber,Horror,the perfection,Allison Williams Logan Browning Steven Weber Richard Shepard Horror
+616,Tate Taylor,Octavia Spencer,Juliette Lewis,Diana Silvers,Horror,ma,Octavia Spencer Juliette Lewis Diana Silvers Tate Taylor Horror
+617,Nisha Ganatra ,Emma Thompson,Mindy Kaling,Max Casella,Horror,late night,Emma Thompson Mindy Kaling Max Casella Nisha Ganatra  Horror
+618,Lars Klevberg ,Aubrey Plaza,Gabriel Bateman,Brian Tyree Henry,Horror,child's play,Aubrey Plaza Gabriel Bateman Brian Tyree Henry Lars Klevberg  Horror
+619,Gary Dauberman,Mckenna Grace,Madison Iseman,Katie Sarife,Horror,annabelle comes home,Mckenna Grace Madison Iseman Katie Sarife Gary Dauberman Horror
+620,Ari Aster,Florence Pugh,Jack Reynor,William Jackson Harper,Horror,midsommar,Florence Pugh Jack Reynor William Jackson Harper Ari Aster Horror
+621,Pollyanna Mcintosh,Pollyanna McIntosh,Cooper Andrews,Nora-Jane Noone,Horror,darlin',Pollyanna McIntosh Cooper Andrews Nora-Jane Noone Pollyanna Mcintosh Horror
+622,AndrÃ© Ãvredal,Zoe Colletti,Michael Garza,Gabriel Rush,Horror,scary stories to tell in the dark,Zoe Colletti Michael Garza Gabriel Rush AndrÃ© Ãvredal  Horror
+623,Johannes Roberts,John Corbett,Nia Long,Sophie Nelisse,Horror,47 meters down: uncaged,John Corbett Nia Long Sophie Nelisse Johannes Roberts Horror
+624,Micah Gallo ,Bruce Davison,Denise Crosby,Elizabeth Roberts,Horror,itsy bitsy,Bruce Davison Denise Crosby Elizabeth Roberts Micah Gallo  Horror
+625,Andy Muschietti ,James McAvoy,Jessica Chastain,Bill Hader,Horror,it chapter two,James McAvoy Jessica Chastain Bill Hader Andy Muschietti  Horror
+626,Chelsea Stardust ,Hayley Griffith,Ruby Modine,Arden Myrin,Horror,satanic panic,Hayley Griffith Ruby Modine Arden Myrin Chelsea Stardust  Horror
+627,Vincenzo Natali,Patrick Wilson,Harrison Gilbertson,Rachel Wilson,Horror,in the tall grass,Patrick Wilson Harrison Gilbertson Rachel Wilson Vincenzo Natali Horror
+628,Abe Forsythe,Lupita Nyong'o,Alexander England,Josh Gad,Horror,little monsters,Lupita Nyong'o Alexander England Josh Gad Abe Forsythe Horror
+629,Lars Klevberg ,Kathryn Prescott,Grace Zabriskie,Samantha Logan,Horror,polaroid,Kathryn Prescott Grace Zabriskie Samantha Logan Lars Klevberg  Horror
+630,Babak Anvari,Armie Hammer,Dakota Johnson,Zazie Beetz,Horror,wounds,Armie Hammer Dakota Johnson Zazie Beetz Babak Anvari Horror
+631,Justin Dec,Elizabeth Lail,Peter Facinelli,Anne Winters,Horror,countdown,Elizabeth Lail Peter Facinelli Anne Winters Justin Dec Horror
+632,"Chris Lofing, Travis Cluff",Chris Milligan,Ema Horvath,Brittany Falardeau,Horror,the gallows act ii,"Chris Milligan Ema Horvath Brittany Falardeau Chris Lofing, Travis Cluff Horror"
+633,Mike Flanagan,Ewan McGregor,Rebecca Ferguson,Kyliegh Curran,Horror,doctor sleep,Ewan McGregor Rebecca Ferguson Kyliegh Curran Mike Flanagan Horror
+634,Adam Egypt Mortimer,Miles Robbins,Patrick Schwarzenegger,Sasha Lane,Horror,daniel isn't real,Miles Robbins Patrick Schwarzenegger Sasha Lane Adam Egypt Mortimer Horror
+635,Sophia Takal,Imogen Poots,Lily Donoghue,Aleyse Shannon,Horror,black christmas,Imogen Poots Lily Donoghue Aleyse Shannon Sophia Takal Horror
+636,Nicolas Pesce,Andrea Riseborough,DemiÃ¡n Bichir,John Cho,Horror Mystery Thriller,the grudge,Andrea Riseborough DemiÃ¡n Bichir John Cho Nicolas Pesce Horror Mystery Thriller
+637,William Eubank,Kristen Stewart,Vincent Cassel,Jessica Henwick,Horror Science Fiction Action Adventure,underwater,Kristen Stewart Vincent Cassel Jessica Henwick William Eubank Horror Science Fiction Action Adventure
+638,Andrew Desmond,Freya Tingley,Simon Abkarian,Rutger Hauer,Horror Thriller Mystery,the sonata,Freya Tingley Simon Abkarian Rutger Hauer Andrew Desmond Horror Thriller Mystery
+639,Floria Sigismondi,Mackenzie Davis,Finn Wolfhard,Brooklynn Prince,Horror Thriller,the turning,Mackenzie Davis Finn Wolfhard Brooklynn Prince Floria Sigismondi Horror Thriller
+640,Oz Perkins,Sophia Lillis,Sammy Leakey,Charles Babalola,Fantasy Horror Mystery,gretel & hansel,Sophia Lillis Sammy Leakey Charles Babalola Oz Perkins Fantasy Horror Mystery
+641,"Veronika Franz, Severin Fiala",Riley Keough,Jaeden Martell,Lia McHugh,Horror,the lodge,"Riley Keough Jaeden Martell Lia McHugh Veronika Franz, Severin Fiala Horror"
+642,Jeff Wadlow,Michael PeÃ±a,Maggie Q,Lucy Hale,Horror Fantasy Adventure Mystery,fantasy island,Michael PeÃ±a Maggie Q Lucy Hale Jeff Wadlow Horror Fantasy Adventure Mystery
+643,William Brent Bell,Katie Holmes,Owain Yeoman,Christopher Convery,Horror Mystery Thriller,brahms: the boy ii,Katie Holmes Owain Yeoman Christopher Convery William Brent Bell Horror Mystery Thriller
+644,Leigh Whannell,Elisabeth Moss,Aldis Hodge,Storm Reid,Thriller Science Fiction Horror,the invisible man,Elisabeth Moss Aldis Hodge Storm Reid Leigh Whannell Thriller Science Fiction Horror
+645,Carlo Mirabella-Davis,Haley Bennett,Austin Stowell,Elizabeth Marvel,Drama Thriller Horror,swallow,Haley Bennett Austin Stowell Elizabeth Marvel Carlo Mirabella-Davis Drama Thriller Horror
+646,Craig Zobel,Betty Gilpin,Ike Barinholtz,Amy Madigan,Action Thriller Horror,the hunt,Betty Gilpin Ike Barinholtz Amy Madigan Craig Zobel Action Thriller Horror
+647,Marc Meyers,Alexandra Daddario,Keean Johnson,Logan Miller,Horror Thriller,we summon the darkness,Alexandra Daddario Keean Johnson Logan Miller Marc Meyers Horror Thriller
+648,Charles Band,Cody Renee Cameron,Russell Coker,Robin Sydney,Horror Comedy,corona zombies,Cody Renee Cameron Russell Coker Robin Sydney Charles Band Horror Comedy
+649,The Pierce Brothers,John-Paul Howard,Piper Curda,Zarah Mahler,Horror Mystery Thriller,the wretched,John-Paul Howard Piper Curda Zarah Mahler The Pierce Brothers Horror Mystery Thriller
+650,Malik Vitthal,Mary J. Blige,Nat Wolff,David Zayas,Horror Thriller Mystery,body cam,Mary J. Blige Nat Wolff David Zayas Malik Vitthal Horror Thriller Mystery
+651,Natalie Erika James,Emily Mortimer,Robyn Nevin,Bella Heathcote,Horror Mystery Thriller,relic,Emily Mortimer Robyn Nevin Bella Heathcote Natalie Erika James Horror Mystery Thriller
+652,Eric Bress,Brenton Thwaites,Theo Rossi,Skylar Astin,Horror Thriller War Fantasy,ghosts of war,Brenton Thwaites Theo Rossi Skylar Astin Eric Bress Horror Thriller War Fantasy
+653,Dave Franco,Dan Stevens,Alison Brie,Sheila Vand,Horror Mystery Thriller,the rental,Dan Stevens Alison Brie Sheila Vand Dave Franco Horror Mystery Thriller
+654,Eugene Kotlyarenko,Joe Keery,Sasheer Zamata,Mischa Barton,Comedy Crime Horror,spree,Joe Keery Sasheer Zamata Mischa Barton Eugene Kotlyarenko Comedy Crime Horror
+655,Josh Boone,Maisie Williams,Anya Taylor-Joy,Charlie Heaton,Science Fiction Horror Action Adventure,the new mutants,Maisie Williams Anya Taylor-Joy Charlie Heaton Josh Boone Science Fiction Horror Action Adventure
+656,Julius Berg,Maisie Williams,Sylvester McCoy,Rita Tushingham,Horror Mystery Thriller,the owners,Maisie Williams Sylvester McCoy Rita Tushingham Julius Berg Horror Mystery Thriller
+657,McG,Judah Lewis,Emily Alyn Lind,Jenna Ortega,Comedy Horror,the babysitter: killer queen,Judah Lewis Emily Alyn Lind Jenna Ortega McG Comedy Horror
+658,Jon Stevenson,Wil Wheaton,Brian Landis Folkins,Kathleen Brady,Horror Thriller,rent-a-pal,Wil Wheaton Brian Landis Folkins Kathleen Brady Jon Stevenson Horror Thriller
+659,"Gerard Bush, Christopher Renz",Janelle MonÃ¡e,Eric Lange,Jena Malone,Horror,antebellum,"Janelle MonÃ¡e Eric Lange Jena Malone Gerard Bush, Christopher Renz Horror"
+660,Sean Durkin,Jude Law,Carrie Coon,Charlie Shotwell,Thriller Science Fiction Horror,the nest,Jude Law Carrie Coon Charlie Shotwell Sean Durkin Thriller Science Fiction Horror
+661,Brian Duffield,Katherine Langford,Charlie Plummer,Hayley Law,Comedy Horror,spontaneous,Katherine Langford Charlie Plummer Hayley Law Brian Duffield Comedy Horror
+662,Osmany Rodriguez,Jaden Michael,Gerald W. Jones III,Gregory Diaz IV,Comedy Horror,vampires vs. the bronx,Jaden Michael Gerald W. Jones III Gregory Diaz IV Osmany Rodriguez Comedy Horror
+663,Brandon Cronenberg,Andrea Riseborough,Christopher Abbott,Rossif Sutherland,Horror Thriller Science Fiction,possessor,Andrea Riseborough Christopher Abbott Rossif Sutherland Brandon Cronenberg Horror Thriller Science Fiction
+664,Darren Lynn Bousman,Maggie Q,Alex Essoe,Luke Hemsworth,Horror Mystery,death of me,Maggie Q Alex Essoe Luke Hemsworth Darren Lynn Bousman Horror Mystery
+665,Veena Sud,Mireille Enos,Peter Sarsgaard,Joey King,Horror Mystery Thriller,the lie,Mireille Enos Peter Sarsgaard Joey King Veena Sud Horror Mystery Thriller
+666,Steven Brill,Adam Sandler,Kevin James,Julie Bowen,Comedy Mystery Horror,hubie halloween,Adam Sandler Kevin James Julie Bowen Steven Brill Comedy Mystery Horror
+667,Brannon Braga,Britt Robertson,Anna Friel,Rafi Gavron,Horror Science Fiction,books of blood,Britt Robertson Anna Friel Rafi Gavron Brannon Braga Horror Science Fiction
+668,Zu Quirke,Sydney Sweeney,Madison Iseman,Jacques Colimon,Horror Mystery Thriller Music,nocturne,Sydney Sweeney Madison Iseman Jacques Colimon Zu Quirke Horror Mystery Thriller Music
+669,"Elan Dassani, Rajeev Dassani",Sarita Choudhury,Sunita Mani,Omar Maskati,Mystery Thriller Horror,evil eye,"Sarita Choudhury Sunita Mani Omar Maskati Elan Dassani, Rajeev Dassani Mystery Thriller Horror"
+670,Johnny Martin,Tyler Posey,Summer Spiro,Robert Ri'chard,Thriller Horror,alone,Tyler Posey Summer Spiro Robert Ri'chard Johnny Martin Thriller Horror
+671,Robert Zemeckis,Anne Hathaway,Octavia Spencer,Stanley Tucci,Fantasy Family Horror,the witches,Anne Hathaway Octavia Spencer Stanley Tucci Robert Zemeckis Fantasy Family Horror
+672,David Prior,James Badge Dale,Marin Ireland,Stephen Root,Horror Mystery Thriller,the empty man,James Badge Dale Marin Ireland Stephen Root David Prior Horror Mystery Thriller
+673,Justin Simien,Elle Lorraine,Vanessa Williams,Jay Pharoah,Horror Comedy,bad hair,Elle Lorraine Vanessa Williams Jay Pharoah Justin Simien Horror Comedy
+674,Zoe Lister-Jones,Cailee Spaeny,Gideon Adlon,Lovie Simone,Horror Drama Fantasy,the craft: legacy,Cailee Spaeny Gideon Adlon Lovie Simone Zoe Lister-Jones Horror Drama Fantasy
+675,Jacob Chase,Gillian Jacobs,John Gallagher Jr.,Azhy Robertson,Horror Mystery Thriller,come play,Gillian Jacobs John Gallagher Jr. Azhy Robertson Jacob Chase Horror Mystery Thriller
+676,Terry Ross,Mark Valeriano,Honey Lauren,John Salandria,Fantasy Horror Thriller,sweet taste of souls,Mark Valeriano Honey Lauren John Salandria Terry Ross Fantasy Horror Thriller
+677,Bryan Bertino,Marin Ireland,Michael Abbott Jr.,Xander Berkeley,Horror Drama Mystery,the dark and the wicked,Marin Ireland Michael Abbott Jr. Xander Berkeley Bryan Bertino Horror Drama Mystery
+678,Christopher Landon,Vince Vaughn,Kathryn Newton,Katie Finneran,Comedy Horror Thriller,freaky,Vince Vaughn Kathryn Newton Katie Finneran Christopher Landon Comedy Horror Thriller
+679,Aneesh Chaganty,Sarah Paulson,Kiera Allen,Pat Healy,Thriller Horror Drama,run,Sarah Paulson Kiera Allen Pat Healy Aneesh Chaganty Thriller Horror Drama
+680,John Suits,Cody Kearsley,Bruce Willis,Thomas Jane,Science Fiction Action Horror,breach,Cody Kearsley Bruce Willis Thomas Jane John Suits Science Fiction Action Horror
+681,Roseanne Liang,ChloÃ« Grace Moretz,Taylor John Smith,Beulah Koale,Horror Action War,shadow in the cloud,ChloÃ« Grace Moretz Taylor John Smith Beulah Koale Roseanne Liang Horror Action War
+682,Mike P. Nelson,Charlotte Vega,Adain Bradley,Bill Sage,Horror Thriller,wrong turn,Charlotte Vega Adain Bradley Bill Sage Mike P. Nelson Horror Thriller
+683,Kevin Lewis,Nicolas Cage,Emily Tosta,Ric Reitz,Action Horror Comedy,willy's wonderland,Nicolas Cage Emily Tosta Ric Reitz Kevin Lewis Action Horror Comedy
+684,Castille Landon,Katherine Heigl,Madison Iseman,Israel Broussard,Thriller Horror Drama,fear of rain,Katherine Heigl Madison Iseman Israel Broussard Castille Landon Thriller Horror Drama
+685,Keith Thomas,Dave Davis,Menashe Lustig,Malky Goldman,Horror Mystery,the vigil,Dave Davis Menashe Lustig Malky Goldman Keith Thomas Horror Mystery
+686,Steve Basilone,Finn Wittrock,Zoe Chao,Casey Wilson,Horror Mystery Thriller,long weekend,Finn Wittrock Zoe Chao Casey Wilson Steve Basilone Horror Mystery Thriller
+687,Justin P. Lange,Guy Pearce,Vadhir Derbez,Stephen Lang,Horror,the seventh day,Guy Pearce Vadhir Derbez Stephen Lang Justin P. Lange Horror
+688,Evan Spiliotopoulos,Jeffrey Dean Morgan,Katie Aselton,William Sadler,Horror Mystery,the unholy,Jeffrey Dean Morgan Katie Aselton William Sadler Evan Spiliotopoulos Horror Mystery
+689,Bruce Wemple,Francesca Anderson,AdriÃ¡n Burke,Chris Cimperman,Horror Mystery,dawn of the beast,Francesca Anderson AdriÃ¡n Burke Chris Cimperman Bruce Wemple Horror Mystery
+690,Ben Wheatley,Joel Fry,Reece Shearsmith,Hayley Squires,Horror Science Fiction Thriller,in the earth,Joel Fry Reece Shearsmith Hayley Squires Ben Wheatley Horror Science Fiction Thriller
+691,Chad Ferrin,Gina La Piana,Robert Miano,Johann Urb,Horror Science Fiction,the deep ones,Gina La Piana Robert Miano Johann Urb Chad Ferrin Horror Science Fiction
+692,Shari Springer Berman and Robert Pulcini,Amanda Seyfried,James Norton,Natalia Dyer,Horror,things heard & seen,Amanda Seyfried James Norton Natalia Dyer Shari Springer Berman and Robert Pulcini Horror
+693,William Brent Bell,Rupert Friend,Mamie Gummer,Violet McGraw,Horror Mystery,separation,Rupert Friend Mamie Gummer Violet McGraw William Brent Bell Horror Mystery
+694,Taylor Chien,Brock O'Hurn,Avery Pascual,Michael Vlamis,Horror,the resort,Brock O'Hurn Avery Pascual Michael Vlamis Taylor Chien Horror
+695,Karl Holt,Karl Holt,Claire Cartwright,David Wayman,Horror Comedy,benny loves you,Karl Holt Claire Cartwright David Wayman Karl Holt Horror Comedy
+696,Zack Snyder,Dave Bautista,Ella Purnell,Omari Hardwick,Action Crime Horror,army of the dead,Dave Bautista Ella Purnell Omari Hardwick Zack Snyder Action Crime Horror
+697,Darren Lynn Bousman,Chris Rock,Max Minghella,Marisol Nichols,Drama Thriller Horror,spiral,Chris Rock Max Minghella Marisol Nichols Darren Lynn Bousman Drama Thriller Horror
+698,"Mark S. Allen, Dante Yore",John Littlefield,Eric Roberts,Alyson Gorske,Horror Action,616 wilford lane,"John Littlefield Eric Roberts Alyson Gorske Mark S. Allen, Dante Yore Horror Action"
+699,Glenn Miller,Vivica A. Fox,Eva Ceja,D. C. Douglas,Horror Action Comedy,aquarium of the dead,Vivica A. Fox Eva Ceja D. C. Douglas Glenn Miller Horror Action Comedy
+700,John Krasinski,Emily Blunt,Cillian Murphy,Millicent Simmonds,Science Fiction Thriller Horror,a quiet place part ii,Emily Blunt Cillian Murphy Millicent Simmonds John Krasinski Science Fiction Thriller Horror
+701,Michael Chaves,Patrick Wilson,Vera Farmiga,Ruairi O'Connor,Horror Mystery Thriller,the conjuring: the devil made me do it,Patrick Wilson Vera Farmiga Ruairi O'Connor Michael Chaves Horror Mystery Thriller
+702,Tyler Savage,Christine Ko,Vincent van Horn,Michael Joplin,Thriller Horror,stalker,Christine Ko Vincent van Horn Michael Joplin Tyler Savage Thriller Horror
+703,Josh Ruben,Sam Richardson,Milana Vayntrub,George Basil,Horror Comedy Fantasy,werewolves within,Sam Richardson Milana Vayntrub George Basil Josh Ruben Horror Comedy Fantasy
+704,John Lee,Ilana Glazer,Justin Theroux,Sophia Bush,Horror Mystery Thriller,false positive,Ilana Glazer Justin Theroux Sophia Bush John Lee Horror Mystery Thriller
+705,Everardo Gout,Ana de la Reguera,Tenoch Huerta,Josh Lucas,Horror Action Thriller,the forever purge,Ana de la Reguera Tenoch Huerta Josh Lucas Everardo Gout Horror Action Thriller
+706,Leigh Janiak,Kiana Madeira,Olivia Scott Welch,Benjamin Flores Jr.,Mystery Horror,fear street part one: 1994,Kiana Madeira Olivia Scott Welch Benjamin Flores Jr. Leigh Janiak Mystery Horror
+707,S.K. Dale,Megan Fox,Eoin Macken,Callan Mulvey,Horror Thriller,till death,Megan Fox Eoin Macken Callan Mulvey S.K. Dale Horror Thriller
+708,Craig Moss,Mackenzie Moss,Sadie Stanley,Mackenzie Ziegler,Science Fiction Thriller Horror,let us in,Mackenzie Moss Sadie Stanley Mackenzie Ziegler Craig Moss Science Fiction Thriller Horror
+709,Leigh Janiak,Sadie Sink,Emily Rudd,Ryan Simpkins,Mystery Horror,fear street part two: 1978,Sadie Sink Emily Rudd Ryan Simpkins Leigh Janiak Mystery Horror
+710,Adam Robitel,Taylor Russell,Logan Miller,Indya Moore,Horror Thriller Mystery,escape room: tournament of champions,Taylor Russell Logan Miller Indya Moore Adam Robitel Horror Thriller Mystery
+711,Leigh Janiak,Kiana Madeira,Ashley Zukerman,Gillian Jacobs,Mystery Horror,fear street part three: 1666,Kiana Madeira Ashley Zukerman Gillian Jacobs Leigh Janiak Mystery Horror
+712,M. Night Shyamalan,Gael GarcÃ­a Bernal,Vicky Krieps,Rufus Sewell,Thriller Mystery Horror,old,Gael GarcÃ­a Bernal Vicky Krieps Rufus Sewell M. Night Shyamalan Thriller Mystery Horror
+713,Pascual Sisto,Charlie Shotwell,Michael C. Hall,Jennifer Ehle,Drama Thriller Horror,john and the hole,Charlie Shotwell Michael C. Hall Jennifer Ehle Pascual Sisto Drama Thriller Horror
+714,Rodo Sayagues,Stephen Lang,Brendan Sexton III,Madelyn Grace,Thriller Horror,don't breathe 2,Stephen Lang Brendan Sexton III Madelyn Grace Rodo Sayagues Thriller Horror
+715,David Bruckner,Rebecca Hall,Sarah Goldberg,Evan Jonigkeit,Drama Horror Mystery Thriller,the night house,Rebecca Hall Sarah Goldberg Evan Jonigkeit David Bruckner Drama Horror Mystery Thriller
+716,Neill Blomkamp,Carly Pope,Chris William Martin,Michael Rogers,Thriller Horror,demonic,Carly Pope Chris William Martin Michael Rogers Neill Blomkamp Thriller Horror
+717,Nia DaCosta,Yahya Abdul-Mateen II,Teyonah Parris,Nathan Stewart-Jarrett,Drama Horror Thriller,candyman,Yahya Abdul-Mateen II Teyonah Parris Nathan Stewart-Jarrett Nia DaCosta Drama Horror Thriller
+718,Vibeke Muasya,Siobhan Fallon Hogan,Ellie Frankel,Robert Patrick,Mystery Thriller Horror Drama Crime,rushed,Siobhan Fallon Hogan Ellie Frankel Robert Patrick Vibeke Muasya Mystery Thriller Horror Drama Crime
+719,Sean King O'Grady,Sierra McCormick,Vinessa Shaw,Pat Healy,Horror Mystery,we need to do something,Sierra McCormick Vinessa Shaw Pat Healy Sean King O'Grady Horror Mystery
+720,James Wan,Annabelle Wallis,Maddie Hasson,George Young,Horror,malignant,Annabelle Wallis Maddie Hasson George Young James Wan Horror
+721,"Scott B. Hansen, Desiree Connell",Zach Galligan,Derek Russo,Corey Taylor,Horror,bad candy,"Zach Galligan Derek Russo Corey Taylor Scott B. Hansen, Desiree Connell Horror"
+722,David Yarovesky,Winslow Fegley,Lidya Jewett,Krysten Ritter,Fantasy Family Horror,nightbooks,Winslow Fegley Lidya Jewett Krysten Ritter David Yarovesky Fantasy Family Horror
+723,Sion Sono,Nicolas Cage,Sofia Boutella,Bill Moseley,Action Fantasy Horror,prisoners of the ghostland,Nicolas Cage Sofia Boutella Bill Moseley Sion Sono Action Fantasy Horror
+724,Gigi Saul Guerrero,L. Scott Caldwell,Adriana Barraza,Joshua Caleb Johnson,Thriller Horror,bingo hell,L. Scott Caldwell Adriana Barraza Joshua Caleb Johnson Gigi Saul Guerrero Thriller Horror
+725,Maritte Lee Go,Ashja Cooper,Theodus Crane,Kenneisha Thompson,Horror Thriller,black as night,Ashja Cooper Theodus Crane Kenneisha Thompson Maritte Lee Go Horror Thriller
+726,Patrick Brice,Sydney Park,Theodore Pellerin,Asjha Cooper,Horror Mystery,there's someone inside your house,Sydney Park Theodore Pellerin Asjha Cooper Patrick Brice Horror Mystery
+727,Axelle Carolyn,Barbara Hershey,Bruce Davison,Stacey Travis,Horror,the manor,Barbara Hershey Bruce Davison Stacey Travis Axelle Carolyn Horror
+728,David Gordon Green,Jamie Lee Curtis,Judy Greer,Andi Matichak,Horror Thriller,halloween kills,Jamie Lee Curtis Judy Greer Andi Matichak David Gordon Green Horror Thriller
+729,Adam Randall,Jorge Lendeborg Jr.,Debby Ryan,Lucy Fry,Horror Thriller Action,night teeth,Jorge Lendeborg Jr. Debby Ryan Lucy Fry Adam Randall Horror Thriller Action
+730,Scott Cooper,Keri Russell,Jesse Plemons,Jeremy T. Thomas,Drama Horror Mystery,antlers,Keri Russell Jesse Plemons Jeremy T. Thomas Scott Cooper Drama Horror Mystery
+731,William Eubank,Emily Bader,Roland Buck III,Dan Lippert,Horror Mystery,paranormal activity: next of kin,Emily Bader Roland Buck III Dan Lippert William Eubank Horror Mystery
+732,"Philip Gelatt, Morgan Galen King",Richard E. Grant,Lucy Lawless,Patton Oswalt,Animation Fantasy Action Horror,the spine of night,"Richard E. Grant Lucy Lawless Patton Oswalt Philip Gelatt, Morgan Galen King Animation Fantasy Action Horror"
+733,"Jim Cummings, PJ McCabe",Jim Cummings,Virginia Newcomb,PJ McCabe,Thriller Horror Comedy,the beta test,"Jim Cummings Virginia Newcomb PJ McCabe Jim Cummings, PJ McCabe Thriller Horror Comedy"
+734,Brian Patrick Butler,Nick Young,Alexandra Slade,Michael C. Burgess,Comedy Science Fiction Horror,friend of the world,Nick Young Alexandra Slade Michael C. Burgess Brian Patrick Butler Comedy Science Fiction Horror
+735,Johannes Roberts,Kaya Scodelario,Hannah John-Kamen,Robbie Amell,Horror Science Fiction Action,resident evil: welcome to raccoon city,Kaya Scodelario Hannah John-Kamen Robbie Amell Johannes Roberts Horror Science Fiction Action
+736,Patricia Harris Seeley,Autumn Reeser,Danny Trejo,Antonio Cupo,Family Animation Fantasy Horror,the legend of la llorona,Autumn Reeser Danny Trejo Antonio Cupo Patricia Harris Seeley Family Animation Fantasy Horror
+737,"Matt Bettinelli-Olpin, Tyler Gillett",Melissa Barrera,Mason Gooding,Jenna Ortega,Horror Mystery Thriller,scream,"Melissa Barrera Mason Gooding Jenna Ortega Matt Bettinelli-Olpin, Tyler Gillett Horror Mystery Thriller"
+738,Justin Lee,Bruce Dern,Billy Zane,Tony Todd,Horror Action,hellblazers,Bruce Dern Billy Zane Tony Todd Justin Lee Horror Action
+739,Rich Ragsdale,Scout Taylor-Compton,Nolan Gerard Funk,Jeff Fahey,Horror,the long night,Scout Taylor-Compton Nolan Gerard Funk Jeff Fahey Rich Ragsdale Horror
+740,D. J. Caruso,Rainey Qualley,Jake Horowitz,Luciana VanDette,Thriller Horror Drama,shut in,Rainey Qualley Jake Horowitz Luciana VanDette D. J. Caruso Thriller Horror Drama
+741,David Blue Garcia,Sarah Yarkin,Elsie Fisher,Mark Burham,Horror Thriller,texas chainsaw massacre,Sarah Yarkin Elsie Fisher Mark Burham David Blue Garcia Horror Thriller
+742,Sean Ellis,Boyd Holbrook,Kelly Reilly,Alistair Petrie,Horror Drama Thriller,the cursed,Boyd Holbrook Kelly Reilly Alistair Petrie Sean Ellis Horror Drama Thriller
+743,B. J. McDonnell,Dave Grohl,Nate Mendel,Pat Smear,Horror Comedy Music,studio 666,Dave Grohl Nate Mendel Pat Smear B. J. McDonnell Horror Comedy Music
+744,Mimi Cave,Daisy Edgar-Jones,Sebastian Stan,Jonica T. Gibbs,Horror Thriller,fresh,Daisy Edgar-Jones Sebastian Stan Jonica T. Gibbs Mimi Cave Horror Thriller
+745,Ti West,Mia Goth,Jenna Ortega,Martin Henderson,Horror Thriller,x,Mia Goth Jenna Ortega Martin Henderson Ti West Horror Thriller
+746,Iris K. Shim,Sandra Oh,Fivel Stewart,Dermot Mulroney,Horror Mystery Drama,umma,Sandra Oh Fivel Stewart Dermot Mulroney Iris K. Shim Horror Mystery Drama
+747,Mariama Diallo,Regina Hall,Zoe Renee,Amber Gray,Horror Thriller Drama Mystery,master,Regina Hall Zoe Renee Amber Gray Mariama Diallo Horror Thriller Drama Mystery
+748,Roshan Sethi,Karan Soni,Geraldine Viswanathan,unknown,Crime Horror Drama Mystery Thriller,7 days,Karan Soni Geraldine Viswanathan unknown Roshan Sethi Crime Horror Drama Mystery Thriller
+749,Nick Lyon,Jamie Bamber,Keesha Sharp,AnnaLynne McCord,Mystery Thriller Horror,titanic 666,Jamie Bamber Keesha Sharp AnnaLynne McCord Nick Lyon Mystery Thriller Horror
+750,Sammi Cohen,Rowan Blanchard,Auli'i Cravalho,Isabella Ferreira,Drama Horror Thriller,crush,Rowan Blanchard Auli'i Cravalho Isabella Ferreira Sammi Cohen Drama Horror Thriller
+751,Emerson Moore,Jordan Claire Robbins,Theo Rossi,Tahirah Sharif,Thriller Horror,escape the field,Jordan Claire Robbins Theo Rossi Tahirah Sharif Emerson Moore Thriller Horror
+752,Keith Thomas,Zac Efron,Ryan Kiera Armstrong,Sydney Lemmon,Horror Thriller Science Fiction,firestarter,Zac Efron Ryan Kiera Armstrong Sydney Lemmon Keith Thomas Horror Thriller Science Fiction
+753,Chloe Okuno,Maika Monroe,Karl Glusman,Burn Gorman,Horror Mystery Thriller,watcher,Maika Monroe Karl Glusman Burn Gorman Chloe Okuno Horror Mystery Thriller
+754,Rob Savage,Annie Hardy,Amer Chadha-Patel,Angela Enahoro,Horror Thriller,dashcam,Annie Hardy Amer Chadha-Patel Angela Enahoro Rob Savage Horror Thriller
+755,Sonja O'Hara,Stephen Lang,Shane West,Bruce Dern,Horror Thriller Drama Mystery,mid-century,Stephen Lang Shane West Bruce Dern Sonja O'Hara Horror Thriller Drama Mystery
+756,Spencer Squire,Emma Roberts,John Gallagher Jr.,Michael Shannon,Horror Mystery Thriller Crime Drama,abandoned,Emma Roberts John Gallagher Jr. Michael Shannon Spencer Squire Horror Mystery Thriller Crime Drama
+757,Scott Derrickson,Ethan Hawke,Mason Thames,Madeleine McGraw,Horror Thriller,the black phone,Ethan Hawke Mason Thames Madeleine McGraw Scott Derrickson Horror Thriller
+758,Jordan Peele,Daniel Kaluuya,Keke Palmer,Steven Yeun,Horror Science Fiction Mystery,nope,Daniel Kaluuya Keke Palmer Steven Yeun Jordan Peele Horror Science Fiction Mystery
+759,Andrew Semans,Rebecca Hall,Grace Kaufman,Michael Esper,Crime Mystery Horror,resurrection,Rebecca Hall Grace Kaufman Michael Esper Andrew Semans Crime Mystery Horror
+760,Spider One,Krsy Fox,John Ennis,Bryce Johnson,Horror,allegoria,Krsy Fox John Ennis Bryce Johnson Spider One Horror
+761,Halina Reijn,Amandla Stenberg,Maria Bakalova,Myha'la Herrold,Comedy Horror Mystery,bodies bodies bodies,Amandla Stenberg Maria Bakalova Myha'la Herrold Halina Reijn Comedy Horror Mystery
+762,John Logan,Theo Germaine,Carrie Preston,Anna Chlumsky,Horror Thriller,they/them,Theo Germaine Carrie Preston Anna Chlumsky John Logan Horror Thriller
+763,J. J. Perry,Jamie Foxx,Dave Franco,Natasha Liu Bordizzo,Action Fantasy Horror Comedy,day shift,Jamie Foxx Dave Franco Natasha Liu Bordizzo J. J. Perry Action Fantasy Horror Comedy
+764,Baltasar KormÃ¡kur,Idris Elba,Sharlto Copley,Iyana Halley,Thriller Action Horror,beast,Idris Elba Sharlto Copley Iyana Halley Baltasar KormÃ¡kur Thriller Action Horror
+765,William Brent Bell,Isabelle Fuhrman,Rossif Sutherland,Hiro Kanagawa,Horror Thriller,orphan: first kill,Isabelle Fuhrman Rossif Sutherland Hiro Kanagawa William Brent Bell Horror Thriller
+766,Jessica M. Thompson,Nathalie Emmanuel,Thomas Doherty,Stephanie Corneliussen,Horror Thriller,the invitation,Nathalie Emmanuel Thomas Doherty Stephanie Corneliussen Jessica M. Thompson Horror Thriller
+767,Zach Cregger,Georgina Campbell,Bill SkarsgÃ¥rd,Justin Long,Horror Mystery Thriller,barbarian,Georgina Campbell Bill SkarsgÃ¥rd Justin Long Zach Cregger Horror Mystery Thriller
+768,Ti West,Mia Goth,David Corenswet,Tandi Wright,Horror Drama,pearl,Mia Goth David Corenswet Tandi Wright Ti West Horror Drama
+769,Matt Sobel,Naomi Watts,Cameron Crovetti,Nicholas Crovetti,Horror Thriller Mystery,goodnight mommy,Naomi Watts Cameron Crovetti Nicholas Crovetti Matt Sobel Horror Thriller Mystery
+770,Timo Vuorensola,Sydney Craven,Imran Adams,Dee Wallace,Horror Thriller Mystery,jeepers creepers: reborn,Sydney Craven Imran Adams Dee Wallace Timo Vuorensola Horror Thriller Mystery
+771,Parker Finn,Sosie Bacon,Jessie T. Usher,Kyle Gallner,Horror Mystery Thriller,smile,Sosie Bacon Jessie T. Usher Kyle Gallner Parker Finn Horror Mystery Thriller
+772,Damon Thomas,Elsie Fisher,Amiah Miller,Rachel Ogechi Kanu,Horror Comedy,my best friend's exorcism,Elsie Fisher Amiah Miller Rachel Ogechi Kanu Damon Thomas Horror Comedy
+773,John Lee Hancock,Donald Sutherland,Jaeden Martell,Joe Tippett,Drama Horror Mystery,mr. harrigan's phone,Donald Sutherland Jaeden Martell Joe Tippett John Lee Hancock Drama Horror Mystery
+774,Damien Leone,Lauren LaVera,Elliot Fullam,Sarah Voigt,Horror Thriller,terrifier 2,Lauren LaVera Elliot Fullam Sarah Voigt Damien Leone Horror Thriller
+775,David Bruckner,Odessa A'zion,Jamie Clayton,Adam Faison,Horror Mystery,hellraiser,Odessa A'zion Jamie Clayton Adam Faison David Bruckner Horror Mystery
+776,"Dan Berk, Robert Olsen",Maika Monroe,Jake Lacy,Matthew Yang King,Science Fiction Thriller Horror Mystery Drama,significant other,Maika Monroe Jake Lacy Matthew Yang King Dan Berk Robert Olsen Science Fiction Thriller Horror Mystery Drama
+777,John Ross,Sara Wolfkind,Shannyn Sossamon,Usman Ally,Horror,grimcutty,Sara Wolfkind Shannyn Sossamon Usman Ally John Ross Horror
+778,David Gordon Green,Jamie Lee Curtis,Andi Matichak,Rohan Campbell,Horror Thriller,halloween ends,Jamie Lee Curtis Andi Matichak Rohan Campbell David Gordon Green Horror Thriller
+779,Jeff Wadlow,Marlon Wayans,Priah Ferguson,Kelly Rowland,Adventure Comedy Horror Family,the curse of bridge hollow,Marlon Wayans Priah Ferguson Kelly Rowland Jeff Wadlow Adventure Comedy Horror Family
+780,Bill Posley,Tony Todd,unknown,unknown,Horror Mystery Thriller Crime,bitch ass,Tony Todd unknown unknown Bill Posley Horror Mystery Thriller Crime
+781,"Maggie Levin, Johannes Roberts, Flying Lotus, Tyler MacIntyre, Vanessa & Joseph Winter",Maggie Levin,Johannes Roberts,Flying Lotus,Horror Thriller,v/h/s/99,"Maggie Levin Johannes Roberts Flying Lotus Maggie Levin, Johannes Roberts, Flying Lotus, Tyler MacIntyre, Vanessa & Joseph Winter Horror Thriller"
+782,Henry Selick,Keegan-Michael Key,Jordan Peele,Angela Bassett,Animation Comedy Fantasy Horror,wendell & wild,Keegan-Michael Key Jordan Peele Angela Bassett Henry Selick Animation Comedy Fantasy Horror
+783,Daniel Stamm,Jacqueline Byers,Colin Salmon,Christian Navarro,Horror Thriller,prey for the devil,Jacqueline Byers Colin Salmon Christian Navarro Daniel Stamm Horror Thriller
+784,Shana Feste,Ella Balinska,Pilou AsbÃÂ¦k,Dayo Okeniyi,Thriller Horror,run sweetheart run,Ella Balinska Pilou AsbÃÂ¦k Dayo Okeniyi Shana Feste Thriller Horror
+785,"Justin Benson, Aaron Moorhead",Aaron Moorhead,Justin Benson,Sarah Adina Smith,Science Fiction Mystery Comedy Horror,something in the dirt,Aaron Moorhead Justin Benson Sarah Adina Smith Justin Benson Aaron Moorhead Science Fiction Mystery Comedy Horror
+786,Mark Mylod,Ralph Fiennes,Anya Taylor-Joy,Nicholas Hoult,Comedy Thriller Horror,the menu,Ralph Fiennes Anya Taylor-Joy Nicholas Hoult Mark Mylod Comedy Thriller Horror
+787,Luca Guadagnino,Taylor Russell,TimothÃÂ©e Chalamet,Michael Stuhlbarg,Drama Horror Romance,bones and all,Taylor Russell TimothÃÂ©e Chalamet Michael Stuhlbarg Luca Guadagnino Drama Horror Romance
+788,Nikyatu Jusu,Anna Diop,Michelle Monaghan,Sinqua Walls,Drama Horror,nanny,Anna Diop Michelle Monaghan Sinqua Walls Nikyatu Jusu Drama Horror
+789,Steven LaMorte,David Howard Thornton,Krystle Martin,Chase Mullins,Horror Comedy,the mean one,David Howard Thornton Krystle Martin Chase Mullins Steven LaMorte Horror Comedy
+790,Scott Cooper,Christian Bale,Harry Melling,Gillian Anderson,Thriller Crime Horror Mystery,the pale blue eye,Christian Bale Harry Melling Gillian Anderson Scott Cooper Thriller Crime Horror Mystery
+791,Gerard Johnstone,Allison Williams,Violet McGraw,Amie Donald,Science Fiction Horror,m3gan,Allison Williams Violet McGraw Amie Donald Gerard Johnstone Science Fiction Horror
+792,Nathan Frankowski,Alice Orr-Ewing,Joe Doyle,Eveline Hall,Horror Fantasy Science Fiction Thriller,the devil conspiracy,Alice Orr-Ewing Joe Doyle Eveline Hall Nathan Frankowski Horror Fantasy Science Fiction Thriller
+793,John Hyams,Gideon Adlon,Bethlehem Million,Marc Menchaca,Horror Mystery Thriller,sick,Gideon Adlon Bethlehem Million Marc Menchaca John Hyams Horror Mystery Thriller
+794,Roxanne Benjamin,Alisha Wainwright,Zach Gilford,Amanda Crew,Horror Mystery Thriller,there's something wrong with the children,Alisha Wainwright Zach Gilford Amanda Crew Roxanne Benjamin Horror Mystery Thriller
+795,Jason Eisener,Dominic Mariche,Phoebe Rex,Calem MacDonald,Horror Science Fiction Thriller,kids vs. aliens,Dominic Mariche Phoebe Rex Calem MacDonald Jason Eisener Horror Science Fiction Thriller
+796,Deon Taylor,Joseph Sikora,King Bach,Annie Ilonzeh,Horror Drama,fear,Joseph Sikora King Bach Annie Ilonzeh Deon Taylor Horror Drama
+797,M. Night Shyamalan,Dave Bautista,Jonathan Groff,Ben Aldridge,Thriller Mystery Horror,knock at the cabin,Dave Bautista Jonathan Groff Ben Aldridge M. Night Shyamalan Thriller Mystery Horror
+798,Bess Wohl,NoÃ©mie Merlant,Kit Harington,Meredith Hagner,Horror Thriller Drama,baby ruby,NoÃ©mie Merlant Kit Harington Meredith Hagner Bess Wohl Horror Thriller Drama
+799,Christopher Smith,Jena Malone,Danny Huston,Janet Suzman,Horror Thriller,consecration,Jena Malone Danny Huston Janet Suzman Christopher Smith Horror Thriller
+800,Robbie Banfitch,Robbie Banfitch,Angela Basolis,Scott Schamell,Horror Science Fiction Thriller,the outwaters,Robbie Banfitch Angela Basolis Scott Schamell Robbie Banfitch Horror Science Fiction Thriller
+801,Christopher Landon,David Harbour,Anthony Mackie,Jahi Di'Allo Winston,Comedy Fantasy Family Adventure Horror,we have a ghost,David Harbour Anthony Mackie Jahi Di'Allo Winston Christopher Landon Comedy Fantasy Family Adventure Horror
+802,Kurt Wimmer,Elena Kampouris,Kate Moyer,Callan Mulvey,Horror Thriller,children of the corn,Elena Kampouris Kate Moyer Callan Mulvey Kurt Wimmer Horror Thriller
+803,Yoko Okumura,Midori Francis,Jolene Purdy,Missi Pyle,Horror Mystery,unseen,Midori Francis Jolene Purdy Missi Pyle Yoko Okumura Horror Mystery
+804,J. Horton,Rachel Amanda Bryant,Al Gomez,Gregory Blair,Crime Horror Thriller,craving,Rachel Amanda Bryant Al Gomez Gregory Blair J. Horton Crime Horror Thriller
+805,"Matt Bettinelli-Olpin, Tyler Gillett",Melissa Barrera,Jasmin Savoy Brown,Jack Champion,Horror Crime Thriller,scream vi,"Melissa Barrera Jasmin Savoy Brown Jack Champion Matt Bettinelli-Olpin, Tyler Gillett Horror Crime Thriller"
+806,Jacob Byrd,Sydney Carvill,Wade Baker Janet Carter,Rob Shuster,Horror Mystery Drama,adalynn,Sydney Carvill Wade Baker Janet Carter Rob Shuster Jacob Byrd Horror Mystery Drama
+807,Anthony DiBlasi,Jessica Sula,Candice Coke,Chaney Morrow,Horror,malum,Jessica Sula Candice Coke Chaney Morrow Anthony DiBlasi Horror
+808,Chris McKay,Nicholas Hoult,Nicolas Cage,Awkwafina,Comedy Horror,renfield,Nicholas Hoult Nicolas Cage Awkwafina Chris McKay Comedy Horror
+809,Julius Avery,Russell Crowe,Alex Essoe,Daniel Zovatto,Horror Thriller,the pope's exorcist,Russell Crowe Alex Essoe Daniel Zovatto Julius Avery Horror Thriller
+810,Chuck Konzelman and Cary Solomon,Sean Patrick Flanery,Jordan Belfi,unknown,Horror Thriller,nefarious,Sean Patrick Flanery Jordan Belfi unknown Chuck Konzelman and Cary Solomon Horror Thriller
+811,Lee Cronin,Lily Sullivan,Alyssa Sutherland,Morgan Davies,Horror Thriller,evil dead rise,Lily Sullivan Alyssa Sutherland Morgan Davies Lee Cronin Horror Thriller
+812,Alexis Jacknow,Dianna Agron,Jay Ali,Melora Hardin,Horror Thriller,clock,Dianna Agron Jay Ali Melora Hardin Alexis Jacknow Horror Thriller
+813,Ryan Stevens Harris,Augie Duke,Haven Lee Harris,Morgana Ignis,Fantasy Horror Drama,moon garden,Augie Duke Haven Lee Harris Morgana Ignis Ryan Stevens Harris Fantasy Horror Drama
+814,"Matt Angel, Suzanne Coote",Lulu Wilson,Seann William Scott,Denise Burse,Action Horror Thriller,the wrath of becky,"Lulu Wilson Seann William Scott Denise Burse Matt Angel, Suzanne Coote Action Horror Thriller"
+815,Rob Savage,Sophie Thatcher,Chris Messina,Vivien Lyra Blair,Horror Thriller Mystery,the boogeyman,Sophie Thatcher Chris Messina Vivien Lyra Blair Rob Savage Horror Thriller Mystery
+816,Kelley Kali,Maisie Richardson-Sellers,Shannon Woodward,unknown,Horror,jagged mind,Maisie Richardson-Sellers Shannon Woodward unknown Kelley Kali Horror
+817,Tim Story,Grace Byers,Jermaine Fowler,Melvin Gregg,Horror Comedy,the blackening,Grace Byers Jermaine Fowler Melvin Gregg Tim Story Horror Comedy
+818,Vincent Shade,R.J. Mitte,Christian Stolte,William Mark McCullough,Action Horror Science Fiction Thriller,the unseen,R.J. Mitte Christian Stolte William Mark McCullough Vincent Shade Action Horror Science Fiction Thriller
+819,Patrick Wilson,Ty Simpkins,Patrick Wilson,Sinclair Daniel,Horror Thriller,insidious: the red door,Ty Simpkins Patrick Wilson Sinclair Daniel Patrick Wilson Horror Thriller
+820,Mark Polonia,Samantha Coolidge,Ryan Dalton,Natalie Himmelberger,Horror Science Fiction,cocaine shark,Samantha Coolidge Ryan Dalton Natalie Himmelberger Mark Polonia Horror Science Fiction
+821,Samuel Bodin,Lizzy Caplan,Woody Norman,Cleopatra Coleman,Horror,cobweb,Lizzy Caplan Woody Norman Cleopatra Coleman Samuel Bodin Horror
+822,Justin Simien,LaKeith Stanfield,Tiffany Haddish,Owen Wilson,Comedy Drama Horror Fantasy,haunted mansion,LaKeith Stanfield Tiffany Haddish Owen Wilson Justin Simien Comedy Drama Horror Fantasy
+823,Dan Bowhers,Morgan DeTogne,Michael Kowalski,Mike Headford,Horror Science Fiction Thriller Drama,blue hour: the disappearance of nick brandreth,Morgan DeTogne Michael Kowalski Mike Headford Dan Bowhers Horror Science Fiction Thriller Drama
+824,Anthony Leone,Felissa Rose,George Jac,Brian Patrick Butler,Horror Comedy,mike & fred vs the dead,Felissa Rose George Jac Brian Patrick Butler Anthony Leone Horror Comedy
+825,Ben Wheatley,Jason Statham,Wu Jing,Sophia Cai,Action Science Fiction Horror,meg 2: the trench,Jason Statham Wu Jing Sophia Cai Ben Wheatley Action Science Fiction Horror
+826,Carter Smith,Johnny Berchtold,Kyle Gallner,unknown,Crime Drama Horror Thriller,the passenger,Johnny Berchtold Kyle Gallner unknown Carter Smith Crime Drama Horror Thriller
+827,AndrÃ© Ãvredal,Corey Hawkins,Aisling Franciosi,Liam Cunningham,Horror Thriller,the last voyage of the demeter,Corey Hawkins Aisling Franciosi Liam Cunningham AndrÃ© Ãvredal Horror Thriller
+828,Laura Moss,Marin Ireland,Judy Reyes,A.J. Lister,Horror Mystery Thriller Drama Science Fiction,birth/rebirth,Marin Ireland Judy Reyes A.J. Lister Laura Moss Horror Mystery Thriller Drama Science Fiction
+829,"Ari Costa, Eren Celeboglu",Natalia Dyer,Asa Butterfield,Benjamin Evan Ainsworth,Horror Thriller,all fun and games,"Natalia Dyer Asa Butterfield Benjamin Evan Ainsworth Ari Costa, Eren Celeboglu Horror Thriller"
+830,Michael Chaves,Taissa Farmiga,Jonas Bloquet,Storm Reid,Horror,the nun ii,Taissa Farmiga Jonas Bloquet Storm Reid Michael Chaves Horror
+831,Brian Duffield,Kaitlyn Dever,Elizabeth Kaluev,Zack Duhame,Horror Science Fiction Thriller,no one will save you,Kaitlyn Dever Elizabeth Kaluev Zack Duhame Brian Duffield Horror Science Fiction Thriller
+832,Bishal Dutta,Megan Suri,Neeru Bajwa,Mohana Krishnan,Horror Mystery,it lives inside,Megan Suri Neeru Bajwa Mohana Krishnan Bishal Dutta Horror Mystery
+833,"Ian Tripp, Ryan Schafer",Vinny Curran,Bill Oberst Jr.,Brendan Cahalan,Horror Comedy Mystery Thriller,everybody dies by the end,"Vinny Curran Bill Oberst Jr. Brendan Cahalan Ian Tripp, Ryan Schafer Horror Comedy Mystery Thriller"
+834,Kevin Greutert,Tobin Bell,Shawnee Smith,SynnÃ¸ve Macody Lund,Horror Thriller,saw x,Tobin Bell Shawnee Smith SynnÃ¸ve Macody Lund Kevin Greutert Horror Thriller
+835,Daniel Di Grado,Ryan Destiny,Heather Graham,unknown,Horror,oracle,Ryan Destiny Heather Graham unknown Daniel Di Grado Horror
+836,Anna Zlokovic,Hadley Robinson,Emily Hampshire,Brandon Mychal Smith,Horror,appendage,Hadley Robinson Emily Hampshire Brandon Mychal Smith Anna Zlokovic Horror
+837,David Gordon Green,Leslie Odom Jr.,Lidya Jewett,Olivia O'Neill,Horror Thriller,the exorcist: believer,Leslie Odom Jr. Lidya Jewett Olivia O'Neill David Gordon Green Horror Thriller
+838,Lindsey Anderson Beer,Jackson White,Jack Mulhern,Henry Thomas,Horror Fantasy,pet sematary: bloodlines,Jackson White Jack Mulhern Henry Thomas Lindsey Anderson Beer Horror Fantasy
+839,Nahnatchka Khan,Kiernan Shipka,Olivia Holt,Julie Bowen,Comedy Horror Science Fiction,totally killer,Kiernan Shipka Olivia Holt Julie Bowen Nahnatchka Khan Comedy Horror Science Fiction
+840,"Scott Derrickson, David Bruckner, Natasha Kermani",Alex Gallick,Anna Sundberg,Chelsey Grant,Horror Thriller,v/h/s/85,Alex Gallick Anna Sundberg Chelsey Grant Scott Derikson David Bruckner Natasha Kermani Horror Thriller
+841,Sean King O'Grady,Lil Rel Howery,Scoot McNairy,Pat Healy,Science Fiction Horror,the mill,Lil Rel Howery Scoot McNairy Pat Healy Sean King O'Grady Science Fiction Horror
+842,David Slade,Casey Likes,E'myri Crutchfield,Dustin Ceithamer,Horror Fantasy Thriller,dark harvest,Casey Likes E'myri Crutchfield Dustin Ceithamer David Slade Horror Fantasy Thriller
+843,John McPhail,Augustus Prew,Andrea Bang,Justin Long,Horror Thriller,dear david,Augustus Prew Andrea Bang Justin Long John McPhail Horror Thriller
+844,Eddie Alcazar,Stephen Dorff,Bella Thorne,Scott Bakula,Fantasy Horror Science Fiction,divinity,Stephen Dorff Bella Thorne Scott Bakula Eddie Alcazar Fantasy Horror Science Fiction
+845,Conor Allyn,Amber Heard,Eduardo Noriega,Lorenzo McGovern Zaini,Thriller Drama Horror,in the fire,Amber Heard Eduardo Noriega Lorenzo McGovern Zaini Conor Allyn Thriller Drama Horror
+846,Emma Tammi,Josh Hutcherson,Elizabeth Lail,Piper Rubio,Horror Mystery,five nights at freddy's,Josh Hutcherson Elizabeth Lail Piper Rubio Emma Tammi Horror Mystery
+847,Joe Lynch,Heather Graham,Judah Lewis,Bruce Davison,Horror Thriller,suitable flesh,Heather Graham Judah Lewis Bruce Davison Joe Lynch Horror Thriller
+848,Stephen Cognetti,Bridget Rose Perrotta,Destiny Leilani Brown,James Liddell,Horror Mystery,hell house llc origins: the carmichael manor,Bridget Rose Perrotta Destiny Leilani Brown James Liddell Stephen Cognetti Horror Mystery
+849,Devon Jovi Johnson,Francheska Pujols,Summer Foley,Silvana Jakich,Crime Thriller Horror,what happened at 625 river road,Francheska Pujols Summer Foley Silvana Jakich Devon Jovi Johnson Crime Thriller Horror
+850,Tyler MacIntyre,Joel McHale,Justin Long,Jane Widdop,Horror Comedy,it's a wonderful knife,Joel McHale Justin Long Jane Widdop Tyler MacIntyre Horror Comedy
+851,Eli Roth,Patrick Dempsey,Addison Rae,Milo Manheim,Horror Mystery Thriller,thanksgiving,Patrick Dempsey Addison Rae Milo Manheim Eli Roth Horror Mystery Thriller
+852,Melissa Vitello,Ava Cantrell,Tren Reed-Brown,Hermione Lynch,Horror Thriller,abigail,Ava Cantrell Tren Reed-Brown Hermione Lynch Melissa Vitello Horror Thriller
+853,Colin Bressler,Leila Annastasia Scott,Jason Scarbrough,Jeff Caperton,Horror Crime,the mummy murders,Leila Annastasia Scott Jason Scarbrough Jeff Caperton Colin Bressler Horror Crime
+854,Howard J. Ford,Ed Westwick,Andrew P. Stephen,Natalya Tsvetkova,Horror Thriller,darkgame,Ed Westwick Andrew P. Stephen Natalya Tsvetkova Howard J. Ford Horror Thriller
+855,Bryce McGuire,Wyatt Russell,Kerry Condon,AmÃ©lie Hoeferle,Horror,night swim,Wyatt Russell Kerry Condon AmÃ©lie Hoeferle Bryce McGuire Horror
+856,Josh Forbes,Jonah Ray,Kiran Deol,Randee Heller,Comedy Horror Music,destroy all neighbors,Jonah Ray Kiran Deol Randee Heller Josh Forbes Comedy Horror Music
+857,Andrew Baird,Alex Pettyfer,Guy Pearce,Crystal Yu,Horror Thriller,sunrise,Alex Pettyfer Guy Pearce Crystal Yu Andrew Baird Horror Thriller
+858,Jon Keeyes,Alice Eve,Antonio Banderas,Paul Reid,Mystery Thriller Crime Horror,cult killer,Alice Eve Antonio Banderas Paul Reid Jon Keeyes Mystery Thriller Crime Horror
+859,Erik Bloomquist,Devin Druid,Amy Hargreaves,Naomi Grace,Horror Thriller Comedy,founders day,Devin Druid Amy Hargreaves Naomi Grace Erik Bloomquist Horror Thriller Comedy
+860,Mike Taylor,Joey Collins,Ena O'Rourke,Jesse Milliner,Horror,there is a monster,Joey Collins Ena O'Rourke Jesse Milliner Mike Taylor Horror
+861,Olivia West Lloyd,Jennifer Kim,Kentucker Audley,Marin Ireland,Drama Thriller Horror,somewhere quiet,Jennifer Kim Kentucker Audley Marin Ireland Olivia West Lloyd Drama Thriller Horror
+862,Zelda Williams,Kathryn Newton,Cole Sprouse,Liza Soberano,Comedy Horror Romance,lisa frankenstein,Kathryn Newton Cole Sprouse Liza Soberano Zelda Williams Comedy Horror Romance
+863,"Adam Newacheck	(director); Holly Kenney (screenplay); Holly Kenney, Brendin Brown, Paris Nicole, Radek Antczak, Teddy Spencer",Holly Kenney,Brendin Brown,Paris Nicole,Horror Thriller,stranger in the woods,"Holly Kenney Brendin Brown Paris Nicole Adam Newacheck	(director); Holly Kenney (screenplay); Holly Kenney, Brendin Brown, Paris Nicole, Radek Antczak, Teddy Spencer Horror Thriller"
+864,Claudio FÃ¤h,Colm Meany,Phyllis Logan,Will Attenborough,Thriller Horror Action,no way up,Colm Meany Phyllis Logan Will Attenborough Claudio FÃ¤h Thriller Horror Action
+865,Teresa Sutherland,Georgina Campbell,Nick Blood,Wai Ching Ho,Horror,"lovely, dark, and deep",Georgina Campbell Nick Blood Wai Ching Ho Teresa Sutherland Horror
+866,Kourosh Ahari,Danielle Deadwyler,Aldis Hodge,Edwin Hodge,Science Fiction Fantasy Horror,parallel,Danielle Deadwyler Aldis Hodge Edwin Hodge Kourosh Ahari Science Fiction Fantasy Horror
+867,Jeff Wadlow,DeWanda Wise,Tom Payne,Taegen Burns,Horror Mystery Thriller,imaginary,DeWanda Wise Tom Payne Taegen Burns Jeff Wadlow Horror Mystery Thriller
+868,"Paul China, Benjamin China (directors/screenplay); Phoebe Tonkin, Lamorne Morris, Madison Hu",Phoebe Tonkin,Lamorne Morris,Madison Hu,Horror,night shift,"Phoebe Tonkin Lamorne Morris Madison Hu Paul China, Benjamin China (directors/screenplay); Phoebe Tonkin, Lamorne Morris, Madison Hu Horror"
+869,Michael Mohan,Sydney Sweeney,Ãlvaro Morte,Benedetta Porcaroli,Horror Mystery Thriller,immaculate,Sydney Sweeney Ãlvaro Morte Benedetta Porcaroli Michael Mohan Horror Mystery Thriller
+870,"Cameron and Colin Cairnes (directors/screenplay); David Dastmalchian, Laura Gordon, Ian Bliss, Fayssal Bazzi, Ingrid Torelli, Rhys Auteri, Georgina Haig, Josh Quong Tart",David Dastmalchian,Laura Gordon,Ian Bliss,Horror,late night with the devil,"David Dastmalchian Laura Gordon Ian Bliss Cameron and Colin Cairnes (directors/screenplay); David Dastmalchian, Laura Gordon, Ian Bliss, Fayssal Bazzi, Ingrid Torelli, Rhys Auteri, Georgina Haig, Josh Quong Tart Horror"
+871,Diane Foster,Miles Cooper,Diane Foster,Kelly Grant,Horror Comedy Fantasy,easter bloody easter,Miles Cooper Diane Foster Kelly Grant Diane Foster Horror Comedy Fantasy
+872,Arkasha Stevenson,Nell Tiger Free,Tawfeek Barhom,SÃ´nia Braga,Horror,the first omen,Nell Tiger Free Tawfeek Barhom SÃ´nia Braga Arkasha Stevenson Horror
+873,Derek Pike,Scout Taylor-Compton,Ryan Merriman,Chris Zylka,Horror Thriller,model house,Scout Taylor-Compton Ryan Merriman Chris Zylka Derek Pike Horror Thriller
+874,Ben Brewer,Nicolas Cage,Jaeden Martell,Maxwell Jenkins,Science Fiction Thriller Horror,arcadian,Nicolas Cage Jaeden Martell Maxwell Jenkins Ben Brewer Science Fiction Thriller Horror
+875,Kiah Roache-Turner,Ryan Corr,Alyla Browne,Penelope Mitchell,Horror,sting,Ryan Corr Alyla Browne Penelope Mitchell Kiah Roache-Turner Horror
+876,"Matt Bettinelli-Olpin, Tyler Gillett",Melissa Barrera,Dan Stevens,Alisha Weir,Horror Thriller,abigail,"Melissa Barrera Dan Stevens Alisha Weir Matt Bettinelli-Olpin, Tyler Gillett Horror Thriller"
+877,Caitlin Cronenberg,Jay Baruchel,Emily Hampshire,Peter Gallagher,Thriller Horror Science Fiction,humane,Jay Baruchel Emily Hampshire Peter Gallagher Caitlin Cronenberg Thriller Horror Science Fiction
+878,Ante Novakovic,Shawnee Smith,Taryn Manning,Drew Moerlein,Horror Thriller,bloodline killer,Shawnee Smith Taryn Manning Drew Moerlein Ante Novakovic Horror Thriller
+879,"Spenser Cohen, Anna Halberg (directors/screenplay); Harriet Slater, Adain Bradley, Avantika, Wolfgang Novogratz, Humberly GonzÃ¡lez, Larsen Thompson, Jacob Batalon",Harriet Slater,Adain Bradley,Avantika,Horror,tarot,"Harriet Slater Adain Bradley Avantika Spenser Cohen, Anna Halberg (directors/screenplay); Harriet Slater, Adain Bradley, Avantika, Wolfgang Novogratz, Humberly GonzÃ¡lez, Larsen Thompson, Jacob Batalon Horror"
+880,Jane Schoenbrun,Justice Smith,Brigette Lundy-Paine,Helena Howard,Drama Horror,i saw the tv glow,Justice Smith Brigette Lundy-Paine Helena Howard Jane Schoenbrun Drama Horror
+881,John Rosman,Sonya Walger,Hayley Erin,Tony Amendola,Horror Thriller Mystery Science Fiction,new life,Sonya Walger Hayley Erin Tony Amendola John Rosman Horror Thriller Mystery Science Fiction
+882,Renny Harlin,Madelaine Petsch,Froy Gutierrez,Gabriel Basso,Horror Thriller,the strangers: chapter 1,Madelaine Petsch Froy Gutierrez Gabriel Basso Renny Harlin Horror Thriller
+883,Rick Bieber,Derek Smith,Katrina Bowden,Rob Schneider,Horror Thriller,dead wrong,Derek Smith Katrina Bowden Rob Schneider Rick Bieber Horror Thriller
+884,Castille Landon,Diane Keaton,Kathy Bates,Alfre Woodard,Horror,summer camp,Diane Keaton Kathy Bates Alfre Woodard Castille Landon Horror
+885,L. Van Dyke Siboutszen,Noah LaLonde,Jay J. Bidwell,Arthur Cartwright,Horror Comedy Thriller Fantasy,deer camp '86,Noah LaLonde Jay J. Bidwell Arthur Cartwright L. Van Dyke Siboutszen Horror Comedy Thriller Fantasy
+886,Ishana Night Shyamalan,Dakota Fanning,Georgina Campbell,Olwen FouÃ©rÃ©,Fantasy Mystery Thriller Horror,the watchers,Dakota Fanning Georgina Campbell Olwen FouÃ©rÃ© Ishana Night Shyamalan Fantasy Mystery Thriller Horror
+887,Ariel Vida,Bethlehem Million,Alex Essoe,Ally Ioannides,Horror Thriller,trim season,Bethlehem Million Alex Essoe Ally Ioannides Ariel Vida Horror Thriller
+888,James Croke,Sasha Luss,Alexis Ren,unknown,Science Fiction Thriller Horror,latency,Sasha Luss Alexis Ren unknown James Croke Science Fiction Thriller Horror
+889,"M. A. Fortin, Joshua John Miller (directors/screenplay); Russell Crowe, Ryan Simpkins, Sam Worthington, Chloe Bailey, Adam Goldberg, David Hyde Pierce",Russell Crowe,Ryan Simpkins,Sam Worthington,Horror Thriller,the exorcism,"Russell Crowe Ryan Simpkins Sam Worthington M. A. Fortin, Joshua John Miller (directors/screenplay); Russell Crowe, Ryan Simpkins, Sam Worthington, Chloe Bailey, Adam Goldberg, David Hyde Pierce Horror Thriller"
+890,Jeff Celentano,Edward Baker-Duly,Pandora Clifford,Maggie Grace,Horror Thriller Drama Crime Mystery,blackwater lane,Edward Baker-Duly Pandora Clifford Maggie Grace Jeff Celentano Horror Thriller Drama Crime Mystery
+891,Michael Sarnoski,Lupita Nyong'o,Joseph Quinn,Alex Wolff,Horror Science Fiction Thriller,a quiet place: day one,Lupita Nyong'o Joseph Quinn Alex Wolff Michael Sarnoski Horror Science Fiction Thriller
+892,Brian Follmer,Kerri Lee Romeo,Adam Leotta,Brian Follmer,Horror Thriller Romance,little deaths,Kerri Lee Romeo Adam Leotta Brian Follmer Brian Follmer Horror Thriller Romance
+893,Ti West,Mia Goth,Elizabeth Debicki,Moses Sumney,Horror Crime Mystery,maxxxine,Mia Goth Elizabeth Debicki Moses Sumney Ti West Horror Crime Mystery
+894,Conor Soucy,Samuel Dunning,Tana Sirois,Samantha Hill,Horror Thriller,dead whisper,Samuel Dunning Tana Sirois Samantha Hill Conor Soucy Horror Thriller
+895,Ali Zamani,Denise Richards,Cuba Gooding Jr.,Randy Couture,Horror Action Fantasy Adventure,angels fallen: warriors of peace,Denise Richards Cuba Gooding Jr. Randy Couture Ali Zamani Horror Action Fantasy Adventure
+896,Osgood Perkins,Maika Monroe,Nicolas Cage,Blair Underwood,Crime Horror Thriller,longlegs,Maika Monroe Nicolas Cage Blair Underwood Osgood Perkins Crime Horror Thriller
+897,Alejandro BruguÃ©s,Bob Gunton,Peyton List,Briana Middleton,Horror,the inheritance,Bob Gunton Peyton List Briana Middleton Alejandro BruguÃ©s Horror
+898,Gino J.H. McKoy,Eric Roberts,Ken Lawson,Emily Hall,Horror Science Fiction Thriller,lumina,Eric Roberts Ken Lawson Emily Hall Gino J.H. McKoy Horror Science Fiction Thriller
+899,Dwain Worrell,Jonathan Rosenthal,Tamara Perry,unknown,Science Fiction Horror Thriller,the abandon,Jonathan Rosenthal Tamara Perry unknown Dwain Worrell Science Fiction Horror Thriller
+900,Damian Mc Carthy,Gwilym Lee,Carolyn Bracken,Tadhg Murphy,Horror,oddity,Gwilym Lee Carolyn Bracken Tadhg Murphy Damian Mc Carthy Horror
+901,Phil Volken,Dean Cameron,Garrett Wareing,Isabel Gravitt,Thriller Horror,dead sea,Dean Cameron Garrett Wareing Isabel Gravitt Phil Volken Thriller Horror
+902,Marcus Dunstan,Jade Pettyjohn,JoJo Siwa,Jennifer Ens,Horror Thriller,amfad all my friends are dead,Jade Pettyjohn JoJo Siwa Jennifer Ens Marcus Dunstan Horror Thriller
+903,Tilman Singer,Hunter Schafer,Dan Stevens,Jessica Henwick,Horror Mystery Science Fiction,cuckoo,Hunter Schafer Dan Stevens Jessica Henwick Tilman Singer Horror Mystery Science Fiction
+904,Fede Ãlvarez,Cailee Spaeny,David Jonsson,Archie Renaux,Science Fiction Horror Thriller,alien: romulus,Cailee Spaeny David Jonsson Archie Renaux Fede Ãlvarez Science Fiction Horror Thriller
+905,Lee Daniels,Andra Day,Glenn Close,Aunjanue Ellis-Taylor,Horror Thriller,the deliverance,Andra Day Glenn Close Aunjanue Ellis-Taylor Lee Daniels Horror Thriller
+906,Michael Leavy,Charles Edwin Powell,Danielle Harris,Jeffrey Combs,Horror Action Thriller,stream,Charles Edwin Powell Danielle Harris Jeffrey Combs Michael Leavy Horror Action Thriller
+907,JT Mollner,Willa Fitzgerald,Kyle Gallner,Madisen Beaty,Crime Horror Thriller,strange darling,Willa Fitzgerald Kyle Gallner Madisen Beaty JT Mollner Crime Horror Thriller
+908,Quinn Armstrong,Steve Pinder,Michael J. Cline,Maya Jeyam,Horror,the exorcism of saint patrick,Steve Pinder Michael J. Cline Maya Jeyam Quinn Armstrong Horror
+909,Chris Weitz,John Cho,Katherine Waterston,Havana Rose Liu,Horror Science Fiction Thriller,afraid,John Cho Katherine Waterston Havana Rose Liu Chris Weitz Horror Science Fiction Thriller
+910,Quinn Armstrong,Michael Kunicki,Quinn Armstrong,Jordan Mullins,Horror Thriller Drama,wolves against the world,Michael Kunicki Quinn Armstrong Jordan Mullins Quinn Armstrong Horror Thriller Drama
+911,Tim Burton,Michael Keaton,Winona Ryder,Catherine O'Hara,Comedy Horror Fantasy,beetlejuice beetlejuice,Michael Keaton Winona Ryder Catherine O'Hara Tim Burton Comedy Horror Fantasy
+912,"The Eggers Brothers (directors/screenplay); Brandy Norwood, Andrew Burnap, Neal Huff, Kathryn Hunter",Brandy Norwood,Andrew Burnap,Neal Huff,Horror Mystery,the front room,"Brandy Norwood Andrew Burnap Neal Huff The Eggers Brothers (directors/screenplay); Brandy Norwood, Andrew Burnap, Neal Huff, Kathryn Hunter Horror Mystery"
+913,Quinn Armstrong,Jordan Myers,Maya Jeyam,Tony White,Horror,dead teenagers,Jordan Myers Maya Jeyam Tony White Quinn Armstrong Horror
+914,James Watkins,James McAvoy,Mackenzie Davis,Aisling Franciosi,Horror Thriller,speak no evil,James McAvoy Mackenzie Davis Aisling Franciosi James Watkins Horror Thriller
+915,Coralie Fargeat,Demi Moore,Margaret Qualley,Dennis Quaid,Drama Horror Science Fiction,the substance,Demi Moore Margaret Qualley Dennis Quaid Coralie Fargeat Drama Horror Science Fiction
+916,Colm McCarthy,Sam Claflin,Antonia Thomas,Frankie Corio,Horror Thriller,bagman,Sam Claflin Antonia Thomas Frankie Corio Colm McCarthy Horror Thriller
+917,Natalie Erika James,Julia Garner,Jim Sturgess,Dianne Wiest,Horror Thriller,apartment 7a,Julia Garner Jim Sturgess Dianne Wiest Natalie Erika James Horror Thriller
+918,Alexandre Aja,Halle Berry,Percy Daggs IV,Anthony B. Jenkins,Horror Thriller,never let go,Halle Berry Percy Daggs IV Anthony B. Jenkins Alexandre Aja Horror Thriller
+919,E. L. Katz,Samara Weaving,Vic Carmen Sonne,Katariina Unt,Action Horror,azrael,Samara Weaving Vic Carmen Sonne Katariina Unt E. L. Katz Action Horror
+920,Evan Marlowe,James Marsters,Hana Mae Lee,Christopher McDonald,Horror Animation,abruptio,James Marsters Hana Mae Lee Christopher McDonald Evan Marlowe Horror Animation
+921,"Karrie Crouse, Will Joines",Sarah Paulson,Annaleigh Ashford,Ebon Moss-Bachrach,Horror Thriller,hold your breath,"Sarah Paulson Annaleigh Ashford Ebon Moss-Bachrach Karrie Crouse, Will Joines Horror Thriller"
+922,Spider One,Krsy Fox,Elizabeth Phoenix Caro,Jon Sklaroff,Horror,little bites,Krsy Fox Elizabeth Phoenix Caro Jon Sklaroff Spider One Horror
+923,Damien Leone,Lauren LaVera,Elliot Fullam,Samantha Scaffidi,Horror Thriller Crime,terrifier 3,Lauren LaVera Elliot Fullam Samantha Scaffidi Damien Leone Horror Thriller Crime
+924,Parker Finn,Naomi Scott,Rosemarie DeWitt,Kyle Gallner,Horror Mystery Thriller,smile 2,Naomi Scott Rosemarie DeWitt Kyle Gallner Parker Finn Horror Mystery Thriller
+925,Caroline Lindy,Melissa Barrera,Tommy Dewey,Edmund Donovan,Horror Romance Comedy,your monster,Melissa Barrera Tommy Dewey Edmund Donovan Caroline Lindy Horror Romance Comedy
+926,"Scott Beck and Bryan Woods (directors/screenplay); Hugh Grant, Sophie Thatcher, Chloe East",Hugh Grant,Sophie Thatcher,Chloe East,Horror Thriller,heretic,"Hugh Grant Sophie Thatcher Chloe East Scott Beck and Bryan Woods (directors/screenplay); Hugh Grant, Sophie Thatcher, Chloe East Horror Thriller"
+927,Marielle Heller,Amy Adams,Scoot McNairy,Arleigh Patrick Snowden,Comedy Fantasy Horror,nightbitch,Amy Adams Scoot McNairy Arleigh Patrick Snowden Marielle Heller Comedy Fantasy Horror
+928,Kyle Mooney,Jaeden Martell,Julian Dennison,Rachel Zegler,Science Fiction Comedy Horror,y2k,Jaeden Martell Julian Dennison Rachel Zegler Kyle Mooney Science Fiction Comedy Horror
+929,Uberto Pasolini,Ralph Fiennes,Juliette Binoche,Charlie Plummer,Horror Science Fiction,the return,Ralph Fiennes Juliette Binoche Charlie Plummer Uberto Pasolini Horror Science Fiction
+930,Steven C. Miller,Frank Grillo,Katrina Law,Ilfenesh Hadera,Action Horror,werewolves: the beast amog us,Frank Grillo Katrina Law Ilfenesh Hadera Steven C. Miller Action Horror
+931,Ben Smallbone,Neal McDonough,Dawn Olivieri,Currie Graham,Horror Thriller Western,homestead,Neal McDonough Dawn Olivieri Currie Graham Ben Smallbone Horror Thriller Western
+932,Robert Eggers,Bill SkarsgÃ¥rd,Nicholas Hoult,Lily-Rose Depp,Drama Fantasy Horror,nosferatu,Bill SkarsgÃ¥rd Nicholas Hoult Lily-Rose Depp Robert Eggers Drama Fantasy Horror

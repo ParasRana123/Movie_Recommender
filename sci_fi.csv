@@ -1,0 +1,651 @@
+,director_name,actor_1_name,actor_2_name,actor_3_name,genres,movie_title,comb
+0,James Cameron,CCH Pounder,Joel David Moore,Wes Studi,Action Adventure Fantasy Sci-Fi,avatar,CCH Pounder Joel David Moore Wes Studi James Cameron Action Adventure Fantasy Sci-Fi
+1,Andrew Stanton,Daryl Sabara,Samantha Morton,Polly Walker,Action Adventure Sci-Fi,john carter,Daryl Sabara Samantha Morton Polly Walker Andrew Stanton Action Adventure Sci-Fi
+2,Joss Whedon,Chris Hemsworth,Robert Downey Jr.,Scarlett Johansson,Action Adventure Sci-Fi,avengers: age of ultron,Chris Hemsworth Robert Downey Jr. Scarlett Johansson Joss Whedon Action Adventure Sci-Fi
+3,Zack Snyder,Henry Cavill,Lauren Cohan,Alan D. Purwin,Action Adventure Sci-Fi,batman v superman: dawn of justice,Henry Cavill Lauren Cohan Alan D. Purwin Zack Snyder Action Adventure Sci-Fi
+4,Bryan Singer,Kevin Spacey,Marlon Brando,Frank Langella,Action Adventure Sci-Fi,superman returns,Kevin Spacey Marlon Brando Frank Langella Bryan Singer Action Adventure Sci-Fi
+5,Zack Snyder,Henry Cavill,Christopher Meloni,Harry Lennix,Action Adventure Fantasy Sci-Fi,man of steel,Henry Cavill Christopher Meloni Harry Lennix Zack Snyder Action Adventure Fantasy Sci-Fi
+6,Barry Sonnenfeld,Will Smith,Michael Stuhlbarg,Nicole Scherzinger,Action Adventure Comedy Family Fantasy Sci-Fi,men in black 3,Will Smith Michael Stuhlbarg Nicole Scherzinger Barry Sonnenfeld Action Adventure Comedy Family Fantasy Sci-Fi
+7,Anthony Russo,Robert Downey Jr.,Scarlett Johansson,Chris Evans,Action Adventure Sci-Fi,captain america: civil war,Robert Downey Jr. Scarlett Johansson Chris Evans Anthony Russo Action Adventure Sci-Fi
+8,Peter Berg,Liam Neeson,Alexander SkarsgÃÂ¥rd,Tadanobu Asano,Action Adventure Sci-Fi Thriller,battleship,Liam Neeson Alexander SkarsgÃÂ¥rd Tadanobu Asano Peter Berg Action Adventure Sci-Fi Thriller
+9,Colin Trevorrow,Bryce Dallas Howard,Judy Greer,Omar Sy,Action Adventure Sci-Fi Thriller,jurassic world,Bryce Dallas Howard Judy Greer Omar Sy Colin Trevorrow Action Adventure Sci-Fi Thriller
+10,Shane Black,Robert Downey Jr.,Jon Favreau,Don Cheadle,Action Adventure Sci-Fi,iron man 3,Robert Downey Jr. Jon Favreau Don Cheadle Shane Black Action Adventure Sci-Fi
+11,Brett Ratner,Hugh Jackman,Kelsey Grammer,Daniel Cudmore,Action Adventure Fantasy Sci-Fi Thriller,x-men: the last stand,Hugh Jackman Kelsey Grammer Daniel Cudmore Brett Ratner Action Adventure Fantasy Sci-Fi Thriller
+12,Michael Bay,Glenn Morshower,Kevin Dunn,Ramon Rodriguez,Action Adventure Sci-Fi,transformers: revenge of the fallen,Glenn Morshower Kevin Dunn Ramon Rodriguez Michael Bay Action Adventure Sci-Fi
+13,Michael Bay,Bingbing Li,Sophia Myles,Kelsey Grammer,Action Adventure Sci-Fi,transformers: age of extinction,Bingbing Li Sophia Myles Kelsey Grammer Michael Bay Action Adventure Sci-Fi
+14,Marc Webb,Emma Stone,Andrew Garfield,B.J. Novak,Action Adventure Fantasy Sci-Fi,the amazing spider-man 2,Emma Stone Andrew Garfield B.J. Novak Marc Webb Action Adventure Fantasy Sci-Fi
+15,Martin Campbell,Ryan Reynolds,Temuera Morrison,Taika Waititi,Action Adventure Sci-Fi,green lantern,Ryan Reynolds Temuera Morrison Taika Waititi Martin Campbell Action Adventure Sci-Fi
+16,McG,Christian Bale,Bryce Dallas Howard,Common,Action Adventure Sci-Fi,terminator salvation,Christian Bale Bryce Dallas Howard Common McG Action Adventure Sci-Fi
+17,Marc Forster,Peter Capaldi,Brad Pitt,Mireille Enos,Action Adventure Horror Sci-Fi Thriller,world war z,Peter Capaldi Brad Pitt Mireille Enos Marc Forster Action Adventure Horror Sci-Fi Thriller
+18,Bryan Singer,Jennifer Lawrence,Peter Dinklage,Hugh Jackman,Action Adventure Fantasy Sci-Fi Thriller,x-men: days of future past,Jennifer Lawrence Peter Dinklage Hugh Jackman Bryan Singer Action Adventure Fantasy Sci-Fi Thriller
+19,J.J. Abrams,Benedict Cumberbatch,Bruce Greenwood,Noel Clarke,Action Adventure Sci-Fi,star trek into darkness,Benedict Cumberbatch Bruce Greenwood Noel Clarke J.J. Abrams Action Adventure Sci-Fi
+20,Guillermo del Toro,Charlie Hunnam,Clifton Collins Jr.,Larry Joe Campbell,Action Adventure Sci-Fi,pacific rim,Charlie Hunnam Clifton Collins Jr. Larry Joe Campbell Guillermo del Toro Action Adventure Sci-Fi
+21,Michael Bay,Glenn Morshower,Lester Speight,Kevin Dunn,Action Adventure Sci-Fi,transformers: dark of the moon,Glenn Morshower Lester Speight Kevin Dunn Michael Bay Action Adventure Sci-Fi
+22,Justin Lin,Sofia Boutella,Melissa Roxburgh,Lydia Wilson,Action Adventure Sci-Fi Thriller,star trek beyond,Sofia Boutella Melissa Roxburgh Lydia Wilson Justin Lin Action Adventure Sci-Fi Thriller
+23,Andrew Stanton,John Ratzenberger,Fred Willard,Jeff Garlin,Adventure Animation Family Sci-Fi,wallÃÂ·e,John Ratzenberger Fred Willard Jeff Garlin Andrew Stanton Adventure Animation Family Sci-Fi
+24,Roland Emmerich,Oliver Platt,Liam James,Tom McCarthy,Action Adventure Sci-Fi,2012,Oliver Platt Liam James Tom McCarthy Roland Emmerich Action Adventure Sci-Fi
+25,Lana Wachowski,Channing Tatum,Mila Kunis,Eddie Redmayne,Action Adventure Sci-Fi,jupiter ascending,Channing Tatum Mila Kunis Eddie Redmayne Lana Wachowski Action Adventure Sci-Fi
+26,Bryan Singer,Jennifer Lawrence,Michael Fassbender,Tye Sheridan,Action Adventure Sci-Fi,x-men: apocalypse,Jennifer Lawrence Michael Fassbender Tye Sheridan Bryan Singer Action Adventure Sci-Fi
+27,Rob Letterman,Amy Poehler,Rainn Wilson,Stephen Colbert,Action Adventure Animation Comedy Family Sci-Fi,monsters vs. aliens,Amy Poehler Rainn Wilson Stephen Colbert Rob Letterman Action Adventure Animation Comedy Family Sci-Fi
+28,Jon Favreau,Robert Downey Jr.,Jeff Bridges,Jon Favreau,Action Adventure Sci-Fi,iron man,Robert Downey Jr. Jeff Bridges Jon Favreau Jon Favreau Action Adventure Sci-Fi
+29,Barry Sonnenfeld,Will Smith,Salma Hayek,Bai Ling,Action Comedy Sci-Fi Western,wild wild west,Will Smith Salma Hayek Bai Ling Barry Sonnenfeld Action Comedy Sci-Fi Western
+30,David Ayer,Will Smith,Robin Atkin Downes,Ike Barinholtz,Action Adventure Comedy Sci-Fi,suicide squad,Will Smith Robin Atkin Downes Ike Barinholtz David Ayer Action Adventure Comedy Sci-Fi
+31,Doug Liman,Tom Cruise,Lara Pulver,Noah Taylor,Action Adventure Sci-Fi,edge of tomorrow,Tom Cruise Lara Pulver Noah Taylor Doug Liman Action Adventure Sci-Fi
+32,Kevin Reynolds,Jeanne Tripplehorn,Rick Aviles,Zakes Mokae,Action Adventure Sci-Fi Thriller,waterworld,Jeanne Tripplehorn Rick Aviles Zakes Mokae Kevin Reynolds Action Adventure Sci-Fi Thriller
+33,Stephen Sommers,Joseph Gordon-Levitt,Dennis Quaid,Leo Howard,Action Adventure Sci-Fi Thriller,g.i. joe: the rise of cobra,Joseph Gordon-Levitt Dennis Quaid Leo Howard Stephen Sommers Action Adventure Sci-Fi Thriller
+34,Jon Favreau,Robert Downey Jr.,Scarlett Johansson,Jon Favreau,Action Adventure Sci-Fi,iron man 2,Robert Downey Jr. Scarlett Johansson Jon Favreau Jon Favreau Action Adventure Sci-Fi
+35,Matt Reeves,Gary Oldman,Judy Greer,Kodi Smit-McPhee,Action Adventure Drama Sci-Fi,dawn of the planet of the apes,Gary Oldman Judy Greer Kodi Smit-McPhee Matt Reeves Action Adventure Drama Sci-Fi
+36,Anthony Russo,Scarlett Johansson,Chris Evans,Hayley Atwell,Action Adventure Sci-Fi,captain america: the winter soldier,Scarlett Johansson Chris Evans Hayley Atwell Anthony Russo Action Adventure Sci-Fi
+37,Brad Bird,Judy Greer,Chris Bauer,Thomas Robinson,Action Adventure Family Mystery Sci-Fi,tomorrowland,Judy Greer Chris Bauer Thomas Robinson Brad Bird Action Adventure Family Mystery Sci-Fi
+38,Don Hall,Damon Wayans Jr.,Daniel Henney,Abraham Benrubi,Action Adventure Animation Comedy Drama Family Sci-Fi,big hero 6,Damon Wayans Jr. Daniel Henney Abraham Benrubi Don Hall Action Adventure Animation Comedy Drama Family Sci-Fi
+39,Rich Moore,Jack McBrayer,Sarah Silverman,Joe Lo Truglio,Adventure Animation Comedy Family Sci-Fi,wreck-it ralph,Jack McBrayer Sarah Silverman Joe Lo Truglio Rich Moore Adventure Animation Comedy Family Sci-Fi
+40,Roland Emmerich,Vivica A. Fox,Sela Ward,Judd Hirsch,Action Adventure Sci-Fi,independence day: resurgence,Vivica A. Fox Sela Ward Judd Hirsch Roland Emmerich Action Adventure Sci-Fi
+41,Jonathan Mostow,Nick Stahl,M.C. Gainey,Carolyn Hennesy,Action Sci-Fi,terminator 3: rise of the machines,Nick Stahl M.C. Gainey Carolyn Hennesy Jonathan Mostow Action Sci-Fi
+42,James Gunn,Bradley Cooper,Vin Diesel,Djimon Hounsou,Action Adventure Sci-Fi,guardians of the galaxy,Bradley Cooper Vin Diesel Djimon Hounsou James Gunn Action Adventure Sci-Fi
+43,Christopher Nolan,Matthew McConaughey,Anne Hathaway,Mackenzie Foy,Adventure Drama Sci-Fi,interstellar,Matthew McConaughey Anne Hathaway Mackenzie Foy Christopher Nolan Adventure Drama Sci-Fi
+44,Christopher Nolan,Leonardo DiCaprio,Tom Hardy,Joseph Gordon-Levitt,Action Adventure Sci-Fi Thriller,inception,Leonardo DiCaprio Tom Hardy Joseph Gordon-Levitt Christopher Nolan Action Adventure Sci-Fi Thriller
+45,Matthew Vaughn,Jennifer Lawrence,Michael Fassbender,Oliver Platt,Action Adventure Sci-Fi,x-men: first class,Jennifer Lawrence Michael Fassbender Oliver Platt Matthew Vaughn Action Adventure Sci-Fi
+46,Francis Lawrence,Jennifer Lawrence,Philip Seymour Hoffman,Josh Hutcherson,Adventure Sci-Fi,the hunger games: mockingjay - part 2,Jennifer Lawrence Philip Seymour Hoffman Josh Hutcherson Francis Lawrence Adventure Sci-Fi
+47,Alan Taylor,J.K. Simmons,Emilia Clarke,Matt Smith,Action Adventure Sci-Fi,terminator genisys,J.K. Simmons Emilia Clarke Matt Smith Alan Taylor Action Adventure Sci-Fi
+48,Michael Bay,Zack Ward,Michael O'Neill,Kevin Dunn,Action Adventure Sci-Fi,transformers,Zack Ward Michael O'Neill Kevin Dunn Michael Bay Action Adventure Sci-Fi
+49,Francis Lawrence,Will Smith,Alice Braga,Willow Smith,Drama Horror Sci-Fi,i am legend,Will Smith Alice Braga Willow Smith Francis Lawrence Drama Horror Sci-Fi
+50,Gavin Hood,Hugh Jackman,Ryan Reynolds,Dominic Monaghan,Action Adventure Fantasy Sci-Fi Thriller,x-men origins: wolverine,Hugh Jackman Ryan Reynolds Dominic Monaghan Gavin Hood Action Adventure Fantasy Sci-Fi Thriller
+51,Lana Wachowski,Essie Davis,Collin Chou,Nona Gaye,Action Sci-Fi,the matrix revolutions,Essie Davis Collin Chou Nona Gaye Lana Wachowski Action Sci-Fi
+52,Lana Wachowski,Steve Bastoni,Daniel Bernhardt,Helmut Bakaitis,Action Sci-Fi,the matrix reloaded,Steve Bastoni Daniel Bernhardt Helmut Bakaitis Lana Wachowski Action Sci-Fi
+53,George Miller,Tom Hardy,Charlize Theron,ZoÃÂ« Kravitz,Action Adventure Sci-Fi Thriller,mad max: fury road,Tom Hardy Charlize Theron ZoÃÂ« Kravitz George Miller Action Adventure Sci-Fi Thriller
+54,Hoyt Yeatman,Kelli Garner,Piper Mackenzie Harris,Niecy Nash,Action Adventure Animation Comedy Family Fantasy Sci-Fi,g-force,Kelli Garner Piper Mackenzie Harris Niecy Nash Hoyt Yeatman Action Adventure Animation Comedy Family Fantasy Sci-Fi
+55,Simon Wells,Elisabeth Harnois,Dan Fogler,Tom Everett Scott,Action Adventure Animation Comedy Family Sci-Fi,mars needs moms,Elisabeth Harnois Dan Fogler Tom Everett Scott Simon Wells Action Adventure Animation Comedy Family Sci-Fi
+56,Rob Minkoff,Ty Burrell,Zach Callison,Karan Brar,Adventure Animation Comedy Family Sci-Fi,mr. peabody & sherman,Ty Burrell Zach Callison Karan Brar Rob Minkoff Adventure Animation Comedy Family Sci-Fi
+57,Michael Bay,Bruce Willis,Steve Buscemi,Will Patton,Action Adventure Sci-Fi Thriller,armageddon,Bruce Willis Steve Buscemi Will Patton Michael Bay Action Adventure Sci-Fi Thriller
+58,Barry Sonnenfeld,Will Smith,Rosario Dawson,Rip Torn,Action Adventure Comedy Family Fantasy Mystery Sci-Fi,men in black ii,Will Smith Rosario Dawson Rip Torn Barry Sonnenfeld Action Adventure Comedy Family Fantasy Mystery Sci-Fi
+59,J.J. Abrams,Chris Hemsworth,Leonard Nimoy,Bruce Greenwood,Action Adventure Sci-Fi,star trek,Chris Hemsworth Leonard Nimoy Bruce Greenwood J.J. Abrams Action Adventure Sci-Fi
+60,Rob Cohen,Sam Shepard,Joe Morton,Richard Roxburgh,Action Adventure Sci-Fi Thriller,stealth,Sam Shepard Joe Morton Richard Roxburgh Rob Cohen Action Adventure Sci-Fi Thriller
+61,Zack Snyder,Matt Frewer,Billy Crudup,Stephen McHattie,Action Drama Mystery Sci-Fi,watchmen,Matt Frewer Billy Crudup Stephen McHattie Zack Snyder Action Drama Mystery Sci-Fi
+62,Ang Lee,Kevin Rankin,Regi Davis,Celia Weston,Action Sci-Fi,hulk,Kevin Rankin Regi Davis Celia Weston Ang Lee Action Sci-Fi
+63,Jon M. Chu,Channing Tatum,Dwayne Johnson,Elodie Yung,Action Adventure Sci-Fi Thriller,g.i. joe: retaliation,Channing Tatum Dwayne Johnson Elodie Yung Jon M. Chu Action Adventure Sci-Fi Thriller
+64,Hironobu Sakaguchi,Steve Buscemi,Ming-Na Wen,Jean Simmons,Action Adventure Animation Fantasy Romance Sci-Fi,final fantasy: the spirits within,Steve Buscemi Ming-Na Wen Jean Simmons Hironobu Sakaguchi Action Adventure Animation Fantasy Romance Sci-Fi
+65,Joe Johnston,Chris Evans,Dominic Cooper,Hayley Atwell,Action Adventure Sci-Fi,captain america: the first avenger,Chris Evans Dominic Cooper Hayley Atwell Joe Johnston Action Adventure Sci-Fi
+66,Louis Leterrier,Ty Burrell,Peter Mensah,William Hurt,Action Adventure Sci-Fi,the incredible hulk,Ty Burrell Peter Mensah William Hurt Louis Leterrier Action Adventure Sci-Fi
+67,Peyton Reed,Judy Greer,Hayley Atwell,T.I.,Action Adventure Comedy Sci-Fi,ant-man,Judy Greer Hayley Atwell T.I. Peyton Reed Action Adventure Comedy Sci-Fi
+68,Francis Lawrence,Jennifer Lawrence,Josh Hutcherson,Sandra Ellis Lafferty,Adventure Sci-Fi Thriller,the hunger games: catching fire,Jennifer Lawrence Josh Hutcherson Sandra Ellis Lafferty Francis Lawrence Adventure Sci-Fi Thriller
+69,Steven Spielberg,Tom Cruise,Lisa Ann Walter,Rick Gonzalez,Adventure Sci-Fi Thriller,war of the worlds,Tom Cruise Lisa Ann Walter Rick Gonzalez Steven Spielberg Adventure Sci-Fi Thriller
+70,M. Night Shyamalan,Will Smith,ZoÃÂ« Kravitz,Glenn Morshower,Action Adventure Sci-Fi,after earth,Will Smith ZoÃÂ« Kravitz Glenn Morshower M. Night Shyamalan Action Adventure Sci-Fi
+71,Tom McGrath,J.K. Simmons,Brad Pitt,Will Ferrell,Action Animation Comedy Family Sci-Fi,megamind,J.K. Simmons Brad Pitt Will Ferrell Tom McGrath Action Animation Comedy Family Sci-Fi
+72,Hideaki Anno,Mark Chinnery,Shin'ya Tsukamoto,Atsuko Maeda,Action Adventure Drama Horror Sci-Fi,godzilla resurgence,Mark Chinnery Shin'ya Tsukamoto Atsuko Maeda Hideaki Anno Action Adventure Drama Horror Sci-Fi
+73,Francis Lawrence,Jennifer Lawrence,Philip Seymour Hoffman,Josh Hutcherson,Adventure Sci-Fi Thriller,the hunger games: mockingjay - part 1,Jennifer Lawrence Philip Seymour Hoffman Josh Hutcherson Francis Lawrence Adventure Sci-Fi Thriller
+74,Bryan Singer,Hugh Jackman,Bruce Davison,Aaron Stanford,Action Adventure Fantasy Sci-Fi Thriller,x-men 2,Hugh Jackman Bruce Davison Aaron Stanford Bryan Singer Action Adventure Fantasy Sci-Fi Thriller
+75,Roland Emmerich,Jake Gyllenhaal,Dennis Quaid,Sela Ward,Action Adventure Sci-Fi Thriller,the day after tomorrow,Jake Gyllenhaal Dennis Quaid Sela Ward Roland Emmerich Action Adventure Sci-Fi Thriller
+76,Tim Story,Chris Evans,Ioan Gruffudd,Andre Braugher,Action Adventure Sci-Fi Thriller,fantastic 4: rise of the silver surfer,Chris Evans Ioan Gruffudd Andre Braugher Tim Story Action Adventure Sci-Fi Thriller
+77,Ridley Scott,Michael Fassbender,Charlize Theron,Sean Harris,Adventure Mystery Sci-Fi,prometheus,Michael Fassbender Charlize Theron Sean Harris Ridley Scott Adventure Mystery Sci-Fi
+78,Neill Blomkamp,Matt Damon,Sharlto Copley,Alice Braga,Action Drama Sci-Fi Thriller,elysium,Matt Damon Sharlto Copley Alice Braga Neill Blomkamp Action Drama Sci-Fi Thriller
+79,David Twohy,Vin Diesel,Alexa Davalos,Christina Cox,Action Adventure Sci-Fi Thriller,the chronicles of riddick,Vin Diesel Alexa Davalos Christina Cox David Twohy Action Adventure Sci-Fi Thriller
+80,Joseph Kosinski,Morgan Freeman,Tom Cruise,ZoÃÂ« Bell,Action Adventure Mystery Sci-Fi,oblivion,Morgan Freeman Tom Cruise ZoÃÂ« Bell Joseph Kosinski Action Adventure Mystery Sci-Fi
+81,George Lucas,Natalie Portman,Christopher Lee,Hayden Christensen,Action Adventure Fantasy Sci-Fi,star wars: episode iii - revenge of the sith,Natalie Portman Christopher Lee Hayden Christensen George Lucas Action Adventure Fantasy Sci-Fi
+82,George Lucas,Natalie Portman,Christopher Lee,Hayden Christensen,Action Adventure Fantasy Sci-Fi,star wars: episode ii - attack of the clones,Natalie Portman Christopher Lee Hayden Christensen George Lucas Action Adventure Fantasy Sci-Fi
+83,James Mangold,Hugh Jackman,Tao Okamoto,Rila Fukushima,Action Adventure Sci-Fi Thriller,the wolverine,Hugh Jackman Tao Okamoto Rila Fukushima James Mangold Action Adventure Sci-Fi Thriller
+84,George Lucas,Natalie Portman,Liam Neeson,Ian McDiarmid,Action Adventure Fantasy Sci-Fi,star wars: episode i - the phantom menace,Natalie Portman Liam Neeson Ian McDiarmid George Lucas Action Adventure Fantasy Sci-Fi
+85,Alfonso CuarÃÂ³n,Phaldut Sharma,Basher Savage,Amy Warren,Adventure Drama Sci-Fi Thriller,gravity,Phaldut Sharma Basher Savage Amy Warren Alfonso CuarÃÂ³n Adventure Drama Sci-Fi Thriller
+86,Dave Green,Stephen Amell,Noel Fisher,Brad Garrett,Action Adventure Comedy Sci-Fi,teenage mutant ninja turtles: out of the shadows,Stephen Amell Noel Fisher Brad Garrett Dave Green Action Adventure Comedy Sci-Fi
+87,Robert Schwentke,Kate Winslet,Theo James,Mekhi Phifer,Adventure Sci-Fi Thriller,insurgent,Kate Winslet Theo James Mekhi Phifer Robert Schwentke Adventure Sci-Fi Thriller
+88,Michel Gondry,Christoph Waltz,Tom Wilkinson,Chad L. Coleman,Action Comedy Crime Sci-Fi Thriller,the green hornet,Christoph Waltz Tom Wilkinson Chad L. Coleman Michel Gondry Action Comedy Crime Sci-Fi Thriller
+89,Robert Schwentke,Naomi Watts,Theo James,ZoÃÂ« Kravitz,Action Adventure Mystery Sci-Fi Thriller,allegiant,Naomi Watts Theo James ZoÃÂ« Kravitz Robert Schwentke Action Adventure Mystery Sci-Fi Thriller
+90,Shawn Levy,Hugh Jackman,Torey Michael Adkins,Olga Fonda,Action Drama Sci-Fi Sport,real steel,Hugh Jackman Torey Michael Adkins Olga Fonda Shawn Levy Action Drama Sci-Fi Sport
+91,Gavin Hood,Harrison Ford,Moises Arias,Aramis Knight,Action Sci-Fi,ender's game,Harrison Ford Moises Arias Aramis Knight Gavin Hood Action Sci-Fi
+92,Alex Proyas,Will Smith,Bruce Greenwood,Chi McBride,Action Mystery Sci-Fi Thriller,"i, robot",Will Smith Bruce Greenwood Chi McBride Alex Proyas Action Mystery Sci-Fi Thriller
+93,Ridley Scott,Matt Damon,Donald Glover,Benedict Wong,Adventure Drama Sci-Fi,the martian,Matt Damon Donald Glover Benedict Wong Ridley Scott Adventure Drama Sci-Fi
+94,Steven Spielberg,Tom Cruise,Frank Grillo,Jessica Capshaw,Action Mystery Sci-Fi Thriller,minority report,Tom Cruise Frank Grillo Jessica Capshaw Steven Spielberg Action Mystery Sci-Fi Thriller
+95,James Cameron,Joe Morton,Jenette Goldstein,S. Epatha Merkerson,Action Sci-Fi,terminator 2: judgment day,Joe Morton Jenette Goldstein S. Epatha Merkerson James Cameron Action Sci-Fi
+96,Paul Verhoeven,Jake Busey,Patrick Muldoon,Seth Gilliam,Action Sci-Fi War,starship troopers,Jake Busey Patrick Muldoon Seth Gilliam Paul Verhoeven Action Sci-Fi War
+97,Tom Tykwer,Tom Hanks,Jim Sturgess,Jim Broadbent,Drama Sci-Fi,cloud atlas,Tom Hanks Jim Sturgess Jim Broadbent Tom Tykwer Drama Sci-Fi
+98,Ron Clements,Joseph Gordon-Levitt,Martin Short,Michael Wincott,Adventure Animation Family Sci-Fi,treasure planet,Joseph Gordon-Levitt Martin Short Michael Wincott Ron Clements Adventure Animation Family Sci-Fi
+99,Brad Silberling,Will Ferrell,Anna Friel,Bobb'e J. Thompson,Adventure Comedy Sci-Fi,land of the lost,Will Ferrell Anna Friel Bobb'e J. Thompson Brad Silberling Adventure Comedy Sci-Fi
+100,Ron Underwood,Rosario Dawson,Randy Quaid,Burt Young,Action Comedy Sci-Fi,the adventures of pluto nash,Rosario Dawson Randy Quaid Burt Young Ron Underwood Action Comedy Sci-Fi
+101,Frank Oz,Jon Lovitz,Matthew Broderick,Roger Bart,Comedy Sci-Fi Thriller,the stepford wives,Jon Lovitz Matthew Broderick Roger Bart Frank Oz Comedy Sci-Fi Thriller
+102,Luc Besson,Milla Jovovich,Bruce Willis,Gary Oldman,Action Adventure Sci-Fi,the fifth element,Milla Jovovich Bruce Willis Gary Oldman Luc Besson Action Adventure Sci-Fi
+103,Wally Pfister,Johnny Depp,Morgan Freeman,Clifton Collins Jr.,Drama Mystery Romance Sci-Fi Thriller,transcendence,Johnny Depp Morgan Freeman Clifton Collins Jr. Wally Pfister Drama Mystery Romance Sci-Fi Thriller
+104,Joe Johnston,Michael Jeter,Trevor Morgan,Alessandro Nivola,Action Adventure Sci-Fi Thriller,jurassic park iii,Michael Jeter Trevor Morgan Alessandro Nivola Joe Johnston Action Adventure Sci-Fi Thriller
+105,Rupert Wyatt,James Franco,David Oyelowo,Tyler Labine,Action Drama Sci-Fi Thriller,rise of the planet of the apes,James Franco David Oyelowo Tyler Labine Rupert Wyatt Action Drama Sci-Fi Thriller
+106,Barry Sonnenfeld,Will Smith,Rip Torn,Linda Fiorentino,Adventure Comedy Family Mystery Sci-Fi,men in black,Will Smith Rip Torn Linda Fiorentino Barry Sonnenfeld Adventure Comedy Family Mystery Sci-Fi
+107,Phil Lord,Will Forte,Bobb'e J. Thompson,Al Roker,Animation Comedy Family Sci-Fi,cloudy with a chance of meatballs,Will Forte Bobb'e J. Thompson Al Roker Phil Lord Animation Comedy Family Sci-Fi
+108,Gary Trousdale,Leonard Nimoy,Jim Varney,Cree Summer,Action Adventure Animation Family Fantasy Sci-Fi,atlantis: the lost empire,Leonard Nimoy Jim Varney Cree Summer Gary Trousdale Action Adventure Animation Family Fantasy Sci-Fi
+109,Chris Columbus,Peter Dinklage,Adam Sandler,Josh Gad,Action Animation Comedy Sci-Fi,pixels,Peter Dinklage Adam Sandler Josh Gad Chris Columbus Action Animation Comedy Sci-Fi
+110,Steven Spielberg,Haley Joel Osment,William Hurt,Kevin Sussman,Adventure Drama Sci-Fi,a.i. artificial intelligence,Haley Joel Osment William Hurt Kevin Sussman Steven Spielberg Adventure Drama Sci-Fi
+111,Robert Zemeckis,Matthew McConaughey,Tom Skerritt,Larry King,Drama Mystery Sci-Fi Thriller,contact,Matthew McConaughey Tom Skerritt Larry King Robert Zemeckis Drama Mystery Sci-Fi Thriller
+112,Paul Verhoeven,Greg Grunberg,Kim Dickens,Joey Slotnick,Action Horror Sci-Fi Thriller,hollow man,Greg Grunberg Kim Dickens Joey Slotnick Paul Verhoeven Action Horror Sci-Fi Thriller
+113,Brian De Palma,Don Cheadle,Connie Nielsen,Kim Delaney,Adventure Sci-Fi Thriller,mission to mars,Don Cheadle Connie Nielsen Kim Delaney Brian De Palma Adventure Sci-Fi Thriller
+114,Chris Columbus,Robin Williams,Oliver Platt,John Michael Higgins,Comedy Drama Sci-Fi,bicentennial man,Robin Williams Oliver Platt John Michael Higgins Chris Columbus Comedy Drama Sci-Fi
+115,Mick Jackson,Don Cheadle,Anne Heche,Gaby Hoffmann,Action Drama Sci-Fi Thriller,volcano,Don Cheadle Anne Heche Gaby Hoffmann Mick Jackson Action Drama Sci-Fi Thriller
+116,Josh Trank,Tim Blake Nelson,Reg E. Cathey,Tim Heidecker,Action Adventure Sci-Fi,fantastic four,Tim Blake Nelson Reg E. Cathey Tim Heidecker Josh Trank Action Adventure Sci-Fi
+117,Neil Burger,Kate Winslet,Theo James,Mekhi Phifer,Adventure Mystery Sci-Fi,divergent,Kate Winslet Theo James Mekhi Phifer Neil Burger Adventure Mystery Sci-Fi
+118,Jon Amiel,Glenn Morshower,TchÃÂ©ky Karyo,Rekha Sharma,Action Adventure Sci-Fi Thriller,the core,Glenn Morshower TchÃÂ©ky Karyo Rekha Sharma Jon Amiel Action Adventure Sci-Fi Thriller
+119,Peter Segal,Larry Miller,Janet Jackson,Chris Elliott,Comedy Romance Sci-Fi,nutty professor ii: the klumps,Larry Miller Janet Jackson Chris Elliott Peter Segal Comedy Romance Sci-Fi
+120,Doug Liman,Kristen Stewart,Hayden Christensen,Tom Hulce,Action Adventure Sci-Fi Thriller,jumper,Kristen Stewart Hayden Christensen Tom Hulce Doug Liman Action Adventure Sci-Fi Thriller
+121,Guillermo del Toro,Seth MacFarlane,IvÃÂ¡n KamarÃÂ¡s,Brian Steele,Action Adventure Fantasy Horror Sci-Fi,hellboy ii: the golden army,Seth MacFarlane IvÃÂ¡n KamarÃÂ¡s Brian Steele Guillermo del Toro Action Adventure Fantasy Horror Sci-Fi
+122,Roger Spottiswoode,Robert Duvall,Michael Rapaport,Tony Goldwyn,Action Mystery Sci-Fi Thriller,the 6th day,Robert Duvall Michael Rapaport Tony Goldwyn Roger Spottiswoode Action Mystery Sci-Fi Thriller
+123,Gary Ross,Jennifer Lawrence,Josh Hutcherson,Anthony Reynolds,Adventure Drama Sci-Fi Thriller,the hunger games,Jennifer Lawrence Josh Hutcherson Anthony Reynolds Gary Ross Adventure Drama Sci-Fi Thriller
+124,Dean DeBlois,Tia Carrere,Jason Scott Lee,David Ogden Stiers,Adventure Animation Comedy Drama Family Fantasy Sci-Fi,lilo & stitch,Tia Carrere Jason Scott Lee David Ogden Stiers Dean DeBlois Adventure Animation Comedy Drama Family Fantasy Sci-Fi
+125,Mimi Leder,Morgan Freeman,Jon Favreau,Robert Duvall,Action Drama Romance Sci-Fi Thriller,deep impact,Morgan Freeman Jon Favreau Robert Duvall Mimi Leder Action Drama Romance Sci-Fi Thriller
+126,Chris Wedge,Jim Broadbent,Drew Carey,Paula Abdul,Adventure Animation Comedy Family Sci-Fi,robots,Jim Broadbent Drew Carey Paula Abdul Chris Wedge Adventure Animation Comedy Family Sci-Fi
+127,John Woo,Nicolas Cage,CCH Pounder,Joan Allen,Action Crime Sci-Fi Thriller,face/off,Nicolas Cage CCH Pounder Joan Allen John Woo Action Crime Sci-Fi Thriller
+128,unknown,Elden Henson,Royce Johnson,Charlie Cox,Action Adventure Crime Drama Sci-Fi Thriller,daredevilÃÂ            ,Elden Henson Royce Johnson Charlie Cox unknown Action Adventure Crime Drama Sci-Fi Thriller
+129,Les Mayfield,Robin Williams,Jodi Benson,Sam Lloyd,Comedy Family Sci-Fi,flubber,Robin Williams Jodi Benson Sam Lloyd Les Mayfield Comedy Family Sci-Fi
+130,Joe Pytka,Bill Murray,Wayne Knight,Michael Jordan,Adventure Animation Comedy Family Fantasy Sci-Fi Sport,space jam,Bill Murray Wayne Knight Michael Jordan Joe Pytka Adventure Animation Comedy Family Fantasy Sci-Fi Sport
+131,Stephen Hopkins,Gary Oldman,William Hurt,June Lockhart,Action Adventure Family Sci-Fi Thriller,lost in space,Gary Oldman William Hurt June Lockhart Stephen Hopkins Action Adventure Family Sci-Fi Thriller
+132,Jonathan Demme,Denzel Washington,Dorian Missick,Jose Pablo Cantillo,Drama Mystery Sci-Fi Thriller,the manchurian candidate,Denzel Washington Dorian Missick Jose Pablo Cantillo Jonathan Demme Drama Mystery Sci-Fi Thriller
+133,Simon Wells,Mark Addy,Alan Young,Josh Stamberg,Action Adventure Sci-Fi,the time machine,Mark Addy Alan Young Josh Stamberg Simon Wells Action Adventure Sci-Fi
+134,Tim Burton,Natalie Portman,Martin Short,Lukas Haas,Action Comedy Sci-Fi,mars attacks!,Natalie Portman Martin Short Lukas Haas Tim Burton Action Comedy Sci-Fi
+135,Lucile Hadzihalilovic,Nissim Renard,Roxane Duran,Julie-Marie Parmentier,Drama Horror Mystery Sci-Fi,evolution,Nissim Renard Roxane Duran Julie-Marie Parmentier Lucile Hadzihalilovic Drama Horror Mystery Sci-Fi
+136,Jonathan Mostow,Bruce Willis,Devin Ratray,Boris Kodjoe,Action Sci-Fi Thriller,surrogates,Bruce Willis Devin Ratray Boris Kodjoe Jonathan Mostow Action Sci-Fi Thriller
+137,Roger Christian,Richard Tyson,Michael Byrne,John Topor,Action Adventure Sci-Fi,battlefield earth,Richard Tyson Michael Byrne John Topor Roger Christian Action Adventure Sci-Fi
+138,Joe Dante,Brendan Fraser,Jenna Elfman,Heather Locklear,Adventure Animation Comedy Family Fantasy Sci-Fi,looney tunes: back in action,Brendan Fraser Jenna Elfman Heather Locklear Joe Dante Adventure Animation Comedy Family Fantasy Sci-Fi
+139,Richard Donner,Paul Walker,Gerard Butler,Ethan Embry,Action Adventure Sci-Fi,timeline,Paul Walker Gerard Butler Ethan Embry Richard Donner Action Adventure Sci-Fi
+140,Kevin Costner,Olivia Williams,Brian Anthony Wilson,Larenz Tate,Action Adventure Drama Sci-Fi,the postman,Olivia Williams Brian Anthony Wilson Larenz Tate Kevin Costner Action Adventure Drama Sci-Fi
+141,Antony Hoffman,Bob Neill,Val Kilmer,Tom Sizemore,Action Sci-Fi Thriller,red planet,Bob Neill Val Kilmer Tom Sizemore Antony Hoffman Action Sci-Fi Thriller
+142,Peter Hyams,David Oyelowo,Catherine McCormack,Jemima Rooper,Action Adventure Horror Sci-Fi Thriller,a sound of thunder,David Oyelowo Catherine McCormack Jemima Rooper Peter Hyams Action Adventure Horror Sci-Fi Thriller
+143,Brad Peyton,Josh Hutcherson,Dwayne Johnson,Kristin Davis,Action Adventure Comedy Family Fantasy Sci-Fi,journey 2: the mysterious island,Josh Hutcherson Dwayne Johnson Kristin Davis Brad Peyton Action Adventure Comedy Family Fantasy Sci-Fi
+144,Cody Cameron,Will Forte,Khamani Griffin,Melissa Sturm,Animation Comedy Family Fantasy Sci-Fi,cloudy with a chance of meatballs 2,Will Forte Khamani Griffin Melissa Sturm Cody Cameron Animation Comedy Family Fantasy Sci-Fi
+145,Oliver Hirschbiegel,Roger Rees,Veronica Cartwright,Jeremy Northam,Sci-Fi Thriller,the invasion,Roger Rees Veronica Cartwright Jeremy Northam Oliver Hirschbiegel Sci-Fi Thriller
+146,Stephen Norrington,Jason Flemyng,Max Ryan,Tony Curran,Action Adventure Fantasy Sci-Fi,the league of extraordinary gentlemen,Jason Flemyng Max Ryan Tony Curran Stephen Norrington Action Adventure Fantasy Sci-Fi
+147,Pierre Coffin,Steve Carell,Miranda Cosgrove,Steve Coogan,Animation Comedy Family Sci-Fi,despicable me 2,Steve Carell Miranda Cosgrove Steve Coogan Pierre Coffin Animation Comedy Family Sci-Fi
+148,Roland Emmerich,Will Smith,Adam Baldwin,Mary McDonnell,Action Adventure Sci-Fi,independence day,Will Smith Adam Baldwin Mary McDonnell Roland Emmerich Action Adventure Sci-Fi
+149,Steven Spielberg,Ariana Richards,Richard Schiff,Vanessa Lee Chester,Action Adventure Sci-Fi,the lost world: jurassic park,Ariana Richards Richard Schiff Vanessa Lee Chester Steven Spielberg Action Adventure Sci-Fi
+150,Alfonso CuarÃÂ³n,Charlie Hunnam,Danny Huston,Rita Davies,Drama Sci-Fi Thriller,children of men,Charlie Hunnam Danny Huston Rita Davies Alfonso CuarÃÂ³n Drama Sci-Fi Thriller
+151,Bryan Singer,Hugh Jackman,Tyler Mane,Bruce Davison,Action Adventure Sci-Fi,x-men,Hugh Jackman Tyler Mane Bruce Davison Bryan Singer Action Adventure Sci-Fi
+152,David Kellogg,Matthew Broderick,Rene Auberjonois,Rupert Everett,Action Adventure Comedy Family Sci-Fi,inspector gadget,Matthew Broderick Rene Auberjonois Rupert Everett David Kellogg Action Adventure Comedy Family Sci-Fi
+153,Don Bluth,Matt Damon,Janeane Garofalo,Nathan Lane,Action Adventure Animation Family Sci-Fi,titan a.e.,Matt Damon Janeane Garofalo Nathan Lane Don Bluth Action Adventure Animation Family Sci-Fi
+154,Paul W.S. Anderson,Connie Nielsen,Sean Pertwee,Jason Scott Lee,Action Drama Sci-Fi,soldier,Connie Nielsen Sean Pertwee Jason Scott Lee Paul W.S. Anderson Action Drama Sci-Fi
+155,David Pastor,Christopher Meloni,Kiernan Shipka,Lou Taylor Pucci,Drama Horror Sci-Fi Thriller,carriers,Christopher Meloni Kiernan Shipka Lou Taylor Pucci David Pastor Drama Horror Sci-Fi Thriller
+156,M. Night Shyamalan,Robin Wright,Bruce Willis,Michael Kelly,Drama Mystery Sci-Fi Thriller,unbreakable,Robin Wright Bruce Willis Michael Kelly M. Night Shyamalan Drama Mystery Sci-Fi Thriller
+157,Kyle Balda,Steve Carell,Jon Hamm,Steve Coogan,Action Animation Comedy Family Sci-Fi,minions,Steve Carell Jon Hamm Steve Coogan Kyle Balda Action Animation Comedy Family Sci-Fi
+158,Barry Levinson,Peter Coyote,James Pickens Jr.,Huey Lewis,Drama Mystery Sci-Fi Thriller,sphere,Peter Coyote James Pickens Jr. Huey Lewis Barry Levinson Drama Mystery Sci-Fi Thriller
+159,M. Night Shyamalan,Rory Culkin,Merritt Wever,Cherry Jones,Drama Sci-Fi Thriller,signs,Rory Culkin Merritt Wever Cherry Jones M. Night Shyamalan Drama Sci-Fi Thriller
+160,Cameron Crowe,Tom Cruise,Ivana Milicevic,Noah Taylor,Fantasy Mystery Romance Sci-Fi Thriller,vanilla sky,Tom Cruise Ivana Milicevic Noah Taylor Cameron Crowe Fantasy Mystery Romance Sci-Fi Thriller
+161,Paul W.S. Anderson,Sanaa Lathan,Colin Salmon,Raoul Bova,Action Horror Sci-Fi Thriller,avp: alien vs. predator,Sanaa Lathan Colin Salmon Raoul Bova Paul W.S. Anderson Action Horror Sci-Fi Thriller
+162,Jonathan Frakes,LeVar Burton,Jonathan Frakes,Michael Dorn,Action Adventure Sci-Fi Thriller,star trek: insurrection,LeVar Burton Jonathan Frakes Michael Dorn Jonathan Frakes Action Adventure Sci-Fi Thriller
+163,Jonathan Liebesman,Noel Fisher,Jim Parrack,Ramon Rodriguez,Action Sci-Fi,battle los angeles,Noel Fisher Jim Parrack Ramon Rodriguez Jonathan Liebesman Action Sci-Fi
+164,James Cameron,Michael Biehn,Todd Graff,Mary Elizabeth Mastrantonio,Adventure Drama Sci-Fi Thriller,the abyss,Michael Biehn Todd Graff Mary Elizabeth Mastrantonio James Cameron Adventure Drama Sci-Fi Thriller
+165,Andrzej Bartkowiak,Dwayne Johnson,Ben Daniels,Dexter Fletcher,Action Adventure Horror Sci-Fi,doom,Dwayne Johnson Ben Daniels Dexter Fletcher Andrzej Bartkowiak Action Adventure Horror Sci-Fi
+166,John McTiernan,LL Cool J,Chris Klein,Andrew Bryniarski,Action Sci-Fi Sport,rollerball,LL Cool J Chris Klein Andrew Bryniarski John McTiernan Action Sci-Fi Sport
+167,Wych Kaosayananda,Talisa Soto,Sandrine Holt,Gregg Henry,Action Crime Sci-Fi Thriller,ballistic: ecks vs. sever,Talisa Soto Sandrine Holt Gregg Henry Wych Kaosayananda Action Crime Sci-Fi Thriller
+168,Kerry Conran,Angelina Jolie Pitt,Laurence Olivier,Bai Ling,Action Adventure Mystery Sci-Fi Thriller,sky captain and the world of tomorrow,Angelina Jolie Pitt Laurence Olivier Bai Ling Kerry Conran Action Adventure Mystery Sci-Fi Thriller
+169,Mikael HÃÂ¥fstrÃÂ¶m,Sylvester Stallone,50 Cent,Matt Gerald,Action Crime Mystery Sci-Fi Thriller,escape plan,Sylvester Stallone 50 Cent Matt Gerald Mikael HÃÂ¥fstrÃÂ¶m Action Crime Mystery Sci-Fi Thriller
+170,Kinka Usher,Janeane Garofalo,Wes Studi,Eddie Izzard,Action Comedy Fantasy Sci-Fi,mystery men,Janeane Garofalo Wes Studi Eddie Izzard Kinka Usher Action Comedy Fantasy Sci-Fi
+171,Rob Bowman,Martin Landau,Mitch Pileggi,Jeffrey DeMunn,Drama Mystery Sci-Fi Thriller,the x files,Martin Landau Mitch Pileggi Jeffrey DeMunn Rob Bowman Drama Mystery Sci-Fi Thriller
+172,Lawrence Kasdan,Morgan Freeman,Michael O'Neill,Reece Thompson,Drama Horror Sci-Fi Thriller,dreamcatcher,Morgan Freeman Michael O'Neill Reece Thompson Lawrence Kasdan Drama Horror Sci-Fi Thriller
+173,Lana Wachowski,Keanu Reeves,Marcus Chong,Gloria Foster,Action Sci-Fi,the matrix,Keanu Reeves Marcus Chong Gloria Foster Lana Wachowski Action Sci-Fi
+174,Paul Verhoeven,Ronny Cox,Rachel Ticotin,Marshall Bell,Action Sci-Fi,total recall,Ronny Cox Rachel Ticotin Marshall Bell Paul Verhoeven Action Sci-Fi
+175,David S. Goyer,Ryan Reynolds,Natasha Lyonne,John Michael Higgins,Action Adventure Fantasy Horror Sci-Fi Thriller,blade: trinity,Ryan Reynolds Natasha Lyonne John Michael Higgins David S. Goyer Action Adventure Fantasy Horror Sci-Fi Thriller
+176,Paul W.S. Anderson,Milla Jovovich,Boris Kodjoe,Bingbing Li,Action Horror Sci-Fi Thriller,resident evil: retribution,Milla Jovovich Boris Kodjoe Bingbing Li Paul W.S. Anderson Action Horror Sci-Fi Thriller
+177,Paul W.S. Anderson,Jason Statham,Max Ryan,Joan Allen,Action Sci-Fi Thriller,death race,Jason Statham Max Ryan Joan Allen Paul W.S. Anderson Action Sci-Fi Thriller
+178,Jon Favreau,Kristen Stewart,Josh Hutcherson,Jonah Bobo,Action Adventure Comedy Family Fantasy Sci-Fi,zathura: a space adventure,Kristen Stewart Josh Hutcherson Jonah Bobo Jon Favreau Action Adventure Comedy Family Fantasy Sci-Fi
+179,Stuart Beattie,Caitlin Stasey,Kevin Grevioux,Miranda Otto,Action Fantasy Sci-Fi Thriller,"i, frankenstein",Caitlin Stasey Kevin Grevioux Miranda Otto Stuart Beattie Action Fantasy Sci-Fi Thriller
+180,David Bowers,Nicolas Cage,Charlize Theron,Dee Bradley Baker,Action Animation Comedy Family Sci-Fi,astro boy,Nicolas Cage Charlize Theron Dee Bradley Baker David Bowers Action Animation Comedy Family Sci-Fi
+181,Steven Spielberg,Wayne Knight,Ariana Richards,Bob Peck,Adventure Sci-Fi Thriller,jurassic park,Wayne Knight Ariana Richards Bob Peck Steven Spielberg Adventure Sci-Fi Thriller
+182,Mark Dindal,Catherine O'Hara,Fred Willard,Amy Sedaris,Adventure Animation Comedy Family Sci-Fi,chicken little,Catherine O'Hara Fred Willard Amy Sedaris Mark Dindal Adventure Animation Comedy Family Sci-Fi
+183,Peter Weir,Natascha McElhone,Noah Emmerich,Peter Krause,Comedy Drama Sci-Fi,the truman show,Natascha McElhone Noah Emmerich Peter Krause Peter Weir Comedy Drama Sci-Fi
+184,Wes Ball,Ki Hong Lee,Lili Taylor,Rosa Salazar,Action Sci-Fi Thriller,the scorch trials,Ki Hong Lee Lili Taylor Rosa Salazar Wes Ball Action Sci-Fi Thriller
+185,Renny Harlin,LL Cool J,Michael Rapaport,Saffron Burrows,Action Sci-Fi Thriller,deep blue sea,LL Cool J Michael Rapaport Saffron Burrows Renny Harlin Action Sci-Fi Thriller
+186,M. Night Shyamalan,Zooey Deschanel,Alan Ruck,Kristen Connolly,Sci-Fi Thriller,the happening,Zooey Deschanel Alan Ruck Kristen Connolly M. Night Shyamalan Sci-Fi Thriller
+187,Guillermo del Toro,James Babson,Rupert Evans,Brian Steele,Action Fantasy Horror Sci-Fi,hellboy,James Babson Rupert Evans Brian Steele Guillermo del Toro Action Fantasy Horror Sci-Fi
+188,John Woo,Ivana Milicevic,Joe Morton,Callum Rennie,Action Mystery Sci-Fi Thriller,paycheck,Ivana Milicevic Joe Morton Callum Rennie John Woo Action Mystery Sci-Fi Thriller
+189,Kevin Donovan,Romany Malco,Debi Mazar,Ritchie Coster,Action Comedy Sci-Fi,the tuxedo,Romany Malco Debi Mazar Ritchie Coster Kevin Donovan Action Comedy Sci-Fi
+190,Jean-Pierre Jeunet,Gary Dourdan,Michael Wincott,Raymond Cruz,Action Horror Sci-Fi,alien: resurrection,Gary Dourdan Michael Wincott Raymond Cruz Jean-Pierre Jeunet Action Horror Sci-Fi
+191,Rob Bowman,Christian Bale,Gerard Butler,Matthew McConaughey,Action Adventure Fantasy Sci-Fi Thriller,reign of fire,Christian Bale Gerard Butler Matthew McConaughey Rob Bowman Action Adventure Fantasy Sci-Fi Thriller
+192,Donald Petrie,Steven Anthony Lawrence,Ray Walston,Michael Lerner,Comedy Family Sci-Fi,my favorite martian,Steven Anthony Lawrence Ray Walston Michael Lerner Donald Petrie Comedy Family Sci-Fi
+193,Jorge Blanco,Dwayne Johnson,Gary Oldman,James Corden,Adventure Animation Comedy Family Sci-Fi,planet 51,Dwayne Johnson Gary Oldman James Corden Jorge Blanco Adventure Animation Comedy Family Sci-Fi
+194,Stuart Baird,Tom Hardy,LeVar Burton,Jonathan Frakes,Action Adventure Sci-Fi Thriller,star trek: nemesis,Tom Hardy LeVar Burton Jonathan Frakes Stuart Baird Action Adventure Sci-Fi Thriller
+195,Peter Hyams,John Kapelos,Penelope Ann Miller,Chi Muoi Lo,Horror Mystery Sci-Fi Thriller,the relic,John Kapelos Penelope Ann Miller Chi Muoi Lo Peter Hyams Horror Mystery Sci-Fi Thriller
+196,Scott Stewart,Josh Wingate,Alan Dale,Jacob Hopkins,Action Fantasy Horror Sci-Fi Thriller,priest,Josh Wingate Alan Dale Jacob Hopkins Scott Stewart Action Fantasy Horror Sci-Fi Thriller
+197,Paul W.S. Anderson,Sean Pertwee,Joely Richardson,Kathleen Quinlan,Horror Sci-Fi Thriller,event horizon,Sean Pertwee Joely Richardson Kathleen Quinlan Paul W.S. Anderson Horror Sci-Fi Thriller
+198,Joss Whedon,Chris Hemsworth,Robert Downey Jr.,Scarlett Johansson,Action Adventure Sci-Fi,the avengers,Chris Hemsworth Robert Downey Jr. Scarlett Johansson Joss Whedon Action Adventure Sci-Fi
+199,Walter Hill,Robert Forster,Wilson Cruz,Vanessa Marshall,Horror Sci-Fi Thriller,supernova,Robert Forster Wilson Cruz Vanessa Marshall Walter Hill Horror Sci-Fi Thriller
+200,Brian Robbins,Marc Blucas,Mike O'Malley,Shawn Christian,Adventure Comedy Family Romance Sci-Fi,meet dave,Marc Blucas Mike O'Malley Shawn Christian Brian Robbins Adventure Comedy Family Romance Sci-Fi
+201,Tim Miller,Ryan Reynolds,Ed Skrein,Stefan Kapicic,Action Adventure Comedy Romance Sci-Fi,deadpool,Ryan Reynolds Ed Skrein Stefan Kapicic Tim Miller Action Adventure Comedy Romance Sci-Fi
+202,Brian Levant,Taylor Negron,Mark Addy,Danny Woodburn,Comedy Family Romance Sci-Fi,the flintstones in viva rock vegas,Taylor Negron Mark Addy Danny Woodburn Brian Levant Comedy Family Romance Sci-Fi
+203,Paul W.S. Anderson,Milla Jovovich,Boris Kodjoe,Shawn Roberts,Action Adventure Horror Sci-Fi,resident evil: afterlife,Milla Jovovich Boris Kodjoe Shawn Roberts Paul W.S. Anderson Action Adventure Horror Sci-Fi
+204,Richard Donner,Marlon Brando,Margot Kidder,Ned Beatty,Action Adventure Drama Romance Sci-Fi,superman,Marlon Brando Margot Kidder Ned Beatty Richard Donner Action Adventure Drama Romance Sci-Fi
+205,Tom Shadyac,Jada Pinkett Smith,James Coburn,Dave Chappelle,Comedy Romance Sci-Fi,the nutty professor,Jada Pinkett Smith James Coburn Dave Chappelle Tom Shadyac Comedy Romance Sci-Fi
+206,unknown,Christopher Judge,Don S. Davis,Gary Jones,Action Adventure Drama Sci-Fi,stargate sg-1ÃÂ            ,Christopher Judge Don S. Davis Gary Jones unknown Action Adventure Drama Sci-Fi
+207,David Fincher,Charles S. Dutton,Holt McCallany,Paul McGann,Action Horror Sci-Fi,alien 3,Charles S. Dutton Holt McCallany Paul McGann David Fincher Action Horror Sci-Fi
+208,Andrew Davis,Keanu Reeves,Morgan Freeman,Kevin Dunn,Action Drama Sci-Fi Thriller,chain reaction,Keanu Reeves Morgan Freeman Kevin Dunn Andrew Davis Action Drama Sci-Fi Thriller
+209,Karyn Kusama,Charlize Theron,Sophie Okonedo,Paterson Joseph,Action Sci-Fi,ÃÂ¦on flux,Charlize Theron Sophie Okonedo Paterson Joseph Karyn Kusama Action Sci-Fi
+210,Jonathan Frakes,Sophia Myles,Philip Winchester,Brady Corbet,Action Adventure Comedy Family Sci-Fi,thunderbirds,Sophia Myles Philip Winchester Brady Corbet Jonathan Frakes Action Adventure Comedy Family Sci-Fi
+211,Guillermo del Toro,Norman Reedus,Thomas Kretschmann,Tony Curran,Action Horror Sci-Fi Thriller,blade ii,Norman Reedus Thomas Kretschmann Tony Curran Guillermo del Toro Action Horror Sci-Fi Thriller
+212,Richard Lester,Margot Kidder,Ned Beatty,Jackie Cooper,Action Adventure Romance Sci-Fi,superman ii,Margot Kidder Ned Beatty Jackie Cooper Richard Lester Action Adventure Romance Sci-Fi
+213,George Nolfi,Matt Damon,Michael Kelly,Jon Stewart,Romance Sci-Fi Thriller,the adjustment bureau,Matt Damon Michael Kelly Jon Stewart George Nolfi Romance Sci-Fi Thriller
+214,J.J. Abrams,Joel Courtney,AJ Michalka,Zach Mills,Mystery Sci-Fi Thriller,super 8,Joel Courtney AJ Michalka Zach Mills J.J. Abrams Mystery Sci-Fi Thriller
+215,Frank Marshall,Dylan Walsh,Joe Don Baker,Grant Heslov,Action Adventure Mystery Sci-Fi,congo,Dylan Walsh Joe Don Baker Grant Heslov Frank Marshall Action Adventure Mystery Sci-Fi
+216,Alex Proyas,Nicolas Cage,Ben Mendelsohn,Chandler Canterbury,Drama Mystery Sci-Fi Thriller,knowing,Nicolas Cage Ben Mendelsohn Chandler Canterbury Alex Proyas Drama Mystery Sci-Fi Thriller
+217,Andy Fickman,Dwayne Johnson,Billy Brown,Tom Everett Scott,Action Adventure Family Fantasy Sci-Fi Thriller,race to witch mountain,Dwayne Johnson Billy Brown Tom Everett Scott Andy Fickman Action Adventure Family Fantasy Sci-Fi Thriller
+218,D.J. Caruso,Alex Pettyfer,Emily Wickersham,Reuben Langdon,Action Adventure Sci-Fi Thriller,i am number four,Alex Pettyfer Emily Wickersham Reuben Langdon D.J. Caruso Action Adventure Sci-Fi Thriller
+219,Alexander Witt,Milla Jovovich,Thomas Kretschmann,Mike Epps,Action Horror Sci-Fi Thriller,resident evil: apocalypse,Milla Jovovich Thomas Kretschmann Mike Epps Alexander Witt Action Horror Sci-Fi Thriller
+220,John Carpenter,Steve Buscemi,Valeria Golino,Michelle Forbes,Action Adventure Sci-Fi Thriller,escape from l.a.,Steve Buscemi Valeria Golino Michelle Forbes John Carpenter Action Adventure Sci-Fi Thriller
+221,Brad Bird,Vin Diesel,Harry Connick Jr.,M. Emmet Walsh,Action Adventure Animation Comedy Drama Family Sci-Fi,the iron giant,Vin Diesel Harry Connick Jr. M. Emmet Walsh Brad Bird Action Adventure Animation Comedy Drama Family Sci-Fi
+222,unknown,Julie Benz,Tony Curran,Grant Bowler,Action Drama Sci-Fi,defianceÃÂ            ,Julie Benz Tony Curran Grant Bowler unknown Action Drama Sci-Fi
+223,Mark Neveldine,Gerard Butler,Logan Lerman,Alison Lohman,Action Sci-Fi Thriller,gamer,Gerard Butler Logan Lerman Alison Lohman Mark Neveldine Action Sci-Fi Thriller
+224,Mike Nichols,Judy Greer,Linda Fiorentino,Garry Shandling,Comedy Sci-Fi,what planet are you from?,Judy Greer Linda Fiorentino Garry Shandling Mike Nichols Comedy Sci-Fi
+225,James Wong,Jason Statham,Jet Li,Delroy Lindo,Action Sci-Fi Thriller,the one,Jason Statham Jet Li Delroy Lindo James Wong Action Sci-Fi Thriller
+226,unknown,Tobias Menzies,Graham McTavish,Stephen Walters,Drama Romance Sci-Fi,outlanderÃÂ            ,Tobias Menzies Graham McTavish Stephen Walters unknown Drama Romance Sci-Fi
+227,Neill Blomkamp,Hugh Jackman,Sharlto Copley,Jose Pablo Cantillo,Action Crime Drama Sci-Fi Thriller,chappie,Hugh Jackman Sharlto Copley Jose Pablo Cantillo Neill Blomkamp Action Crime Drama Sci-Fi Thriller
+228,Iain Softley,Kevin Spacey,Jeff Bridges,Alfre Woodard,Drama Mystery Sci-Fi,k-pax,Kevin Spacey Jeff Bridges Alfre Woodard Iain Softley Drama Mystery Sci-Fi
+229,Andrei Tarkovsky,Donatas Banionis,Anatoliy Solonitsyn,Natalya Bondarchuk,Drama Mystery Sci-Fi,solaris,Donatas Banionis Anatoliy Solonitsyn Natalya Bondarchuk Andrei Tarkovsky Drama Mystery Sci-Fi
+230,Jonathan Frakes,LeVar Burton,Alfre Woodard,Jonathan Frakes,Action Adventure Drama Sci-Fi Thriller,star trek: first contact,LeVar Burton Alfre Woodard Jonathan Frakes Jonathan Frakes Action Adventure Drama Sci-Fi Thriller
+231,Eric Brevig,Josh Hutcherson,Brendan Fraser,Anita Briem,Action Adventure Family Fantasy Sci-Fi,journey to the center of the earth,Josh Hutcherson Brendan Fraser Anita Briem Eric Brevig Action Adventure Family Fantasy Sci-Fi
+232,Dean Parisot,Alan Rickman,Enrico Colantoni,Robin Sachs,Adventure Comedy Sci-Fi,galaxy quest,Alan Rickman Enrico Colantoni Robin Sachs Dean Parisot Adventure Comedy Sci-Fi
+233,Garth Jennings,Zooey Deschanel,Kelly Macdonald,Thomas Lennon,Adventure Comedy Sci-Fi,the hitchhiker's guide to the galaxy,Zooey Deschanel Kelly Macdonald Thomas Lennon Garth Jennings Adventure Comedy Sci-Fi
+234,Russell Mulcahy,Milla Jovovich,Mike Epps,James Tumminia,Action Horror Sci-Fi Thriller,resident evil: extinction,Milla Jovovich Mike Epps James Tumminia Russell Mulcahy Action Horror Sci-Fi Thriller
+235,David Lynch,Virginia Madsen,JÃÂ¼rgen Prochnow,JosÃÂ© Ferrer,Action Adventure Sci-Fi,dune,Virginia Madsen JÃÂ¼rgen Prochnow JosÃÂ© Ferrer David Lynch Action Adventure Sci-Fi
+236,Mathieu Kassovitz,Vin Diesel,Charlotte Rampling,David Belle,Action Adventure Sci-Fi Thriller,babylon a.d.,Vin Diesel Charlotte Rampling David Belle Mathieu Kassovitz Action Adventure Sci-Fi Thriller
+237,Harold Ramis,John de Lancie,Brian Doyle-Murray,Obba BabatundÃÂ©,Comedy Romance Sci-Fi,multiplicity,John de Lancie Brian Doyle-Murray Obba BabatundÃÂ© Harold Ramis Comedy Romance Sci-Fi
+238,John Schultz,Malese Jow,Carter Jenkins,Tim Meadows,Adventure Comedy Family Fantasy Sci-Fi,aliens in the attic,Malese Jow Carter Jenkins Tim Meadows John Schultz Adventure Comedy Family Fantasy Sci-Fi
+239,Pete Travis,Wood Harris,Jason Cope,Rakie Ayola,Action Sci-Fi,dredd,Wood Harris Jason Cope Rakie Ayola Pete Travis Action Sci-Fi
+240,Stephen Sommers,Djimon Hounsou,Jason Flemyng,Wes Studi,Action Adventure Horror Sci-Fi,deep rising,Djimon Hounsou Jason Flemyng Wes Studi Stephen Sommers Action Adventure Horror Sci-Fi
+241,Len Wiseman,Sophia Myles,Tony Curran,Derek Jacobi,Action Adventure Fantasy Sci-Fi Thriller,underworld: evolution,Sophia Myles Tony Curran Derek Jacobi Len Wiseman Action Adventure Fantasy Sci-Fi Thriller
+242,Annabel Jankel,Bob Hoskins,Fisher Stevens,Fiona Shaw,Adventure Comedy Family Fantasy Sci-Fi,super mario bros.,Bob Hoskins Fisher Stevens Fiona Shaw Annabel Jankel Adventure Comedy Family Fantasy Sci-Fi
+243,Robert Zemeckis,Lea Thompson,Jeffrey Weissman,Thomas F. Wilson,Adventure Comedy Sci-Fi,back to the future part ii,Lea Thompson Jeffrey Weissman Thomas F. Wilson Robert Zemeckis Adventure Comedy Sci-Fi
+244,Luc Besson,Scarlett Johansson,Morgan Freeman,Amr Waked,Action Sci-Fi Thriller,lucy,Scarlett Johansson Morgan Freeman Amr Waked Luc Besson Action Sci-Fi Thriller
+245,Robert Rodriguez,Sylvester Stallone,Salma Hayek,Alexa PenaVega,Action Adventure Comedy Family Sci-Fi,spy kids 3-d: game over,Sylvester Stallone Salma Hayek Alexa PenaVega Robert Rodriguez Action Adventure Comedy Family Sci-Fi
+246,Robert Zemeckis,Lea Thompson,Jeffrey Weissman,Thomas F. Wilson,Adventure Comedy Sci-Fi Western,back to the future part iii,Lea Thompson Jeffrey Weissman Thomas F. Wilson Robert Zemeckis Adventure Comedy Sci-Fi Western
+247,Joe Dante,Kirsten Dunst,Denis Leary,Robert Picardo,Action Adventure Comedy Family Sci-Fi,small soldiers,Kirsten Dunst Denis Leary Robert Picardo Joe Dante Action Adventure Comedy Family Sci-Fi
+248,Christopher Nolan,Christian Bale,Hugh Jackman,Scarlett Johansson,Drama Mystery Sci-Fi Thriller,the prestige,Christian Bale Hugh Jackman Scarlett Johansson Christopher Nolan Drama Mystery Sci-Fi Thriller
+249,Cal Brunker,Brendan Fraser,Paul Scheer,Jonathan Morgan Heit,Adventure Animation Comedy Family Sci-Fi,escape from planet earth,Brendan Fraser Paul Scheer Jonathan Morgan Heit Cal Brunker Adventure Animation Comedy Family Sci-Fi
+250,NimrÃÂ³d Antal,Topher Grace,Alice Braga,Derek Mears,Action Adventure Sci-Fi Thriller,predators,Topher Grace Alice Braga Derek Mears NimrÃÂ³d Antal Action Adventure Sci-Fi Thriller
+251,Colin Strause,Sam Trammell,Johnny Lewis,Ian Whyte,Action Horror Sci-Fi Thriller,aliens vs. predator: requiem,Sam Trammell Johnny Lewis Ian Whyte Colin Strause Action Horror Sci-Fi Thriller
+252,Greg Mottola,Bobby Lee,Nelson Ascencio,Jeremy Owen,Adventure Comedy Sci-Fi,paul,Bobby Lee Nelson Ascencio Jeremy Owen Greg Mottola Adventure Comedy Sci-Fi
+253,John Frankenheimer,Marlon Brando,Temuera Morrison,Marco Hofschneider,Horror Sci-Fi Thriller,the island of dr. moreau,Marlon Brando Temuera Morrison Marco Hofschneider John Frankenheimer Horror Sci-Fi Thriller
+254,John Carpenter,Richard Epcar,Michael McKean,Patricia Heaton,Comedy Romance Sci-Fi Thriller,memoirs of an invisible man,Richard Epcar Michael McKean Patricia Heaton John Carpenter Comedy Romance Sci-Fi Thriller
+255,Mic Rodgers,Michael Jai White,Daniel von Bargen,Xander Berkeley,Action Sci-Fi,universal soldier: the return,Michael Jai White Daniel von Bargen Xander Berkeley Mic Rodgers Action Sci-Fi
+256,Christian Alvart,Norman Reedus,Dennis Quaid,Eddie Rouse,Action Horror Mystery Sci-Fi Thriller,pandorum,Norman Reedus Dennis Quaid Eddie Rouse Christian Alvart Action Horror Mystery Sci-Fi Thriller
+257,Gary Fleder,Gary Dourdan,Mekhi Phifer,Tim Guinee,Drama Mystery Sci-Fi Thriller,impostor,Gary Dourdan Mekhi Phifer Tim Guinee Gary Fleder Drama Mystery Sci-Fi Thriller
+258,Jean-Marie PoirÃÂ©,Bridgette Wilson-Sampras,Matt Ross,John Aylward,Comedy Fantasy Sci-Fi,just visiting,Bridgette Wilson-Sampras Matt Ross John Aylward Jean-Marie PoirÃÂ© Comedy Fantasy Sci-Fi
+259,Danny Boyle,Chris Evans,Benedict Wong,Troy Garity,Adventure Sci-Fi Thriller,sunshine,Chris Evans Benedict Wong Troy Garity Danny Boyle Adventure Sci-Fi Thriller
+260,Joon-ho Bong,Chris Evans,Ewen Bremner,Kang-ho Song,Action Drama Sci-Fi Thriller,snowpiercer,Chris Evans Ewen Bremner Kang-ho Song Joon-ho Bong Action Drama Sci-Fi Thriller
+261,Robert Schwentke,Arliss Howard,Brooklynn Proulx,Michelle Nolden,Drama Fantasy Romance Sci-Fi,the time traveler's wife,Arliss Howard Brooklynn Proulx Michelle Nolden Robert Schwentke Drama Fantasy Romance Sci-Fi
+262,Tim Burton,Martin Landau,Catherine O'Hara,Atticus Shaffer,Animation Comedy Family Horror Sci-Fi,frankenweenie,Martin Landau Catherine O'Hara Atticus Shaffer Tim Burton Animation Comedy Family Horror Sci-Fi
+263,Joss Whedon,Adam Baldwin,Sean Maher,Michael Hitchcock,Action Adventure Sci-Fi Thriller,serenity,Adam Baldwin Sean Maher Michael Hitchcock Joss Whedon Action Adventure Sci-Fi Thriller
+264,Richard Lester,Margot Kidder,Robert Vaughn,Jackie Cooper,Action Comedy Sci-Fi,superman iii,Margot Kidder Robert Vaughn Jackie Cooper Richard Lester Action Comedy Sci-Fi
+265,Robert Rodriguez,Steve Buscemi,Alexa PenaVega,Emily Osment,Action Adventure Comedy Family Sci-Fi,spy kids 2: island of lost dreams,Steve Buscemi Alexa PenaVega Emily Osment Robert Rodriguez Action Adventure Comedy Family Sci-Fi
+266,David Carson,LeVar Burton,Alan Ruck,Jonathan Frakes,Action Adventure Mystery Sci-Fi Thriller,star trek: generations,LeVar Burton Alan Ruck Jonathan Frakes David Carson Action Adventure Mystery Sci-Fi Thriller
+267,unknown,Joseph Gordon-Levitt,Wayne Knight,Kristen Johnston,Comedy Family Sci-Fi,3rd rock from the sunÃÂ            ,Joseph Gordon-Levitt Wayne Knight Kristen Johnston unknown Comedy Family Sci-Fi
+268,John Carpenter,Wilford Brimley,Richard Masur,David Clennon,Horror Mystery Sci-Fi,the thing,Wilford Brimley Richard Masur David Clennon John Carpenter Horror Mystery Sci-Fi
+269,David Twohy,Vin Diesel,Nolan Gerard Funk,Bokeem Woodbine,Action Sci-Fi Thriller,riddick,Vin Diesel Nolan Gerard Funk Bokeem Woodbine David Twohy Action Sci-Fi Thriller
+270,Gil Kenan,Bill Murray,Toby Jones,Harry Treadaway,Adventure Family Fantasy Sci-Fi,city of ember,Bill Murray Toby Jones Harry Treadaway Gil Kenan Adventure Family Fantasy Sci-Fi
+271,J Blakeson,ChloÃÂ« Grace Moretz,Maggie Siff,Nick Robinson,Action Adventure Sci-Fi Thriller,the 5th wave,ChloÃÂ« Grace Moretz Maggie Siff Nick Robinson J Blakeson Action Adventure Sci-Fi Thriller
+272,Fedor Bondarchuk,Yuliya Snigir,Fedor Bondarchuk,Aleksey Serebryakov,Action Adventure Sci-Fi,obitaemyy ostrov,Yuliya Snigir Fedor Bondarchuk Aleksey Serebryakov Fedor Bondarchuk Action Adventure Sci-Fi
+273,Steve Pink,Charlie McDermott,Collette Wolfe,Crystal Lowe,Comedy Sci-Fi,hot tub time machine,Charlie McDermott Collette Wolfe Crystal Lowe Steve Pink Comedy Sci-Fi
+274,Andrew Niccol,Blair Underwood,Xander Berkeley,Mason Gamble,Drama Sci-Fi Thriller,gattaca,Blair Underwood Xander Berkeley Mason Gamble Andrew Niccol Drama Sci-Fi Thriller
+275,Kirk De Micco,Cheryl Hines,Kenan Thompson,Omid Abtahi,Adventure Animation Comedy Family Sci-Fi,space chimps,Cheryl Hines Kenan Thompson Omid Abtahi Kirk De Micco Adventure Animation Comedy Family Sci-Fi
+276,Robert Rodriguez,Alexa PenaVega,Cheech Marin,Daryl Sabara,Action Adventure Comedy Family Sci-Fi,spy kids,Alexa PenaVega Cheech Marin Daryl Sabara Robert Rodriguez Action Adventure Comedy Family Sci-Fi
+277,Robert Wise,Leonard Nimoy,Nichelle Nichols,Walter Koenig,Adventure Mystery Sci-Fi,star trek: the motion picture,Leonard Nimoy Nichelle Nichols Walter Koenig Robert Wise Adventure Mystery Sci-Fi
+278,Mike Mitchell,Michael Angarano,Kelly Preston,Nicholas Braun,Adventure Comedy Family Sci-Fi,sky high,Michael Angarano Kelly Preston Nicholas Braun Mike Mitchell Adventure Comedy Family Sci-Fi
+279,Roger Donaldson,Natasha Henstridge,Marg Helgenberger,Jordan Lund,Action Horror Sci-Fi Thriller,species,Natasha Henstridge Marg Helgenberger Jordan Lund Roger Donaldson Action Horror Sci-Fi Thriller
+280,Tarsem Singh,Dylan Baker,Jake Weber,James Gammon,Horror Sci-Fi Thriller,the cell,Dylan Baker Jake Weber James Gammon Tarsem Singh Horror Sci-Fi Thriller
+281,Kevin Munroe,Chris Evans,Sarah Michelle Gellar,Mako,Action Adventure Animation Comedy Family Fantasy Sci-Fi,tmnt,Chris Evans Sarah Michelle Gellar Mako Kevin Munroe Action Adventure Animation Comedy Family Fantasy Sci-Fi
+282,Patrick Tatopoulos,Craig Parker,Kevin Grevioux,Steven Mackintosh,Action Adventure Fantasy Sci-Fi Thriller,underworld: rise of the lycans,Craig Parker Kevin Grevioux Steven Mackintosh Patrick Tatopoulos Action Adventure Fantasy Sci-Fi Thriller
+283,Paul W.S. Anderson,Milla Jovovich,Jaymes Butler,Colin Salmon,Action Horror Sci-Fi,resident evil,Milla Jovovich Jaymes Butler Colin Salmon Paul W.S. Anderson Action Horror Sci-Fi
+284,Andrew Niccol,Matt Bomer,Olivia Wilde,Justin Timberlake,Action Sci-Fi Thriller,in time,Matt Bomer Olivia Wilde Justin Timberlake Andrew Niccol Action Sci-Fi Thriller
+285,Stephen Hopkins,Adam Baldwin,Robert Davi,Kevin Peter Hall,Action Horror Sci-Fi,predator 2,Adam Baldwin Robert Davi Kevin Peter Hall Stephen Hopkins Action Horror Sci-Fi
+286,Hugh Wilson,Brendan Fraser,Sissy Spacek,Douglas Smith,Comedy Drama Romance Sci-Fi,blast from the past,Brendan Fraser Sissy Spacek Douglas Smith Hugh Wilson Comedy Drama Romance Sci-Fi
+287,Mike Hodges,Brian Blessed,William Hootkins,Sam J. Jones,Action Adventure Sci-Fi,flash gordon,Brian Blessed William Hootkins Sam J. Jones Mike Hodges Action Adventure Sci-Fi
+288,Chris Carter,Mitch Pileggi,Callum Rennie,Nicki Aycox,Drama Mystery Sci-Fi Thriller,the x files: i want to believe,Mitch Pileggi Callum Rennie Nicki Aycox Chris Carter Drama Mystery Sci-Fi Thriller
+289,Craig Mazin,Drake Bell,Tracy Morgan,Marion Ross,Action Comedy Sci-Fi Thriller,superhero movie,Drake Bell Tracy Morgan Marion Ross Craig Mazin Action Comedy Sci-Fi Thriller
+290,Kimble Rendall,Alex Russell,Cariba Heine,Richard Brancatisano,Action Horror Sci-Fi,bait,Alex Russell Cariba Heine Richard Brancatisano Kimble Rendall Action Horror Sci-Fi
+291,Peter Hewitt,Kevin Zegers,Rip Torn,Thomas F. Wilson,Action Adventure Family Sci-Fi,zoom,Kevin Zegers Rip Torn Thomas F. Wilson Peter Hewitt Action Adventure Family Sci-Fi
+292,Bille August,Jim Broadbent,Tom Wilkinson,Julia Ormond,Action Drama Sci-Fi Thriller,smilla's sense of snow,Jim Broadbent Tom Wilkinson Julia Ormond Bille August Action Drama Sci-Fi Thriller
+293,Wes Ball,Ki Hong Lee,Aml Ameen,Jacob Latimore,Action Mystery Sci-Fi Thriller,the maze runner,Ki Hong Lee Aml Ameen Jacob Latimore Wes Ball Action Mystery Sci-Fi Thriller
+294,Darren Aronofsky,Hugh Jackman,Ellen Burstyn,Mark Margolis,Drama Sci-Fi,the fountain,Hugh Jackman Ellen Burstyn Mark Margolis Darren Aronofsky Drama Sci-Fi
+295,Chris Gorak,Max Minghella,Veronika Vernadskaya,Dato Bakhtadze,Action Adventure Horror Sci-Fi Thriller,the darkest hour,Max Minghella Veronika Vernadskaya Dato Bakhtadze Chris Gorak Action Adventure Horror Sci-Fi Thriller
+296,Richard Marquand,Harrison Ford,Ian McDiarmid,Kenny Baker,Action Adventure Fantasy Sci-Fi,star wars: episode vi - return of the jedi,Harrison Ford Ian McDiarmid Kenny Baker Richard Marquand Action Adventure Fantasy Sci-Fi
+297,Neil Marshall,Ryan Kruger,Jason Cope,Jeremy Crutchley,Action Sci-Fi Thriller,doomsday,Ryan Kruger Jason Cope Jeremy Crutchley Neil Marshall Action Sci-Fi Thriller
+298,Jon Turteltaub,Robert Duvall,Kyra Sedgwick,David Gallagher,Drama Fantasy Romance Sci-Fi,phenomenon,Robert Duvall Kyra Sedgwick David Gallagher Jon Turteltaub Drama Fantasy Romance Sci-Fi
+299,Duncan Jones,Jake Gyllenhaal,Cas Anvar,Russell Peters,Mystery Sci-Fi Thriller,source code,Jake Gyllenhaal Cas Anvar Russell Peters Duncan Jones Mystery Sci-Fi Thriller
+300,Miguel Sapochnik,Alice Braga,RZA,Yvette Nicole Brown,Action Crime Sci-Fi Thriller,repo men,Alice Braga RZA Yvette Nicole Brown Miguel Sapochnik Action Crime Sci-Fi Thriller
+301,Ariel Vromen,Gary Oldman,Jordi MollÃÂ ,Doug Cockle,Action Crime Drama Mystery Sci-Fi Thriller,criminal,Gary Oldman Jordi MollÃÂ  Doug Cockle Ariel Vromen Action Crime Drama Mystery Sci-Fi Thriller
+302,Lewis Gilbert,Desmond Llewelyn,Lois Chiles,Lois Maxwell,Action Adventure Sci-Fi Thriller,moonraker,Desmond Llewelyn Lois Chiles Lois Maxwell Lewis Gilbert Action Adventure Sci-Fi Thriller
+303,Gregory Hoblit,Dennis Quaid,Andre Braugher,Noah Emmerich,Crime Drama Mystery Sci-Fi Thriller,frequency,Dennis Quaid Andre Braugher Noah Emmerich Gregory Hoblit Crime Drama Mystery Sci-Fi Thriller
+304,Paul Feig,Ed Begley Jr.,Kate McKinnon,Zach Woods,Action Comedy Fantasy Sci-Fi,ghostbusters,Ed Begley Jr. Kate McKinnon Zach Woods Paul Feig Action Comedy Fantasy Sci-Fi
+305,Neill Blomkamp,Sharlto Copley,Jed Brophy,Jason Cope,Action Sci-Fi Thriller,district 9,Sharlto Copley Jed Brophy Jason Cope Neill Blomkamp Action Sci-Fi Thriller
+306,Rian Johnson,Joseph Gordon-Levitt,Bruce Willis,Tracie Thoms,Action Crime Drama Sci-Fi Thriller,looper,Joseph Gordon-Levitt Bruce Willis Tracie Thoms Rian Johnson Action Crime Drama Sci-Fi Thriller
+307,William Shatner,Leonard Nimoy,Nichelle Nichols,Walter Koenig,Action Adventure Sci-Fi Thriller,star trek v: the final frontier,Leonard Nimoy Nichelle Nichols Walter Koenig William Shatner Action Adventure Sci-Fi Thriller
+308,Steve Box,Mark Gatiss,Geraldine McEwan,Peter Sallis,Animation Comedy Family Mystery Sci-Fi,the curse of the were-rabbit,Mark Gatiss Geraldine McEwan Peter Sallis Steve Box Animation Comedy Family Mystery Sci-Fi
+309,Paul Michael Glaser,Yaphet Kotto,Maria Conchita Alonso,Richard Dawson,Action Crime Sci-Fi Thriller,the running man,Yaphet Kotto Maria Conchita Alonso Richard Dawson Paul Michael Glaser Action Crime Sci-Fi Thriller
+310,Frank Oz,Bill Murray,Jim Belushi,Tisha Campbell-Martin,Comedy Horror Musical Sci-Fi,little shop of horrors,Bill Murray Jim Belushi Tisha Campbell-Martin Frank Oz Comedy Horror Musical Sci-Fi
+311,John R. Leonetti,Brian Thompson,Talisa Soto,Robin Shou,Action Adventure Fantasy Sci-Fi Thriller,mortal kombat: annihilation,Brian Thompson Talisa Soto Robin Shou John R. Leonetti Action Adventure Fantasy Sci-Fi Thriller
+312,Shane Acker,Martin Landau,Alan Oppenheimer,Tom Kane,Action Adventure Animation Drama Mystery Sci-Fi Thriller,9,Martin Landau Alan Oppenheimer Tom Kane Shane Acker Action Adventure Animation Drama Mystery Sci-Fi Thriller
+313,Brett Leonard,Denzel Washington,Costas Mandylor,Traci Lords,Action Crime Sci-Fi Thriller,virtuosity,Denzel Washington Costas Mandylor Traci Lords Brett Leonard Action Crime Sci-Fi Thriller
+314,Ivan Reitman,Rainn Wilson,Eddie Izzard,Wanda Sykes,Comedy Romance Sci-Fi,my super ex-girlfriend,Rainn Wilson Eddie Izzard Wanda Sykes Ivan Reitman Comedy Romance Sci-Fi
+315,Kurt Wimmer,Milla Jovovich,Cameron Bright,Nick Chinlund,Action Horror Sci-Fi Thriller,ultraviolet,Milla Jovovich Cameron Bright Nick Chinlund Kurt Wimmer Action Horror Sci-Fi Thriller
+316,Vincenzo Natali,Sarah Polley,David Hewlett,Delphine ChanÃÂ©ac,Drama Horror Sci-Fi,splice,Sarah Polley David Hewlett Delphine ChanÃÂ©ac Vincenzo Natali Drama Horror Sci-Fi
+317,Willard Huyck,Lea Thompson,Jeffrey Jones,Jordan Prentice,Action Adventure Comedy Romance Sci-Fi,howard the duck,Lea Thompson Jeffrey Jones Jordan Prentice Willard Huyck Action Adventure Comedy Romance Sci-Fi
+318,Chris Roberts,Saffron Burrows,David Suchet,JÃÂ¼rgen Prochnow,Action Adventure Sci-Fi,wing commander,Saffron Burrows David Suchet JÃÂ¼rgen Prochnow Chris Roberts Action Adventure Sci-Fi
+319,James Wong,Ian Whyte,Texas Battle,Randall Duk Kim,Action Adventure Fantasy Sci-Fi Thriller,dragonball: evolution,Ian Whyte Texas Battle Randall Duk Kim James Wong Action Adventure Fantasy Sci-Fi Thriller
+320,Nick Hamm,Robert De Niro,Cameron Bright,Munro Chambers,Drama Horror Sci-Fi Thriller,godsend,Robert De Niro Cameron Bright Munro Chambers Nick Hamm Drama Horror Sci-Fi Thriller
+321,unknown,Amanda Schull,Kirk Acevedo,Tom Noonan,Adventure Drama Mystery Sci-Fi Thriller,12 monkeysÃÂ            ,Amanda Schull Kirk Acevedo Tom Noonan unknown Adventure Drama Mystery Sci-Fi Thriller
+322,John Maybury,Jennifer Jason Leigh,Jason Lewis,Angel Coulby,Drama Mystery Sci-Fi Thriller,the jacket,Jennifer Jason Leigh Jason Lewis Angel Coulby John Maybury Drama Mystery Sci-Fi Thriller
+323,Shinji Aramaki,Shun Oguri,YÃÂ» Aoi,Haruma Miura,Adventure Animation Sci-Fi,harlock: space pirate,Shun Oguri YÃÂ» Aoi Haruma Miura Shinji Aramaki Adventure Animation Sci-Fi
+324,Peter Hyams,Mia Sara,Bruce McGill,Gloria Reuben,Action Crime Sci-Fi Thriller,timecop,Mia Sara Bruce McGill Gloria Reuben Peter Hyams Action Crime Sci-Fi Thriller
+325,Ridley Scott,Harrison Ford,Sean Young,M. Emmet Walsh,Sci-Fi Thriller,blade runner,Harrison Ford Sean Young M. Emmet Walsh Ridley Scott Sci-Fi Thriller
+326,John Carpenter,Jason Statham,Clea DuVall,Natasha Henstridge,Action Horror Sci-Fi,ghosts of mars,Jason Statham Clea DuVall Natasha Henstridge John Carpenter Action Horror Sci-Fi
+327,unknown,Colin Salmon,Mary Elizabeth Mastrantonio,Jake McDorman,Crime Drama Sci-Fi Thriller,limitlessÃÂ            ,Colin Salmon Mary Elizabeth Mastrantonio Jake McDorman unknown Crime Drama Sci-Fi Thriller
+328,Nicholas Meyer,Leonard Nimoy,Kurtwood Smith,Nichelle Nichols,Action Adventure Sci-Fi Thriller,star trek vi: the undiscovered country,Leonard Nimoy Kurtwood Smith Nichelle Nichols Nicholas Meyer Action Adventure Sci-Fi Thriller
+329,Alex Proyas,Rufus Sewell,William Hurt,Bruce Spence,Action Drama Fantasy Mystery Sci-Fi Thriller,dark city,Rufus Sewell William Hurt Bruce Spence Alex Proyas Action Drama Fantasy Mystery Sci-Fi Thriller
+330,Robert Rodriguez,Alexa PenaVega,Joel McHale,Daryl Sabara,Action Adventure Comedy Family Sci-Fi,spy kids: all the time in the world in 4d,Alexa PenaVega Joel McHale Daryl Sabara Robert Rodriguez Action Adventure Comedy Family Sci-Fi
+331,Joel Schumacher,Julia Roberts,Oliver Platt,Hope Davis,Drama Horror Sci-Fi Thriller,flatliners,Julia Roberts Oliver Platt Hope Davis Joel Schumacher Drama Horror Sci-Fi Thriller
+332,Jonathan Frakes,Michael Biehn,Paula GarcÃÂ©s,Jason George,Action Adventure Comedy Sci-Fi Thriller,clockstoppers,Michael Biehn Paula GarcÃÂ©s Jason George Jonathan Frakes Action Adventure Comedy Sci-Fi Thriller
+333,Kevin Allen,Daniel Roebuck,Frankie Muniz,David Kelly,Action Adventure Comedy Family Romance Sci-Fi,agent cody banks 2: destination london,Daniel Roebuck Frankie Muniz David Kelly Kevin Allen Action Adventure Comedy Family Romance Sci-Fi
+334,Andrew Morahan,Christopher Lambert,Mako,Mario Van Peebles,Action Fantasy Romance Sci-Fi,highlander: the final dimension,Christopher Lambert Mako Mario Van Peebles Andrew Morahan Action Fantasy Romance Sci-Fi
+335,Tarsem Singh,Ryan Reynolds,Derek Luke,Sandra Ellis Lafferty,Action Mystery Sci-Fi Thriller,self/less,Ryan Reynolds Derek Luke Sandra Ellis Lafferty Tarsem Singh Action Mystery Sci-Fi Thriller
+336,John A. Davis,Martin Short,Rob Paulsen,Andrea Martin,Action Adventure Animation Comedy Family Sci-Fi,jimmy neutron: boy genius,Martin Short Rob Paulsen Andrea Martin John A. Davis Action Adventure Animation Comedy Family Sci-Fi
+337,Matt Reeves,Mike Vogel,Ben Feldman,Liza Lapira,Action Adventure Horror Sci-Fi,cloverfield,Mike Vogel Ben Feldman Liza Lapira Matt Reeves Action Adventure Horror Sci-Fi
+338,Michael Pressman,Kevin Nash,Paige Turco,Ernie Reyes Jr.,Action Adventure Comedy Family Sci-Fi,teenage mutant ninja turtles ii: the secret of the ooze,Kevin Nash Paige Turco Ernie Reyes Jr. Michael Pressman Action Adventure Comedy Family Sci-Fi
+339,Phillip Noyce,Jeff Bridges,Meryl Streep,Alexander SkarsgÃÂ¥rd,Drama Romance Sci-Fi,the giver,Jeff Bridges Meryl Streep Alexander SkarsgÃÂ¥rd Phillip Noyce Drama Romance Sci-Fi
+340,Tobe Hooper,Frank Finlay,Steve Railsback,Peter Firth,Action Horror Sci-Fi Thriller,lifeforce,Frank Finlay Steve Railsback Peter Firth Tobe Hooper Action Horror Sci-Fi Thriller
+341,unknown,Elizabeth Daily,Jennifer Hale,Tom Kane,Action Animation Comedy Family Fantasy Sci-Fi,the powerpuff girlsÃÂ            ,Elizabeth Daily Jennifer Hale Tom Kane unknown Action Animation Comedy Family Fantasy Sci-Fi
+342,Rachel Talalay,Naomi Watts,Lori Petty,Jeff Kober,Action Comedy Sci-Fi,tank girl,Naomi Watts Lori Petty Jeff Kober Rachel Talalay Action Comedy Sci-Fi
+343,Fernando Meirelles,Don McKellar,Joe Pingue,YÃÂ»suke Iseya,Drama Mystery Sci-Fi Thriller,blindness,Don McKellar Joe Pingue YÃÂ»suke Iseya Fernando Meirelles Drama Mystery Sci-Fi Thriller
+344,Leonard Nimoy,Leonard Nimoy,Nichelle Nichols,Walter Koenig,Adventure Comedy Sci-Fi,star trek iv: the voyage home,Leonard Nimoy Nichelle Nichols Walter Koenig Leonard Nimoy Adventure Comedy Sci-Fi
+345,Tim Hill,Josh Charles,F. Murray Abraham,David Arquette,Adventure Comedy Family Fantasy Music Sci-Fi,muppets from space,Josh Charles F. Murray Abraham David Arquette Tim Hill Adventure Comedy Family Fantasy Music Sci-Fi
+346,Ruben Fleischer,Emma Stone,Bill Murray,Derek Graf,Adventure Comedy Horror Sci-Fi,zombieland,Emma Stone Bill Murray Derek Graf Ruben Fleischer Adventure Comedy Horror Sci-Fi
+347,Irvin Kershner,Harrison Ford,Kenny Baker,Anthony Daniels,Action Adventure Fantasy Sci-Fi,star wars: episode v - the empire strikes back,Harrison Ford Kenny Baker Anthony Daniels Irvin Kershner Action Adventure Fantasy Sci-Fi
+348,David Twohy,Vin Diesel,Radha Mitchell,Cole Hauser,Horror Sci-Fi,pitch black,Vin Diesel Radha Mitchell Cole Hauser David Twohy Horror Sci-Fi
+349,Spike Jonze,Scarlett Johansson,Brian Johnson,Matt Letscher,Drama Romance Sci-Fi,her,Scarlett Johansson Brian Johnson Matt Letscher Spike Jonze Drama Romance Sci-Fi
+350,Mel Brooks,Joan Rivers,Dick Van Patten,Michael Winslow,Adventure Comedy Sci-Fi,spaceballs,Joan Rivers Dick Van Patten Michael Winslow Mel Brooks Adventure Comedy Sci-Fi
+351,Luke Greenfield,Louis Lombardi,Michael Papajohn,Colleen Haskell,Comedy Sci-Fi,the animal,Louis Lombardi Michael Papajohn Colleen Haskell Luke Greenfield Comedy Sci-Fi
+352,Paul McGuigan,Daniel Radcliffe,Spencer Wilding,Daniel Mays,Drama Horror Sci-Fi Thriller,victor frankenstein,Daniel Radcliffe Spencer Wilding Daniel Mays Paul McGuigan Drama Horror Sci-Fi Thriller
+353,Michael Bay,Scarlett Johansson,Steve Buscemi,Djimon Hounsou,Action Adventure Romance Sci-Fi Thriller,the island,Scarlett Johansson Steve Buscemi Djimon Hounsou Michael Bay Action Adventure Romance Sci-Fi Thriller
+354,Fred Dekker,CCH Pounder,Rip Torn,Mako,Action Crime Sci-Fi Thriller,robocop 3,CCH Pounder Rip Torn Mako Fred Dekker Action Crime Sci-Fi Thriller
+355,Brian Trenchard-Smith,Michael Biehn,Udo Kier,Franco Nero,Action Adventure Fantasy Sci-Fi Thriller,megiddo: the omega code 2,Michael Biehn Udo Kier Franco Nero Brian Trenchard-Smith Action Adventure Fantasy Sci-Fi Thriller
+356,Stuart Gillard,Paige Turco,John Aylward,Matt Hill,Action Adventure Comedy Family Fantasy Sci-Fi,teenage mutant ninja turtles iii,Paige Turco John Aylward Matt Hill Stuart Gillard Action Adventure Comedy Family Fantasy Sci-Fi
+357,Katt Shea,Jason London,Rachel Blanchard,Eddie Kaye Thomas,Horror Sci-Fi Thriller,the rage: carrie 2,Jason London Rachel Blanchard Eddie Kaye Thomas Katt Shea Horror Sci-Fi Thriller
+358,David Cronenberg,Jennifer Jason Leigh,Sarah Polley,Callum Rennie,Horror Sci-Fi Thriller,existenz,Jennifer Jason Leigh Sarah Polley Callum Rennie David Cronenberg Horror Sci-Fi Thriller
+359,Steven Spielberg,Bob Balaban,Teri Garr,Melinda Dillon,Drama Sci-Fi,close encounters of the third kind,Bob Balaban Teri Garr Melinda Dillon Steven Spielberg Drama Sci-Fi
+360,Jim Sonzero,Ian Somerhalder,Christina Milian,Rick Gonzalez,Drama Horror Sci-Fi Thriller,pulse,Ian Somerhalder Christina Milian Rick Gonzalez Jim Sonzero Drama Horror Sci-Fi Thriller
+361,Paul W.S. Anderson,Christopher Lambert,Cary-Hiroyuki Tagawa,Bridgette Wilson-Sampras,Action Adventure Fantasy Sci-Fi Thriller,mortal kombat,Christopher Lambert Cary-Hiroyuki Tagawa Bridgette Wilson-Sampras Paul W.S. Anderson Action Adventure Fantasy Sci-Fi Thriller
+362,Peter Hewitt,Keanu Reeves,George Carlin,Alex Winter,Adventure Comedy Fantasy Music Sci-Fi,bill & ted's bogus journey,Keanu Reeves George Carlin Alex Winter Peter Hewitt Adventure Comedy Fantasy Music Sci-Fi
+363,Gary Nelson,Robert Forster,Maximilian Schell,Yvette Mimieux,Action Sci-Fi,the black hole,Robert Forster Maximilian Schell Yvette Mimieux Gary Nelson Action Sci-Fi
+364,Michel Gondry,Kate Winslet,Kirsten Dunst,Tom Wilkinson,Drama Fantasy Romance Sci-Fi,eternal sunshine of the spotless mind,Kate Winslet Kirsten Dunst Tom Wilkinson Michel Gondry Drama Fantasy Romance Sci-Fi
+365,Edgar Wright,Michael Smiley,Thomas Law,Jasper Levine,Action Comedy Sci-Fi,the world's end,Michael Smiley Thomas Law Jasper Levine Edgar Wright Action Comedy Sci-Fi
+366,Michael Spierig,Jay Laga'aia,Damien Garvey,Tiffany Lamb,Action Horror Sci-Fi Thriller,daybreakers,Jay Laga'aia Damien Garvey Tiffany Lamb Michael Spierig Action Horror Sci-Fi Thriller
+367,Henry Joost,Samira Wiley,Marc John Jefferies,Emily Meade,Adventure Crime Mystery Sci-Fi Thriller,nerve,Samira Wiley Marc John Jefferies Emily Meade Henry Joost Adventure Crime Mystery Sci-Fi Thriller
+368,James Mather,Joseph Gilgun,Vincent Regan,Jacky Ido,Action Adventure Sci-Fi Thriller,lockout,Joseph Gilgun Vincent Regan Jacky Ido James Mather Action Adventure Sci-Fi Thriller
+369,Mark Neveldine,Jason Statham,Clifton Collins Jr.,David Carradine,Action Crime Sci-Fi Thriller,crank: high voltage,Jason Statham Clifton Collins Jr. David Carradine Mark Neveldine Action Crime Sci-Fi Thriller
+370,Bob Clark,Scott Baio,Vanessa Angel,Peter Wingfield,Comedy Family Sci-Fi,superbabies: baby geniuses 2,Scott Baio Vanessa Angel Peter Wingfield Bob Clark Comedy Family Sci-Fi
+371,Glen Morgan,Laura Harring,Ty Olsson,Jackie Burroughs,Drama Horror Sci-Fi Thriller,willard,Laura Harring Ty Olsson Jackie Burroughs Glen Morgan Drama Horror Sci-Fi Thriller
+372,Richard Linklater,Robert Downey Jr.,Keanu Reeves,Rory Cochrane,Animation Drama Mystery Sci-Fi Thriller,a scanner darkly,Robert Downey Jr. Keanu Reeves Rory Cochrane Richard Linklater Animation Drama Mystery Sci-Fi Thriller
+373,Uwe Boll,Catherine Lough Haggquist,Darren Shahlavi,Karin Konoval,Horror Sci-Fi,alone in the dark,Catherine Lough Haggquist Darren Shahlavi Karin Konoval Uwe Boll Horror Sci-Fi
+374,Kurt Wimmer,Christian Bale,Emily Watson,Sean Pertwee,Action Drama Sci-Fi Thriller,equilibrium,Christian Bale Emily Watson Sean Pertwee Kurt Wimmer Action Drama Sci-Fi Thriller
+375,Katsuhiro ÃÂtomo,William Hootkins,Robin Atkin Downes,Rosalind Ayres,Action Adventure Animation Family Sci-Fi Thriller,steamboy,William Hootkins Robin Atkin Downes Rosalind Ayres Katsuhiro ÃÂtomo Action Adventure Animation Family Sci-Fi Thriller
+376,Stephen Chow,Jiao Xu,Yuqi Zhang,Chi Chung Lam,Comedy Family Sci-Fi,cj7,Jiao Xu Yuqi Zhang Chi Chung Lam Stephen Chow Comedy Family Sci-Fi
+377,Jean-Marie PoirÃÂ©,Christian Clavier,Philippe Nahon,Marie-Anne Chazel,Comedy Family Fantasy Sci-Fi,les couloirs du temps: les visiteurs ii,Christian Clavier Philippe Nahon Marie-Anne Chazel Jean-Marie PoirÃÂ© Comedy Family Fantasy Sci-Fi
+378,Kevin Munroe,Marco St. John,Laura Spencer,Anita Briem,Action Comedy Crime Fantasy Horror Mystery Sci-Fi Thriller,dylan dog: dead of night,Marco St. John Laura Spencer Anita Briem Kevin Munroe Action Comedy Crime Fantasy Horror Mystery Sci-Fi Thriller
+379,Robert Zemeckis,Lea Thompson,Thomas F. Wilson,J.J. Cohen,Adventure Comedy Sci-Fi,back to the future,Lea Thompson Thomas F. Wilson J.J. Cohen Robert Zemeckis Adventure Comedy Sci-Fi
+380,Leonard Nimoy,Leonard Nimoy,Nichelle Nichols,Walter Koenig,Action Adventure Sci-Fi,star trek iii: the search for spock,Leonard Nimoy Nichelle Nichols Walter Koenig Leonard Nimoy Action Adventure Sci-Fi
+381,John McTiernan,Shane Black,Bill Duke,Carl Weathers,Action Horror Sci-Fi,predator,Shane Black Bill Duke Carl Weathers John McTiernan Action Horror Sci-Fi
+382,Hal Needham,Barry Bostwick,Michael Beck,Henry Silva,Action Sci-Fi,megaforce,Barry Bostwick Michael Beck Henry Silva Hal Needham Action Sci-Fi
+383,Jeff Nichols,Kirsten Dunst,Sam Shepard,Paul Sparks,Adventure Drama Sci-Fi Thriller,midnight special,Kirsten Dunst Sam Shepard Paul Sparks Jeff Nichols Adventure Drama Sci-Fi Thriller
+384,Mike Marvin,Clint Howard,Randy Quaid,Nick Cassavetes,Action Horror Romance Sci-Fi Thriller,the wraith,Clint Howard Randy Quaid Nick Cassavetes Mike Marvin Action Horror Romance Sci-Fi Thriller
+385,Christian Volckman,Romola Garai,Catherine McCormack,Kevork Malikyan,Action Animation Sci-Fi Thriller,renaissance,Romola Garai Catherine McCormack Kevork Malikyan Christian Volckman Action Animation Sci-Fi Thriller
+386,James Cameron,Michael Biehn,Carrie Henn,Jenette Goldstein,Action Adventure Sci-Fi,aliens,Michael Biehn Carrie Henn Jenette Goldstein James Cameron Action Adventure Sci-Fi
+387,John Hoffman,Liam Aiken,Molly Shannon,Kevin Nealon,Comedy Drama Family Fantasy Sci-Fi,good boy!,Liam Aiken Molly Shannon Kevin Nealon John Hoffman Comedy Drama Family Fantasy Sci-Fi
+388,Joseph Kosinski,Jeff Bridges,Olivia Wilde,James Frain,Action Adventure Sci-Fi,tron: legacy,Jeff Bridges Olivia Wilde James Frain Joseph Kosinski Action Adventure Sci-Fi
+389,Sidney J. Furie,Jim Broadbent,Margot Kidder,William Hootkins,Action Adventure Family Sci-Fi,superman iv: the quest for peace,Jim Broadbent Margot Kidder William Hootkins Sidney J. Furie Action Adventure Family Sci-Fi
+390,Richard Kelly,Janeane Garofalo,Curtis Armstrong,Chris Andrew Ciulla,Comedy Mystery Sci-Fi Thriller,southland tales,Janeane Garofalo Curtis Armstrong Chris Andrew Ciulla Richard Kelly Comedy Mystery Sci-Fi Thriller
+391,Jack Smight,George Peppard,Jan-Michael Vincent,Paul Winfield,Sci-Fi,damnation alley,George Peppard Jan-Michael Vincent Paul Winfield Jack Smight Sci-Fi
+392,Richard Benjamin,Jon Lovitz,Alyson Hannigan,Tony Jay,Comedy Romance Sci-Fi,my stepmother is an alien,Jon Lovitz Alyson Hannigan Tony Jay Richard Benjamin Comedy Romance Sci-Fi
+393,Josef Rusnak,Gretchen Mol,Craig Bierko,Brad William Henke,Mystery Sci-Fi Thriller,the thirteenth floor,Gretchen Mol Craig Bierko Brad William Henke Josef Rusnak Mystery Sci-Fi Thriller
+394,Ronald Neame,Martin Landau,Karl Malden,Brian Keith,Action Drama Sci-Fi Thriller,meteor,Martin Landau Karl Malden Brian Keith Ronald Neame Action Drama Sci-Fi Thriller
+395,Kenneth Johnson,Charles Napier,Annabeth Gish,Hill Harper,Action Crime Sci-Fi,steel,Charles Napier Annabeth Gish Hill Harper Kenneth Johnson Action Crime Sci-Fi
+396,James Gunn,Dustin Milligan,Gregg Henry,Tania Saulnier,Comedy Horror Sci-Fi,slither,Dustin Milligan Gregg Henry Tania Saulnier James Gunn Comedy Horror Sci-Fi
+397,Robert Rodriguez,Jordana Brewster,Salma Hayek,Clea DuVall,Horror Mystery Sci-Fi,the faculty,Jordana Brewster Salma Hayek Clea DuVall Robert Rodriguez Horror Mystery Sci-Fi
+398,Juan Carlos Fresnadillo,Jeremy Renner,Harold Perrineau,Catherine McCormack,Drama Horror Sci-Fi,28 weeks later,Jeremy Renner Harold Perrineau Catherine McCormack Juan Carlos Fresnadillo Drama Horror Sci-Fi
+399,David Nutter,Bruce Greenwood,Ethan Embry,Katharine Isabelle,Horror Mystery Sci-Fi Thriller,disturbing behavior,Bruce Greenwood Ethan Embry Katharine Isabelle David Nutter Horror Mystery Sci-Fi Thriller
+400,Mark L. Lester,Heather Locklear,George C. Scott,David Keith,Action Horror Sci-Fi Thriller,firestarter,Heather Locklear George C. Scott David Keith Mark L. Lester Action Horror Sci-Fi Thriller
+401,Douglas Aarniokoski,Christopher Lambert,Adrian Paul,Adam Copeland,Action Adventure Fantasy Sci-Fi,highlander: endgame,Christopher Lambert Adrian Paul Adam Copeland Douglas Aarniokoski Action Adventure Fantasy Sci-Fi
+402,Terry Gilliam,Robert De Niro,Bob Hoskins,Jim Broadbent,Drama Sci-Fi,brazil,Robert De Niro Bob Hoskins Jim Broadbent Terry Gilliam Drama Sci-Fi
+403,unknown,David Ogden Stiers,Nicole de Boer,Chris Bruno,Drama Fantasy Mystery Sci-Fi,the dead zoneÃÂ            ,David Ogden Stiers Nicole de Boer Chris Bruno unknown Drama Fantasy Mystery Sci-Fi
+404,Mark Romanek,Andrew Garfield,Charlie Rowe,Charlotte Rampling,Drama Romance Sci-Fi,never let me go,Andrew Garfield Charlie Rowe Charlotte Rampling Mark Romanek Drama Romance Sci-Fi
+405,Khalil Sullins,Thomas Stroppel,Kalim Chandler,Amber Marie Bollinger,Drama Sci-Fi Thriller,listening,Thomas Stroppel Kalim Chandler Amber Marie Bollinger Khalil Sullins Drama Sci-Fi Thriller
+406,Fritz Lang,Brigitte Helm,Gustav FrÃÂ¶hlich,Rudolf Klein-Rogge,Drama Sci-Fi,metropolis,Brigitte Helm Gustav FrÃÂ¶hlich Rudolf Klein-Rogge Fritz Lang Drama Sci-Fi
+407,Gabe IbÃ¡Ã±ez,Birgitte Hjort SÃ¸rensen,Robert Forster,Melanie Griffith,Action Sci-Fi Thriller,automata,Birgitte Hjort SÃ¸rensen Robert Forster Melanie Griffith Gabe IbÃ¡Ã±ez Action Sci-Fi Thriller
+408,Lewis Gilbert,Caroline Munro,Desmond Llewelyn,Barbara Bach,Action Adventure Sci-Fi Thriller,the spy who loved me,Caroline Munro Desmond Llewelyn Barbara Bach Lewis Gilbert Action Adventure Sci-Fi Thriller
+409,James Isaac,Peter Mensah,Kane Hodder,Lexa Doig,Action Horror Sci-Fi Thriller,jason x,Peter Mensah Kane Hodder Lexa Doig James Isaac Action Horror Sci-Fi Thriller
+410,Jonathan Liebesman,Noel Fisher,Danny Woodburn,Jeremy Howard,Action Adventure Comedy Sci-Fi,teenage mutant ninja turtles,Noel Fisher Danny Woodburn Jeremy Howard Jonathan Liebesman Action Adventure Comedy Sci-Fi
+411,Steve Pink,Adam Scott,Gillian Jacobs,Collette Wolfe,Comedy Sci-Fi,hot tub time machine 2,Adam Scott Gillian Jacobs Collette Wolfe Steve Pink Comedy Sci-Fi
+412,Jonathan Glazer,Scarlett Johansson,Paul Brannigan,Alison Chand,Drama Horror Sci-Fi Thriller,under the skin,Scarlett Johansson Paul Brannigan Alison Chand Jonathan Glazer Drama Horror Sci-Fi Thriller
+413,JosÃÂ© Padilha,Gary Oldman,Abbie Cornish,Jennifer Ehle,Action Crime Sci-Fi Thriller,robocop,Gary Oldman Abbie Cornish Jennifer Ehle JosÃÂ© Padilha Action Crime Sci-Fi Thriller
+414,Eric Bress,Logan Lerman,Eric Stoltz,Cameron Bright,Sci-Fi Thriller,the butterfly effect,Logan Lerman Eric Stoltz Cameron Bright Eric Bress Sci-Fi Thriller
+415,Bob Clark,Kathleen Turner,Dom DeLuise,Ruby Dee,Comedy Crime Family Sci-Fi,baby geniuses,Kathleen Turner Dom DeLuise Ruby Dee Bob Clark Comedy Crime Family Sci-Fi
+416,Alex Garland,Elina Alminas,Sonoya Mizuno,Corey Johnson,Drama Mystery Sci-Fi Thriller,ex machina,Elina Alminas Sonoya Mizuno Corey Johnson Alex Garland Drama Mystery Sci-Fi Thriller
+417,Dave Green,Teo Halm,Ella Wahlestedt,Jason Gray-Stanford,Adventure Family Sci-Fi,earth to echo,Teo Halm Ella Wahlestedt Jason Gray-Stanford Dave Green Adventure Family Sci-Fi
+418,Michael Polish,J.K. Simmons,Virginia Madsen,Bruce Dern,Adventure Drama Sci-Fi,the astronaut farmer,J.K. Simmons Virginia Madsen Bruce Dern Michael Polish Adventure Drama Sci-Fi
+419,Blair Hayes,Jake Gyllenhaal,Geoffrey Arend,Marley Shelton,Adventure Comedy Romance Sci-Fi,bubble boy,Jake Gyllenhaal Geoffrey Arend Marley Shelton Blair Hayes Adventure Comedy Romance Sci-Fi
+420,Joe Cornish,John Boyega,Luke Treadaway,Jodie Whittaker,Action Comedy Sci-Fi Thriller,attack the block,John Boyega Luke Treadaway Jodie Whittaker Joe Cornish Action Comedy Sci-Fi Thriller
+421,Benedek Fliegauf,Eva Green,Matt Smith,Hannah Murray,Drama Romance Sci-Fi,womb,Eva Green Matt Smith Hannah Murray Benedek Fliegauf Drama Romance Sci-Fi
+422,Nicholas Meyer,Leonard Nimoy,Kirstie Alley,Nichelle Nichols,Action Adventure Sci-Fi,star trek ii: the wrath of khan,Leonard Nimoy Kirstie Alley Nichelle Nichols Nicholas Meyer Action Adventure Sci-Fi
+423,John Badham,Matthew Broderick,Barry Corbin,Ally Sheedy,Sci-Fi Thriller,wargames,Matthew Broderick Barry Corbin Ally Sheedy John Badham Sci-Fi Thriller
+424,Josh Trank,Michael Kelly,Alex Russell,Ashley Hinshaw,Drama Sci-Fi Thriller,chronicle,Michael Kelly Alex Russell Ashley Hinshaw Josh Trank Drama Sci-Fi Thriller
+425,Terry Gilliam,Shelley Duvall,Michael Palin,Kenny Baker,Adventure Comedy Fantasy Sci-Fi,time bandits,Shelley Duvall Michael Palin Kenny Baker Terry Gilliam Adventure Comedy Fantasy Sci-Fi
+426,John Erick Dowdle,Andrew Fiscella,Jay Hernandez,Dania Ramirez,Horror Sci-Fi Thriller,quarantine,Andrew Fiscella Jay Hernandez Dania Ramirez John Erick Dowdle Horror Sci-Fi Thriller
+427,John Frankenheimer,Talia Shire,Richard Dysart,Robert Foxworth,Horror Sci-Fi,prophecy,Talia Shire Richard Dysart Robert Foxworth John Frankenheimer Horror Sci-Fi
+428,Dean Israelite,Gary Weeks,Jonny Weston,Sofia Black-D'Elia,Sci-Fi Thriller,project almanac,Gary Weeks Jonny Weston Sofia Black-D'Elia Dean Israelite Sci-Fi Thriller
+429,Stuart Gordon,Christopher Lambert,Kurtwood Smith,Clifton Collins Jr.,Action Crime Sci-Fi Thriller,fortress,Christopher Lambert Kurtwood Smith Clifton Collins Jr. Stuart Gordon Action Crime Sci-Fi Thriller
+430,Joon-ho Bong,Doona Bae,Kang-ho Song,Ah-sung Ko,Comedy Drama Horror Sci-Fi,the host,Doona Bae Kang-ho Song Ah-sung Ko Joon-ho Bong Comedy Drama Horror Sci-Fi
+431,Kar-Wai Wong,Li Gong,Tony Chiu Wai Leung,Maggie Cheung,Drama Romance Sci-Fi,2046,Li Gong Tony Chiu Wai Leung Maggie Cheung Kar-Wai Wong Drama Romance Sci-Fi
+432,Vincenzo Natali,David Hewlett,Jeremy Northam,Kari Matchett,Mystery Romance Sci-Fi Thriller,cypher,David Hewlett Jeremy Northam Kari Matchett Vincenzo Natali Mystery Romance Sci-Fi Thriller
+433,Takashi Yamazaki,Takuya Kimura,Meisa Kuroki,Hiroyuki Ikeuchi,Action Adventure Drama Sci-Fi,space battleship yamato,Takuya Kimura Meisa Kuroki Hiroyuki Ikeuchi Takashi Yamazaki Action Adventure Drama Sci-Fi
+434,George Lucas,Harrison Ford,Peter Cushing,Kenny Baker,Action Adventure Fantasy Sci-Fi,star wars: episode iv - a new hope,Harrison Ford Peter Cushing Kenny Baker George Lucas Action Adventure Fantasy Sci-Fi
+435,Tobe Hooper,Louise Fletcher,Bud Cort,William Bassett,Horror Sci-Fi,invaders from mars,Louise Fletcher Bud Cort William Bassett Tobe Hooper Horror Sci-Fi
+436,Ruairi Robinson,Romola Garai,Olivia Williams,Tom Cullen,Horror Sci-Fi Thriller,the last days on mars,Romola Garai Olivia Williams Tom Cullen Ruairi Robinson Horror Sci-Fi Thriller
+437,Stanley Kubrick,Keir Dullea,Gary Lockwood,Glenn Beck,Adventure Mystery Sci-Fi,2001: a space odyssey,Keir Dullea Gary Lockwood Glenn Beck Stanley Kubrick Adventure Mystery Sci-Fi
+438,Steven Spielberg,Henry Thomas,Dee Wallace,Peter Coyote,Family Sci-Fi,e.t. the extra-terrestrial,Henry Thomas Dee Wallace Peter Coyote Steven Spielberg Family Sci-Fi
+439,James DeMonaco,Frank Grillo,Joseph Julian Soria,Mykelti Williamson,Action Horror Sci-Fi Thriller,the purge: election year,Frank Grillo Joseph Julian Soria Mykelti Williamson James DeMonaco Action Horror Sci-Fi Thriller
+440,Stephen Herek,Keanu Reeves,George Carlin,Al Leong,Adventure Comedy Music Sci-Fi,bill & ted's excellent adventure,Keanu Reeves George Carlin Al Leong Stephen Herek Adventure Comedy Music Sci-Fi
+441,Chuck Sheetz,Diedrich Bader,Andrew Lawrence,Dabney Coleman,Animation Comedy Family Mystery Sci-Fi,recess: school's out,Diedrich Bader Andrew Lawrence Dabney Coleman Chuck Sheetz Animation Comedy Family Mystery Sci-Fi
+442,George Miller,Tina Turner,Bruce Spence,Angelo Rossitto,Action Adventure Sci-Fi Thriller,mad max beyond thunderdome,Tina Turner Bruce Spence Angelo Rossitto George Miller Action Adventure Sci-Fi Thriller
+443,Brett Leonard,Jeff Fahey,Austin O'Brien,Troy Evans,Horror Sci-Fi,the lawnmower man,Jeff Fahey Austin O'Brien Troy Evans Brett Leonard Horror Sci-Fi
+444,Joe Dante,Albert Brooks,Al Leong,Vic Morrow,Fantasy Horror Sci-Fi,twilight zone: the movie,Albert Brooks Al Leong Vic Morrow Joe Dante Fantasy Horror Sci-Fi
+445,David Cronenberg,Tom Skerritt,Herbert Lom,Anthony Zerbe,Horror Sci-Fi Thriller,the dead zone,Tom Skerritt Herbert Lom Anthony Zerbe David Cronenberg Horror Sci-Fi Thriller
+446,Olatunde Osunsanmi,Milla Jovovich,Will Patton,Hakeem Kae-Kazim,Mystery Sci-Fi Thriller,the fourth kind,Milla Jovovich Will Patton Hakeem Kae-Kazim Olatunde Osunsanmi Mystery Sci-Fi Thriller
+447,Colin Strause,David Zayas,Donald Faison,Brittany Daniel,Action Sci-Fi Thriller,skyline,David Zayas Donald Faison Brittany Daniel Colin Strause Action Sci-Fi Thriller
+448,Ron Underwood,Reba McEntire,Ariana Richards,Michael Gross,Comedy Horror Sci-Fi,tremors,Reba McEntire Ariana Richards Michael Gross Ron Underwood Comedy Horror Sci-Fi
+449,Lorene Scafaria,Steve Carell,Mark Moses,Rob Huebel,Adventure Comedy Drama Romance Sci-Fi,seeking a friend for the end of the world,Steve Carell Mark Moses Rob Huebel Lorene Scafaria Adventure Comedy Drama Romance Sci-Fi
+450,Allan Arkush,Bernadette Peters,Randy Quaid,Christopher Guest,Comedy Sci-Fi,heartbeeps,Bernadette Peters Randy Quaid Christopher Guest Allan Arkush Comedy Sci-Fi
+451,John Putch,Robert Picardo,Diedrich Bader,Esai Morales,Drama Mystery Sci-Fi,atlas shrugged ii: the strike,Robert Picardo Diedrich Bader Esai Morales John Putch Drama Mystery Sci-Fi
+452,Rakesh Roshan,Naseeruddin Shah,Rekha,Sharat Saxena,Action Adventure Romance Sci-Fi,krrish,Naseeruddin Shah Rekha Sharat Saxena Rakesh Roshan Action Adventure Romance Sci-Fi
+453,Jason Connery,Ray Winstone,Henry Rollins,Jason London,Action Horror Sci-Fi,the devil's tomb,Ray Winstone Henry Rollins Jason London Jason Connery Action Horror Sci-Fi
+454,Gerald Potterton,John Vernon,Joe Flaherty,Don Francks,Adventure Animation Fantasy Horror Sci-Fi,heavy metal,John Vernon Joe Flaherty Don Francks Gerald Potterton Adventure Animation Fantasy Horror Sci-Fi
+455,Jared Hess,Jizelle Jade,Michael Angarano,HÃÂ©ctor JimÃÂ©nez,Adventure Comedy Sci-Fi,gentlemen broncos,Jizelle Jade Michael Angarano HÃÂ©ctor JimÃÂ©nez Jared Hess Adventure Comedy Sci-Fi
+456,Lars von Trier,Alexander SkarsgÃÂ¥rd,Kirsten Dunst,Charlotte Rampling,Drama Sci-Fi,melancholia,Alexander SkarsgÃÂ¥rd Kirsten Dunst Charlotte Rampling Lars von Trier Drama Sci-Fi
+457,Ridley Scott,Tom Skerritt,Yaphet Kotto,Bolaji Badejo,Horror Sci-Fi,alien,Tom Skerritt Yaphet Kotto Bolaji Badejo Ridley Scott Horror Sci-Fi
+458,Joseph Kahn,Josh Hutcherson,Shanley Caswell,Parker Bagley,Comedy Horror Sci-Fi,detention,Josh Hutcherson Shanley Caswell Parker Bagley Joseph Kahn Comedy Horror Sci-Fi
+459,James DeMonaco,Noel Gugliemi,Zach Gilford,Roberta Valderrama,Action Horror Sci-Fi Thriller,the purge: anarchy,Noel Gugliemi Zach Gilford Roberta Valderrama James DeMonaco Action Horror Sci-Fi Thriller
+460,Stewart Raffill,Anjelica Huston,John Carradine,Robert Urich,Action Adventure Comedy Romance Sci-Fi,the ice pirates,Anjelica Huston John Carradine Robert Urich Stewart Raffill Action Adventure Comedy Romance Sci-Fi
+461,Martyn Pick,Sean Pertwee,Steven Waddington,Donald Sumpter,Action Animation Fantasy Horror Mystery Sci-Fi Thriller,"ultramarines: a warhammer 40,000 movie",Sean Pertwee Steven Waddington Donald Sumpter Martyn Pick Action Animation Fantasy Horror Mystery Sci-Fi Thriller
+462,Roland Suso Richter,Stephen Graham,Sarah Polley,Stephen Rea,Mystery Sci-Fi Thriller,the i inside,Stephen Graham Sarah Polley Stephen Rea Roland Suso Richter Mystery Sci-Fi Thriller
+463,unknown,Dee Bradley Baker,James Arnold Taylor,Tom Kane,Action Adventure Animation Drama Fantasy Sci-Fi,star wars: the clone warsÃÂ            ,Dee Bradley Baker James Arnold Taylor Tom Kane unknown Action Adventure Animation Drama Fantasy Sci-Fi
+464,Roger Vadim,Jane Fonda,David Hemmings,Milo O'Shea,Adventure Comedy Fantasy Sci-Fi,barbarella,Jane Fonda David Hemmings Milo O'Shea Roger Vadim Adventure Comedy Fantasy Sci-Fi
+465,Darren Lynn Bousman,Alexa PenaVega,Paris Hilton,Paul Sorvino,Horror Musical Sci-Fi,repo! the genetic opera,Alexa PenaVega Paris Hilton Paul Sorvino Darren Lynn Bousman Horror Musical Sci-Fi
+466,Danny Boyle,Noah Huntley,Megan Burns,David Schneider,Drama Horror Sci-Fi Thriller,28 days later...,Noah Huntley Megan Burns David Schneider Danny Boyle Drama Horror Sci-Fi Thriller
+467,Ken Shapiro,Brian Doyle-Murray,Dabney Coleman,Mary Kay Place,Comedy Fantasy Sci-Fi,modern problems,Brian Doyle-Murray Dabney Coleman Mary Kay Place Ken Shapiro Comedy Fantasy Sci-Fi
+468,Andrew Currie,Alexia Fast,Henry Czerny,Kesun Loder,Comedy Drama Horror Sci-Fi,fido,Alexia Fast Henry Czerny Kesun Loder Andrew Currie Comedy Drama Horror Sci-Fi
+469,Katsuhiro ÃÂtomo,Mitsuo Iwata,Takeshi Kusao,TesshÃÂ´ Genda,Action Animation Sci-Fi,akira,Mitsuo Iwata Takeshi Kusao TesshÃÂ´ Genda Katsuhiro ÃÂtomo Action Animation Sci-Fi
+470,David Webb Peoples,Delroy Lindo,Joan Chen,Anna Katarina,Action Sci-Fi Sport,the blood of heroes,Delroy Lindo Joan Chen Anna Katarina David Webb Peoples Action Sci-Fi Sport
+471,Michael Winterbottom,Samantha Morton,Om Puri,Natalie Mendoza,Drama Romance Sci-Fi Thriller,code 46,Samantha Morton Om Puri Natalie Mendoza Michael Winterbottom Drama Romance Sci-Fi Thriller
+472,Robert Marcarelli,George Coe,William Hootkins,Ayla Kell,Action Adventure Fantasy Sci-Fi Thriller,the omega code,George Coe William Hootkins Ayla Kell Robert Marcarelli Action Adventure Fantasy Sci-Fi Thriller
+473,Michael Anderson,Farrah Fawcett,Jenny Agutter,Peter Ustinov,Action Adventure Sci-Fi,logan's run,Farrah Fawcett Jenny Agutter Peter Ustinov Michael Anderson Action Adventure Sci-Fi
+474,Tony Maylam,Michael J. Pollard,Alun Armstrong,Alastair Duncan,Action Crime Horror Sci-Fi Thriller,split second,Michael J. Pollard Alun Armstrong Alastair Duncan Tony Maylam Action Crime Horror Sci-Fi Thriller
+475,unknown,Jensen Ackles,Ashley Scott,John Savage,Action Drama Mystery Sci-Fi,dark angelÃÂ            ,Jensen Ackles Ashley Scott John Savage unknown Action Drama Mystery Sci-Fi
+476,Jean-Marie PoirÃÂ©,Christian Clavier,Isabelle Nanty,ValÃÂ©rie Lemercier,Comedy Fantasy Sci-Fi,les visiteurs,Christian Clavier Isabelle Nanty ValÃÂ©rie Lemercier Jean-Marie PoirÃÂ© Comedy Fantasy Sci-Fi
+477,Aleksey German,Leonid Yarmolnik,Yuriy Tsurilo,Valentin Golubenko,Drama Sci-Fi,hard to be a god,Leonid Yarmolnik Yuriy Tsurilo Valentin Golubenko Aleksey German Drama Sci-Fi
+478,Robert C. Cooper,Ben Browder,Christopher Judge,Julian Sands,Action Adventure Drama Fantasy Sci-Fi,stargate: the ark of truth,Ben Browder Christopher Judge Julian Sands Robert C. Cooper Action Adventure Drama Fantasy Sci-Fi
+479,Robert Wise,David Wayne,Paula Kelly,Eric Christmas,Sci-Fi Thriller,the andromeda strain,David Wayne Paula Kelly Eric Christmas Robert Wise Sci-Fi Thriller
+480,Louis Morneau,Leon,Bob Gunton,Ned Bellamy,Horror Sci-Fi Thriller,bats,Leon Bob Gunton Ned Bellamy Louis Morneau Horror Sci-Fi Thriller
+481,James Cameron,Michael Biehn,Brian Thompson,Paul Winfield,Action Sci-Fi,the terminator,Michael Biehn Brian Thompson Paul Winfield James Cameron Action Sci-Fi
+482,John Carpenter,Donald Pleasence,Adrienne Barbeau,Tom Atkins,Action Sci-Fi,escape from new york,Donald Pleasence Adrienne Barbeau Tom Atkins John Carpenter Action Sci-Fi
+483,Sylvio Tabet,Michael Berryman,Kari Wuhrer,Marc Singer,Action Adventure Fantasy Sci-Fi,beastmaster 2: through the portal of time,Michael Berryman Kari Wuhrer Marc Singer Sylvio Tabet Action Adventure Fantasy Sci-Fi
+484,David Cronenberg,Debbie Harry,Leslie Carlson,Reiner Schwarz,Horror Mystery Sci-Fi Thriller,videodrome,Debbie Harry Leslie Carlson Reiner Schwarz David Cronenberg Horror Mystery Sci-Fi Thriller
+485,William Sachs,Stephen Macht,Avery Schreiber,Angelo Rossitto,Comedy Sci-Fi,galaxina,Stephen Macht Avery Schreiber Angelo Rossitto William Sachs Comedy Sci-Fi
+486,Jon Wright,Russell Tovey,Richard Coyle,Bronagh Gallagher,Comedy Horror Sci-Fi Thriller,grabbers,Russell Tovey Richard Coyle Bronagh Gallagher Jon Wright Comedy Horror Sci-Fi Thriller
+487,Dan Trachtenberg,Bradley Cooper,John Gallagher Jr.,Sumalee Montano,Drama Horror Mystery Sci-Fi Thriller,10 cloverfield lane,Bradley Cooper John Gallagher Jr. Sumalee Montano Dan Trachtenberg Drama Horror Mystery Sci-Fi Thriller
+488,David Gelb,Olivia Wilde,Mark Duplass,Donald Glover,Horror Sci-Fi Thriller,the lazarus effect,Olivia Wilde Mark Duplass Donald Glover David Gelb Horror Sci-Fi Thriller
+489,Gonzalo LÃÂ³pez-Gallego,Warren Christie,Ryan Robbins,Andrew Airlie,Horror Mystery Sci-Fi Thriller,apollo 18,Warren Christie Ryan Robbins Andrew Airlie Gonzalo LÃÂ³pez-Gallego Horror Mystery Sci-Fi Thriller
+490,Mamoru Hosoda,Lara Jill Miller,Colleen O'Shaughnessey,Mona Marshall,Action Adventure Animation Family Sci-Fi,digimon: the movie,Lara Jill Miller Colleen O'Shaughnessey Mona Marshall Mamoru Hosoda Action Adventure Animation Family Sci-Fi
+491,Duncan Jones,Kevin Spacey,Matt Berry,Benedict Wong,Drama Mystery Sci-Fi,moon,Kevin Spacey Matt Berry Benedict Wong Duncan Jones Drama Mystery Sci-Fi
+492,Jerry Belson,Cassandra Peterson,Tim Thomerson,Bess Armstrong,Comedy Music Sci-Fi,jekyll and hyde... together again,Cassandra Peterson Tim Thomerson Bess Armstrong Jerry Belson Comedy Music Sci-Fi
+493,James Manera,Joaquim de Almeida,Greg Germann,Kristoffer Polaha,Drama Mystery Sci-Fi,atlas shrugged: who is john galt?,Joaquim de Almeida Greg Germann Kristoffer Polaha James Manera Drama Mystery Sci-Fi
+494,Matthew Hastings,Meghan Ory,Marc Trottier,Corey Sevier,Comedy Horror Sci-Fi,decoys,Meghan Ory Marc Trottier Corey Sevier Matthew Hastings Comedy Horror Sci-Fi
+495,Oren Peli,Glenn Campbell,Sandra Staggs,Jelena Nik,Horror Sci-Fi Thriller,area 51,Glenn Campbell Sandra Staggs Jelena Nik Oren Peli Horror Sci-Fi Thriller
+496,Peter Hyams,David Huddleston,Sam Waterston,Hal Holbrook,Action Sci-Fi Thriller,capricorn one,David Huddleston Sam Waterston Hal Holbrook Peter Hyams Action Sci-Fi Thriller
+497,Richard Kelly,Jake Gyllenhaal,Mary McDonnell,James Duval,Drama Sci-Fi Thriller,donnie darko,Jake Gyllenhaal Mary McDonnell James Duval Richard Kelly Drama Sci-Fi Thriller
+498,Ivan Engler,Yangzom Brauen,Claude-Oliver Rudolph,Anna Katharina Schwabroh,Mystery Sci-Fi Thriller,cargo,Yangzom Brauen Claude-Oliver Rudolph Anna Katharina Schwabroh Ivan Engler Mystery Sci-Fi Thriller
+499,Dan O'Bannon,Linnea Quigley,Clu Gulager,Beverly Randolph,Comedy Horror Sci-Fi,the return of the living dead,Linnea Quigley Clu Gulager Beverly Randolph Dan O'Bannon Comedy Horror Sci-Fi
+500,John Carpenter,Meg Foster,Peter Jason,George 'Buck' Flower,Horror Sci-Fi Thriller,they live,Meg Foster Peter Jason George 'Buck' Flower John Carpenter Horror Sci-Fi Thriller
+501,William Arntz,Marlee Matlin,Elaine Hendrix,Armin Shimerman,Comedy Documentary Drama Fantasy Mystery Sci-Fi,what the #$*! do we (k)now!?,Marlee Matlin Elaine Hendrix Armin Shimerman William Arntz Comedy Documentary Drama Fantasy Mystery Sci-Fi
+502,Tim Burton,Cary-Hiroyuki Tagawa,Estella Warren,Erick Avari,Action Adventure Sci-Fi Thriller,planet of the apes,Cary-Hiroyuki Tagawa Estella Warren Erick Avari Tim Burton Action Adventure Sci-Fi Thriller
+503,Jim Mickle,Connor Paolo,Michael Cerveris,Nick Damici,Drama Horror Sci-Fi,stake land,Connor Paolo Michael Cerveris Nick Damici Jim Mickle Drama Horror Sci-Fi
+504,Akiva Schaffer,Will Forte,Nicholas Braun,Rosemarie DeWitt,Action Comedy Sci-Fi,the watch,Will Forte Nicholas Braun Rosemarie DeWitt Akiva Schaffer Action Comedy Sci-Fi
+505,Jay Oliva,Michael Emerson,Mark Valley,Grey Griffin,Action Animation Crime Sci-Fi Thriller,"batman: the dark knight returns, part 2",Michael Emerson Mark Valley Grey Griffin Jay Oliva Action Animation Crime Sci-Fi Thriller
+506,Brandon Cronenberg,Sarah Gadon,Douglas Smith,Caleb Landry Jones,Horror Sci-Fi Thriller,antiviral,Sarah Gadon Douglas Smith Caleb Landry Jones Brandon Cronenberg Horror Sci-Fi Thriller
+507,James DeMonaco,Rhys Wakefield,Adelaide Kane,Chris Mulkey,Horror Sci-Fi Thriller,the purge,Rhys Wakefield Adelaide Kane Chris Mulkey James DeMonaco Horror Sci-Fi Thriller
+508,Ted Post,Linda Harrison,Gregory Sierra,Victor Buono,Action Adventure Sci-Fi,beneath the planet of the apes,Linda Harrison Gregory Sierra Victor Buono Ted Post Action Adventure Sci-Fi
+509,Kunihiko Yuyama,Veronica Taylor,Eric Stuart,Lisa Ortiz,Action Adventure Animation Family Fantasy Sci-Fi,pokÃÂ©mon 3: the movie,Veronica Taylor Eric Stuart Lisa Ortiz Kunihiko Yuyama Action Adventure Animation Family Fantasy Sci-Fi
+510,Patrick Read Johnson,Ariana Richards,Royal Dano,Tonya Lee Williams,Adventure Comedy Sci-Fi,spaced invaders,Ariana Richards Royal Dano Tonya Lee Williams Patrick Read Johnson Adventure Comedy Sci-Fi
+511,Don Coscarelli,Angus Scrimm,A. Michael Baldwin,James Le Gros,Action Fantasy Horror Sci-Fi Thriller,phantasm ii,Angus Scrimm A. Michael Baldwin James Le Gros Don Coscarelli Action Fantasy Horror Sci-Fi Thriller
+512,unknown,Craig T. Nelson,Colm Feore,Megalyn Echikunwoke,Horror Sci-Fi Thriller,creatureÃÂ            ,Craig T. Nelson Colm Feore Megalyn Echikunwoke unknown Horror Sci-Fi Thriller
+513,unknown,Danny Pino,Megan Hilty,Zach Grenier,Comedy Drama Horror Sci-Fi Thriller,braindeadÃÂ            ,Danny Pino Megan Hilty Zach Grenier unknown Comedy Drama Horror Sci-Fi Thriller
+514,Xavier Gens,Michael Biehn,Lauren German,Rosanna Arquette,Drama Sci-Fi Thriller,the divide,Michael Biehn Lauren German Rosanna Arquette Xavier Gens Drama Sci-Fi Thriller
+515,Leon Ford,Maeve Dermody,Patrick Brammall,Kelly Paterniti,Comedy Drama Romance Sci-Fi,griff the invisible,Maeve Dermody Patrick Brammall Kelly Paterniti Leon Ford Comedy Drama Romance Sci-Fi
+516,ThorbjÃÂ¸rn Christoffersen,Iben Hjejle,Frank Hvam,Casper Christensen,Action Adventure Animation Comedy Sci-Fi,journey to saturn,Iben Hjejle Frank Hvam Casper Christensen ThorbjÃÂ¸rn Christoffersen Action Adventure Animation Comedy Sci-Fi
+517,Rand Ravich,Johnny Depp,Charlize Theron,Clea DuVall,Drama Sci-Fi Thriller,the astronaut's wife,Johnny Depp Charlize Theron Clea DuVall Rand Ravich Drama Sci-Fi Thriller
+518,Nacho Vigalondo,Karra Elejalde,Nacho Vigalondo,BÃÂ¡rbara Goenaga,Horror Mystery Sci-Fi Thriller,timecrimes,Karra Elejalde Nacho Vigalondo BÃÂ¡rbara Goenaga Nacho Vigalondo Horror Mystery Sci-Fi Thriller
+519,Tommy Lee Wallace,Tom Atkins,Dan O'Herlihy,Nancy Kyes,Horror Mystery Sci-Fi,halloween iii: season of the witch,Tom Atkins Dan O'Herlihy Nancy Kyes Tommy Lee Wallace Horror Mystery Sci-Fi
+520,Don Taylor,Roddy McDowall,M. Emmet Walsh,Sal Mineo,Action Sci-Fi,escape from the planet of the apes,Roddy McDowall M. Emmet Walsh Sal Mineo Don Taylor Action Sci-Fi
+521,Jake Schreier,Frank Langella,Joshua Ormond,Ana Gasteyer,Comedy Crime Drama Sci-Fi,robot & frank,Frank Langella Joshua Ormond Ana Gasteyer Jake Schreier Comedy Crime Drama Sci-Fi
+522,Alex Rivera,Leonor Varela,Jacob Vargas,Tenoch Huerta,Drama Romance Sci-Fi Thriller,sleep dealer,Leonor Varela Jacob Vargas Tenoch Huerta Alex Rivera Drama Romance Sci-Fi Thriller
+523,Mike Judge,Anthony 'Citric' Campos,Patrick Fischler,David Herman,Adventure Comedy Sci-Fi,idiocracy,Anthony 'Citric' Campos Patrick Fischler David Herman Mike Judge Adventure Comedy Sci-Fi
+524,Dominic Burns,Julian Glover,Sean Pertwee,Bianca Brigitte VanDamme,Comedy Sci-Fi,alien uprising,Julian Glover Sean Pertwee Bianca Brigitte VanDamme Dominic Burns Comedy Sci-Fi
+525,Neil Mcenery-West,Walter Hendrix III,Michael Chapman,Louise Brealey,Horror Sci-Fi Thriller,containment,Walter Hendrix III Michael Chapman Louise Brealey Neil Mcenery-West Horror Sci-Fi Thriller
+526,Michael Herz,Phoebe Legere,Jessica Dublin,Lisa Gaye,Action Comedy Horror Sci-Fi,the toxic avenger part ii,Phoebe Legere Jessica Dublin Lisa Gaye Michael Herz Action Comedy Horror Sci-Fi
+527,Woody Allen,Woody Allen,John Beck,Mews Small,Comedy Sci-Fi,sleeper,Woody Allen John Beck Mews Small Woody Allen Comedy Sci-Fi
+528,George Miller,Vernon Wells,Bruce Spence,Kjell Nilsson,Action Adventure Sci-Fi Thriller,mad max 2: the road warrior,Vernon Wells Bruce Spence Kjell Nilsson George Miller Action Adventure Sci-Fi Thriller
+529,Lance Mungia,Jeffrey Falcon,Stephane Gauger,Kim De Angelo,Action Adventure Comedy Drama Music Sci-Fi,six-string samurai,Jeffrey Falcon Stephane Gauger Kim De Angelo Lance Mungia Action Adventure Comedy Drama Music Sci-Fi
+530,unknown,Joe Morton,Colin Ferguson,Salli Richardson-Whitfield,Comedy Drama Sci-Fi,eurekaÃÂ            ,Joe Morton Colin Ferguson Salli Richardson-Whitfield unknown Comedy Drama Sci-Fi
+531,Brian Yuzna,Melinda Clarke,Kent McCord,Sarah Douglas,Horror Romance Sci-Fi,return of the living dead iii,Melinda Clarke Kent McCord Sarah Douglas Brian Yuzna Horror Romance Sci-Fi
+532,Aaron Hann,Jordi Vilasuso,Michael McLafferty,Kaiwi Lyman-Mersereau,Drama Horror Mystery Sci-Fi Thriller,circle,Jordi Vilasuso Michael McLafferty Kaiwi Lyman-Mersereau Aaron Hann Drama Horror Mystery Sci-Fi Thriller
+533,Paul Bunnell,Kate Maberly,Kevin McCarthy,Paul Williams,Comedy Fantasy Musical Sci-Fi,the ghastly love of johnny x,Kate Maberly Kevin McCarthy Paul Williams Paul Bunnell Comedy Fantasy Musical Sci-Fi
+534,J. Lee Thompson,Roddy McDowall,Paul Williams,Claude Akins,Action Sci-Fi,battle for the planet of the apes,Roddy McDowall Paul Williams Claude Akins J. Lee Thompson Action Sci-Fi
+535,W.D. Hogan,Tom Everett Scott,Keenan Tracey,Nicholas Carella,Action Sci-Fi,independence daysaster,Tom Everett Scott Keenan Tracey Nicholas Carella W.D. Hogan Action Sci-Fi
+536,J. Lee Thompson,Roddy McDowall,Gordon Jump,John Randolph,Action Sci-Fi,conquest of the planet of the apes,Roddy McDowall Gordon Jump John Randolph J. Lee Thompson Action Sci-Fi
+537,Alex Cox,Del Zamora,Tracey Walter,Miguel Sandoval,Comedy Crime Sci-Fi Thriller,repo man,Del Zamora Tracey Walter Miguel Sandoval Alex Cox Comedy Crime Sci-Fi Thriller
+538,David Winning,Ashanti,Amber Marshall,John DeSantis,Sci-Fi,mutant world,Ashanti Amber Marshall John DeSantis David Winning Sci-Fi
+539,unknown,James Morrison,Tucker Smallwood,Kristen Cloke,Drama Sci-Fi,space: above and beyondÃÂ            ,James Morrison Tucker Smallwood Kristen Cloke unknown Drama Sci-Fi
+540,Paul Donovan,Maury Chaykin,Lenore Zann,Tim Choate,Action Sci-Fi,def-con 4,Maury Chaykin Lenore Zann Tim Choate Paul Donovan Action Sci-Fi
+541,Douglas Cheek,Daniel Stern,John Heard,Sam McMurray,Horror Sci-Fi,c.h.u.d.,Daniel Stern John Heard Sam McMurray Douglas Cheek Horror Sci-Fi
+542,Scott Derrickson,Keanu Reeves,Jon Hamm,Juan Riedinger,Drama Sci-Fi Thriller,the day the earth stood still,Keanu Reeves Jon Hamm Juan Riedinger Scott Derrickson Drama Sci-Fi Thriller
+543,Panos Cosmatos,Chris Gauthier,Marilyn Norry,Eva Bourne,Sci-Fi Thriller,beyond the black rainbow,Chris Gauthier Marilyn Norry Eva Bourne Panos Cosmatos Sci-Fi Thriller
+544,Matthew R. Anderson,Johnny Pacar,Vernon Wells,Matthew R. Anderson,Action Horror Sci-Fi,the dead undead,Johnny Pacar Vernon Wells Matthew R. Anderson Matthew R. Anderson Action Horror Sci-Fi
+545,Douglas Trumbull,Bruce Dern,Ron Rifkin,Jesse Vint,Drama Sci-Fi,silent running,Bruce Dern Ron Rifkin Jesse Vint Douglas Trumbull Drama Sci-Fi
+546,Bradley Parker,Jesse McCartney,Ingrid BolsÃÂ¸ Berdal,Jonathan Sadowski,Horror Mystery Sci-Fi Thriller,chernobyl diaries,Jesse McCartney Ingrid BolsÃÂ¸ Berdal Jonathan Sadowski Bradley Parker Horror Mystery Sci-Fi Thriller
+547,Takao Okawara,Hiroshi Abe,Naomi Nishida,Sakae Kimura,Action Adventure Drama Sci-Fi Thriller,godzilla 2000,Hiroshi Abe Naomi Nishida Sakae Kimura Takao Okawara Action Adventure Drama Sci-Fi Thriller
+548,Trey Parker,Trey Parker,Dian Bachar,Matt Stone,Comedy Sci-Fi,orgazmo,Trey Parker Dian Bachar Matt Stone Trey Parker Comedy Sci-Fi
+549,Mike Cahill,Steven Yeun,Cara Seymour,Venida Evans,Drama Romance Sci-Fi,i origins,Steven Yeun Cara Seymour Venida Evans Mike Cahill Drama Romance Sci-Fi
+550,Craig Mazin,Judy Greer,James Gunn,Jamie Kennedy,Action Comedy Fantasy Sci-Fi,the specials,Judy Greer James Gunn Jamie Kennedy Craig Mazin Action Comedy Fantasy Sci-Fi
+551,Benjamin Dickinson,Nora Zehetner,Alexia Rasmussen,Meredith Hagner,Drama Sci-Fi,creative control,Nora Zehetner Alexia Rasmussen Meredith Hagner Benjamin Dickinson Drama Sci-Fi
+552,Hal Haberman,Michael Rapaport,Paul Blackthorne,Ian Bohen,Comedy Drama Sci-Fi,special,Michael Rapaport Paul Blackthorne Ian Bohen Hal Haberman Comedy Drama Sci-Fi
+553,A. Raven Cruz,Scott Levy,Vanilla Ice,Jennifer Sky,Action Adventure Comedy Fantasy Sci-Fi,the helix... loaded,Scott Levy Vanilla Ice Jennifer Sky A. Raven Cruz Action Adventure Comedy Fantasy Sci-Fi
+554,Kevin Hamedani,Russell Hodgkinson,Janette Armand,Kevin Hamedani,Comedy Horror Sci-Fi,zmd: zombies of mass destruction,Russell Hodgkinson Janette Armand Kevin Hamedani Kevin Hamedani Comedy Horror Sci-Fi
+555,Jeffrey St. Jules,Boyd Banks,Chloe Rose,Kristian Bruun,Drama Musical Sci-Fi,bang bang baby,Boyd Banks Chloe Rose Kristian Bruun Jeffrey St. Jules Drama Musical Sci-Fi
+556,Ralph Nelson,Cliff Robertson,Dick Van Patten,Claire Bloom,Drama Romance Sci-Fi,charly,Cliff Robertson Dick Van Patten Claire Bloom Ralph Nelson Drama Romance Sci-Fi
+557,Rich Christiano,Gavin MacLeod,D. David Morin,Hal Linden,Drama Fantasy Sci-Fi,time changer,Gavin MacLeod D. David Morin Hal Linden Rich Christiano Drama Fantasy Sci-Fi
+558,Nick Love,Eddie Griffin,Christopher Berry,Michelle Tabora,Action Comedy Drama Sci-Fi,american hero,Eddie Griffin Christopher Berry Michelle Tabora Nick Love Action Comedy Drama Sci-Fi
+559,Clark Baker,Taylor Pigeon,Alan Pietruszewski,Whit Spurgeon,Horror Sci-Fi Short Thriller,vessel,Taylor Pigeon Alan Pietruszewski Whit Spurgeon Clark Baker Horror Sci-Fi Short Thriller
+560,Matt Maiellaro,Tina Fey,Fred Armisen,Chris Kattan,Action Adventure Animation Comedy Fantasy Sci-Fi,aqua teen hunger force colon movie film for theaters,Tina Fey Fred Armisen Chris Kattan Matt Maiellaro Action Adventure Animation Comedy Fantasy Sci-Fi
+561,Joseph Kosinski,Peter Dinklage,Lauren Cohan,Erick Avari,Action Adventure Fantasy Sci-Fi,destiny,Peter Dinklage Lauren Cohan Erick Avari Joseph Kosinski Action Adventure Fantasy Sci-Fi
+562,John 'Bud' Cardos,Woody Strode,Hoke Howell,Tiffany Bolling,Horror Sci-Fi,kingdom of the spiders,Woody Strode Hoke Howell Tiffany Bolling John 'Bud' Cardos Horror Sci-Fi
+563,Tim Johnson,Jim Parsons,Matt Jones,April Winchell,Adventure Animation Comedy Family Fantasy Sci-Fi,home,Jim Parsons Matt Jones April Winchell Tim Johnson Adventure Animation Comedy Family Fantasy Sci-Fi
+564,Gareth Edwards,Scoot McNairy,Whitney Able,Ricky Catter,Drama Sci-Fi Thriller,monsters,Scoot McNairy Whitney Able Ricky Catter Gareth Edwards Drama Sci-Fi Thriller
+565,Michael Herz,Patrick Kilpatrick,Mark Torgl,Pat Ryan,Action Comedy Horror Sci-Fi,the toxic avenger,Patrick Kilpatrick Mark Torgl Pat Ryan Michael Herz Action Comedy Horror Sci-Fi
+566,unknown,Sendhil Ramamurthy,Masi Oka,Greg Grunberg,Drama Fantasy Sci-Fi Thriller,heroesÃÂ            ,Sendhil Ramamurthy Masi Oka Greg Grunberg unknown Drama Fantasy Sci-Fi Thriller
+567,unknown,Billy Burke,Tracy Spiridakos,David Lyons,Action Adventure Drama Sci-Fi,revolutionÃÂ            ,Billy Burke Tracy Spiridakos David Lyons unknown Action Adventure Drama Sci-Fi
+568,Chad Kapper,Tom E. Nicholson,Natalie Welch,Christian Kapper,Family Sci-Fi,rotor dr1,Tom E. Nicholson Natalie Welch Christian Kapper Chad Kapper Family Sci-Fi
+569,Paul Bartel,Sylvester Stallone,David Carradine,Martin Kove,Action Comedy Sci-Fi Sport,death race 2000,Sylvester Stallone David Carradine Martin Kove Paul Bartel Action Comedy Sci-Fi Sport
+570,Vincenzo Natali,David Hewlett,Julian Richings,Nicole de Boer,Mystery Sci-Fi Thriller,cube,David Hewlett Julian Richings Nicole de Boer Vincenzo Natali Mystery Sci-Fi Thriller
+571,Bill Plympton,Charis Michelsen,Bill Martone,Richard Spore,Animation Comedy Drama Fantasy Sci-Fi,i married a strange person!,Charis Michelsen Bill Martone Richard Spore Bill Plympton Animation Comedy Drama Fantasy Sci-Fi
+572,Hilary Brougher,James Urbaniak,Samantha Buck,Terumi Matthews,Sci-Fi,the sticky fingers of time,James Urbaniak Samantha Buck Terumi Matthews Hilary Brougher Sci-Fi
+573,Jamin Winans,Eme Ikwuakor,Marty Lindsey,Jessica Duffy,Action Drama Fantasy Sci-Fi,ink,Eme Ikwuakor Marty Lindsey Jessica Duffy Jamin Winans Action Drama Fantasy Sci-Fi
+574,EugÃÂ¨ne LouriÃÂ©,Kenneth Tobey,Cecil Kellaway,Ross Elliott,Adventure Horror Sci-Fi,"the beast from 20,000 fathoms",Kenneth Tobey Cecil Kellaway Ross Elliott EugÃÂ¨ne LouriÃÂ© Adventure Horror Sci-Fi
+575,Richard Fleischer,James Mason,Robert J. Wilke,Paul Lukas,Adventure Drama Family Fantasy Sci-Fi,"20,000 leagues under the sea",James Mason Robert J. Wilke Paul Lukas Richard Fleischer Adventure Drama Family Fantasy Sci-Fi
+576,George Miller,Hugh Keays-Byrne,Steve Bisley,Joanne Samuel,Action Adventure Sci-Fi Thriller,mad max,Hugh Keays-Byrne Steve Bisley Joanne Samuel George Miller Action Adventure Sci-Fi Thriller
+577,Eric Valette,Melanie Papalia,Ryan Kennedy,John Reardon,Horror Sci-Fi Thriller,super hybrid,Melanie Papalia Ryan Kennedy John Reardon Eric Valette Horror Sci-Fi Thriller
+578,Richard Schenkman,William Katt,John Billingsley,David Lee Smith,Drama Romance Sci-Fi,the man from earth,William Katt John Billingsley David Lee Smith Richard Schenkman Drama Romance Sci-Fi
+579,James Kerwin,John Newton,Chase Masterson,H.M. Wynant,Drama Music Mystery Romance Sci-Fi,yesterday was a lie,John Newton Chase Masterson H.M. Wynant James Kerwin Drama Music Mystery Romance Sci-Fi
+580,Rania Attieh,Paul Hickert,Robin Bartlett,Rebecca Dayan,Drama Sci-Fi Thriller,h.,Paul Hickert Robin Bartlett Rebecca Dayan Rania Attieh Drama Sci-Fi Thriller
+581,Mike Cahill,Robin Lord Taylor,William Mapother,Flint Beverage,Drama Romance Sci-Fi,another earth,Robin Lord Taylor William Mapother Flint Beverage Mike Cahill Drama Romance Sci-Fi
+582,Zal Batmanglij,Christopher Denham,James Urbaniak,Constance Wu,Drama Mystery Sci-Fi Thriller,sound of my voice,Christopher Denham James Urbaniak Constance Wu Zal Batmanglij Drama Mystery Sci-Fi Thriller
+583,David Lynch,Hal Landon Jr.,Jack Nance,Charlotte Stewart,Fantasy Horror Sci-Fi,eraserhead,Hal Landon Jr. Jack Nance Charlotte Stewart David Lynch Fantasy Horror Sci-Fi
+584,Larry Blamire,Fay Masterson,Brian Howe,Larry Blamire,Comedy Horror Sci-Fi,the lost skeleton of cadavra,Fay Masterson Brian Howe Larry Blamire Larry Blamire Comedy Horror Sci-Fi
+585,Patrick Ryan Sims,Claire Gordon-Harper,Hugh Mun,Johnathan Hurley,Action Drama Sci-Fi Thriller,echo dr.,Claire Gordon-Harper Hugh Mun Johnathan Hurley Patrick Ryan Sims Action Drama Sci-Fi Thriller
+586,Brett Piper,Michelle Simone Miller,Steve Diasparra,A.J. DeLucia,Action Sci-Fi Thriller,queen crab,Michelle Simone Miller Steve Diasparra A.J. DeLucia Brett Piper Action Sci-Fi Thriller
+587,Joseph Green,Virginia Leith,Jason Evers,Bruce Kerr,Horror Sci-Fi,the brain that wouldn't die,Virginia Leith Jason Evers Bruce Kerr Joseph Green Horror Sci-Fi
+588,William Eubank,Lin Shaye,Olivia Cooke,Beau Knapp,Sci-Fi Thriller,the signal,Lin Shaye Olivia Cooke Beau Knapp William Eubank Sci-Fi Thriller
+589,Kirk Loudon,Barry Corbin,Johnny Walter,Shiree Nelson,Drama Sci-Fi Thriller,dawn of the crescent moon,Barry Corbin Johnny Walter Shiree Nelson Kirk Loudon Drama Sci-Fi Thriller
+590,Jason Trost,Sean Whalen,Jason Trost,Nick Principe,Sci-Fi Thriller,all superheroes must die,Sean Whalen Jason Trost Nick Principe Jason Trost Sci-Fi Thriller
+591,Shane Carruth,Shane Carruth,David Sullivan,Casey Gooden,Drama Sci-Fi Thriller,primer,Shane Carruth David Sullivan Casey Gooden Shane Carruth Drama Sci-Fi Thriller
+592,Zack Snyder,Ben Affleck,Henry Cavill,Gal Gadot,Action Adventure Fantasy Sci-Fi,justice league,Ben Affleck Henry Cavill Gal Gadot Zack Snyder Action Adventure Fantasy Sci-Fi
+593,Taika Waititi,Chris Hemsworth,Tom Hiddleston,Cate Blanchett,Action Adventure Fantasy Sci-Fi,thor: ragnarok,Chris Hemsworth Tom Hiddleston Cate Blanchett Taika Waititi Action Adventure Fantasy Sci-Fi
+594,James Gunn,Chris Pratt,Zoe Saldana,Dave Bautista,Action Adventure Comedy Sci-Fi,guardians of the galaxy vol. 2,Chris Pratt Zoe Saldana Dave Bautista James Gunn Action Adventure Comedy Sci-Fi
+595,Sarik Andreasyan,Anton Pampushnyy,Sanzhar Madiyev,Sebastien Sisak,Action Fantasy Sci-Fi,guardians,Anton Pampushnyy Sanzhar Madiyev Sebastien Sisak Sarik Andreasyan Action Fantasy Sci-Fi
+596,James Ponsoldt,Emma Watson,Tom Hanks,John Boyega,Drama Thriller Sci-Fi,the circle,Emma Watson Tom Hanks John Boyega James Ponsoldt Drama Thriller Sci-Fi
+597,Aaron Leong,Sean O'Donnell,Alexandria DeBerry,Gary Busey,Comedy Drama Family Fantasy Romance Sci-Fi,mamaboy,Sean O'Donnell Alexandria DeBerry Gary Busey Aaron Leong Comedy Drama Family Fantasy Romance Sci-Fi
+598,Nacho Vigalondo,Anne Hathaway,Jason Sudeikis,Tim Blake Nelson,Action Comedy Drama Fantasy Sci-Fi,colossal,Anne Hathaway Jason Sudeikis Tim Blake Nelson Nacho Vigalondo Action Comedy Drama Fantasy Sci-Fi
+599,Alex Helfrecht JÃÂ¶rg Tittel,Agyness Deyn,Jonathan Pryce,Fiona Shaw,Drama Sci-Fi,the white king,Agyness Deyn Jonathan Pryce Fiona Shaw Alex Helfrecht JÃÂ¶rg Tittel Drama Sci-Fi
+600,Peter Chelsom,Asa Butterfield,Britt Robertson,Carla Gugino,Romance Adventure Sci-Fi Drama,the space between us,Asa Butterfield Britt Robertson Carla Gugino Peter Chelsom Romance Adventure Sci-Fi Drama
+601,Gore Verbinski,Dane DeHaan,Jason Isaacs,Mia Goth,Mystery Thriller Horror Sci-Fi,a cure for wellness,Dane DeHaan Jason Isaacs Mia Goth Gore Verbinski Mystery Thriller Horror Sci-Fi
+602,G.J. Echternkamp,Manu Bennett,Malcolm McDowell,Marci Miller,Action Comedy Sci-Fi,death race 2050,Manu Bennett Malcolm McDowell Marci Miller G.J. Echternkamp Action Comedy Sci-Fi
+603,James Mangold,Hugh Jackman,Patrick Stewart,Dafne Keen,Action Drama Sci-Fi,logan,Hugh Jackman Patrick Stewart Dafne Keen James Mangold Action Drama Sci-Fi
+604,Shane Abbess,Kellan Lutz,Daniel MacPherson,Isabel Lucas,Sci-Fi,science fiction volume one: the osiris child,Kellan Lutz Daniel MacPherson Isabel Lucas Shane Abbess Sci-Fi
+605,Jay Oliva,Matt Ryan,Jason O'Mara,Camilla Luddington,Action Animation Fantasy Sci-Fi Thriller,justice league dark,Matt Ryan Jason O'Mara Camilla Luddington Jay Oliva Action Animation Fantasy Sci-Fi Thriller
+606,Adam Randall,Bill Milner,Maisie Williams,Rory Kinnear,Action Crime Sci-Fi Thriller,iboy,Bill Milner Maisie Williams Rory Kinnear Adam Randall Action Crime Sci-Fi Thriller
+607,Rupert Sanders,Scarlett Johansson,Michael Pitt,Pilou AsbÃÂ¦k,Action Sci-Fi Thriller,ghost in the shell,Scarlett Johansson Michael Pitt Pilou AsbÃÂ¦k Rupert Sanders Action Sci-Fi Thriller
+608,Fyodor Bondarchuk,Rinal Mukhametov,Sergey Garmash,Oleg Menshikov,Drama Romance Sci-Fi,attraction,Rinal Mukhametov Sergey Garmash Oleg Menshikov Fyodor Bondarchuk Drama Romance Sci-Fi
+609,Ben Browder,Gina Gershon,Sean Astin,Sammi Hanratty,Mystery Comedy Thriller Sci-Fi Fantasy,bad kids of crestview academy,Gina Gershon Sean Astin Sammi Hanratty Ben Browder Mystery Comedy Thriller Sci-Fi Fantasy
+610,Vladimir Besedin,Aleksandr Gorbatov,Ivan Fominov,Anton Kuznetsov,Action Adventure Sci-Fi Drama,major grom,Aleksandr Gorbatov Ivan Fominov Anton Kuznetsov Vladimir Besedin Action Adventure Sci-Fi Drama
+611,Daniel Espinosa,Jake Gyllenhaal,Rebecca Ferguson,Ryan Reynolds,Horror Sci-Fi Thriller,life,Jake Gyllenhaal Rebecca Ferguson Ryan Reynolds Daniel Espinosa Horror Sci-Fi Thriller
+612,J.D. Dillard,Jacob Latimore,Seychelle Gabriel,Sasheer Zamata,Drama Thriller Action Sci-Fi,sleight,Jacob Latimore Seychelle Gabriel Sasheer Zamata J.D. Dillard Drama Thriller Action Sci-Fi
+613,Dean Israelite,Dacre Montgomery,Naomi Scott,RJ Cyler,Action Adventure Sci-Fi,power rangers,Dacre Montgomery Naomi Scott RJ Cyler Dean Israelite Action Adventure Sci-Fi
+614,Ridley Scott,Michael Fassbender,Katherine Waterston,Billy Crudup,Horror Sci-Fi Thriller,alien: covenant,Michael Fassbender Katherine Waterston Billy Crudup Ridley Scott Horror Sci-Fi Thriller
+615,Geoffrey Orthwein Andrew Sullivan,Maika Monroe,Matt O'Leary,Arnar JÃ³nsson,Drama Sci-Fi Thriller,bokeh,Maika Monroe Matt O'Leary Arnar JÃ³nsson Geoffrey Orthwein Andrew Sullivan Drama Sci-Fi Thriller
+616,Simon Amstell,Simon Amstell,Linda Bassett,Martin Freeman,Sci-Fi Comedy Documentary,carnage: swallowing the past,Simon Amstell Linda Bassett Martin Freeman Simon Amstell Sci-Fi Comedy Documentary
+617,Charlie McDowell,Jason Segel,Rooney Mara,Robert Redford,Drama Romance Sci-Fi Thriller,the discovery,Jason Segel Rooney Mara Robert Redford Charlie McDowell Drama Romance Sci-Fi Thriller
+618,Sam Liu,Stuart Allan,Jake T. Austin,Taissa Farmiga,Sci-Fi Animation Action,teen titans: the judas contract,Stuart Allan Jake T. Austin Taissa Farmiga Sam Liu Sci-Fi Animation Action
+619,Aaron Woodley,Jessica Biel,Hilary Swank,Susan Sarandon,Adventure Animation Comedy Family Sci-Fi,spark: a space tail,Jessica Biel Hilary Swank Susan Sarandon Aaron Woodley Adventure Animation Comedy Family Sci-Fi
+620,Ian Truitner,Sunny Mabrey,Lance Broadway,T.J. Hoban,Sci-Fi,teleios,Sunny Mabrey Lance Broadway T.J. Hoban Ian Truitner Sci-Fi
+621,Takanori Tsujimoto,Kevin Dorman,Matthew Mercer,Erin Cahill,Action Adventure Animation Horror Mystery Sci-Fi,resident evil: vendetta,Kevin Dorman Matthew Mercer Erin Cahill Takanori Tsujimoto Action Adventure Animation Horror Mystery Sci-Fi
+622,Justin Barber,Florence Hartigan,Jeanine Jackson,Chelsea Lopez,Horror Mystery Sci-Fi,phoenix forgotten,Florence Hartigan Jeanine Jackson Chelsea Lopez Justin Barber Horror Mystery Sci-Fi
+623,Vincent J. Guastini Michael McQuown,Cortney Palm,David Hull,Emilia Zoryan,Horror Sci-Fi Thriller,the dark tapes,Cortney Palm David Hull Emilia Zoryan Vincent J. Guastini Michael McQuown Horror Sci-Fi Thriller
+624,Liam O'Donnell,Frank Grillo,Bojana Novakovic,Iko Uwais,Action Sci-Fi,beyond skyline,Frank Grillo Bojana Novakovic Iko Uwais Liam O'Donnell Action Sci-Fi
+625,Robert Dyke,Sarah Butler,Damon Dayoub,Charles Shaughnessy,Action Sci-Fi Adventure,moontrap: target earth,Sarah Butler Damon Dayoub Charles Shaughnessy Robert Dyke Action Sci-Fi Adventure
+626,Grant Humphreys,Ronan Quarmby,Brad Richards,Barbara Harrison,Sci-Fi,taking earth,Ronan Quarmby Brad Richards Barbara Harrison Grant Humphreys Sci-Fi
+627,Bong Joon-ho,Tilda Swinton,Paul Dano,Ahn Seo-hyun ,Adventure Drama Fantasy Sci-Fi,okja,Tilda Swinton Paul Dano Ahn Seo-hyun  Bong Joon-ho Adventure Drama Fantasy Sci-Fi
+628,Kevin Macdonald,Richard Madden,Flora Spencer-Longhurst,Moshidi Motshegwa,TV Movie Drama Sci-Fi,oasis,Richard Madden Flora Spencer-Longhurst Moshidi Motshegwa Kevin Macdonald TV Movie Drama Sci-Fi
+629,Amariah Olson Obin Olson,Jonathan Rhys Meyers,Cam Gigandet,Michael Biehn,Sci-Fi Action Thriller,the shadow effect,Jonathan Rhys Meyers Cam Gigandet Michael Biehn Amariah Olson Obin Olson Sci-Fi Action Thriller
+630,Hiroyuki Seshita,Takahiro Sakurai,Kana Hanazawa,Sora Amamiya,Action Animation Drama Horror Sci-Fi,blame!,Takahiro Sakurai Kana Hanazawa Sora Amamiya Hiroyuki Seshita Action Animation Drama Horror Sci-Fi
+631,Tim Smit,Dan Stevens,BÃ©rÃ©nice Marlohe,Charity Wakefield,Sci-Fi,kill switch,Dan Stevens BÃ©rÃ©nice Marlohe Charity Wakefield Tim Smit Sci-Fi
+632,Ana Lily Amirpour,Suki Waterhouse,Jason Momoa,Jayda Fink,Thriller Romance Sci-Fi,the bad batch,Suki Waterhouse Jason Momoa Jayda Fink Ana Lily Amirpour Thriller Romance Sci-Fi
+633,Matt Reeves,Andy Serkis,Woody Harrelson,Steve Zahn,Drama Sci-Fi War,war for the planet of the apes,Andy Serkis Woody Harrelson Steve Zahn Matt Reeves Drama Sci-Fi War
+634,John Cameron Mitchell,Elle Fanning,Nicole Kidman,Ruth Wilson,Comedy Music Romance Sci-Fi,how to talk to girls at parties,Elle Fanning Nicole Kidman Ruth Wilson John Cameron Mitchell Comedy Music Romance Sci-Fi
+635,Luc Besson,Dane DeHaan,Cara Delevingne,Clive Owen,Adventure Sci-Fi Action,valerian and the city of a thousand planets,Dane DeHaan Cara Delevingne Clive Owen Luc Besson Adventure Sci-Fi Action
+636,Mathieu Ratthe,Alex C. Nachi,Mathieu Ratthe,Victor Andres Turgeon-Trelles,Horror Sci-Fi Action,the gracefield incident,Alex C. Nachi Mathieu Ratthe Victor Andres Turgeon-Trelles Mathieu Ratthe Horror Sci-Fi Action
+637,Kim Joon-Sung,Go Soo,Sol Kyung-gu,Park Yoo-chun,Sci-Fi Thriller,lucid dream,Go Soo Sol Kyung-gu Park Yoo-chun Kim Joon-Sung Sci-Fi Thriller
+638,Nicole Jones-Dion,Anna Harr,Mark Grossman,Phyllis Spielman,Adventure Sci-Fi,stasis,Anna Harr Mark Grossman Phyllis Spielman Nicole Jones-Dion Adventure Sci-Fi
+639,Tommy Wirkola,Noomi Rapace,Marwan Kenzari,Christian Rubeck,Sci-Fi Thriller,what happened to monday,Noomi Rapace Marwan Kenzari Christian Rubeck Tommy Wirkola Sci-Fi Thriller
+640,Neill Blomkamp,Sigourney Weaver,Eugene Khumbanyiwa,Robert Hobbs,Action Sci-Fi,rakka,Sigourney Weaver Eugene Khumbanyiwa Robert Hobbs Neill Blomkamp Action Sci-Fi
+641,David Firth,David Firth,Carla Simpson,Christian Webb,Animation Comedy Sci-Fi,cream,David Firth Carla Simpson Christian Webb David Firth Animation Comedy Sci-Fi
+642,Hatem Khraiche,Clara Lago,BelÃ©n Rueda,Ãlex GonzÃ¡lez,Drama Sci-Fi Romance,orbiter 9,Clara Lago BelÃ©n Rueda Ãlex GonzÃ¡lez Hatem Khraiche Drama Sci-Fi Romance
+643,Michael Bay,Mark Wahlberg,Josh Duhamel,Laura Haddock,Action Sci-Fi Thriller Adventure,transformers: the last knight,Mark Wahlberg Josh Duhamel Laura Haddock Michael Bay Action Sci-Fi Thriller Adventure
+644,Neill Blomkamp,Steve Boyle,Nic Rhind,Robert Hobbs,Action Sci-Fi War,firebase,Steve Boyle Nic Rhind Robert Hobbs Neill Blomkamp Action Sci-Fi War
+645,Joe Miale,Lee Pace,BÃ©rÃ©nice Marlohe,Jason Flemyng,Sci-Fi,revolt,Lee Pace BÃ©rÃ©nice Marlohe Jason Flemyng Joe Miale Sci-Fi
+646,Nikolaj Arcel,Idris Elba,Matthew McConaughey,Tom Taylor,Action Western Sci-Fi Fantasy Horror,the dark tower,Idris Elba Matthew McConaughey Tom Taylor Nikolaj Arcel Action Western Sci-Fi Fantasy Horror
+647,Clay Staub,Milo Ventimiglia,Bridget Regan,Amanda Schull,Sci-Fi Thriller,devil's gate,Milo Ventimiglia Bridget Regan Amanda Schull Clay Staub Sci-Fi Thriller
+648,Shawn Levy,Ryan Reynolds,Hugh Jackman,Emma Corrin,"Action , Adventure , Comedy , Sci-Fi , Superhero",deadpool & wolverine,"Ryan Reynolds Hugh Jackman Emma Corrin Shawn Levy Action , Adventure , Comedy , Sci-Fi , Superhero"
+649,S.J. Clarkson,Dakota Johnson,Sydney Sweeney,Isabela Merced,"Action , Adventure , Fantasy , Thriller , Sci-Fi , Superhero",madame web,"Dakota Johnson Sydney Sweeney Isabela Merced S.J. Clarkson Action , Adventure , Fantasy , Thriller , Sci-Fi , Superhero"
