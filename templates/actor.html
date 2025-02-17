@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ actor.name }}</title>
+    <style>
+        .actor-container {
+            border: 2px solid green;
+            background-color: #542929;
+            color: white;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        .actor-profile {
+            height: 500px;
+            width: auto;
+            border-radius: 8px;
+        }
+
+        .details {
+            max-width: 600px;
+        }
+
+        .movies-list {
+            margin-top: 30px;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .movie-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            /* border: 2px solid black; */
+            width: 1200px;
+            max-width: 1400px;
+            margin: auto;
+        }
+
+        .movie-item {
+            background-color: #333;
+            color: white;
+            border-radius: 8px;
+            margin: 10px;
+            padding: 20px;
+            width: 220px;
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+        }
+
+        .movie-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .movie-title {
+            font-size: 18px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .character-name {
+            font-size: 16px;
+            margin-top: 5px;
+            font-style: italic;
+            color: #bbb;
+        }
+
+        .movie-poster {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="actor-container">
+    <img src="{{ actor.profile }}" alt="{{ actor.name }}" class="actor-profile">
+    <div class="details">
+        <h1>{{ actor.name }}</h1>
+        <h3>Born: {{ actor.birthday }}</h3>
+        <h3>Birthplace: {{ actor.birth_place }}</h3>
+        <h2>Biography</h2>
+        <p>{{ actor.biography }}</p>
+    </div>
+</div>
+
+<div class="movies-list">
+    <h3>Movies:</h3>
+    {% if movies %}
+        <div class="movie-container" id="movies-list">
+            {% for movie in movies %}
+                <div class="movie-item" id="movie-{{ loop.index }}">
+                    <!-- Poster, Title, and Character Name will be inserted here -->
+                </div>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No movies found for this actor.</p>
+    {% endif %}
+</div>
+
+<script>
+        // Get all movie titles and actor name safely
+        const movieTitles = {{ movies | tojson | safe }};
+    const actorName = "{{ actor.name }}";  // Ensure it's passed correctly
+
+    // TMDB API Key (Replace with your own)
+    const apiKey = 'fce0af3409e6113c9b3c75aaf49341bb';
+
+    // Function to fetch actor ID using name
+    async function fetchActorId() {
+        try {
+            const searchUrl = `https://api.themoviedb.org/3/search/person?api_key=${apiKey}&query=${encodeURIComponent(actorName)}`;
+            const response = await fetch(searchUrl);
+            const data = await response.json();
+
+            if (data.results.length > 0) {
+                return data.results[0].id;  // Return first matching actor ID
+            } else {
+                console.error("Actor not found on TMDB.");
+                return null;
+            }
+        } catch (error) {
+            console.error("Error fetching actor ID:", error);
+            return null;
+        }
+    }
+
+    // Function to fetch actor's movie credits
+    async function fetchActorMovies(actorId) {
+        if (!actorId) return [];
+
+        try {
+            const creditsUrl = `https://api.themoviedb.org/3/person/${actorId}/movie_credits?api_key=${apiKey}`;
+            const response = await fetch(creditsUrl);
+            const data = await response.json();
+            return data.cast || [];
+        } catch (error) {
+            console.error("Error fetching actor's movie credits:", error);
+            return [];
+        }
+    }
+
+    // Function to fetch movie data (Poster, Character, Release Year, Rating)
+    async function fetchMovieData(movieTitle, index, movieCredits) {
+        try {
+            // Find the movie in the actor's credits to get the character name
+            const movieData = movieCredits.find(movie => movie.title.toLowerCase() === movieTitle.toLowerCase());
+            const characterName = movieData ? movieData.character : "Unknown Role";
+
+            // Fetch movie details from TMDB
+            const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${encodeURIComponent(movieTitle)}`;
+            const response = await fetch(searchUrl);
+            const data = await response.json();
+
+            if (data.results.length > 0) {
+                const movie = data.results[0];  
+                const posterPath = movie.poster_path;
+                const posterUrl = posterPath ? `https://image.tmdb.org/t/p/w500${posterPath}` : 'https://via.placeholder.com/220x330?text=No+Image';
+                const releaseYear = movie.release_date ? movie.release_date.split('-')[0] : "Unknown Year";
+                const rating = movie.vote_average ? movie.vote_average.toFixed(1) : "N/A";
+
+                // Insert poster, title, character name, release year, and rating
+                document.getElementById(`movie-${index}`).innerHTML = `
+                    <img src="${posterUrl}" alt="${movieTitle}" class="movie-poster">
+                    <div class="movie-title">${movieTitle} (${releaseYear})</div>
+                    <div class="character-name">as ${characterName}</div>
+                    <div class="movie-rating">⭐ ${rating}</div>
+                `;
+            }
+        } catch (error) {
+            console.error("Error fetching movie details:", error);
+        }
+    }
+
+    // Fetch all movie data and update UI
+    async function loadMovies() {
+        const actorId = await fetchActorId();
+        if (!actorId) return;  // Stop if actor not found
+
+        const movieCredits = await fetchActorMovies(actorId);
+        movieTitles.forEach((movieTitle, index) => {
+            fetchMovieData(movieTitle, index + 1, movieCredits);
+        });
+    }
+
+    loadMovies();
+</script>
+
+</body>
+</html>

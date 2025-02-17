@@ -53,26 +53,39 @@
 	</div>
 	<br>
 
-<div id="mycontent">
-    <div id="mcontent">
-      <div class="poster-lg">
-        <img class="poster" style="border-radius: 40px;margin-left: 90px;" height="400" width="250" src={{poster}}>
-      </div>
-      <div class="poster-sm text-center">
-        <img class="poster" style="border-radius: 40px;margin-bottom: 5%;" height="400" width="250" src={{poster}}>
-      </div>
-      <div id="details">
-        <br/>
-        <h6 id="title" style="color:white;">TITLE: &nbsp;{{title}}</h6>
-        <h6 id="overview" style="color:white;max-width: 85%">OVERVIEW: <br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{overview}}</h6>
-        <h6 id="vote_average" style="color:white;">RATING: &nbsp;{{vote_average}}/10 ({{vote_count}} votes)</h6>
-        <h6 id="genres" style="color:white;">GENRE: &nbsp;{{genres}}</h6>
-        <h6 id="date" style="color:white;">RELEASE DATE: &nbsp;{{release_date}}</h6>
-        <h6 id="runtime" style="color:white;">RUNTIME: &nbsp;{{runtime}}</h6>
-        <h6 id="status" style="color:white;">STATUS: &nbsp;{{status}}</h6>
-      </div>
+  <div id="mycontent">
+    <div id="mcontent" style="position: relative; height: 60vh;">
+        <!-- Pseudo-element for background image with blur -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; 
+                    background-image: url('{{backdrop}}'); 
+                    background-size: cover; 
+                    background-position: right; 
+                    filter: blur(6px); 
+                    z-index: 0;">
+        </div>
+
+        <!-- Content on top of the blurred background -->
+        <div class="poster-lg" style="position: relative; z-index: 2;">
+            <img class="poster" style="border-radius: 40px; margin-left: 90px;" height="400" width="250" src="{{poster}}">
+        </div>
+        <div class="poster-sm text-center" style="position: relative; z-index: 2;">
+            <img class="poster" style="border-radius: 40px; margin-bottom: 5%;" height="400" width="250" src="{{poster}}">
+        </div>
+        
+        <!-- Details section (text) on top of the posters -->
+        <div id="details" style="position: relative; z-index: 3; color: white; padding: 20px;">
+            <br/>
+            <h6 id="title" style="z-index: 3;">TITLE: &nbsp;{{title}}</h6>
+            <h6 id="overview" style="max-width: 85%; z-index: 3;">OVERVIEW: <br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{overview}}</h6>
+            <h6 id="vote_average" style="z-index: 3;">RATING: &nbsp;{{vote_average}}/10 ({{vote_count}} votes)</h6>
+            <h6 id="genres" style="z-index: 3;">GENRE: &nbsp;{{genres}}</h6>
+            <h6 id="date" style="z-index: 3;">RELEASE DATE: &nbsp;{{release_date}}</h6>
+            <h6 id="runtime" style="z-index: 3;">RUNTIME: &nbsp;{{runtime}}</h6>
+            <h6 id="status" style="z-index: 3;">STATUS: &nbsp;{{status}}</h6>
+        </div>
     </div>
 </div>
+
 <br/>
 	
 {% for name, details in cast_details.items() if not cast_details.hidden %}
@@ -119,7 +132,7 @@
             <div class="imghvr">
               <img class="card-img-top cast-img" id="{{details[0]}}" height="360" width="240" alt="{{name}} - profile" src="{{details[2]}}">
               <figcaption class="fig">
-                <button class="card-btn btn btn-danger"> Know More </button>
+                <button class="card-btn btn btn-danger" onclick="redirectToActor('{{ details[0] }}')">Know More</button>
               </figcaption>
             </div>
             <div class="card-body">
@@ -231,6 +244,10 @@ function showMessage(message) {
     setTimeout(() => {
         messageElement.style.display = 'block';
     }, 2000);
+}
+
+function redirectToActor(actorId) {
+    window.location.href = "/actor/" + actorId;
 }
 
   </script>

@@ -24,13 +24,14 @@
 }
 
 #content {
-	background-image: url("../static/image.jpg");
+	/* background-image: url("../static/image.jpg"); */
 	background-color: black;
 	font-family: 'Noto Sans JP', sans-serif;
 }
 
 #details {
 	margin-left: 50px;
+	/* font-weight: bolder; */
 }
 
 .footer {

@@ -108,6 +108,7 @@ function get_movie_details(movie_id,my_api_key,arr,movie_title) {
 function show_details(movie_details,arr,movie_title,my_api_key,movie_id){
   var imdb_id = movie_details.imdb_id;
   var poster = 'https://image.tmdb.org/t/p/original'+movie_details.poster_path;
+  var backdrop = 'https://image.tmdb.org/t/p/original' + movie_details.backdrop_path; // Added backdrop image
   var overview = movie_details.overview;
   var genres = movie_details.genres;
   var rating = movie_details.vote_average;
@@ -143,6 +144,7 @@ function show_details(movie_details,arr,movie_title,my_api_key,movie_id){
       'cast_places':JSON.stringify(ind_cast.cast_places),
       'imdb_id':imdb_id,
       'poster':poster,
+      'backdrop': backdrop, // Include backdrop
       'genres':my_genre,
       'overview':overview,
       'rating':rating,
