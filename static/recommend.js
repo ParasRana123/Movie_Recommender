@@ -116,6 +116,7 @@ function show_details(movie_details,arr,movie_title,my_api_key,movie_id){
   var release_date = new Date(movie_details.release_date);
   var runtime = parseInt(movie_details.runtime);
   var status = movie_details.status;
+  var trailer = movie_details.trailer
   var genre_list = []
   for (var genre in genres){
     genre_list.push(genres[genre].name);
@@ -127,6 +128,29 @@ function show_details(movie_details,arr,movie_title,my_api_key,movie_id){
   else {
     runtime = Math.floor(runtime/60)+" hour(s) "+(runtime%60)+" min(s)"
   }
+
+  // var trailer_key = "";
+  // if (movie_details.videos.results.length > 0) {
+  //   var trailer = movie_details.videos.results.find(video => video.type === "Trailer");
+  //   if (trailer) {
+  //     trailer_key = `https://www.youtube.com/watch?v=${trailer.key}`;
+  //   }
+  // }
+
+    // Extract Director, Screenplay, Story Credits
+  // var director = [];
+  // var screenplay = [];
+  // var story = [];
+  // movie_details.credits.crew.forEach(member => {
+  //   if (member.job === "Director") {
+  //       director.push(member.name);
+  //     } else if (member.job === "Screenplay") {
+  //       screenplay.push(member.name);
+  //     } else if (member.job === "Story") {
+  //       story.push(member.name);
+  //     }
+  // });
+
   arr_poster = get_movie_posters(arr,my_api_key);
   
   movie_cast = get_movie_cast(movie_id,my_api_key);

@@ -46,33 +46,45 @@
 </style>
 
 <body id="content">
-	<div class="results">
+	<!-- <div class="results">
 	    <center>
-	      <h2 id="name" class="text-uppercase">{{title}}</h2>
+	      <h2 id="name" style="color: #000000;" class="text-uppercase">{{title}}</h2>
 	    </center>
-	</div>
+	</div> -->
 	<br>
 
   <div id="mycontent">
-    <div id="mcontent" style="position: relative; height: 60vh;">
-        <!-- Pseudo-element for background image with blur -->
+    <div id="mcontent" style="position: relative; height: 60vh; overflow: hidden; margin-top: -40px;">
+        <!-- Background Image with Blur and Darkened Overlay -->
         <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; 
                     background-image: url('{{backdrop}}'); 
                     background-size: cover; 
-                    background-position: right; 
+                    background-position: center; 
                     filter: blur(6px); 
                     z-index: 0;">
         </div>
 
-        <!-- Content on top of the blurred background -->
+        <!-- Left Black Gradient Overlay -->
+        <div style="position: absolute; top: 0; left: 0; width: 40%; height: 100%;
+                    background: linear-gradient(to right, black 60%, transparent); 
+                    z-index: 1;">
+        </div>
+
+        <!-- Darkened Full Overlay -->
+        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+                    background: rgba(0, 0, 0, 0.5); 
+                    z-index: 1;">
+        </div>
+
+        <!-- Poster Image -->
         <div class="poster-lg" style="position: relative; z-index: 2;">
-            <img class="poster" style="border-radius: 40px; margin-left: 90px;" height="400" width="250" src="{{poster}}">
+            <img class="poster" style="border-radius: 40px; margin-left: 90px; margin-top: 20px" height="400" width="250" src="{{poster}}">
         </div>
         <div class="poster-sm text-center" style="position: relative; z-index: 2;">
             <img class="poster" style="border-radius: 40px; margin-bottom: 5%;" height="400" width="250" src="{{poster}}">
         </div>
-        
-        <!-- Details section (text) on top of the posters -->
+
+        <!-- Details Section (Text) -->
         <div id="details" style="position: relative; z-index: 3; color: white; padding: 20px;">
             <br/>
             <h6 id="title" style="z-index: 3;">TITLE: &nbsp;{{title}}</h6>
@@ -85,6 +97,7 @@
         </div>
     </div>
 </div>
+
 
 <br/>
 	

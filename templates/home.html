@@ -20,23 +20,36 @@
   <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
 
   <style>
-    #movie_list {
-        max-height: 200px; /* Adjust the height as needed */
-        overflow-y: auto;
-        background-color: white;
-        padding: 0; /* Remove any padding */
-    }
+    .search-container {
+    position: relative;
+    width: 60%; /* Adjust as needed */
+}
 
-    #movie_list li {
-        padding: 5px;
-        cursor: pointer;
-        list-style-type: none; /* Remove bullet points */
-        margin: 0; /* Remove any margin */
-    }
+#movie_list {
+    max-height: 200px; /* Adjust the height as needed */
+    overflow-y: auto;
+    background-color: white;
+    padding: 0; /* Remove any padding */
+    position: absolute;
+    top: 100%; /* Position the list below the input */
+    left: 0;
+    width: 100%; /* Make it the same width as the input */
+    z-index: 1000; /* Ensure it appears above other elements */
+    margin-top: 5px; /* Add a small gap between the input and the list */
+    border-radius: 5px; /* Optional: Add some rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
+}
 
-    #movie_list li:hover {
-        background-color: #f0f0f0;
-    }
+#movie_list li {
+    padding: 10px;
+    cursor: pointer;
+    list-style-type: none; /* Remove bullet points */
+    margin: 0; /* Remove any margin */
+}
+
+#movie_list li:hover {
+    background-color: #f0f0f0;
+}
 
     #top_movies {
         display: flex;
@@ -417,20 +430,21 @@
 			  fill="currentColor" class="octo-body"></path>
 		      </svg>
 		    </a>
-    <center><h1> Movie Recommendation System</h1></center>
-    <div class="form-group shadow-textarea" style="margin-top: 30px;text-align: center;color: white;">
-        <input type="text" name="movie" class="movie form-control" id="autoComplete" autocomplete="off" placeholder="Enter the Movie Name" style="background-color: #ffffff;border-color:#ffffff;width: 60%;color: #181818" required="required" />
-        <br>
-    </div>
+    <!-- <center><h1> Movie Recommendation System</h1></center> -->
+    <nav class="form-group shadow-textarea" style="text-align: center;color: white; display: flex; justify-content: center; align-items: center; background-color: #333333;">
+      <div class="search-container" style="position: relative;">
+          <input type="text" name="movie" class="movie form-control" id="autoComplete" autocomplete="off" placeholder="Enter the Movie Name" style="background-color: #ffffff;border-color:#ffffff;width: 60%;color: #181818; border-radius: 5px;" required="required" />
+          <ul id="movie_list"></ul>
+      </div>
+      <div class="form-group" style="text-align: center;">
+          <button class="btn btn-primary btn-block movie-button" style="background-color: #e50914;text-align: center;border-color: #e50914;width:120px; position: relative; left: -155px; top: 30px;" disabled="true">Enter</button><br><br>
+      </div>
+      <div class="watchlist" onclick="window.location.href='/watchlist';">
+          <img src="{{ url_for('static', filename='images/add_bookmark.svg') }}" width="30px" height="auto" alt="">
+          <p>WatchList</p>
+      </div>
+  </nav>
 
-    <div class="watchlist" onclick="window.location.href='/watchlist';">
-      <img src="{{ url_for('static', filename='images/add_bookmark.svg') }}" width="30px" height="auto" alt="">
-      <p>WatchList</p>
-    </div>
-
-    <div class="form-group" style="text-align: center;">
-      <button class="btn btn-primary btn-block movie-button" style="background-color: #e50914;text-align: center;border-color: #e50914;width:120px;" disabled="true" >Enter</button><br><br>
-    </div>
 	</div>
 
   <div id="loader" class="text-center"></div>
