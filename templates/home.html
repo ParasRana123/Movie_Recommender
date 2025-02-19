@@ -231,13 +231,13 @@
 
 .watchlist {
   position: relative;
-  top: -168px;
-  left: 1251px;
+  top: -5px;
+  left: -120px;
   gap: 8px;
   display: flex;
   align-items: center; /* Align text and image vertically */
-  background-color: #333; /* Dark background */
-  box-shadow: 0px 1px 15px 4px rgba(250, 250, 250, 1);
+  background-color: #333333; /* Dark background */
+  /* box-shadow: 0px 1px 15px 4px rgba(250, 250, 250, 1); */
   border-radius: 20px;
   transition: 0.3s;
   padding: 10px;
@@ -431,7 +431,7 @@
 		      </svg>
 		    </a>
     <!-- <center><h1> Movie Recommendation System</h1></center> -->
-    <nav class="form-group shadow-textarea" style="text-align: center;color: white; display: flex; justify-content: center; align-items: center; background-color: #333333;">
+    <nav class="form-group shadow-textarea" style="text-align: center;color: white; display: flex; justify-content: center; align-items: center; background-color: #333333; height: 12vh;">
       <div class="search-container" style="position: relative;">
           <input type="text" name="movie" class="movie form-control" id="autoComplete" autocomplete="off" placeholder="Enter the Movie Name" style="background-color: #ffffff;border-color:#ffffff;width: 60%;color: #181818; border-radius: 5px;" required="required" />
           <ul id="movie_list"></ul>
@@ -439,6 +439,7 @@
       <div class="form-group" style="text-align: center;">
           <button class="btn btn-primary btn-block movie-button" style="background-color: #e50914;text-align: center;border-color: #e50914;width:120px; position: relative; left: -155px; top: 30px;" disabled="true">Enter</button><br><br>
       </div>
+      <div style="color: white;position: relative;left: -125px;top: -5px;"> | </div>
       <div class="watchlist" onclick="window.location.href='/watchlist';">
           <img src="{{ url_for('static', filename='images/add_bookmark.svg') }}" width="30px" height="auto" alt="">
           <p>WatchList</p>
