@@ -43,6 +43,10 @@
       90% { opacity: 1; }
       100% { opacity: 0; }
   }
+
+  .card-title {
+    text-align: center;
+  }
 </style>
 
 <body id="content">
@@ -59,8 +63,10 @@
         <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; 
                     background-image: url('{{backdrop}}'); 
                     background-size: cover; 
+                    background-repeat: no-repeat;
                     background-position: center; 
-                    filter: blur(6px); 
+                    filter: blur(3px); 
+                    width: 100vw;
                     z-index: 0;">
         </div>
 
@@ -141,7 +147,7 @@
 
   <div class="movie-content">
         {% for name, details in casts.items() if not casts.hidden %}
-          <div class="castcard card" style="width: 15rem;" title="Click to know more about {{name}}" data-toggle="modal" data-target="#{{details[0]}}">
+          <div class="" title="Click to know more about {{name}}" data-toggle="modal" data-target="#{{details[0]}}">
             <div class="imghvr">
               <img class="card-img-top cast-img" id="{{details[0]}}" height="360" width="240" alt="{{name}} - profile" src="{{details[2]}}">
               <figcaption class="fig">
