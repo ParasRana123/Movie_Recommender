@@ -187,6 +187,10 @@ def recommend():
         status = request.form.get('status', 'Unknown Status')
         rec_movies = request.form.get('rec_movies', '[]')
         rec_posters = request.form.get('rec_posters', '[]')
+        trailer_url = request.form.get('trailer', '[]')
+        teaser_url = request.form.get('teaser', '[]')
+        watch_providers = request.form.get('watch_providers', '[]')
+        watch_provider_logos = request.form.get('watch_provider_logos', '[]')
 
         # Function to safely convert a string representation of a list into an actual list
         def safe_convert_list(data):
@@ -194,6 +198,25 @@ def recommend():
                 return ast.literal_eval(data)
             except (ValueError, SyntaxError):
                 return []
+        
+        def extract_video_id(url):
+            if "youtube.com/watch?v=" in url:
+                return url.split("v=")[-1].split("&")[0]
+            elif "youtu.be/" in url:
+                return url.split("youtu.be/")[-1].split("?")[0]
+            return ""
+        
+        trailer_id = extract_video_id(trailer_url)
+        teaser_id = extract_video_id(teaser_url)
+
+        trailer_embed = f"https://www.youtube.com/embed/{trailer_id}" if trailer_id else None
+        teaser_embed = f"https://www.youtube.com/embed/{teaser_id}" if teaser_id else None
+
+        watch_providers = safe_convert_list(watch_providers)
+        watch_provider_logos = safe_convert_list(watch_provider_logos)
+
+        # Combine provider names and logos into tuples
+        streaming_availability = list(zip(watch_providers, watch_provider_logos))
 
         # Convert string inputs to lists
         rec_movies = safe_convert_list(rec_movies)
@@ -268,7 +291,10 @@ def recommend():
             movie_cards=movie_cards,
             reviews=movie_reviews,
             casts=casts,
-            cast_details=cast_details
+            cast_details=cast_details,
+            trailer=trailer_embed,
+            teaser=teaser_embed,
+            streaming_availability = streaming_availability
         )
 
     except Exception as e:

@@ -47,6 +47,20 @@
   .card-title {
     text-align: center;
   }
+
+  .providers-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 10px;
+    }
+    .provider {
+        text-align: center;
+        color: black;
+    }
+    .provider img {
+        border-radius: 10px;
+    }
 </style>
 
 <body id="content">
@@ -104,6 +118,30 @@
     </div>
 </div>
 
+<!-- Trailer and Teaser Section -->
+<div id="video-section" style="text-align: center; margin-top: 30px;">
+  {% if trailer %}
+      <h3 style="color: white;">🎬 Watch the Trailer</h3>
+      <iframe width="560" height="315" src="{{ trailer }}" frameborder="0" allowfullscreen></iframe>
+  {% endif %}
+
+  {% if teaser %}
+      <h3 style="color: white; margin-top: 20px;">🎥 Watch the Teaser</h3>
+      <iframe width="560" height="315" src="{{ teaser }}" frameborder="0" allowfullscreen></iframe>
+  {% endif %}
+</div>
+
+<div id="streaming-platforms">
+  <h4>Available on:</h4>
+  <div class="providers-container">
+      {% for provider, logo in streaming_availability %}
+          <div class="provider">
+              <img src="{{ logo }}" alt="{{ provider }}" width="50">
+              <p>{{ provider }}</p>
+          </div>
+      {% endfor %}
+  </div>
+</div>
 
 <br/>
 	
