@@ -191,6 +191,15 @@ def recommend():
         teaser_url = request.form.get('teaser', '[]')
         watch_providers = request.form.get('watch_providers', '[]')
         watch_provider_logos = request.form.get('watch_provider_logos', '[]')
+        budget = request.form.get('budget', 'N/A')
+        revenue = request.form.get('revenue', 'N/A')
+
+
+        original_language = request.form.get('original_language', 'N/A')
+        director_name = request.form.get('director_name', 'Unknown')
+        director_image = request.form.get('director_image', '')
+        director_bio = request.form.get('director_bio', 'No biography available')
+        director_birthplace = request.form.get('director_birthplace', 'Unknown')
 
         # Function to safely convert a string representation of a list into an actual list
         def safe_convert_list(data):
@@ -294,7 +303,14 @@ def recommend():
             cast_details=cast_details,
             trailer=trailer_embed,
             teaser=teaser_embed,
-            streaming_availability = streaming_availability
+            streaming_availability = streaming_availability,
+            budget=budget,
+            revenue=revenue,
+            original_language=original_language,
+            director_name=director_name,
+            director_image=director_image,
+            director_bio=director_bio,
+            director_birthplace=director_birthplace
         )
 
     except Exception as e:

@@ -143,6 +143,27 @@
   </div>
 </div>
 
+{% if budget %}
+    <h6 id="budget" style="z-index: 3; color: black;">BUDGET: $&nbsp;{{budget}}</h6>
+{% endif %}
+
+{% if revenue %}
+    <h6 id="budget" style="z-index: 3;color: black;">REVENUE: $&nbsp;{{revenue}}</h6>
+{% endif %}
+
+{% if original_language %}
+    <h6 id="budget" style="z-index: 3;color: black;">ORIGINAL LANGUAGE: &nbsp;{{original_language}}</h6>
+{% endif %}
+
+<div class="director-section" style="color: black;">
+  <h2>Director: {{ director_name }}</h2>
+  {% if director_image %}
+      <img src="{{ director_image }}" alt="Director Image" width="150">
+  {% endif %}
+  <!-- <p><strong>Born:</strong> {{ director_birthplace }}</p> -->
+  <p><strong>Bio:</strong> {{ director_bio }}</p>
+</div>
+
 <br/>
 	
 {% for name, details in cast_details.items() if not cast_details.hidden %}
