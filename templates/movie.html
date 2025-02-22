@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            border-radius: 8px 8px 0 0;
+        }
+        .poster {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .details {
+            padding: 20px;
+        }
+        .details h2 {
+            margin-bottom: 10px;
+        }
+        .genre, .info {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+        .genre span, .info span {
+            background: #ddd;
+            padding: 5px 10px;
+            margin-right: 5px;
+            border-radius: 5px;
+        }
+        .director {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .director img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .trailer {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .trailer iframe {
+            width: 100%;
+            height: 315px;
+        }
+        .providers {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .provider {
+            margin-right: 10px;
+            text-align: center;
+        }
+        .provider img {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+        }
+        .reviews {
+            margin-top: 20px;
+        }
+        .review {
+            background: #f9f9f9;
+            padding: 10px;
+            border-left: 5px solid #444;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>{{ title }}</h1>
+    </div>
+
+    <img src="{{ backdrop }}" class="poster" alt="{{ title }} Backdrop">
+
+    <div class="details">
+        <h2>Movie Overview</h2>
+        <p>{{ overview }}</p>
+
+        <h3>Genres</h3>
+        <div class="genre">
+            {% for genre in genres %}
+                <span>{{ genre }}</span>
+            {% endfor %}
+        </div>
+
+        <h3>Movie Details</h3>
+        <div class="info">
+            <span>📅 Release Date: {{ release_date }}</span>
+            <span>⏳ Runtime: {{ runtime }} mins</span>
+            <span>💰 Budget: {{ budget }}</span>
+            <span>💵 Revenue: {{ revenue }}</span>
+            <span>🌍 Language: {{ original_language }}</span>
+            <span>⭐ Rating: {{ vote_average }} ({{ vote_count }} votes)</span>
+            <span>🎬 Status: {{ status }}</span>
+        </div>
+
+        <h3>Director</h3>
+        <div class="director">
+            <img src="{{ director_image }}" alt="Director">
+            <span>{{ director_name }}</span>
+        </div>
+
+        {% if trailer %}
+        <div class="trailer">
+            <h3>🎥 Watch Trailer</h3>
+            <iframe src="{{ trailer }}" frameborder="0" allowfullscreen></iframe>
+        </div>
+        {% endif %}
+
+        <h3>📺 Streaming Availability</h3>
+        <div class="providers">
+            {% if streaming_availability %}
+                {% for provider in streaming_availability %}
+                <div class="provider">
+                    <img src="{{ provider[1] }}" alt="{{ provider[0] }}">
+                    <p>{{ provider[0] }}</p>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p>Not available for streaming.</p>
+            {% endif %}
+        </div>
+
+        <h3>🎭 IMDb Reviews</h3>
+        <div class="reviews">
+            {% if movie_reviews %}
+                {% for review, sentiment in movie_reviews.items() %}
+                <div class="review">
+                    <p>{{ review }}</p>
+                    <strong>Sentiment: {{ sentiment }}</strong>
+                </div>
+                {% endfor %}
+            {% else %}
+                <p>No reviews available.</p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

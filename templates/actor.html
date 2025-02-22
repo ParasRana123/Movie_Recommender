@@ -97,7 +97,7 @@
     {% if movies %}
         <div class="movie-container" id="movies-list">
             {% for movie in movies %}
-                <div class="movie-item" id="movie-{{ loop.index }}">
+                <div class="movie-item" id="movie-{{ loop.index }}" onclick="showMovieDetails('{{ movie }}')">
                     <!-- Poster, Title, and Character Name will be inserted here -->
                 </div>
             {% endfor %}
@@ -190,6 +190,10 @@
         movieTitles.forEach((movieTitle, index) => {
             fetchMovieData(movieTitle, index + 1, movieCredits);
         });
+    }
+
+    function showMovieDetails(movieTitle) {
+        window.location.href = `/movie/${encodeURIComponent(movieTitle)}`;
     }
 
     loadMovies();

@@ -358,6 +358,131 @@ def actor_details(actor_id):
     except Exception as e:
         logging.error(f"Error loading actor details: {e}")
         return render_template("error.html", message="An error occurred.")
+    
+
+def get_movie_id(movie_title):
+    """Fetch movie ID from TMDB using the title."""
+    search_url = f"https://api.themoviedb.org/3/search/movie?api_key=fce0af3409e6113c9b3c75aaf49341bb&query={movie_title}"
+    response = requests.get(search_url)
+
+    if response.status_code == 200:
+        search_results = response.json().get("results", [])
+        if search_results:
+            return search_results[0]["id"]  # Get the first result's ID
+    logging.error(f"TMDB Search API Error: {response.status_code} - {response.text}")
+    return None  # Return None if not found
+
+@app.route("/movie/<movie_title>")
+def movie_details(movie_title):
+    try:
+        # Convert movie title to TMDB movie ID
+        movie_id = get_movie_id(movie_title)
+        if not movie_id:
+            return render_template("error.html", message="Movie not found in TMDB.")
+
+        # Fetch movie details using the correct movie ID
+        movie_url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key=fce0af3409e6113c9b3c75aaf49341bb&append_to_response=videos,credits,watch/providers"
+        movie_response = requests.get(movie_url)
+
+        if movie_response.status_code != 200:
+            logging.error(f"TMDB API Error: {movie_response.status_code} - {movie_response.text}")
+            return render_template("error.html", message="Error fetching movie details from TMDB API.")
+
+        movie_data = movie_response.json()
+
+        # Extract movie details safely
+        title = movie_data.get("original_title", "Unknown Title")
+        poster_path = movie_data.get("poster_path")
+        backdrop_path = movie_data.get("backdrop_path")
+
+        # Ensure valid URLs
+        poster = f"https://image.tmdb.org/t/p/original{poster_path}" if poster_path else "https://via.placeholder.com/500x750"
+        backdrop = f"https://image.tmdb.org/t/p/original{backdrop_path}" if backdrop_path else "https://via.placeholder.com/1280x720"
+
+        overview = movie_data.get("overview", "No overview available.")
+        genres = [genre["name"] for genre in movie_data.get("genres", [])] if "genres" in movie_data else []
+        release_date = movie_data.get("release_date", "Unknown Date")
+        runtime = movie_data.get("runtime", "Unknown Runtime")
+        budget = f"${movie_data.get('budget', 0):,}"
+        revenue = f"${movie_data.get('revenue', 0):,}"
+        original_language = movie_data.get("original_language", "N/A").upper()
+        vote_average = movie_data.get("vote_average", "N/A")
+        vote_count = movie_data.get("vote_count", "0")
+        status = movie_data.get("status", "Unknown Status")
+        imdb_id = movie_data.get("imdb_id", "")
+
+        # Extract director details
+        director = next((crew for crew in movie_data.get("credits", {}).get("crew", []) if crew.get("job") == "Director"), {})
+        director_name = director.get("name", "Unknown")
+        director_image_path = director.get("profile_path")
+        director_image = f"https://image.tmdb.org/t/p/w300{director_image_path}" if director_image_path else "https://via.placeholder.com/300"
+
+        # Extract trailers and teasers
+        videos = movie_data.get("videos", {}).get("results", [])
+        trailer = next((f"https://www.youtube.com/embed/{video['key']}" for video in videos if video["type"] == "Trailer" and video["site"] == "YouTube"), None)
+        teaser = next((f"https://www.youtube.com/embed/{video['key']}" for video in videos if video["type"] == "Teaser" and video["site"] == "YouTube"), None)
+
+        # Extract streaming providers
+        providers_data = movie_data.get("watch/providers", {}).get("results", {}).get("IN", {}).get("flatrate", [])
+        streaming_availability = [
+            (provider["provider_name"], f"https://image.tmdb.org/t/p/w200{provider['logo_path']}") 
+            for provider in providers_data if provider.get("provider_name") and provider.get("logo_path")
+        ]
+
+        # Fetch IMDb reviews (with proper handling)
+        movie_reviews = fetch_imdb_reviews(imdb_id) if imdb_id else {"Error": "IMDb ID not available."}
+
+        # Render the template with movie details
+        return render_template(
+            "movie.html",
+            title=title,
+            poster=poster,
+            backdrop=backdrop,
+            overview=overview,
+            genres=genres,
+            release_date=release_date,
+            runtime=runtime,
+            budget=budget,
+            revenue=revenue,
+            original_language=original_language,
+            vote_average=vote_average,
+            vote_count=vote_count,
+            status=status,
+            director_name=director_name,
+            director_image=director_image,
+            trailer=trailer,
+            teaser=teaser,
+            streaming_availability=streaming_availability,
+            movie_reviews=movie_reviews
+        )
+
+    except Exception as e:
+        logging.error(f"Error fetching movie details: {e}")
+        return render_template("error.html", message="An error occurred while fetching movie details.")
+
+def fetch_imdb_reviews(imdb_id):
+    """Fetch IMDb reviews using web scraping."""
+    try:
+        url = f'https://www.imdb.com/title/{imdb_id}/reviews?ref_=tt_ov_rt'
+        headers = {'User-Agent': 'Mozilla/5.0'}
+        request = urllib.request.Request(url, headers=headers)
+        response = urllib.request.urlopen(request)
+        soup = bs(response.read(), 'lxml')
+
+        # Extract reviews safely
+        reviews = [div.text.strip() for div in soup.find_all("div", class_="text show-more__control")]
+
+        # If no reviews found, return a message
+        if not reviews:
+            return {"Message": "No IMDb reviews available."}
+
+        # Perform basic sentiment analysis (dummy logic: Good if length > 100)
+        movie_reviews = {review: "Good" if len(review) > 100 else "Bad" for review in reviews}
+        return movie_reviews
+
+    except Exception as e:
+        logging.error(f"Error fetching IMDb reviews: {e}")
+        return {"Error": "Could not retrieve reviews."}
 
 if __name__ == '__main__':
     app.run(debug=True)

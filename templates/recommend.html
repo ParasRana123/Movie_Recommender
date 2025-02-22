@@ -49,8 +49,8 @@
   }
 
   .providers-container {
-        display: flex;
-        flex-wrap: wrap;
+        /* display: flex; */
+        /* flex-wrap: wrap; */
         gap: 15px;
         margin-top: 10px;
     }
@@ -61,6 +61,46 @@
     .provider img {
         border-radius: 10px;
     }
+
+    .director-section {
+      display: flex;
+      border: 2px solid black;
+      color: white;
+      align-items: center;
+      justify-content: center;
+      margin-top: 30px;
+      background-color: black;
+    }
+
+    .director-section img {
+      margin-right: 50px;
+      mask-image: linear-gradient(to right, black 50%, rgba(0, 0, 0, 0));
+      -webkit-mask-image: linear-gradient(to right, black 50%, rgba(0, 0, 0, 0)); /* For WebKit browsers */
+      margin: 12px auto; /* Optional: Center the image and add space around it */
+      margin-left: 12px;
+    }
+
+    #streaming-platforms {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      color: white;
+      background-color: #333333;
+    }
+
+    .streaming_platform {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .vertical-line {
+    border-left: 2px solid white;
+    height: 300px;
+    }
+
 </style>
 
 <body id="content">
@@ -118,50 +158,60 @@
     </div>
 </div>
 
+
 <!-- Trailer and Teaser Section -->
-<div id="video-section" style="text-align: center; margin-top: 30px;">
+<!-- <div id="video-section" style="text-align: center; margin-top: 30px;">
   {% if trailer %}
-      <h3 style="color: white;">🎬 Watch the Trailer</h3>
+      <h3 style="color: black;">🎬 Watch the Trailer</h3>
       <iframe width="560" height="315" src="{{ trailer }}" frameborder="0" allowfullscreen></iframe>
   {% endif %}
 
   {% if teaser %}
-      <h3 style="color: white; margin-top: 20px;">🎥 Watch the Teaser</h3>
+      <h3 style="color: black; margin-top: 20px;">🎥 Watch the Teaser</h3>
       <iframe width="560" height="315" src="{{ teaser }}" frameborder="0" allowfullscreen></iframe>
   {% endif %}
-</div>
+</div> -->
 
 <div id="streaming-platforms">
-  <h4>Available on:</h4>
-  <div class="providers-container">
-      {% for provider, logo in streaming_availability %}
-          <div class="provider">
-              <img src="{{ logo }}" alt="{{ provider }}" width="50">
-              <p>{{ provider }}</p>
-          </div>
-      {% endfor %}
+  <div id="video-section" style="margin-top: 30px; margin-right: 30px;       display: flex;
+  align-items: center;
+  justify-content: center;">
+    <div class="teaser">
+          {% if teaser %}
+            <h3 style="color: white; margin-top: 20px;">🎥 Watch the Teaser</h3>
+            <iframe style="margin-bottom: 40px;" width="250" height="315" src="{{ teaser }}" frameborder="0" allowfullscreen></iframe>
+          {% endif %}
+    </div>
+    <div class="trailer">
+      {% if trailer %}
+        <h3>🎬 Watch the Trailer</h3>
+        <iframe style="margin-bottom: 20px;" width="560" height="315" src="{{ trailer }}" frameborder="0" allowfullscreen></iframe>
+      {% endif %}
+    </div>
   </div>
-</div>
+  <div class="vertical-line"></div>
+  <div class="providers-container">
+    <h6>Streaming on:</h46>
+    <div class="streaming_platform">
+      {% for provider, logo in streaming_availability %}
+        <div class="provider">
+          <img src="{{ logo }}" alt="{{ provider }}" width="50">
+          <p style="color: white;">{{ provider }}</p>
+        </div>
+      {% endfor %}
+    </div>
+    {% if budget %}
+      <h6 id="budget" style="z-index: 3;">BUDGET: $&nbsp;{{budget}}</h6>
+    {% endif %}
 
-{% if budget %}
-    <h6 id="budget" style="z-index: 3; color: black;">BUDGET: $&nbsp;{{budget}}</h6>
-{% endif %}
+    {% if revenue %}
+       <h6 id="budget" style="z-index: 3;">REVENUE: $&nbsp;{{revenue}}</h6>
+    {% endif %}
 
-{% if revenue %}
-    <h6 id="budget" style="z-index: 3;color: black;">REVENUE: $&nbsp;{{revenue}}</h6>
-{% endif %}
-
-{% if original_language %}
-    <h6 id="budget" style="z-index: 3;color: black;">ORIGINAL LANGUAGE: &nbsp;{{original_language}}</h6>
-{% endif %}
-
-<div class="director-section" style="color: black;">
-  <h2>Director: {{ director_name }}</h2>
-  {% if director_image %}
-      <img src="{{ director_image }}" alt="Director Image" width="150">
-  {% endif %}
-  <!-- <p><strong>Born:</strong> {{ director_birthplace }}</p> -->
-  <p><strong>Bio:</strong> {{ director_bio }}</p>
+    {% if original_language %}
+      <h6 id="budget" style="z-index: 3;">ORIGINAL LANGUAGE: &nbsp;{{original_language}}</h6>
+    {% endif %}
+  </div>
 </div>
 
 <br/>
@@ -221,6 +271,18 @@
       {% endfor %}
     </div>
 {% endif %}
+
+<div class="director-section">
+  {% if director_image %}
+    <div class="director-image">
+      <img src="{{ director_image }}" alt="Director Image">
+    </div>
+  {% endif %}
+  <div class="director-info">
+    <h2>Director: {{ director_name }}</h2>
+    <p><strong>Bio:</strong> {{ director_bio }}</p>
+  </div>
+</div>
 
   <center>
     {% if reviews %}
