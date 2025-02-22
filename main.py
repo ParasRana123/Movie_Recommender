@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from flask import Flask, render_template, request , redirect , session
+from flask import Flask, render_template, request , redirect , session , jsonify
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import json
@@ -16,6 +16,9 @@ import csv
 filename = 'nlp_model2.pkl'
 clf = pickle.load(open(filename, 'rb'))
 vectorizer = pickle.load(open('transform1.pkl', 'rb'))
+
+data = None
+similarity = None
 
 def create_similarity():
     data = pd.read_csv('main_data1.csv', encoding='latin1')
@@ -54,6 +57,13 @@ def rcmd(m):
             a = item[0]
             l.append(data['movie_title'][a])
         return l
+
+def load_data():
+    global data, similarity
+    if data is None or similarity is None:
+        data, similarity = create_similarity()
+
+load_data()
     
 # converting list of string to list (eg. "["abc","def"]" to ["abc","def"])
 def convert_to_list(my_list):
@@ -316,8 +326,60 @@ def recommend():
     except Exception as e:
         logging.error(f"Critical error in recommendation function: {e}")
         return render_template('error.html', message="An error occurred while processing your request.")
+    
+def get_recommendations(movie_title):
+    """Get recommended movies based on similarity."""
+    movie_title = movie_title.lower()
 
-@app.route("/actor/<actor_id>")
+    # Ensure `data` and `similarity` are loaded
+    global data, similarity
+    try:
+        data.head()  # Check if data is a DataFrame
+        similarity.shape  # Check if similarity is a matrix
+    except:
+        data, similarity = create_similarity()  # ✅ Fix: Ensure correct assignment
+
+    # If movie not found, return empty list
+    if movie_title not in data['movie_title'].unique():
+        return []
+
+    # Get movie index and find similar movies
+    i = data.loc[data['movie_title'] == movie_title].index[0]
+    lst = list(enumerate(similarity[i]))
+    lst = sorted(lst, key=lambda x: x[1], reverse=True)
+    lst = lst[1:11]  # Exclude the first item (the movie itself)
+
+    recommended_movies = []
+
+    for item in lst:
+        rec_title = data.iloc[item[0]]['movie_title']
+        movie_id = get_movie_id(rec_title)
+        if movie_id:
+            movie_url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key=fce0af3409e6113c9b3c75aaf49341bb"
+            movie_response = requests.get(movie_url)
+
+            if movie_response.status_code==200:
+                movie_data = movie_response.json()
+                poster_path = movie_data.get("poster_path" , None)
+                poster_url = f"https://image.tmdb.org/t/p/w500{poster_path}" if poster_path else "https://via.placeholder.com/200x300"
+                recommended_movies.append({"title" : rec_title , "poster" : poster_url})
+
+    return recommended_movies
+
+    # recommended_movies = [data.iloc[item[0]]['movie_title'] for item in lst]  # ✅ Fix indexing
+    # return recommended_movies
+
+
+@app.route("/recommendations/<movie_title>")
+def recommendations(movie_title):
+    recommended_movies = get_recommendations(movie_title)
+    
+    if not recommended_movies:
+        return jsonify({"error": "No recommendations found. Please check the movie name."})
+    
+    return jsonify({"recommendations": recommended_movies})
+
+# @app.route("/actor/<actor_id>")
 @app.route("/actor/<actor_id>")
 def actor_details(actor_id):
     try:
@@ -415,7 +477,36 @@ def movie_details(movie_title):
         director = next((crew for crew in movie_data.get("credits", {}).get("crew", []) if crew.get("job") == "Director"), {})
         director_name = director.get("name", "Unknown")
         director_image_path = director.get("profile_path")
+        director_id = director.get("id")
         director_image = f"https://image.tmdb.org/t/p/w300{director_image_path}" if director_image_path else "https://via.placeholder.com/300"
+
+        if director_id:
+            director_url = f"https://api.themoviedb.org/3/person/{director_id}?api_key=fce0af3409e6113c9b3c75aaf49341bb"
+            director_response = requests.get(director_url)
+            if director_response.status_code==200:
+                director_data = director_response.json()
+                director_bio = director_data.get("biography" , "Biography Not available")
+
+        credits = movie_data.get("credits", {})
+
+# Ensure credits contain cast details
+        if "cast" not in credits:
+            logging.error("No 'cast' key found in movie_data['credits']")
+            cast = []  # Prevent errors if 'cast' is missing
+        else:
+            cast = credits.get("cast", [])[:10]
+
+        actors = [
+    {
+        "id": actor.get("id", None),  # Use None instead of empty string
+        "name": actor.get("name", "Unknown Actor"),
+        "character": actor.get("character", "Unknown Character"),
+        "image": f"https://image.tmdb.org/t/p/w300{actor['profile_path']}" 
+        if actor.get("profile_path") else "https://via.placeholder.com/150"
+    }
+        for actor in cast
+        ]
+
 
         # Extract trailers and teasers
         videos = movie_data.get("videos", {}).get("results", [])
@@ -431,6 +522,7 @@ def movie_details(movie_title):
 
         # Fetch IMDb reviews (with proper handling)
         movie_reviews = fetch_imdb_reviews(imdb_id) if imdb_id else {"Error": "IMDb ID not available."}
+        recommendations = get_recommendations(title)
 
         # Render the template with movie details
         return render_template(
@@ -450,10 +542,13 @@ def movie_details(movie_title):
             status=status,
             director_name=director_name,
             director_image=director_image,
+            director_bio=director_bio,
+            actors=actors,
             trailer=trailer,
             teaser=teaser,
             streaming_availability=streaming_availability,
-            movie_reviews=movie_reviews
+            # movie_reviews=movie_reviews,
+            recommended_movies=recommendations
         )
 
     except Exception as e:

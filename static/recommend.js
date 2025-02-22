@@ -90,7 +90,6 @@ function movie_recs(movie_title,movie_id,my_api_key){
 }
 
 // get all the details of the movie using the movie id.
-// get all the details of the movie using the movie id.
 function get_movie_details(movie_id, my_api_key, arr, movie_title) {
   $.ajax({
       type: 'GET',
