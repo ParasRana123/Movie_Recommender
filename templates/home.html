@@ -440,10 +440,12 @@
           <button class="btn btn-primary btn-block movie-button" style="background-color: #e50914;text-align: center;border-color: #e50914;width:120px; position: relative; left: -155px; top: 30px;" disabled="true">Enter</button><br><br>
       </div>
       <div style="color: white;position: relative;left: -125px;top: -5px;"> | </div>
-      <div class="watchlist" onclick="window.location.href='/watchlist';">
+      <div class="watchlist" style="cursor: pointer;" onclick="window.location.href='/watchlist';">
           <img src="{{ url_for('static', filename='images/add_bookmark.svg') }}" width="30px" height="auto" alt="">
           <p>WatchList</p>
       </div>
+      <!-- <div style="color: white;position: relative;left: -120px;top: -5px;"> | </div> -->
+      <div class="genres" style="color: white;position: relative;left: -120px;top: -5px; cursor: pointer;" onclick="window.location.href='/genres'">Genre-Wise</div>
   </nav>
 
 	</div>
@@ -681,7 +683,7 @@ window.addEventListener('load', checkScrollButtons);
                   <div><img src="${movie.poster}" alt="${movie.title} Poster" class="movie-poster"></div>
                   <div>
                     <p class="movie-rating" style="color: white">★  ${movie.rating}   (${movie.count})</p>
-                  <div><h5 class="movie-title" style="color: white">${movie.title}</h5></div>
+                  <div onclick="window.location.href='/movie/${encodeURIComponent(movie.title)}'"><h5 class="movie-title" style="color: white">${movie.title}</h5></div>
                   <div class="flex">
                   <img src="{{ url_for('static', filename='images/bookmark_tick.svg') }}" alt="" <img src="{{ url_for('static', filename='images/Sci-Fi.jpg') }}" alt=""  class="delete-btn1">></button>
                   <div>

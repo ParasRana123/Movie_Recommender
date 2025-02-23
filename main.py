@@ -171,6 +171,10 @@ def sci_fi():
     movie_titles3 = df5['movie_title'].tolist()
     return render_template('sci_fi.html' , movies=movie_titles3) 
 
+@app.route("/genres")
+def genres():
+    return render_template('genres.html')
+
 cast_details = {}
 
 @app.route("/recommend", methods=["POST"])
