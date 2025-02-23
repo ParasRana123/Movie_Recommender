@@ -195,7 +195,7 @@
                     movieCard.innerHTML = `
                         <div><img src="${movie.poster}" alt="${movie.title} Poster" class="movie-poster"></div>
                         <div>
-                        <div><h1 class="movie-title">${movie.title}</h1></div>
+                        <div onclick="window.location.href='/movie/${encodeURIComponent(movie.title)}'"><h1 class="movie-title">${movie.title}</h1></div>
                         <div class="flex">
                         <p class="movie-date">${movie.date}</p>
                         <p class="movie-status">${movie.status}</p>

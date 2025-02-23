@@ -11,6 +11,7 @@ import requests
 import logging
 import ast
 import csv
+from bs4 import BeautifulSoup
 
 # Load the NLP model and TF-IDF vectorizer from disk
 filename = 'nlp_model2.pkl'
@@ -370,56 +371,111 @@ def get_recommendations(movie_title):
     # return recommended_movies
 
 
-@app.route("/recommendations/<movie_title>")
-def recommendations(movie_title):
-    recommended_movies = get_recommendations(movie_title)
-    
-    if not recommended_movies:
-        return jsonify({"error": "No recommendations found. Please check the movie name."})
-    
-    return jsonify({"recommendations": recommended_movies})
 
-# @app.route("/actor/<actor_id>")
+WIKIPEDIA_URL = "https://en.wikipedia.org/wiki/"
+
+def fetch_actor_from_wikipedia(actor_name):
+    """ Fetch actor details from Wikipedia by scraping the page. """
+    try:
+        actor_url = WIKIPEDIA_URL + actor_name.replace(" ", "_")  # Convert spaces to underscores
+        response = requests.get(actor_url)
+
+        if response.status_code != 200:
+            logging.error(f"🚨 Wikipedia page for {actor_name} not found! Status Code: {response.status_code}")
+            return None
+
+        # Parse the Wikipedia page
+        soup = BeautifulSoup(response.text, "html.parser")
+
+        # Extract the first paragraph (usually biography intro)
+        paragraphs = soup.select("p")  # Select all paragraphs
+        biography = "No biography available."
+        for p in paragraphs:
+            if p.text.strip():
+                biography = p.text.strip()
+                break  # Use the first non-empty paragraph
+
+        # Extract image (if available)
+        image_url = "https://via.placeholder.com/150"  # Default placeholder
+        image_tag = soup.select_one(".infobox img")  # Try to find actor's image
+        if image_tag and image_tag.get("src"):
+            image_url = "https:" + image_tag["src"]
+
+        return {
+            "name": actor_name,
+            "profile": image_url,
+            "birthday": "Unknown",
+            "birth_place": "Unknown",
+            "biography": biography
+        }
+
+    except Exception as e:
+        logging.error(f"❌ Error fetching Wikipedia details for {actor_name}: {e}")
+        return None
+
 @app.route("/actor/<actor_id>")
 def actor_details(actor_id):
     try:
-        global cast_details  # Declare it as global
+        global cast_details
         movies = []
 
-        # Map actor_id to actor_name
+        logging.debug(f"Fetching details for Actor ID: {actor_id}")
+
+        if not cast_details:
+            logging.error("cast_details dictionary is EMPTY! Check data loading.")
+            return render_template("error.html", message="Cast details not found.")
+
+        actor_id = str(actor_id)
         actor_name = None
+
+        # Search for actor_id in cast_details
         for name, details in cast_details.items():
-            if details[0] == actor_id:
+            if str(details[0]) == actor_id:
                 actor_name = name
                 break
 
         if not actor_name:
-            return render_template("error.html", message=f"Actor ID {actor_id} not found in cast details.")
+            logging.warning(f"⚠️ Actor ID {actor_id} not found in local database. Trying Wikipedia...")
+            actor_data = fetch_actor_from_wikipedia(f"{actor_name}")  # Fetch from Wikipedia
+            if not actor_data:
+                return render_template("error.html", message=f"Actor ID {actor_id} not found.")
+            return render_template("actor.html", actor=actor_data, movies=[])
 
-        # Now look up movies corresponding to the actor_name in the CSV file
-        with open('actors1.csv', mode='r', encoding='utf-8') as file:
-            reader = csv.DictReader(file)
-            for row in reader:
-                if row['actor_name'].strip() == actor_name.strip():  # Match actor_name from CSV
-                    movies.append(row['movie_title'])
+        logging.debug(f"Matched Actor: {actor_name}")
 
-        # Debugging: Log the movies list
+        # 🎥 Fetch movies from actors1.csv
+        try:
+            with open('actors1.csv', mode='r', encoding='utf-8') as file:
+                reader = csv.DictReader(file)
+                for row in reader:
+                    if row['actor_name'].strip().lower() == actor_name.strip().lower():
+                        movies.append(row['movie_title'])
+        except FileNotFoundError:
+            logging.error("actors1.csv file not found!")
+            return render_template("error.html", message="Actor database not found.")
+
         logging.debug(f"Movies for {actor_name}: {movies}")
 
-        # Find actor details from cast_details dictionary
+        # If actor found in cast_details
+        details = cast_details[actor_name]
+
+        if len(details) < 5:
+            logging.error(f"Incomplete details for {actor_name}: {details}")
+            return render_template("error.html", message="Actor details are incomplete.")
+
         actor = {
             "name": actor_name,
-            "profile": details[1],
-            "birthday": details[2],
-            "birth_place": details[3],
-            "biography": details[4]
+            "profile": details[1] if details[1] else "https://via.placeholder.com/150",
+            "birthday": details[2] if details[2] else "Unknown",
+            "birth_place": details[3] if details[3] else "Unknown",
+            "biography": details[4] if details[4] else "No biography available."
         }
 
         return render_template("actor.html", actor=actor, movies=movies)
 
     except Exception as e:
-        logging.error(f"Error loading actor details: {e}")
-        return render_template("error.html", message="An error occurred.")
+        logging.error(f"Error loading actor details: {e}", exc_info=True)
+        return render_template("error.html", message="An error occurred while fetching actor details.")
     
 
 def get_movie_id(movie_title):

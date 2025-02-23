@@ -223,7 +223,7 @@
             const container = document.getElementById('movies-container');
 
             const movieCard = `
-                <div class="movie-card">
+                <div class="movie-card" onclick="window.location.href='/movie/${encodeURIComponent(title)}'">
                     <img src="${posterUrl}" alt="${title} poster" />
                     <p>★ ${voteAverage}</p>
                     <h3>${title}</h3>
