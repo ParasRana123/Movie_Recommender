@@ -51,7 +51,7 @@ h1 {
     color: #e50914;
     font-weight: bold;
     margin-top: 30px;
-    text-shadow: #000000 0px 0px 13px;
+    /* text-shadow: #000000 0px 0px 13px; */
  }
 
 .github-corner:hover .octo-arm {

@@ -265,40 +265,28 @@ def recommend():
         cast_details = {cast_names[i]: [cast_ids[i], cast_profiles[i], cast_bdays[i], cast_places[i], cast_bios[i]] for i in range(len(cast_places))} if cast_places else {}
 
         # Web Scraping IMDb Reviews
-        movie_reviews = {}
-        if imdb_id:
-            url = f'https://www.imdb.com/title/{imdb_id}/reviews?ref_=tt_ov_rt'
-            headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'}
+        url = f'https://www.imdb.com/title/{imdb_id}/reviews/?ref_=tt_ov_rt'
+        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36'}
+
+        response = requests.get(url , headers=headers)
+        print(response.status_code)
+        if response.status_code==200:
+            soup = BeautifulSoup(response.content , 'lxml')
+            soup_result = soup.find_all("div" , {"class": "ipc-html-content-inner-div"})
+            print(soup_result)
+
+            reviews_list = []
+            reviews_status =[]
+            for reviews in soup_result:
+                review_text = reviews.text.strip()
+                if review_text:
+                    reviews_list.append(review_text)
+                    movie_review_list = np.array([review_text])
+                    movie_vector = vectorizer.transform(movie_review_list)
+                    pred = clf.predict(movie_vector)
+                    reviews_status.append('Good' if pred else 'Bad')
             
-            imdb_request = urllib.request.Request(url, headers=headers)  # ✅ Rename 'request' to 'imdb_request'
-            
-            try:
-                response = urllib.request.urlopen(imdb_request)  # ✅ Use 'imdb_request' here
-                soup = bs.BeautifulSoup(response.read(), 'lxml')
-                soup_result = soup.find_all("div", {"class": "text show-more__control"})
-
-                # Process reviews
-                reviews_list, reviews_status = [], []
-                for review in soup_result:
-                    if review.string:
-                        reviews_list.append(review.string)
-                        movie_vector = vectorizer.transform([review.string])
-                        pred = clf.predict(movie_vector)
-                        reviews_status.append('Good' if pred else 'Bad')
-
-                # Create a dictionary of reviews with their sentiment status
-                movie_reviews = {reviews_list[i]: reviews_status[i] for i in range(len(reviews_list))}
-
-            except urllib.error.HTTPError as e:
-                logging.error(f"HTTP Error: {e.code} - {e.reason}")
-                movie_reviews = {"Error": "Could not retrieve reviews"}
-            except urllib.error.URLError as e:
-                logging.error(f"URL Error: {e.reason}")
-                movie_reviews = {"Error": "Network issue, couldn't retrieve reviews"}
-            except Exception as e:
-                logging.error(f"Unexpected error during IMDb scraping: {e}")
-                movie_reviews = {"Error": "An unexpected error occurred"}
-
+            movie_reviews = {reviews_list[i]: reviews_status[i] for i in range(len(reviews_list))}
         # Render the recommend page with all processed data
         return render_template(
             'recommend.html',
@@ -417,68 +405,85 @@ def fetch_actor_from_wikipedia(actor_name):
         logging.error(f"❌ Error fetching Wikipedia details for {actor_name}: {e}")
         return None
 
+TMDB_API_KEY = "fce0af3409e6113c9b3c75aaf49341bb"
+TMDB_BASE_URL = "https://api.themoviedb.org/3"
+
+def fetch_actor_from_tmdb(actor_id):
+    """ Fetch actor details from TMDB API with error handling. """
+    try:
+        url = f"{TMDB_BASE_URL}/person/{actor_id}?api_key={TMDB_API_KEY}&language=en-US"
+        response = requests.get(url)
+
+        # Check for HTTP errors
+        if response.status_code != 200:
+            logging.error(f"🚨 TMDB API request failed for Actor ID {actor_id}! Status Code: {response.status_code}")
+            return None
+
+        data = response.json()
+
+        # Handle potential missing data
+        return {
+            "name": data.get("name", "Unknown"),
+            "profile": f"https://image.tmdb.org/t/p/w500{data.get('profile_path')}" if data.get("profile_path") else "https://via.placeholder.com/150",
+            "birthday": data.get("birthday", "Unknown"),
+            "birth_place": data.get("place_of_birth", "Unknown"),
+            "biography": data.get("biography", "No biography available.")
+        }
+
+    except requests.exceptions.RequestException as e:
+        logging.error(f"❌ Network error while fetching actor details from TMDB: {e}")
+        return None
+    except Exception as e:
+        logging.error(f"❌ Unexpected error while fetching actor details: {e}")
+        return None
+
 @app.route("/actor/<actor_id>")
 def actor_details(actor_id):
     try:
-        global cast_details
-        movies = []
+        movies = set()  # Using a set to store unique movies
+        actor_name = None
 
         logging.debug(f"Fetching details for Actor ID: {actor_id}")
 
-        if not cast_details:
-            logging.error("cast_details dictionary is EMPTY! Check data loading.")
-            return render_template("error.html", message="Cast details not found.")
-
-        actor_id = str(actor_id)
-        actor_name = None
-
-        # Search for actor_id in cast_details
-        for name, details in cast_details.items():
-            if str(details[0]) == actor_id:
-                actor_name = name
-                break
-
-        if not actor_name:
-            logging.warning(f"⚠️ Actor ID {actor_id} not found in local database. Trying Wikipedia...")
-            actor_data = fetch_actor_from_wikipedia(f"{actor_name}")  # Fetch from Wikipedia
-            if not actor_data:
-                return render_template("error.html", message=f"Actor ID {actor_id} not found.")
-            return render_template("actor.html", actor=actor_data, movies=[])
-
-        logging.debug(f"Matched Actor: {actor_name}")
-
-        # 🎥 Fetch movies from actors1.csv
+        # Convert actor_id from URL to integer
         try:
-            with open('actors1.csv', mode='r', encoding='utf-8') as file:
+            actor_id = int(float(actor_id))  # Handle both float & int cases
+        except ValueError:
+            logging.error(f"❌ Invalid actor_id format: {actor_id}")
+            return render_template("error.html", message="Invalid actor ID format.")
+
+        # 🎥 Fetch actor_name & movies from actors3.csv
+        try:
+            with open('actors3.csv', mode='r', encoding='utf-8') as file:
                 reader = csv.DictReader(file)
                 for row in reader:
-                    if row['actor_name'].strip().lower() == actor_name.strip().lower():
-                        movies.append(row['movie_title'])
+                    try:
+                        csv_actor_id = int(float(row['actor_id']))  # Convert CSV float to int
+                        if csv_actor_id == actor_id:
+                            actor_name = row['actor_name']
+                            movies.add(row['movie_title'])  # Add to set (removes duplicates automatically)
+                    except ValueError:
+                        logging.warning(f"⚠️ Skipping invalid actor_id: {row['actor_id']}")
+
         except FileNotFoundError:
-            logging.error("actors1.csv file not found!")
+            logging.error("❌ actors3.csv file not found!")
             return render_template("error.html", message="Actor database not found.")
 
-        logging.debug(f"Movies for {actor_name}: {movies}")
+        if not actor_name:
+            logging.warning(f"⚠️ Actor ID {actor_id} not found in CSV!")
+            return render_template("error.html", message=f"Actor ID {actor_id} not found.")
 
-        # If actor found in cast_details
-        details = cast_details[actor_name]
+        logging.debug(f"🎬 Unique Movies for {actor_name}: {movies}")
 
-        if len(details) < 5:
-            logging.error(f"Incomplete details for {actor_name}: {details}")
-            return render_template("error.html", message="Actor details are incomplete.")
+        # Fetch actor details from TMDB
+        actor_data = fetch_actor_from_tmdb(actor_id)
+        if not actor_data:
+            return render_template("error.html", message=f"Could not fetch details for {actor_name} from TMDB.")
 
-        actor = {
-            "name": actor_name,
-            "profile": details[1] if details[1] else "https://via.placeholder.com/150",
-            "birthday": details[2] if details[2] else "Unknown",
-            "birth_place": details[3] if details[3] else "Unknown",
-            "biography": details[4] if details[4] else "No biography available."
-        }
-
-        return render_template("actor.html", actor=actor, movies=movies)
+        return render_template("actor.html", actor=actor_data, movies=list(movies))  # Convert set to list for rendering
 
     except Exception as e:
-        logging.error(f"Error loading actor details: {e}", exc_info=True)
+        logging.error(f"❌ Error loading actor details: {e}", exc_info=True)
         return render_template("error.html", message="An error occurred while fetching actor details.")
     
 
@@ -607,7 +612,7 @@ def movie_details(movie_title):
             trailer=trailer,
             teaser=teaser,
             streaming_availability=streaming_availability,
-            # movie_reviews=movie_reviews,
+            movie_reviews=movie_reviews,
             recommended_movies=recommendations
         )
 
@@ -619,20 +624,36 @@ def fetch_imdb_reviews(imdb_id):
     """Fetch IMDb reviews using web scraping."""
     try:
         url = f'https://www.imdb.com/title/{imdb_id}/reviews?ref_=tt_ov_rt'
-        headers = {'User-Agent': 'Mozilla/5.0'}
-        request = urllib.request.Request(url, headers=headers)
-        response = urllib.request.urlopen(request)
-        soup = bs(response.read(), 'lxml')
+        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36'}
+        response = requests.get(url , headers=headers)
+        print(response.status_code)
+        if response.status_code==200:
+            soup = BeautifulSoup(response.content , 'lxml')
+            soup_result = soup.find_all("div" , {"class" : "ipc-html-content-inner-div"})
+            print(soup_result)
 
-        # Extract reviews safely
-        reviews = [div.text.strip() for div in soup.find_all("div", class_="text show-more__control")]
+            reviews_list = []
+            reviews_status = []
 
-        # If no reviews found, return a message
-        if not reviews:
-            return {"Message": "No IMDb reviews available."}
+            for reviews in soup_result:
+                reviews_text = reviews.text.strip()
+                if reviews_text:
+                    reviews_list.append(reviews_text)
+                    movie_reviews_list = np.array([reviews_text])
+                    movie_vector = vectorizer.transform(movie_reviews_list)
+                    pred = clf.predict(movie_vector)
+                    reviews_status.append('Good' if pred else 'Bad')
+            
+            movie_reviews = {reviews_list[i]: reviews_status[i] for i in range(len(reviews_list))}
+        # # Extract reviews safely
+        # reviews = [div.text.strip() for div in soup.find_all("div", class_="text show-more__control")]
 
-        # Perform basic sentiment analysis (dummy logic: Good if length > 100)
-        movie_reviews = {review: "Good" if len(review) > 100 else "Bad" for review in reviews}
+        # # If no reviews found, return a message
+        # if not reviews:
+        #     return {"Message": "No IMDb reviews available."}
+
+        # # Perform basic sentiment analysis (dummy logic: Good if length > 100)
+        # movie_reviews = {review: "Good" if len(review) > 100 else "Bad" for review in reviews}
         return movie_reviews
 
     except Exception as e:
