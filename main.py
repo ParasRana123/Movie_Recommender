@@ -641,8 +641,10 @@ def fetch_imdb_reviews(imdb_id):
                     reviews_list.append(reviews_text)
                     movie_reviews_list = np.array([reviews_text])
                     movie_vector = vectorizer.transform(movie_reviews_list)
-                    pred = clf.predict(movie_vector)
-                    reviews_status.append('Good' if pred else 'Bad')
+                    # pred = clf.predict(movie_vector)
+                    pred_prob = clf.predict_proba(movie_vector)[: , 1]
+                    confidence_score = round(pred_prob[0] * 100 , 2)
+                    reviews_status.append(f"{confidence_score}% confident positive")
             
             movie_reviews = {reviews_list[i]: reviews_status[i] for i in range(len(reviews_list))}
         # # Extract reviews safely

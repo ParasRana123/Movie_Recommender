@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ actor.name }}</title>
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
         .actor-container {
             border: 2px solid green;
-            background-color: #542929;
+            background-color: black;
             color: white;
             display: flex;
             flex-direction: row;
@@ -93,7 +97,9 @@
 </div>
 
 <div class="movies-list">
-    <h3>Movies:</h3>
+    <h3 style="text-align: center; font-size: 24px; color: #e50914;">ACTOR KNOWN FOR THE MOVIES: </h3>
+    <hr style="width: 1100px;">
+    <br>
     {% if movies %}
         <div class="movie-container" id="movies-list">
             {% for movie in movies %}
