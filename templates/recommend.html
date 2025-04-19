@@ -259,7 +259,7 @@
           <div class="" title="Click to know more about {{name}}" data-toggle="modal" data-target="#{{details[0]}}">
             <div class="imghvr">
               <img class="card-img-top cast-img" id="{{details[0]}}" height="360" width="240" alt="{{name}} - profile" src="{{details[2]}}">
-              <figcaption class="fig">
+              <figcaption class="img">
                 <button class="card-btn btn btn-danger" onclick="redirectToActor('{{ details[0] }}')">Know More</button>
               </figcaption>
             </div>
@@ -271,6 +271,10 @@
       {% endfor %}
     </div>
 {% endif %}
+
+<div>
+  <h3 style="color: black; text-align: center;">ABOUT THE DIRECTOR</h3>
+</div>
 
 <div class="director-section">
   {% if director_image %}
@@ -286,13 +290,13 @@
 
   <center>
     {% if reviews %}
-    <h2 style="color:white">USER REVIEWS</h2>
+    <h2 style="color: black; margin: 40px;">USER REVIEWS</h2>
      <div class="col-md-12" style="margin: 0 auto; margin-top:25px;">
         <table class="table table-bordered" bordercolor="white" style="color:white">
             <thead>
                 <tr>
-                    <th class="text-center" scope="col" style="width: 75%">Comments</th>
-                    <th class="text-center" scope="col">Sentiments</th>
+                    <th class="text-center" scope="col" style="width: 75%; color: #333333;">Comments</th>
+                    <th class="text-center" scope="col" style="color: #333333;">Sentiments</th>
                 </tr>
             </thead>
     
@@ -325,12 +329,12 @@
 
 
       <div class="movie" style="color: #E8E8E8;">
-      <center><h3>RECOMMENDED MOVIES FOR YOU</h3><h5>(Click any of the movies to get recommendation)</h5></center>
+      <center><h3 style="color: #333333;">RECOMMENDED MOVIES FOR YOU</h3><h5>(Click any of the movies to get recommendation)</h5></center>
     </div>
 
     <div class="movie-content">
       {% for poster, title in movie_cards.items() if not movie_cards.hidden %}
-        <div class="card" style="width: 15rem;" title="{{title}}" onclick="recommendcard(this)">
+        <div class="card" style="width: 15rem; border-radius: 18px; box-shadow: 0 10px 10px rgba(68, 66, 66, 0.3);" title="{{title}}" onclick="recommendcard(this)">
           <div class="imghvr">
             <img class="card-img-top" height="360" width="240" alt="{{title}} - poster" src={{poster}}>
             <figcaption class="fig">

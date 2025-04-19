@@ -296,7 +296,7 @@
       </div>
 
       {% if actors %}
-      <div class="movie" style="color: black;">
+      <div class="movie" style="color: black; margin-top: 25px; text-align: center;">
             <center>
             <h3>TOP CAST</h3>
             <h5>(Click on the cast to know more)</h5>
@@ -308,19 +308,26 @@
             <div title="Click to know more about {{ actor.name }}" data-toggle="modal" data-target="#{{ actor.id }}">
                 <div class="imghvr">
                     <img class="card-img-top cast-img" id="{{ actor.id }}" height="360" width="240" alt="{{ actor.name }} - profile" src="{{ actor.image }}">
-                    <figcaption class="fig">
+                    <figcaption class="img">
                         <a href="{{ url_for('actor_details', actor_id=actor.id) }}" class="card-btn btn btn-danger">Know More</a>
                     </figcaption>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">{{ actor.name }}</h5>
-                    <h5 class="card-title"><span style="color:#756969;font-size: 20px;">Character: {{ actor.character }}</span></h5>
+                    <h5 class="card-title" style="text-align: center;">{{ actor.name }}</h5>
+                    <h5 class="card-title" style="text-align: center;"><span style="color:#756969;font-size: 20px;">Character: {{ actor.character }}</span></h5>
                 </div>
             </div>
         {% endfor %}
     </div>
     
     {% endif %}
+
+    <div class="movie" style="color: black; margin-top: 18px; text-align: center;">
+      <center>
+        <h3>ABOUT THE DIRECTOR</h3>
+        <!-- <h5>(Click on the cast to know more)</h5> -->
+      </center>
+    </div>
 
     <div class="director-section">
         {% if director_image %}
@@ -336,13 +343,13 @@
 
       <center>
         {% if movie_reviews %}
-        <h2 style="color:white">USER REVIEWS</h2>
-        <div class="col-md-12" style="margin: 0 auto; margin-top:25px;">
-          <table class="table table-bordered" bordercolor="white" style="color:white">
+        <h2 style="color:black; margin-top: 25px;">USER REVIEWS</h2>
+        <div class="col-md-12" style="margin: 0 auto; margin: 25px;">
+          <table class="table table-bordered" bordercolor="white" style="color: white">
             <thead>
               <tr>
-                <th class="text-center" scope="col" style="width: 75%">Comments</th>
-                <th class="text-center" scope="col">Sentiments</th>
+                <th class="text-center" scope="col" style="width: 75%; color: black;">Comments</th>
+                <th class="text-center" scope="col" style="color: black;">Sentiments</th>
               </tr>
             </thead>
             <tbody>
@@ -367,13 +374,13 @@
       {% if recommended_movies %}
 
 
-      <div class="movie" style="color: #E8E8E8;">
-      <center><h3>RECOMMENDED MOVIES FOR YOU</h3><h5>(Click any of the movies to get recommendation)</h5></center>
-    </div>
+      <div class="movie" style="color: black; margin-top: 25px;">
+        <center><h3>RECOMMENDED MOVIES FOR YOU</h3><h5>(Click any of the movies to get recommendation)</h5></center>
+      </div>
 
     <div class="movie-content">
       {% for movie in recommended_movies %}
-        <div class="card" style="width: 15rem;" title="{{movie.title}}">
+        <div class="card" style="width: 15rem; border-radius: 18px; box-shadow: 0 10px 10px rgba(68, 66, 66, 0.3);" title="{{movie.title}}">
           <div class="imghvr">
             <img class="card-img-top" height="360" width="240" alt="{{title}} - poster" src={{movie.poster}}>
             <figcaption class="fig">
