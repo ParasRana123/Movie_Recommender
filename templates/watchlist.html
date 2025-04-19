@@ -6,9 +6,13 @@
     <title>Your Watchlist</title>
     <style>
         .your_watchlist {
-            width: 1455px;
-            padding-left: 34px;
-        }
+    width: 100%;
+    max-width: 1455px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
 
         body {
             background-color: #1c1c11;
@@ -133,6 +137,65 @@
             border-radius: 5px;
         }
 
+        @media (max-width: 768px) {
+    .movie-card {
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+        text-align: center;
+    }
+
+    .movie-poster {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+
+    .movie-title {
+        font-size: 1rem;
+        padding-left: 0;
+    }
+
+    .flex {
+        flex-direction: column;
+        gap: 5px;
+        margin-bottom: 5px;
+        padding-left: 0;
+    }
+
+    .movie-status,
+    .movie-date {
+        padding-left: 0;
+    }
+
+    .movie-overview {
+        position: static;
+        padding: 10px;
+    }
+
+    /* New wrapper for runtime and rating on mobile */
+    .movie-info-mobile {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 5px;
+    }
+
+    .movie-runtime,
+    .movie-rating {
+        padding-left: 0;
+    }
+
+    .your_watchlist {
+    text-align: center;
+    padding: 0 10px;
+}
+
+}
+
+
+
     </style>
 </head>
 <body>
@@ -201,7 +264,11 @@
                         <p class="movie-status">${movie.status}</p>
                         <p class="movie-runtime">${movie.runtime}</p>
                         </div>
-                        <p class="movie-rating">★  ${movie.rating}   (${movie.count})</p>
+                        <div class="movie-info-mobile">
+    <p class="movie-runtime">${movie.runtime}</p>
+    <p class="movie-rating">★  ${movie.rating}   (${movie.count})</p>
+</div>
+
                         </div>
                         <p class="movie-overview">${movie.overview}</p>
                         <button class="delete-btn" onclick="removeFromWatchlist(${index})">X</button>
