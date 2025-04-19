@@ -18,101 +18,172 @@
   <!-- Auto Complete -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/css/autoComplete.min.css">
   <!-- <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}"> -->
-    <style>
-
-        body {
-            background-color: black;
-            background-image: none;
-        }
-            /* Style for the image */
-            .responsive-img {
-            max-width: 500px; /* Adjust the maximum width to your needs */
-            height: auto; /* Maintain aspect ratio */
-            border-radius: 30px; /* Optional: Add rounded corners */
-            mask-image: linear-gradient(to right, black 50%, rgba(0, 0, 0, 0));
-            -webkit-mask-image: linear-gradient(to right, black 50%, rgba(0, 0, 0, 0)); /* For WebKit browsers */
-            margin: 12px auto; /* Optional: Center the image and add space around it */
-            margin-left: 12px;
-        }
-
-        .container1 {
-            position: inherit;
-            /* border: 2px solid white; */
-            border-radius: 40px;
-            background-color: black;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 5px;
-            padding-left: 3px;
-            margin: 20px;
-            width: 100%;
-        }
-
-        @media (min-width: 1200px) {
-    .container1 {
-        max-width: 1420px;
+  <style>
+    body {
+        background-color: black;
+        background-image: none;
     }
-}
 
-        .text {
-            padding-left: 20px;
-            padding-right: 20px;
-        }
+    .responsive-img {
+      max-width: 650px;
+      height: auto;
+      border-radius: 30px;
+      mask-image: linear-gradient(to right, black 50%, rgba(0, 0, 0, 0));
+      -webkit-mask-image: linear-gradient(to right, black 50%, rgba(0, 0, 0, 0));
+      margin: 12px auto;
+      margin-left: 12px;
+    }
 
-        .text {
-            color: white;
-        }
+    .container1 {
+      position: inherit;
+      border-radius: 30px;
+      background-color: black;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px;
+      margin: 20px;
+      width: 100%;
+      padding-left: 80px;
+      margin-right: -4px;
+    }
 
-        .description {
-            font-size: 16px;
-        }
+    @media (min-width: 1200px) {
+      .container1 {
+        max-width: 1420px;
+      }
+    }
 
-        .heading {
-            color: rgb(228, 228, 6);
-        }
+    .text {
+      padding-left: 20px;
+      padding-right: 20px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+    }
 
-        #movies-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; /* Ensure equal space between cards */
-    gap: 20px; /* Define the gap between cards */
-    margin: 35px auto;
-    max-width: 1200px; /* Adjust max-width for large screens */
-}
+    .description {
+      font-size: 16px;
+    }
 
-.movie-card {
-    background-color: #333;
-    color: white;
-    border-radius: 10px;
-    width: calc(20% - 20px); /* Adjusted for 5 cards per row with space */
-    height: 400px;
-    text-align: center;
-    box-sizing: border-box;
-    overflow: hidden;
-    /* box-shadow: 0px 1px 15px 4px rgba(250, 250, 250, 1); */
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    .heading {
+      color: rgb(228, 228, 6);
+    }
 
-.movie-card img {
-    width: 100%;
-    height: 320px;
-    object-fit: cover;
-    border-bottom: 1px solid #444;
-}
+    #movies-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+      margin: 35px auto;
+      max-width: 1200px;
+    }
 
+    .movie-card {
+      background-color: #333;
+      color: white;
+      border-radius: 10px;
+      width: calc(20% - 20px);
+      height: 400px;
+      text-align: center;
+      box-sizing: border-box;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .movie-card img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      border-bottom: 1px solid #444;
+    }
 
     .movie-card h3 {
-        margin: 10px 0 0; /* Add margin to the top only */
-        font-size: 1em; /* Adjust font size if needed */
-        /* overflow: hidden; Hide overflow text to maintain card size */
-        /* text-overflow: ellipsis; Add ellipsis for overflow text */
-        /* white-space: nowrap; Prevent text from wrapping */
-        margin-left: 10px;
-        margin-right: 10px;
+      margin: 10px 10px 0;
+      font-size: 1em;
     }
-    </style>
+
+    .all,
+    .upcoming {
+      position: absolute;
+      background-color: black;
+      color: white;
+      top: 80%;
+      border: 2px solid white;
+      border-radius: 50px;
+      cursor: pointer;
+    }
+
+    .all {
+      left: 53%;
+    }
+
+    .upcoming {
+      left: 60%;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .container1 {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 20px;
+      }
+
+      .responsive-img {
+        max-width: 100%;
+        margin-left: 0;
+      }
+
+      .text {
+        padding: 10px 0;
+      }
+
+      .movie-card {
+        width: calc(33.33% - 20px);
+        height: auto;
+      }
+
+      .movie-card img {
+        height: auto;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #movies-container {
+        justify-content: center;
+      }
+
+      .movie-card {
+        width: calc(50% - 20px);
+      }
+    }
+
+    @media (max-width: 576px) {
+      .movie-card {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 768px) {
+  .movie-card {
+    width: calc(50% - 10px); /* Show 2 cards per row */
+    height: 220px; /* Reduce height */
+  }
+
+  .movie-card img {
+    height: 140px; /* Smaller poster size */
+  }
+
+  .movie-card p {
+    font-size: 12px; /* Optional: make text slightly smaller */
+  }
+}
+
+  </style>
 </head>
     <body id="content" style="font-family: 'Noto Sans JP', sans-serif;background-image: none;">
 
