@@ -3,6 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+  
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  
+    <!-- Auto Complete -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/css/autoComplete.min.css">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
     <title>{{ actor.name }} - IMDb</title>
     <style>
         body {
@@ -79,9 +91,91 @@
             width: 100%;
             border-radius: 8px;
         }
+
+        .watchlist {
+  position: relative;
+  top: -5px;
+  left: -120px;
+  gap: 8px;
+  display: flex;
+  align-items: center; /* Align text and image vertically */
+  background-color: #333333; /* Dark background */
+  /* box-shadow: 0px 1px 15px 4px rgba(250, 250, 250, 1); */
+  border-radius: 20px;
+  transition: 0.3s;
+  padding: 10px;
+  border-radius: 8px; /* Rounded corners */
+  color: #fff; /* White text for contrast */
+  font-size: 18px; /* Adjust font size */
+  width: fit-content; /* Adjust width to content */
+}
+
+.watchlist:hover {
+  box-shadow: 0 8px 16px 0 rgba(0 , 0 , 0 , 0.2);
+}
+
+.watchlist p {
+  margin: 0; /* Remove default margin from <p> */
+  margin-right: 10px; /* Add some space between text and image */
+  /* font-weight: bold; Make text bold */
+}
+
+.watchlist img {
+  display: block; /* Ensure the image is not affected by line-height */
+  filter: invert(1); /* Invert colors for better visibility on dark background */
+  width: 30px; /* Set the width of the image */
+  height: auto; /* Keep aspect ratio */
+}
+
+.from_watchlist {
+  padding: 10px;
+  margin-left: 20px;
+}
+
+#movie_list {
+    max-height: 200px; /* Adjust the height as needed */
+    overflow-y: auto;
+    background-color: white;
+    padding: 0; /* Remove any padding */
+    position: absolute;
+    top: 100%; /* Position the list below the input */
+    left: 0;
+    width: 100%; /* Make it the same width as the input */
+    z-index: 1000; /* Ensure it appears above other elements */
+    margin-top: 5px; /* Add a small gap between the input and the list */
+    border-radius: 5px; /* Optional: Add some rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
+}
+
+#movie_list li {
+    padding: 10px;
+    cursor: pointer;
+    list-style-type: none; /* Remove bullet points */
+    margin: 0; /* Remove any margin */
+}
+
+#movie_list li:hover {
+    background-color: #f0f0f0;
+}
     </style>
 </head>
 <body>
+    <nav class="form-group shadow-textarea" style="text-align: center;color: white; display: flex; justify-content: center; align-items: center; background-color: #333333; height: 12vh;">
+        <div class="search-container" style="position: relative;">
+            <input type="text" name="movie" class="movie form-control" id="autoComplete" autocomplete="off" placeholder="Enter the Movie Name" style="background-color: #ffffff;border-color:#ffffff;width: 60%;color: #181818; border-radius: 5px;" required="required" />
+            <ul id="movie_list"></ul>
+        </div>
+        <div class="form-group" style="text-align: center;">
+            <button class="btn btn-primary btn-block movie-button" style="background-color: #e50914;text-align: center;border-color: #e50914;width:120px; position: relative; left: -155px; top: 30px;" disabled="true">Enter</button><br><br>
+        </div>
+        <div style="color: white;position: relative;left: -125px;top: -5px;"> | </div>
+        <div class="watchlist" style="cursor: pointer;" onclick="window.location.href='/watchlist';">
+            <img src="{{ url_for('static', filename='images/add_bookmark.svg') }}" width="30px" height="auto" alt="">
+            <p>WatchList</p>
+        </div>
+        <!-- <div style="color: white;position: relative;left: -120px;top: -5px;"> | </div> -->
+        <div class="genres" style="color: white;position: relative;left: -120px;top: -5px; cursor: pointer;" onclick="window.location.href='/genres'">Genre-Wise</div>
+    </nav>
     <div class="container">
         <div class="actor-container">
             <img src="{{ actor.profile }}" alt="{{ actor.name }}" class="actor-profile">
@@ -175,5 +269,10 @@
 
         loadMovies();
     </script>
+    	<script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/js/autoComplete.min.js"></script>
+        <script type="text/javascript" src="{{url_for('static', filename='autocomplete.js')}}"></script>
+      
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript" src="{{url_for('static', filename='recommend.js')}}"></script>
 </body>
 </html>
