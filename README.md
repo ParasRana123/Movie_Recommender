@@ -28,23 +28,17 @@ A multilingual movie recommendation system that leverages Natural Language Proce
 ## Project Structure
 
 ```bash
-├── static/            
-│   ├── css/        # All CSS stylings in this file
-│   ├── uploads/    # Contains user Uploaded images
-│   └── matches/    # Matched images for the user uplaoded images
-├── templates/
-│   └── index.html  # Contains all the frontend HTML code
-├── main.py         # Flask backend code
-├── app.py          # Streamlit backend code
-├── feature_extractor1.ipynb   # Useful for making filenames.pkl
-├── feature_extractor.ipynb    # Useful for making embedding.pkl
-├── requirements.txt           # Contains all the requirements
-└── README.md
+├── static/              # All CSS files and Images here          
+├── templates/           # All the utility template files
+├── main.py              # All flask routes present here
+├── test.py              # All test code here
+├── requirements.txt     # Contains all the requirements
+└── README.md            # README.md file
 ```
 
 ## Installation
 
-> **Note**: Python Version greater than 3.7 needed.
+> **Note**: Python Version greater than 3.8 needed.
 
 1. **Clone the Repository**
 
@@ -56,7 +50,7 @@ cd face
 2. **Create and activate python virtual environment**
 
 ```bash
-conda create -p venv python==3.8.0 -y
+conda create -p venv python==3.11.0 -y
 activate venv/
 ```
 
@@ -66,42 +60,11 @@ activate venv/
 pip install -r requirements.txt
 ```
 
-4. **Install the Jupyter Notebook**
-
-```bash
-pip install notebook
-```
-
-5. **Run the `feature_extractor1.ipynb` to make `filenames.pkl`**
-
-```bash
-jupyter nbconvert --to notebook --feature.extractor1.ipynb --inplace
-```
-
-6. **Then run the `feature_extractor.ipynb` to make `embedding.pkl`**
-
-```bash
-jupyter nbconvert --to notebook --feature.extractor.ipynb --inplace
-```
-
-7. **Make the `uploads` and  `matches` inside `static` folder**
-
-```bash
-cd static
-mkdir uploads
-mkdir matches
-```
-
-8. **Start the flask application**
+4. **Start the flask application**
 
 ```bash
 python main.py
 ```
-
-   **You can also use the streamlit server (Optional)**
-   ```bash
-   streamlit run app.py
-   ```
 
 ## Contributing
 
