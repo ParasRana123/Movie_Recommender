@@ -12,6 +12,7 @@ import logging
 import ast
 import csv
 from bs4 import BeautifulSoup
+from markupsafe import escape
 
 # Load the NLP model and TF-IDF vectorizer from disk
 filename = 'nlp_model2.pkl'
@@ -409,82 +410,90 @@ TMDB_API_KEY = "fce0af3409e6113c9b3c75aaf49341bb"
 TMDB_BASE_URL = "https://api.themoviedb.org/3"
 
 def fetch_actor_from_tmdb(actor_id):
-    """ Fetch actor details from TMDB API with error handling. """
+    """Fetch actor details from TMDB using a numeric actor_id."""
     try:
         url = f"{TMDB_BASE_URL}/person/{actor_id}?api_key={TMDB_API_KEY}&language=en-US"
         response = requests.get(url)
 
-        # Check for HTTP errors
         if response.status_code != 200:
-            logging.error(f"🚨 TMDB API request failed for Actor ID {actor_id}! Status Code: {response.status_code}")
+            logging.error(f"🚨 TMDB API request failed for Actor ID {actor_id}. Status: {response.status_code}")
             return None
 
         data = response.json()
 
-        # Handle potential missing data
         return {
             "name": data.get("name", "Unknown"),
-            "profile": f"https://image.tmdb.org/t/p/w500{data.get('profile_path')}" if data.get("profile_path") else "https://via.placeholder.com/150",
+            "profile": (
+                f"https://image.tmdb.org/t/p/w500{data['profile_path']}"
+                if data.get("profile_path")
+                else "https://via.placeholder.com/150"
+            ),
             "birthday": data.get("birthday", "Unknown"),
             "birth_place": data.get("place_of_birth", "Unknown"),
             "biography": data.get("biography", "No biography available.")
         }
 
     except requests.exceptions.RequestException as e:
-        logging.error(f"❌ Network error while fetching actor details from TMDB: {e}")
+        logging.error(f"❌ Network error while fetching from TMDB: {e}")
         return None
     except Exception as e:
-        logging.error(f"❌ Unexpected error while fetching actor details: {e}")
+        logging.exception("❌ Unexpected error during TMDB fetch.")
         return None
 
 @app.route("/actor/<actor_id>")
 def actor_details(actor_id):
     try:
-        movies = set()  # Using a set to store unique movies
+        movies = set()
         actor_name = None
 
-        logging.debug(f"Fetching details for Actor ID: {actor_id}")
+        # ✅ Sanitize input
+        actor_id = escape(actor_id)
+        logging.debug(f"📌 Raw Actor ID from URL: {actor_id}")
 
-        # Convert actor_id from URL to integer
+        # ✅ Convert to int and validate
         try:
-            actor_id = int(float(actor_id))  # Handle both float & int cases
+            if not actor_id or actor_id.lower() == 'none':
+                raise ValueError("Empty or None actor_id")
+            actor_id = int(float(actor_id))  # Handles '85.0' and '85'
         except ValueError:
             logging.error(f"❌ Invalid actor_id format: {actor_id}")
-            return render_template("error.html", message="Invalid actor ID format.")
+            return render_template("error.html", message="Invalid actor ID in URL.")
 
-        # 🎥 Fetch actor_name & movies from actors3.csv
+        # ✅ Read CSV and find actor
         try:
             with open('actors3.csv', mode='r', encoding='utf-8') as file:
                 reader = csv.DictReader(file)
                 for row in reader:
                     try:
-                        csv_actor_id = int(float(row['actor_id']))  # Convert CSV float to int
+                        csv_actor_id = int(float(row.get('actor_id', -1)))
                         if csv_actor_id == actor_id:
-                            actor_name = row['actor_name']
-                            movies.add(row['movie_title'])  # Add to set (removes duplicates automatically)
+                            actor_name = row.get('actor_name', 'Unknown')
+                            movie = row.get('movie_title', 'Untitled')
+                            if movie:
+                                movies.add(movie)
                     except ValueError:
-                        logging.warning(f"⚠️ Skipping invalid actor_id: {row['actor_id']}")
-
+                        logging.warning(f"⚠️ Skipping malformed row with actor_id: {row.get('actor_id')}")
         except FileNotFoundError:
             logging.error("❌ actors3.csv file not found!")
             return render_template("error.html", message="Actor database not found.")
 
+        # ✅ Handle actor not found in CSV
         if not actor_name:
-            logging.warning(f"⚠️ Actor ID {actor_id} not found in CSV!")
-            return render_template("error.html", message=f"Actor ID {actor_id} not found.")
+            logging.warning(f"⚠️ Actor ID {actor_id} not found in CSV.")
+            return render_template("error.html", message=f"No actor found for ID {actor_id}.")
 
-        logging.debug(f"🎬 Unique Movies for {actor_name}: {movies}")
+        logging.debug(f"🎬 Found actor: {actor_name} | Movies: {movies}")
 
-        # Fetch actor details from TMDB
+        # ✅ Fetch actor details from TMDB using actor_id (not name!)
         actor_data = fetch_actor_from_tmdb(actor_id)
         if not actor_data:
             return render_template("error.html", message=f"Could not fetch details for {actor_name} from TMDB.")
 
-        return render_template("actor.html", actor=actor_data, movies=list(movies))  # Convert set to list for rendering
+        return render_template("actor.html", actor=actor_data, movies=sorted(movies))
 
     except Exception as e:
-        logging.error(f"❌ Error loading actor details: {e}", exc_info=True)
-        return render_template("error.html", message="An error occurred while fetching actor details.")
+        logging.exception("❌ Unexpected error while loading actor details.")
+        return render_template("error.html", message="An internal error occurred while fetching actor details.")
     
 
 def get_movie_id(movie_title):
