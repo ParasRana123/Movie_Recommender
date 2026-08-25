@@ -59,6 +59,13 @@ function load_movie_recommendations(title) {
         $('.fail').css('display', 'block');
         $('.results').css('display', 'none');
       } else {
+        // Hide actor details, underlying movie details, and other static page elements
+        $('#actor-main-content').hide();
+        $('#movie-main-content').hide();
+        $('#page-main-content').hide();
+        $('#mycontent').hide();
+        $('#streaming-platforms').hide();
+
         $('.fail').css('display', 'none');
         $('.results').html(response);
         $('.results').css('display', 'block');

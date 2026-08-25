@@ -207,8 +207,18 @@
 </nav>
 
 </div>
-    <div id="mycontent">
-        <div id="mcontent" style="position: relative; height: 67vh; overflow: hidden; margin-top: -40px;">
+    <!-- Loader & Search Results -->
+    <div id="loader" style="text-align: center; display: none;">
+        <p id="loader-text" style="color: white; font-size:20px; font-weight: 800;">LOADING...</p>
+    </div>
+    <div class="fail" style="display: none; text-align: center; margin-top: 30px;">
+        <h3 style="color: #333333;">Sorry! The movie you requested is not in our database.</h3>
+    </div>
+    <div class="results"></div>
+
+    <div id="movie-main-content">
+        <div id="mycontent">
+            <div id="mcontent" style="position: relative; height: 67vh; overflow: hidden; margin-top: -40px;">
             <!-- Background Image with Blur and Darkened Overlay -->
             <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; 
                         background-image: url('{{ backdrop }}'); 
@@ -411,13 +421,17 @@
 
     
     </div>
+    </div>
 </div>
 <script>
     function redirectToMovie(movieTitle) {
-    // Encode movie title to handle spaces and special characters in URLs
     let encodedTitle = encodeURIComponent(movieTitle);
     window.location.href = `/movie/${encodedTitle}`;
   }
 </script>
+<script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/js/autoComplete.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='autocomplete.js') }}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='recommend.js') }}"></script>
 </body>
 </html>
