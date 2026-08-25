@@ -2,7 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>{{ actor.name }} - Movie Recommender</title>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/bookmark_tick.svg') }}">
+
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
   
@@ -14,265 +20,258 @@
   
     <!-- Auto Complete -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/css/autoComplete.min.css">
-    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
-    <title>{{ actor.name }} - IMDb</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #121212;
-            color: white;
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #ffffff;
+            color: #111111;
         }
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 20px;
+
+        .search-container {
+            position: relative;
+            width: 60%;
         }
-        .actor-container {
-            display: flex;
-            gap: 20px;
-            background-color: #1c1c1c;
-            padding: 20px;
-            border-radius: 8px;
-        }
-        .actor-profile {
-            width: 300px;
-            border-radius: 8px;
-        }
-        .details h1 {
-            color: #f5c518;
-            margin-bottom: 5px;
-        }
-        .details h3 {
-            margin: 5px 0;
-            color: #bbb;
-        }
-        .details p {
-            line-height: 1.5;
-        }
-        .movies-list {
-            margin-top: 40px;
-        }
-        .movies-list h3 {
-            text-align: center;
-            font-size: 24px;
-            color: #f5c518;
-        }
-        .movie-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-        }
-        .movie-item {
-            background-color: #222;
-            padding: 15px;
-            border-radius: 8px;
-            width: 220px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .movie-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 20px rgba(245, 197, 24, 0.3);
-        }
-        .movie-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin-top: 10px;
-        }
-        .character-name {
-            font-size: 16px;
-            color: #bbb;
-            font-style: italic;
-        }
-        .movie-poster {
+
+        #movie_list {
+            max-height: 200px;
+            overflow-y: auto;
+            background-color: white;
+            padding: 0;
+            position: absolute;
+            top: 100%;
+            left: 0;
             width: 100%;
-            border-radius: 8px;
+            z-index: 1000;
+            margin-top: 5px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #movie_list li {
+            padding: 10px;
+            cursor: pointer;
+            list-style-type: none;
+            margin: 0;
+        }
+
+        #movie_list li:hover {
+            background-color: #f0f0f0;
         }
 
         .watchlist {
-  position: relative;
-  top: -5px;
-  left: -120px;
-  gap: 8px;
-  display: flex;
-  align-items: center; /* Align text and image vertically */
-  background-color: #333333; /* Dark background */
-  /* box-shadow: 0px 1px 15px 4px rgba(250, 250, 250, 1); */
-  border-radius: 20px;
-  transition: 0.3s;
-  padding: 10px;
-  border-radius: 8px; /* Rounded corners */
-  color: #fff; /* White text for contrast */
-  font-size: 18px; /* Adjust font size */
-  width: fit-content; /* Adjust width to content */
-}
+            position: relative;
+            top: -5px;
+            left: -120px;
+            gap: 8px;
+            display: flex;
+            align-items: center;
+            background-color: #333333;
+            border-radius: 8px;
+            transition: 0.3s;
+            padding: 10px;
+            color: #fff;
+            font-size: 18px;
+            width: fit-content;
+        }
 
-.watchlist:hover {
-  box-shadow: 0 8px 16px 0 rgba(0 , 0 , 0 , 0.2);
-}
+        .watchlist:hover {
+            box-shadow: 0 8px 16px 0 rgba(0 , 0 , 0 , 0.2);
+        }
 
-.watchlist p {
-  margin: 0; /* Remove default margin from <p> */
-  margin-right: 10px; /* Add some space between text and image */
-  /* font-weight: bold; Make text bold */
-}
+        .watchlist p {
+            margin: 0;
+            margin-right: 10px;
+        }
 
-.watchlist img {
-  display: block; /* Ensure the image is not affected by line-height */
-  filter: invert(1); /* Invert colors for better visibility on dark background */
-  width: 30px; /* Set the width of the image */
-  height: auto; /* Keep aspect ratio */
-}
+        .watchlist img {
+            display: block;
+            filter: invert(1);
+            width: 30px;
+            height: auto;
+        }
 
-.from_watchlist {
-  padding: 10px;
-  margin-left: 20px;
-}
+        #details {
+            margin-left: 50px;
+        }
 
-#movie_list {
-    max-height: 200px; /* Adjust the height as needed */
-    overflow-y: auto;
-    background-color: white;
-    padding: 0; /* Remove any padding */
-    position: absolute;
-    top: 100%; /* Position the list below the input */
-    left: 0;
-    width: 100%; /* Make it the same width as the input */
-    z-index: 1000; /* Ensure it appears above other elements */
-    margin-top: 5px; /* Add a small gap between the input and the list */
-    border-radius: 5px; /* Optional: Add some rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow */
-}
+        #details h6 {
+            margin-bottom: 14px;
+            line-height: 1.6;
+        }
 
-#movie_list li {
-    padding: 10px;
-    cursor: pointer;
-    list-style-type: none; /* Remove bullet points */
-    margin: 0; /* Remove any margin */
-}
+        .actor-bio-scroll {
+            color: #e8e8e8;
+            font-weight: normal;
+            display: block;
+            max-height: 170px;
+            overflow-y: auto;
+            padding-right: 15px;
+            line-height: 1.7;
+        }
 
-#movie_list li:hover {
-    background-color: #f0f0f0;
-}
+        .actor-bio-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .actor-bio-scroll::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 4px;
+        }
+
+        @media only screen and (max-width: 650px) {
+            #mcontent {
+                display: block;
+                height: auto !important;
+            }
+            .poster-lg {
+                display: none;
+            }
+            #details {
+                margin-left: 20px;
+                padding: 15px !important;
+            }
+            .watchlist, .genres {
+                left: 0 !important;
+            }
+        }
     </style>
 </head>
-<body>
-    <nav class="form-group shadow-textarea" style="text-align: center;color: white; display: flex; justify-content: center; align-items: center; background-color: #333333; height: 12vh;">
+<body id="content">
+    <!-- Top Navigation Bar -->
+    <nav class="form-group shadow-textarea" style="text-align: center; color: white; display: flex; justify-content: center; align-items: center; background-color: #333333; height: 12vh; margin-bottom: 0;">
         <div class="search-container" style="position: relative;">
-            <input type="text" name="movie" class="movie form-control" id="autoComplete" autocomplete="off" placeholder="Enter the Movie Name" style="background-color: #ffffff;border-color:#ffffff;width: 60%;color: #181818; border-radius: 5px;" required="required" />
+            <input type="text" name="movie" class="movie form-control" id="autoComplete" autocomplete="off" placeholder="Enter the Movie Name" style="background-color: #ffffff; border-color:#ffffff; width: 60%; color: #181818; border-radius: 5px;" required="required" />
             <ul id="movie_list"></ul>
         </div>
         <div class="form-group" style="text-align: center;">
-            <button class="btn btn-primary btn-block movie-button" style="background-color: #e50914;text-align: center;border-color: #e50914;width:120px; position: relative; left: -155px; top: 30px;" disabled="true">Enter</button><br><br>
+            <button class="btn btn-primary btn-block movie-button" style="background-color: #e50914; text-align: center; border-color: #e50914; width:120px; position: relative; left: -155px; top: 30px;" disabled="true">Enter</button>
         </div>
-        <div style="color: white;position: relative;left: -125px;top: -5px;"> | </div>
+        <div style="color: white; position: relative; left: -125px; top: -5px;"> | </div>
         <div class="watchlist" style="cursor: pointer;" onclick="window.location.href='/watchlist';">
-            <img src="{{ url_for('static', filename='images/add_bookmark.svg') }}" width="30px" height="auto" alt="">
+            <img src="{{ url_for('static', filename='images/add_bookmark.svg') }}" width="30px" height="auto" alt="Watchlist">
             <p>WatchList</p>
         </div>
-        <!-- <div style="color: white;position: relative;left: -120px;top: -5px;"> | </div> -->
-        <div class="genres" style="color: white;position: relative;left: -120px;top: -5px; cursor: pointer;" onclick="window.location.href='/genres'">Genre-Wise</div>
+        <div class="genres" style="color: white; position: relative; left: -120px; top: -5px; cursor: pointer;" onclick="window.location.href='/genres'">Genre-Wise</div>
     </nav>
-    <div class="container">
-        <div class="actor-container">
-            <img src="{{ actor.profile }}" alt="{{ actor.name }}" class="actor-profile">
-            <div class="details">
-                <h1>{{ actor.name }}</h1>
-                <h3>Born: {{ actor.birthday }}</h3>
-                <h3>Birthplace: {{ actor.birth_place }}</h3>
-                <h2>Biography</h2>
-                <p>{{ actor.biography }}</p>
+
+    <!-- Loader & Search Results -->
+    <div id="loader" style="text-align: center; display: none;">
+        <p id="loader-text" style="color: white; font-size:20px; font-weight: 800;">LOADING...</p>
+    </div>
+    <div class="fail" style="display: none; text-align: center; margin-top: 30px;">
+        <h3 style="color: #333333;">Sorry! The movie you requested is not in our database.</h3>
+    </div>
+    <div class="results"></div>
+
+    <div id="actor-main-content">
+        <!-- Cinematic Hero Banner -->
+        <div id="mycontent">
+            <div id="mcontent" style="position: relative; min-height: 65vh; overflow: hidden; background-color: #000000;">
+                <!-- Ambient Blurred Background Backdrop -->
+                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; 
+                            background-image: url('{{ actor.profile }}'); 
+                            background-size: cover; 
+                            background-repeat: no-repeat; 
+                            background-position: center 25%; 
+                            filter: blur(8px) brightness(35%); 
+                            transform: scale(1.1);
+                            z-index: 0;">
+                </div>
+
+                <!-- Left Dark Gradient Overlay -->
+                <div style="position: absolute; top: 0; left: 0; width: 50%; height: 100%;
+                            background: linear-gradient(to right, rgba(0,0,0,0.85) 60%, transparent); 
+                            z-index: 1;">
+                </div>
+
+                <!-- Full Darkening Overlay -->
+                <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+                            background: rgba(0, 0, 0, 0.4); 
+                            z-index: 1;">
+                </div>
+
+                <!-- Actor Profile Poster (Large screens) -->
+                <div class="poster-lg" style="position: relative; z-index: 2;">
+                    <img class="poster" style="border-radius: 40px; margin-left: 90px; margin-top: 40px;" height="400" width="260" src="{{ actor.profile }}" alt="{{ actor.name }}">
+                </div>
+                
+                <!-- Actor Profile Poster (Mobile screens) -->
+                <div class="poster-sm text-center" style="position: relative; z-index: 2;">
+                    <img class="poster" style="border-radius: 40px; margin-top: 20px; margin-bottom: 20px;" height="320" width="220" src="{{ actor.profile }}" alt="{{ actor.name }}">
+                </div>
+
+                <!-- Actor Details Text Section -->
+                <div id="details" style="position: relative; z-index: 3; color: white; padding: 30px; max-width: 850px;">
+                    <h2 id="title" style="color: #ffffff; font-weight: bold; margin-bottom: 15px; font-size: 34px; letter-spacing: 0.5px;">{{ actor.name }}</h2>
+                    <h6 style="color: #e50914; font-weight: bold; font-size: 15px; margin-bottom: 12px;">PROFESSION: &nbsp;<span style="color: #ffffff; font-weight: normal;">{{ actor.known_for_department or 'Acting' }}</span></h6>
+                    
+                    {% if actor.birthday and actor.birthday != 'Unknown' %}
+                        <h6 style="font-size: 15px; margin-bottom: 12px; font-weight: bold;">BORN: &nbsp;<span style="color: #e0e0e0; font-weight: normal;">{{ actor.birthday }}</span></h6>
+                    {% endif %}
+                    
+                    {% if actor.birth_place and actor.birth_place != 'Unknown' %}
+                        <h6 style="font-size: 15px; margin-bottom: 12px; font-weight: bold;">PLACE OF BIRTH: &nbsp;<span style="color: #e0e0e0; font-weight: normal;">{{ actor.birth_place }}</span></h6>
+                    {% endif %}
+                    
+                    <h6 style="max-width: 95%; font-size: 15px; font-weight: bold; margin-top: 15px;">BIOGRAPHY: <br/><br/>
+                        <span class="actor-bio-scroll">
+                            {{ actor.biography or 'Biography not available for this actor.' }}
+                        </span>
+                    </h6>
+                </div>
             </div>
         </div>
 
-        <div class="movies-list">
-            <h3>Known For</h3>
-            <div class="movie-container" id="movies-list">
-                {% for movie in movies %}
-                    <div class="movie-item" id="movie-{{ loop.index }}" onclick="showMovieDetails('{{ movie }}')">
-                        <!-- Movie content will be added dynamically -->
-                    </div>
-                {% endfor %}
-            </div>
+        <!-- Known For Movies Section -->
+        {% if actor_movies and actor_movies|length > 0 %}
+        <div class="movie" style="color: #E8E8E8; margin-top: 45px;">
+            <center>
+                <h3 style="color: #333333; font-weight: bold; letter-spacing: 0.5px;">KNOWN FOR MOVIES</h3>
+                <h5 style="color: #777777; font-size: 15px;">(Click any of the movies to view full details and recommendations)</h5>
+            </center>
         </div>
+
+        <div class="movie-content">
+            {% for movie in actor_movies %}
+                <div class="card" style="width: 15rem; border-radius: 18px; box-shadow: 0 10px 10px rgba(68, 66, 66, 0.3); cursor: pointer;" title="{{ movie.title }}" onclick="window.location.href='/movie/{{ movie.title|urlencode }}'">
+                    <div class="imghvr">
+                        <img class="card-img-top" height="360" width="240" alt="{{ movie.title }} - poster" src="{{ movie.poster }}" onerror="this.src='https://via.placeholder.com/240x360?text=No+Poster'">
+                        <figcaption class="fig">
+                            <button class="card-btn btn btn-danger">View Movie</button>
+                        </figcaption>
+                    </div>
+                    <div class="card-body" style="text-align: center; padding: 15px 10px;">
+                        <h5 class="card-title" style="font-size: 16px; font-weight: bold; margin-bottom: 6px; color: #222222; line-height: 1.3;">
+                            {{ movie.title|title }}
+                            {% if movie.release_year %}
+                                <span style="color: #888888; font-size: 13px; font-weight: normal;">({{ movie.release_year }})</span>
+                            {% endif %}
+                        </h5>
+                        {% if movie.character and movie.character != 'Unknown Role' %}
+                            <p style="color: #756969; font-size: 14px; margin: 0; font-style: italic;">as {{ movie.character }}</p>
+                        {% endif %}
+                        {% if movie.rating and movie.rating != 'N/A' and movie.rating != '0' and movie.rating != '0.0' %}
+                            <div style="color: #e5a00d; font-weight: bold; font-size: 14px; margin-top: 6px;">★ {{ movie.rating }}/10</div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div style="text-align: center; margin: 50px 0;">
+            <h4 style="color: #666666;">No known movies found for this actor in the database.</h4>
+        </div>
+        {% endif %}
     </div>
 
-    <script>
-        const movieTitles = {{ movies | tojson | safe }};
-        const actorName = "{{ actor.name }}";
-        const apiKey = 'fce0af3409e6113c9b3c75aaf49341bb';
-
-        async function fetchActorId() {
-            try {
-                const searchUrl = `https://api.tmdb.org/3/search/person?api_key=${apiKey}&query=${encodeURIComponent(actorName)}`;
-                const response = await fetch(searchUrl);
-                const data = await response.json();
-                return data.results.length > 0 ? data.results[0].id : null;
-            } catch (error) {
-                console.error("Error fetching actor ID:", error);
-                return null;
-            }
-        }
-
-        async function fetchActorMovies(actorId) {
-            if (!actorId) return [];
-            try {
-                const creditsUrl = `https://api.tmdb.org/3/person/${actorId}/movie_credits?api_key=${apiKey}`;
-                const response = await fetch(creditsUrl);
-                const data = await response.json();
-                return data.cast || [];
-            } catch (error) {
-                console.error("Error fetching actor's movie credits:", error);
-                return [];
-            }
-        }
-
-        async function fetchMovieData(movieTitle, index, movieCredits) {
-            try {
-                const movieData = movieCredits.find(movie => movie.title.toLowerCase() === movieTitle.toLowerCase());
-                const characterName = movieData ? movieData.character : "Unknown Role";
-                const searchUrl = `https://api.tmdb.org/3/search/movie?api_key=${apiKey}&query=${encodeURIComponent(movieTitle)}`;
-                const response = await fetch(searchUrl);
-                const data = await response.json();
-                if (data.results.length > 0) {
-                    const movie = data.results[0];  
-                    const posterUrl = movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : 'https://via.placeholder.com/220x330?text=No+Image';
-                    const releaseYear = movie.release_date ? movie.release_date.split('-')[0] : "Unknown Year";
-                    const rating = movie.vote_average ? movie.vote_average.toFixed(1) : "N/A";
-                    document.getElementById(`movie-${index}`).innerHTML = `
-                        <img src="${posterUrl}" alt="${movieTitle}" class="movie-poster">
-                        <div class="movie-title">${movieTitle} (${releaseYear})</div>
-                        <div class="character-name">as ${characterName}</div>
-                        <div class="movie-rating">⭐ ${rating}</div>
-                    `;
-                }
-            } catch (error) {
-                console.error("Error fetching movie details:", error);
-            }
-        }
-
-        async function loadMovies() {
-            const actorId = await fetchActorId();
-            if (!actorId) return;
-            const movieCredits = await fetchActorMovies(actorId);
-            movieTitles.forEach((movieTitle, index) => {
-                fetchMovieData(movieTitle, index + 1, movieCredits);
-            });
-        }
-
-        function showMovieDetails(movieTitle) {
-            window.location.href = `/movie/${encodeURIComponent(movieTitle)}`;
-        }
-
-        loadMovies();
-    </script>
-    	<script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/js/autoComplete.min.js"></script>
-        <script type="text/javascript" src="{{url_for('static', filename='autocomplete.js')}}"></script>
-      
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script type="text/javascript" src="{{url_for('static', filename='recommend.js')}}"></script>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/js/autoComplete.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='autocomplete.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='recommend.js') }}"></script>
 </body>
 </html>

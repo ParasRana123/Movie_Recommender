@@ -505,74 +505,99 @@ def recommend():
         return "<div class='fail'><center><h3>An error occurred while processing recommendations.</h3></center></div>"
 
 def fetch_actor_from_tmdb(actor_id):
-    """Fetch actor details from TMDB using a numeric actor_id."""
+    """Fetch actor details and movie credits from TMDB using a numeric actor_id."""
     try:
-        url = f"{TMDB_BASE_URL}/person/{actor_id}?api_key={TMDB_API_KEY}&language=en-US"
+        url = f"{TMDB_BASE_URL}/person/{actor_id}?api_key={TMDB_API_KEY}&language=en-US&append_to_response=movie_credits"
         response = http_session.get(url, timeout=5)
 
         if response.status_code != 200:
-            logging.error(f"🚨 TMDB API request failed for Actor ID {actor_id}. Status: {response.status_code}")
-            return None
+            logging.error(f"TMDB API request failed for Actor ID {actor_id}. Status: {response.status_code}")
+            return None, []
 
         data = response.json()
 
-        return {
+        actor_info = {
+            "id": actor_id,
             "name": data.get("name", "Unknown"),
             "profile": (
-                f"https://image.tmdb.org/t/p/w500{data['profile_path']}"
+                f"https://image.tmdb.org/t/p/original{data['profile_path']}"
                 if data.get("profile_path")
-                else "https://via.placeholder.com/150"
+                else "https://via.placeholder.com/300x450?text=No+Photo"
             ),
             "birthday": data.get("birthday", "Unknown"),
             "birth_place": data.get("place_of_birth", "Unknown"),
-            "biography": data.get("biography", "No biography available.")
+            "known_for_department": data.get("known_for_department", "Acting"),
+            "biography": data.get("biography") or "Biography not available."
         }
 
+        # Format birthday to friendly format
+        if actor_info["birthday"] and actor_info["birthday"] != "Unknown":
+            try:
+                b_parts = actor_info["birthday"].split("-")
+                months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+                if len(b_parts) == 3:
+                    month_name = months[int(b_parts[1]) - 1]
+                    actor_info["birthday"] = f"{month_name} {b_parts[2]}, {b_parts[0]}"
+            except Exception:
+                pass
+
+        # Extract movies from cast credits sorted by vote_count & popularity
+        cast_credits = data.get("movie_credits", {}).get("cast", [])
+        sorted_credits = sorted(cast_credits, key=lambda x: (x.get("vote_count", 0), x.get("popularity", 0)), reverse=True)
+        
+        seen_titles = set()
+        actor_movies = []
+        for m in sorted_credits:
+            title = m.get("title") or m.get("original_title")
+            if not title or title.lower() in seen_titles:
+                continue
+            seen_titles.add(title.lower())
+            
+            poster_path = m.get("poster_path")
+            poster_url = f"https://image.tmdb.org/t/p/w500{poster_path}" if poster_path else "https://via.placeholder.com/240x360?text=No+Poster"
+            
+            rel_date = m.get("release_date", "")
+            release_year = rel_date.split("-")[0] if rel_date else ""
+            
+            rating = m.get("vote_average", 0)
+            rating_formatted = f"{round(rating, 1)}" if rating else "N/A"
+            character = m.get("character", "").strip() or "Unknown Role"
+            
+            actor_movies.append({
+                "id": m.get("id"),
+                "title": title,
+                "character": character,
+                "poster": poster_url,
+                "release_year": release_year,
+                "rating": rating_formatted
+            })
+
+        return actor_info, actor_movies
+
     except Exception as e:
-        logging.error(f"❌ Error fetching from TMDB: {e}")
-        return None
+        logging.error(f"Error fetching from TMDB: {e}")
+        return None, []
 
 @app.route("/actor/<actor_id>")
 def actor_details(actor_id):
     try:
-        movies = set()
-        actor_name = None
         actor_id = escape(actor_id)
 
         try:
             if not actor_id or actor_id.lower() == 'none':
                 raise ValueError("Empty or None actor_id")
-            actor_id = int(float(actor_id))
+            numeric_actor_id = int(float(actor_id))
         except ValueError:
             return render_template("error.html", message="Invalid actor ID in URL.")
 
-        try:
-            with open('actors3.csv', mode='r', encoding='utf-8') as file:
-                reader = csv.DictReader(file)
-                for row in reader:
-                    try:
-                        csv_actor_id = int(float(row.get('actor_id', -1)))
-                        if csv_actor_id == actor_id:
-                            actor_name = row.get('actor_name', 'Unknown')
-                            movie = row.get('movie_title', 'Untitled')
-                            if movie:
-                                movies.add(movie)
-                    except ValueError:
-                        pass
-        except FileNotFoundError:
-            return render_template("error.html", message="Actor database not found.")
-
-        if not actor_name:
-            return render_template("error.html", message=f"No actor found for ID {actor_id}.")
-
-        actor_data = fetch_actor_from_tmdb(actor_id)
+        actor_data, actor_movies = fetch_actor_from_tmdb(numeric_actor_id)
         if not actor_data:
-            return render_template("error.html", message=f"Could not fetch details for {actor_name} from TMDB.")
+            return render_template("error.html", message=f"Could not fetch details for Actor ID {actor_id} from TMDB.")
 
-        return render_template("actor.html", actor=actor_data, movies=sorted(movies))
+        return render_template("actor.html", actor=actor_data, actor_movies=actor_movies[:15])
 
     except Exception as e:
-        logging.exception("❌ Error loading actor details.")
+        logging.exception("Error loading actor details.")
         return render_template("error.html", message="An error occurred while fetching actor details.")
 
 def get_movie_id(movie_title):
