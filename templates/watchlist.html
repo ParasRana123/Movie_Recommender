@@ -3,328 +3,445 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Watchlist</title>
+    <title>Your Watchlist - Movie Recommender</title>
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/bookmark_tick.svg') }}">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+  
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  
+    <!-- Auto Complete -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/css/autoComplete.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    
     <style>
-        .your_watchlist {
-    width: 100%;
-    max-width: 1455px;
-    padding: 0 20px;
-    box-sizing: border-box;
-    margin: 0 auto;
-}
-
-
         body {
-            background-color: #1c1c11;
+            background-color: #121212;
             color: #ffffff;
-            /* font-family: Arial, sans-serif; */
+            font-family: 'Noto Sans JP', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .your_watchlist {
+            width: 100%;
+            max-width: 1200px;
+            padding: 30px 20px 10px 20px;
+            box-sizing: border-box;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .your_watchlist h1 {
+            color: #e50914;
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .your_watchlist p {
+            color: #b3b3b3;
+            font-size: 16px;
+            max-width: 700px;
+            margin: 0 auto 25px auto;
+        }
+
+        .search-container {
+            position: relative;
+            width: 60%;
+        }
+
+        #movie_list {
+            max-height: 200px;
+            overflow-y: auto;
+            background-color: white;
+            padding: 0;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            margin-top: 5px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #movie_list li {
+            padding: 10px;
+            cursor: pointer;
+            list-style-type: none;
+            margin: 0;
+            color: #222;
+        }
+
+        #movie_list li:hover {
+            background-color: #f0f0f0;
+        }
+
+        .watchlist {
+            position: relative;
+            top: -5px;
+            left: -120px;
+            gap: 8px;
+            display: flex;
+            align-items: center;
+            background-color: #e50914;
+            border-radius: 8px;
+            transition: 0.3s;
+            padding: 10px 16px;
+            color: #fff;
+            font-size: 18px;
+            width: fit-content;
+        }
+
+        .watchlist:hover {
+            box-shadow: 0 8px 16px 0 rgba(0 , 0 , 0 , 0.2);
+        }
+
+        .watchlist p {
+            margin: 0;
+            margin-right: 10px;
+        }
+
+        .watchlist img {
+            display: block;
+            filter: invert(1);
+            width: 25px;
+            height: auto;
+        }
+
+        #watchlist-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
         }
 
         .movie-card {
             display: flex;
-            /* width: 15rem; */
-            margin: 30px;
-            padding: 12px;
-            background-color: #333;
-            border: 1px solid white;
-            border-radius: 10px;
-            height: 230px;
-            /* display: inline-block; */
+            gap: 25px;
+            background-color: #1f1f1f;
+            border: 1px solid #333333;
+            border-radius: 14px;
+            padding: 18px;
             position: relative;
-            cursor: pointer;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .movie-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 24px rgba(229, 9, 20, 0.2);
+            border-color: #444444;
+        }
+
+        .movie-poster-wrap {
+            flex-shrink: 0;
         }
 
         .movie-poster {
-            width: auto;
-            height: 160px;
+            width: 140px;
+            height: 210px;
+            object-fit: cover;
             border-radius: 10px;
-            box-shadow: 0px 1px 15px 4px rgba(250, 250, 250, 1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .movie-info-wrap {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
         }
 
         .movie-title {
-            text-align: center;
-            margin-top: 25px;
-            padding-left: 6%;
-            margin-bottom: 5px;
-            white-space: nowrap; /* Prevents text from wrapping to the next line */
-            overflow: hidden;    /* Hides the overflow if the text is too long */
-            /* text-overflow: ellipsis; Adds '...' if the text is too long */
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 0 8px 0;
+            cursor: pointer;
+            transition: color 0.2s;
         }
 
-        .movie-status {
-            padding-left: 21px;
+        .movie-title:hover {
+            color: #e50914;
         }
 
-        .movie-date {
-            padding-left: 40px;
-        }
-
-        .movie-runtime {
-            padding-left: 21px;
-        }
-
-        .movie-rating {
-            padding-left: 40px;
-        }
-
-        .flex {
+        .movie-meta-row {
             display: flex;
-            margin-bottom: -10px;
+            flex-wrap: wrap;
+            gap: 15px;
+            color: #aaaaaa;
+            font-size: 14px;
+            margin-bottom: 12px;
         }
 
-        .movie-overview {
-            position: absolute;
-            top: 166px;
-            left: 9px;
-            padding-left: 3px;
-            padding-right: 3px;
+        .movie-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
 
-        /* .movie-card:hover {
-            transform: scale(1.2);
-        } */
+        .movie-rating-badge {
+            color: #f5b301;
+            font-weight: bold;
+        }
+
+        .movie-overview-text {
+            color: #cccccc;
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 0;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
 
         .delete-btn {
             position: absolute;
-            top: 10px;
-            right: 10px;
-            background-color: #e74c3c;
-            color: #fff;
+            top: 15px;
+            right: 15px;
+            background-color: rgba(229, 9, 20, 0.85);
+            color: #ffffff;
             border: none;
             border-radius: 50%;
-            width: 30px;
-            height: 30px;
+            width: 32px;
+            height: 32px;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: background-color 0.2s;
         }
-        .message {
-            display: none;
-            background-color: #28a745;
-            color: #ffffff;
-            padding: 10px;
-            border-radius: 5px;
-            margin: 10px 0;
+
+        .delete-btn:hover {
+            background-color: #ff0f1f;
+        }
+
+        .empty-watchlist {
             text-align: center;
+            padding: 60px 20px;
+            color: #888888;
+        }
+
+        .empty-watchlist h3 {
+            color: #cccccc;
+            margin-bottom: 15px;
+        }
+
+        .explore-btn {
+            background-color: #e50914;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 25px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .explore-btn:hover {
+            background-color: #ff1e2b;
+            color: white;
+            text-decoration: none;
         }
 
         .undo-message {
             display: none;
-            background-color: #333;
+            background-color: #222222;
             color: #ffffff;
-            padding: 10px;
-            border-radius: 5px;
+            padding: 12px 24px;
+            border-radius: 30px;
             margin: 10px 0;
             text-align: center;
             position: fixed;
-            bottom: 20px;
-            left: 10%;
+            bottom: 25px;
+            left: 50%;
             transform: translateX(-50%);
             z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+            border: 1px solid #444;
         }
 
         .undo-btn {
-            color: rgb(4, 4, 255);
-            border: none;
-            padding: 5px 10px;
+            color: #e50914;
+            font-weight: bold;
             cursor: pointer;
-            margin-left: 10px;
+            margin-left: 12px;
+            display: inline-block;
         }
 
         .undo-btn:hover {
-            background-color: #585858;
-            border-radius: 5px;
+            text-decoration: underline;
         }
 
         @media (max-width: 768px) {
-    .movie-card {
-        flex-direction: column;
-        height: auto;
-        align-items: center;
-        text-align: center;
-    }
-
-    .movie-poster {
-        width: 100%;
-        height: auto;
-        margin-bottom: 10px;
-        border-radius: 10px;
-    }
-
-    .movie-title {
-        font-size: 1rem;
-        padding-left: 0;
-    }
-
-    .flex {
-        flex-direction: column;
-        gap: 5px;
-        margin-bottom: 5px;
-        padding-left: 0;
-    }
-
-    .movie-status,
-    .movie-date {
-        padding-left: 0;
-    }
-
-    .movie-overview {
-        position: static;
-        padding: 10px;
-    }
-
-    /* New wrapper for runtime and rating on mobile */
-    .movie-info-mobile {
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        margin-top: 5px;
-    }
-
-    .movie-runtime,
-    .movie-rating {
-        padding-left: 0;
-    }
-
-    .your_watchlist {
-    text-align: center;
-    padding: 0 10px;
-}
-
-}
-
-
-
+            .movie-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .watchlist, .genres {
+                left: 0 !important;
+            }
+        }
     </style>
 </head>
-<body>
+<body id="content">
+    <!-- Top Navigation Bar -->
+    <nav class="form-group shadow-textarea" style="text-align: center; color: white; display: flex; justify-content: center; align-items: center; background-color: #333333; height: 12vh; margin-bottom: 0;">
+        <div class="search-container" style="position: relative;">
+            <input type="text" name="movie" class="movie form-control" id="autoComplete" autocomplete="off" placeholder="Enter the Movie Name" style="background-color: #ffffff; border-color:#ffffff; width: 60%; color: #181818; border-radius: 5px;" required="required" />
+            <ul id="movie_list"></ul>
+        </div>
+        <div class="form-group" style="text-align: center;">
+            <button class="btn btn-primary btn-block movie-button" style="background-color: #e50914; text-align: center; border-color: #e50914; width:120px; position: relative; left: -155px; top: 30px;" disabled="true">Enter</button>
+        </div>
+        <div style="color: white; position: relative; left: -125px; top: -5px;"> | </div>
+        <div class="watchlist" style="cursor: pointer;" onclick="window.location.href='/watchlist';">
+            <img src="{{ url_for('static', filename='images/add_bookmark.svg') }}" width="25px" height="auto" alt="Watchlist">
+            <p>WatchList</p>
+        </div>
+        <div class="genres" style="color: white; position: relative; left: -120px; top: -5px; cursor: pointer;" onclick="window.location.href='/genres'">Genre-Wise</div>
+    </nav>
 
-    <!-- <div class="ml-container" style="display: block;">
-        <svg data-toggle="tooltip"
-        data-placement="left" width="80" height="80" viewBox="0 0 250 250"
-      style="fill:#e50914; color:#fff; position: fixed;z-index:100; top: 0; border: 0; right: 0;" aria-hidden="true">
-      <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
-      <path
-        d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
-        fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
-      <path
-        d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
-        fill="currentColor" class="octo-body"></path>
-        </svg>
-      </a>
-<center><h1> Movie Recommendation System</h1></center>
-<div class="form-group shadow-textarea" style="margin-top: 30px;text-align: center;color: white;">
-  <input type="text" name="movie" class="movie form-control" id="autoComplete" autocomplete="off" placeholder="Enter the Movie Name" style="background-color: #ffffff;border-color:#ffffff;width: 60%;color: #181818" required="required" />
-  <br>
-</div> -->
-
-<!-- <div class="form-group" style="text-align: center;">
-<button class="btn btn-primary btn-block movie-button" style="background-color: #e50914;text-align: center;border-color: #e50914;width:120px;" disabled="true" >Enter</button><br><br>
-</div>
-</div> -->
-    <div class="your_watchlist">
-        <h1>Your Watchlist</h1>
-        <p>Your Watchlist is the place to track the titles you want to watch. Users can add items to their watchlist so they can easily access them without searching again.</p>
+    <!-- Loader & Search Results -->
+    <div id="loader" style="text-align: center; display: none;">
+        <p id="loader-text" style="color: white; font-size:20px; font-weight: 800;">LOADING...</p>
     </div>
-    <div id="watchlist-container" class="d-flex flex-wrap justify-content-center">
-        <!-- Watchlist movie cards will be dynamically inserted here -->
+    <div class="fail" style="display: none; text-align: center; margin-top: 30px;">
+        <h3 style="color: #ffffff;">Sorry! The movie you requested is not in our database.</h3>
+    </div>
+    <div class="results"></div>
+
+    <div id="page-main-content">
+        <div class="your_watchlist">
+            <h1>Your Watchlist</h1>
+            <p>Track all the movies you want to watch. Easily jump right back into any title or view recommendations.</p>
+        </div>
+
+        <div id="watchlist-container">
+            <!-- Watchlist movie cards inserted dynamically -->
+        </div>
     </div>
 
-    <!-- Hidden message elements -->
-    <div class="message" id="message">
-        <p>Saved to Watchlist</p>
-    </div>
+    <!-- Undo toast popup -->
     <div class="undo-message" id="undo-message">
-        <p>Movie removed from Watchlist.</p>
-        <p class="undo-btn" id="undo-btn">Undo</p>
+        <span>Movie removed from Watchlist.</span>
+        <span class="undo-btn" id="undo-btn">Undo</span>
     </div>
 
     <script>
         let lastRemovedMovie = null;
         let lastRemovedIndex = null;
 
-        document.addEventListener('DOMContentLoaded', function() {
+        function renderWatchlist() {
             const watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
             const container = document.getElementById('watchlist-container');
 
+            if (!container) return;
+
             if (watchlist.length === 0) {
-                container.innerHTML = '<p>Your watchlist is empty.</p>';
+                container.innerHTML = `
+                    <div class="empty-watchlist">
+                        <h3>Your Watchlist is empty</h3>
+                        <p>Search for movies or browse genres and click "Add to Watchlist" to save them here.</p>
+                        <a href="/home" class="explore-btn">Discover Movies</a>
+                    </div>
+                `;
             } else {
+                container.innerHTML = '';
                 watchlist.forEach((movie, index) => {
                     const movieCard = document.createElement('div');
                     movieCard.classList.add('movie-card');
 
-                    movieCard.innerHTML = `
-                        <div><img src="${movie.poster}" alt="${movie.title} Poster" class="movie-poster"></div>
-                        <div>
-                        <div onclick="window.location.href='/movie/${encodeURIComponent(movie.title)}'"><h1 class="movie-title">${movie.title}</h1></div>
-                        <div class="flex">
-                        <p class="movie-date">${movie.date}</p>
-                        <p class="movie-status">${movie.status}</p>
-                        <p class="movie-runtime">${movie.runtime}</p>
-                        </div>
-                        <div class="movie-info-mobile">
-    <p class="movie-runtime">${movie.runtime}</p>
-    <p class="movie-rating">★  ${movie.rating}   (${movie.count})</p>
-</div>
+                    const ratingDisplay = (movie.rating && movie.rating !== 'N/A' && movie.rating !== '0') 
+                        ? `★ ${movie.rating} ${movie.count ? `(${movie.count} votes)` : ''}` 
+                        : 'Rating N/A';
 
+                    movieCard.innerHTML = `
+                        <div class="movie-poster-wrap">
+                            <img src="${movie.poster || 'https://via.placeholder.com/140x210?text=No+Poster'}" alt="${movie.title} Poster" class="movie-poster" onerror="this.src='https://via.placeholder.com/140x210?text=No+Poster'">
                         </div>
-                        <p class="movie-overview">${movie.overview}</p>
-                        <button class="delete-btn" onclick="removeFromWatchlist(${index})">X</button>
+                        <div class="movie-info-wrap">
+                            <div onclick="window.location.href='/movie/${encodeURIComponent(movie.title)}'">
+                                <h2 class="movie-title">${movie.title}</h2>
+                            </div>
+                            <div class="movie-meta-row">
+                                ${movie.date ? `<div class="movie-meta-item"><span>📅 ${movie.date}</span></div>` : ''}
+                                ${movie.runtime && movie.runtime !== 'N/A' ? `<div class="movie-meta-item"><span>⏱ ${movie.runtime}</span></div>` : ''}
+                                ${movie.status ? `<div class="movie-meta-item"><span>🏷 ${movie.status}</span></div>` : ''}
+                                <div class="movie-meta-item movie-rating-badge"><span>${ratingDisplay}</span></div>
+                            </div>
+                            <p class="movie-overview-text">${movie.overview || 'No overview available.'}</p>
+                        </div>
+                        <button class="delete-btn" title="Remove from Watchlist" onclick="removeFromWatchlist(${index})">✕</button>
                     `;
 
                     container.appendChild(movieCard);
                 });
             }
-        });
-
-        function showMessage(message) {
-            const messageElement = document.getElementById('message');
-            messageElement.textContent = message;
-            messageElement.style.display = 'block';
-            setTimeout(() => {
-                messageElement.style.display = 'none';
-            }, 2000);
         }
+
+        document.addEventListener('DOMContentLoaded', renderWatchlist);
 
         function showUndoMessage() {
             const undoMessageElement = document.getElementById('undo-message');
-            undoMessageElement.style.display = 'block';
-            setTimeout(() => {
-                undoMessageElement.style.display = 'none';
-                lastRemovedMovie = null;
-                lastRemovedIndex = null;
-            }, 2000);
+            if (undoMessageElement) {
+                undoMessageElement.style.display = 'block';
+                setTimeout(() => {
+                    undoMessageElement.style.display = 'none';
+                    lastRemovedMovie = null;
+                    lastRemovedIndex = null;
+                }, 3500);
+            }
         }
 
-        document.getElementById('undo-btn').addEventListener('click', function() {
-            if (lastRemovedMovie && lastRemovedIndex !== null) {
-                let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
-                watchlist.splice(lastRemovedIndex, 0, lastRemovedMovie);
-                localStorage.setItem('watchlist', JSON.stringify(watchlist));
+        const undoBtn = document.getElementById('undo-btn');
+        if (undoBtn) {
+            undoBtn.addEventListener('click', function() {
+                if (lastRemovedMovie && lastRemovedIndex !== null) {
+                    let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
+                    watchlist.splice(lastRemovedIndex, 0, lastRemovedMovie);
+                    localStorage.setItem('watchlist', JSON.stringify(watchlist));
 
-                document.getElementById('watchlist-container').innerHTML = '';
-                document.dispatchEvent(new Event('DOMContentLoaded'));
-
-                showMessage('Movie restored to Watchlist');
-                lastRemovedMovie = null;
-                lastRemovedIndex = null;
-            }
-        });
+                    renderWatchlist();
+                    lastRemovedMovie = null;
+                    lastRemovedIndex = null;
+                    const undoMessageElement = document.getElementById('undo-message');
+                    if (undoMessageElement) undoMessageElement.style.display = 'none';
+                }
+            });
+        }
 
         function removeFromWatchlist(index) {
             let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
-            lastRemovedMovie = watchlist.splice(index, 1)[0];  // Remove and store the removed movie
-            lastRemovedIndex = index;  // Store the index of the removed movie
+            lastRemovedMovie = watchlist.splice(index, 1)[0];
+            lastRemovedIndex = index;
             localStorage.setItem('watchlist', JSON.stringify(watchlist));
 
-            // Refresh the watchlist display
-            document.getElementById('watchlist-container').innerHTML = '';
-            document.dispatchEvent(new Event('DOMContentLoaded'));
-
+            renderWatchlist();
             showUndoMessage();
         }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/js/autoComplete.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='autocomplete.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='recommend.js') }}"></script>
 </body>
 </html>

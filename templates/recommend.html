@@ -154,6 +154,14 @@
             <h6 id="date" style="z-index: 3;">RELEASE DATE: &nbsp;{{release_date}}</h6>
             <h6 id="runtime" style="z-index: 3;">RUNTIME: &nbsp;{{runtime}}</h6>
             <h6 id="status" style="z-index: 3;">STATUS: &nbsp;{{status}}</h6>
+            
+            <!-- Add to Watchlist Button -->
+            <div style="margin-top: 15px; z-index: 4; position: relative;">
+                <button id="watchlist-btn" class="btn btn-danger" onclick="toggleWatchlist()" style="background-color: #e50914; border-color: #e50914; border-radius: 25px; padding: 8px 22px; font-weight: bold; font-size: 15px; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4); cursor: pointer; transition: all 0.3s ease;">
+                    <img id="watchlist-btn-icon" src="{{ url_for('static', filename='images/add_bookmark.svg') }}" width="20" height="20" style="filter: invert(1);" alt="Watchlist">
+                    <span id="watchlist-btn-text">Add to Watchlist</span>
+                </button>
+            </div>
         </div>
     </div>
 </div>
@@ -362,43 +370,83 @@
   </div>
 
   <script>
-
-function addToWatchlist() {
+function toggleWatchlist() {
     const movie = {
-        title: "{{ title }}",  // Replace with actual data
-        poster: "{{ poster }}", // Replace with actual data
-        status: "{{ status }}", // Replace with actual data
-        date: "{{ release_date }}", // Replace with actual data
-        runtime: "{{ runtime }}", // Replace with actual data
-        rating: "{{ vote_average }}", // Replace with actual data
-        count: "{{ vote_count }}", // Replace with actual data
-        overview: "{{ overview }}" // Replace with actual data
+        title: {{ title | tojson | safe }},
+        poster: {{ poster | tojson | safe }},
+        status: {{ status | tojson | safe }},
+        date: {{ release_date | tojson | safe }},
+        runtime: {{ runtime | tojson | safe }},
+        rating: {{ vote_average | tojson | safe }},
+        count: {{ vote_count | tojson | safe }},
+        overview: {{ overview | tojson | safe }}
     };
 
     let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
+    const index = watchlist.findIndex(item => item.title && item.title.toLowerCase() === movie.title.toLowerCase());
 
-    // Check if the movie is already in the watchlist
-    if (!watchlist.some(item => item.title === movie.title)) {
+    if (index === -1) {
         watchlist.push(movie);
         localStorage.setItem('watchlist', JSON.stringify(watchlist));
-        showMessage('Saved to Watchlist');
+        updateWatchlistButton(true);
+        showWatchlistToast("Saved to Watchlist!");
     } else {
-        showMessage('Already in Watchlist');
+        watchlist.splice(index, 1);
+        localStorage.setItem('watchlist', JSON.stringify(watchlist));
+        updateWatchlistButton(false);
+        showWatchlistToast("Removed from Watchlist!");
     }
 }
 
+function updateWatchlistButton(isInWatchlist) {
+    const btn = document.getElementById('watchlist-btn');
+    const text = document.getElementById('watchlist-btn-text');
+    const icon = document.getElementById('watchlist-btn-icon');
+    if (!btn || !text) return;
 
-function showMessage(message) {
-    const messageElement = document.getElementById('message');
-    messageElement.textContent = message;
-    messageElement.style.display = 'block';
+    if (isInWatchlist) {
+        btn.style.backgroundColor = '#28a745';
+        btn.style.borderColor = '#28a745';
+        btn.style.boxShadow = '0 4px 15px rgba(40, 167, 69, 0.4)';
+        text.textContent = 'In Watchlist ✓';
+        if (icon) icon.src = "{{ url_for('static', filename='images/bookmark_tick.svg') }}";
+    } else {
+        btn.style.backgroundColor = '#e50914';
+        btn.style.borderColor = '#e50914';
+        btn.style.boxShadow = '0 4px 15px rgba(229, 9, 20, 0.4)';
+        text.textContent = 'Add to Watchlist';
+        if (icon) icon.src = "{{ url_for('static', filename='images/add_bookmark.svg') }}";
+    }
+}
+
+function checkWatchlistState() {
+    const currentTitle = ({{ title | tojson | safe }} || "").toLowerCase();
+    const watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
+    const exists = watchlist.some(item => item.title && item.title.toLowerCase() === currentTitle);
+    updateWatchlistButton(exists);
+}
+
+function showWatchlistToast(msg) {
+    let toast = document.getElementById('watchlist-toast');
+    if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'watchlist-toast';
+        toast.style.cssText = 'position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); background-color: #28a745; color: #ffffff; padding: 12px 28px; border-radius: 30px; font-weight: bold; font-size: 16px; z-index: 9999; box-shadow: 0 4px 20px rgba(0,0,0,0.6); transition: opacity 0.3s ease;';
+        document.body.appendChild(toast);
+    }
+    toast.textContent = msg;
+    toast.style.display = 'block';
+    toast.style.opacity = '1';
     setTimeout(() => {
-        messageElement.style.display = 'block';
-    }, 2000);
+        toast.style.opacity = '0';
+        setTimeout(() => { toast.style.display = 'none'; }, 300);
+    }, 2200);
 }
 
 function redirectToActor(actorId) {
     window.location.href = "/actor/" + actorId;
 }
 
+// Check initial button state on render
+checkWatchlistState();
   </script>
