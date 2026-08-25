@@ -255,7 +255,7 @@
         };
 
         function get_movie_posters(arr, my_api_key) {
-            var tmdbApiUrl = 'https://api.themoviedb.org/3/search/movie?api_key=' + my_api_key + '&query=';
+            var tmdbApiUrl = 'https://api.tmdb.org/3/search/movie?api_key=' + my_api_key + '&query=';
 
             arr.forEach(function(movieTitle) {
                 const searchUrl = tmdbApiUrl + encodeURIComponent(movieTitle);

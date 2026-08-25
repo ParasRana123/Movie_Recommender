@@ -86,7 +86,7 @@ def get_recommendations(movie_title):
             print(f"❌ Failed to get ID for {rec_title}")
             continue
 
-        movie_url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key=fce0af3409e6113c9b3c75aaf49341bb"
+        movie_url = f"https://api.tmdb.org/3/movie/{movie_id}?api_key=fce0af3409e6113c9b3c75aaf49341bb"
         
         try:
             movie_response = requests.get(movie_url)
@@ -108,7 +108,7 @@ def get_recommendations(movie_title):
 
 def get_movie_id(movie_title):
     """Fetch movie ID from TMDB using the title."""
-    search_url = f"https://api.themoviedb.org/3/search/movie?api_key=fce0af3409e6113c9b3c75aaf49341bb&query={movie_title}"
+    search_url = f"https://api.tmdb.org/3/search/movie?api_key=fce0af3409e6113c9b3c75aaf49341bb&query={movie_title}"
     response = requests.get(search_url)
 
     if response.status_code == 200:

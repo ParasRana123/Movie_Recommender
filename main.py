@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from flask import Flask, render_template, request , redirect , session , jsonify
+from flask import Flask, render_template, request, redirect, session, jsonify, send_from_directory
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import json
@@ -11,13 +11,20 @@ import requests
 import logging
 import ast
 import csv
+import os
 from bs4 import BeautifulSoup
 from markupsafe import escape
+
+# Setup logging
+logging.basicConfig(level=logging.INFO)
 
 # Load the NLP model and TF-IDF vectorizer from disk
 filename = 'nlp_model2.pkl'
 clf = pickle.load(open(filename, 'rb'))
 vectorizer = pickle.load(open('transform1.pkl', 'rb'))
+
+TMDB_API_KEY = "fce0af3409e6113c9b3c75aaf49341bb"
+TMDB_BASE_URL = "https://api.tmdb.org/3"
 
 data = None
 similarity = None
@@ -33,6 +40,7 @@ def create_similarity():
 
 def rcmd(m):
     m = m.lower()
+    global data, similarity
     try:
         data.head()
         similarity.shape
@@ -50,7 +58,6 @@ def rcmd(m):
         # Check if we have fewer than 10 recommendations, and if so, pad the list
         if len(lst) < 10:
             remaining = 10 - len(lst)
-            # Find other movies to recommend (skipping the movie itself)
             additional_movies = [x for x in list(enumerate(similarity[i])) if x[0] != i][10:]
             lst.extend(additional_movies[:remaining])
         
@@ -80,20 +87,24 @@ def get_suggestions():
 
 app = Flask(__name__)
 
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'), 'images/bookmark_tick.svg', mimetype='image/svg+xml')
+
 @app.route("/")
 @app.route("/home")
 def home():
     suggestions = get_suggestions()
-    return render_template('home.html',suggestions=suggestions)
+    return render_template('home.html', suggestions=suggestions)
 
-@app.route("/similarity",methods=["POST"])
-def similarity():
-    movie = request.form['name']
+@app.route("/similarity", methods=["POST"])
+def similarity_route():
+    movie = request.form.get('name', '').strip()
     rc = rcmd(movie)
-    if type(rc)==type('string'):
+    if isinstance(rc, str):
         return rc
     else:
-        m_str="---".join(rc)
+        m_str = "---".join(rc)
         return m_str
 
 @app.route("/watchlist")
@@ -104,73 +115,73 @@ def watchlist():
 def action():
     df2 = pd.read_csv("action.csv")
     movie_titles = df2['movie_title'].tolist()
-    return render_template('action.html' , movies = movie_titles)
+    return render_template('action.html', movies=movie_titles)
 
 @app.route("/allaction")
 def allaction():
     df2 = pd.read_csv("action.csv")
     movie_titles = df2['movie_title'].tolist()
-    return render_template("allaction.html" , movies = movie_titles)
+    return render_template("allaction.html", movies=movie_titles)
 
 @app.route("/horror")
 def horror():
     df3 = pd.read_csv("horror.csv")
     movie_titles1 = df3['movie_title'].tolist()
-    return render_template('horror.html' , movies=movie_titles1)
+    return render_template('horror.html', movies=movie_titles1)
 
 @app.route("/romance")
 def romance():
     df5 = pd.read_csv("romance.csv")
     movie_titles3 = df5['movie_title'].tolist()
-    return render_template('romance.html' , movies=movie_titles3)
+    return render_template('romance.html', movies=movie_titles3)
 
 @app.route("/mystery")
 def mystery():
     df5 = pd.read_csv("mystery.csv")
     movie_titles3 = df5['movie_title'].tolist()
-    return render_template('mystery.html' , movies=movie_titles3)
+    return render_template('mystery.html', movies=movie_titles3)
 
 @app.route("/history")
 def history():
     df5 = pd.read_csv("history.csv")
     movie_titles3 = df5['movie_title'].tolist()
-    return render_template('history.html' , movies=movie_titles3)
+    return render_template('history.html', movies=movie_titles3)
 
 @app.route("/thriller")
 def thriller():
     df5 = pd.read_csv("thriller.csv")
     movie_titles3 = df5['movie_title'].tolist()
-    return render_template('thriller.html' , movies=movie_titles3)
+    return render_template('thriller.html', movies=movie_titles3)
 
 @app.route("/comedy")
 def comedy():
     df4 = pd.read_csv('comedy.csv')
     movie_titles2 = df4['movie_title'].tolist()
-    return render_template('comedy.html' , movies=movie_titles2)
+    return render_template('comedy.html', movies=movie_titles2)
 
 @app.route("/fantasy")
 def fantasy():
     df5 = pd.read_csv("fantasy.csv")
     movie_titles3 = df5['movie_title'].tolist()
-    return render_template('fantasy.html' , movies=movie_titles3)
+    return render_template('fantasy.html', movies=movie_titles3)
 
 @app.route("/adventure")
 def adventure():
     df5 = pd.read_csv("adventure.csv")
     movie_titles3 = df5['movie_title'].tolist()
-    return render_template('adventure.html' , movies=movie_titles3)              
+    return render_template('adventure.html', movies=movie_titles3)              
 
 @app.route("/documentary")
 def documentary():
     df5 = pd.read_csv("documentary.csv")
     movie_titles3 = df5['movie_title'].tolist()
-    return render_template('documentary.html' , movies=movie_titles3)  
+    return render_template('documentary.html', movies=movie_titles3)  
 
 @app.route("/sci_fi")
 def sci_fi():
     df5 = pd.read_csv("sci_fi.csv")
     movie_titles3 = df5['movie_title'].tolist()
-    return render_template('sci_fi.html' , movies=movie_titles3) 
+    return render_template('sci_fi.html', movies=movie_titles3) 
 
 @app.route("/genres")
 def genres():
@@ -203,13 +214,12 @@ def recommend():
         status = request.form.get('status', 'Unknown Status')
         rec_movies = request.form.get('rec_movies', '[]')
         rec_posters = request.form.get('rec_posters', '[]')
-        trailer_url = request.form.get('trailer', '[]')
-        teaser_url = request.form.get('teaser', '[]')
+        trailer_url = request.form.get('trailer', '')
+        teaser_url = request.form.get('teaser', '')
         watch_providers = request.form.get('watch_providers', '[]')
         watch_provider_logos = request.form.get('watch_provider_logos', '[]')
         budget = request.form.get('budget', 'N/A')
         revenue = request.form.get('revenue', 'N/A')
-
 
         original_language = request.form.get('original_language', 'N/A')
         director_name = request.form.get('director_name', 'Unknown')
@@ -218,13 +228,20 @@ def recommend():
         director_birthplace = request.form.get('director_birthplace', 'Unknown')
 
         # Function to safely convert a string representation of a list into an actual list
-        def safe_convert_list(data):
+        def safe_convert_list(data_str):
             try:
-                return ast.literal_eval(data)
-            except (ValueError, SyntaxError):
-                return []
+                if isinstance(data_str, list):
+                    return data_str
+                return json.loads(data_str)
+            except Exception:
+                try:
+                    return ast.literal_eval(data_str)
+                except Exception:
+                    return []
         
         def extract_video_id(url):
+            if not url or not isinstance(url, str):
+                return ""
             if "youtube.com/watch?v=" in url:
                 return url.split("v=")[-1].split("&")[0]
             elif "youtu.be/" in url:
@@ -252,42 +269,46 @@ def recommend():
         cast_bdays = safe_convert_list(cast_bdays)
         cast_bios = safe_convert_list(cast_bios)
         cast_places = safe_convert_list(cast_places)
-
-        cast_ids = cast_ids.split(',')
-        cast_ids[0] = cast_ids[0].replace("[","")
-        cast_ids[-1] = cast_ids[-1].replace("]","")
+        cast_ids = safe_convert_list(cast_ids)
 
         for i in range(len(cast_bios)):
-            cast_bios[i] = cast_bios[i].replace(r'\n', '\n').replace(r'\"','\"')
+            if isinstance(cast_bios[i], str):
+                cast_bios[i] = cast_bios[i].replace(r'\n', '\n').replace(r'\"', '\"')
 
-        # Dictionary mappings
-        movie_cards = {rec_posters[i]: rec_movies[i] for i in range(len(rec_posters))} if rec_posters else {}
-        casts = {cast_names[i]: [cast_ids[i], cast_chars[i], cast_profiles[i]] for i in range(len(cast_profiles))} if cast_profiles else {}
-        cast_details = {cast_names[i]: [cast_ids[i], cast_profiles[i], cast_bdays[i], cast_places[i], cast_bios[i]] for i in range(len(cast_places))} if cast_places else {}
+        # Dictionary mappings with safety
+        num_cards = min(len(rec_posters), len(rec_movies))
+        movie_cards = {rec_posters[i]: rec_movies[i] for i in range(num_cards)} if num_cards > 0 else {}
+
+        num_casts = min(len(cast_names), len(cast_ids), len(cast_chars), len(cast_profiles))
+        casts = {cast_names[i]: [cast_ids[i], cast_chars[i], cast_profiles[i]] for i in range(num_casts)} if num_casts > 0 else {}
+
+        num_details = min(len(cast_names), len(cast_ids), len(cast_profiles), len(cast_bdays), len(cast_places), len(cast_bios))
+        cast_details = {cast_names[i]: [cast_ids[i], cast_profiles[i], cast_bdays[i], cast_places[i], cast_bios[i]] for i in range(num_details)} if num_details > 0 else {}
 
         # Web Scraping IMDb Reviews
-        url = f'https://www.imdb.com/title/{imdb_id}/reviews/?ref_=tt_ov_rt'
-        headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36'}
+        movie_reviews = {}
+        if imdb_id:
+            try:
+                url = f'https://www.imdb.com/title/{imdb_id}/reviews/?ref_=tt_ov_rt'
+                headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36'}
+                response = requests.get(url, headers=headers, timeout=4)
+                if response.status_code == 200:
+                    soup = BeautifulSoup(response.content, 'lxml')
+                    soup_result = soup.find_all("div", {"class": "ipc-html-content-inner-div"})
+                    reviews_list = []
+                    reviews_status = []
+                    for reviews in soup_result:
+                        review_text = reviews.text.strip()
+                        if review_text:
+                            reviews_list.append(review_text)
+                            movie_review_list = np.array([review_text])
+                            movie_vector = vectorizer.transform(movie_review_list)
+                            pred = clf.predict(movie_vector)
+                            reviews_status.append('Good' if pred[0] == 1 or pred[0] == 'Good' or pred[0] else 'Bad')
+                    movie_reviews = {reviews_list[i]: reviews_status[i] for i in range(len(reviews_list))}
+            except Exception as ex:
+                logging.warning(f"Error scraping IMDb reviews: {ex}")
 
-        response = requests.get(url , headers=headers)
-        print(response.status_code)
-        if response.status_code==200:
-            soup = BeautifulSoup(response.content , 'lxml')
-            soup_result = soup.find_all("div" , {"class": "ipc-html-content-inner-div"})
-            print(soup_result)
-
-            reviews_list = []
-            reviews_status =[]
-            for reviews in soup_result:
-                review_text = reviews.text.strip()
-                if review_text:
-                    reviews_list.append(review_text)
-                    movie_review_list = np.array([review_text])
-                    movie_vector = vectorizer.transform(movie_review_list)
-                    pred = clf.predict(movie_vector)
-                    reviews_status.append('Good' if pred else 'Bad')
-            
-            movie_reviews = {reviews_list[i]: reviews_status[i] for i in range(len(reviews_list))}
         # Render the recommend page with all processed data
         return render_template(
             'recommend.html',
@@ -307,7 +328,7 @@ def recommend():
             cast_details=cast_details,
             trailer=trailer_embed,
             teaser=teaser_embed,
-            streaming_availability = streaming_availability,
+            streaming_availability=streaming_availability,
             budget=budget,
             revenue=revenue,
             original_language=original_language,
@@ -318,7 +339,7 @@ def recommend():
         )
 
     except Exception as e:
-        logging.error(f"Critical error in recommendation function: {e}")
+        logging.error(f"Critical error in recommendation function: {e}", exc_info=True)
         return render_template('error.html', message="An error occurred while processing your request.")
     
 def get_recommendations(movie_title):
@@ -328,10 +349,10 @@ def get_recommendations(movie_title):
     # Ensure `data` and `similarity` are loaded
     global data, similarity
     try:
-        data.head()  # Check if data is a DataFrame
-        similarity.shape  # Check if similarity is a matrix
+        data.head()
+        similarity.shape
     except:
-        data, similarity = create_similarity()  # ✅ Fix: Ensure correct assignment
+        data, similarity = create_similarity()
 
     # If movie not found, return empty list
     if movie_title not in data['movie_title'].unique():
@@ -347,31 +368,29 @@ def get_recommendations(movie_title):
 
     for item in lst:
         rec_title = data.iloc[item[0]]['movie_title']
-        movie_id = get_movie_id(rec_title)
-        if movie_id:
-            movie_url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key=fce0af3409e6113c9b3c75aaf49341bb"
-            movie_response = requests.get(movie_url)
-
-            if movie_response.status_code==200:
-                movie_data = movie_response.json()
-                poster_path = movie_data.get("poster_path" , None)
-                poster_url = f"https://image.tmdb.org/t/p/w500{poster_path}" if poster_path else "https://via.placeholder.com/200x300"
-                recommended_movies.append({"title" : rec_title , "poster" : poster_url})
+        search_url = f"{TMDB_BASE_URL}/search/movie?api_key={TMDB_API_KEY}&query={requests.utils.quote(rec_title)}"
+        try:
+            res = requests.get(search_url, timeout=4)
+            if res.status_code == 200:
+                results = res.json().get("results", [])
+                if results and results[0].get("poster_path"):
+                    poster_url = f"https://image.tmdb.org/t/p/w500{results[0]['poster_path']}"
+                else:
+                    poster_url = "https://via.placeholder.com/200x300?text=No+Poster"
+                recommended_movies.append({"title": rec_title, "poster": poster_url})
+        except Exception as e:
+            logging.warning(f"Error fetching poster for {rec_title}: {e}")
+            recommended_movies.append({"title": rec_title, "poster": "https://via.placeholder.com/200x300?text=No+Poster"})
 
     return recommended_movies
-
-    # recommended_movies = [data.iloc[item[0]]['movie_title'] for item in lst]  # ✅ Fix indexing
-    # return recommended_movies
-
-
 
 WIKIPEDIA_URL = "https://en.wikipedia.org/wiki/"
 
 def fetch_actor_from_wikipedia(actor_name):
     """ Fetch actor details from Wikipedia by scraping the page. """
     try:
-        actor_url = WIKIPEDIA_URL + actor_name.replace(" ", "_")  # Convert spaces to underscores
-        response = requests.get(actor_url)
+        actor_url = WIKIPEDIA_URL + actor_name.replace(" ", "_")
+        response = requests.get(actor_url, timeout=5)
 
         if response.status_code != 200:
             logging.error(f"🚨 Wikipedia page for {actor_name} not found! Status Code: {response.status_code}")
@@ -380,17 +399,17 @@ def fetch_actor_from_wikipedia(actor_name):
         # Parse the Wikipedia page
         soup = BeautifulSoup(response.text, "html.parser")
 
-        # Extract the first paragraph (usually biography intro)
-        paragraphs = soup.select("p")  # Select all paragraphs
+        # Extract the first paragraph
+        paragraphs = soup.select("p")
         biography = "No biography available."
         for p in paragraphs:
             if p.text.strip():
                 biography = p.text.strip()
-                break  # Use the first non-empty paragraph
+                break
 
-        # Extract image (if available)
-        image_url = "https://via.placeholder.com/150"  # Default placeholder
-        image_tag = soup.select_one(".infobox img")  # Try to find actor's image
+        # Extract image
+        image_url = "https://via.placeholder.com/150"
+        image_tag = soup.select_one(".infobox img")
         if image_tag and image_tag.get("src"):
             image_url = "https:" + image_tag["src"]
 
@@ -406,14 +425,11 @@ def fetch_actor_from_wikipedia(actor_name):
         logging.error(f"❌ Error fetching Wikipedia details for {actor_name}: {e}")
         return None
 
-TMDB_API_KEY = "fce0af3409e6113c9b3c75aaf49341bb"
-TMDB_BASE_URL = "https://api.themoviedb.org/3"
-
 def fetch_actor_from_tmdb(actor_id):
     """Fetch actor details from TMDB using a numeric actor_id."""
     try:
         url = f"{TMDB_BASE_URL}/person/{actor_id}?api_key={TMDB_API_KEY}&language=en-US"
-        response = requests.get(url)
+        response = requests.get(url, timeout=5)
 
         if response.status_code != 200:
             logging.error(f"🚨 TMDB API request failed for Actor ID {actor_id}. Status: {response.status_code}")
@@ -454,7 +470,7 @@ def actor_details(actor_id):
         try:
             if not actor_id or actor_id.lower() == 'none':
                 raise ValueError("Empty or None actor_id")
-            actor_id = int(float(actor_id))  # Handles '85.0' and '85'
+            actor_id = int(float(actor_id))
         except ValueError:
             logging.error(f"❌ Invalid actor_id format: {actor_id}")
             return render_template("error.html", message="Invalid actor ID in URL.")
@@ -472,7 +488,7 @@ def actor_details(actor_id):
                             if movie:
                                 movies.add(movie)
                     except ValueError:
-                        logging.warning(f"⚠️ Skipping malformed row with actor_id: {row.get('actor_id')}")
+                        pass
         except FileNotFoundError:
             logging.error("❌ actors3.csv file not found!")
             return render_template("error.html", message="Actor database not found.")
@@ -482,9 +498,7 @@ def actor_details(actor_id):
             logging.warning(f"⚠️ Actor ID {actor_id} not found in CSV.")
             return render_template("error.html", message=f"No actor found for ID {actor_id}.")
 
-        logging.debug(f"🎬 Found actor: {actor_name} | Movies: {movies}")
-
-        # ✅ Fetch actor details from TMDB using actor_id (not name!)
+        # ✅ Fetch actor details from TMDB using actor_id
         actor_data = fetch_actor_from_tmdb(actor_id)
         if not actor_data:
             return render_template("error.html", message=f"Could not fetch details for {actor_name} from TMDB.")
@@ -494,19 +508,20 @@ def actor_details(actor_id):
     except Exception as e:
         logging.exception("❌ Unexpected error while loading actor details.")
         return render_template("error.html", message="An internal error occurred while fetching actor details.")
-    
 
 def get_movie_id(movie_title):
     """Fetch movie ID from TMDB using the title."""
-    search_url = f"https://api.themoviedb.org/3/search/movie?api_key=fce0af3409e6113c9b3c75aaf49341bb&query={movie_title}"
-    response = requests.get(search_url)
-
-    if response.status_code == 200:
-        search_results = response.json().get("results", [])
-        if search_results:
-            return search_results[0]["id"]  # Get the first result's ID
-    logging.error(f"TMDB Search API Error: {response.status_code} - {response.text}")
-    return None  # Return None if not found
+    search_url = f"{TMDB_BASE_URL}/search/movie?api_key={TMDB_API_KEY}&query={requests.utils.quote(movie_title)}"
+    try:
+        response = requests.get(search_url, timeout=5)
+        if response.status_code == 200:
+            search_results = response.json().get("results", [])
+            if search_results:
+                return search_results[0]["id"]
+        logging.error(f"TMDB Search API Error: {response.status_code} - {response.text}")
+    except Exception as e:
+        logging.error(f"Exception in get_movie_id: {e}")
+    return None
 
 @app.route("/movie/<movie_title>")
 def movie_details(movie_title):
@@ -517,8 +532,8 @@ def movie_details(movie_title):
             return render_template("error.html", message="Movie not found in TMDB.")
 
         # Fetch movie details using the correct movie ID
-        movie_url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key=fce0af3409e6113c9b3c75aaf49341bb&append_to_response=videos,credits,watch/providers"
-        movie_response = requests.get(movie_url)
+        movie_url = f"{TMDB_BASE_URL}/movie/{movie_id}?api_key={TMDB_API_KEY}&append_to_response=videos,credits,watch/providers"
+        movie_response = requests.get(movie_url, timeout=5)
 
         if movie_response.status_code != 200:
             logging.error(f"TMDB API Error: {movie_response.status_code} - {movie_response.text}")
@@ -553,49 +568,48 @@ def movie_details(movie_title):
         director_image_path = director.get("profile_path")
         director_id = director.get("id")
         director_image = f"https://image.tmdb.org/t/p/w300{director_image_path}" if director_image_path else "https://via.placeholder.com/300"
+        director_bio = "Biography not available"
 
         if director_id:
-            director_url = f"https://api.themoviedb.org/3/person/{director_id}?api_key=fce0af3409e6113c9b3c75aaf49341bb"
-            director_response = requests.get(director_url)
-            if director_response.status_code==200:
-                director_data = director_response.json()
-                director_bio = director_data.get("biography" , "Biography Not available")
+            director_url = f"{TMDB_BASE_URL}/person/{director_id}?api_key={TMDB_API_KEY}"
+            try:
+                director_response = requests.get(director_url, timeout=5)
+                if director_response.status_code == 200:
+                    director_data = director_response.json()
+                    director_bio = director_data.get("biography", "Biography not available")
+            except Exception as e:
+                logging.warning(f"Error fetching director data: {e}")
 
         credits = movie_data.get("credits", {})
-
-# Ensure credits contain cast details
-        if "cast" not in credits:
-            logging.error("No 'cast' key found in movie_data['credits']")
-            cast = []  # Prevent errors if 'cast' is missing
-        else:
-            cast = credits.get("cast", [])[:10]
+        cast = credits.get("cast", [])[:10] if isinstance(credits, dict) and "cast" in credits else []
 
         actors = [
-    {
-        "id": actor.get("id", None),  # Use None instead of empty string
-        "name": actor.get("name", "Unknown Actor"),
-        "character": actor.get("character", "Unknown Character"),
-        "image": f"https://image.tmdb.org/t/p/w300{actor['profile_path']}" 
-        if actor.get("profile_path") else "https://via.placeholder.com/150"
-    }
-        for actor in cast
+            {
+                "id": actor.get("id", None),
+                "name": actor.get("name", "Unknown Actor"),
+                "character": actor.get("character", "Unknown Character"),
+                "image": f"https://image.tmdb.org/t/p/w300{actor['profile_path']}" 
+                if actor.get("profile_path") else "https://via.placeholder.com/150"
+            }
+            for actor in cast
         ]
-
 
         # Extract trailers and teasers
         videos = movie_data.get("videos", {}).get("results", [])
-        trailer = next((f"https://www.youtube.com/embed/{video['key']}" for video in videos if video["type"] == "Trailer" and video["site"] == "YouTube"), None)
-        teaser = next((f"https://www.youtube.com/embed/{video['key']}" for video in videos if video["type"] == "Teaser" and video["site"] == "YouTube"), None)
+        trailer = next((f"https://www.youtube.com/embed/{video['key']}" for video in videos if video.get("type") == "Trailer" and video.get("site") == "YouTube"), None)
+        teaser = next((f"https://www.youtube.com/embed/{video['key']}" for video in videos if video.get("type") == "Teaser" and video.get("site") == "YouTube"), None)
 
         # Extract streaming providers
         providers_data = movie_data.get("watch/providers", {}).get("results", {}).get("IN", {}).get("flatrate", [])
+        if not providers_data:
+            providers_data = movie_data.get("watch/providers", {}).get("results", {}).get("US", {}).get("flatrate", [])
         streaming_availability = [
             (provider["provider_name"], f"https://image.tmdb.org/t/p/w200{provider['logo_path']}") 
             for provider in providers_data if provider.get("provider_name") and provider.get("logo_path")
         ]
 
-        # Fetch IMDb reviews (with proper handling)
-        movie_reviews = fetch_imdb_reviews(imdb_id) if imdb_id else {"Error": "IMDb ID not available."}
+        # Fetch IMDb reviews
+        movie_reviews = fetch_imdb_reviews(imdb_id) if imdb_id else {}
         recommendations = get_recommendations(title)
 
         # Render the template with movie details
@@ -626,20 +640,21 @@ def movie_details(movie_title):
         )
 
     except Exception as e:
-        logging.error(f"Error fetching movie details: {e}")
+        logging.error(f"Error fetching movie details: {e}", exc_info=True)
         return render_template("error.html", message="An error occurred while fetching movie details.")
 
 def fetch_imdb_reviews(imdb_id):
     """Fetch IMDb reviews using web scraping."""
+    movie_reviews = {}
+    if not imdb_id:
+        return movie_reviews
     try:
         url = f'https://www.imdb.com/title/{imdb_id}/reviews?ref_=tt_ov_rt'
         headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36'}
-        response = requests.get(url , headers=headers)
-        print(response.status_code)
-        if response.status_code==200:
-            soup = BeautifulSoup(response.content , 'lxml')
-            soup_result = soup.find_all("div" , {"class" : "ipc-html-content-inner-div"})
-            print(soup_result)
+        response = requests.get(url, headers=headers, timeout=4)
+        if response.status_code == 200:
+            soup = BeautifulSoup(response.content, 'lxml')
+            soup_result = soup.find_all("div", {"class": "ipc-html-content-inner-div"})
 
             reviews_list = []
             reviews_status = []
@@ -650,26 +665,16 @@ def fetch_imdb_reviews(imdb_id):
                     reviews_list.append(reviews_text)
                     movie_reviews_list = np.array([reviews_text])
                     movie_vector = vectorizer.transform(movie_reviews_list)
-                    # pred = clf.predict(movie_vector)
-                    pred_prob = clf.predict_proba(movie_vector)[: , 1]
-                    confidence_score = round(pred_prob[0] * 100 , 2)
+                    pred_prob = clf.predict_proba(movie_vector)[:, 1]
+                    confidence_score = round(pred_prob[0] * 100, 2)
                     reviews_status.append(f"{confidence_score}% confident positive")
             
             movie_reviews = {reviews_list[i]: reviews_status[i] for i in range(len(reviews_list))}
-        # # Extract reviews safely
-        # reviews = [div.text.strip() for div in soup.find_all("div", class_="text show-more__control")]
-
-        # # If no reviews found, return a message
-        # if not reviews:
-        #     return {"Message": "No IMDb reviews available."}
-
-        # # Perform basic sentiment analysis (dummy logic: Good if length > 100)
-        # movie_reviews = {review: "Good" if len(review) > 100 else "Bad" for review in reviews}
         return movie_reviews
 
     except Exception as e:
-        logging.error(f"Error fetching IMDb reviews: {e}")
-        return {"Error": "Could not retrieve reviews."}
+        logging.warning(f"Error fetching IMDb reviews: {e}")
+        return movie_reviews
 
 if __name__ == '__main__':
     app.run(debug=True)

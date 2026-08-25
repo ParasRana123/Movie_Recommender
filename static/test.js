@@ -2,13 +2,13 @@
 function get_movie_details(movie_id, my_api_key, arr, movie_title) {
     $.ajax({
         type: 'GET',
-        url: 'https://api.themoviedb.org/3/movie/' + movie_id + '?api_key=' + my_api_key + '&append_to_response=videos,credits',
+        url: 'https://api.tmdb.org/3/movie/' + movie_id + '?api_key=' + my_api_key + '&append_to_response=videos,credits',
         success: function(movie_details) {
-            let videos = movie_details.videos.results;
+            let videos = movie_details.videos ? movie_details.videos.results : [];
             let trailer = "";
             let teaser = "";
   
-            if (videos.length > 0) {
+            if (videos && videos.length > 0) {
                 videos.forEach(video => {
                     if (video.type === "Trailer" && video.site === "YouTube") {
                         trailer = `https://www.youtube.com/watch?v=${video.key}`;
@@ -42,7 +42,7 @@ function get_movie_details(movie_id, my_api_key, arr, movie_title) {
   function get_director_details(director_id, my_api_key, movie_id, movie_details, arr, movie_title, trailer, teaser) {
     $.ajax({
         type: 'GET',
-        url: `https://api.themoviedb.org/3/person/${director_id}?api_key=${my_api_key}`,
+        url: `https://api.tmdb.org/3/person/${director_id}?api_key=${my_api_key}`,
         success: function(directorData) {
             let directorDetails = {
                 name: directorData.name,
@@ -54,7 +54,6 @@ function get_movie_details(movie_id, my_api_key, arr, movie_title) {
             get_watch_providers(movie_id, my_api_key, movie_details, arr, movie_title, trailer, teaser, directorDetails);
         },
         error: function() {
-            console.log("Error fetching director details.");
             let directorDetails = {
                 name: "Unknown",
                 bio: "Biography not available.",
@@ -70,12 +69,12 @@ function get_movie_details(movie_id, my_api_key, arr, movie_title) {
   function get_watch_providers(movie_id, my_api_key, movie_details, arr, movie_title, trailer, teaser, directorDetails) {
     $.ajax({
         type: 'GET',
-        url: `https://api.themoviedb.org/3/movie/${movie_id}/watch/providers?api_key=${my_api_key}`,
+        url: `https://api.tmdb.org/3/movie/${movie_id}/watch/providers?api_key=${my_api_key}`,
         success: function(providerData) {
             let providerNames = [];
             let providerLogos = [];
   
-            if (providerData.results && providerData.results.IN && providerData.results.IN.flatrate) {  // Change 'IN' for your country
+            if (providerData.results && providerData.results.IN && providerData.results.IN.flatrate) {
                 let providers = providerData.results.IN.flatrate;
                 providerNames = providers.map(provider => provider.provider_name);
                 providerLogos = providers.map(provider => provider.logo_path ? `https://image.tmdb.org/t/p/w200${provider.logo_path}` : "");
@@ -84,7 +83,6 @@ function get_movie_details(movie_id, my_api_key, arr, movie_title) {
             show_details(movie_details, arr, movie_title, my_api_key, movie_id, trailer, teaser, providerNames, providerLogos, directorDetails);
         },
         error: function() {
-            console.log("Error fetching watch providers.");
             show_details(movie_details, arr, movie_title, my_api_key, movie_id, trailer, teaser, [], [], directorDetails);
         }
     });
@@ -93,18 +91,18 @@ function get_movie_details(movie_id, my_api_key, arr, movie_title) {
   // Passing all the details to Python's Flask for displaying and scraping the movie reviews using IMDb ID
   function show_details(movie_details, arr, movie_title, my_api_key, movie_id, trailer, teaser, providerNames, providerLogos, directorDetails) {
     var imdb_id = movie_details.imdb_id;
-    var poster = 'https://image.tmdb.org/t/p/original' + movie_details.poster_path;
-    var backdrop = 'https://image.tmdb.org/t/p/original' + movie_details.backdrop_path;
+    var poster = movie_details.poster_path ? 'https://image.tmdb.org/t/p/original' + movie_details.poster_path : 'https://via.placeholder.com/500x750';
+    var backdrop = movie_details.backdrop_path ? 'https://image.tmdb.org/t/p/original' + movie_details.backdrop_path : poster;
     var overview = movie_details.overview;
-    var genres = movie_details.genres;
+    var genres = movie_details.genres || [];
     var rating = movie_details.vote_average;
     var vote_count = movie_details.vote_count;
     var release_date = new Date(movie_details.release_date);
     var runtime = parseInt(movie_details.runtime);
     var status = movie_details.status;
-    var budget = movie_details.budget.toLocaleString();
-    var revenue = movie_details.revenue.toLocaleString();
-    var original_language = movie_details.original_language.toUpperCase();
+    var budget = movie_details.budget ? movie_details.budget.toLocaleString() : "N/A";
+    var revenue = movie_details.revenue ? movie_details.revenue.toLocaleString() : "N/A";
+    var original_language = movie_details.original_language ? movie_details.original_language.toUpperCase() : "EN";
   
     var genre_list = genres.map(genre => genre.name);
     var my_genre = genre_list.join(", ");
@@ -168,4 +166,3 @@ function get_movie_details(movie_id, my_api_key, arr, movie_title) {
         }
     });
   }
-  
