@@ -348,25 +348,38 @@
           <table class="table table-bordered" bordercolor="white" style="color: white">
             <thead>
               <tr>
-                <th class="text-center" scope="col" style="width: 75%; color: black;">Comments</th>
-                <th class="text-center" scope="col" style="color: black;">Sentiments</th>
+                <th class="text-center" scope="col" style="width: 55%; color: black; font-size: 18px; font-weight: bold;">Comments</th>
+                <th class="text-center" scope="col" style="width: 20%; color: black; font-size: 18px; font-weight: bold;">Author & Rating</th>
+                <th class="text-center" scope="col" style="width: 25%; color: black; font-size: 18px; font-weight: bold;">Sentiments</th>
               </tr>
             </thead>
             <tbody>
-              {% for review, sentiment in movie_reviews.items() %}
+              {% for review in movie_reviews %}
               <tr style="background-color:#e5091485;">
-                <td>{{ review }}</td>
-                <td><center>
-                  {{ sentiment }} 
-                </center></td>
+                <td style="text-align: left; padding: 15px; font-size: 15px; line-height: 1.6;">{{ review.content if review.content is defined else review }}</td>
+                <td style="vertical-align: middle; text-align: center; color: white;">
+                  <strong>{{ review.author if review.author is defined else 'Reviewer' }}</strong><br/>
+                  <span style="color: #ffd700; font-size: 17px; font-weight: bold;">★ {{ review.rating if review.rating is defined else 'N/A' }}</span>
+                </td>
+                <td style="vertical-align: middle; text-align: center; font-size: 16px;">
+                  <strong>{{ review.sentiment if review.sentiment is defined else (movie_reviews[review] if movie_reviews is mapping else 'Good') }}</strong> : 
+                  {% if (review.sentiment if review.sentiment is defined else (movie_reviews[review] if movie_reviews is mapping else 'Good')) == 'Good' or (review.sentiment if review.sentiment is defined else (movie_reviews[review] if movie_reviews is mapping else 1)) == 1 %}
+                    <span style="font-size: 24px;">&#128515;</span>
+                  {% else %}
+                    <span style="font-size: 24px;">&#128534;</span>
+                  {% endif %}
+                  {% if review.confidence is defined and review.confidence %}
+                    <br/><small style="color: #f8f9fa;">({{ review.confidence }} confident)</small>
+                  {% endif %}
+                </td>
               </tr>
               {% endfor %}
             </tbody>
           </table>
         </div>
         {% else %}
-        <div style="color:white;">
-          <h1 style="color:white"> This movie is not released yet. Stay tuned! </h1>
+        <div style="color:black; margin: 30px;">
+          <h3 style="color:black"> No reviews available for this movie yet. Stay tuned! </h3>
         </div>
         {% endif %}
       </center>
