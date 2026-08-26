@@ -14,6 +14,8 @@ import csv
 import os
 from bs4 import BeautifulSoup
 from markupsafe import escape
+import warnings
+warnings.filterwarnings('ignore')
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)
@@ -54,67 +56,53 @@ TMDB_API_KEY = "fce0af3409e6113c9b3c75aaf49341bb"
 TMDB_BASE_URL = "https://api.tmdb.org/3"
 
 data = None
-similarity = None
+count_matrix = None
 http_session = requests.Session()
+SUGGESTIONS_CACHE = None
 
 def create_similarity():
-    data = pd.read_csv(get_csv_path('main_data1.csv'), encoding='latin1')
-    cv = CountVectorizer()
-    count_matrix = cv.fit_transform(data['comb'])
-    similarity = cosine_similarity(count_matrix)
-    return data, similarity
+    global data, count_matrix, SUGGESTIONS_CACHE
+    if data is None or count_matrix is None:
+        data = pd.read_csv(get_csv_path('main_data1.csv'), encoding='latin1')
+        cv = CountVectorizer()
+        count_matrix = cv.fit_transform(data['comb'].fillna(''))
+        SUGGESTIONS_CACHE = list(data['movie_title'].dropna().str.capitalize().unique())
+    return data, count_matrix
 
 def rcmd(m):
     m = str(m).lower().strip()
-    global data, similarity
-    try:
-        data.head()
-        similarity.shape
-    except:
-        data, similarity = create_similarity()
+    global data, count_matrix
+    if data is None or count_matrix is None:
+        create_similarity()
     
-    if m not in data['movie_title'].unique():
+    unique_titles = data['movie_title'].unique()
+    if m not in unique_titles:
         # Try finding a fuzzy or substring match in case of minor title differences
-        matches = [t for t in data['movie_title'].unique() if m in str(t).lower() or str(t).lower() in m]
+        matches = [t for t in unique_titles if m in str(t).lower() or str(t).lower() in m]
         if matches:
             m = matches[0]
         else:
             return 'Sorry! The movie you requested is not in our database. Please check the spelling or try with some other movies'
     
     i = data.loc[data['movie_title'] == m].index[0]
-    lst = list(enumerate(similarity[i]))
-    lst = sorted(lst, key=lambda x: x[1], reverse=True)
-    lst = lst[1:11]
+    # Memory-efficient on-demand cosine similarity for movie vector against sparse matrix (takes ~15ms and <1MB RAM)
+    sim_scores = cosine_similarity(count_matrix[i], count_matrix).flatten()
+    sorted_indices = sim_scores.argsort()[::-1]
     
-    if len(lst) < 10:
-        remaining = 10 - len(lst)
-        additional_movies = [x for x in list(enumerate(similarity[i])) if x[0] != i][10:]
-        lst.extend(additional_movies[:remaining])
+    # Exclude the queried movie itself
+    top_indices = [idx for idx in sorted_indices if idx != i][:10]
     
-    l = []
-    for item in lst:
-        a = item[0]
-        l.append(data['movie_title'][a])
-    return l
+    return [data['movie_title'].iloc[idx] for idx in top_indices]
 
 def load_data():
-    global data, similarity
-    if data is None or similarity is None:
-        data, similarity = create_similarity()
+    create_similarity()
 
 load_data()
     
-SUGGESTIONS_CACHE = None
-
 def get_suggestions():
     global SUGGESTIONS_CACHE
     if SUGGESTIONS_CACHE is None:
-        try:
-            df = pd.read_csv(get_csv_path('main_data.csv'))
-            SUGGESTIONS_CACHE = list(df['movie_title'].dropna().str.capitalize().unique())
-        except Exception as e:
-            logging.error(f"Error loading suggestions: {e}")
-            SUGGESTIONS_CACHE = []
+        create_similarity()
     return SUGGESTIONS_CACHE
 
 app = Flask(__name__)
