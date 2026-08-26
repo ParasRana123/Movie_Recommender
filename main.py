@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 from flask import Flask, render_template, request, redirect, session, jsonify, send_from_directory
+from flask_cors import CORS
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import json
@@ -106,6 +107,15 @@ def get_suggestions():
     return SUGGESTIONS_CACHE
 
 app = Flask(__name__)
+# Enable CORS for all routes and all origins
+CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
+
+@app.after_request
+def add_cors_headers(response):
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    response.headers['Access-Control-Allow-Methods'] = 'GET, POST, PUT, DELETE, OPTIONS'
+    response.headers['Access-Control-Allow-Headers'] = 'Content-Type, Authorization, X-Requested-With, Accept'
+    return response
 
 @app.context_processor
 def inject_suggestions():
@@ -806,10 +816,198 @@ def movie_details(movie_title):
 
     except Exception as e:
         logging.error(f"Error fetching movie details: {e}", exc_info=True)
+# ==================== REST API ENDPOINTS FOR REACT FRONTEND ====================
+
+@app.route('/api/health')
+def health_endpoint():
+    return jsonify({"status": "ok", "message": "Movie Recommender API is live"})
+
+@app.route('/api/suggestions')
+def api_suggestions():
+    return jsonify(get_suggestions())
+
+@app.route('/api/recommend', methods=['POST', 'GET', 'OPTIONS'])
+def api_recommend():
+    if request.method == 'OPTIONS':
+        return jsonify({"status": "ok"}), 200
+
+    query_title = request.args.get('title') or request.args.get('name') or request.args.get('movie') or request.args.get('query')
+    if not query_title and request.is_json:
+        req_data = request.get_json() or {}
+        query_title = req_data.get('title') or req_data.get('name') or req_data.get('movie') or req_data.get('query')
+    if not query_title and request.form:
+        query_title = request.form.get('title') or request.form.get('name') or request.form.get('movie') or request.form.get('query')
+
+    if not query_title:
+        return jsonify({"error": "Movie title query parameter is required"}), 400
+
+    full_data = fetch_movie_full_data(query_title)
+    if not full_data:
+        return jsonify({"error": f"Movie '{query_title}' not found in database"}), 404
+
+    return jsonify(full_data)
+
+@app.route('/api/movie/<path:movie_title>', methods=['GET', 'OPTIONS'])
+def api_movie_details(movie_title):
+    if request.method == 'OPTIONS':
+        return jsonify({"status": "ok"}), 200
+    full_data = fetch_movie_full_data(movie_title)
+    if not full_data:
+        return jsonify({"error": f"Movie '{movie_title}' not found in database"}), 404
+    return jsonify(full_data)
+
+@app.route('/api/actor/<actor_id>', methods=['GET', 'OPTIONS'])
+def api_actor_details(actor_id):
+    if request.method == 'OPTIONS':
+        return jsonify({"status": "ok"}), 200
+    try:
+        actor_id_clean = escape(actor_id)
+        numeric_actor_id = int(float(actor_id_clean))
+        actor_info, actor_movies = fetch_actor_from_tmdb(numeric_actor_id)
+        if not actor_info:
+            return jsonify({"error": f"Actor ID '{actor_id}' not found"}), 404
+        return jsonify({
+            "actor": actor_info,
+            "movies": actor_movies[:15]
+        })
+    except Exception as e:
+        return jsonify({"error": str(e)}), 400
+
+@app.route('/api/genres', methods=['GET', 'OPTIONS'])
+def api_genres_list():
+    if request.method == 'OPTIONS':
+        return jsonify({"status": "ok"}), 200
+    genres = [
+        {"id": "action", "name": "Action", "image": "/images/action1.jpg", "banner": "/images/action.jpg", "description": "Fast-paced, thrilling sequences of physical feats, combat, and excitement."},
+        {"id": "horror", "name": "Horror", "image": "/images/horror.jpg", "banner": "/images/horror1.jpg", "description": "Stories that aim to elicit fear, suspense, and a sense of dread with macabre and supernatural themes."},
+        {"id": "romance", "name": "Romance", "image": "/images/Romance.jpg", "banner": "/images/romance1.jpg", "description": "Heartwarming and emotional stories celebrating the journey of love, connection, and relationships."},
+        {"id": "mystery", "name": "Mystery", "image": "/images/mystery.jpg", "banner": "/images/mystery1.jpg", "description": "Suspenseful investigations, intricate plots, and thrilling enigmas waiting to be solved."},
+        {"id": "history", "name": "History", "image": "/images/history.jpg", "banner": "/images/history1.jpg", "description": "Recounting historical events, civilization milestones, and iconic figures that shaped our world."},
+        {"id": "thriller", "name": "Thriller", "image": "/images/Thriller.jpg", "banner": "/images/thriller1.jpg", "description": "Edge-of-your-seat excitement, suspenseful plots, and psychological tension."},
+        {"id": "comedy", "name": "Comedy", "image": "/images/Comedy.jpg", "banner": "/images/comedy1.jpg", "description": "Lighthearted entertainment, wit, and humor crafted to bring laughter and joy."},
+        {"id": "fantasy", "name": "Fantasy", "image": "/images/fantasy.jpg", "banner": "/images/fantasy1.jpg", "description": "Imaginative realms, magic, mythical creatures, and wondrous supernatural adventures."},
+        {"id": "adventure", "name": "Adventure", "image": "/images/Adventure.jpg", "banner": "/images/adventure1.jpg", "description": "Epic quests, daring expeditions, and heroic feats in exotic environments."},
+        {"id": "documentary", "name": "Documentary", "image": "/images/Documentary.jpg", "banner": "/images/documentary1.jpg", "description": "Factual stories, real-world issues, nature wonders, and thought-provoking insights."},
+        {"id": "sci_fi", "name": "Sci-Fi", "image": "/images/Sci-Fi.jpg", "banner": "/images/sci-fi1.jpg", "description": "Futuristic concepts, space exploration, cutting-edge technology, and mind-bending speculative realities."}
+    ]
+    return jsonify(genres)
+
+@app.route('/api/genres/<genre_name>', methods=['GET', 'OPTIONS'])
+def api_genre_movies(genre_name):
+    if request.method == 'OPTIONS':
+        return jsonify({"status": "ok"}), 200
+    clean_genre = genre_name.lower().replace("-", "_")
+    csv_file = get_csv_path(f"{clean_genre}.csv")
+    if not os.path.exists(csv_file):
+        return jsonify({"error": f"Genre '{genre_name}' not found"}), 404
+
+    try:
+        df = pd.read_csv(csv_file)
+        titles = df['movie_title'].dropna().tolist()[:25]
+        
+        # Enrich top 15 with TMDB posters & ratings
+        enriched = []
+        for t in titles[:15]:
+            try:
+                r_s = http_session.get(f"{TMDB_BASE_URL}/search/movie?api_key={TMDB_API_KEY}&query={requests.utils.quote(str(t))}", timeout=2.5)
+                if r_s.status_code == 200:
+                    res = r_s.json().get('results', [])
+                    if res and res[0].get('poster_path'):
+                        enriched.append({
+                            "title": t,
+                            "poster": f"https://image.tmdb.org/t/p/w500{res[0]['poster_path']}",
+                            "vote_average": f"{round(float(res[0].get('vote_average', 0)), 1)}" if res[0].get('vote_average') else "N/A"
+                        })
+                    else:
+                        enriched.append({
+                            "title": t,
+                            "poster": "https://via.placeholder.com/240x360?text=No+Poster",
+                            "vote_average": "N/A"
+                        })
+                else:
+                    enriched.append({"title": t, "poster": "https://via.placeholder.com/240x360?text=No+Poster", "vote_average": "N/A"})
+            except Exception:
+                enriched.append({"title": t, "poster": "https://via.placeholder.com/240x360?text=No+Poster", "vote_average": "N/A"})
+
+        return jsonify({
+            "genre": genre_name,
+            "movies": enriched
+        })
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+TRENDING_CACHE = {"timestamp": 0, "data": []}
+UPCOMING_CACHE = {"timestamp": 0, "data": []}
 PEOPLE_CACHE = {"timestamp": 0, "data": []}
 
-@app.route('/api/trending-people')
+@app.route('/api/trending', methods=['GET', 'OPTIONS'])
+def api_trending_movies():
+    if request.method == 'OPTIONS':
+        return jsonify({"status": "ok"}), 200
+    global TRENDING_CACHE
+    import time
+    now = time.time()
+    if TRENDING_CACHE["data"] and (now - TRENDING_CACHE["timestamp"] < 1800):
+        return jsonify(TRENDING_CACHE["data"])
+    try:
+        r = http_session.get(f"{TMDB_BASE_URL}/trending/movie/week?api_key={TMDB_API_KEY}", timeout=4)
+        if r.status_code == 200:
+            results = r.json().get('results', [])
+            formatted = [
+                {
+                    "id": m.get("id"),
+                    "title": m.get("title"),
+                    "poster": f"https://image.tmdb.org/t/p/w500{m.get('poster_path')}" if m.get('poster_path') else None,
+                    "backdrop": f"https://image.tmdb.org/t/p/w780{m.get('backdrop_path')}" if m.get('backdrop_path') else None,
+                    "rating": round(float(m.get("vote_average", 0)), 1),
+                    "release_date": m.get("release_date"),
+                    "overview": m.get("overview")
+                }
+                for m in results if m.get("title") and m.get("poster_path")
+            ]
+            if formatted:
+                TRENDING_CACHE = {"timestamp": now, "data": formatted}
+                return jsonify(formatted)
+    except Exception as e:
+        logging.error(f"Error fetching trending movies: {e}")
+    return jsonify(TRENDING_CACHE["data"])
+
+@app.route('/api/upcoming', methods=['GET', 'OPTIONS'])
+def api_upcoming_movies():
+    if request.method == 'OPTIONS':
+        return jsonify({"status": "ok"}), 200
+    global UPCOMING_CACHE
+    import time
+    now = time.time()
+    if UPCOMING_CACHE["data"] and (now - UPCOMING_CACHE["timestamp"] < 1800):
+        return jsonify(UPCOMING_CACHE["data"])
+    try:
+        r = http_session.get(f"{TMDB_BASE_URL}/movie/upcoming?api_key={TMDB_API_KEY}&language=en-US&page=1", timeout=4)
+        if r.status_code == 200:
+            results = r.json().get('results', [])
+            formatted = [
+                {
+                    "id": m.get("id"),
+                    "title": m.get("title"),
+                    "poster": f"https://image.tmdb.org/t/p/w500{m.get('poster_path')}" if m.get('poster_path') else None,
+                    "backdrop": f"https://image.tmdb.org/t/p/w780{m.get('backdrop_path')}" if m.get('backdrop_path') else None,
+                    "rating": round(float(m.get("vote_average", 0)), 1),
+                    "release_date": m.get("release_date"),
+                    "overview": m.get("overview")
+                }
+                for m in results if m.get("title") and m.get("poster_path")
+            ]
+            if formatted:
+                UPCOMING_CACHE = {"timestamp": now, "data": formatted}
+                return jsonify(formatted)
+    except Exception as e:
+        logging.error(f"Error fetching upcoming movies: {e}")
+    return jsonify(UPCOMING_CACHE["data"])
+
+@app.route('/api/trending-people', methods=['GET', 'OPTIONS'])
 def api_trending_people():
+    if request.method == 'OPTIONS':
+        return jsonify({"status": "ok"}), 200
     global PEOPLE_CACHE
     import time
     now = time.time()
@@ -836,5 +1034,30 @@ def api_trending_people():
         logging.error(f"Error fetching trending people: {e}")
     return jsonify(PEOPLE_CACHE["data"])
 
+@app.route('/api/top-movies', methods=['GET', 'OPTIONS'])
+def api_top_movies():
+    if request.method == 'OPTIONS':
+        return jsonify({"status": "ok"}), 200
+    curated = [
+        "Avatar", "The Dark Knight", "Inception", "Interstellar", 
+        "Avengers: Endgame", "Titanic", "Gladiator", "Pulp Fiction", 
+        "The Matrix", "Spider-Man: Into the Spider-Verse"
+    ]
+    movies_data = []
+    for t in curated:
+        try:
+            r = http_session.get(f"{TMDB_BASE_URL}/search/movie?api_key={TMDB_API_KEY}&query={requests.utils.quote(t)}", timeout=2.5)
+            if r.status_code == 200:
+                res = r.json().get('results', [])
+                if res and res[0].get('poster_path'):
+                    movies_data.append({
+                        "title": t,
+                        "poster": f"https://image.tmdb.org/t/p/w500{res[0]['poster_path']}",
+                        "vote_average": f"{round(float(res[0].get('vote_average', 0)), 1)}"
+                    })
+        except Exception:
+            pass
+    return jsonify(movies_data)
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port=5000, debug=True)
