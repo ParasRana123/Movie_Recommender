@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
-import Loader from '../components/Loader';
 import RecommendationView from '../components/RecommendationView';
 import { fetchMovieDetails } from '../api/movieApi';
 
@@ -10,13 +9,13 @@ export default function MovieDetailsPage() {
   const navigate = useNavigate();
   const [movieData, setMovieData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     if (!movieTitle) return;
     let isMounted = true;
     setLoading(true);
-    setError(null);
+    setError(false);
 
     fetchMovieDetails(decodeURIComponent(movieTitle))
       .then(data => {
@@ -27,7 +26,8 @@ export default function MovieDetailsPage() {
       })
       .catch(err => {
         if (isMounted) {
-          setError(err.message || 'Movie not found');
+          console.error(err);
+          setError(true);
           setMovieData(null);
         }
       })
@@ -43,25 +43,31 @@ export default function MovieDetailsPage() {
   };
 
   return (
-    <div className="movie-details-page-container">
+    <div id="content">
       <Navbar onSearchMovie={handleSelectMovie} initialQuery={movieTitle || ''} />
 
-      {loading && <Loader text="FETCHING MOVIE DETAILS & REVIEWS..." />}
+      {loading && (
+        <div id="loader">
+          <p id="loader-text" style={{ color: '#333333' }}>LOADING...</p>
+        </div>
+      )}
 
       {error && !loading && (
-        <div className="search-error-banner">
-          <div className="error-content">
-            <h3>⚠️ Movie Not Found</h3>
-            <p>{error}</p>
-          </div>
+        <div className="fail" style={{ display: 'block' }}>
+          <center>
+            <h3>Sorry! The movie you requested is not in our database. <br />
+            Please check the spelling or try with other movies!</h3>
+          </center>
         </div>
       )}
 
       {movieData && !loading && (
-        <RecommendationView
-          movieData={movieData}
-          onSelectRecommendedMovie={handleSelectMovie}
-        />
+        <div className="results">
+          <RecommendationView
+            movieData={movieData}
+            onSelectRecommendedMovie={handleSelectMovie}
+          />
+        </div>
       )}
     </div>
   );

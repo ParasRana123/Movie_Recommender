@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
-import Loader from '../components/Loader';
-import MovieCard from '../components/MovieCard';
 import { fetchGenreMovies } from '../api/movieApi';
 import { GENRES_DATA } from '../data/genresData';
 
@@ -12,21 +10,19 @@ export default function GenreDetailPage() {
 
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   const cleanGenreId = (genreId || 'action').toLowerCase().replace('-', '_');
   const genreMeta = GENRES_DATA.find(g => g.id === cleanGenreId) || {
     id: cleanGenreId,
     name: cleanGenreId.toUpperCase(),
-    banner: '/images/action.jpg',
+    banner: '/images/action1.jpg',
     heading: cleanGenreId.toUpperCase(),
-    description: `Explore our collection of popular ${cleanGenreId} movies.`
+    description: `The ${cleanGenreId} genre features exciting entertainment and engaging storylines.`
   };
 
   useEffect(() => {
     let isMounted = true;
     setLoading(true);
-    setError(null);
 
     fetchGenreMovies(cleanGenreId)
       .then(data => {
@@ -37,8 +33,7 @@ export default function GenreDetailPage() {
       })
       .catch(err => {
         if (isMounted) {
-          console.error('Error fetching genre movies:', err);
-          setError(err.message || 'Could not load movies for this genre');
+          console.error(err);
         }
       })
       .finally(() => {
@@ -49,61 +44,56 @@ export default function GenreDetailPage() {
   }, [cleanGenreId]);
 
   return (
-    <div className="genre-detail-page-container">
+    <div style={{ backgroundColor: 'black', minHeight: '100vh', color: '#ffffff' }}>
       <Navbar onSearchMovie={(title) => navigate(`/movie/${encodeURIComponent(title)}`)} />
 
-      {loading && <Loader text={`LOADING POPULAR ${genreMeta.name.toUpperCase()} MOVIES...`} />}
+      {loading && (
+        <div id="loader" style={{ display: 'block', textAlign: 'center', padding: '40px' }}>
+          <p id="loader-text" style={{ color: 'white', fontSize: '20px', fontWeight: 800 }}>LOADING...</p>
+        </div>
+      )}
 
-      <main className="genre-detail-main-content">
-        {/* Genre Banner Section */}
-        <section className="genre-banner-card">
-          <div className="genre-banner-image-wrapper">
+      <div id="genre-main-content">
+        <div className="container1">
+          <div className="img" style={{ position: 'static', opacity: 1, backdropFilter: 'none' }}>
             <img
-              src={genreMeta.banner}
+              src={genreMeta.banner || genreMeta.image}
+              className="responsive-img"
               alt={genreMeta.name}
-              className="genre-banner-img"
-              onError={(e) => { e.target.src = genreMeta.image; }}
             />
           </div>
-          <div className="genre-banner-text-col">
-            <h1 className="genre-banner-heading">{genreMeta.heading}</h1>
-            <p className="genre-banner-description">{genreMeta.description}</p>
+          <div className="text">
+            <h2 className="heading">{genreMeta.heading}</h2>
+            <p className="description">{genreMeta.description}</p>
           </div>
-        </section>
+        </div>
 
-        <hr className="genre-divider" />
+        <hr style={{ borderColor: '#333' }} />
 
-        {/* Popular Movies in Genre */}
-        <section className="genre-movies-section">
-          <center>
-            <h2 className="genre-section-title">Popular Movies</h2>
-            <p className="genre-section-subtitle">(Trending in {genreMeta.name} Movies)</p>
-          </center>
+        <center><h2 style={{ color: 'red', marginTop: '20px' }}>Popular Movies</h2></center>
+        <center><p style={{ color: 'white' }}>(Popular {genreMeta.name} related movies)</p></center>
 
-          {error && (
-            <div className="search-error-banner">
-              <p>{error}</p>
-            </div>
-          )}
-
-          {!loading && movies.length > 0 && (
-            <div className="movies-grid">
-              {movies.map((m, idx) => (
-                <MovieCard
-                  key={idx}
-                  title={m.title}
-                  poster={m.poster}
-                  rating={m.vote_average}
+        <div id="movies-container">
+          {movies && movies.length > 0 && (
+            movies.map((m, idx) => (
+              <div
+                key={idx}
+                className="movie-card-genre"
+                onClick={() => navigate(`/movie/${encodeURIComponent(m.title)}`)}
+              >
+                <img
+                  src={m.poster || 'https://via.placeholder.com/240x320?text=No+Poster'}
+                  alt={`${m.title} poster`}
                 />
-              ))}
-            </div>
+                {m.vote_average && m.vote_average !== 'N/A' && (
+                  <p>★ {m.vote_average}</p>
+                )}
+                <h3>{m.title}</h3>
+              </div>
+            ))
           )}
-
-          {!loading && movies.length === 0 && !error && (
-            <p className="empty-text">No movies found for this category.</p>
-          )}
-        </section>
-      </main>
+        </div>
+      </div>
     </div>
   );
 }

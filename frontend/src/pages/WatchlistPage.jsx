@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import { useWatchlist } from '../context/WatchlistContext';
 
@@ -8,23 +8,21 @@ export default function WatchlistPage() {
   const navigate = useNavigate();
 
   return (
-    <div className="watchlist-page-container">
+    <div style={{ backgroundColor: '#121212', minHeight: '100vh', color: '#ffffff' }}>
       <Navbar onSearchMovie={(title) => navigate(`/movie/${encodeURIComponent(title)}`)} />
 
-      <main className="watchlist-main-content">
-        <div className="watchlist-header-block">
-          <h1 className="watchlist-title">Your Watchlist</h1>
-          <p className="watchlist-subtitle">
-            Track all the movies you want to watch. Easily jump right back into any title or view recommendations.
-          </p>
-        </div>
+      <div className="your_watchlist">
+        <h1>Your Watchlist</h1>
+        <p>
+          Here are all the movies you've saved. You can click on any movie to view recommendations or remove it from your list.
+        </p>
 
-        {watchlist.length > 0 ? (
-          <div className="watchlist-grid">
-            {watchlist.map((movie, idx) => (
-              <div key={idx} className="watchlist-movie-card">
+        <div id="watchlist-container">
+          {watchlist && watchlist.length > 0 ? (
+            watchlist.map((movie, idx) => (
+              <div key={idx} className="watchlist-card">
                 <button
-                  className="watchlist-delete-btn"
+                  className="delete-btn"
                   onClick={() => removeFromWatchlist(movie.title)}
                   title="Remove from Watchlist"
                 >
@@ -32,40 +30,77 @@ export default function WatchlistPage() {
                 </button>
 
                 <div
-                  className="watchlist-card-body"
+                  className="movie-poster-wrap"
                   onClick={() => navigate(`/movie/${encodeURIComponent(movie.title)}`)}
                 >
                   <img
-                    src={movie.poster || 'https://via.placeholder.com/240x360?text=No+Poster'}
+                    src={movie.poster || 'https://via.placeholder.com/140x210?text=No+Poster'}
                     alt={movie.title}
-                    className="watchlist-poster-img"
-                    onError={(e) => { e.target.src = 'https://via.placeholder.com/240x360?text=No+Poster'; }}
+                    className="movie-poster"
                   />
-                  <div className="watchlist-info">
-                    <h4 className="watchlist-movie-title" title={movie.title}>{movie.title}</h4>
+                </div>
+
+                <div className="movie-info-wrap">
+                  <h3
+                    className="movie-title"
+                    onClick={() => navigate(`/movie/${encodeURIComponent(movie.title)}`)}
+                  >
+                    {movie.title}
+                  </h3>
+
+                  <div className="movie-meta-row">
                     {movie.rating && movie.rating !== 'N/A' && (
-                      <span className="card-rating">★ {movie.rating}</span>
+                      <div className="movie-meta-item movie-rating-badge">
+                        ★ {movie.rating} / 10
+                      </div>
                     )}
-                    {movie.genres && (
-                      <p className="watchlist-genres-text">{movie.genres}</p>
+                    {movie.runtime && movie.runtime !== 'N/A' && (
+                      <div className="movie-meta-item">
+                        ⏱ {movie.runtime}
+                      </div>
+                    )}
+                    {movie.release_date && movie.release_date !== 'Unknown Date' && (
+                      <div className="movie-meta-item">
+                        📅 {movie.release_date}
+                      </div>
+                    )}
+                    {movie.status && (
+                      <div className="movie-meta-item">
+                        🏷 {movie.status}
+                      </div>
                     )}
                   </div>
+
+                  {movie.overview && (
+                    <p className="movie-overview-text">{movie.overview}</p>
+                  )}
                 </div>
               </div>
-            ))}
-          </div>
-        ) : (
-          <div className="empty-watchlist-box">
-            <img src="/images/add_bookmark.svg" width="64" height="64" alt="Empty" className="empty-icon" />
-            <h3>Your Watchlist is empty</h3>
-            <p>Save movies here to easily find and watch them later.</p>
-            <div className="empty-actions-row">
-              <Link to="/" className="btn-primary-red">Browse Popular Movies</Link>
-              <Link to="/genres" className="btn-secondary-dark">Explore Genres</Link>
+            ))
+          ) : (
+            <div style={{ textAlign: 'center', padding: '60px 20px' }}>
+              <img
+                src="/images/add_bookmark.svg"
+                width="60"
+                height="60"
+                style={{ filter: 'invert(1)', opacity: 0.3, marginBottom: '20px' }}
+                alt="Empty"
+              />
+              <h3 style={{ color: '#ffffff', marginBottom: '10px' }}>Your Watchlist is empty</h3>
+              <p style={{ color: '#888888', maxWidth: '500px', margin: '0 auto 25px auto' }}>
+                You haven't saved any movies yet. Search for movies and click "Add to Watchlist" to save them here!
+              </p>
+              <button
+                className="btn btn-primary movie-button"
+                style={{ backgroundColor: '#e50914', borderColor: '#e50914', borderRadius: '5px', padding: '8px 24px', cursor: 'pointer' }}
+                onClick={() => navigate('/')}
+              >
+                Explore Movies
+              </button>
             </div>
-          </div>
-        )}
-      </main>
+          )}
+        </div>
+      </div>
     </div>
   );
 }

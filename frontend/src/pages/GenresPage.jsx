@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import { GENRES_DATA } from '../data/genresData';
 
@@ -7,42 +7,32 @@ export default function GenresPage() {
   const navigate = useNavigate();
 
   return (
-    <div className="genres-page-container">
+    <div style={{ backgroundColor: '#121212', minHeight: '100vh', color: '#ffffff' }}>
       <Navbar onSearchMovie={(title) => navigate(`/movie/${encodeURIComponent(title)}`)} />
 
-      <main className="genres-main-content">
-        <div className="genres-header-block">
-          <h1 className="genres-title">Movie Genres</h1>
-          <p className="genres-subtitle">
-            Explore curated collections across all major cinematic genres.
-          </p>
+      <div id="genre-main-content">
+        <div className="genres-page-title">
+          <h1>Genres</h1>
+          <p>Click on any genre to explore popular movies</p>
         </div>
 
-        <div className="genres-grid-container">
+        <div className="genres-card">
           {GENRES_DATA.map((genre) => (
-            <Link
+            <div
               key={genre.id}
-              to={`/genres/${genre.id}`}
-              className="genre-portal-card"
+              className="card-genre"
+              onClick={() => navigate(`/genres/${genre.id}`)}
             >
-              <div className="genre-portal-image-wrapper">
-                <img
-                  src={genre.image}
-                  alt={genre.name}
-                  className="genre-portal-img"
-                  loading="lazy"
-                />
-                <div className="genre-portal-overlay">
-                  <span className="genre-explore-tag">Explore Movies →</span>
-                </div>
-              </div>
-              <div className="genre-portal-title-row">
-                <h3 className="genre-portal-name">{genre.name}</h3>
-              </div>
-            </Link>
+              <img
+                src={genre.image}
+                className="card-img"
+                alt={genre.name}
+              />
+              <div className="genres-name">{genre.name}</div>
+            </div>
           ))}
         </div>
-      </main>
+      </div>
     </div>
   );
 }

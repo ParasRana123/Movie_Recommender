@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
-import Loader from '../components/Loader';
-import MovieCard from '../components/MovieCard';
 import { fetchActorDetails } from '../api/movieApi';
 
 export default function ActorPage() {
@@ -11,13 +9,13 @@ export default function ActorPage() {
   const [actorData, setActorData] = useState(null);
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     if (!actorId) return;
     let isMounted = true;
     setLoading(true);
-    setError(null);
+    setError(false);
 
     fetchActorDetails(actorId)
       .then(data => {
@@ -29,7 +27,8 @@ export default function ActorPage() {
       })
       .catch(err => {
         if (isMounted) {
-          setError(err.message || 'Could not load actor details');
+          console.error(err);
+          setError(true);
         }
       })
       .finally(() => {
@@ -40,79 +39,165 @@ export default function ActorPage() {
   }, [actorId]);
 
   return (
-    <div className="actor-page-container">
+    <div id="content" style={{ backgroundColor: '#ffffff', minHeight: '100vh' }}>
       <Navbar onSearchMovie={(title) => navigate(`/movie/${encodeURIComponent(title)}`)} />
 
-      {loading && <Loader text="FETCHING ACTOR PROFILE & FILMOGRAPHY..." />}
+      {loading && (
+        <div id="loader" style={{ display: 'block', textAlign: 'center', padding: '40px' }}>
+          <p id="loader-text" style={{ color: '#333333', fontSize: '20px', fontWeight: 800 }}>LOADING...</p>
+        </div>
+      )}
 
       {error && !loading && (
-        <div className="search-error-banner">
-          <div className="error-content">
-            <h3>⚠️ Error</h3>
-            <p>{error}</p>
-          </div>
+        <div className="fail" style={{ display: 'block', textAlign: 'center', marginTop: '30px' }}>
+          <h3 style={{ color: '#333333' }}>Sorry! Actor details could not be loaded.</h3>
         </div>
       )}
 
       {actorData && !loading && (
-        <main className="actor-main-content">
-          {/* Actor Profile Banner */}
-          <section className="actor-profile-card">
-            <div className="actor-profile-image-col">
-              <img
-                src={actorData.profile}
-                alt={actorData.name}
-                className="actor-large-photo"
-                onError={(e) => { e.target.src = 'https://via.placeholder.com/300x450?text=No+Photo'; }}
+        <div id="actor-main-content">
+          {/* Cinematic Hero Banner */}
+          <div id="mycontent">
+            <div id="mcontent" style={{ position: 'relative', minHeight: '65vh', overflow: 'hidden', backgroundColor: '#000000' }}>
+              {/* Blurred Background Backdrop */}
+              <div
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  backgroundImage: `url('${actorData.profile}')`,
+                  backgroundSize: 'cover',
+                  backgroundRepeat: 'no-repeat',
+                  backgroundPosition: 'center 25%',
+                  filter: 'blur(8px) brightness(35%)',
+                  transform: 'scale(1.1)',
+                  zIndex: 0
+                }}
               />
-            </div>
 
-            <div className="actor-details-col">
-              <span className="actor-dept-badge">{actorData.known_for_department || 'Acting'}</span>
-              <h1 className="actor-full-name">{actorData.name}</h1>
+              {/* Left Dark Gradient Overlay */}
+              <div
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '50%',
+                  height: '100%',
+                  background: 'linear-gradient(to right, rgba(0,0,0,0.85) 60%, transparent)',
+                  zIndex: 1
+                }}
+              />
 
-              <div className="actor-meta-row">
+              {/* Full Darkening Overlay */}
+              <div
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  background: 'rgba(0, 0, 0, 0.4)',
+                  zIndex: 1
+                }}
+              />
+
+              {/* Actor Profile Poster (Large screens) */}
+              <div className="poster-lg" style={{ position: 'relative', zIndex: 2 }}>
+                <img
+                  className="poster"
+                  style={{ borderRadius: '40px', marginLeft: '90px', marginTop: '40px' }}
+                  height="400"
+                  width="260"
+                  src={actorData.profile}
+                  alt={actorData.name}
+                />
+              </div>
+
+              {/* Actor Profile Poster (Mobile screens) */}
+              <div className="poster-sm text-center" style={{ position: 'relative', zIndex: 2 }}>
+                <img
+                  className="poster"
+                  style={{ borderRadius: '40px', marginTop: '20px', marginBottom: '20px' }}
+                  height="320"
+                  width="220"
+                  src={actorData.profile}
+                  alt={actorData.name}
+                />
+              </div>
+
+              {/* Actor Details Text Section */}
+              <div id="details" style={{ position: 'relative', zIndex: 3, color: 'white', padding: '30px', maxWidth: '850px' }}>
+                <h2 id="title" style={{ color: '#ffffff', fontWeight: 'bold', marginBottom: '15px', fontSize: '34px', letterSpacing: '0.5px' }}>
+                  {actorData.name}
+                </h2>
+                <h6 style={{ color: '#e50914', fontWeight: 'bold', fontSize: '15px', marginBottom: '12px' }}>
+                  PROFESSION: &nbsp;<span style={{ color: '#ffffff', fontWeight: 'normal' }}>{actorData.known_for_department || 'Acting'}</span>
+                </h6>
+
                 {actorData.birthday && actorData.birthday !== 'Unknown' && (
-                  <div className="actor-meta-item">
-                    <strong>Born:</strong> {actorData.birthday}
-                  </div>
+                  <h6 style={{ fontSize: '15px', marginBottom: '12px', fontWeight: 'bold' }}>
+                    BORN: &nbsp;<span style={{ color: '#e0e0e0', fontWeight: 'normal' }}>{actorData.birthday}</span>
+                  </h6>
                 )}
+
                 {actorData.birth_place && actorData.birth_place !== 'Unknown' && (
-                  <div className="actor-meta-item">
-                    <strong>Birthplace:</strong> {actorData.birth_place}
-                  </div>
+                  <h6 style={{ fontSize: '15px', marginBottom: '12px', fontWeight: 'bold' }}>
+                    PLACE OF BIRTH: &nbsp;<span style={{ color: '#e0e0e0', fontWeight: 'normal' }}>{actorData.birth_place}</span>
+                  </h6>
                 )}
-              </div>
 
-              <div className="actor-bio-block">
-                <h3 className="section-mini-heading">BIOGRAPHY</h3>
-                <p className="actor-bio-text">{actorData.biography}</p>
+                <h6 style={{ maxWidth: '95%', fontSize: '15px', fontWeight: 'bold', marginTop: '15px' }}>
+                  BIOGRAPHY: <br /><br />
+                  <span className="actor-bio-scroll">
+                    {actorData.biography || 'Biography not available for this actor.'}
+                  </span>
+                </h6>
               </div>
             </div>
-          </section>
+          </div>
 
-          {/* Filmography Grid */}
-          <section className="actor-filmography-section">
-            <div className="section-header-row">
-              <h2 className="showcase-heading">🎬 Known For ({movies.length} Movies)</h2>
-            </div>
+          {/* Known For Movies Section */}
+          {movies && movies.length > 0 && (
+            <>
+              <div className="movie" style={{ color: '#E8E8E8', marginTop: '45px' }}>
+                <center>
+                  <h3 style={{ color: '#333333', fontWeight: 'bold', letterSpacing: '0.5px' }}>KNOWN FOR MOVIES</h3>
+                  <h5 style={{ color: '#777777', fontSize: '15px' }}>(Click any of the movies to view full details and recommendations)</h5>
+                </center>
+              </div>
 
-            {movies.length > 0 ? (
-              <div className="movies-grid">
+              <div className="movie-content">
                 {movies.map((m, idx) => (
-                  <MovieCard
+                  <div
                     key={idx}
+                    className="card"
+                    style={{ width: '15rem', borderRadius: '18px', boxShadow: '0 10px 10px rgba(68, 66, 66, 0.3)', margin: '10px auto' }}
                     title={m.title}
-                    poster={m.poster}
-                    rating={m.rating}
-                  />
+                    onClick={() => navigate(`/movie/${encodeURIComponent(m.title)}`)}
+                  >
+                    <div className="imghvr">
+                      <img
+                        className="card-img-top"
+                        height="360"
+                        width="240"
+                        alt={`${m.title} - poster`}
+                        src={m.poster || 'https://via.placeholder.com/240x360?text=No+Poster'}
+                      />
+                      <figcaption className="fig">
+                        <button className="card-btn btn btn-danger"> Click Me </button>
+                      </figcaption>
+                    </div>
+                    <div className="card-body">
+                      <h5 className="card-title">{m.title}</h5>
+                    </div>
+                  </div>
                 ))}
               </div>
-            ) : (
-              <p className="empty-text">No movie credits found.</p>
-            )}
-          </section>
-        </main>
+            </>
+          )}
+        </div>
       )}
     </div>
   );

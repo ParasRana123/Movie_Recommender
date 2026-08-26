@@ -13,8 +13,7 @@ export function WatchlistProvider({ children }) {
     }
   });
 
-  const [lastRemoved, setLastRemoved] = useState(null);
-  const [toast, setToast] = useState({ visible: false, message: '', canUndo: false });
+  const [toast, setToast] = useState({ visible: false, message: '' });
 
   useEffect(() => {
     try {
@@ -24,30 +23,31 @@ export function WatchlistProvider({ children }) {
     }
   }, [watchlist]);
 
-  const showToast = (message, canUndo = false) => {
-    setToast({ visible: true, message, canUndo });
+  const showToast = (message) => {
+    setToast({ visible: true, message });
     setTimeout(() => {
-      setToast(prev => ({ ...prev, visible: false }));
-    }, 3000);
+      setToast({ visible: false, message: '' });
+    }, 2500);
   };
 
   const addToWatchlist = (movie) => {
     if (!movie || !movie.title) return;
     setWatchlist(prev => {
-      if (prev.some(m => m.title.toLowerCase() === movie.title.toLowerCase())) {
-        showToast(`"${movie.title}" is already in your Watchlist!`, false);
+      if (prev.some(m => m.title && m.title.toLowerCase() === movie.title.toLowerCase())) {
+        showToast(`"${movie.title}" is already in your Watchlist!`);
         return prev;
       }
-      showToast(`Added "${movie.title}" to Watchlist!`, false);
+      showToast(`Saved to Watchlist!`);
       return [
         {
-          id: movie.movie_id || movie.id,
           title: movie.title,
           poster: movie.poster,
-          rating: movie.vote_average || movie.rating || 'N/A',
-          release_date: movie.release_date || movie.release_year || '',
-          genres: movie.genres || movie.genres_str || '',
-          runtime: movie.runtime || ''
+          rating: movie.rating || movie.vote_average || 'N/A',
+          release_date: movie.release_date || movie.date || '',
+          runtime: movie.runtime || '',
+          status: movie.status || '',
+          vote_count: movie.vote_count || movie.count || '',
+          overview: movie.overview || ''
         },
         ...prev
       ];
@@ -55,25 +55,13 @@ export function WatchlistProvider({ children }) {
   };
 
   const removeFromWatchlist = (title) => {
-    const item = watchlist.find(m => m.title.toLowerCase() === title.toLowerCase());
-    if (item) {
-      setLastRemoved(item);
-      setWatchlist(prev => prev.filter(m => m.title.toLowerCase() !== title.toLowerCase()));
-      showToast(`Removed "${item.title}" from Watchlist`, true);
-    }
-  };
-
-  const undoRemove = () => {
-    if (lastRemoved) {
-      setWatchlist(prev => [lastRemoved, ...prev]);
-      showToast(`Restored "${lastRemoved.title}" to Watchlist`, false);
-      setLastRemoved(null);
-    }
+    setWatchlist(prev => prev.filter(m => m.title && m.title.toLowerCase() !== title.toLowerCase()));
+    showToast(`Removed from Watchlist!`);
   };
 
   const isInWatchlist = (title) => {
     if (!title) return false;
-    return watchlist.some(m => m.title.toLowerCase() === title.toLowerCase());
+    return watchlist.some(m => m.title && m.title.toLowerCase() === title.toLowerCase());
   };
 
   return (
@@ -82,13 +70,32 @@ export function WatchlistProvider({ children }) {
         watchlist,
         addToWatchlist,
         removeFromWatchlist,
-        undoRemove,
         isInWatchlist,
-        toast,
-        setToast
+        toast
       }}
     >
       {children}
+      {toast.visible && (
+        <div
+          style={{
+            position: 'fixed',
+            bottom: '30px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            backgroundColor: '#28a745',
+            color: '#ffffff',
+            padding: '12px 28px',
+            borderRadius: '30px',
+            fontWeight: 'bold',
+            fontSize: '16px',
+            zIndex: 99999,
+            boxShadow: '0 4px 20px rgba(0,0,0,0.6)',
+            transition: 'opacity 0.3s ease'
+          }}
+        >
+          {toast.message}
+        </div>
+      )}
     </WatchlistContext.Provider>
   );
 }
