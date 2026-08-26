@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
+import Loader from '../components/Loader';
 import { fetchGenreMovies } from '../api/movieApi';
 import { GENRES_DATA } from '../data/genresData';
 
@@ -47,11 +48,7 @@ export default function GenreDetailPage() {
     <div style={{ backgroundColor: 'black', minHeight: '100vh', color: '#ffffff' }}>
       <Navbar onSearchMovie={(title) => navigate(`/movie/${encodeURIComponent(title)}`)} />
 
-      {loading && (
-        <div id="loader" style={{ display: 'block', textAlign: 'center', padding: '40px' }}>
-          <p id="loader-text" style={{ color: 'white', fontSize: '20px', fontWeight: 800 }}>LOADING...</p>
-        </div>
-      )}
+      {loading && <Loader />}
 
       <div id="genre-main-content">
         <div className="container1">

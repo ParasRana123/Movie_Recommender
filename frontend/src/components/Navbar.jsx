@@ -13,14 +13,12 @@ export default function Navbar({ onSearchMovie, initialQuery = '' }) {
   const navigate = useNavigate();
   const searchContainerRef = useRef(null);
 
-  // Sync initialQuery prop if it changes
   useEffect(() => {
     if (initialQuery) {
       setQuery(initialQuery);
     }
   }, [initialQuery]);
 
-  // Also fetch latest suggestions from server in background
   useEffect(() => {
     let mounted = true;
     fetchSuggestions()
@@ -33,7 +31,6 @@ export default function Navbar({ onSearchMovie, initialQuery = '' }) {
     return () => { mounted = false; };
   }, []);
 
-  // Compute live search suggestions on every keystroke
   useEffect(() => {
     const trimmed = query.trim().toLowerCase();
     if (trimmed.length < 2) {
@@ -42,7 +39,6 @@ export default function Navbar({ onSearchMovie, initialQuery = '' }) {
       return;
     }
 
-    // Match movies starting with query first, then movies containing query
     const startsWithMatches = [];
     const containsMatches = [];
 
@@ -63,7 +59,6 @@ export default function Navbar({ onSearchMovie, initialQuery = '' }) {
     setSelectedIndex(-1);
   }, [query, films]);
 
-  // Click outside to dismiss dropdown
   useEffect(() => {
     function handleClickOutside(event) {
       if (searchContainerRef.current && !searchContainerRef.current.contains(event.target)) {
@@ -110,7 +105,6 @@ export default function Navbar({ onSearchMovie, initialQuery = '' }) {
     }
   };
 
-  // Highlight matched query with <mark>
   const renderHighlighted = (text, highlight) => {
     if (!highlight.trim()) return text;
     const parts = text.split(new RegExp(`(${highlight})`, 'gi'));
@@ -129,7 +123,7 @@ export default function Navbar({ onSearchMovie, initialQuery = '' }) {
 
   return (
     <div className="ml-container" style={{ display: 'block' }}>
-      {/* GitHub Octocat Ribbon */}
+      {/* GitHub Corner */}
       <a href="https://github.com/ParasRana123/Movie-Recommender-with-Sentiment-Analysis" className="github-corner" title="View source on GitHub">
         <svg data-toggle="tooltip" data-placement="left" width="80" height="80" viewBox="0 0 250 250" style={{ fill: '#e50914', color: '#fff', position: 'fixed', zIndex: 100, top: 0, border: 0, right: 0 }} aria-hidden="true">
           <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
@@ -138,7 +132,7 @@ export default function Navbar({ onSearchMovie, initialQuery = '' }) {
         </svg>
       </a>
 
-      {/* Exact Original Navigation Bar */}
+      {/* Top Navbar with clean non-colliding layout */}
       <nav
         className="form-group shadow-textarea"
         style={{
@@ -150,11 +144,14 @@ export default function Navbar({ onSearchMovie, initialQuery = '' }) {
           backgroundColor: '#333333',
           height: '12vh',
           margin: 0,
+          padding: '0 20px',
+          gap: '20px',
           position: 'relative',
           zIndex: 1000
         }}
       >
-        <div className="search-container" style={{ position: 'relative', width: '60%' }} ref={searchContainerRef}>
+        {/* Search Bar Input Container */}
+        <div className="search-container" style={{ position: 'relative', width: '450px', maxWidth: '45vw', margin: 0 }} ref={searchContainerRef}>
           <input
             type="text"
             name="movie"
@@ -167,7 +164,9 @@ export default function Navbar({ onSearchMovie, initialQuery = '' }) {
               borderColor: '#ffffff',
               width: '100%',
               color: '#181818',
-              borderRadius: '5px'
+              borderRadius: '5px',
+              height: '38px',
+              padding: '6px 12px'
             }}
             value={query}
             onChange={(e) => setQuery(e.target.value)}
@@ -193,40 +192,63 @@ export default function Navbar({ onSearchMovie, initialQuery = '' }) {
           )}
         </div>
 
-        <div className="form-group" style={{ textAlign: 'center', margin: 0 }}>
+        {/* Enter Button (no collision) */}
+        <div style={{ margin: 0 }}>
           <button
-            className="btn btn-primary btn-block movie-button"
+            className="btn btn-primary movie-button"
             style={{
               backgroundColor: '#e50914',
-              textAlign: 'center',
               borderColor: '#e50914',
-              width: '120px',
-              position: 'relative',
-              left: '-155px',
-              top: '30px'
+              width: '110px',
+              height: '38px',
+              borderRadius: '5px',
+              fontWeight: 'bold',
+              margin: 0,
+              cursor: query.trim() ? 'pointer' : 'default'
             }}
             disabled={!query.trim()}
             onClick={handleSubmit}
           >
             Enter
           </button>
-          <br /><br />
         </div>
 
-        <div style={{ color: 'white', position: 'relative', left: '-125px', top: '-5px' }}> | </div>
+        <div style={{ color: 'white', fontSize: '18px', margin: '0 5px' }}> | </div>
 
+        {/* Watchlist Navigation */}
         <div
           className="watchlist"
-          style={{ cursor: 'pointer' }}
+          style={{
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+            backgroundColor: 'transparent',
+            margin: 0,
+            padding: 0,
+            top: 0,
+            left: 0
+          }}
           onClick={() => navigate('/watchlist')}
         >
-          <img src="/images/add_bookmark.svg" width="30px" height="auto" alt="WatchList" />
-          <p>WatchList</p>
+          <img src="/images/add_bookmark.svg" width="28px" height="auto" alt="WatchList" style={{ filter: 'invert(1)' }} />
+          <p style={{ margin: 0, color: 'white', fontSize: '16px' }}>WatchList</p>
         </div>
 
+        <div style={{ color: 'white', fontSize: '18px', margin: '0 5px' }}> | </div>
+
+        {/* Genre-Wise Navigation */}
         <div
           className="genres"
-          style={{ color: 'white', position: 'relative', left: '-120px', top: '-5px', cursor: 'pointer' }}
+          style={{
+            color: 'white',
+            cursor: 'pointer',
+            fontSize: '16px',
+            fontWeight: 500,
+            margin: 0,
+            padding: 0,
+            position: 'static'
+          }}
           onClick={() => navigate('/genres')}
         >
           Genre-Wise

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
+import Loader from '../components/Loader';
 import { fetchActorDetails } from '../api/movieApi';
 
 export default function ActorPage() {
@@ -42,11 +43,7 @@ export default function ActorPage() {
     <div id="content" style={{ backgroundColor: '#ffffff', minHeight: '100vh' }}>
       <Navbar onSearchMovie={(title) => navigate(`/movie/${encodeURIComponent(title)}`)} />
 
-      {loading && (
-        <div id="loader" style={{ display: 'block', textAlign: 'center', padding: '40px' }}>
-          <p id="loader-text" style={{ color: '#333333', fontSize: '20px', fontWeight: 800 }}>LOADING...</p>
-        </div>
-      )}
+      {loading && <Loader />}
 
       {error && !loading && (
         <div className="fail" style={{ display: 'block', textAlign: 'center', marginTop: '30px' }}>

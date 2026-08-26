@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import RecommendationView from '../components/RecommendationView';
+import Loader from '../components/Loader';
 import { fetchMovieDetails } from '../api/movieApi';
 
 export default function MovieDetailsPage() {
@@ -17,11 +18,19 @@ export default function MovieDetailsPage() {
     setLoading(true);
     setError(false);
 
+    const startTime = Date.now();
+
     fetchMovieDetails(decodeURIComponent(movieTitle))
-      .then(data => {
+      .then(async (data) => {
         if (isMounted) {
-          setMovieData(data);
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+          const elapsed = Date.now() - startTime;
+          if (elapsed < 1800) {
+            await new Promise(resolve => setTimeout(resolve, 1800 - elapsed));
+          }
+          if (isMounted) {
+            setMovieData(data);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
         }
       })
       .catch(err => {
@@ -46,21 +55,22 @@ export default function MovieDetailsPage() {
     <div id="content">
       <Navbar onSearchMovie={handleSelectMovie} initialQuery={movieTitle || ''} />
 
-      {loading && (
-        <div id="loader">
-          <p id="loader-text" style={{ color: '#333333' }}>LOADING...</p>
-        </div>
-      )}
+      {/* Dynamic Loader with rotating messages */}
+      {loading && <Loader />}
 
+      {/* Fail Message */}
       {error && !loading && (
-        <div className="fail" style={{ display: 'block' }}>
+        <div className="fail" style={{ display: 'block', margin: '40px auto', textAlign: 'center' }}>
           <center>
-            <h3>Sorry! The movie you requested is not in our database. <br />
-            Please check the spelling or try with other movies!</h3>
+            <h3 style={{ color: '#333333', maxWidth: '800px', lineHeight: '1.6' }}>
+              Sorry! The movie you requested is not in our database. <br />
+              Please check the spelling or try with other movies!
+            </h3>
           </center>
         </div>
       )}
 
+      {/* Recommendation Results */}
       {movieData && !loading && (
         <div className="results">
           <RecommendationView
