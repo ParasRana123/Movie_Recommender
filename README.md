@@ -1,10 +1,13 @@
 # 🎬 Movie Recommendation System (React + Flask)
 
-A machine-learning and NLP-powered Movie Recommendation web application with a React SPA frontend and a Flask REST API backend.
+A machine-learning and NLP-powered Movie Recommendation web application with a modern React SPA frontend and a high-performance Flask REST API backend.
+
+-  **Live Website**: [https://movierecommender-navy.vercel.app/](https://movierecommender-navy.vercel.app/)
+-  **Demo Video**: [https://res.cloudinary.com/d3ukbssg/video/upload/v1787560286/movie_recom_record.mp4](https://res.cloudinary.com/d3ukbssg/video/upload/v1787560286/movie_recom_record.mp4)
 
 ---
 
-## 📁 Architecture Overview
+## Architecture Overview
 
 ```
 Movie_Recommender/
@@ -30,13 +33,14 @@ Movie_Recommender/
 
 ---
 
-## 🚀 How to Run Locally
+## How to Run Locally
 
 ### 1. Start the Flask Backend
-Open a terminal in the `backend/` directory:
+Open a terminal in the project root or `backend/` directory:
 ```bash
-cd backend
-python app.py
+python main.py
+# or
+cd backend && python app.py
 ```
 *The API will start at `http://127.0.0.1:5000`*
 
@@ -51,7 +55,7 @@ npm run dev
 
 ---
 
-## ✨ Features
+## Features
 - **Universal Live Autocomplete**: As you type in the search bar on any page (e.g. *avengers*), matched movie titles appear instantly in the dropdown with matched characters highlighted.
 - **Content-Based Recommendations**: Machine Learning cosine similarity engine generates 10 relevant movie recommendations.
 - **NLP Sentiment Analysis**: Audience reviews are classified into *Positive* or *Critical* with probability confidence scores.
