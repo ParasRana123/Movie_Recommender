@@ -57,6 +57,26 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
     }
   };
 
+  const getStreamingRedirectUrl = (providerName, movieTitle, customUrl) => {
+    if (customUrl) return customUrl;
+    const p = (providerName || '').toLowerCase().trim();
+    const encoded = encodeURIComponent((movieTitle || '').trim());
+    if (p.includes('netflix')) return `https://www.netflix.com/search?q=${encoded}`;
+    if (p.includes('prime') || p.includes('amazon')) return `https://www.primevideo.com/search/ref=atv_nb_sr?phrase=${encoded}`;
+    if (p.includes('disney') || p.includes('hotstar')) return `https://www.hotstar.com/in/search?q=${encoded}`;
+    if (p.includes('apple') || p.includes('itunes')) return `https://tv.apple.com/search?term=${encoded}`;
+    if (p.includes('hulu')) return `https://www.hulu.com/search?q=${encoded}`;
+    if (p.includes('hbo') || p.includes('max')) return `https://www.max.com/search?q=${encoded}`;
+    if (p.includes('jio')) return `https://www.jiocinema.com/search/${encoded}`;
+    if (p.includes('zee')) return `https://www.zee5.com/search?q=${encoded}`;
+    if (p.includes('sonyliv') || p.includes('sony')) return `https://www.sonyliv.com/search?q=${encoded}`;
+    if (p.includes('peacock')) return `https://www.peacocktv.com/search?q=${encoded}`;
+    if (p.includes('paramount')) return `https://www.paramountplus.com/search/?q=${encoded}`;
+    if (p.includes('youtube') || p.includes('google')) return `https://www.youtube.com/results?search_query=${encoded}+movie`;
+    if (p.includes('crunchyroll')) return `https://www.crunchyroll.com/search?q=${encoded}`;
+    return `https://www.google.com/search?q=watch+${encoded}+on+${encodeURIComponent(providerName)}`;
+  };
+
   const displayGenres = genres_str || (Array.isArray(genres) ? genres.join(', ') : genres);
   const headingColor = isDark ? '#ffffff' : '#333333';
   const subtitleColor = isDark ? '#aaaaaa' : '#777777';
@@ -248,12 +268,22 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
           <h6>Streaming on:</h6>
           <div className="streaming_platform">
             {streaming_availability && streaming_availability.length > 0 ? (
-              streaming_availability.map((prov, i) => (
-                <div key={i} className="provider">
-                  <img src={prov.logo_path} alt={prov.provider_name} width="50" />
-                  <p style={{ color: 'white' }}>{prov.provider_name}</p>
-                </div>
-              ))
+              streaming_availability.map((prov, i) => {
+                const targetUrl = getStreamingRedirectUrl(prov.provider_name, title, prov.watch_url);
+                return (
+                  <a
+                    key={i}
+                    href={targetUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="provider"
+                    title={`Watch "${title}" on ${prov.provider_name}`}
+                  >
+                    <img src={prov.logo_path} alt={prov.provider_name} width="50" />
+                    <p>{prov.provider_name}</p>
+                  </a>
+                );
+              })
             ) : (
               <p style={{ color: '#aaa', fontSize: '14px' }}>Check local streaming platforms</p>
             )}

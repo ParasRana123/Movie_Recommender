@@ -225,14 +225,55 @@ def fetch_movie_full_data(movie_title_or_id):
         trailer = f"https://www.youtube.com/embed/{trailer_key}" if trailer_key else None
         teaser = f"https://www.youtube.com/embed/{teaser_key}" if teaser_key else None
 
+        # Helper to generate streaming service redirect URL
+        def get_streaming_url(provider_name, title, fallback_link=""):
+            p = (provider_name or "").lower().strip()
+            encoded = requests.utils.quote(str(title).strip())
+            if "netflix" in p:
+                return f"https://www.netflix.com/search?q={encoded}"
+            elif "prime" in p or "amazon" in p:
+                return f"https://www.primevideo.com/search/ref=atv_nb_sr?phrase={encoded}"
+            elif "disney" in p or "hotstar" in p:
+                return f"https://www.hotstar.com/in/search?q={encoded}"
+            elif "apple" in p or "itunes" in p:
+                return f"https://tv.apple.com/search?term={encoded}"
+            elif "hulu" in p:
+                return f"https://www.hulu.com/search?q={encoded}"
+            elif "hbo" in p or "max" in p:
+                return f"https://www.max.com/search?q={encoded}"
+            elif "jio" in p:
+                return f"https://www.jiocinema.com/search/{encoded}"
+            elif "zee" in p:
+                return f"https://www.zee5.com/search?q={encoded}"
+            elif "sonyliv" in p or "sony" in p:
+                return f"https://www.sonyliv.com/search?q={encoded}"
+            elif "peacock" in p:
+                return f"https://www.peacocktv.com/search?q={encoded}"
+            elif "paramount" in p:
+                return f"https://www.paramountplus.com/search/?q={encoded}"
+            elif "youtube" in p or "google" in p:
+                return f"https://www.youtube.com/results?search_query={encoded}+movie"
+            elif "crunchyroll" in p:
+                return f"https://www.crunchyroll.com/search?q={encoded}"
+            elif fallback_link:
+                return fallback_link
+            else:
+                return f"https://www.google.com/search?q=watch+{encoded}+on+{requests.utils.quote(provider_name)}"
+
         # Watch Providers
-        providers_data = movie_data.get("watch/providers", {}).get("results", {}).get("IN", {}).get("flatrate", [])
+        watch_results = movie_data.get("watch/providers", {}).get("results", {})
+        providers_data = watch_results.get("IN", {}).get("flatrate", [])
+        tmdb_watch_link = watch_results.get("IN", {}).get("link", "")
         if not providers_data:
-            providers_data = movie_data.get("watch/providers", {}).get("results", {}).get("US", {}).get("flatrate", [])
+            providers_data = watch_results.get("US", {}).get("flatrate", [])
+            if not tmdb_watch_link:
+                tmdb_watch_link = watch_results.get("US", {}).get("link", "")
+
         streaming_availability = [
             {
                 "provider_name": p["provider_name"],
-                "logo_path": f"https://image.tmdb.org/t/p/w200{p['logo_path']}"
+                "logo_path": f"https://image.tmdb.org/t/p/w200{p['logo_path']}",
+                "watch_url": get_streaming_url(p["provider_name"], title, tmdb_watch_link)
             }
             for p in providers_data if p.get("provider_name") and p.get("logo_path")
         ]
