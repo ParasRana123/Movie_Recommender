@@ -98,6 +98,34 @@ export async function fetchGenreMovies(genreName) {
 }
 
 /**
+ * Fetch trending movies
+ */
+export async function fetchTrendingMovies() {
+  try {
+    const res = await fetch(`${API_BASE}/trending`);
+    if (!res.ok) throw new Error('Failed to fetch trending movies');
+    return await res.json();
+  } catch (err) {
+    console.error('Error in fetchTrendingMovies:', err);
+    return [];
+  }
+}
+
+/**
+ * Fetch upcoming movies
+ */
+export async function fetchUpcomingMovies() {
+  try {
+    const res = await fetch(`${API_BASE}/upcoming`);
+    if (!res.ok) throw new Error('Failed to fetch upcoming movies');
+    return await res.json();
+  } catch (err) {
+    console.error('Error in fetchUpcomingMovies:', err);
+    return [];
+  }
+}
+
+/**
  * Fetch curated top movies
  */
 export async function fetchTopMovies() {

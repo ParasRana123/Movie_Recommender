@@ -4,7 +4,7 @@ import localSuggestions from '../data/suggestions.json';
 import { fetchSuggestions } from '../api/movieApi';
 import { useTheme } from '../context/ThemeContext';
 
-export default function Navbar({ onSearchMovie, initialQuery = '' }) {
+export default function Navbar({ onSearchMovie, onHomeClick, initialQuery = '' }) {
   const [query, setQuery] = useState(initialQuery);
   const [films, setFilms] = useState(localSuggestions || []);
   const [filteredSuggestions, setFilteredSuggestions] = useState([]);
@@ -157,14 +157,14 @@ export default function Navbar({ onSearchMovie, initialQuery = '' }) {
           height: '12vh',
           margin: 0,
           padding: '0 20px',
-          gap: '18px',
+          gap: '16px',
           position: 'relative',
           zIndex: 1000,
           transition: 'background-color 0.3s ease'
         }}
       >
         {/* Search Bar Input Container */}
-        <div className="search-container" style={{ position: 'relative', width: '450px', maxWidth: '42vw', margin: 0 }} ref={searchContainerRef}>
+        <div className="search-container" style={{ position: 'relative', width: '420px', maxWidth: '38vw', margin: 0 }} ref={searchContainerRef}>
           <input
             type="text"
             name="movie"
@@ -232,7 +232,7 @@ export default function Navbar({ onSearchMovie, initialQuery = '' }) {
             style={{
               backgroundColor: '#e50914',
               borderColor: '#e50914',
-              width: '105px',
+              width: '95px',
               height: '38px',
               borderRadius: '5px',
               fontWeight: 'bold',
@@ -245,6 +245,35 @@ export default function Navbar({ onSearchMovie, initialQuery = '' }) {
           >
             Enter
           </button>
+        </div>
+
+        <div style={{ color: 'white', fontSize: '18px', margin: '0 2px' }}> | </div>
+
+        {/* Home Navigation */}
+        <div
+          className="home-nav"
+          style={{
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '6px',
+            backgroundColor: 'transparent',
+            margin: 0,
+            padding: 0
+          }}
+          onClick={() => {
+            if (onHomeClick) {
+              onHomeClick();
+            }
+            navigate('/');
+          }}
+          title="Back to Home Discovery"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ verticalAlign: 'middle' }}>
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+          <p style={{ margin: 0, color: 'white', fontSize: '15px', fontWeight: 500 }}>Home</p>
         </div>
 
         <div style={{ color: 'white', fontSize: '18px', margin: '0 2px' }}> | </div>
@@ -265,7 +294,7 @@ export default function Navbar({ onSearchMovie, initialQuery = '' }) {
           }}
           onClick={() => navigate('/watchlist')}
         >
-          <img src="/images/add_bookmark.svg" width="26px" height="auto" alt="WatchList" style={{ filter: 'invert(1)' }} />
+          <img src="/images/add_bookmark.svg" width="24px" height="auto" alt="WatchList" style={{ filter: 'invert(1)' }} />
           <p style={{ margin: 0, color: 'white', fontSize: '15px' }}>WatchList</p>
         </div>
 

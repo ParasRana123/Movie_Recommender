@@ -604,5 +604,68 @@ def top_movies():
             pass
     return jsonify(movies_data)
 
+TRENDING_CACHE = {"timestamp": 0, "data": []}
+UPCOMING_CACHE = {"timestamp": 0, "data": []}
+
+@app.route('/api/trending')
+def trending_movies():
+    global TRENDING_CACHE
+    import time
+    now = time.time()
+    if TRENDING_CACHE["data"] and (now - TRENDING_CACHE["timestamp"] < 1800):
+        return jsonify(TRENDING_CACHE["data"])
+    try:
+        r = http_session.get(f"{TMDB_BASE_URL}/trending/movie/week?api_key={TMDB_API_KEY}", timeout=4)
+        if r.status_code == 200:
+            results = r.json().get('results', [])
+            formatted = [
+                {
+                    "id": m.get("id"),
+                    "title": m.get("title"),
+                    "poster": f"https://image.tmdb.org/t/p/w500{m.get('poster_path')}" if m.get('poster_path') else None,
+                    "backdrop": f"https://image.tmdb.org/t/p/w780{m.get('backdrop_path')}" if m.get('backdrop_path') else None,
+                    "rating": round(float(m.get("vote_average", 0)), 1),
+                    "release_date": m.get("release_date"),
+                    "overview": m.get("overview")
+                }
+                for m in results if m.get("title") and m.get("poster_path")
+            ]
+            if formatted:
+                TRENDING_CACHE = {"timestamp": now, "data": formatted}
+                return jsonify(formatted)
+    except Exception as e:
+        logging.error(f"Error fetching trending movies: {e}")
+    return jsonify(TRENDING_CACHE["data"])
+
+@app.route('/api/upcoming')
+def upcoming_movies():
+    global UPCOMING_CACHE
+    import time
+    now = time.time()
+    if UPCOMING_CACHE["data"] and (now - UPCOMING_CACHE["timestamp"] < 1800):
+        return jsonify(UPCOMING_CACHE["data"])
+    try:
+        r = http_session.get(f"{TMDB_BASE_URL}/movie/upcoming?api_key={TMDB_API_KEY}&language=en-US&page=1", timeout=4)
+        if r.status_code == 200:
+            results = r.json().get('results', [])
+            formatted = [
+                {
+                    "id": m.get("id"),
+                    "title": m.get("title"),
+                    "poster": f"https://image.tmdb.org/t/p/w500{m.get('poster_path')}" if m.get('poster_path') else None,
+                    "backdrop": f"https://image.tmdb.org/t/p/w780{m.get('backdrop_path')}" if m.get('backdrop_path') else None,
+                    "rating": round(float(m.get("vote_average", 0)), 1),
+                    "release_date": m.get("release_date"),
+                    "overview": m.get("overview")
+                }
+                for m in results if m.get("title") and m.get("poster_path")
+            ]
+            if formatted:
+                UPCOMING_CACHE = {"timestamp": now, "data": formatted}
+                return jsonify(formatted)
+    except Exception as e:
+        logging.error(f"Error fetching upcoming movies: {e}")
+    return jsonify(UPCOMING_CACHE["data"])
+
 if __name__ == '__main__':
     app.run(port=5000, debug=True)
