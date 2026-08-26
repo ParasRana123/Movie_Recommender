@@ -5,6 +5,9 @@ import { useTheme } from '../context/ThemeContext';
 
 export default function RecommendationView({ movieData, onSelectRecommendedMovie }) {
   const [selectedCastModal, setSelectedCastModal] = useState(null);
+  const [isDirectorBioExpanded, setIsDirectorBioExpanded] = useState(false);
+  const [expandedReviews, setExpandedReviews] = useState({});
+
   const navigate = useNavigate();
   const { isInWatchlist, addToWatchlist, removeFromWatchlist } = useWatchlist();
   const { isDark } = useTheme();
@@ -48,181 +51,177 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
         poster,
         rating: vote_average,
         release_date,
-        genres: Array.isArray(genres) ? genres.join(', ') : (genres_str || genres),
-        runtime,
-        vote_count,
-        status,
-        overview
+        genres: genres_str || (Array.isArray(genres) ? genres.join(', ') : genres)
       });
     }
   };
 
-  const getStreamingRedirectUrl = (providerName, movieTitle, customUrl) => {
-    if (customUrl) return customUrl;
-    const p = (providerName || '').toLowerCase().trim();
+  const toggleReview = (idx) => {
+    setExpandedReviews(prev => ({
+      ...prev,
+      [idx]: !prev[idx]
+    }));
+  };
+
+  const headingColor = isDark ? '#ffffff' : '#333333';
+  const subtitleColor = isDark ? '#aaaaaa' : '#777777';
+
+  // Helper for direct streaming URL
+  const getStreamingRedirectUrl = (provName, movieTitle, fallbackLink) => {
+    const p = (provName || '').toLowerCase().trim();
     const encoded = encodeURIComponent((movieTitle || '').trim());
     if (p.includes('netflix')) return `https://www.netflix.com/search?q=${encoded}`;
     if (p.includes('prime') || p.includes('amazon')) return `https://www.primevideo.com/search/ref=atv_nb_sr?phrase=${encoded}`;
     if (p.includes('disney') || p.includes('hotstar')) return `https://www.hotstar.com/in/search?q=${encoded}`;
     if (p.includes('apple') || p.includes('itunes')) return `https://tv.apple.com/search?term=${encoded}`;
     if (p.includes('hulu')) return `https://www.hulu.com/search?q=${encoded}`;
-    if (p.includes('hbo') || p.includes('max')) return `https://www.max.com/search?q=${encoded}`;
+    if (p.includes('max') || p.includes('hbo')) return `https://www.max.com/search?q=${encoded}`;
     if (p.includes('jio')) return `https://www.jiocinema.com/search/${encoded}`;
     if (p.includes('zee')) return `https://www.zee5.com/search?q=${encoded}`;
-    if (p.includes('sonyliv') || p.includes('sony')) return `https://www.sonyliv.com/search?q=${encoded}`;
-    if (p.includes('peacock')) return `https://www.peacocktv.com/search?q=${encoded}`;
-    if (p.includes('paramount')) return `https://www.paramountplus.com/search/?q=${encoded}`;
-    if (p.includes('youtube') || p.includes('google')) return `https://www.youtube.com/results?search_query=${encoded}+movie`;
-    if (p.includes('crunchyroll')) return `https://www.crunchyroll.com/search?q=${encoded}`;
-    return `https://www.google.com/search?q=watch+${encoded}+on+${encodeURIComponent(providerName)}`;
+    if (p.includes('sony')) return `https://www.sonyliv.com/search?query=${encoded}`;
+    return fallbackLink || `https://www.google.com/search?q=watch+${encoded}+on+${encodeURIComponent(provName || '')}`;
   };
 
-  const displayGenres = genres_str || (Array.isArray(genres) ? genres.join(', ') : genres);
-  const headingColor = isDark ? '#ffffff' : '#333333';
-  const subtitleColor = isDark ? '#aaaaaa' : '#777777';
-
   return (
-    <div id="mycontent" style={{ color: 'white' }}>
-      {/* 1. Hero Movie Overview Section */}
-      <div
-        id="mcontent"
-        style={{
-          position: 'relative',
-          minHeight: '67vh',
-          overflow: 'hidden',
-          marginTop: '0px',
-          padding: '35px 0 45px 0',
-          display: 'flex',
-          alignItems: 'center'
-        }}
-      >
-        {/* Background Image with Blur and Darkened Overlay */}
+    <div>
+      {/* 1. Cinematic Hero Banner */}
+      <div id="mycontent">
         <div
+          id="mcontent"
           style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundImage: `url('${backdrop || poster}')`,
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center',
-            filter: 'blur(3px)',
-            width: '100%',
-            height: '100%',
-            zIndex: 0
+            position: 'relative',
+            minHeight: '65vh',
+            overflow: 'hidden',
+            backgroundColor: '#000000',
+            padding: '30px 0'
           }}
-        />
-
-        {/* Left Black Gradient Overlay */}
-        <div
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '45%',
-            height: '100%',
-            background: 'linear-gradient(to right, black 60%, transparent)',
-            zIndex: 1
-          }}
-        />
-
-        {/* Darkened Full Overlay */}
-        <div
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            background: 'rgba(0, 0, 0, 0.5)',
-            width: '100%',
-            height: '100%',
-            zIndex: 1
-          }}
-        />
-
-        {/* Poster Image (Large screen) */}
-        <div className="poster-lg" style={{ position: 'relative', zIndex: 2, flexShrink: 0, paddingLeft: '80px' }}>
-          <img
-            className="poster"
-            style={{ borderRadius: '40px', display: 'block' }}
-            height="400"
-            width="250"
-            src={poster || 'https://via.placeholder.com/250x400?text=No+Poster'}
-            alt={title}
+        >
+          {/* Ambient Blurred Background Backdrop */}
+          <div
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundImage: `url('${backdrop || poster}')`,
+              backgroundSize: 'cover',
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'center 20%',
+              filter: 'blur(10px) brightness(30%)',
+              transform: 'scale(1.1)',
+              zIndex: 0
+            }}
           />
-        </div>
 
-        {/* Poster Image (Small screen / Mobile) */}
-        <div className="poster-sm text-center" style={{ position: 'relative', zIndex: 2, padding: '20px 0', width: '100%' }}>
-          <img
-            className="poster"
-            style={{ borderRadius: '30px', margin: '0 auto', maxWidth: '80%', height: 'auto', maxHeight: '350px' }}
-            src={poster || 'https://via.placeholder.com/250x400?text=No+Poster'}
-            alt={title}
+          {/* Left Dark Gradient Overlay for Maximum Readability */}
+          <div
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '50%',
+              height: '100%',
+              background: 'linear-gradient(to right, rgba(0,0,0,0.85) 60%, transparent)',
+              zIndex: 1
+            }}
           />
-        </div>
 
-        {/* Details Section (Text) */}
-        <div id="details" className="hero-details" style={{ position: 'relative', zIndex: 3, color: 'white', padding: '10px 45px', flex: 1, maxWidth: '85%' }}>
-          <h6 id="title" style={{ zIndex: 3, color: 'white', fontSize: '20px', fontWeight: 'bold', marginBottom: '14px' }}>
-            TITLE: &nbsp;{title}
-          </h6>
-          <h6 id="overview" style={{ maxWidth: '95%', zIndex: 3, color: 'white', lineHeight: '1.6', marginBottom: '14px' }}>
-            OVERVIEW: <br /><br />
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{overview}
-          </h6>
-          <h6 id="vote_average" style={{ zIndex: 3, color: 'white', marginBottom: '14px' }}>
-            RATING: &nbsp;{vote_average}/10 ({vote_count} votes)
-          </h6>
-          <h6 id="genres" style={{ zIndex: 3, color: 'white', marginBottom: '14px' }}>
-            GENRE: &nbsp;{displayGenres}
-          </h6>
-          <h6 id="date" style={{ zIndex: 3, color: 'white', marginBottom: '14px' }}>
-            RELEASE DATE: &nbsp;{release_date}
-          </h6>
-          <h6 id="runtime" style={{ zIndex: 3, color: 'white', marginBottom: '14px' }}>
-            RUNTIME: &nbsp;{runtime}
-          </h6>
-          <h6 id="status" style={{ zIndex: 3, color: 'white', marginBottom: '14px' }}>
-            STATUS: &nbsp;{status}
-          </h6>
+          {/* Full Darkening Overlay */}
+          <div
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              background: 'rgba(0, 0, 0, 0.4)',
+              zIndex: 1
+            }}
+          />
 
-          {/* Add to Watchlist Button */}
-          <div style={{ marginTop: '18px', zIndex: 4, position: 'relative' }}>
-            <button
-              id="watchlist-btn"
-              className={`btn btn-danger ${inWatchlist ? 'in-watchlist' : ''}`}
-              onClick={handleWatchlistToggle}
-              style={{
-                backgroundColor: inWatchlist ? '#28a745' : '#e50914',
-                borderColor: inWatchlist ? '#28a745' : '#e50914',
-                borderRadius: '25px',
-                padding: '8px 22px',
-                fontWeight: 'bold',
-                fontSize: '15px',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                boxShadow: inWatchlist ? '0 4px 15px rgba(40, 167, 69, 0.4)' : '0 4px 15px rgba(229, 9, 20, 0.4)',
-                cursor: 'pointer',
-                transition: 'all 0.3s ease'
-              }}
-            >
-              <img
-                id="watchlist-btn-icon"
-                src={inWatchlist ? '/images/bookmark_tick.svg' : '/images/add_bookmark.svg'}
-                width="20"
-                height="20"
-                style={{ filter: 'invert(1)' }}
-                alt="Watchlist"
-              />
-              <span id="watchlist-btn-text">
-                {inWatchlist ? 'In Watchlist ✓' : 'Add to Watchlist'}
-              </span>
-            </button>
+          {/* Poster (Desktop / Large Screens) */}
+          <div className="poster-lg" style={{ position: 'relative', zIndex: 2, paddingLeft: '80px' }}>
+            <img
+              className="poster"
+              style={{ borderRadius: '40px', display: 'block' }}
+              height="400"
+              width="260"
+              src={poster}
+              alt={title}
+            />
+          </div>
+
+          {/* Poster (Mobile / Small Screens) */}
+          <div className="poster-sm text-center" style={{ position: 'relative', zIndex: 2 }}>
+            <img
+              className="poster"
+              style={{ borderRadius: '40px', marginTop: '20px', marginBottom: '20px' }}
+              height="320"
+              width="220"
+              src={poster}
+              alt={title}
+            />
+          </div>
+
+          {/* Movie Details Text & Actions */}
+          <div id="details" style={{ position: 'relative', zIndex: 3, color: 'white', padding: '20px 40px', maxWidth: '850px' }}>
+            <h2 id="title" style={{ color: '#ffffff', fontWeight: 'bold', marginBottom: '15px', fontSize: '34px', letterSpacing: '0.5px' }}>
+              {title}
+            </h2>
+
+            <h6 id="genres" style={{ color: '#e0e0e0', fontSize: '15px', marginBottom: '12px' }}>
+              <strong>GENRE:</strong> &nbsp;{genres_str || (Array.isArray(genres) ? genres.join(', ') : genres)}
+            </h6>
+
+            <h6 id="date" style={{ color: '#e0e0e0', fontSize: '15px', marginBottom: '12px' }}>
+              <strong>RELEASE DATE:</strong> &nbsp;{release_date || 'Unknown'}
+            </h6>
+
+            <h6 id="runtime" style={{ color: '#e0e0e0', fontSize: '15px', marginBottom: '12px' }}>
+              <strong>RUNTIME:</strong> &nbsp;{runtime || 'Unknown'}
+            </h6>
+
+            <h6 id="status" style={{ color: '#e0e0e0', fontSize: '15px', marginBottom: '12px' }}>
+              <strong>STATUS:</strong> &nbsp;{status || 'Released'}
+            </h6>
+
+            <h6 id="rating" style={{ color: '#ffd700', fontSize: '16px', marginBottom: '16px', fontWeight: 'bold' }}>
+              <strong>RATING:</strong> &nbsp;★ {vote_average} / 10 &nbsp;
+              <span style={{ color: '#b0b0b0', fontSize: '14px', fontWeight: 'normal' }}>({vote_count} votes)</span>
+            </h6>
+
+            <h6 style={{ color: '#ffffff', fontSize: '16px', fontWeight: 'bold', marginTop: '15px', marginBottom: '8px' }}>
+              OVERVIEW:
+            </h6>
+            <p id="overview" style={{ color: '#d0d0d0', lineHeight: '1.7', fontSize: '14px', maxWidth: '95%' }}>
+              {overview || 'No overview available.'}
+            </p>
+
+            {/* Watchlist Toggle Button */}
+            <div style={{ marginTop: '20px' }}>
+              <button
+                id="watchlist-btn"
+                className="btn btn-danger"
+                onClick={handleWatchlistToggle}
+                style={{
+                  backgroundColor: inWatchlist ? '#28a745' : '#e50914',
+                  borderColor: inWatchlist ? '#28a745' : '#e50914',
+                  borderRadius: '25px',
+                  padding: '8px 24px',
+                  fontWeight: 'bold',
+                  fontSize: '15px',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  boxShadow: inWatchlist ? '0 4px 15px rgba(40, 167, 69, 0.4)' : '0 4px 15px rgba(229, 9, 20, 0.4)',
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease'
+                }}
+              >
+                <span>{inWatchlist ? '✓ Added to Watchlist' : '+ Add to Watchlist'}</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -396,73 +395,203 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
         </div>
       )}
 
-      {/* 5. About The Director */}
-      <div style={{ marginTop: '40px' }}>
-        <h3 style={{ color: headingColor, textAlign: 'center', fontWeight: 'bold' }}>ABOUT THE DIRECTOR</h3>
+      {/* 5. About The Director (Fixed Size Card with See More / Expandable Scroll) */}
+      <div style={{ marginTop: '45px' }}>
+        <h3 style={{ color: headingColor, textAlign: 'center', fontWeight: 'bold', letterSpacing: '0.5px' }}>
+          ABOUT THE DIRECTOR
+        </h3>
       </div>
 
       <div className="director-section">
         {director_image && (
           <div className="director-image">
-            <img src={director_image} alt="Director" />
+            <img
+              src={director_image}
+              alt={`Director ${director_name}`}
+              onError={(e) => { e.target.src = 'https://via.placeholder.com/220x280?text=No+Photo'; }}
+            />
           </div>
         )}
         <div className="director-info">
-          <h2>Director: {director_name}</h2>
-          <p><strong>Bio:</strong> {director_bio}</p>
+          <h2>Director: {director_name || 'Unknown'}</h2>
+          <div className="director-bio-container">
+            <p style={{ margin: 0 }}>
+              <strong>Bio: </strong>
+              {director_bio && director_bio.length > 280 && !isDirectorBioExpanded
+                ? `${director_bio.slice(0, 280)}...`
+                : (director_bio || 'Biography not available for this director.')}
+              {director_bio && director_bio.length > 280 && (
+                <button
+                  onClick={() => setIsDirectorBioExpanded(!isDirectorBioExpanded)}
+                  className="read-more-btn"
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    color: '#e50914',
+                    fontWeight: 'bold',
+                    fontSize: '14px',
+                    cursor: 'pointer',
+                    marginLeft: '6px',
+                    padding: 0,
+                    textDecoration: 'underline'
+                  }}
+                >
+                  {isDirectorBioExpanded ? 'Show Less' : 'See More'}
+                </button>
+              )}
+            </p>
+          </div>
         </div>
       </div>
 
-      {/* 6. User Reviews Table */}
+      {/* 6. User Reviews Section (Responsive Table on Desktop & Expandable Cards on Mobile) */}
       <center>
-        <div className="reviews-container">
-          <h2 style={{ color: headingColor, margin: '40px 10px', fontWeight: 'bold' }}>USER REVIEWS</h2>
+        <div className="reviews-container" style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          <h2 style={{ color: headingColor, margin: '45px 10px 20px 10px', fontWeight: 'bold', letterSpacing: '0.5px' }}>
+            USER REVIEWS
+          </h2>
           {reviews && reviews.length > 0 ? (
-            <div className="col-md-12" style={{ margin: '0 auto', marginTop: '25px', maxWidth: '1200px', padding: '0 10px' }}>
-              <div className="table-responsive" style={{ overflowX: 'auto', WebkitOverflowScrolling: 'touch', width: '100%' }}>
-                <table className="table table-bordered table-custom" bordercolor="white" style={{ color: 'white', minWidth: '600px' }}>
+            <div className="col-md-12 reviews-table-wrapper" style={{ margin: '0 auto', padding: '0 10px' }}>
+              
+              {/* Desktop / Tablet Reviews Table */}
+              <div className="table-responsive reviews-desktop-table" style={{ overflowX: 'auto', WebkitOverflowScrolling: 'touch', width: '100%' }}>
+                <table className="table table-bordered table-custom" bordercolor="white" style={{ color: 'white', minWidth: '650px', borderRadius: '12px', overflow: 'hidden' }}>
                   <thead>
-                    <tr>
-                      <th scope="col" style={{ width: '55%', color: headingColor, fontSize: '16px', fontWeight: 'bold', textAlign: 'center' }}>
+                    <tr style={{ backgroundColor: isDark ? '#1f1f1f' : '#2d2d2d' }}>
+                      <th scope="col" style={{ width: '55%', color: '#ffffff', fontSize: '16px', fontWeight: 'bold', textAlign: 'center' }}>
                         User Comments
                       </th>
-                      <th scope="col" style={{ width: '20%', color: headingColor, fontSize: '16px', fontWeight: 'bold', textAlign: 'center' }}>
+                      <th scope="col" style={{ width: '22%', color: '#ffffff', fontSize: '16px', fontWeight: 'bold', textAlign: 'center' }}>
                         Author & Rating
                       </th>
-                      <th scope="col" style={{ width: '25%', color: headingColor, fontSize: '16px', fontWeight: 'bold', textAlign: 'center' }}>
+                      <th scope="col" style={{ width: '23%', color: '#ffffff', fontSize: '16px', fontWeight: 'bold', textAlign: 'center' }}>
                         Sentiment Analysis
                       </th>
                     </tr>
                   </thead>
                   <tbody>
-                    {reviews.map((rev, i) => (
-                      <tr key={i} style={{ backgroundColor: '#e5091485' }}>
-                        <td style={{ textAlign: 'left', padding: '12px', fontSize: '14px', lineHeight: '1.6', color: 'white' }}>
-                          {rev.content}
-                        </td>
-                        <td style={{ verticalAlign: 'middle', textAlign: 'center', color: 'white', padding: '10px' }}>
-                          <strong>{rev.author}</strong><br />
-                          <span style={{ color: '#ffd700', fontSize: '16px', fontWeight: 'bold' }}>
-                            ★ {rev.rating}
-                          </span>
-                        </td>
-                        <td style={{ verticalAlign: 'middle', textAlign: 'center', fontSize: '15px', color: 'white', padding: '10px' }}>
-                          <strong>{rev.sentiment}</strong> :{' '}
-                          <span style={{ fontSize: '22px' }}>
-                            {rev.sentiment === 'Good' ? '😃' : '😔'}
-                          </span>
-                          {rev.confidence && (
-                            <>
-                              <br />
-                              <small style={{ color: '#f8f9fa' }}>({rev.confidence} confident)</small>
-                            </>
-                          )}
-                        </td>
-                      </tr>
-                    ))}
+                    {reviews.map((rev, i) => {
+                      const isExpanded = !!expandedReviews[i];
+                      const isLong = rev.content && rev.content.length > 220;
+                      const contentToShow = isLong && !isExpanded ? `${rev.content.slice(0, 220)}...` : rev.content;
+
+                      return (
+                        <tr key={i} style={{ backgroundColor: '#e5091485' }}>
+                          <td style={{ textAlign: 'left', padding: '14px 16px', fontSize: '14px', lineHeight: '1.6', color: 'white' }}>
+                            <span>{contentToShow}</span>
+                            {isLong && (
+                              <button
+                                onClick={() => toggleReview(i)}
+                                style={{
+                                  background: 'none',
+                                  border: 'none',
+                                  color: '#ffd700',
+                                  fontWeight: 'bold',
+                                  fontSize: '13px',
+                                  cursor: 'pointer',
+                                  marginLeft: '6px',
+                                  padding: 0,
+                                  textDecoration: 'underline'
+                                }}
+                              >
+                                {isExpanded ? 'Show Less' : 'See More'}
+                              </button>
+                            )}
+                          </td>
+                          <td style={{ verticalAlign: 'middle', textAlign: 'center', color: 'white', padding: '10px' }}>
+                            <strong style={{ fontSize: '15px' }}>{rev.author || 'Anonymous'}</strong><br />
+                            <span style={{ color: '#ffd700', fontSize: '15px', fontWeight: 'bold' }}>
+                              ★ {rev.rating || 'N/A'}
+                            </span>
+                          </td>
+                          <td style={{ verticalAlign: 'middle', textAlign: 'center', fontSize: '15px', color: 'white', padding: '10px' }}>
+                            <strong>{rev.sentiment}</strong> :{' '}
+                            <span style={{ fontSize: '22px' }}>
+                              {rev.sentiment === 'Good' ? '😃' : '😔'}
+                            </span>
+                            {rev.confidence && (
+                              <>
+                                <br />
+                                <small style={{ color: '#f8f9fa' }}>({rev.confidence} confident)</small>
+                              </>
+                            )}
+                          </td>
+                        </tr>
+                      );
+                    })}
                   </tbody>
                 </table>
               </div>
+
+              {/* Mobile Dedicated Reviews Cards View (Stacking clean cards with 'See More') */}
+              <div className="reviews-mobile-cards">
+                {reviews.map((rev, i) => {
+                  const isExpanded = !!expandedReviews[i];
+                  const isLong = rev.content && rev.content.length > 160;
+                  const contentToShow = isLong && !isExpanded ? `${rev.content.slice(0, 160)}...` : rev.content;
+
+                  return (
+                    <div
+                      key={i}
+                      className="review-mobile-card"
+                      style={{
+                        backgroundColor: '#e5091490',
+                        borderRadius: '16px',
+                        padding: '16px',
+                        marginBottom: '14px',
+                        color: 'white',
+                        textAlign: 'left',
+                        boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
+                        border: '1px solid rgba(255,255,255,0.15)'
+                      }}
+                    >
+                      {/* Header with author, rating, sentiment */}
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px', borderBottom: '1px solid rgba(255,255,255,0.2)', paddingBottom: '8px' }}>
+                        <div>
+                          <strong style={{ fontSize: '15px', color: '#ffffff' }}>{rev.author || 'Anonymous'}</strong>
+                          <div style={{ color: '#ffd700', fontSize: '13px', fontWeight: 'bold', marginTop: '2px' }}>
+                            ★ {rev.rating || 'N/A'}
+                          </div>
+                        </div>
+                        <div style={{ textAlign: 'right' }}>
+                          <span style={{ fontSize: '13px', fontWeight: 'bold', backgroundColor: 'rgba(0,0,0,0.4)', padding: '3px 8px', borderRadius: '10px', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                            {rev.sentiment} {rev.sentiment === 'Good' ? '😃' : '😔'}
+                          </span>
+                          {rev.confidence && (
+                            <div style={{ fontSize: '11px', color: '#f0f0f0', marginTop: '2px' }}>
+                              {rev.confidence}
+                            </div>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Review Body with See More */}
+                      <div style={{ fontSize: '14px', lineHeight: '1.6', color: '#ffffff' }}>
+                        {contentToShow}
+                        {isLong && (
+                          <button
+                            onClick={() => toggleReview(i)}
+                            style={{
+                              background: 'none',
+                              border: 'none',
+                              color: '#ffd700',
+                              fontWeight: 'bold',
+                              fontSize: '13px',
+                              cursor: 'pointer',
+                              marginLeft: '6px',
+                              padding: 0,
+                              textDecoration: 'underline'
+                            }}
+                          >
+                            {isExpanded ? 'Show Less' : 'See More'}
+                          </button>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+
             </div>
           ) : (
             <div style={{ color: 'white', margin: '30px' }}>
