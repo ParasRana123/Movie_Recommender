@@ -20,10 +20,38 @@ CORS(app)  # Enable CORS for React frontend
 
 # Base directories
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+ROOT_DIR = os.path.dirname(BASE_DIR)
+
+def get_csv_path(filename):
+    """Resolve csv path whether running from root, backend, or subfolders."""
+    candidates = [
+        os.path.join(ROOT_DIR, 'csv', filename),
+        os.path.join(BASE_DIR, 'csv', filename),
+        os.path.join(BASE_DIR, '..', 'csv', filename),
+        os.path.join(ROOT_DIR, filename),
+        os.path.join(BASE_DIR, filename),
+        filename
+    ]
+    for c in candidates:
+        if os.path.exists(c):
+            return c
+def get_model_path(filename):
+    """Resolve model path whether running from root, backend, or subfolders."""
+    candidates = [
+        os.path.join(BASE_DIR, 'models', filename),
+        os.path.join(ROOT_DIR, 'backend', 'models', filename),
+        os.path.join(ROOT_DIR, 'models', filename),
+        os.path.join(BASE_DIR, filename),
+        filename
+    ]
+    for c in candidates:
+        if os.path.exists(c):
+            return c
+    return os.path.join(BASE_DIR, 'models', filename)
 
 # Load the NLP model and TF-IDF vectorizer from disk
-clf = pickle.load(open(os.path.join(BASE_DIR, 'nlp_model2.pkl'), 'rb'))
-vectorizer = pickle.load(open(os.path.join(BASE_DIR, 'transform1.pkl'), 'rb'))
+clf = pickle.load(open(get_model_path('nlp_model2.pkl'), 'rb'))
+vectorizer = pickle.load(open(get_model_path('transform1.pkl'), 'rb'))
 
 TMDB_API_KEY = "fce0af3409e6113c9b3c75aaf49341bb"
 TMDB_BASE_URL = "https://api.tmdb.org/3"
@@ -34,7 +62,7 @@ http_session = requests.Session()
 SUGGESTIONS_CACHE = None
 
 def create_similarity():
-    csv_path = os.path.join(BASE_DIR, 'main_data1.csv')
+    csv_path = get_csv_path('main_data1.csv')
     df = pd.read_csv(csv_path, encoding='latin1')
     cv = CountVectorizer()
     count_matrix = cv.fit_transform(df['comb'])
@@ -52,7 +80,7 @@ def get_suggestions():
     global SUGGESTIONS_CACHE
     if SUGGESTIONS_CACHE is None:
         try:
-            csv_path = os.path.join(BASE_DIR, 'main_data.csv')
+            csv_path = get_csv_path('main_data.csv')
             df = pd.read_csv(csv_path)
             SUGGESTIONS_CACHE = list(df['movie_title'].dropna().str.capitalize().unique())
         except Exception as e:
@@ -514,7 +542,7 @@ def genres_list():
 @app.route('/api/genres/<genre_name>')
 def genre_movies(genre_name):
     clean_genre = genre_name.lower().replace("-", "_")
-    csv_file = os.path.join(BASE_DIR, f"{clean_genre}.csv")
+    csv_file = get_csv_path(f"{clean_genre}.csv")
     if not os.path.exists(csv_file):
         return jsonify({"error": f"Genre '{genre_name}' not found"}), 404
 

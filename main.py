@@ -18,10 +18,37 @@ from markupsafe import escape
 # Setup logging
 logging.basicConfig(level=logging.INFO)
 
+# Base directory and path resolvers
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+def get_csv_path(filename):
+    """Resolve csv path in csv/ or fallback locations."""
+    candidates = [
+        os.path.join(BASE_DIR, 'csv', filename),
+        os.path.join(BASE_DIR, filename),
+        filename
+    ]
+    for c in candidates:
+        if os.path.exists(c):
+            return c
+    return os.path.join(BASE_DIR, 'csv', filename)
+
+def get_model_path(filename):
+    """Resolve model path in backend/models/ or fallback locations."""
+    candidates = [
+        os.path.join(BASE_DIR, 'backend', 'models', filename),
+        os.path.join(BASE_DIR, 'models', filename),
+        os.path.join(BASE_DIR, filename),
+        filename
+    ]
+    for c in candidates:
+        if os.path.exists(c):
+            return c
+    return os.path.join(BASE_DIR, 'backend', 'models', filename)
+
 # Load the NLP model and TF-IDF vectorizer from disk
-filename = 'nlp_model2.pkl'
-clf = pickle.load(open(filename, 'rb'))
-vectorizer = pickle.load(open('transform1.pkl', 'rb'))
+clf = pickle.load(open(get_model_path('nlp_model2.pkl'), 'rb'))
+vectorizer = pickle.load(open(get_model_path('transform1.pkl'), 'rb'))
 
 TMDB_API_KEY = "fce0af3409e6113c9b3c75aaf49341bb"
 TMDB_BASE_URL = "https://api.tmdb.org/3"
@@ -31,7 +58,7 @@ similarity = None
 http_session = requests.Session()
 
 def create_similarity():
-    data = pd.read_csv('main_data1.csv', encoding='latin1')
+    data = pd.read_csv(get_csv_path('main_data1.csv'), encoding='latin1')
     cv = CountVectorizer()
     count_matrix = cv.fit_transform(data['comb'])
     similarity = cosine_similarity(count_matrix)
@@ -83,7 +110,7 @@ def get_suggestions():
     global SUGGESTIONS_CACHE
     if SUGGESTIONS_CACHE is None:
         try:
-            df = pd.read_csv('main_data.csv')
+            df = pd.read_csv(get_csv_path('main_data.csv'))
             SUGGESTIONS_CACHE = list(df['movie_title'].dropna().str.capitalize().unique())
         except Exception as e:
             logging.error(f"Error loading suggestions: {e}")
@@ -124,73 +151,73 @@ def watchlist():
 
 @app.route("/action")   
 def action():
-    df2 = pd.read_csv("action.csv")
+    df2 = pd.read_csv(get_csv_path("action.csv"))
     movie_titles = df2['movie_title'].tolist()
     return render_template('action.html', movies=movie_titles)
 
 @app.route("/allaction")
 def allaction():
-    df2 = pd.read_csv("action.csv")
+    df2 = pd.read_csv(get_csv_path("action.csv"))
     movie_titles = df2['movie_title'].tolist()
     return render_template("allaction.html", movies=movie_titles)
 
 @app.route("/horror")
 def horror():
-    df3 = pd.read_csv("horror.csv")
+    df3 = pd.read_csv(get_csv_path("horror.csv"))
     movie_titles1 = df3['movie_title'].tolist()
     return render_template('horror.html', movies=movie_titles1)
 
 @app.route("/romance")
 def romance():
-    df5 = pd.read_csv("romance.csv")
+    df5 = pd.read_csv(get_csv_path("romance.csv"))
     movie_titles3 = df5['movie_title'].tolist()
     return render_template('romance.html', movies=movie_titles3)
 
 @app.route("/mystery")
 def mystery():
-    df5 = pd.read_csv("mystery.csv")
+    df5 = pd.read_csv(get_csv_path("mystery.csv"))
     movie_titles3 = df5['movie_title'].tolist()
     return render_template('mystery.html', movies=movie_titles3)
 
 @app.route("/history")
 def history():
-    df5 = pd.read_csv("history.csv")
+    df5 = pd.read_csv(get_csv_path("history.csv"))
     movie_titles3 = df5['movie_title'].tolist()
     return render_template('history.html', movies=movie_titles3)
 
 @app.route("/thriller")
 def thriller():
-    df5 = pd.read_csv("thriller.csv")
+    df5 = pd.read_csv(get_csv_path("thriller.csv"))
     movie_titles3 = df5['movie_title'].tolist()
     return render_template('thriller.html', movies=movie_titles3)
 
 @app.route("/comedy")
 def comedy():
-    df4 = pd.read_csv('comedy.csv')
+    df4 = pd.read_csv(get_csv_path('comedy.csv'))
     movie_titles2 = df4['movie_title'].tolist()
     return render_template('comedy.html', movies=movie_titles2)
 
 @app.route("/fantasy")
 def fantasy():
-    df5 = pd.read_csv("fantasy.csv")
+    df5 = pd.read_csv(get_csv_path("fantasy.csv"))
     movie_titles3 = df5['movie_title'].tolist()
     return render_template('fantasy.html', movies=movie_titles3)
 
 @app.route("/adventure")
 def adventure():
-    df5 = pd.read_csv("adventure.csv")
+    df5 = pd.read_csv(get_csv_path("adventure.csv"))
     movie_titles3 = df5['movie_title'].tolist()
     return render_template('adventure.html', movies=movie_titles3)              
 
 @app.route("/documentary")
 def documentary():
-    df5 = pd.read_csv("documentary.csv")
+    df5 = pd.read_csv(get_csv_path("documentary.csv"))
     movie_titles3 = df5['movie_title'].tolist()
     return render_template('documentary.html', movies=movie_titles3)  
 
 @app.route("/sci_fi")
 def sci_fi():
-    df5 = pd.read_csv("sci_fi.csv")
+    df5 = pd.read_csv(get_csv_path("sci_fi.csv"))
     movie_titles3 = df5['movie_title'].tolist()
     return render_template('sci_fi.html', movies=movie_titles3) 
 
