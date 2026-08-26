@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useWatchlist } from '../context/WatchlistContext';
+import { useTheme } from '../context/ThemeContext';
 
 export default function RecommendationView({ movieData, onSelectRecommendedMovie }) {
   const [selectedCastModal, setSelectedCastModal] = useState(null);
   const navigate = useNavigate();
   const { isInWatchlist, addToWatchlist, removeFromWatchlist } = useWatchlist();
+  const { isDark } = useTheme();
 
   if (!movieData) return null;
 
@@ -56,10 +58,12 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
   };
 
   const displayGenres = genres_str || (Array.isArray(genres) ? genres.join(', ') : genres);
+  const headingColor = isDark ? '#ffffff' : '#333333';
+  const subtitleColor = isDark ? '#aaaaaa' : '#777777';
 
   return (
     <div id="mycontent" style={{ color: 'white' }}>
-      {/* 1. Hero Movie Overview Section with proper top/bottom padding */}
+      {/* 1. Hero Movie Overview Section */}
       <div
         id="mcontent"
         style={{
@@ -119,7 +123,7 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
           }}
         />
 
-        {/* Poster Image (Large screen) with comfortable left padding */}
+        {/* Poster Image (Large screen) */}
         <div className="poster-lg" style={{ position: 'relative', zIndex: 2, flexShrink: 0, paddingLeft: '80px' }}>
           <img
             className="poster"
@@ -143,7 +147,7 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
           />
         </div>
 
-        {/* Details Section (Text) with generous padding */}
+        {/* Details Section (Text) */}
         <div id="details" style={{ position: 'relative', zIndex: 3, color: 'white', padding: '10px 45px', flex: 1, maxWidth: '85%' }}>
           <h6 id="title" style={{ zIndex: 3, color: 'white', fontSize: '18px', fontWeight: 'bold', marginBottom: '14px' }}>
             TITLE: &nbsp;{title}
@@ -319,10 +323,10 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
       {/* 4. Top Cast Section */}
       {casts && casts.length > 0 && (
         <>
-          <div className="movie" style={{ color: 'black' }}>
+          <div className="movie" style={{ color: headingColor, marginTop: '40px' }}>
             <center>
-              <h3>TOP CAST</h3>
-              <h5>(Click on the cast to know more)</h5>
+              <h3 style={{ color: headingColor, fontWeight: 'bold' }}>TOP CAST</h3>
+              <h5 style={{ color: subtitleColor }}>(Click on the cast to know more)</h5>
             </center>
           </div>
 
@@ -355,7 +359,7 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
                   <h5 className="card-title">{c.name}</h5>
                   {c.character && (
                     <h5 className="card-title">
-                      <span style={{ color: '#756969', fontSize: '20px' }}>
+                      <span style={{ color: isDark ? '#aaa' : '#756969', fontSize: '18px' }}>
                         Character: {c.character}
                       </span>
                     </h5>
@@ -368,8 +372,8 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
       )}
 
       {/* 5. About The Director */}
-      <div>
-        <h3 style={{ color: 'black', textAlign: 'center' }}>ABOUT THE DIRECTOR</h3>
+      <div style={{ marginTop: '40px' }}>
+        <h3 style={{ color: headingColor, textAlign: 'center', fontWeight: 'bold' }}>ABOUT THE DIRECTOR</h3>
       </div>
 
       <div className="director-section">
@@ -387,19 +391,19 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
       {/* 6. User Reviews Table */}
       <center>
         <div className="reviews-container">
-          <h2 style={{ color: 'black', margin: '40px' }}>USER REVIEWS</h2>
+          <h2 style={{ color: headingColor, margin: '40px', fontWeight: 'bold' }}>USER REVIEWS</h2>
           {reviews && reviews.length > 0 ? (
-            <div className="col-md-12" style={{ margin: '0 auto', marginTop: '25px' }}>
+            <div className="col-md-12" style={{ margin: '0 auto', marginTop: '25px', maxWidth: '1200px' }}>
               <table className="table table-bordered table-custom" bordercolor="white" style={{ color: 'white' }}>
                 <thead>
                   <tr>
-                    <th scope="col" style={{ width: '55%', color: '#333333', fontSize: '18px', fontWeight: 'bold', textAlign: 'center' }}>
+                    <th scope="col" style={{ width: '55%', color: headingColor, fontSize: '18px', fontWeight: 'bold', textAlign: 'center' }}>
                       User Comments
                     </th>
-                    <th scope="col" style={{ width: '20%', color: '#333333', fontSize: '18px', fontWeight: 'bold', textAlign: 'center' }}>
+                    <th scope="col" style={{ width: '20%', color: headingColor, fontSize: '18px', fontWeight: 'bold', textAlign: 'center' }}>
                       Author & Rating
                     </th>
-                    <th scope="col" style={{ width: '25%', color: '#333333', fontSize: '18px', fontWeight: 'bold', textAlign: 'center' }}>
+                    <th scope="col" style={{ width: '25%', color: headingColor, fontSize: '18px', fontWeight: 'bold', textAlign: 'center' }}>
                       Sentiment Analysis
                     </th>
                   </tr>
@@ -435,7 +439,7 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
             </div>
           ) : (
             <div style={{ color: 'white', margin: '30px' }}>
-              <h3 style={{ color: '#333333' }}>No reviews available for this movie yet. Stay tuned!</h3>
+              <h3 style={{ color: headingColor }}>No reviews available for this movie yet. Stay tuned!</h3>
             </div>
           )}
         </div>
@@ -444,10 +448,10 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
       {/* 7. Recommended Movies Grid */}
       {recommended_movies && recommended_movies.length > 0 && (
         <>
-          <div className="movie" style={{ color: '#E8E8E8' }}>
+          <div className="movie" style={{ marginTop: '45px' }}>
             <center>
-              <h3 style={{ color: '#333333' }}>RECOMMENDED MOVIES FOR YOU</h3>
-              <h5>(Click any of the movies to get recommendation)</h5>
+              <h3 style={{ color: headingColor, fontWeight: 'bold' }}>RECOMMENDED MOVIES FOR YOU</h3>
+              <h5 style={{ color: subtitleColor }}>(Click any of the movies to get recommendation)</h5>
             </center>
           </div>
 
@@ -456,7 +460,7 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
               <div
                 key={idx}
                 className="card"
-                style={{ width: '15rem', borderRadius: '18px', boxShadow: '0 10px 10px rgba(68, 66, 66, 0.3)', margin: '10px auto' }}
+                style={{ width: '15rem', borderRadius: '18px', margin: '10px auto' }}
                 title={m.title}
                 onClick={() => {
                   if (onSelectRecommendedMovie) {

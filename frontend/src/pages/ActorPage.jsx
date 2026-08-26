@@ -3,10 +3,12 @@ import { useParams, useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Loader from '../components/Loader';
 import { fetchActorDetails } from '../api/movieApi';
+import { useTheme } from '../context/ThemeContext';
 
 export default function ActorPage() {
   const { actorId } = useParams();
   const navigate = useNavigate();
+  const { isDark } = useTheme();
   const [actorData, setActorData] = useState(null);
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -39,15 +41,18 @@ export default function ActorPage() {
     return () => { isMounted = false; };
   }, [actorId]);
 
+  const headingColor = isDark ? '#ffffff' : '#333333';
+  const subtitleColor = isDark ? '#aaaaaa' : '#777777';
+
   return (
-    <div id="content" style={{ backgroundColor: '#ffffff', minHeight: '100vh' }}>
+    <div id="content" style={{ minHeight: '100vh' }}>
       <Navbar onSearchMovie={(title) => navigate(`/movie/${encodeURIComponent(title)}`)} />
 
       {loading && <Loader />}
 
       {error && !loading && (
         <div className="fail" style={{ display: 'block', textAlign: 'center', marginTop: '30px' }}>
-          <h3 style={{ color: '#333333' }}>Sorry! Actor details could not be loaded.</h3>
+          <h3 style={{ color: headingColor }}>Sorry! Actor details could not be loaded.</h3>
         </div>
       )}
 
@@ -55,7 +60,7 @@ export default function ActorPage() {
         <div id="actor-main-content">
           {/* Cinematic Hero Banner */}
           <div id="mycontent">
-            <div id="mcontent" style={{ position: 'relative', minHeight: '65vh', overflow: 'hidden', backgroundColor: '#000000' }}>
+            <div id="mcontent" style={{ position: 'relative', minHeight: '65vh', overflow: 'hidden', backgroundColor: '#000000', padding: '30px 0' }}>
               {/* Blurred Background Backdrop */}
               <div
                 style={{
@@ -101,10 +106,10 @@ export default function ActorPage() {
               />
 
               {/* Actor Profile Poster (Large screens) */}
-              <div className="poster-lg" style={{ position: 'relative', zIndex: 2 }}>
+              <div className="poster-lg" style={{ position: 'relative', zIndex: 2, paddingLeft: '80px' }}>
                 <img
                   className="poster"
-                  style={{ borderRadius: '40px', marginLeft: '90px', marginTop: '40px' }}
+                  style={{ borderRadius: '40px', display: 'block' }}
                   height="400"
                   width="260"
                   src={actorData.profile}
@@ -125,7 +130,7 @@ export default function ActorPage() {
               </div>
 
               {/* Actor Details Text Section */}
-              <div id="details" style={{ position: 'relative', zIndex: 3, color: 'white', padding: '30px', maxWidth: '850px' }}>
+              <div id="details" style={{ position: 'relative', zIndex: 3, color: 'white', padding: '20px 40px', maxWidth: '850px' }}>
                 <h2 id="title" style={{ color: '#ffffff', fontWeight: 'bold', marginBottom: '15px', fontSize: '34px', letterSpacing: '0.5px' }}>
                   {actorData.name}
                 </h2>
@@ -158,10 +163,10 @@ export default function ActorPage() {
           {/* Known For Movies Section */}
           {movies && movies.length > 0 && (
             <>
-              <div className="movie" style={{ color: '#E8E8E8', marginTop: '45px' }}>
+              <div className="movie" style={{ marginTop: '45px' }}>
                 <center>
-                  <h3 style={{ color: '#333333', fontWeight: 'bold', letterSpacing: '0.5px' }}>KNOWN FOR MOVIES</h3>
-                  <h5 style={{ color: '#777777', fontSize: '15px' }}>(Click any of the movies to view full details and recommendations)</h5>
+                  <h3 style={{ color: headingColor, fontWeight: 'bold', letterSpacing: '0.5px' }}>KNOWN FOR MOVIES</h3>
+                  <h5 style={{ color: subtitleColor, fontSize: '15px' }}>(Click any of the movies to view full details and recommendations)</h5>
                 </center>
               </div>
 
@@ -170,7 +175,7 @@ export default function ActorPage() {
                   <div
                     key={idx}
                     className="card"
-                    style={{ width: '15rem', borderRadius: '18px', boxShadow: '0 10px 10px rgba(68, 66, 66, 0.3)', margin: '10px auto' }}
+                    style={{ width: '15rem', borderRadius: '18px', margin: '10px auto' }}
                     title={m.title}
                     onClick={() => navigate(`/movie/${encodeURIComponent(m.title)}`)}
                   >

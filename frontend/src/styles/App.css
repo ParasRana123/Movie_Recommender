@@ -1,9 +1,40 @@
 /* =========================================================
-   EXACT ORIGINAL STYLESHEET FROM STATIC/STYLE.CSS
+   EXACT ORIGINAL STYLESHEET WITH LIGHT & DARK MODE SUPPORT
    ========================================================= */
 
+/* Core Theme Variables */
+:root {
+  --bg-primary: #ffffff;
+  --text-primary: #181818;
+  --text-heading: #333333;
+  --card-bg: #ffffff;
+  --card-shadow: rgba(68, 66, 66, 0.3);
+  --table-header-color: #333333;
+  --fail-color: #333333;
+  --border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  --bg-primary: #121212;
+  --text-primary: #ffffff;
+  --text-heading: #ffffff;
+  --card-bg: #1c1c1c;
+  --card-shadow: rgba(0, 0, 0, 0.7);
+  --table-header-color: #ffffff;
+  --fail-color: #ffffff;
+  --border-color: rgba(255, 255, 255, 0.15);
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0;
+  padding: 0;
+}
+
 .movie {
-	color: #fff;
+	color: var(--text-heading);
 	margin-left: auto;
 	margin-right: auto;
 	resize: none;
@@ -21,7 +52,7 @@
     margin: 20px;
 }
 
-.btn-block{
+.btn-block {
 	width: 15%;
 	text-align: center;
 	margin-left: auto;
@@ -30,10 +61,11 @@
 }
 
 #content {
-	background-color: #fff;
-	color: #111;
+	background-color: var(--bg-primary);
+	color: var(--text-primary);
 	font-family: 'Noto Sans JP', sans-serif;
 	min-height: 100vh;
+	transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #details {
@@ -63,7 +95,6 @@ h1 {
     color: #e50914;
     font-weight: bold;
     margin-top: 30px;
-    /* text-shadow: #000000 0px 0px 13px; */
 }
 
 .github-corner:hover .octo-arm {
@@ -157,6 +188,7 @@ h6 {
 		margin-bottom: 20px;
 	}
 }
+
 @media only screen and (min-width: 992px) {
 	.modal-body {
 		display: flex;
@@ -176,7 +208,7 @@ h6 {
 	#loader {
 		display: none;
 		position: fixed;
-		z-index: 100;
+		z-index: 99999;
 		left: 0;
 		top:0;
 		width: 100%;
@@ -194,13 +226,19 @@ h6 {
 		vertical-align: middle;
 		color:white;
 	}
-
 }
 
-.poster{
+.poster {
     -webkit-box-shadow: 0px 1px 15px 4px rgba(250,250,250,1);
     -moz-box-shadow: 0px 1px 15px 4px rgba(250,250,250,1);
     box-shadow: 0px 1px 15px 4px rgba(250,250,250,1);
+}
+
+.card {
+  background-color: var(--card-bg) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
@@ -216,10 +254,10 @@ h6 {
 	-moz-transition: all 0.75s ease;
     -webkit-transition: all 0.75s ease;
 	transition: all 0.75s ease;
-	width: 250px; /* Set image width */
-    height: 250px; /* Set image height */
-	border-radius: 50%; /* Makes image circular */
-    object-fit: cover; /* Ensures the image fills the circle */
+	width: 250px;
+    height: 250px;
+	border-radius: 50%;
+    object-fit: cover;
 }
 
 .cast-img:hover {
@@ -289,13 +327,13 @@ h6 {
 
 .table td {
     border-color: white;
-    border-style:solid; 
-    border-width:1px;
+    border-style: solid; 
+    border-width: 1px;
 }
 
 .fail {
 	display: none;
-	color: white;
+	color: var(--fail-color);
 }
 
 .genre-section {
@@ -356,43 +394,11 @@ h6 {
 
 .h5, h5 {
     font-size: 1.25rem;
-    color: black;
+    color: var(--text-heading);
 }
 
-.message {
-	visibility: hidden;
-	position: relative;
-	top: -1020px;
-	left: 5px;
-	gap: 8px;
-	display: flex;
-	align-items: center;
-	background-color: green;
-	box-shadow: 0px 1px 15px 4px rgba(250, 250, 250, 1);
-	border-radius: 20px;
-	transition: 0.3s;
-	padding: 10px;
-	border-radius: 14px;
-	color: #fff;
-	font-size: 18px;
-	width: fit-content;
-}
-  
-.message:hover {
-	box-shadow: 0 8px 16px 0 rgba(0 , 0 , 0 , 0.2);
-}
-  
-.message p {
-	margin: 0;
-	margin-right: 10px;
-}
-  
-.message img {
-	display: block;
-	filter: invert(1);
-	width: 30px;
-	height: auto;
-	color: #fff;
+.card-title {
+    color: var(--text-heading) !important;
 }
 
 /* Search Container and Autocomplete Suggestions Dropdown */
@@ -443,6 +449,12 @@ h6 {
     font-weight: 500;
 }
 
+[data-theme="dark"] #movie_list li:hover,
+[data-theme="dark"] #movie_list li.selected {
+    background-color: #2a2a2a;
+    color: #e50914;
+}
+
 #movie_list mark {
     background-color: transparent;
     color: #e50914;
@@ -459,23 +471,17 @@ h6 {
 
 /* Watchlist and Genres buttons in navbar */
 .watchlist {
-    position: relative;
-    top: -5px;
-    left: -120px;
-    gap: 8px;
     display: flex;
     align-items: center;
-    background-color: #333333;
-    border-radius: 8px;
+    gap: 8px;
     transition: 0.3s;
-    padding: 10px;
     color: #fff;
     font-size: 18px;
-    width: fit-content;
+    cursor: pointer;
 }
 
 .watchlist:hover {
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    opacity: 0.85;
 }
 
 .watchlist p {
@@ -593,7 +599,7 @@ h6 {
     color: white;
 }
 
-/* Genre Detail (Action, Comedy, etc.) */
+/* Genre Detail */
 .container1 {
     position: inherit;
     border-radius: 30px;
@@ -815,6 +821,59 @@ h6 {
 
 .delete-btn:hover {
     background-color: #ff0f1f;
+}
+
+/* Modal Custom Styles */
+.modal-overlay-custom {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    padding: 20px;
+}
+
+.modal-content-custom {
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+    border-radius: 12px;
+    max-width: 600px;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.modal-header-custom {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-close-x {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.modal-body-custom {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.modal-footer-custom {
+    padding: 12px 20px;
+    border-top: 1px solid var(--border-color);
+    text-align: right;
 }
 
 /* Actor Bio */

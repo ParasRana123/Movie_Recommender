@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import localSuggestions from '../data/suggestions.json';
 import { fetchSuggestions } from '../api/movieApi';
+import { useTheme } from '../context/ThemeContext';
 
 export default function Navbar({ onSearchMovie, initialQuery = '' }) {
   const [query, setQuery] = useState(initialQuery);
@@ -10,6 +11,7 @@ export default function Navbar({ onSearchMovie, initialQuery = '' }) {
   const [showDropdown, setShowDropdown] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(-1);
 
+  const { theme, toggleTheme, isDark } = useTheme();
   const navigate = useNavigate();
   const searchContainerRef = useRef(null);
   const isSelectingRef = useRef(false);
@@ -132,7 +134,7 @@ export default function Navbar({ onSearchMovie, initialQuery = '' }) {
 
   return (
     <div className="ml-container" style={{ display: 'block' }}>
-      {/* GitHub Corner with wave animation */}
+      {/* GitHub Corner */}
       <a href="https://github.com/ParasRana123/Movie-Recommender-with-Sentiment-Analysis" className="github-corner" title="View source on GitHub">
         <svg data-toggle="tooltip" data-placement="left" width="80" height="80" viewBox="0 0 250 250" style={{ fill: '#e50914', color: '#fff', position: 'fixed', zIndex: 100, top: 0, border: 0, right: 0 }} aria-hidden="true">
           <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
@@ -143,24 +145,26 @@ export default function Navbar({ onSearchMovie, initialQuery = '' }) {
 
       {/* Top Navbar */}
       <nav
-        className="form-group shadow-textarea"
+        className="form-group shadow-textarea app-navbar"
         style={{
           textAlign: 'center',
           color: 'white',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
-          backgroundColor: '#333333',
+          backgroundColor: isDark ? '#1a1a1a' : '#333333',
+          borderBottom: isDark ? '1px solid #2e2e2e' : 'none',
           height: '12vh',
           margin: 0,
           padding: '0 20px',
-          gap: '20px',
+          gap: '18px',
           position: 'relative',
-          zIndex: 1000
+          zIndex: 1000,
+          transition: 'background-color 0.3s ease'
         }}
       >
-        {/* Search Bar Input Container with animated search icon */}
-        <div className="search-container" style={{ position: 'relative', width: '450px', maxWidth: '45vw', margin: 0 }} ref={searchContainerRef}>
+        {/* Search Bar Input Container */}
+        <div className="search-container" style={{ position: 'relative', width: '450px', maxWidth: '42vw', margin: 0 }} ref={searchContainerRef}>
           <input
             type="text"
             name="movie"
@@ -169,10 +173,10 @@ export default function Navbar({ onSearchMovie, initialQuery = '' }) {
             autoComplete="off"
             placeholder="Enter the Movie Name"
             style={{
-              backgroundColor: '#ffffff',
-              borderColor: '#ffffff',
+              backgroundColor: isDark ? '#262626' : '#ffffff',
+              borderColor: isDark ? '#404040' : '#ffffff',
               width: '100%',
-              color: '#181818',
+              color: isDark ? '#ffffff' : '#181818',
               borderRadius: '5px',
               height: '38px',
               padding: '6px 40px 6px 12px',
@@ -180,7 +184,7 @@ export default function Navbar({ onSearchMovie, initialQuery = '' }) {
               backgroundRepeat: 'no-repeat',
               backgroundPosition: '96% center',
               backgroundSize: '20px',
-              transition: 'background-position 0.3s ease, box-shadow 0.3s ease'
+              transition: 'all 0.3s ease'
             }}
             value={query}
             onChange={handleInputChange}
@@ -195,11 +199,22 @@ export default function Navbar({ onSearchMovie, initialQuery = '' }) {
 
           {/* Autocomplete Dropdown List */}
           {showDropdown && filteredSuggestions.length > 0 && (
-            <ul id="movie_list" style={{ display: 'block' }}>
+            <ul
+              id="movie_list"
+              style={{
+                display: 'block',
+                backgroundColor: isDark ? '#1f1f1f' : '#ffffff',
+                borderColor: isDark ? '#333333' : 'rgba(0,0,0,0.1)'
+              }}
+            >
               {filteredSuggestions.map((title, idx) => (
                 <li
                   key={idx}
                   className={idx === selectedIndex ? 'selected' : ''}
+                  style={{
+                    color: isDark ? '#e0e0e0' : '#1a1a1a',
+                    borderBottomColor: isDark ? '#2c2c2c' : '#f0f0f0'
+                  }}
                   onClick={() => handleSelect(title)}
                   onMouseEnter={() => setSelectedIndex(idx)}
                 >
@@ -217,7 +232,7 @@ export default function Navbar({ onSearchMovie, initialQuery = '' }) {
             style={{
               backgroundColor: '#e50914',
               borderColor: '#e50914',
-              width: '110px',
+              width: '105px',
               height: '38px',
               borderRadius: '5px',
               fontWeight: 'bold',
@@ -232,7 +247,7 @@ export default function Navbar({ onSearchMovie, initialQuery = '' }) {
           </button>
         </div>
 
-        <div style={{ color: 'white', fontSize: '18px', margin: '0 5px' }}> | </div>
+        <div style={{ color: 'white', fontSize: '18px', margin: '0 2px' }}> | </div>
 
         {/* Watchlist Navigation */}
         <div
@@ -250,11 +265,11 @@ export default function Navbar({ onSearchMovie, initialQuery = '' }) {
           }}
           onClick={() => navigate('/watchlist')}
         >
-          <img src="/images/add_bookmark.svg" width="28px" height="auto" alt="WatchList" style={{ filter: 'invert(1)' }} />
-          <p style={{ margin: 0, color: 'white', fontSize: '16px' }}>WatchList</p>
+          <img src="/images/add_bookmark.svg" width="26px" height="auto" alt="WatchList" style={{ filter: 'invert(1)' }} />
+          <p style={{ margin: 0, color: 'white', fontSize: '15px' }}>WatchList</p>
         </div>
 
-        <div style={{ color: 'white', fontSize: '18px', margin: '0 5px' }}> | </div>
+        <div style={{ color: 'white', fontSize: '18px', margin: '0 2px' }}> | </div>
 
         {/* Genre-Wise Navigation */}
         <div
@@ -262,7 +277,7 @@ export default function Navbar({ onSearchMovie, initialQuery = '' }) {
           style={{
             color: 'white',
             cursor: 'pointer',
-            fontSize: '16px',
+            fontSize: '15px',
             fontWeight: 500,
             margin: 0,
             padding: 0,
@@ -271,6 +286,32 @@ export default function Navbar({ onSearchMovie, initialQuery = '' }) {
           onClick={() => navigate('/genres')}
         >
           Genre-Wise
+        </div>
+
+        <div style={{ color: 'white', fontSize: '18px', margin: '0 2px' }}> | </div>
+
+        {/* Dark / Light Mode Toggle Button */}
+        <div
+          className="theme-toggle-btn"
+          style={{
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '6px',
+            backgroundColor: isDark ? '#2e2e2e' : '#444444',
+            padding: '6px 12px',
+            borderRadius: '20px',
+            color: 'white',
+            fontSize: '14px',
+            fontWeight: 600,
+            userSelect: 'none',
+            transition: 'all 0.3s ease',
+            border: '1px solid rgba(255, 255, 255, 0.15)'
+          }}
+          onClick={toggleTheme}
+          title={`Switch to ${isDark ? 'Light' : 'Dark'} Mode`}
+        >
+          <span>{isDark ? '☀️ Light' : '🌙 Dark'}</span>
         </div>
       </nav>
     </div>
