@@ -45,14 +45,15 @@ export default function GenreDetailPage() {
   }, [cleanGenreId]);
 
   return (
-    <div style={{ backgroundColor: 'black', minHeight: '100vh', color: '#ffffff' }}>
+    <div style={{ backgroundColor: 'black', minHeight: '100vh', color: '#ffffff', paddingBottom: '60px' }}>
       <Navbar onSearchMovie={(title) => navigate(`/movie/${encodeURIComponent(title)}`)} />
 
       {loading && <Loader />}
 
       <div id="genre-main-content">
+        {/* Genre Banner */}
         <div className="container1">
-          <div className="img" style={{ position: 'static', opacity: 1, backdropFilter: 'none' }}>
+          <div className="genre-banner-wrapper">
             <img
               src={genreMeta.banner || genreMeta.image}
               className="responsive-img"
@@ -67,16 +68,18 @@ export default function GenreDetailPage() {
 
         <hr style={{ borderColor: '#333' }} />
 
-        <center><h2 style={{ color: 'red', marginTop: '20px' }}>Popular Movies</h2></center>
+        <center><h2 style={{ color: 'red', marginTop: '20px', fontWeight: 'bold' }}>Popular Movies</h2></center>
         <center><p style={{ color: 'white' }}>(Popular {genreMeta.name} related movies)</p></center>
 
-        <div id="movies-container">
+        {/* Popular Movies (Grid on Desktop, 1-Line Horizontal Scroll on Mobile) */}
+        <div id="movies-container" className="genre-movies-scroll">
           {movies && movies.length > 0 && (
             movies.map((m, idx) => (
               <div
                 key={idx}
                 className="movie-card-genre"
                 onClick={() => navigate(`/movie/${encodeURIComponent(m.title)}`)}
+                title={m.title}
               >
                 <img
                   src={m.poster || 'https://via.placeholder.com/240x320?text=No+Poster'}
