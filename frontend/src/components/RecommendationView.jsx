@@ -58,9 +58,9 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
   const displayGenres = genres_str || (Array.isArray(genres) ? genres.join(', ') : genres);
 
   return (
-    <div id="mycontent" style={{ color: '#111' }}>
-      {/* 1. Hero Movie Overview Section */}
-      <div id="mcontent" style={{ position: 'relative', minHeight: '67vh', overflow: 'hidden', marginTop: '-10px' }}>
+    <div id="mycontent" style={{ color: 'white' }}>
+      {/* 1. Hero Movie Overview Section (Exact from recommend.html) */}
+      <div id="mcontent" style={{ position: 'relative', height: '67vh', overflow: 'hidden', marginTop: '-40px' }}>
         {/* Background Image with Blur and Darkened Overlay */}
         <div
           style={{
@@ -74,7 +74,8 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
             backgroundRepeat: 'no-repeat',
             backgroundPosition: 'center',
             filter: 'blur(3px)',
-            width: '100vw',
+            width: '100%',
+            height: '100%',
             zIndex: 0
           }}
         />
@@ -101,21 +102,26 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
             right: 0,
             bottom: 0,
             background: 'rgba(0, 0, 0, 0.5)',
+            width: '100%',
+            height: '100%',
             zIndex: 1
           }}
         />
 
         {/* Poster Image (Large screen) */}
-        <div className="poster-lg">
+        <div className="poster-lg" style={{ position: 'relative', zIndex: 2 }}>
           <img
             className="poster"
+            style={{ borderRadius: '40px', marginLeft: '90px', marginTop: '40px' }}
+            height="400"
+            width="250"
             src={poster || 'https://via.placeholder.com/250x400?text=No+Poster'}
             alt={title}
           />
         </div>
 
         {/* Poster Image (Small screen) */}
-        <div className="poster-sm text-center">
+        <div className="poster-sm text-center" style={{ position: 'relative', zIndex: 2 }}>
           <img
             className="poster"
             style={{ borderRadius: '40px', marginBottom: '5%' }}
@@ -127,27 +133,41 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
         </div>
 
         {/* Details Section (Text) */}
-        <div id="details">
+        <div id="details" style={{ position: 'relative', zIndex: 3, color: 'white', padding: '20px' }}>
           <br />
-          <h6 id="title">TITLE: &nbsp;{title}</h6>
-          <h6 id="overview" style={{ maxWidth: '85%' }}>
+          <h6 id="title" style={{ zIndex: 3, color: 'white' }}>TITLE: &nbsp;{title}</h6>
+          <h6 id="overview" style={{ maxWidth: '85%', zIndex: 3, color: 'white' }}>
             OVERVIEW: <br /><br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{overview}
           </h6>
-          <h6 id="vote_average">
+          <h6 id="vote_average" style={{ zIndex: 3, color: 'white' }}>
             RATING: &nbsp;{vote_average}/10 ({vote_count} votes)
           </h6>
-          <h6 id="genres">GENRE: &nbsp;{displayGenres}</h6>
-          <h6 id="date">RELEASE DATE: &nbsp;{release_date}</h6>
-          <h6 id="runtime">RUNTIME: &nbsp;{runtime}</h6>
-          <h6 id="status">STATUS: &nbsp;{status}</h6>
+          <h6 id="genres" style={{ zIndex: 3, color: 'white' }}>GENRE: &nbsp;{displayGenres}</h6>
+          <h6 id="date" style={{ zIndex: 3, color: 'white' }}>RELEASE DATE: &nbsp;{release_date}</h6>
+          <h6 id="runtime" style={{ zIndex: 3, color: 'white' }}>RUNTIME: &nbsp;{runtime}</h6>
+          <h6 id="status" style={{ zIndex: 3, color: 'white' }}>STATUS: &nbsp;{status}</h6>
 
           {/* Add to Watchlist Button */}
           <div style={{ marginTop: '15px', zIndex: 4, position: 'relative' }}>
             <button
               id="watchlist-btn"
-              className={inWatchlist ? 'in-watchlist' : ''}
+              className={`btn btn-danger ${inWatchlist ? 'in-watchlist' : ''}`}
               onClick={handleWatchlistToggle}
+              style={{
+                backgroundColor: inWatchlist ? '#28a745' : '#e50914',
+                borderColor: inWatchlist ? '#28a745' : '#e50914',
+                borderRadius: '25px',
+                padding: '8px 22px',
+                fontWeight: 'bold',
+                fontSize: '15px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                boxShadow: inWatchlist ? '0 4px 15px rgba(40, 167, 69, 0.4)' : '0 4px 15px rgba(229, 9, 20, 0.4)',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease'
+              }}
             >
               <img
                 id="watchlist-btn-icon"
@@ -167,7 +187,7 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
 
       {/* 2. Streaming Platforms & Video Section */}
       <div id="streaming-platforms">
-        <div id="video-section" style={{ marginTop: '30px', marginRight: '30px' }}>
+        <div id="video-section" style={{ marginTop: '30px', marginRight: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           {teaser && (
             <div className="teaser">
               <h3 style={{ color: 'white', marginTop: '20px' }}>🎥 Watch the Teaser</h3>
@@ -207,7 +227,7 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
               streaming_availability.map((prov, i) => (
                 <div key={i} className="provider">
                   <img src={prov.logo_path} alt={prov.provider_name} width="50" />
-                  <p>{prov.provider_name}</p>
+                  <p style={{ color: 'white' }}>{prov.provider_name}</p>
                 </div>
               ))
             ) : (
@@ -235,7 +255,7 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
       {selectedCastModal && (
         <div className="modal-overlay-custom" onClick={() => setSelectedCastModal(null)}>
           <div className="modal-content-custom" onClick={(e) => e.stopPropagation()}>
-            <div className="modal-header-custom">
+            <div className="modal-header-custom" style={{ backgroundColor: '#e50914', color: 'white' }}>
               <h5 className="modal-title">{selectedCastModal.name}</h5>
               <button className="modal-close-x" onClick={() => setSelectedCastModal(null)}>
                 &times;
@@ -247,7 +267,7 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
                 src={selectedCastModal.profile || 'https://via.placeholder.com/250x400?text=No+Photo'}
                 alt={selectedCastModal.name}
               />
-              <div>
+              <div style={{ marginLeft: '20px' }}>
                 <p><strong>Character:</strong> {selectedCastModal.character || 'Actor'}</p>
                 <p>Click below to explore full filmography and biography.</p>
                 <button
@@ -315,7 +335,7 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
                   <h5 className="card-title">{c.name}</h5>
                   {c.character && (
                     <h5 className="card-title">
-                      <span style={{ color: '#756969', fontSize: '18px' }}>
+                      <span style={{ color: '#756969', fontSize: '20px' }}>
                         Character: {c.character}
                       </span>
                     </h5>
@@ -329,7 +349,7 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
 
       {/* 5. About The Director */}
       <div>
-        <h3 style={{ color: 'black', textAlign: 'center', marginTop: '40px' }}>ABOUT THE DIRECTOR</h3>
+        <h3 style={{ color: 'black', textAlign: 'center' }}>ABOUT THE DIRECTOR</h3>
       </div>
 
       <div className="director-section">
@@ -349,42 +369,50 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
         <div className="reviews-container">
           <h2 style={{ color: 'black', margin: '40px' }}>USER REVIEWS</h2>
           {reviews && reviews.length > 0 ? (
-            <table className="table table-bordered table-custom">
-              <thead>
-                <tr>
-                  <th scope="col" style={{ width: '55%' }}>User Comments</th>
-                  <th scope="col" style={{ width: '20%' }}>Author & Rating</th>
-                  <th scope="col" style={{ width: '25%' }}>Sentiment Analysis</th>
-                </tr>
-              </thead>
-              <tbody>
-                {reviews.map((rev, i) => (
-                  <tr key={i} style={{ backgroundColor: '#e5091485' }}>
-                    <td style={{ textAlign: 'left', padding: '15px', fontSize: '15px', lineHeight: '1.6' }}>
-                      {rev.content}
-                    </td>
-                    <td style={{ verticalAlign: 'middle', textAlign: 'center', color: 'white' }}>
-                      <strong>{rev.author}</strong><br />
-                      <span style={{ color: '#ffd700', fontSize: '17px', fontWeight: 'bold' }}>
-                        ★ {rev.rating}
-                      </span>
-                    </td>
-                    <td style={{ verticalAlign: 'middle', textAlign: 'center', fontSize: '16px' }}>
-                      <strong>{rev.sentiment}</strong> :{' '}
-                      <span style={{ fontSize: '24px' }}>
-                        {rev.sentiment === 'Good' ? '😃' : '😔'}
-                      </span>
-                      {rev.confidence && (
-                        <>
-                          <br />
-                          <small style={{ color: '#f8f9fa' }}>({rev.confidence} confident)</small>
-                        </>
-                      )}
-                    </td>
+            <div className="col-md-12" style={{ margin: '0 auto', marginTop: '25px' }}>
+              <table className="table table-bordered table-custom" bordercolor="white" style={{ color: 'white' }}>
+                <thead>
+                  <tr>
+                    <th scope="col" style={{ width: '55%', color: '#333333', fontSize: '18px', fontWeight: 'bold', textAlign: 'center' }}>
+                      User Comments
+                    </th>
+                    <th scope="col" style={{ width: '20%', color: '#333333', fontSize: '18px', fontWeight: 'bold', textAlign: 'center' }}>
+                      Author & Rating
+                    </th>
+                    <th scope="col" style={{ width: '25%', color: '#333333', fontSize: '18px', fontWeight: 'bold', textAlign: 'center' }}>
+                      Sentiment Analysis
+                    </th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {reviews.map((rev, i) => (
+                    <tr key={i} style={{ backgroundColor: '#e5091485' }}>
+                      <td style={{ textAlign: 'left', padding: '15px', fontSize: '15px', lineHeight: '1.6', color: 'white' }}>
+                        {rev.content}
+                      </td>
+                      <td style={{ verticalAlign: 'middle', textAlign: 'center', color: 'white' }}>
+                        <strong>{rev.author}</strong><br />
+                        <span style={{ color: '#ffd700', fontSize: '17px', fontWeight: 'bold' }}>
+                          ★ {rev.rating}
+                        </span>
+                      </td>
+                      <td style={{ verticalAlign: 'middle', textAlign: 'center', fontSize: '16px', color: 'white' }}>
+                        <strong>{rev.sentiment}</strong> :{' '}
+                        <span style={{ fontSize: '24px' }}>
+                          {rev.sentiment === 'Good' ? '😃' : '😔'}
+                        </span>
+                        {rev.confidence && (
+                          <>
+                            <br />
+                            <small style={{ color: '#f8f9fa' }}>({rev.confidence} confident)</small>
+                          </>
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           ) : (
             <div style={{ color: 'white', margin: '30px' }}>
               <h3 style={{ color: '#333333' }}>No reviews available for this movie yet. Stay tuned!</h3>
@@ -407,7 +435,8 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
             {recommended_movies.map((m, idx) => (
               <div
                 key={idx}
-                className="card card-rec"
+                className="card"
+                style={{ width: '15rem', borderRadius: '18px', boxShadow: '0 10px 10px rgba(68, 66, 66, 0.3)', margin: '10px auto' }}
                 title={m.title}
                 onClick={() => {
                   if (onSelectRecommendedMovie) {
@@ -418,6 +447,8 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
                 <div className="imghvr">
                   <img
                     className="card-img-top"
+                    height="360"
+                    width="240"
                     alt={`${m.title} - poster`}
                     src={m.poster || 'https://via.placeholder.com/240x360?text=No+Poster'}
                   />
