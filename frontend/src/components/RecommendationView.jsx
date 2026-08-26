@@ -286,8 +286,12 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
           <h6>Streaming on:</h6>
           <div className="streaming_platform">
             {streaming_availability && streaming_availability.length > 0 ? (
-              streaming_availability.map((prov, i) => {
-                const targetUrl = getStreamingRedirectUrl(prov.provider_name, title, prov.watch_url);
+              streaming_availability.map((rawProv, i) => {
+                const provName = Array.isArray(rawProv) ? rawProv[0] : (rawProv?.provider_name || 'Watch Online');
+                const logoUrl = Array.isArray(rawProv) ? rawProv[1] : (rawProv?.logo_path || 'https://via.placeholder.com/60?text=Stream');
+                const watchUrl = Array.isArray(rawProv) ? rawProv[2] : (rawProv?.watch_url || '');
+                const targetUrl = getStreamingRedirectUrl(provName, title, watchUrl);
+
                 return (
                   <a
                     key={i}
@@ -295,10 +299,10 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
                     target="_blank"
                     rel="noopener noreferrer"
                     className="provider"
-                    title={`Watch "${title}" on ${prov.provider_name}`}
+                    title={`Watch "${title}" on ${provName}`}
                   >
-                    <img src={prov.logo_path} alt={prov.provider_name} className="provider-logo" />
-                    <p>{prov.provider_name}</p>
+                    <img src={logoUrl} alt={provName} className="provider-logo" />
+                    <p>{provName}</p>
                   </a>
                 );
               })

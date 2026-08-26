@@ -129,12 +129,27 @@ export default function HomePage() {
       {!activeMovieData && !loading && (
         <div className="home-feed-container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '20px 25px' }}>
           
-          {/* App Hero Heading (Centered) */}
+          {/* App Hero Heading (Centered & Fluid Responsive) */}
           <center>
-            <h1 style={{ marginTop: '30px', marginBottom: '8px', fontSize: '38px', fontWeight: 'bold', letterSpacing: '1px', color: headingColor }}>
+            <h1
+              className="hero-app-title"
+              style={{
+                marginTop: '30px',
+                marginBottom: '8px',
+                fontSize: 'clamp(20px, 5.2vw, 38px)',
+                fontWeight: 'bold',
+                letterSpacing: '0.5px',
+                lineHeight: '1.25',
+                color: headingColor,
+                maxWidth: '100%',
+                wordBreak: 'normal',
+                overflowWrap: 'break-word',
+                padding: '0 8px'
+              }}
+            >
               MOVIE RECOMMENDATION SYSTEM
             </h1>
-            <p style={{ color: subtitleColor, fontSize: '16px', marginBottom: '45px' }}>
+            <p style={{ color: subtitleColor, fontSize: 'clamp(13px, 3.5vw, 16px)', marginBottom: '35px', padding: '0 10px' }}>
               Discover top movies, real-time audience sentiments & AI-powered recommendations
             </p>
           </center>

@@ -429,7 +429,11 @@ def fetch_movie_full_data(movie_title_or_id):
                 tmdb_watch_link = watch_results.get("US", {}).get("link", "")
 
         streaming_availability = [
-            (p["provider_name"], f"https://image.tmdb.org/t/p/w200{p['logo_path']}", get_streaming_url(p["provider_name"], title, tmdb_watch_link))
+            {
+                "provider_name": p["provider_name"],
+                "logo_path": f"https://image.tmdb.org/t/p/w200{p['logo_path']}",
+                "watch_url": get_streaming_url(p["provider_name"], title, tmdb_watch_link)
+            }
             for p in providers_data if p.get("provider_name") and p.get("logo_path")
         ]
 
