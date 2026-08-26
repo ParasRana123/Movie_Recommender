@@ -45,7 +45,7 @@ export default function ActorPage() {
   const subtitleColor = isDark ? '#aaaaaa' : '#777777';
 
   return (
-    <div id="content" style={{ minHeight: '100vh' }}>
+    <div id="content" style={{ minHeight: '100vh', paddingBottom: '60px' }}>
       <Navbar onSearchMovie={(title) => navigate(`/movie/${encodeURIComponent(title)}`)} />
 
       {loading && <Loader />}
@@ -160,44 +160,54 @@ export default function ActorPage() {
             </div>
           </div>
 
-          {/* Known For Movies Section */}
+          {/* Known For Movies Section (1-Line Horizontal Swipe on Mobile) */}
           {movies && movies.length > 0 && (
-            <>
-              <div className="movie" style={{ marginTop: '45px' }}>
+            <div className="section-container" style={{ marginTop: '45px', marginBottom: '40px' }}>
+              <div className="movie">
                 <center>
                   <h3 style={{ color: headingColor, fontWeight: 'bold', letterSpacing: '0.5px' }}>KNOWN FOR MOVIES</h3>
                   <h5 style={{ color: subtitleColor, fontSize: '15px' }}>(Click any of the movies to view full details and recommendations)</h5>
                 </center>
               </div>
 
-              <div className="movie-content">
+              <div className="movie-content recommended-content-scroll">
                 {movies.map((m, idx) => (
                   <div
                     key={idx}
-                    className="card"
-                    style={{ width: '15rem', borderRadius: '18px', margin: '10px auto' }}
+                    className="card recommended-card-item"
+                    style={{ borderRadius: '18px' }}
                     title={m.title}
                     onClick={() => navigate(`/movie/${encodeURIComponent(m.title)}`)}
                   >
                     <div className="imghvr">
                       <img
                         className="card-img-top"
-                        height="360"
-                        width="240"
                         alt={`${m.title} - poster`}
                         src={m.poster || 'https://via.placeholder.com/240x360?text=No+Poster'}
                       />
                       <figcaption className="fig">
-                        <button className="card-btn btn btn-danger"> Click Me </button>
+                        <button className="card-btn btn btn-danger"> View Movie </button>
                       </figcaption>
                     </div>
-                    <div className="card-body">
-                      <h5 className="card-title">{m.title}</h5>
+                    <div className="card-body" style={{ padding: '10px 8px', textAlign: 'center' }}>
+                      <h5 className="card-title" style={{ fontSize: '14px', fontWeight: 'bold', margin: '0 0 4px 0', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                        {m.title}
+                      </h5>
+                      {m.character && (
+                        <h6 style={{ color: isDark ? '#aaa' : '#777', fontSize: '12px', margin: '0 0 4px 0', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                          as {m.character}
+                        </h6>
+                      )}
+                      {m.release_year && (
+                        <span style={{ fontSize: '12px', color: '#e50914', fontWeight: '600' }}>
+                          {m.release_year} {m.rating && m.rating !== 'N/A' && m.rating !== '0' ? `• ★ ${m.rating}` : ''}
+                        </span>
+                      )}
                     </div>
                   </div>
                 ))}
               </div>
-            </>
+            </div>
           )}
         </div>
       )}

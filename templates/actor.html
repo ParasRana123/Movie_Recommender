@@ -239,27 +239,29 @@
             </center>
         </div>
 
-        <div class="movie-content">
+        <div class="movie-content recommended-content-scroll">
             {% for movie in actor_movies %}
-                <div class="card" style="width: 15rem; border-radius: 18px; box-shadow: 0 10px 10px rgba(68, 66, 66, 0.3); cursor: pointer;" title="{{ movie.title }}" onclick="window.location.href='/movie/{{ movie.title|urlencode }}'">
+                <div class="card recommended-card-item" style="border-radius: 18px; box-shadow: 0 10px 10px rgba(68, 66, 66, 0.3); cursor: pointer;" title="{{ movie.title }}" onclick="window.location.href='/movie/{{ movie.title|urlencode }}'">
                     <div class="imghvr">
                         <img class="card-img-top" height="360" width="240" alt="{{ movie.title }} - poster" src="{{ movie.poster }}" onerror="this.src='https://via.placeholder.com/240x360?text=No+Poster'">
                         <figcaption class="fig">
                             <button class="card-btn btn btn-danger">View Movie</button>
                         </figcaption>
                     </div>
-                    <div class="card-body" style="text-align: center; padding: 15px 10px;">
-                        <h5 class="card-title" style="font-size: 16px; font-weight: bold; margin-bottom: 6px; color: #222222; line-height: 1.3;">
+                    <div class="card-body" style="text-align: center; padding: 12px 8px;">
+                        <h5 class="card-title" style="font-size: 15px; font-weight: bold; margin-bottom: 4px; color: #222222; line-height: 1.3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
                             {{ movie.title|title }}
-                            {% if movie.release_year %}
-                                <span style="color: #888888; font-size: 13px; font-weight: normal;">({{ movie.release_year }})</span>
-                            {% endif %}
                         </h5>
                         {% if movie.character and movie.character != 'Unknown Role' %}
-                            <p style="color: #756969; font-size: 14px; margin: 0; font-style: italic;">as {{ movie.character }}</p>
+                            <p style="color: #756969; font-size: 13px; margin: 0 0 4px 0; font-style: italic; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">as {{ movie.character }}</p>
                         {% endif %}
-                        {% if movie.rating and movie.rating != 'N/A' and movie.rating != '0' and movie.rating != '0.0' %}
-                            <div style="color: #e5a00d; font-weight: bold; font-size: 14px; margin-top: 6px;">★ {{ movie.rating }}/10</div>
+                        {% if movie.release_year %}
+                            <div style="color: #e50914; font-weight: 600; font-size: 13px;">
+                                {{ movie.release_year }}
+                                {% if movie.rating and movie.rating != 'N/A' and movie.rating != '0' and movie.rating != '0.0' %}
+                                    • ★ {{ movie.rating }}
+                                {% endif %}
+                            </div>
                         {% endif %}
                     </div>
                 </div>
