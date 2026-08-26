@@ -138,3 +138,17 @@ export async function fetchTopMovies() {
     return [];
   }
 }
+
+/**
+ * Fetch trending actors & actresses
+ */
+export async function fetchTrendingPeople() {
+  try {
+    const res = await fetch(`${API_BASE}/trending-people`);
+    if (!res.ok) throw new Error('Failed to fetch trending people');
+    return await res.json();
+  } catch (err) {
+    console.error('Error in fetchTrendingPeople:', err);
+    return [];
+  }
+}

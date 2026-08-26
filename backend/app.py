@@ -700,7 +700,35 @@ def upcoming_movies():
                 return jsonify(formatted)
     except Exception as e:
         logging.error(f"Error fetching upcoming movies: {e}")
-    return jsonify(UPCOMING_CACHE["data"])
+PEOPLE_CACHE = {"timestamp": 0, "data": []}
+
+@app.route('/api/trending-people')
+def trending_people():
+    global PEOPLE_CACHE
+    import time
+    now = time.time()
+    if PEOPLE_CACHE["data"] and (now - PEOPLE_CACHE["timestamp"] < 1800):
+        return jsonify(PEOPLE_CACHE["data"])
+    try:
+        r = http_session.get(f"{TMDB_BASE_URL}/trending/person/week?api_key={TMDB_API_KEY}&language=en-US", timeout=4)
+        if r.status_code == 200:
+            results = r.json().get('results', [])
+            formatted = [
+                {
+                    "id": p.get("id"),
+                    "name": p.get("name"),
+                    "profile": f"https://image.tmdb.org/t/p/w500{p.get('profile_path')}" if p.get('profile_path') else "https://via.placeholder.com/250x250?text=No+Photo",
+                    "known_for_department": p.get("known_for_department", "Acting"),
+                    "known_for": [m.get("title") or m.get("name") for m in p.get("known_for", []) if m.get("title") or m.get("name")]
+                }
+                for p in results if p.get("name") and p.get("profile_path")
+            ]
+            if formatted:
+                PEOPLE_CACHE = {"timestamp": now, "data": formatted}
+                return jsonify(formatted)
+    except Exception as e:
+        logging.error(f"Error fetching trending people: {e}")
+    return jsonify(PEOPLE_CACHE["data"])
 
 if __name__ == '__main__':
     app.run(port=5000, debug=True)

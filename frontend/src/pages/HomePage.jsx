@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import RecommendationView from '../components/RecommendationView';
 import Loader from '../components/Loader';
-import { fetchRecommendations, fetchTrendingMovies, fetchUpcomingMovies } from '../api/movieApi';
+import { fetchRecommendations, fetchTrendingMovies, fetchUpcomingMovies, fetchTrendingPeople } from '../api/movieApi';
 import { GENRES_DATA } from '../data/genresData';
 import { useTheme } from '../context/ThemeContext';
 
@@ -11,6 +11,7 @@ export default function HomePage() {
   const [activeMovieData, setActiveMovieData] = useState(null);
   const [trendingMovies, setTrendingMovies] = useState([]);
   const [upcomingMovies, setUpcomingMovies] = useState([]);
+  const [trendingPeople, setTrendingPeople] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [feedLoading, setFeedLoading] = useState(true);
@@ -18,19 +19,40 @@ export default function HomePage() {
   const { isDark } = useTheme();
   const navigate = useNavigate();
 
-  // Load Trending & Upcoming feeds on mount
+  // Load Trending Movies, Upcoming Releases, and Trending Celebrities on mount
   useEffect(() => {
     let mounted = true;
     setFeedLoading(true);
 
-    Promise.allSettled([fetchTrendingMovies(), fetchUpcomingMovies()])
-      .then(([trendingRes, upcomingRes]) => {
+    Promise.allSettled([
+      fetchTrendingMovies(),
+      fetchUpcomingMovies(),
+      fetchTrendingPeople()
+    ])
+      .then(([trendingRes, upcomingRes, peopleRes]) => {
         if (!mounted) return;
         if (trendingRes.status === 'fulfilled' && Array.isArray(trendingRes.value)) {
           setTrendingMovies(trendingRes.value);
         }
         if (upcomingRes.status === 'fulfilled' && Array.isArray(upcomingRes.value)) {
           setUpcomingMovies(upcomingRes.value);
+        }
+        if (peopleRes.status === 'fulfilled' && Array.isArray(peopleRes.value) && peopleRes.value.length > 0) {
+          setTrendingPeople(peopleRes.value);
+        } else {
+          // Curated A-List Fallback Celebrities
+          setTrendingPeople([
+            { id: 6193, name: "Leonardo DiCaprio", profile: "https://image.tmdb.org/t/p/w500/wo2hxAzvBv2YXF1q2ZgWuhq2Uo5.jpg", known_for: ["Inception", "Titanic"] },
+            { id: 3223, name: "Robert Downey Jr.", profile: "https://image.tmdb.org/t/p/w500/5qHNjhtjMD4YWH3ag0Y0kV99NJb.jpg", known_for: ["Iron Man", "Avengers"] },
+            { id: 1245, name: "Scarlett Johansson", profile: "https://image.tmdb.org/t/p/w500/6NsMbJXRlDZuDzatNmakEBpt3Z7.jpg", known_for: ["Black Widow", "Lucy"] },
+            { id: 500, name: "Tom Cruise", profile: "https://image.tmdb.org/t/p/w500/eOhwo2322aPVg44F4koc926c04f.jpg", known_for: ["Top Gun", "Mission: Impossible"] },
+            { id: 234352, name: "Margot Robbie", profile: "https://image.tmdb.org/t/p/w500/euDPyqLnuagWMDo2XZAx0VStoxV.jpg", known_for: ["Barbie", "Wolf of Wall Street"] },
+            { id: 2037, name: "Cillian Murphy", profile: "https://image.tmdb.org/t/p/w500/360RRAkJGzoHaVNT16Kd1w5vrhu.jpg", known_for: ["Oppenheimer", "Peaky Blinders"] },
+            { id: 505710, name: "Zendaya", profile: "https://image.tmdb.org/t/p/w500/r2GQ1j3l6pM5c4cO6QZ2Y5X2d1u.jpg", known_for: ["Dune", "Euphoria"] },
+            { id: 287, name: "Brad Pitt", profile: "https://image.tmdb.org/t/p/w500/cckcYc2v0yh1tc9QGRvcZ2q35Ky.jpg", known_for: ["Fight Club", "Seven"] },
+            { id: 54693, name: "Emma Stone", profile: "https://image.tmdb.org/t/p/w500/cZ8a34v3v23pWpA9Z0X5Y6k2s3A.jpg", known_for: ["La La Land", "Poor Things"] },
+            { id: 30614, name: "Ryan Gosling", profile: "https://image.tmdb.org/t/p/w500/4SYZwA4GZ6228sL1D2d3E4f5G6h.jpg", known_for: ["Drive", "Blade Runner 2049"] }
+          ]);
         }
       })
       .finally(() => {
@@ -48,7 +70,6 @@ export default function HomePage() {
     const startTime = Date.now();
     try {
       const data = await fetchRecommendations(title.trim());
-      // Friendly timing for loader animation
       const elapsed = Date.now() - startTime;
       if (elapsed < 1800) {
         await new Promise(resolve => setTimeout(resolve, 1800 - elapsed));
@@ -104,7 +125,7 @@ export default function HomePage() {
         </div>
       )}
 
-      {/* Front Page Discovery Feed (Trending, Upcoming, Genres) */}
+      {/* Front Page Discovery Feed (Trending, Upcoming, Trending People, Genres) */}
       {!activeMovieData && !loading && (
         <div className="home-feed-container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '20px 25px' }}>
           
@@ -182,19 +203,19 @@ export default function HomePage() {
                       </div>
                     )}
 
-                    {/* Release Year Badge */}
                     {movie.release_date && (
                       <div
                         style={{
                           position: 'absolute',
                           top: '10px',
                           left: '10px',
-                          backgroundColor: 'rgba(229, 9, 20, 0.85)',
+                          backgroundColor: 'rgba(0, 0, 0, 0.78)',
                           color: '#ffffff',
-                          padding: '3px 8px',
-                          borderRadius: '8px',
+                          padding: '4px 10px',
+                          borderRadius: '10px',
                           fontSize: '12px',
-                          fontWeight: 'bold'
+                          fontWeight: '600',
+                          backdropFilter: 'blur(4px)'
                         }}
                       >
                         {movie.release_date.split('-')[0]}
@@ -335,7 +356,68 @@ export default function HomePage() {
             </div>
           </section>
 
-          {/* 3. 🎭 POPULAR GENRES SECTION */}
+          {/* 3. ⭐ TRENDING PEOPLE / CELEBRITIES SECTION (Circular Format with Dark Hover & Mobile 1-Line Touch Scroll) */}
+          {trendingPeople && trendingPeople.length > 0 && (
+            <section className="home-section" style={{ marginBottom: '55px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '20px', borderBottom: `2px solid ${isDark ? '#2a2a2a' : '#eeeeee'}`, paddingBottom: '12px' }}>
+                <div>
+                  <h3 style={{ color: headingColor, fontWeight: 'bold', margin: 0, fontSize: '26px', display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <span style={{ color: '#e50914' }}>⭐</span> Trending Celebrities
+                  </h3>
+                  <h5 style={{ color: subtitleColor, margin: '6px 0 0 0', fontSize: '15px', fontWeight: 'normal' }}>
+                    Popular actors and actresses trending worldwide — click to view filmography
+                  </h5>
+                </div>
+                <span style={{ color: '#e50914', fontSize: '14px', fontWeight: 'bold' }}>
+                  Popular Stars
+                </span>
+              </div>
+
+              <div className="movie-content cast-content-scroll home-people-scroll">
+                {trendingPeople.slice(0, 12).map((person, idx) => (
+                  <div
+                    key={idx}
+                    className="cast-card-item"
+                    title={`Click to view ${person.name}'s page`}
+                    onClick={() => navigate(`/actor/${person.id}`)}
+                    style={{ cursor: 'pointer' }}
+                  >
+                    <div className="imghvr cast-imghvr">
+                      <img
+                        className="card-img-top cast-img"
+                        alt={`${person.name} - profile`}
+                        src={person.profile || 'https://via.placeholder.com/250x250?text=No+Photo'}
+                      />
+                      <figcaption className="img cast-fig-overlay">
+                        <button
+                          className="card-btn btn btn-danger"
+                          style={{ backgroundColor: '#e50914', borderColor: '#e50914' }}
+                        >
+                          Know More
+                        </button>
+                      </figcaption>
+                    </div>
+                    <div className="card-body" style={{ textAlign: 'center', padding: '10px 4px' }}>
+                      <h5 className="card-title" style={{ fontSize: '15px', fontWeight: 'bold', margin: '4px 0', color: headingColor }}>
+                        {person.name}
+                      </h5>
+                      {person.known_for && person.known_for.length > 0 ? (
+                        <h6 style={{ color: isDark ? '#aaa' : '#756969', fontSize: '12px', margin: '0 auto', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', maxWidth: '140px' }}>
+                          {person.known_for.slice(0, 2).join(', ')}
+                        </h6>
+                      ) : (
+                        <h6 style={{ color: isDark ? '#aaa' : '#756969', fontSize: '12px', margin: 0 }}>
+                          {person.known_for_department || 'Acting'}
+                        </h6>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* 4. 🎭 POPULAR GENRES SECTION */}
           <section className="home-section" style={{ marginBottom: '40px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '20px', borderBottom: `2px solid ${isDark ? '#2a2a2a' : '#eeeeee'}`, paddingBottom: '12px' }}>
               <div>
