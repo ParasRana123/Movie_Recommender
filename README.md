@@ -1,78 +1,63 @@
-﻿# Movie Recommendation Platform
+# 🎬 Movie Recommendation System (React + Flask)
 
-A multilingual movie recommendation system that leverages Natural Language Processing (NLP), cosine similarity, and web scraping to deliver accurate and engaging movie suggestions.
+A machine-learning and NLP-powered Movie Recommendation web application with a modern React SPA frontend and a Flask REST API backend.
 
-## Features
+---
 
-- 🔍 **Smart Movie Recommendations**  
-  Suggests similar movies using TF-IDF, CountVectorizer, and cosine similarity based on user selections.
-- 💬 **Multilingual Support**  
-  Enables movie recommendations and search functionality across multiple languages.
-- ✨ **Typo-Tolerant Search**  
-  Intelligent search bar with auto-suggestions and typo handling for better user experience.
-- 📊 **Top 20 Movies by Genre**  
-  Compiled and ranked using IMDb ratings, updated via web scraping.
-- 👤 **Detailed Cast & Crew Info**  
-  Pop-up modals for actor/director bios, filmography, and embedded media previews.
+## 📁 Architecture Overview
 
-## Tech Stack
-
-- **Frontend:** HTML, CSS, JavaScript (with Bootstrap for styling)
-- **Backend:** Python (Flask)
-- **Libraries:** 
-  - NLP: `scikit-learn`, `NLTK`
-  - Similarity: `cosine_similarity`, `TF-IDF`, `CountVectorizer`
-  - Web Scraping: `BeautifulSoup`, `requests`
-- **APIs:** TMDB API and IMDB for web scraping of movie reviews
-
-## Project Structure
-
-```bash
-├── static/              # All CSS files and Images here          
-├── templates/           # All the utility template files
-├── main.py              # All flask routes present here
-├── test.py              # All test code here
-├── requirements.txt     # Contains all the requirements
-└── README.md            # README.md file
+```
+Movie_Recommender/
+├── backend/
+│   ├── app.py                  # Flask REST API server (CORS enabled)
+│   ├── requirements.txt        # Backend dependencies
+│   ├── nlp_model2.pkl          # Sentiment Analysis model
+│   ├── transform1.pkl          # TF-IDF Vectorizer
+│   ├── main_data.csv           # Autocomplete & recommendations dataset
+│   ├── main_data1.csv          # Vectorized similarity dataset
+│   └── *.csv                   # Genre datasets (action, comedy, sci_fi, etc.)
+│
+└── frontend/
+    ├── package.json            # React & Vite dependencies
+    ├── vite.config.js          # Vite config with backend proxy
+    ├── public/images/          # High-resolution genre banners and SVG icons
+    └── src/
+        ├── api/                # Axios/Fetch API client
+        ├── context/            # Global Watchlist state (localStorage synced)
+        ├── data/               # Centralized genre metadata
+        ├── components/         # Navbar (autocomplete), MovieCard, RecommendationView, CastCard, Loader, Toast
+        ├── pages/              # HomePage, MovieDetailsPage, ActorPage, WatchlistPage, GenresPage, GenreDetailPage
+        └── styles/             # Netflix-inspired dark mode styling
 ```
 
-### How to get the API key?
+---
 
-Create an account in https://www.themoviedb.org/, click on the `API` link from the left hand sidebar in your account settings and fill all the details to apply for API key. If you are asked for the website URL, just give "NA" if you don't have one. You will see the API key in your `API` sidebar once your request is approved.
+## 🚀 How to Run Locally
 
-## Installation
-
-> **Note**: Python Version greater than 3.8 needed.
-
-1. **Clone the Repository**
-
+### 1. Start the Flask Backend
+Open a terminal in the `backend/` directory:
 ```bash
-git clone [repository-url]
-cd face
+cd backend
+python app.py
 ```
+*The API will start at `http://127.0.0.1:5000`*
 
-2. **Create and activate python virtual environment**
-
+### 2. Start the React Frontend
+Open another terminal in the `frontend/` directory:
 ```bash
-conda create -p venv python==3.11.0 -y
-activate venv/
+cd frontend
+npm install
+npm run dev
 ```
+*The React app will open at `http://localhost:5173`*
 
-3. **Install all the requirements necessary for this project**
+---
 
-```bash
-pip install -r requirements.txt
-```
-
-4. **Start the flask application**
-
-```bash
-python main.py
-```
-
-## Contributing
-
-We welcome contributions from the community! Whether you're interested in improving features, fixing bugs, or adding new functionality, your input is valuable. Feel free to reach out to us with your ideas and suggestions.
-
-## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+## ✨ Features
+- **Universal Live Autocomplete**: As you type in the search bar on any page (e.g. *avengers*), matched movie titles appear instantly in the dropdown.
+- **Content-Based Recommendations**: Machine Learning cosine similarity engine generates 10 relevant movie recommendations.
+- **NLP Sentiment Analysis**: Audience reviews are classified into *Positive* or *Critical* with probability confidence scores.
+- **Trailers & Streaming Info**: YouTube trailer/teaser players and streaming platform availability (Netflix, Prime, Disney+, etc.).
+- **Global Watchlist**: Saved movies persist across sessions in `localStorage` with undo notifications.
+- **Dynamic Genre Hub**: 11 cinematic genres handled by a single optimized, reusable React component.
+- **Actor Filmographies**: Deep-dive into actor biographies and top movie credits.

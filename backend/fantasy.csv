@@ -1,0 +1,782 @@
+,director_name,actor_1_name,actor_2_name,actor_3_name,genres,movie_title,comb
+0,James Cameron,CCH Pounder,Joel David Moore,Wes Studi,Action Adventure Fantasy Sci-Fi,avatar,CCH Pounder Joel David Moore Wes Studi James Cameron Action Adventure Fantasy Sci-Fi
+1,Gore Verbinski,Johnny Depp,Orlando Bloom,Jack Davenport,Action Adventure Fantasy,pirates of the caribbean: at world's end,Johnny Depp Orlando Bloom Jack Davenport Gore Verbinski Action Adventure Fantasy
+2,Nathan Greno,Brad Garrett,Donna Murphy,M.C. Gainey,Adventure Animation Comedy Family Fantasy Musical Romance,tangled,Brad Garrett Donna Murphy M.C. Gainey Nathan Greno Adventure Animation Comedy Family Fantasy Musical Romance
+3,David Yates,Alan Rickman,Daniel Radcliffe,Rupert Grint,Adventure Family Fantasy Mystery,harry potter and the half-blood prince,Alan Rickman Daniel Radcliffe Rupert Grint David Yates Adventure Family Fantasy Mystery
+4,Gore Verbinski,Johnny Depp,Orlando Bloom,Jack Davenport,Action Adventure Fantasy,pirates of the caribbean: dead man's chest,Johnny Depp Orlando Bloom Jack Davenport Gore Verbinski Action Adventure Fantasy
+5,Zack Snyder,Henry Cavill,Christopher Meloni,Harry Lennix,Action Adventure Fantasy Sci-Fi,man of steel,Henry Cavill Christopher Meloni Harry Lennix Zack Snyder Action Adventure Fantasy Sci-Fi
+6,Andrew Adamson,Peter Dinklage,Pierfrancesco Favino,DamiÃÂ¡n AlcÃÂ¡zar,Action Adventure Family Fantasy,the chronicles of narnia: prince caspian,Peter Dinklage Pierfrancesco Favino DamiÃÂ¡n AlcÃÂ¡zar Andrew Adamson Action Adventure Family Fantasy
+7,Rob Marshall,Johnny Depp,Sam Claflin,Stephen Graham,Action Adventure Fantasy,pirates of the caribbean: on stranger tides,Johnny Depp Sam Claflin Stephen Graham Rob Marshall Action Adventure Fantasy
+8,Barry Sonnenfeld,Will Smith,Michael Stuhlbarg,Nicole Scherzinger,Action Adventure Comedy Family Fantasy Sci-Fi,men in black 3,Will Smith Michael Stuhlbarg Nicole Scherzinger Barry Sonnenfeld Action Adventure Comedy Family Fantasy Sci-Fi
+9,Peter Jackson,Aidan Turner,Adam Brown,James Nesbitt,Adventure Fantasy,the hobbit: the battle of the five armies,Aidan Turner Adam Brown James Nesbitt Peter Jackson Adventure Fantasy
+10,Marc Webb,Emma Stone,Andrew Garfield,Chris Zylka,Action Adventure Fantasy,the amazing spider-man,Emma Stone Andrew Garfield Chris Zylka Marc Webb Action Adventure Fantasy
+11,Peter Jackson,Aidan Turner,Adam Brown,James Nesbitt,Adventure Fantasy,the hobbit: the desolation of smaug,Aidan Turner Adam Brown James Nesbitt Peter Jackson Adventure Fantasy
+12,Chris Weitz,Christopher Lee,Eva Green,Kristin Scott Thomas,Adventure Family Fantasy,the golden compass,Christopher Lee Eva Green Kristin Scott Thomas Chris Weitz Adventure Family Fantasy
+13,Sam Raimi,J.K. Simmons,James Franco,Kirsten Dunst,Action Adventure Fantasy Romance,spider-man 2,J.K. Simmons James Franco Kirsten Dunst Sam Raimi Action Adventure Fantasy Romance
+14,Brett Ratner,Hugh Jackman,Kelsey Grammer,Daniel Cudmore,Action Adventure Fantasy Sci-Fi Thriller,x-men: the last stand,Hugh Jackman Kelsey Grammer Daniel Cudmore Brett Ratner Action Adventure Fantasy Sci-Fi Thriller
+15,Dan Scanlon,Steve Buscemi,Tyler Labine,Sean Hayes,Adventure Animation Comedy Family Fantasy,monsters university,Steve Buscemi Tyler Labine Sean Hayes Dan Scanlon Adventure Animation Comedy Family Fantasy
+16,Marc Webb,Emma Stone,Andrew Garfield,B.J. Novak,Action Adventure Fantasy Sci-Fi,the amazing spider-man 2,Emma Stone Andrew Garfield B.J. Novak Marc Webb Action Adventure Fantasy Sci-Fi
+17,Lee Unkrich,Tom Hanks,John Ratzenberger,Don Rickles,Adventure Animation Comedy Family Fantasy,toy story 3,Tom Hanks John Ratzenberger Don Rickles Lee Unkrich Adventure Animation Comedy Family Fantasy
+18,Bryan Singer,Jennifer Lawrence,Peter Dinklage,Hugh Jackman,Action Adventure Fantasy Sci-Fi Thriller,x-men: days of future past,Jennifer Lawrence Peter Dinklage Hugh Jackman Bryan Singer Action Adventure Fantasy Sci-Fi Thriller
+19,Bryan Singer,Eddie Marsan,Ewen Bremner,Ralph Brown,Adventure Fantasy,jack the giant slayer,Eddie Marsan Ewen Bremner Ralph Brown Bryan Singer Adventure Fantasy
+20,Mike Newell,Jake Gyllenhaal,Richard Coyle,Reece Ritchie,Action Adventure Fantasy Romance,prince of persia: the sands of time,Jake Gyllenhaal Richard Coyle Reece Ritchie Mike Newell Action Adventure Fantasy Romance
+21,Steven Spielberg,Harrison Ford,Ray Winstone,Jim Broadbent,Action Adventure Fantasy,indiana jones and the kingdom of the crystal skull,Harrison Ford Ray Winstone Jim Broadbent Steven Spielberg Action Adventure Fantasy
+22,Peter Sohn,A.J. Buckley,Jack McGraw,Peter Sohn,Adventure Animation Comedy Family Fantasy,the good dinosaur,A.J. Buckley Jack McGraw Peter Sohn Peter Sohn Adventure Animation Comedy Family Fantasy
+23,Mark Andrews,Kelly Macdonald,John Ratzenberger,Julie Walters,Adventure Animation Comedy Family Fantasy,brave,Kelly Macdonald John Ratzenberger Julie Walters Mark Andrews Adventure Animation Comedy Family Fantasy
+24,Robert Zemeckis,Robin Wright,Colin Firth,Gary Oldman,Animation Drama Family Fantasy,a christmas carol,Robin Wright Colin Firth Gary Oldman Robert Zemeckis Animation Drama Family Fantasy
+25,Andrew Adamson,Jim Broadbent,Kiran Shah,Shane Rangi,Adventure Family Fantasy,"the chronicles of narnia: the lion, the witch and the wardrobe",Jim Broadbent Kiran Shah Shane Rangi Andrew Adamson Adventure Family Fantasy
+26,Rob Cohen,Jet Li,Brendan Fraser,Russell Wong,Action Adventure Fantasy Horror Thriller,the mummy: tomb of the dragon emperor,Jet Li Brendan Fraser Russell Wong Rob Cohen Action Adventure Fantasy Horror Thriller
+27,Tom Shadyac,Jimmy Bennett,Morgan Freeman,Steve Carell,Comedy Family Fantasy,evan almighty,Jimmy Bennett Morgan Freeman Steve Carell Tom Shadyac Comedy Family Fantasy
+28,Pete Docter,Amy Poehler,Mindy Kaling,Phyllis Smith,Adventure Animation Comedy Drama Family Fantasy,inside out,Amy Poehler Mindy Kaling Phyllis Smith Pete Docter Adventure Animation Comedy Drama Family Fantasy
+29,Rupert Sanders,Chris Hemsworth,Kristen Stewart,Sam Claflin,Action Adventure Drama Fantasy,snow white and the huntsman,Chris Hemsworth Kristen Stewart Sam Claflin Rupert Sanders Action Adventure Drama Fantasy
+30,Robert Stromberg,Angelina Jolie Pitt,Sharlto Copley,Sam Riley,Action Adventure Family Fantasy Romance,maleficent,Angelina Jolie Pitt Sharlto Copley Sam Riley Robert Stromberg Action Adventure Family Fantasy Romance
+31,Carl Rinsch,Keanu Reeves,Cary-Hiroyuki Tagawa,Jin Akanishi,Action Adventure Drama Fantasy,47 ronin,Keanu Reeves Cary-Hiroyuki Tagawa Jin Akanishi Carl Rinsch Action Adventure Drama Fantasy
+32,Mike Mitchell,Jon Hamm,Kathy Griffin,Mary Kay Place,Adventure Animation Comedy Family Fantasy,shrek forever after,Jon Hamm Kathy Griffin Mary Kay Place Mike Mitchell Adventure Animation Comedy Family Fantasy
+33,Robert Zemeckis,Tom Hanks,Eddie Deezen,Peter Scolari,Adventure Animation Family Fantasy,the polar express,Tom Hanks Eddie Deezen Peter Scolari Robert Zemeckis Adventure Animation Family Fantasy
+34,Dean DeBlois,Gerard Butler,America Ferrera,Craig Ferguson,Adventure Animation Family Fantasy,how to train your dragon,Gerard Butler America Ferrera Craig Ferguson Dean DeBlois Adventure Animation Family Fantasy
+35,Peter Jackson,Aidan Turner,Adam Brown,James Nesbitt,Adventure Fantasy,the hobbit: an unexpected journey,Aidan Turner Adam Brown James Nesbitt Peter Jackson Adventure Fantasy
+36,David Fincher,Brad Pitt,Jason Flemyng,Julia Ormond,Drama Fantasy Romance,the curious case of benjamin button,Brad Pitt Jason Flemyng Julia Ormond David Fincher Drama Fantasy Romance
+37,Jon Turteltaub,Nicolas Cage,Omar Benson Miller,Robert Capron,Action Adventure Family Fantasy,the sorcerer's apprentice,Nicolas Cage Omar Benson Miller Robert Capron Jon Turteltaub Action Adventure Family Fantasy
+38,James Bobin,Johnny Depp,Alan Rickman,Anne Hathaway,Adventure Family Fantasy,alice through the looking glass,Johnny Depp Alan Rickman Anne Hathaway James Bobin Adventure Family Fantasy
+39,Chris Miller,Justin Timberlake,Eric Idle,Rupert Everett,Adventure Animation Comedy Family Fantasy,shrek the third,Justin Timberlake Eric Idle Rupert Everett Chris Miller Adventure Animation Comedy Family Fantasy
+40,Duncan Jones,Dominic Cooper,Callum Rennie,Ruth Negga,Action Adventure Fantasy,warcraft,Dominic Cooper Callum Rennie Ruth Negga Duncan Jones Action Adventure Fantasy
+41,Michael Apted,Bruce Spence,Shane Rangi,Laura Brent,Adventure Family Fantasy,the chronicles of narnia: the voyage of the dawn treader,Bruce Spence Shane Rangi Laura Brent Michael Apted Adventure Family Fantasy
+42,David Yates,Robert Pattinson,Daniel Radcliffe,Fiona Shaw,Adventure Family Fantasy Mystery,harry potter and the order of the phoenix,Robert Pattinson Daniel Radcliffe Fiona Shaw David Yates Adventure Family Fantasy Mystery
+43,Mike Newell,Robert Pattinson,Daniel Radcliffe,Rupert Grint,Adventure Family Fantasy Mystery,harry potter and the goblet of fire,Robert Pattinson Daniel Radcliffe Rupert Grint Mike Newell Adventure Family Fantasy Mystery
+44,Tim Burton,Johnny Depp,Christopher Lee,David Kelly,Adventure Comedy Family Fantasy,charlie and the chocolate factory,Johnny Depp Christopher Lee David Kelly Tim Burton Adventure Comedy Family Fantasy
+45,Brad Bird,Janeane Garofalo,John Ratzenberger,Brian Dennehy,Animation Comedy Family Fantasy,ratatouille,Janeane Garofalo John Ratzenberger Brian Dennehy Brad Bird Animation Comedy Family Fantasy
+46,Shawn Levy,Robin Williams,Rami Malek,Steve Coogan,Adventure Comedy Family Fantasy,night at the museum: battle of the smithsonian,Robin Williams Rami Malek Steve Coogan Shawn Levy Adventure Comedy Family Fantasy
+47,Gavin Hood,Hugh Jackman,Ryan Reynolds,Dominic Monaghan,Action Adventure Fantasy Sci-Fi Thriller,x-men origins: wolverine,Hugh Jackman Ryan Reynolds Dominic Monaghan Gavin Hood Action Adventure Fantasy Sci-Fi Thriller
+48,Chris Buck,Josh Gad,Maurice LaMarche,Livvy Stubenrauch,Adventure Animation Comedy Family Fantasy Musical,frozen,Josh Gad Maurice LaMarche Livvy Stubenrauch Chris Buck Adventure Animation Comedy Family Fantasy Musical
+49,Alan Taylor,Chris Hemsworth,Natalie Portman,Anthony Hopkins,Action Adventure Fantasy,thor: the dark world,Chris Hemsworth Natalie Portman Anthony Hopkins Alan Taylor Action Adventure Fantasy
+50,Kenneth Branagh,Chris Hemsworth,Natalie Portman,Anthony Hopkins,Action Adventure Fantasy,thor,Chris Hemsworth Natalie Portman Anthony Hopkins Kenneth Branagh Action Adventure Fantasy
+51,Hoyt Yeatman,Kelli Garner,Piper Mackenzie Harris,Niecy Nash,Action Adventure Animation Comedy Family Fantasy Sci-Fi,g-force,Kelli Garner Piper Mackenzie Harris Niecy Nash Hoyt Yeatman Action Adventure Animation Comedy Family Fantasy Sci-Fi
+52,Jonathan Liebesman,Liam Neeson,Edgar RamÃÂ­rez,Lily James,Action Adventure Fantasy,wrath of the titans,Liam Neeson Edgar RamÃÂ­rez Lily James Jonathan Liebesman Action Adventure Fantasy
+53,Tim Burton,Johnny Depp,ChloÃÂ« Grace Moretz,Christopher Lee,Comedy Fantasy Horror,dark shadows,Johnny Depp ChloÃÂ« Grace Moretz Christopher Lee Tim Burton Comedy Fantasy Horror
+54,Joe Johnston,Anthony Hopkins,Simon Merrells,Art Malik,Drama Fantasy Horror Thriller,the wolfman,Anthony Hopkins Simon Merrells Art Malik Joe Johnston Drama Fantasy Horror Thriller
+55,M. Night Shyamalan,Seychelle Gabriel,Noah Ringer,Aasif Mandvi,Action Adventure Family Fantasy,the last airbender,Seychelle Gabriel Noah Ringer Aasif Mandvi M. Night Shyamalan Action Adventure Family Fantasy
+56,Barry Sonnenfeld,Will Smith,Rosario Dawson,Rip Torn,Action Adventure Comedy Family Fantasy Mystery Sci-Fi,men in black ii,Will Smith Rosario Dawson Rip Torn Barry Sonnenfeld Action Adventure Comedy Family Fantasy Mystery Sci-Fi
+57,Robert Zemeckis,Robin Wright,Anthony Hopkins,Sebastian RochÃÂ©,Action Adventure Animation Fantasy,beowulf,Robin Wright Anthony Hopkins Sebastian RochÃÂ© Robert Zemeckis Action Adventure Animation Fantasy
+58,Peter Ramsey,Hugh Jackman,Kamil McFadden,Khamani Griffin,Adventure Animation Family Fantasy,rise of the guardians,Hugh Jackman Kamil McFadden Khamani Griffin Peter Ramsey Adventure Animation Family Fantasy
+59,Sam Raimi,J.K. Simmons,James Franco,Kirsten Dunst,Action Adventure Fantasy Romance,spider-man,J.K. Simmons James Franco Kirsten Dunst Sam Raimi Action Adventure Fantasy Romance
+60,Dean DeBlois,Gerard Butler,Djimon Hounsou,America Ferrera,Action Adventure Animation Comedy Family Fantasy,how to train your dragon 2,Gerard Butler Djimon Hounsou America Ferrera Dean DeBlois Action Adventure Animation Comedy Family Fantasy
+61,Alex Proyas,Gerard Butler,Elodie Yung,Bryan Brown,Action Adventure Fantasy,gods of egypt,Gerard Butler Elodie Yung Bryan Brown Alex Proyas Action Adventure Fantasy
+62,Hironobu Sakaguchi,Steve Buscemi,Ming-Na Wen,Jean Simmons,Action Adventure Animation Fantasy Romance Sci-Fi,final fantasy: the spirits within,Steve Buscemi Ming-Na Wen Jean Simmons Hironobu Sakaguchi Action Adventure Animation Fantasy Romance Sci-Fi
+63,Steven Spielberg,Mark Rylance,Penelope Wilton,Rafe Spall,Adventure Family Fantasy,the bfg,Mark Rylance Penelope Wilton Rafe Spall Steven Spielberg Adventure Family Fantasy
+64,Bill Condon,Robert Pattinson,Kristen Stewart,Taylor Lautner,Adventure Drama Fantasy Romance,the twilight saga: breaking dawn - part 2,Robert Pattinson Kristen Stewart Taylor Lautner Bill Condon Adventure Drama Fantasy Romance
+65,Chris Miller,Salma Hayek,Constance Marie,Amy Sedaris,Action Adventure Animation Comedy Family Fantasy,puss in boots,Salma Hayek Constance Marie Amy Sedaris Chris Miller Action Adventure Animation Comedy Family Fantasy
+66,Alfonso CuarÃÂ³n,Daniel Radcliffe,Gary Oldman,Rupert Grint,Adventure Family Fantasy Mystery,harry potter and the prisoner of azkaban,Daniel Radcliffe Gary Oldman Rupert Grint Alfonso CuarÃÂ³n Adventure Family Fantasy Mystery
+67,Matt Birch,Rupert Grint,Dave Legeno,Ralph Ineson,Action Fantasy,harry potter and the deathly hallows: part ii,Rupert Grint Dave Legeno Ralph Ineson Matt Birch Action Fantasy
+68,Shawn Levy,Robin Williams,Rami Malek,Steve Coogan,Adventure Comedy Family Fantasy,night at the museum: secret of the tomb,Robin Williams Rami Malek Steve Coogan Shawn Levy Adventure Comedy Family Fantasy
+69,Chris Columbus,Daniel Radcliffe,Fiona Shaw,Verne Troyer,Adventure Family Fantasy,harry potter and the sorcerer's stone,Daniel Radcliffe Fiona Shaw Verne Troyer Chris Columbus Adventure Family Fantasy
+70,Robert Schwentke,Ryan Reynolds,Jeff Bridges,Stephanie Szostak,Action Comedy Fantasy,r.i.p.d.,Ryan Reynolds Jeff Bridges Stephanie Szostak Robert Schwentke Action Comedy Fantasy
+71,Gore Verbinski,Johnny Depp,Orlando Bloom,Jack Davenport,Action Adventure Fantasy,pirates of the caribbean: the curse of the black pearl,Johnny Depp Orlando Bloom Jack Davenport Gore Verbinski Action Adventure Fantasy
+72,Matt Birch,Rupert Grint,Toby Jones,Alfred Enoch,Fantasy,harry potter and the deathly hallows: part i,Rupert Grint Toby Jones Alfred Enoch Matt Birch Fantasy
+73,Bryan Singer,Hugh Jackman,Bruce Davison,Aaron Stanford,Action Adventure Fantasy Sci-Fi Thriller,x-men 2,Hugh Jackman Bruce Davison Aaron Stanford Bryan Singer Action Adventure Fantasy Sci-Fi Thriller
+74,Ron Howard,Clint Howard,T.J. Thyne,Molly Shannon,Comedy Family Fantasy,how the grinch stole christmas,Clint Howard T.J. Thyne Molly Shannon Ron Howard Comedy Family Fantasy
+75,Ang Lee,Suraj Sharma,Rafe Spall,Tabu,Adventure Drama Fantasy,life of pi,Suraj Sharma Rafe Spall Tabu Ang Lee Adventure Drama Fantasy
+76,Mark Steven Johnson,Nicolas Cage,Matt Long,Peter Fonda,Action Fantasy Thriller,ghost rider,Nicolas Cage Matt Long Peter Fonda Mark Steven Johnson Action Fantasy Thriller
+77,Rob Minkoff,Nathan Lane,Brad Garrett,Melanie Griffith,Adventure Animation Comedy Family Fantasy,stuart little 2,Nathan Lane Brad Garrett Melanie Griffith Rob Minkoff Adventure Animation Comedy Family Fantasy
+78,George Lucas,Natalie Portman,Christopher Lee,Hayden Christensen,Action Adventure Fantasy Sci-Fi,star wars: episode iii - revenge of the sith,Natalie Portman Christopher Lee Hayden Christensen George Lucas Action Adventure Fantasy Sci-Fi
+79,George Lucas,Natalie Portman,Christopher Lee,Hayden Christensen,Action Adventure Fantasy Sci-Fi,star wars: episode ii - attack of the clones,Natalie Portman Christopher Lee Hayden Christensen George Lucas Action Adventure Fantasy Sci-Fi
+80,Pete Docter,Steve Buscemi,John Ratzenberger,James Coburn,Adventure Animation Comedy Family Fantasy,"monsters, inc.",Steve Buscemi John Ratzenberger James Coburn Pete Docter Adventure Animation Comedy Family Fantasy
+81,George Lucas,Natalie Portman,Liam Neeson,Ian McDiarmid,Action Adventure Fantasy Sci-Fi,star wars: episode i - the phantom menace,Natalie Portman Liam Neeson Ian McDiarmid George Lucas Action Adventure Fantasy Sci-Fi
+82,Kirk De Micco,Ryan Reynolds,Emma Stone,Nicolas Cage,Adventure Animation Comedy Family Fantasy,the croods,Ryan Reynolds Emma Stone Nicolas Cage Kirk De Micco Adventure Animation Comedy Family Fantasy
+83,FrÃÂ©dÃÂ©ric Forestier,Alain Delon,Santiago Segura,Vanessa Hessler,Adventure Comedy Family Fantasy,asterix at the olympic games,Alain Delon Santiago Segura Vanessa Hessler FrÃÂ©dÃÂ©ric Forestier Adventure Comedy Family Fantasy
+84,Cedric Nicolas-Troyan,Chris Hemsworth,Sam Claflin,Charlize Theron,Action Adventure Drama Fantasy,the huntsman: winter's war,Chris Hemsworth Sam Claflin Charlize Theron Cedric Nicolas-Troyan Action Adventure Drama Fantasy
+85,Shawn Levy,Robin Williams,Rami Malek,Steve Coogan,Action Adventure Comedy Family Fantasy,night at the museum,Robin Williams Rami Malek Steve Coogan Shawn Levy Action Adventure Comedy Family Fantasy
+86,Rob Letterman,James Corden,Catherine Tate,Olly Alexander,Adventure Comedy Family Fantasy,gulliver's travels,James Corden Catherine Tate Olly Alexander Rob Letterman Adventure Comedy Family Fantasy
+87,Noam Murro,Eva Green,Sullivan Stapleton,Peter Mensah,Action Drama Fantasy War,300: rise of an empire,Eva Green Sullivan Stapleton Peter Mensah Noam Murro Action Drama Fantasy War
+88,Raja Gosnell,Mahadeo Shivraj,Tim Gunn,Madison McKinley,Adventure Animation Comedy Family Fantasy,the smurfs,Mahadeo Shivraj Tim Gunn Madison McKinley Raja Gosnell Adventure Animation Comedy Family Fantasy
+89,Raja Gosnell,Jacob Tremblay,Nancy O'Dell,Vanessa Matsui,Adventure Animation Comedy Family Fantasy,the smurfs 2,Jacob Tremblay Nancy O'Dell Vanessa Matsui Raja Gosnell Adventure Animation Comedy Family Fantasy
+90,Peter Jackson,Christopher Lee,Orlando Bloom,Billy Boyd,Action Adventure Drama Fantasy,the lord of the rings: the fellowship of the ring,Christopher Lee Orlando Bloom Billy Boyd Peter Jackson Action Adventure Drama Fantasy
+91,Bo Welch,Sean Hayes,Kelly Preston,Spencer Breslin,Adventure Comedy Family Fantasy,the cat in the hat,Sean Hayes Kelly Preston Spencer Breslin Bo Welch Adventure Comedy Family Fantasy
+92,Rob Minkoff,Chazz Palminteri,Nathan Lane,Jeffrey Jones,Adventure Comedy Family Fantasy,stuart little,Chazz Palminteri Nathan Lane Jeffrey Jones Rob Minkoff Adventure Comedy Family Fantasy
+93,Ron Clements,Oprah Winfrey,Jenifer Lewis,Anika Noni Rose,Animation Family Fantasy Musical Romance,the princess and the frog,Oprah Winfrey Jenifer Lewis Anika Noni Rose Ron Clements Animation Family Fantasy Musical Romance
+94,Chris Columbus,Daniel Radcliffe,Rupert Grint,Emma Watson,Adventure Family Fantasy Mystery,harry potter and the chamber of secrets,Daniel Radcliffe Rupert Grint Emma Watson Chris Columbus Adventure Family Fantasy Mystery
+95,Mark Dindal,Eartha Kitt,Wendie Malick,John Fiedler,Adventure Animation Comedy Family Fantasy,the emperor's new groove,Eartha Kitt Wendie Malick John Fiedler Mark Dindal Adventure Animation Comedy Family Fantasy
+96,Stefen Fangmeier,Djimon Hounsou,Ed Speleers,Gary Lewis,Action Adventure Family Fantasy,eragon,Djimon Hounsou Ed Speleers Gary Lewis Stefen Fangmeier Action Adventure Family Fantasy
+97,Spike Jonze,Catherine O'Hara,Ryan Corr,Max Records,Adventure Drama Family Fantasy,where the wild things are,Catherine O'Hara Ryan Corr Max Records Spike Jonze Adventure Drama Family Fantasy
+98,Chris Wedge,Josh Hutcherson,Emma Kenney,Troy Evans,Adventure Animation Family Fantasy,epic,Josh Hutcherson Emma Kenney Troy Evans Chris Wedge Adventure Animation Family Fantasy
+99,Peter Hyams,CCH Pounder,Mark Margolis,Udo Kier,Action Fantasy Horror Mystery,end of days,CCH Pounder Mark Margolis Udo Kier Peter Hyams Action Fantasy Horror Mystery
+100,Joel Schumacher,Michael Gough,Rene Auberjonois,Debi Mazar,Action Adventure Fantasy,batman forever,Michael Gough Rene Auberjonois Debi Mazar Joel Schumacher Action Adventure Fantasy
+101,Zack Snyder,Abbie Cornish,Richard Roxburgh,Anthony LaPaglia,Action Adventure Animation Family Fantasy,legend of the guardians: the owls of ga'hoole,Abbie Cornish Richard Roxburgh Anthony LaPaglia Zack Snyder Action Adventure Animation Family Fantasy
+102,Pitof,Frances Conroy,Christopher Heyerdahl,Alex Borstein,Action Crime Fantasy Romance Thriller,catwoman,Frances Conroy Christopher Heyerdahl Alex Borstein Pitof Action Crime Fantasy Romance Thriller
+103,Lawrence Guterman,Jamie Kennedy,Traylor Howard,Ben Stein,Comedy Family Fantasy,son of the mask,Jamie Kennedy Traylor Howard Ben Stein Lawrence Guterman Comedy Family Fantasy
+104,Stephen Sommers,Dwayne Johnson,Brendan Fraser,Patricia Velasquez,Action Adventure Fantasy Thriller,the mummy returns,Dwayne Johnson Brendan Fraser Patricia Velasquez Stephen Sommers Action Adventure Fantasy Thriller
+105,Peter Jackson,Orlando Bloom,Billy Boyd,Bernard Hill,Action Adventure Drama Fantasy,the lord of the rings: the return of the king,Orlando Bloom Billy Boyd Bernard Hill Peter Jackson Action Adventure Drama Fantasy
+106,Peter Jackson,Christopher Lee,Orlando Bloom,Billy Boyd,Action Adventure Drama Fantasy,the lord of the rings: the two towers,Christopher Lee Orlando Bloom Billy Boyd Peter Jackson Action Adventure Drama Fantasy
+107,Sergey Bodrov,Jeff Bridges,Djimon Hounsou,Olivia Williams,Action Adventure Fantasy,seventh son,Jeff Bridges Djimon Hounsou Olivia Williams Sergey Bodrov Action Adventure Fantasy
+108,Simon West,Angelina Jolie Pitt,Noah Taylor,Chris Barrie,Action Adventure Fantasy Thriller,lara croft: tomb raider,Angelina Jolie Pitt Noah Taylor Chris Barrie Simon West Action Adventure Fantasy Thriller
+109,Mark Waters,Martin Short,Tod Fennell,Joan Plowright,Adventure Family Fantasy,the spiderwick chronicles,Martin Short Tod Fennell Joan Plowright Mark Waters Adventure Family Fantasy
+110,Chris Columbus,Logan Lerman,Rosario Dawson,Steve Coogan,Adventure Family Fantasy,percy jackson & the olympians: the lightning thief,Logan Lerman Rosario Dawson Steve Coogan Chris Columbus Adventure Family Fantasy
+111,John Lasseter,Tom Hanks,John Ratzenberger,Wayne Knight,Adventure Animation Comedy Family Fantasy,toy story 2,Tom Hanks John Ratzenberger Wayne Knight John Lasseter Adventure Animation Comedy Family Fantasy
+112,Robert Zemeckis,Harrison Ford,Amber Valletta,Miranda Otto,Drama Fantasy Horror Mystery Thriller,what lies beneath,Harrison Ford Amber Valletta Miranda Otto Robert Zemeckis Drama Fantasy Horror Mystery Thriller
+113,Ben Stiller,Adam Scott,Adrian Martinez,Joey Slotnick,Adventure Comedy Drama Fantasy Romance,the secret life of walter mitty,Adam Scott Adrian Martinez Joey Slotnick Ben Stiller Adventure Comedy Drama Fantasy Romance
+114,Tony Bancroft,Ming-Na Wen,Harvey Fierstein,June Foray,Adventure Animation Family Fantasy Musical War,mulan,Ming-Na Wen Harvey Fierstein June Foray Tony Bancroft Adventure Animation Family Fantasy Musical War
+115,Gary Trousdale,Leonard Nimoy,Jim Varney,Cree Summer,Action Adventure Animation Family Fantasy Sci-Fi,atlantis: the lost empire,Leonard Nimoy Jim Varney Cree Summer Gary Trousdale Action Adventure Animation Family Fantasy Sci-Fi
+116,Walt Becker,Bella Thorne,Joshua Mikel,Jesse McCartney,Adventure Animation Comedy Family Fantasy Music,alvin and the chipmunks: the road chip,Bella Thorne Joshua Mikel Jesse McCartney Walt Becker Adventure Animation Comedy Family Fantasy Music
+117,Rob Minkoff,Marsha Thomason,Rachael Harris,Marc John Jefferies,Comedy Family Fantasy Horror Mystery,the haunted mansion,Marsha Thomason Rachael Harris Marc John Jefferies Rob Minkoff Comedy Family Fantasy Horror Mystery
+118,Thor Freudenthal,Logan Lerman,Leven Rambin,Brandon T. Jackson,Adventure Family Fantasy,percy jackson: sea of monsters,Logan Lerman Leven Rambin Brandon T. Jackson Thor Freudenthal Adventure Family Fantasy
+119,Jan de Bont,Gerard Butler,Angelina Jolie Pitt,Djimon Hounsou,Action Adventure Fantasy,lara croft tomb raider: the cradle of life,Gerard Butler Angelina Jolie Pitt Djimon Hounsou Jan de Bont Action Adventure Fantasy
+120,Andrey Konchalovskiy,Shirley Henderson,Nathan Lane,Richard E. Grant,Action Family Fantasy Musical,the nutcracker in 3d,Shirley Henderson Nathan Lane Richard E. Grant Andrey Konchalovskiy Action Family Fantasy Musical
+121,Genndy Tartakovsky,Steve Buscemi,Adam Sandler,Jon Lovitz,Animation Comedy Family Fantasy,hotel transylvania,Steve Buscemi Adam Sandler Jon Lovitz Genndy Tartakovsky Animation Comedy Family Fantasy
+122,Kevin Lima,Jeff Bennett,Teala Dunn,Fred Tatasciore,Animation Comedy Family Fantasy Musical Romance,enchanted,Jeff Bennett Teala Dunn Fred Tatasciore Kevin Lima Animation Comedy Family Fantasy Musical Romance
+123,John McTiernan,F. Murray Abraham,Tom Noonan,Joan Plowright,Action Adventure Comedy Fantasy,last action hero,F. Murray Abraham Tom Noonan Joan Plowright John McTiernan Action Adventure Comedy Fantasy
+124,Sarah Smith,Jim Broadbent,Imelda Staunton,Michael Palin,Adventure Animation Comedy Family Fantasy,arthur christmas,Jim Broadbent Imelda Staunton Michael Palin Sarah Smith Adventure Animation Comedy Family Fantasy
+125,Martin Brest,Anthony Hopkins,Brad Pitt,Jake Weber,Drama Fantasy Romance,meet joe black,Anthony Hopkins Brad Pitt Jake Weber Martin Brest Drama Fantasy Romance
+126,Tarsem Singh,Julia Roberts,Nathan Lane,Danny Woodburn,Adventure Comedy Drama Family Fantasy,mirror mirror,Julia Roberts Nathan Lane Danny Woodburn Tarsem Singh Adventure Comedy Drama Family Fantasy
+127,Edgar Wright,Anna Kendrick,Kieran Culkin,Ellen Wong,Action Comedy Fantasy Romance,scott pilgrim vs. the world,Anna Kendrick Kieran Culkin Ellen Wong Edgar Wright Action Comedy Fantasy Romance
+128,Frank Coraci,Adam Sandler,Cameron Monaghan,Julie Kavner,Comedy Drama Fantasy Romance,click,Adam Sandler Cameron Monaghan Julie Kavner Frank Coraci Comedy Drama Fantasy Romance
+129,Brad Peyton,Jack McBrayer,Sean Hayes,Katt Williams,Action Comedy Family Fantasy,cats & dogs: the revenge of kitty galore,Jack McBrayer Sean Hayes Katt Williams Brad Peyton Action Comedy Family Fantasy
+130,Guillermo del Toro,Seth MacFarlane,IvÃÂ¡n KamarÃÂ¡s,Brian Steele,Action Adventure Fantasy Horror Sci-Fi,hellboy ii: the golden army,Seth MacFarlane IvÃÂ¡n KamarÃÂ¡s Brian Steele Guillermo del Toro Action Adventure Fantasy Horror Sci-Fi
+131,Dean DeBlois,Tia Carrere,Jason Scott Lee,David Ogden Stiers,Adventure Animation Comedy Drama Family Fantasy Sci-Fi,lilo & stitch,Tia Carrere Jason Scott Lee David Ogden Stiers Dean DeBlois Adventure Animation Comedy Drama Family Fantasy Sci-Fi
+132,Gary Winick,Steve Buscemi,Julia Roberts,Oprah Winfrey,Comedy Family Fantasy,charlotte's web,Steve Buscemi Julia Roberts Oprah Winfrey Gary Winick Comedy Family Fantasy
+133,Mike Mitchell,Amy Poehler,Jesse McCartney,Lauren Gottlieb,Adventure Animation Comedy Family Fantasy Music,alvin and the chipmunks: chipwrecked,Amy Poehler Jesse McCartney Lauren Gottlieb Mike Mitchell Adventure Animation Comedy Family Fantasy Music
+134,Adam Shankman,Adam Sandler,Carmen Electra,Kathryn Joosten,Comedy Family Fantasy Romance,bedtime stories,Adam Sandler Carmen Electra Kathryn Joosten Adam Shankman Comedy Family Fantasy Romance
+135,Jan de Bont,Liam Neeson,Lili Taylor,Virginia Madsen,Fantasy Horror Mystery Thriller,the haunting,Liam Neeson Lili Taylor Virginia Madsen Jan de Bont Fantasy Horror Mystery Thriller
+136,Joe Pytka,Bill Murray,Wayne Knight,Michael Jordan,Adventure Animation Comedy Family Fantasy Sci-Fi Sport,space jam,Bill Murray Wayne Knight Michael Jordan Joe Pytka Adventure Animation Comedy Family Fantasy Sci-Fi Sport
+137,Genndy Tartakovsky,Steve Buscemi,Adam Sandler,Fran Drescher,Animation Comedy Family Fantasy,hotel transylvania 2,Steve Buscemi Adam Sandler Fran Drescher Genndy Tartakovsky Animation Comedy Family Fantasy
+138,unknown,Elizabeth Montgomery,Agnes Moorehead,Dick York,Comedy Family Fantasy,bewitchedÃÂ            ,Elizabeth Montgomery Agnes Moorehead Dick York unknown Comedy Family Fantasy
+139,James Algar,Quincy Jones,Penn Jillette,Russi Taylor,Animation Family Fantasy Music,fantasia 2000,Quincy Jones Penn Jillette Russi Taylor James Algar Animation Family Fantasy Music
+140,Ron Underwood,Charlize Theron,Mika Boorem,David Paymer,Action Adventure Family Fantasy Thriller,mighty joe young,Charlize Theron Mika Boorem David Paymer Ron Underwood Action Adventure Family Fantasy Thriller
+141,Vincent Ward,Robin Williams,Annabella Sciorra,Rosalind Chao,Drama Fantasy Romance,what dreams may come,Robin Williams Annabella Sciorra Rosalind Chao Vincent Ward Drama Fantasy Romance
+142,Steven Brill,Adam Sandler,Jon Lovitz,Michael McKean,Comedy Fantasy,little nicky,Adam Sandler Jon Lovitz Michael McKean Steven Brill Comedy Fantasy
+143,Terry Gilliam,Matt Damon,Heath Ledger,Mackenzie Crook,Action Adventure Comedy Fantasy Thriller,the brothers grimm,Matt Damon Heath Ledger Mackenzie Crook Terry Gilliam Action Adventure Comedy Fantasy Thriller
+144,Joe Dante,Brendan Fraser,Jenna Elfman,Heather Locklear,Adventure Animation Comedy Family Fantasy Sci-Fi,looney tunes: back in action,Brendan Fraser Jenna Elfman Heather Locklear Joe Dante Adventure Animation Comedy Family Fantasy Sci-Fi
+145,George Miller,Adam Goldberg,Elizabeth Daily,Glenne Headly,Adventure Comedy Drama Family Fantasy,babe: pig in the city,Adam Goldberg Elizabeth Daily Glenne Headly George Miller Adventure Comedy Drama Family Fantasy
+146,Breck Eisner,Vin Diesel,Joseph Gilgun,Lotte Verbeek,Action Adventure Fantasy,the last witch hunter,Vin Diesel Joseph Gilgun Lotte Verbeek Breck Eisner Action Adventure Fantasy
+147,Luc Besson,Mia Farrow,Adam LeFevre,Penny Balfour,Adventure Animation Family Fantasy,arthur and the invisibles,Mia Farrow Adam LeFevre Penny Balfour Luc Besson Adventure Animation Family Fantasy
+148,Brad Peyton,Josh Hutcherson,Dwayne Johnson,Kristin Davis,Action Adventure Comedy Family Fantasy Sci-Fi,journey 2: the mysterious island,Josh Hutcherson Dwayne Johnson Kristin Davis Brad Peyton Action Adventure Comedy Family Fantasy Sci-Fi
+149,Cody Cameron,Will Forte,Khamani Griffin,Melissa Sturm,Animation Comedy Family Fantasy Sci-Fi,cloudy with a chance of meatballs 2,Will Forte Khamani Griffin Melissa Sturm Cody Cameron Animation Comedy Family Fantasy Sci-Fi
+150,Mark Osborne,Jeff Bridges,James Franco,Mackenzie Foy,Adventure Animation Drama Family Fantasy,the little prince,Jeff Bridges James Franco Mackenzie Foy Mark Osborne Adventure Animation Drama Family Fantasy
+151,Des McAnuff,Robert De Niro,Janeane Garofalo,Jonathan Winters,Adventure Animation Comedy Family Fantasy,the adventures of rocky & bullwinkle,Robert De Niro Janeane Garofalo Jonathan Winters Des McAnuff Adventure Animation Comedy Family Fantasy
+152,Stephen Norrington,Jason Flemyng,Max Ryan,Tony Curran,Action Adventure Fantasy Sci-Fi,the league of extraordinary gentlemen,Jason Flemyng Max Ryan Tony Curran Stephen Norrington Action Adventure Fantasy Sci-Fi
+153,Timur Bekmambetov,Angelina Jolie Pitt,Morgan Freeman,Common,Action Crime Fantasy Thriller,wanted,Angelina Jolie Pitt Morgan Freeman Common Timur Bekmambetov Action Crime Fantasy Thriller
+154,Carlos Saldanha,Denis Leary,Ray Romano,Jay Leno,Action Adventure Animation Comedy Family Fantasy,ice age: the meltdown,Denis Leary Ray Romano Jay Leno Carlos Saldanha Action Adventure Animation Comedy Family Fantasy
+155,unknown,Harold Perrineau,Matt Ryan,Charles Halford,Drama Fantasy Horror Thriller,constantineÃÂ            ,Harold Perrineau Matt Ryan Charles Halford unknown Drama Fantasy Horror Thriller
+156,Gil Kenan,Steve Buscemi,Jon Heder,Catherine O'Hara,Animation Comedy Family Fantasy Mystery,monster house,Steve Buscemi Jon Heder Catherine O'Hara Gil Kenan Animation Comedy Family Fantasy Mystery
+157,Tarsem Singh,Henry Cavill,Daniel Sharman,Steve Byers,Action Drama Fantasy Romance,immortals,Henry Cavill Daniel Sharman Steve Byers Tarsem Singh Action Drama Fantasy Romance
+158,Henry Selick,Brendan Fraser,Bridget Fonda,Megan Mullally,Animation Comedy Fantasy,monkeybone,Brendan Fraser Bridget Fonda Megan Mullally Henry Selick Animation Comedy Fantasy
+159,Zack Snyder,Jon Hamm,Abbie Cornish,Scott Glenn,Action Fantasy,sucker punch,Jon Hamm Abbie Cornish Scott Glenn Zack Snyder Action Fantasy
+160,Steve Carr,Raven-SymonÃÂ©,Jeffrey Jones,Kevin Pollak,Comedy Family Fantasy,dr. dolittle 2,Raven-SymonÃÂ© Jeffrey Jones Kevin Pollak Steve Carr Comedy Family Fantasy
+161,Betty Thomas,Oliver Platt,Raven-SymonÃÂ©,Peter Boyle,Comedy Family Fantasy,doctor dolittle,Oliver Platt Raven-SymonÃÂ© Peter Boyle Betty Thomas Comedy Family Fantasy
+162,Andrew Adamson,Rupert Everett,Jennifer Saunders,Conrad Vernon,Adventure Animation Comedy Family Fantasy Romance,shrek 2,Rupert Everett Jennifer Saunders Conrad Vernon Andrew Adamson Adventure Animation Comedy Family Fantasy Romance
+163,Paul Tibbitt,Tim Conway,Billy West,Eddie Deezen,Adventure Animation Comedy Family Fantasy,the spongebob movie: sponge out of water,Tim Conway Billy West Eddie Deezen Paul Tibbitt Adventure Animation Comedy Family Fantasy
+164,Steven Spielberg,Robin Williams,Julia Roberts,Bob Hoskins,Adventure Comedy Family Fantasy,hook,Robin Williams Julia Roberts Bob Hoskins Steven Spielberg Adventure Comedy Family Fantasy
+165,unknown,Nicole Beharie,Katia Winter,Lyndie Greenwood,Adventure Drama Fantasy Mystery Thriller,sleepy hollowÃÂ            ,Nicole Beharie Katia Winter Lyndie Greenwood unknown Adventure Drama Fantasy Mystery Thriller
+166,Cameron Crowe,Tom Cruise,Ivana Milicevic,Noah Taylor,Fantasy Mystery Romance Sci-Fi Thriller,vanilla sky,Tom Cruise Ivana Milicevic Noah Taylor Cameron Crowe Fantasy Mystery Romance Sci-Fi Thriller
+167,M. Night Shyamalan,Bryce Dallas Howard,Freddy RodrÃÂ­guez,Bob Balaban,Drama Fantasy Mystery Thriller,lady in the water,Bryce Dallas Howard Freddy RodrÃÂ­guez Bob Balaban M. Night Shyamalan Drama Fantasy Mystery Thriller
+168,Betty Thomas,Amy Poehler,Bridgit Mendler,Jesse McCartney,Animation Comedy Family Fantasy Music,alvin and the chipmunks: the squeakquel,Amy Poehler Bridgit Mendler Jesse McCartney Betty Thomas Animation Comedy Family Fantasy Music
+169,Tim Burton,Steve Buscemi,Alison Lohman,Albert Finney,Adventure Drama Fantasy,big fish,Steve Buscemi Alison Lohman Albert Finney Tim Burton Adventure Drama Fantasy
+170,Gary Shore,Dominic Cooper,Sarah Gadon,Zach McGowan,Action Drama Fantasy Horror War,dracula untold,Dominic Cooper Sarah Gadon Zach McGowan Gary Shore Action Drama Fantasy Horror War
+171,Matthew Vaughn,Henry Cavill,David Kelly,Nathaniel Parker,Adventure Family Fantasy Romance,stardust,Henry Cavill David Kelly Nathaniel Parker Matthew Vaughn Adventure Family Fantasy Romance
+172,MÃÂ¥ns MÃÂ¥rlind,Theo James,Stephen Rea,Sandrine Holt,Action Fantasy Horror,underworld: awakening,Theo James Stephen Rea Sandrine Holt MÃÂ¥ns MÃÂ¥rlind Action Fantasy Horror
+173,Bobby Farrelly,Ron Howard,Brandy Norwood,David Hyde Pierce,Action Adventure Animation Comedy Crime Family Fantasy,osmosis jones,Ron Howard Brandy Norwood David Hyde Pierce Bobby Farrelly Action Adventure Animation Comedy Crime Family Fantasy
+174,Will Finn,Lea Michele,Oliver Platt,Jim Belushi,Adventure Animation Family Fantasy Musical,legends of oz: dorothy's return,Lea Michele Oliver Platt Jim Belushi Will Finn Adventure Animation Family Fantasy Musical
+175,Renny Harlin,Roxanne McKee,Luke Newberry,Gaia Weiss,Action Adventure Fantasy,the legend of hercules,Roxanne McKee Luke Newberry Gaia Weiss Renny Harlin Action Adventure Fantasy
+176,David Slade,Robert Pattinson,Kristen Stewart,Anna Kendrick,Adventure Drama Fantasy Romance,the twilight saga: eclipse,Robert Pattinson Kristen Stewart Anna Kendrick David Slade Adventure Drama Fantasy Romance
+177,Kinka Usher,Janeane Garofalo,Wes Studi,Eddie Izzard,Action Comedy Fantasy Sci-Fi,mystery men,Janeane Garofalo Wes Studi Eddie Izzard Kinka Usher Action Comedy Fantasy Sci-Fi
+178,Timur Bekmambetov,Rufus Sewell,Dominic Cooper,Benjamin Walker,Action Fantasy Horror,abraham lincoln: vampire hunter,Rufus Sewell Dominic Cooper Benjamin Walker Timur Bekmambetov Action Fantasy Horror
+179,Doug Lefler,Colin Firth,Nonso Anozie,Owen Teale,Action Adventure Fantasy War,the last legion,Colin Firth Nonso Anozie Owen Teale Doug Lefler Action Adventure Fantasy War
+180,Nancy Meyers,Judy Greer,Lisa Edelstein,Loretta Devine,Comedy Fantasy Romance,what women want,Judy Greer Lisa Edelstein Loretta Devine Nancy Meyers Comedy Fantasy Romance
+181,Michael Lembeck,Judge Reinhold,Aisha Tyler,Eric Lloyd,Comedy Family Fantasy,the santa clause 2,Judge Reinhold Aisha Tyler Eric Lloyd Michael Lembeck Comedy Family Fantasy
+182,Jon Turteltaub,Bruce Willis,Lily Tomlin,Daniel von Bargen,Comedy Family Fantasy,the kid,Bruce Willis Lily Tomlin Daniel von Bargen Jon Turteltaub Comedy Family Fantasy
+183,David S. Goyer,Ryan Reynolds,Natasha Lyonne,John Michael Higgins,Action Adventure Fantasy Horror Sci-Fi Thriller,blade: trinity,Ryan Reynolds Natasha Lyonne John Michael Higgins David S. Goyer Action Adventure Fantasy Horror Sci-Fi Thriller
+184,Jon Favreau,Kristen Stewart,Josh Hutcherson,Jonah Bobo,Action Adventure Comedy Family Fantasy Sci-Fi,zathura: a space adventure,Kristen Stewart Josh Hutcherson Jonah Bobo Jon Favreau Action Adventure Comedy Family Fantasy Sci-Fi
+185,Stuart Beattie,Caitlin Stasey,Kevin Grevioux,Miranda Otto,Action Fantasy Sci-Fi Thriller,"i, frankenstein",Caitlin Stasey Kevin Grevioux Miranda Otto Stuart Beattie Action Fantasy Sci-Fi Thriller
+186,Rob Bowman,Jennifer Garner,Cary-Hiroyuki Tagawa,Goran Visnjic,Action Crime Fantasy Thriller,elektra,Jennifer Garner Cary-Hiroyuki Tagawa Goran Visnjic Rob Bowman Action Crime Fantasy Thriller
+187,Tom Tykwer,Michael Smiley,David Calder,Simon Chandler,Crime Drama Fantasy,perfume: the story of a murderer,Michael Smiley David Calder Simon Chandler Tom Tykwer Crime Drama Fantasy
+188,Tim Hill,Gary Cole,Elizabeth Perkins,Chelsea Handler,Adventure Animation Comedy Family Fantasy,hop,Gary Cole Elizabeth Perkins Chelsea Handler Tim Hill Adventure Animation Comedy Family Fantasy
+189,Zack Snyder,Gerard Butler,Michael Fassbender,Vincent Regan,Action Drama Fantasy War,300,Gerard Butler Michael Fassbender Vincent Regan Zack Snyder Action Drama Fantasy War
+190,Frank Darabont,Tom Hanks,Jeffrey DeMunn,Michael Jeter,Crime Drama Fantasy Mystery,the green mile,Tom Hanks Jeffrey DeMunn Michael Jeter Frank Darabont Crime Drama Fantasy Mystery
+191,Brenda Chapman,Martin Short,Aria Noelle Curzon,Eden Riegel,Adventure Animation Biography Drama Family Fantasy Musical,the prince of egypt,Martin Short Aria Noelle Curzon Eden Riegel Brenda Chapman Adventure Animation Biography Drama Family Fantasy Musical
+192,Lawrence Guterman,Carol Ann Susi,Elizabeth Perkins,Miriam Margolyes,Action Comedy Family Fantasy,cats & dogs,Carol Ann Susi Elizabeth Perkins Miriam Margolyes Lawrence Guterman Action Comedy Family Fantasy
+193,Brett Ratner,Nicolas Cage,Don Cheadle,Amber Valletta,Comedy Drama Fantasy Romance,the family man,Nicolas Cage Don Cheadle Amber Valletta Brett Ratner Comedy Drama Fantasy Romance
+194,Chuck Russell,Dwayne Johnson,Roger Rees,Bernard Hill,Action Adventure Fantasy Thriller,the scorpion king,Dwayne Johnson Roger Rees Bernard Hill Chuck Russell Action Adventure Fantasy Thriller
+195,Henry Selick,Jennifer Saunders,Dawn French,John Hodgman,Animation Family Fantasy,coraline,Jennifer Saunders Dawn French John Hodgman Henry Selick Animation Family Fantasy
+196,Brian Robbins,Robert Downey Jr.,Joel David Moore,Kristin Davis,Comedy Family Fantasy,the shaggy dog,Robert Downey Jr. Joel David Moore Kristin Davis Brian Robbins Comedy Family Fantasy
+197,Guillermo del Toro,James Babson,Rupert Evans,Brian Steele,Action Fantasy Horror Sci-Fi,hellboy,James Babson Rupert Evans Brian Steele Guillermo del Toro Action Fantasy Horror Sci-Fi
+198,Chris Butler,Anna Kendrick,Kodi Smit-McPhee,Elaine Stritch,Adventure Animation Comedy Family Fantasy,paranorman,Anna Kendrick Kodi Smit-McPhee Elaine Stritch Chris Butler Adventure Animation Comedy Family Fantasy
+199,Sam Fell,Emma Watson,Matthew Broderick,Frank Langella,Adventure Animation Comedy Family Fantasy,the tale of despereaux,Emma Watson Matthew Broderick Frank Langella Sam Fell Adventure Animation Comedy Family Fantasy
+200,Graham Annable,Isaac Hempstead Wright,Dee Bradley Baker,Tracy Morgan,Adventure Animation Comedy Family Fantasy,the boxtrolls,Isaac Hempstead Wright Dee Bradley Baker Tracy Morgan Graham Annable Adventure Animation Comedy Family Fantasy
+201,Griffin Dunne,Goran Visnjic,Dianne Wiest,Stockard Channing,Comedy Drama Fantasy Romance,practical magic,Goran Visnjic Dianne Wiest Stockard Channing Griffin Dunne Comedy Drama Fantasy Romance
+202,Phil Lord,Morgan Freeman,Will Ferrell,Alison Brie,Action Adventure Animation Comedy Family Fantasy,the lego movie,Morgan Freeman Will Ferrell Alison Brie Phil Lord Action Adventure Animation Comedy Family Fantasy
+203,Rob Bowman,Christian Bale,Gerard Butler,Matthew McConaughey,Action Adventure Fantasy Sci-Fi Thriller,reign of fire,Christian Bale Gerard Butler Matthew McConaughey Rob Bowman Action Adventure Fantasy Sci-Fi Thriller
+204,Robert Redford,Matt Damon,Will Smith,Charlize Theron,Drama Fantasy Sport,the legend of bagger vance,Matt Damon Will Smith Charlize Theron Robert Redford Drama Fantasy Sport
+205,Tim Hill,Bill Murray,Roger Rees,Ben Falcone,Animation Comedy Family Fantasy,garfield 2,Bill Murray Roger Rees Ben Falcone Tim Hill Animation Comedy Family Fantasy
+206,Scott Stewart,Josh Wingate,Alan Dale,Jacob Hopkins,Action Fantasy Horror Sci-Fi Thriller,priest,Josh Wingate Alan Dale Jacob Hopkins Scott Stewart Action Fantasy Horror Sci-Fi Thriller
+207,Patrick Gilmore,Brad Pitt,Adriano Giannini,Timothy West,Adventure Animation Comedy Drama Family Fantasy Romance,sinbad: legend of the seven seas,Brad Pitt Adriano Giannini Timothy West Patrick Gilmore Adventure Animation Comedy Drama Family Fantasy Romance
+208,Tom Shadyac,Joe Morton,Susanna Thompson,Matt Craven,Drama Fantasy Mystery Romance Thriller,dragonfly,Joe Morton Susanna Thompson Matt Craven Tom Shadyac Drama Fantasy Mystery Romance Thriller
+209,Akiva Goldsman,Matt Bomer,William Hurt,Kevin Corrigan,Drama Fantasy Mystery Romance,winter's tale,Matt Bomer William Hurt Kevin Corrigan Akiva Goldsman Drama Fantasy Mystery Romance
+210,Harald Zwart,Aidan Turner,Kevin Zegers,CCH Pounder,Fantasy Horror Mystery Romance,the mortal instruments: city of bones,Aidan Turner Kevin Zegers CCH Pounder Harald Zwart Fantasy Horror Mystery Romance
+211,Iain Softley,Brendan Fraser,Stephen Graham,Jamie Foreman,Adventure Family Fantasy,inkheart,Brendan Fraser Stephen Graham Jamie Foreman Iain Softley Adventure Family Fantasy
+212,Frank Miller,Scarlett Johansson,Jaime King,Louis Lombardi,Action Crime Fantasy Thriller,the spirit,Scarlett Johansson Jaime King Louis Lombardi Frank Miller Action Crime Fantasy Thriller
+213,Uwe Boll,Jason Statham,Mike Dopud,Tania Saulnier,Action Adventure Fantasy Thriller,in the name of the king: a dungeon siege tale,Jason Statham Mike Dopud Tania Saulnier Uwe Boll Action Adventure Fantasy Thriller
+214,Pou-Soi Cheang,Li Gong,Aaron Kwok,Eddie Peng,Action Adventure Fantasy,xi you ji zhi: sun wukong san da baigu jing,Li Gong Aaron Kwok Eddie Peng Pou-Soi Cheang Action Adventure Fantasy
+215,unknown,Nate Richert,Soleil Moon Frye,Caroline Rhea,Comedy Family Fantasy,"sabrina, the teenage witchÃÂ            ",Nate Richert Soleil Moon Frye Caroline Rhea unknown Comedy Family Fantasy
+216,Mark Waters,Jon Heder,Ivana Milicevic,Willie Garson,Comedy Fantasy Romance,just like heaven,Jon Heder Ivana Milicevic Willie Garson Mark Waters Comedy Fantasy Romance
+217,Rob Cohen,Dennis Quaid,Brian Thompson,Terry O'Neill,Action Adventure Fantasy,dragonheart,Dennis Quaid Brian Thompson Terry O'Neill Rob Cohen Action Adventure Fantasy
+218,Mark Neveldine,Nicolas Cage,Spencer Wilding,Christopher Lambert,Action Fantasy Thriller,ghost rider: spirit of vengeance,Nicolas Cage Spencer Wilding Christopher Lambert Mark Neveldine Action Fantasy Thriller
+219,Tim Hill,Jesse McCartney,Beth Riesgraf,Matthew Gray Gubler,Animation Comedy Family Fantasy Music,alvin and the chipmunks,Jesse McCartney Beth Riesgraf Matthew Gray Gubler Tim Hill Animation Comedy Family Fantasy Music
+220,Brad Silberling,Eric Idle,Fred Rogers,Cathy Moriarty,Comedy Family Fantasy,casper,Eric Idle Fred Rogers Cathy Moriarty Brad Silberling Comedy Family Fantasy
+221,Brad Silberling,Nicolas Cage,Andre Braugher,Colm Feore,Drama Fantasy Romance,city of angels,Nicolas Cage Andre Braugher Colm Feore Brad Silberling Drama Fantasy Romance
+222,Robert Zemeckis,Bruce Willis,Meryl Streep,Isabella Rossellini,Comedy Fantasy Horror,death becomes her,Bruce Willis Meryl Streep Isabella Rossellini Robert Zemeckis Comedy Fantasy Horror
+223,Mark Waters,Madeline Carroll,Ophelia Lovibond,Philip Baker Hall,Comedy Family Fantasy,mr. popper's penguins,Madeline Carroll Ophelia Lovibond Philip Baker Hall Mark Waters Comedy Family Fantasy
+224,Rob Minkoff,Jet Li,Thomas McDonell,Michael Angarano,Action Adventure Fantasy,the forbidden kingdom,Jet Li Thomas McDonell Michael Angarano Rob Minkoff Action Adventure Fantasy
+225,Paul King,Julie Walters,Matt Lucas,Sally Hawkins,Animation Comedy Family Fantasy,paddington,Julie Walters Matt Lucas Sally Hawkins Paul King Animation Comedy Family Fantasy
+226,Karey Kirkpatrick,Stephen Root,Ronny Cox,Richard Schiff,Comedy Drama Family Fantasy,imagine that,Stephen Root Ronny Cox Richard Schiff Karey Kirkpatrick Comedy Drama Family Fantasy
+227,Don Bluth,Kirsten Dunst,Kelsey Grammer,Bernadette Peters,Adventure Animation Drama Family Fantasy Musical Mystery Romance,anastasia,Kirsten Dunst Kelsey Grammer Bernadette Peters Don Bluth Adventure Animation Drama Family Fantasy Musical Mystery Romance
+228,David Dobkin,Ryan Reynolds,Olivia Wilde,Mircea Monroe,Comedy Fantasy,the change-up,Ryan Reynolds Olivia Wilde Mircea Monroe David Dobkin Comedy Fantasy
+229,Paul Hunter,Jaime King,Mako,Victoria Smurfit,Action Comedy Fantasy,bulletproof monk,Jaime King Mako Victoria Smurfit Paul Hunter Action Comedy Fantasy
+230,Chris Weitz,Robert Pattinson,Kristen Stewart,Taylor Lautner,Adventure Drama Fantasy Romance,the twilight saga: new moon,Robert Pattinson Kristen Stewart Taylor Lautner Chris Weitz Adventure Drama Fantasy Romance
+231,Andrew Adamson,Kathleen Freeman,Chris Miller,Bobby Block,Adventure Animation Comedy Family Fantasy,shrek,Kathleen Freeman Chris Miller Bobby Block Andrew Adamson Adventure Animation Comedy Family Fantasy
+232,Seth MacFarlane,Mila Kunis,Seth MacFarlane,Tom Skerritt,Comedy Fantasy,ted,Mila Kunis Seth MacFarlane Tom Skerritt Seth MacFarlane Comedy Fantasy
+233,Neil Jordan,Brad Pitt,Tom Cruise,Kirsten Dunst,Drama Fantasy Horror,interview with the vampire: the vampire chronicles,Brad Pitt Tom Cruise Kirsten Dunst Neil Jordan Drama Fantasy Horror
+234,Rob Marshall,Johnny Depp,Meryl Streep,Anna Kendrick,Adventure Comedy Drama Fantasy Musical,into the woods,Johnny Depp Meryl Streep Anna Kendrick Rob Marshall Adventure Comedy Drama Fantasy Musical
+235,Peter Hewitt,Bill Murray,Mark Christopher Lawrence,Michael Monks,Animation Comedy Family Fantasy,garfield,Bill Murray Mark Christopher Lawrence Michael Monks Peter Hewitt Animation Comedy Family Fantasy
+236,Andy Fickman,Dwayne Johnson,Billy Brown,Tom Everett Scott,Action Adventure Family Fantasy Sci-Fi Thriller,race to witch mountain,Dwayne Johnson Billy Brown Tom Everett Scott Andy Fickman Action Adventure Family Fantasy Sci-Fi Thriller
+237,Angela Robinson,Scoot McNairy,Thomas Lennon,Cheryl Hines,Adventure Comedy Family Fantasy Romance Sport,herbie fully loaded,Scoot McNairy Thomas Lennon Cheryl Hines Angela Robinson Adventure Comedy Family Fantasy Romance Sport
+238,Tommy Wirkola,Jeremy Renner,Derek Mears,Ingrid BolsÃÂ¸ Berdal,Action Fantasy Horror,hansel & gretel: witch hunters,Jeremy Renner Derek Mears Ingrid BolsÃÂ¸ Berdal Tommy Wirkola Action Fantasy Horror
+239,Jorge R. GutiÃÂ©rrez,Channing Tatum,Hector Elizondo,Ana de la Reguera,Adventure Animation Comedy Family Fantasy Romance,the book of life,Channing Tatum Hector Elizondo Ana de la Reguera Jorge R. GutiÃÂ©rrez Adventure Animation Comedy Family Fantasy Romance
+240,Joe Dante,Christopher Lee,Robert Picardo,Phoebe Cates,Comedy Fantasy Horror,gremlins 2: the new batch,Christopher Lee Robert Picardo Phoebe Cates Joe Dante Comedy Fantasy Horror
+241,Robert Rodriguez,Taylor Lautner,Kristin Davis,Taylor Dooley,Action Adventure Family Fantasy,the adventures of sharkboy and lavagirl 3-d,Taylor Lautner Kristin Davis Taylor Dooley Robert Rodriguez Action Adventure Family Fantasy
+242,Clint Eastwood,Matt Damon,Jay Mohr,CÃÂ©cile De France,Drama Fantasy,hereafter,Matt Damon Jay Mohr CÃÂ©cile De France Clint Eastwood Drama Fantasy
+243,David Gordon Green,Natalie Portman,Zooey Deschanel,James Franco,Adventure Comedy Fantasy,your highness,Natalie Portman Zooey Deschanel James Franco David Gordon Green Adventure Comedy Fantasy
+244,Richard LaGravenese,Alden Ehrenreich,Zoey Deutch,Pruitt Taylor Vince,Drama Fantasy Romance,beautiful creatures,Alden Ehrenreich Zoey Deutch Pruitt Taylor Vince Richard LaGravenese Drama Fantasy Romance
+245,Patrick Lussier,Nicolas Cage,Billy Burke,Katy Mixon,Action Fantasy Thriller,drive angry,Nicolas Cage Billy Burke Katy Mixon Patrick Lussier Action Fantasy Thriller
+246,Steven Spielberg,Harrison Ford,Julian Glover,Alison Doody,Action Adventure Fantasy,indiana jones and the last crusade,Harrison Ford Julian Glover Alison Doody Steven Spielberg Action Adventure Fantasy
+247,James Mangold,Hugh Jackman,Natasha Lyonne,Bradley Whitford,Comedy Fantasy Romance,kate & leopold,Hugh Jackman Natasha Lyonne Bradley Whitford James Mangold Comedy Fantasy Romance
+248,Harold Ramis,Brendan Fraser,Frances O'Connor,Brian Doyle-Murray,Comedy Fantasy Romance,bedazzled,Brendan Fraser Frances O'Connor Brian Doyle-Murray Harold Ramis Comedy Fantasy Romance
+249,Paul Bolger,Sarah Michelle Gellar,George Carlin,Rob Paulsen,Adventure Animation Comedy Family Fantasy,happily n'ever after,Sarah Michelle Gellar George Carlin Rob Paulsen Paul Bolger Adventure Animation Comedy Family Fantasy
+250,Jimmy Hayward,Michael Fassbender,Billy Blair,Julia Jones,Action Drama Fantasy Thriller Western,jonah hex,Michael Fassbender Billy Blair Julia Jones Jimmy Hayward Action Drama Fantasy Thriller Western
+251,Tom Shadyac,Maura Tierney,Swoosie Kurtz,Randall 'Tex' Cobb,Comedy Fantasy Romance,liar liar,Maura Tierney Swoosie Kurtz Randall 'Tex' Cobb Tom Shadyac Comedy Fantasy Romance
+252,Brian Levant,Jonathan Winters,Elizabeth Perkins,Harvey Korman,Comedy Family Fantasy,the flintstones,Jonathan Winters Elizabeth Perkins Harvey Korman Brian Levant Comedy Family Fantasy
+253,Eric Brevig,Josh Hutcherson,Brendan Fraser,Anita Briem,Action Adventure Family Fantasy Sci-Fi,journey to the center of the earth,Josh Hutcherson Brendan Fraser Anita Briem Eric Brevig Action Adventure Family Fantasy Sci-Fi
+254,John Lasseter,Kevin Spacey,Madeline Kahn,John Ratzenberger,Adventure Animation Comedy Family Fantasy,a bug's life,Kevin Spacey Madeline Kahn John Ratzenberger John Lasseter Adventure Animation Comedy Family Fantasy
+255,Joel Zwick,Dania Ramirez,Nick Zano,Alice Greczyn,Comedy Family Fantasy Romance,fat albert,Dania Ramirez Nick Zano Alice Greczyn Joel Zwick Comedy Family Fantasy Romance
+256,Frank Oz,Steve Coogan,Vincent Kartheiser,David Keith,Drama Family Fantasy,the indian in the cupboard,Steve Coogan Vincent Kartheiser David Keith Frank Oz Drama Family Fantasy
+257,John A. Davis,Nicolas Cage,Meryl Streep,Julia Roberts,Adventure Animation Comedy Family Fantasy,the ant bully,Nicolas Cage Meryl Streep Julia Roberts John A. Davis Adventure Animation Comedy Family Fantasy
+258,John Schultz,Malese Jow,Carter Jenkins,Tim Meadows,Adventure Comedy Family Fantasy Sci-Fi,aliens in the attic,Malese Jow Carter Jenkins Tim Meadows John Schultz Adventure Comedy Family Fantasy Sci-Fi
+259,Simon Wincer,Cary-Hiroyuki Tagawa,Treat Williams,Kristy Swanson,Action Adventure Comedy Fantasy,the phantom,Cary-Hiroyuki Tagawa Treat Williams Kristy Swanson Simon Wincer Action Adventure Comedy Fantasy
+260,unknown,Pierre Perrier,Clotilde Hesme,CÃÂ©line Sallette,Drama Fantasy Horror Mystery,the returnedÃÂ            ,Pierre Perrier Clotilde Hesme CÃÂ©line Sallette unknown Drama Fantasy Horror Mystery
+261,Lawrence Kasanoff,Jerry Stiller,Larry Miller,Harvey Fierstein,Action Animation Comedy Family Fantasy,foodfight!,Jerry Stiller Larry Miller Harvey Fierstein Lawrence Kasanoff Action Animation Comedy Family Fantasy
+262,Norman Ferguson,Mel Blanc,Dickie Jones,Cliff Edwards,Animation Family Fantasy Musical,pinocchio,Mel Blanc Dickie Jones Cliff Edwards Norman Ferguson Animation Family Fantasy Musical
+263,Len Wiseman,Sophia Myles,Tony Curran,Derek Jacobi,Action Adventure Fantasy Sci-Fi Thriller,underworld: evolution,Sophia Myles Tony Curran Derek Jacobi Len Wiseman Action Adventure Fantasy Sci-Fi Thriller
+264,Burr Steers,Augustus Prew,Charlie Tahan,Valerie Tian,Drama Fantasy Romance,charlie st. cloud,Augustus Prew Charlie Tahan Valerie Tian Burr Steers Drama Fantasy Romance
+265,Catherine Hardwicke,Gary Oldman,Billy Burke,Virginia Madsen,Fantasy Horror Mystery Thriller,red riding hood,Gary Oldman Billy Burke Virginia Madsen Catherine Hardwicke Fantasy Horror Mystery Thriller
+266,Annabel Jankel,Bob Hoskins,Fisher Stevens,Fiona Shaw,Adventure Comedy Family Fantasy Sci-Fi,super mario bros.,Bob Hoskins Fisher Stevens Fiona Shaw Annabel Jankel Adventure Comedy Family Fantasy Sci-Fi
+267,Sngmoo Lee,Tony Cox,Dong-gun Jang,Jed Brophy,Action Fantasy Western,the warrior's way,Tony Cox Dong-gun Jang Jed Brophy Sngmoo Lee Action Fantasy Western
+268,Gordon Chan,Julian Sands,Lee Evans,Anthony Chau-Sang Wong,Action Comedy Fantasy,the medallion,Julian Sands Lee Evans Anthony Chau-Sang Wong Gordon Chan Action Comedy Fantasy
+269,Francis Ford Coppola,Keanu Reeves,Anthony Hopkins,Gary Oldman,Fantasy Horror Romance,bram stoker's dracula,Keanu Reeves Anthony Hopkins Gary Oldman Francis Ford Coppola Fantasy Horror Romance
+270,Bobby Farrelly,Jason Alexander,Bruce McGill,Susan Ward,Comedy Drama Fantasy Romance,shallow hal,Jason Alexander Bruce McGill Susan Ward Bobby Farrelly Comedy Drama Fantasy Romance
+271,Burr Steers,Matthew Perry,Hunter Parrish,Thomas Lennon,Comedy Drama Family Fantasy Romance,17 again,Matthew Perry Hunter Parrish Thomas Lennon Burr Steers Comedy Drama Family Fantasy Romance
+272,Alejandro Agresti,Keanu Reeves,Dylan Walsh,Ebon Moss-Bachrach,Drama Fantasy Romance,the lake house,Keanu Reeves Dylan Walsh Ebon Moss-Bachrach Alejandro Agresti Drama Fantasy Romance
+273,Peter Hedges,Jennifer Garner,Odeya Rush,Common,Comedy Drama Family Fantasy,the odd life of timothy green,Jennifer Garner Odeya Rush Common Peter Hedges Comedy Drama Family Fantasy
+274,Russell Mulcahy,Jonathan Winters,Peter Boyle,John Kapelos,Action Adventure Crime Fantasy Mystery Thriller,the shadow,Jonathan Winters Peter Boyle John Kapelos Russell Mulcahy Action Adventure Crime Fantasy Mystery Thriller
+275,Frederik Du Chau,Gary Oldman,Jaleel White,Eric Idle,Adventure Animation Comedy Drama Family Fantasy Musical,the magic sword: quest for camelot,Gary Oldman Jaleel White Eric Idle Frederik Du Chau Adventure Animation Comedy Drama Family Fantasy Musical
+276,Paul Weitz,Josh Hutcherson,Salma Hayek,Patrick Fugit,Action Adventure Fantasy Thriller,cirque du freak: the vampire's assistant,Josh Hutcherson Salma Hayek Patrick Fugit Paul Weitz Action Adventure Fantasy Thriller
+277,Jean-Marie PoirÃÂ©,Bridgette Wilson-Sampras,Matt Ross,John Aylward,Comedy Fantasy Sci-Fi,just visiting,Bridgette Wilson-Sampras Matt Ross John Aylward Jean-Marie PoirÃÂ© Comedy Fantasy Sci-Fi
+278,Marc F. Adler,Eric Idle,Anne Bancroft,Kelly Ripa,Adventure Animation Comedy Fantasy Romance,delgo,Eric Idle Anne Bancroft Kelly Ripa Marc F. Adler Adventure Animation Comedy Fantasy Romance
+279,Joel Coen,Jennifer Jason Leigh,Bill Cobbs,John Mahoney,Comedy Fantasy,the hudsucker proxy,Jennifer Jason Leigh Bill Cobbs John Mahoney Joel Coen Comedy Fantasy
+280,Bibo Bergeron,Adam Goldberg,Bob Balaban,FranÃÂ§ois Cluzet,Adventure Animation Comedy Fantasy Music Romance,a monster in paris,Adam Goldberg Bob Balaban FranÃÂ§ois Cluzet Bibo Bergeron Adventure Animation Comedy Fantasy Music Romance
+281,Alex Proyas,Michael Wincott,Bai Ling,David Patrick Kelly,Action Drama Fantasy,the crow,Michael Wincott Bai Ling David Patrick Kelly Alex Proyas Action Drama Fantasy
+282,S.S. Rajamouli,Tamannaah Bhatia,Anushka Shetty,Prabhas,Action Adventure Drama Fantasy War,baahubali: the beginning,Tamannaah Bhatia Anushka Shetty Prabhas S.S. Rajamouli Action Adventure Drama Fantasy War
+283,Robert Schwentke,Arliss Howard,Brooklynn Proulx,Michelle Nolden,Drama Fantasy Romance Sci-Fi,the time traveler's wife,Arliss Howard Brooklynn Proulx Michelle Nolden Robert Schwentke Drama Fantasy Romance Sci-Fi
+284,Yuefeng Song,Blythe Auffarth,Bianca Collins,Jiao Xu,Adventure Animation Family Fantasy,dragon nest: warriors' dawn,Blythe Auffarth Bianca Collins Jiao Xu Yuefeng Song Adventure Animation Family Fantasy
+285,Gil Kenan,Bill Murray,Toby Jones,Harry Treadaway,Adventure Family Fantasy Sci-Fi,city of ember,Bill Murray Toby Jones Harry Treadaway Gil Kenan Adventure Family Fantasy Sci-Fi
+286,Jennifer Flackett,Gerard Butler,Anthony Simcoe,Christopher James Baker,Adventure Comedy Family Fantasy,nim's island,Gerard Butler Anthony Simcoe Christopher James Baker Jennifer Flackett Adventure Comedy Family Fantasy
+287,John Frankenheimer,Charlize Theron,James Frain,Clarence Williams III,Action Adventure Crime Drama Family Fantasy Romance Thriller,reindeer games,Charlize Theron James Frain Clarence Williams III John Frankenheimer Action Adventure Crime Drama Family Fantasy Romance Thriller
+288,Kevin Munroe,Chris Evans,Sarah Michelle Gellar,Mako,Action Adventure Animation Comedy Family Fantasy Sci-Fi,tmnt,Chris Evans Sarah Michelle Gellar Mako Kevin Munroe Action Adventure Animation Comedy Family Fantasy Sci-Fi
+289,Patrick Tatopoulos,Craig Parker,Kevin Grevioux,Steven Mackintosh,Action Adventure Fantasy Sci-Fi Thriller,underworld: rise of the lycans,Craig Parker Kevin Grevioux Steven Mackintosh Patrick Tatopoulos Action Adventure Fantasy Sci-Fi Thriller
+290,Gil Junger,Tom Wilkinson,Marsha Thomason,Vincent Regan,Adventure Comedy Fantasy,black knight,Tom Wilkinson Marsha Thomason Vincent Regan Gil Junger Adventure Comedy Fantasy
+291,Catherine Hardwicke,Keisha Castle-Hughes,Hiam Abbass,Shaun Toub,Drama Family Fantasy,the nativity story,Keisha Castle-Hughes Hiam Abbass Shaun Toub Catherine Hardwicke Drama Family Fantasy
+292,Michael Rymer,Aaliyah,Lena Olin,Bruce Spence,Drama Fantasy Horror,queen of the damned,Aaliyah Lena Olin Bruce Spence Michael Rymer Drama Fantasy Horror
+293,Susanna White,Daniel Mays,Bill Bailey,Eros Vlahos,Comedy Family Fantasy,nanny mcphee returns,Daniel Mays Bill Bailey Eros Vlahos Susanna White Comedy Family Fantasy
+294,Tommy O'Haver,Anne Hathaway,Steve Coogan,Joanna Lumley,Comedy Family Fantasy Romance,ella enchanted,Anne Hathaway Steve Coogan Joanna Lumley Tommy O'Haver Comedy Family Fantasy Romance
+295,Peter Yates,Liam Neeson,Alun Armstrong,Lysette Anthony,Action Adventure Fantasy,krull,Liam Neeson Alun Armstrong Lysette Anthony Peter Yates Action Adventure Fantasy
+296,Terrence Malick,Brad Pitt,Tye Sheridan,Fiona Shaw,Drama Fantasy,the tree of life,Brad Pitt Tye Sheridan Fiona Shaw Terrence Malick Drama Fantasy
+297,Ronny Yu,Marley Shelton,Lee Arenberg,Angus Macfadyen,Action Adventure Fantasy,warriors of virtue,Marley Shelton Lee Arenberg Angus Macfadyen Ronny Yu Action Adventure Fantasy
+298,Hayao Miyazaki,Rumi Hiiragi,YÃÂ»ki Amami,Yuria Nara,Adventure Animation Family Fantasy,ponyo,Rumi Hiiragi YÃÂ»ki Amami Yuria Nara Hayao Miyazaki Adventure Animation Family Fantasy
+299,Jeremy Degruson,Kyle Hebert,Brianne Brozey,Joe Ochman,Adventure Animation Comedy Family Fantasy,thunder and the house of magic,Kyle Hebert Brianne Brozey Joe Ochman Jeremy Degruson Adventure Animation Comedy Family Fantasy
+300,Richard Marquand,Harrison Ford,Ian McDiarmid,Kenny Baker,Action Adventure Fantasy Sci-Fi,star wars: episode vi - return of the jedi,Harrison Ford Ian McDiarmid Kenny Baker Richard Marquand Action Adventure Fantasy Sci-Fi
+301,Jon Favreau,Peter Dinklage,Zooey Deschanel,Will Ferrell,Comedy Family Fantasy Romance,elf,Peter Dinklage Zooey Deschanel Will Ferrell Jon Favreau Comedy Family Fantasy Romance
+302,Jon Turteltaub,Robert Duvall,Kyra Sedgwick,David Gallagher,Drama Fantasy Romance Sci-Fi,phenomenon,Robert Duvall Kyra Sedgwick David Gallagher Jon Turteltaub Drama Fantasy Romance Sci-Fi
+303,Richard Donner,Bill Murray,Alfre Woodard,Robert Mitchum,Comedy Drama Fantasy,scrooged,Bill Murray Alfre Woodard Robert Mitchum Richard Donner Comedy Drama Fantasy
+304,Evan Goldberg,Channing Tatum,James Franco,Emma Watson,Comedy Fantasy,this is the end,Channing Tatum James Franco Emma Watson Evan Goldberg Comedy Fantasy
+305,Hyung-rae Shim,Robert Forster,Aimee Garcia,Chris Mulkey,Action Drama Fantasy Horror Thriller,dragon wars: d-war,Robert Forster Aimee Garcia Chris Mulkey Hyung-rae Shim Action Drama Fantasy Horror Thriller
+306,Norman Jewison,Haley Joel Osment,Nancy Travis,Andrea Martin,Comedy Family Fantasy,bogus,Haley Joel Osment Nancy Travis Andrea Martin Norman Jewison Comedy Family Fantasy
+307,Mark Dindal,George Kennedy,Frank Welker,Hal Holbrook,Animation Comedy Family Fantasy Musical,cats don't dance,George Kennedy Frank Welker Hal Holbrook Mark Dindal Animation Comedy Family Fantasy Musical
+308,Tom Reeve,Joan Plowright,Rollo Weeks,Simon Callow,Action Adventure Comedy Fantasy Romance,george and the dragon,Joan Plowright Rollo Weeks Simon Callow Tom Reeve Action Adventure Comedy Fantasy Romance
+309,Frank Marshall,Julian Sands,Peter Jason,Brian McNamara,Comedy Fantasy Horror Thriller,arachnophobia,Julian Sands Peter Jason Brian McNamara Frank Marshall Comedy Fantasy Horror Thriller
+310,Paul Feig,Ed Begley Jr.,Kate McKinnon,Zach Woods,Action Comedy Fantasy Sci-Fi,ghostbusters,Ed Begley Jr. Kate McKinnon Zach Woods Paul Feig Action Comedy Fantasy Sci-Fi
+311,John Lasseter,Tom Hanks,John Ratzenberger,Jim Varney,Adventure Animation Comedy Family Fantasy,toy story,Tom Hanks John Ratzenberger Jim Varney John Lasseter Adventure Animation Comedy Family Fantasy
+312,Barry Sonnenfeld,Anjelica Huston,Raul Julia,Carel Struycken,Comedy Fantasy,the addams family,Anjelica Huston Raul Julia Carel Struycken Barry Sonnenfeld Comedy Fantasy
+313,Stephen Hillenburg,Scarlett Johansson,Bill Fagerbakke,Rodger Bumpass,Adventure Animation Comedy Family Fantasy,the spongebob squarepants movie,Scarlett Johansson Bill Fagerbakke Rodger Bumpass Stephen Hillenburg Adventure Animation Comedy Family Fantasy
+314,Chris Weitz,Chazz Palminteri,Mark Addy,Wanda Sykes,Comedy Fantasy,down to earth,Chazz Palminteri Mark Addy Wanda Sykes Chris Weitz Comedy Fantasy
+315,Gary Winick,Jennifer Garner,Judy Greer,Christa B. Allen,Comedy Fantasy Romance,13 going on 30,Jennifer Garner Judy Greer Christa B. Allen Gary Winick Comedy Fantasy Romance
+316,Woody Allen,Kurt Fuller,Audrey Fleurot,Nina Arianda,Comedy Fantasy Romance,midnight in paris,Kurt Fuller Audrey Fleurot Nina Arianda Woody Allen Comedy Fantasy Romance
+317,John Schultz,Brenda Song,Robert Forster,Anne Meara,Comedy Family Fantasy Sport,like mike,Brenda Song Robert Forster Anne Meara John Schultz Comedy Family Fantasy Sport
+318,Tim Burton,Johnny Depp,Christopher Lee,Joanna Lumley,Animation Drama Family Fantasy Musical Romance,corpse bride,Johnny Depp Christopher Lee Joanna Lumley Tim Burton Animation Drama Family Fantasy Musical Romance
+319,Lee Toland Krieger,Harrison Ford,Michiel Huisman,Ellen Burstyn,Drama Fantasy Romance,the age of adaline,Harrison Ford Michiel Huisman Ellen Burstyn Lee Toland Krieger Drama Fantasy Romance
+320,Marc Forster,Will Ferrell,Christian Stolte,Danny Rhodes,Comedy Drama Fantasy Romance,stranger than fiction,Will Ferrell Christian Stolte Danny Rhodes Marc Forster Comedy Drama Fantasy Romance
+321,Drew Goddard,Chris Hemsworth,Bradley Whitford,Kristen Connolly,Fantasy Horror Mystery Thriller,the cabin in the woods,Chris Hemsworth Bradley Whitford Kristen Connolly Drew Goddard Fantasy Horror Mystery Thriller
+322,John R. Leonetti,Brian Thompson,Talisa Soto,Robin Shou,Action Adventure Fantasy Sci-Fi Thriller,mortal kombat: annihilation,Brian Thompson Talisa Soto Robin Shou John R. Leonetti Action Adventure Fantasy Sci-Fi Thriller
+323,Neil Jordan,Robert Downey Jr.,Aidan Quinn,Paul Guilfoyle,Drama Fantasy Thriller,in dreams,Robert Downey Jr. Aidan Quinn Paul Guilfoyle Neil Jordan Drama Fantasy Thriller
+324,James Wong,Ian Whyte,Texas Battle,Randall Duk Kim,Action Adventure Fantasy Sci-Fi Thriller,dragonball: evolution,Ian Whyte Texas Battle Randall Duk Kim James Wong Action Adventure Fantasy Sci-Fi Thriller
+325,Terry Gilliam,Andrew Garfield,Lily Cole,Verne Troyer,Adventure Fantasy Mystery,the imaginarium of doctor parnassus,Andrew Garfield Lily Cole Verne Troyer Terry Gilliam Adventure Fantasy Mystery
+326,Maksim Fadeev,Konstantin Khabenskiy,Fedor Bondarchuk,Sergey Garmash,Adventure Animation Fantasy,a warrior's tail,Konstantin Khabenskiy Fedor Bondarchuk Sergey Garmash Maksim Fadeev Adventure Animation Fantasy
+327,Greg Tiernan,James Franco,Salma Hayek,Anders Holm,Adventure Animation Comedy Fantasy,sausage party,James Franco Salma Hayek Anders Holm Greg Tiernan Adventure Animation Comedy Fantasy
+328,Peter Hewitt,Jim Broadbent,Bradley Pierce,Mark Williams,Adventure Comedy Family Fantasy,the borrowers,Jim Broadbent Bradley Pierce Mark Williams Peter Hewitt Adventure Comedy Family Fantasy
+329,Don Mancini,Jason Flemyng,Billy Boyd,Hannah Spearritt,Comedy Fantasy Horror Thriller,seed of chucky,Jason Flemyng Billy Boyd Hannah Spearritt Don Mancini Comedy Fantasy Horror Thriller
+330,Ron Clements,Robin Williams,Frank Welker,Scott Weinger,Adventure Animation Comedy Family Fantasy Musical Romance,aladdin,Robin Williams Frank Welker Scott Weinger Ron Clements Adventure Animation Comedy Family Fantasy Musical Romance
+331,Kenny Ortega,Vinessa Shaw,Omri Katz,Larry Bagby,Comedy Family Fantasy,hocus pocus,Vinessa Shaw Omri Katz Larry Bagby Kenny Ortega Comedy Family Fantasy
+332,Patrick Lussier,Gerard Butler,Danny Masterson,Jeri Ryan,Action Fantasy Horror Thriller,dracula 2000,Gerard Butler Danny Masterson Jeri Ryan Patrick Lussier Action Fantasy Horror Thriller
+333,Donald Petrie,Samaire Armstrong,Carlos Ponce,Faizon Love,Comedy Fantasy Romance,just my luck,Samaire Armstrong Carlos Ponce Faizon Love Donald Petrie Comedy Fantasy Romance
+334,Michael Ritchie,Mara Wilson,Francis Capra,Kathleen Turner,Comedy Family Fantasy,a simple wish,Mara Wilson Francis Capra Kathleen Turner Michael Ritchie Comedy Family Fantasy
+335,Jon Favreau,Scarlett Johansson,Bill Murray,Garry Shandling,Adventure Drama Family Fantasy,the jungle book,Scarlett Johansson Bill Murray Garry Shandling Jon Favreau Adventure Drama Family Fantasy
+336,Wolfgang Petersen,Gerald McRaney,Barret Oliver,Alan Oppenheimer,Adventure Drama Family Fantasy,the neverending story,Gerald McRaney Barret Oliver Alan Oppenheimer Wolfgang Petersen Adventure Drama Family Fantasy
+337,Alex Proyas,Rufus Sewell,William Hurt,Bruce Spence,Action Drama Fantasy Mystery Sci-Fi Thriller,dark city,Rufus Sewell William Hurt Bruce Spence Alex Proyas Action Drama Fantasy Mystery Sci-Fi Thriller
+338,Walter Murch,Piper Laurie,Jean Marsh,Tim Rose,Adventure Family Fantasy Horror Mystery,return to oz,Piper Laurie Jean Marsh Tim Rose Walter Murch Adventure Family Fantasy Horror Mystery
+339,Mark Waters,Jamie Lee Curtis,Julie Gonzalo,Willie Garson,Comedy Family Fantasy Music Romance,freaky friday,Jamie Lee Curtis Julie Gonzalo Willie Garson Mark Waters Comedy Family Fantasy Music Romance
+340,Scott Stewart,Dennis Quaid,Kate Walsh,Charles S. Dutton,Action Fantasy Horror,legion,Dennis Quaid Kate Walsh Charles S. Dutton Scott Stewart Action Fantasy Horror
+341,Andrew Morahan,Christopher Lambert,Mako,Mario Van Peebles,Action Fantasy Romance Sci-Fi,highlander: the final dimension,Christopher Lambert Mako Mario Van Peebles Andrew Morahan Action Fantasy Romance Sci-Fi
+342,Michael Cohn,David Conrad,Chris Bauer,Monica Keena,Fantasy Horror,snow white: a tale of terror,David Conrad Chris Bauer Monica Keena Michael Cohn Fantasy Horror
+343,Raja Gosnell,Sarah Michelle Gellar,Linda Cardellini,Tim Blake Nelson,Adventure Comedy Family Fantasy Horror Mystery,scooby-doo 2: monsters unleashed,Sarah Michelle Gellar Linda Cardellini Tim Blake Nelson Raja Gosnell Adventure Comedy Family Fantasy Horror Mystery
+344,Oleg Stepchenko,Jason Flemyng,Igor Jijikine,Agnia Ditkovskite,Adventure Fantasy Mystery Thriller,viy,Jason Flemyng Igor Jijikine Agnia Ditkovskite Oleg Stepchenko Adventure Fantasy Mystery Thriller
+345,Gabor Csupo,Josh Hutcherson,Zooey Deschanel,Bailee Madison,Adventure Drama Family Fantasy,bridge to terabithia,Josh Hutcherson Zooey Deschanel Bailee Madison Gabor Csupo Adventure Drama Family Fantasy
+346,Kirk Jones,Colin Firth,Kelly Macdonald,Imelda Staunton,Comedy Family Fantasy,nanny mcphee,Colin Firth Kelly Macdonald Imelda Staunton Kirk Jones Comedy Family Fantasy
+347,Cathy Malkasian,Alfre Woodard,Flea,Cree Summer,Adventure Animation Comedy Family Fantasy,the wild thornberrys movie,Alfre Woodard Flea Cree Summer Cathy Malkasian Adventure Animation Comedy Family Fantasy
+348,John Eng,Elizabeth Daily,Cree Summer,Nancy Cartwright,Adventure Animation Comedy Family Fantasy Musical,rugrats go wild,Elizabeth Daily Cree Summer Nancy Cartwright John Eng Adventure Animation Comedy Family Fantasy Musical
+349,Ronny Yu,Alexis Arquette,Park Bench,Vince Corazza,Comedy Fantasy Horror Romance,bride of chucky,Alexis Arquette Park Bench Vince Corazza Ronny Yu Comedy Fantasy Horror Romance
+350,Troy Nixey,Bailee Madison,Alan Dale,Jack Thompson,Fantasy Horror Thriller,don't be afraid of the dark,Bailee Madison Alan Dale Jack Thompson Troy Nixey Fantasy Horror Thriller
+351,Steve Barron,Martin Landau,Udo Kier,Bebe Neuwirth,Adventure Family Fantasy Musical,the adventures of pinocchio,Martin Landau Udo Kier Bebe Neuwirth Steve Barron Adventure Family Fantasy Musical
+352,Richard Kelly,Frank Langella,Gillian Jacobs,Celia Weston,Drama Fantasy Mystery Thriller,the box,Frank Langella Gillian Jacobs Celia Weston Richard Kelly Drama Fantasy Mystery Thriller
+353,unknown,Elizabeth Daily,Jennifer Hale,Tom Kane,Action Animation Comedy Family Fantasy Sci-Fi,the powerpuff girlsÃÂ            ,Elizabeth Daily Jennifer Hale Tom Kane unknown Action Animation Comedy Family Fantasy Sci-Fi
+354,John Carpenter,Victor Wong,Kate Burton,Peter Kwong,Action Adventure Comedy Fantasy,big trouble in little china,Victor Wong Kate Burton Peter Kwong John Carpenter Action Adventure Comedy Fantasy
+355,John Guillermin,Tanya Roberts,Donovan Scott,Ted Wass,Adventure Fantasy,sheena,Tanya Roberts Donovan Scott Ted Wass John Guillermin Adventure Fantasy
+356,Uwe Boll,Meat Loaf,Udo Kier,Michael ParÃÂ©,Action Adventure Fantasy Horror,bloodrayne,Meat Loaf Udo Kier Michael ParÃÂ© Uwe Boll Action Adventure Fantasy Horror
+357,Andrew Adamson,Dallas Barnett,Erica Linz,Igor Zaripov,Fantasy,cirque du soleil: worlds away,Dallas Barnett Erica Linz Igor Zaripov Andrew Adamson Fantasy
+358,Terry Gilliam,Jeff Bridges,David Hyde Pierce,Harry Shearer,Comedy Drama Fantasy,the fisher king,Jeff Bridges David Hyde Pierce Harry Shearer Terry Gilliam Comedy Drama Fantasy
+359,Tim Hill,Josh Charles,F. Murray Abraham,David Arquette,Adventure Comedy Family Fantasy Music Sci-Fi,muppets from space,Josh Charles F. Murray Abraham David Arquette Tim Hill Adventure Comedy Family Fantasy Music Sci-Fi
+360,Sidney Lumet,Lena Horne,Diana Ross,Theresa Merritt,Adventure Family Fantasy Music Musical,the wiz,Lena Horne Diana Ross Theresa Merritt Sidney Lumet Adventure Family Fantasy Music Musical
+361,Richard Williams,Donald Pleasence,Kenneth Williams,Clive Revill,Action Adventure Animation Comedy Fantasy,the princess and the cobbler,Donald Pleasence Kenneth Williams Clive Revill Richard Williams Action Adventure Animation Comedy Fantasy
+362,Hayao Miyazaki,Christian Bale,Blythe Danner,Jean Simmons,Adventure Animation Family Fantasy,howl's moving castle,Christian Bale Blythe Danner Jean Simmons Hayao Miyazaki Adventure Animation Family Fantasy
+363,Irvin Kershner,Harrison Ford,Kenny Baker,Anthony Daniels,Action Adventure Fantasy Sci-Fi,star wars: episode v - the empire strikes back,Harrison Ford Kenny Baker Anthony Daniels Irvin Kershner Action Adventure Fantasy Sci-Fi
+364,Jonathan Newman,Ioan Gruffudd,Keeley Hawes,Oliver Stark,Adventure Family Fantasy,the adventurer: the curse of the midas box,Ioan Gruffudd Keeley Hawes Oliver Stark Jonathan Newman Adventure Family Fantasy
+365,Mikael HÃÂ¥fstrÃÂ¶m,Drew Powell,Kim Thomson,Alexandra Silber,Fantasy Horror,1408,Drew Powell Kim Thomson Alexandra Silber Mikael HÃÂ¥fstrÃÂ¶m Fantasy Horror
+366,Jerry Zucker,Demi Moore,Tony Goldwyn,Phil Leeds,Drama Fantasy Romance Thriller,ghost,Demi Moore Tony Goldwyn Phil Leeds Jerry Zucker Drama Fantasy Romance Thriller
+367,John Pasquin,Judge Reinhold,Eric Lloyd,Peter Boyle,Comedy Drama Family Fantasy,the santa clause,Judge Reinhold Eric Lloyd Peter Boyle John Pasquin Comedy Drama Family Fantasy
+368,Len Wiseman,Sophia Myles,Kevin Grevioux,Shane Brolly,Action Fantasy Thriller,underworld,Sophia Myles Kevin Grevioux Shane Brolly Len Wiseman Action Fantasy Thriller
+369,Uli Edel,Richard E. Grant,Jim Carter,Alice Krige,Adventure Comedy Family Fantasy,the little vampire,Richard E. Grant Jim Carter Alice Krige Uli Edel Adventure Comedy Family Fantasy
+370,Brian Trenchard-Smith,Michael Biehn,Udo Kier,Franco Nero,Action Adventure Fantasy Sci-Fi Thriller,megiddo: the omega code 2,Michael Biehn Udo Kier Franco Nero Brian Trenchard-Smith Action Adventure Fantasy Sci-Fi Thriller
+371,Trey Parker,Minnie Driver,Eric Idle,Trey Parker,Animation Comedy Fantasy Musical,south park: bigger longer & uncut,Minnie Driver Eric Idle Trey Parker Trey Parker Animation Comedy Fantasy Musical
+372,Stuart Gillard,Paige Turco,John Aylward,Matt Hill,Action Adventure Comedy Family Fantasy Sci-Fi,teenage mutant ninja turtles iii,Paige Turco John Aylward Matt Hill Stuart Gillard Action Adventure Comedy Family Fantasy Sci-Fi
+373,Paul W.S. Anderson,Christopher Lambert,Cary-Hiroyuki Tagawa,Bridgette Wilson-Sampras,Action Adventure Fantasy Sci-Fi Thriller,mortal kombat,Christopher Lambert Cary-Hiroyuki Tagawa Bridgette Wilson-Sampras Paul W.S. Anderson Action Adventure Fantasy Sci-Fi Thriller
+374,Tim Burton,Johnny Depp,Dianne Wiest,Conchata Ferrell,Fantasy Romance,edward scissorhands,Johnny Depp Dianne Wiest Conchata Ferrell Tim Burton Fantasy Romance
+375,Robin Budd,Roger Rees,Rob Paulsen,Spencer Breslin,Adventure Animation Family Fantasy,return to never land,Roger Rees Rob Paulsen Spencer Breslin Robin Budd Adventure Animation Family Fantasy
+376,John Milius,William Smith,Mako,Sandahl Bergman,Adventure Fantasy,conan the barbarian,William Smith Mako Sandahl Bergman John Milius Adventure Fantasy
+377,Peter Hewitt,Keanu Reeves,George Carlin,Alex Winter,Adventure Comedy Fantasy Music Sci-Fi,bill & ted's bogus journey,Keanu Reeves George Carlin Alex Winter Peter Hewitt Adventure Comedy Fantasy Music Sci-Fi
+378,Michel Gondry,Kate Winslet,Kirsten Dunst,Tom Wilkinson,Drama Fantasy Romance Sci-Fi,eternal sunshine of the spotless mind,Kate Winslet Kirsten Dunst Tom Wilkinson Michel Gondry Drama Fantasy Romance Sci-Fi
+379,Robert Rodriguez,Jimmy Bennett,Leo Howard,Jake Short,Comedy Family Fantasy,shorts,Jimmy Bennett Leo Howard Jake Short Robert Rodriguez Comedy Family Fantasy
+380,unknown,Pablo Sevilla,unknown,unknown,Action Adventure Animation Family Fantasy,yu-gi-oh! duel monstersÃÂ            ,Pablo Sevilla unknown unknown unknown Action Adventure Animation Family Fantasy
+381,Richard Donner,Matthew Broderick,John Wood,Leo McKern,Adventure Comedy Drama Fantasy,ladyhawke,Matthew Broderick John Wood Leo McKern Richard Donner Adventure Comedy Drama Fantasy
+382,Robert Rodriguez,Quentin Tarantino,Salma Hayek,Cheech Marin,Crime Fantasy Horror,from dusk till dawn,Quentin Tarantino Salma Hayek Cheech Marin Robert Rodriguez Crime Fantasy Horror
+383,Frank Nissen,Kath Soucie,Brenda Blethyn,John Fiedler,Animation Family Fantasy Mystery,pooh's heffalump movie,Kath Soucie Brenda Blethyn John Fiedler Frank Nissen Animation Family Fantasy Mystery
+384,Stephen Chow,Shengyi Huang,Chi Ling Chiu,Qiu Yuen,Action Comedy Crime Fantasy,kung fu hustle,Shengyi Huang Chi Ling Chiu Qiu Yuen Stephen Chow Action Comedy Crime Fantasy
+385,Catherine Hardwicke,Kristen Stewart,Taylor Lautner,Anna Kendrick,Drama Fantasy Romance,twilight,Kristen Stewart Taylor Lautner Anna Kendrick Catherine Hardwicke Drama Fantasy Romance
+386,David Koepp,Aasif Mandvi,Dequina Moore,Jordan Carlos,Comedy Drama Fantasy Romance,ghost town,Aasif Mandvi Dequina Moore Jordan Carlos David Koepp Comedy Drama Fantasy Romance
+387,Matt Reeves,ChloÃÂ« Grace Moretz,Dylan Minnette,Kodi Smit-McPhee,Drama Fantasy Horror Mystery,let me in,ChloÃÂ« Grace Moretz Dylan Minnette Kodi Smit-McPhee Matt Reeves Drama Fantasy Horror Mystery
+388,Dave Borthwick,Jimmy Fallon,Kylie Minogue,Jon Stewart,Adventure Animation Comedy Family Fantasy,doogal,Jimmy Fallon Kylie Minogue Jon Stewart Dave Borthwick Adventure Animation Comedy Family Fantasy
+389,David Zucker,Chriss Anglin,Geoffrey Arend,Gary Coleman,Comedy Fantasy,an american carol,Chriss Anglin Geoffrey Arend Gary Coleman David Zucker Comedy Fantasy
+390,Hayao Miyazaki,Minnie Driver,Jada Pinkett Smith,Billy Crudup,Adventure Animation Fantasy,princess mononoke,Minnie Driver Jada Pinkett Smith Billy Crudup Hayao Miyazaki Adventure Animation Fantasy
+391,Matthew Diamond,Chazz Palminteri,Garrett Clayton,Toni Braxton,Adventure Family Fantasy Musical,the oogieloves in the big balloon adventure,Chazz Palminteri Garrett Clayton Toni Braxton Matthew Diamond Adventure Family Fantasy Musical
+392,Jean-Marie PoirÃÂ©,Christian Clavier,Philippe Nahon,Marie-Anne Chazel,Comedy Family Fantasy Sci-Fi,les couloirs du temps: les visiteurs ii,Christian Clavier Philippe Nahon Marie-Anne Chazel Jean-Marie PoirÃÂ© Comedy Family Fantasy Sci-Fi
+393,Kevin Munroe,Marco St. John,Laura Spencer,Anita Briem,Action Comedy Crime Fantasy Horror Mystery Sci-Fi Thriller,dylan dog: dead of night,Marco St. John Laura Spencer Anita Briem Kevin Munroe Action Comedy Crime Fantasy Horror Mystery Sci-Fi Thriller
+394,Julie Taymor,Djimon Hounsou,Reeve Carney,Tom Conti,Comedy Drama Fantasy Romance,the tempest,Djimon Hounsou Reeve Carney Tom Conti Julie Taymor Comedy Drama Fantasy Romance
+395,Britt Allcroft,Mara Wilson,Colm Feore,Peter Fonda,Adventure Comedy Drama Family Fantasy,thomas and the magic railroad,Mara Wilson Colm Feore Peter Fonda Britt Allcroft Adventure Comedy Drama Family Fantasy
+396,Hayao Miyazaki,Bunta Sugawara,RyÃÂ»nosuke Kamiki,Miyu Irino,Adventure Animation Family Fantasy,spirited away,Bunta Sugawara RyÃÂ»nosuke Kamiki Miyu Irino Hayao Miyazaki Adventure Animation Family Fantasy
+397,Emile Ardolino,Darci Kistler,Kyra Nichols,Margaret Tracey,Family Fantasy Music,the nutcracker,Darci Kistler Kyra Nichols Margaret Tracey Emile Ardolino Family Fantasy Music
+398,Ricky Gervais,Jennifer Garner,Tina Fey,Martin Starr,Comedy Fantasy Romance,the invention of lying,Jennifer Garner Tina Fey Martin Starr Ricky Gervais Comedy Fantasy Romance
+399,Chuck Russell,Peter Greene,Amy Yasbeck,Reg E. Cathey,Action Comedy Crime Fantasy,the mask,Peter Greene Amy Yasbeck Reg E. Cathey Chuck Russell Action Comedy Crime Fantasy
+400,Penny Marshall,Tom Hanks,Jon Lovitz,John Heard,Comedy Drama Family Fantasy Romance,big,Tom Hanks Jon Lovitz John Heard Penny Marshall Comedy Drama Family Fantasy Romance
+401,Francis Ford Coppola,Nicolas Cage,Kathleen Turner,Joan Allen,Comedy Drama Fantasy Romance,peggy sue got married,Nicolas Cage Kathleen Turner Joan Allen Francis Ford Coppola Comedy Drama Fantasy Romance
+402,Richard Fleischer,Mako,Olivia d'Abo,Grace Jones,Action Adventure Fantasy,conan the destroyer,Mako Olivia d'Abo Grace Jones Richard Fleischer Action Adventure Fantasy
+403,Barry Levinson,Nicholas Rowe,Roger Ashton-Griffiths,Freddie Jones,Adventure Fantasy Mystery Thriller,young sherlock holmes,Nicholas Rowe Roger Ashton-Griffiths Freddie Jones Barry Levinson Adventure Fantasy Mystery Thriller
+404,Matthew Robbins,Ian McDiarmid,Ralph Richardson,Albert Salmi,Action Adventure Fantasy,dragonslayer,Ian McDiarmid Ralph Richardson Albert Salmi Matthew Robbins Action Adventure Fantasy
+405,Richard Fleischer,Ernie Reyes Jr.,Brigitte Nielsen,Sandahl Bergman,Action Adventure Fantasy,red sonja,Ernie Reyes Jr. Brigitte Nielsen Sandahl Bergman Richard Fleischer Action Adventure Fantasy
+406,Alejandro AmenÃÂ¡bar,Fionnula Flanagan,Elaine Cassidy,Eric Sykes,Fantasy Horror Thriller,the others,Fionnula Flanagan Elaine Cassidy Eric Sykes Alejandro AmenÃÂ¡bar Fantasy Horror Thriller
+407,John Hoffman,Liam Aiken,Molly Shannon,Kevin Nealon,Comedy Drama Family Fantasy Sci-Fi,good boy!,Liam Aiken Molly Shannon Kevin Nealon John Hoffman Comedy Drama Family Fantasy Sci-Fi
+408,Daniel Barnz,Alex Pettyfer,Mary-Kate Olsen,Erik Knudsen,Drama Fantasy Romance,beastly,Alex Pettyfer Mary-Kate Olsen Erik Knudsen Daniel Barnz Drama Fantasy Romance
+409,Gary Halvorson,Vanessa Williams,Kevin Clash,Caroll Spinney,Adventure Comedy Family Fantasy Musical,the adventures of elmo in grouchland,Vanessa Williams Kevin Clash Caroll Spinney Gary Halvorson Adventure Comedy Family Fantasy Musical
+410,Guillaume Ivernel,Rob Paulsen,Jess Harnell,Mary Mouser,Adventure Animation Family Fantasy,dragon hunters,Rob Paulsen Jess Harnell Mary Mouser Guillaume Ivernel Adventure Animation Family Fantasy
+411,Guillermo del Toro,Ivana Baquero,Maribel VerdÃÂº,Sergi LÃÂ³pez,Drama Fantasy War,pan's labyrinth,Ivana Baquero Maribel VerdÃÂº Sergi LÃÂ³pez Guillermo del Toro Drama Fantasy War
+412,unknown,Joel Courtney,Jessika Van,Riley Smith,Drama Fantasy Mystery Thriller,the messengersÃÂ            ,Joel Courtney Jessika Van Riley Smith unknown Drama Fantasy Mystery Thriller
+413,Karyn Kusama,J.K. Simmons,Amy Sedaris,Cynthia Stevenson,Comedy Fantasy Horror,jennifer's body,J.K. Simmons Amy Sedaris Cynthia Stevenson Karyn Kusama Comedy Fantasy Horror
+414,Vic Armstrong,Nicolas Cage,Lea Thompson,Quinton Aaron,Action Drama Fantasy Mystery Thriller,left behind,Nicolas Cage Lea Thompson Quinton Aaron Vic Armstrong Action Drama Fantasy Mystery Thriller
+415,Russell Mulcahy,Christopher Lambert,Jon Polito,Celia Imrie,Action Adventure Fantasy,highlander,Christopher Lambert Jon Polito Celia Imrie Russell Mulcahy Action Adventure Fantasy
+416,Gaspar NoÃÂ©,Paz de la Huerta,Emily Alyn Lind,Olly Alexander,Drama Fantasy,enter the void,Paz de la Huerta Emily Alyn Lind Olly Alexander Gaspar NoÃÂ© Drama Fantasy
+417,AndrÃÂ©s Muschietti,Javier Botet,Megan Charpentier,Isabelle NÃÂ©lisse,Fantasy Horror,mama,Javier Botet Megan Charpentier Isabelle NÃÂ©lisse AndrÃÂ©s Muschietti Fantasy Horror
+418,Tim Burton,Catherine O'Hara,Jeffrey Jones,Glenn Shadix,Comedy Fantasy,beetlejuice,Catherine O'Hara Jeffrey Jones Glenn Shadix Tim Burton Comedy Fantasy
+419,James Watkins,Daniel Radcliffe,Roger Allam,Jessica Raine,Drama Fantasy Horror Thriller,the woman in black,Daniel Radcliffe Roger Allam Jessica Raine James Watkins Drama Fantasy Horror Thriller
+420,Michael Dougherty,Adam Scott,Conchata Ferrell,Allison Tolman,Comedy Fantasy Horror,krampus,Adam Scott Conchata Ferrell Allison Tolman Michael Dougherty Comedy Fantasy Horror
+421,Louis Leterrier,Liam Neeson,Jason Flemyng,Alexa Davalos,Action Adventure Fantasy,clash of the titans,Liam Neeson Jason Flemyng Alexa Davalos Louis Leterrier Action Adventure Fantasy
+422,Rob Reiner,Robin Wright,Carol Kane,AndrÃÂ© the Giant,Adventure Family Fantasy Romance,the princess bride,Robin Wright Carol Kane AndrÃÂ© the Giant Rob Reiner Adventure Family Fantasy Romance
+423,Joe Berlinger,Kim Director,Erica Leerhsen,Kurt Loder,Adventure Fantasy Horror Mystery Thriller,book of shadows: blair witch 2,Kim Director Erica Leerhsen Kurt Loder Joe Berlinger Adventure Fantasy Horror Mystery Thriller
+424,Andrew Fleming,Christine Taylor,Rachel True,Brenda Strong,Drama Fantasy Horror Thriller,the craft,Christine Taylor Rachel True Brenda Strong Andrew Fleming Drama Fantasy Horror Thriller
+425,Elizabeth Allen Rosenbaum,Sierra McCormick,Hutch Dano,Jason Spevack,Adventure Comedy Family Fantasy,ramona and beezus,Sierra McCormick Hutch Dano Jason Spevack Elizabeth Allen Rosenbaum Adventure Comedy Family Fantasy
+426,Jay Russell,William Hurt,Sissy Spacek,Jonathan Jackson,Drama Family Fantasy Romance,tuck everlasting,William Hurt Sissy Spacek Jonathan Jackson Jay Russell Drama Family Fantasy Romance
+427,Douglas Aarniokoski,Christopher Lambert,Adrian Paul,Adam Copeland,Action Adventure Fantasy Sci-Fi,highlander: endgame,Christopher Lambert Adrian Paul Adam Copeland Douglas Aarniokoski Action Adventure Fantasy Sci-Fi
+428,unknown,David Ogden Stiers,Nicole de Boer,Chris Bruno,Drama Fantasy Mystery Sci-Fi,the dead zoneÃÂ            ,David Ogden Stiers Nicole de Boer Chris Bruno unknown Drama Fantasy Mystery Sci-Fi
+429,Rodman Flender,Vivica A. Fox,Fred Willard,Elden Henson,Comedy Fantasy Horror Thriller,idle hands,Vivica A. Fox Fred Willard Elden Henson Rodman Flender Comedy Fantasy Horror Thriller
+430,Katja von Garnier,Olivier Martinez,Agnes Bruckner,Chris Geere,Drama Fantasy Horror Romance,blood and chocolate,Olivier Martinez Agnes Bruckner Chris Geere Katja von Garnier Drama Fantasy Horror Romance
+431,Michael Chapman,Curtis Armstrong,Pamela Reed,Mike Muscat,Adventure Drama Fantasy,the clan of the cave bear,Curtis Armstrong Pamela Reed Mike Muscat Michael Chapman Adventure Drama Fantasy
+432,RyÃÂ»hei Kitamura,Bradley Cooper,Brooke Shields,Leslie Bibb,Fantasy Horror Mystery,the midnight meat train,Bradley Cooper Brooke Shields Leslie Bibb RyÃÂ»hei Kitamura Fantasy Horror Mystery
+433,Jake Paltrow,Stephen Graham,Gael Le Cornec,Keith Allen,Comedy Drama Fantasy Music Romance,the good night,Stephen Graham Gael Le Cornec Keith Allen Jake Paltrow Comedy Drama Fantasy Music Romance
+434,Juraj Jakubisko,Anna Friel,Hans Matheson,Franco Nero,Biography Drama Fantasy History,bathory: countess of blood,Anna Friel Hans Matheson Franco Nero Juraj Jakubisko Biography Drama Fantasy History
+435,Gerry Lively,Bruce Payne,Lucy Gaskell,Steven Elder,Action Adventure Fantasy,dungeons & dragons: wrath of the dragon god,Bruce Payne Lucy Gaskell Steven Elder Gerry Lively Action Adventure Fantasy
+436,Harold Ramis,Bill Murray,Chris Elliott,Willie Garson,Comedy Fantasy Romance,groundhog day,Bill Murray Chris Elliott Willie Garson Harold Ramis Comedy Fantasy Romance
+437,Wes Craven,John Witherspoon,W. Earl Brown,Allen Payne,Comedy Fantasy Horror Romance,vampire in brooklyn,John Witherspoon W. Earl Brown Allen Payne Wes Craven Comedy Fantasy Horror Romance
+438,Tom Holland,Joe Mantegna,Bethany Joy Lenz,Kari Wuhrer,Fantasy Horror,thinner,Joe Mantegna Bethany Joy Lenz Kari Wuhrer Tom Holland Fantasy Horror
+439,Renny Harlin,Tuesday Knight,Rodney Eastman,Brooke Bundy,Fantasy Horror Thriller,a nightmare on elm street 4: the dream master,Tuesday Knight Rodney Eastman Brooke Bundy Renny Harlin Fantasy Horror Thriller
+440,John Lafia,Jenny Agutter,Beth Grant,Greg Germann,Fantasy Horror,child's play 2,Jenny Agutter Beth Grant Greg Germann John Lafia Fantasy Horror
+441,Spike Jonze,Willie Garson,Orson Bean,Mary Kay Place,Comedy Drama Fantasy,being john malkovich,Willie Garson Orson Bean Mary Kay Place Spike Jonze Comedy Drama Fantasy
+442,Michael Ritchie,Victor Wong,Randall 'Tex' Cobb,Charlotte Lewis,Action Adventure Comedy Fantasy Mystery,the golden child,Victor Wong Randall 'Tex' Cobb Charlotte Lewis Michael Ritchie Action Adventure Comedy Fantasy Mystery
+443,Terry Gilliam,Shelley Duvall,Michael Palin,Kenny Baker,Adventure Comedy Fantasy Sci-Fi,time bandits,Shelley Duvall Michael Palin Kenny Baker Terry Gilliam Adventure Comedy Fantasy Sci-Fi
+444,Jesse Dylan,Hector Elizondo,Fred Willard,T.J. Thyne,Comedy Fantasy,how high,Hector Elizondo Fred Willard T.J. Thyne Jesse Dylan Comedy Fantasy
+445,Brian Henson,Steven Mackintosh,Jerry Nelson,Steve Whitmire,Comedy Drama Family Fantasy Musical,the muppet christmas carol,Steven Mackintosh Jerry Nelson Steve Whitmire Brian Henson Comedy Drama Family Fantasy Musical
+446,Elizabeth Allen Rosenbaum,Tammin Sursok,Joanna 'JoJo' Levesque,Dichen Lachman,Comedy Family Fantasy Romance,aquamarine,Tammin Sursok Joanna 'JoJo' Levesque Dichen Lachman Elizabeth Allen Rosenbaum Comedy Family Fantasy Romance
+447,Ernest R. Dickerson,CCH Pounder,Jada Pinkett Smith,Gary Farmer,Action Fantasy Horror Thriller,tales from the crypt: demon knight,CCH Pounder Jada Pinkett Smith Gary Farmer Ernest R. Dickerson Action Fantasy Horror Thriller
+448,Richard Curtis,Tom Hughes,Tom Hollander,Lindsay Duncan,Drama Fantasy Romance,about time,Tom Hughes Tom Hollander Lindsay Duncan Richard Curtis Drama Fantasy Romance
+449,Antonia Bird,Jeremy Davies,Jeffrey Jones,David Arquette,Fantasy Horror Thriller,ravenous,Jeremy Davies Jeffrey Jones David Arquette Antonia Bird Fantasy Horror Thriller
+450,Christopher Smith,Rachael Carpani,Michael Dorman,Emma Lung,Fantasy Mystery Thriller,triangle,Rachael Carpani Michael Dorman Emma Lung Christopher Smith Fantasy Mystery Thriller
+451,Mary Lambert,Miko Hughes,Fred Gwynne,Denise Crosby,Fantasy Horror,pet sematary,Miko Hughes Fred Gwynne Denise Crosby Mary Lambert Fantasy Horror
+452,Joe Dante,Phoebe Cates,Harry Carey Jr.,Zach Galligan,Comedy Fantasy Horror,gremlins,Phoebe Cates Harry Carey Jr. Zach Galligan Joe Dante Comedy Fantasy Horror
+453,George Lucas,Harrison Ford,Peter Cushing,Kenny Baker,Action Adventure Fantasy Sci-Fi,star wars: episode iv - a new hope,Harrison Ford Peter Cushing Kenny Baker George Lucas Action Adventure Fantasy Sci-Fi
+454,R.J. Cutler,ChloÃÂ« Grace Moretz,Mireille Enos,Stacy Keach,Drama Fantasy Music Romance,if i stay,ChloÃÂ« Grace Moretz Mireille Enos Stacy Keach R.J. Cutler Drama Fantasy Music Romance
+455,Sam Raimi,Patricia Tallman,Bridget Fonda,Embeth Davidtz,Comedy Fantasy Horror,army of darkness,Patricia Tallman Bridget Fonda Embeth Davidtz Sam Raimi Comedy Fantasy Horror
+456,Tobe Hooper,Heather O'Rourke,Zelda Rubinstein,Craig T. Nelson,Fantasy Horror,poltergeist,Heather O'Rourke Zelda Rubinstein Craig T. Nelson Tobe Hooper Fantasy Horror
+457,Leigh Whannell,Lin Shaye,Hayley Kiyoko,Leigh Whannell,Fantasy Horror Thriller,insidious: chapter 3,Lin Shaye Hayley Kiyoko Leigh Whannell Leigh Whannell Fantasy Horror Thriller
+458,Kevin Smith,Matt Damon,Janeane Garofalo,George Carlin,Adventure Comedy Drama Fantasy,dogma,Matt Damon Janeane Garofalo George Carlin Kevin Smith Adventure Comedy Drama Fantasy
+459,Joe Dante,Albert Brooks,Al Leong,Vic Morrow,Fantasy Horror Sci-Fi,twilight zone: the movie,Albert Brooks Al Leong Vic Morrow Joe Dante Fantasy Horror Sci-Fi
+460,David Lowery,Bryce Dallas Howard,Oona Laurence,Isiah Whitlock Jr.,Adventure Family Fantasy,pete's dragon,Bryce Dallas Howard Oona Laurence Isiah Whitlock Jr. David Lowery Adventure Family Fantasy
+461,Jeff Lowell,Stephen Root,William Morgan Sheppard,Wendi McLendon-Covey,Comedy Fantasy Romance,over her dead body,Stephen Root William Morgan Sheppard Wendi McLendon-Covey Jeff Lowell Comedy Fantasy Romance
+462,Timothy BjÃÂ¶rklund,Nathan Lane,Kelsey Grammer,Jerry Stiller,Animation Comedy Family Fantasy Musical,teacher's pet,Nathan Lane Kelsey Grammer Jerry Stiller Timothy BjÃÂ¶rklund Animation Comedy Family Fantasy Musical
+463,Patrick Lussier,Teryl Rothery,Craig Fairbrass,Adrian Holmes,Drama Fantasy Horror Thriller,white noise 2: the light,Teryl Rothery Craig Fairbrass Adrian Holmes Patrick Lussier Drama Fantasy Horror Thriller
+464,Gerald Potterton,John Vernon,Joe Flaherty,Don Francks,Adventure Animation Fantasy Horror Sci-Fi,heavy metal,John Vernon Joe Flaherty Don Francks Gerald Potterton Adventure Animation Fantasy Horror Sci-Fi
+465,Tom Holland,Catherine Hicks,Alex Vincent,Dinah Manoff,Fantasy Horror,child's play,Catherine Hicks Alex Vincent Dinah Manoff Tom Holland Fantasy Horror
+466,Hong-jin Na,Jung-min Hwang,Jun Kunimura,Woo-hee Chun,Fantasy Horror Mystery Thriller,the wailing,Jung-min Hwang Jun Kunimura Woo-hee Chun Hong-jin Na Fantasy Horror Mystery Thriller
+467,Martyn Pick,Sean Pertwee,Steven Waddington,Donald Sumpter,Action Animation Fantasy Horror Mystery Sci-Fi Thriller,"ultramarines: a warhammer 40,000 movie",Sean Pertwee Steven Waddington Donald Sumpter Martyn Pick Action Animation Fantasy Horror Mystery Sci-Fi Thriller
+468,unknown,Dee Bradley Baker,James Arnold Taylor,Tom Kane,Action Adventure Animation Drama Fantasy Sci-Fi,star wars: the clone warsÃÂ            ,Dee Bradley Baker James Arnold Taylor Tom Kane unknown Action Adventure Animation Drama Fantasy Sci-Fi
+469,Joel Schumacher,Dianne Wiest,Jami Gertz,Jason Patric,Comedy Fantasy Horror,the lost boys,Dianne Wiest Jami Gertz Jason Patric Joel Schumacher Comedy Fantasy Horror
+470,Roger Vadim,Jane Fonda,David Hemmings,Milo O'Shea,Adventure Comedy Fantasy Sci-Fi,barbarella,Jane Fonda David Hemmings Milo O'Shea Roger Vadim Adventure Comedy Fantasy Sci-Fi
+471,Ron Howard,Tom Hanks,Howard Morris,Patrick Cronin,Comedy Fantasy Romance,splash,Tom Hanks Howard Morris Patrick Cronin Ron Howard Comedy Fantasy Romance
+472,George A. Romero,Ted Danson,Hal Holbrook,Adrienne Barbeau,Comedy Fantasy Horror,creepshow,Ted Danson Hal Holbrook Adrienne Barbeau George A. Romero Comedy Fantasy Horror
+473,Ken Shapiro,Brian Doyle-Murray,Dabney Coleman,Mary Kay Place,Comedy Fantasy Sci-Fi,modern problems,Brian Doyle-Murray Dabney Coleman Mary Kay Place Ken Shapiro Comedy Fantasy Sci-Fi
+474,Wes Craven,Miko Hughes,Heather Langenkamp,Tracy Middendorf,Fantasy Horror Mystery Thriller,new nightmare,Miko Hughes Heather Langenkamp Tracy Middendorf Wes Craven Fantasy Horror Mystery Thriller
+475,Fina Torres,Harold Perrineau,John de Lancie,Mark Feuerstein,Comedy Fantasy Romance,woman on top,Harold Perrineau John de Lancie Mark Feuerstein Fina Torres Comedy Fantasy Romance
+476,unknown,Dominic Cooper,Joseph Gilgun,Ruth Negga,Adventure Drama Fantasy Mystery,preacherÃÂ            ,Dominic Cooper Joseph Gilgun Ruth Negga unknown Adventure Drama Fantasy Mystery
+477,Tomm Moore,Sean Lennon,Mick Lally,Evan McGuire,Adventure Animation Family Fantasy,the secret of kells,Sean Lennon Mick Lally Evan McGuire Tomm Moore Adventure Animation Family Fantasy
+478,Joe Dante,Bruce Dern,Teri Polo,Haley Bennett,Adventure Fantasy Thriller,the hole,Bruce Dern Teri Polo Haley Bennett Joe Dante Adventure Fantasy Thriller
+479,Robert Marcarelli,George Coe,William Hootkins,Ayla Kell,Action Adventure Fantasy Sci-Fi Thriller,the omega code,George Coe William Hootkins Ayla Kell Robert Marcarelli Action Adventure Fantasy Sci-Fi Thriller
+480,unknown,Sarah Michelle Gellar,Alyson Hannigan,Emma Caulfield,Action Drama Fantasy Romance,buffy the vampire slayerÃÂ            ,Sarah Michelle Gellar Alyson Hannigan Emma Caulfield unknown Action Drama Fantasy Romance
+481,Steve Miner,Julian Sands,Richard E. Grant,Lori Singer,Action Fantasy Horror Thriller,warlock,Julian Sands Richard E. Grant Lori Singer Steve Miner Action Fantasy Horror Thriller
+482,Jean-Marie PoirÃÂ©,Christian Clavier,Isabelle Nanty,ValÃÂ©rie Lemercier,Comedy Fantasy Sci-Fi,les visiteurs,Christian Clavier Isabelle Nanty ValÃÂ©rie Lemercier Jean-Marie PoirÃÂ© Comedy Fantasy Sci-Fi
+483,Francis Ford Coppola,Alden Ehrenreich,Bruce Dern,Joanne Whalley,Comedy Fantasy Horror Mystery,twixt,Alden Ehrenreich Bruce Dern Joanne Whalley Francis Ford Coppola Comedy Fantasy Horror Mystery
+484,Richard Rich,Debi Derryberry,Kate Higgins,Cindy Robinson,Action Adventure Animation Comedy Drama Family Fantasy Thriller,alpha and omega 4: the legend of the saw toothed cave,Debi Derryberry Kate Higgins Cindy Robinson Richard Rich Action Adventure Animation Comedy Drama Family Fantasy Thriller
+485,Robert C. Cooper,Ben Browder,Christopher Judge,Julian Sands,Action Adventure Drama Fantasy Sci-Fi,stargate: the ark of truth,Ben Browder Christopher Judge Julian Sands Robert C. Cooper Action Adventure Drama Fantasy Sci-Fi
+486,Robert Stevenson,Ed Wynn,Glynis Johns,Elsa Lanchester,Comedy Family Fantasy Musical,mary poppins,Ed Wynn Glynis Johns Elsa Lanchester Robert Stevenson Comedy Family Fantasy Musical
+487,Stephen Hopkins,Lisa Wilcox,Kelly Jo Minter,Matthew Borlenghi,Fantasy Horror Romance Thriller,a nightmare on elm street 5: the dream child,Lisa Wilcox Kelly Jo Minter Matthew Borlenghi Stephen Hopkins Fantasy Horror Romance Thriller
+488,Peter Howitt,Jeanne Tripplehorn,Kevin McNally,John Lynch,Comedy Drama Fantasy Romance,sliding doors,Jeanne Tripplehorn Kevin McNally John Lynch Peter Howitt Comedy Drama Fantasy Romance
+489,Mark Tarlov,Sarah Michelle Gellar,Dylan Baker,Lawrence Gilliard Jr.,Comedy Drama Fantasy Romance,simply irresistible,Sarah Michelle Gellar Dylan Baker Lawrence Gilliard Jr. Mark Tarlov Comedy Drama Fantasy Romance
+490,Sylvio Tabet,Michael Berryman,Kari Wuhrer,Marc Singer,Action Adventure Fantasy Sci-Fi,beastmaster 2: through the portal of time,Michael Berryman Kari Wuhrer Marc Singer Sylvio Tabet Action Adventure Fantasy Sci-Fi
+491,Jeannot Szwarc,Teresa Wright,Bill Erwin,George Voskovec,Drama Fantasy Romance,somewhere in time,Teresa Wright Bill Erwin George Voskovec Jeannot Szwarc Drama Fantasy Romance
+492,James Wan,Lin Shaye,Barbara Hershey,Leigh Whannell,Fantasy Horror Thriller,insidious: chapter 2,Lin Shaye Barbara Hershey Leigh Whannell James Wan Fantasy Horror Thriller
+493,Stiles White,Lin Shaye,Shelley Hennig,Daren Kagasoff,Fantasy Horror,ouija,Lin Shaye Shelley Hennig Daren Kagasoff Stiles White Fantasy Horror
+494,Chuck Russell,John Saxon,Heather Langenkamp,Jennifer Rubin,Action Fantasy Horror Thriller,a nightmare on elm street 3: dream warriors,John Saxon Heather Langenkamp Jennifer Rubin Chuck Russell Action Fantasy Horror Thriller
+495,Rachel Talalay,Johnny Depp,Tom Arnold,Yaphet Kotto,Comedy Fantasy Horror Thriller,freddy's dead: the final nightmare,Johnny Depp Tom Arnold Yaphet Kotto Rachel Talalay Comedy Fantasy Horror Thriller
+496,Christopher Landon,Richard Cabral,Gloria Sandoval,Molly Ephraim,Fantasy Horror Thriller,paranormal activity: the marked ones,Richard Cabral Gloria Sandoval Molly Ephraim Christopher Landon Fantasy Horror Thriller
+497,Don Coscarelli,Vanna Bonta,John Amos,Rip Torn,Action Adventure Fantasy,the beastmaster,Vanna Bonta John Amos Rip Torn Don Coscarelli Action Adventure Fantasy
+498,Stephen Herek,Henry Ian Cusick,Callum Blue,Shenae Grimes-Beech,Comedy Drama Fantasy,dead like me: life after death,Henry Ian Cusick Callum Blue Shenae Grimes-Beech Stephen Herek Comedy Drama Fantasy
+499,Kevin Smith,Johnny Depp,Haley Joel Osment,Natasha Lyonne,Comedy Fantasy Horror Thriller,yoga hosers,Johnny Depp Haley Joel Osment Natasha Lyonne Kevin Smith Comedy Fantasy Horror Thriller
+500,Frank LaLoggia,Alex Rocco,Lukas Haas,Katherine Helmond,Fantasy Horror Mystery Thriller,lady in white,Alex Rocco Lukas Haas Katherine Helmond Frank LaLoggia Fantasy Horror Mystery Thriller
+501,Joe Wright,Hugh Jackman,Cara Delevingne,Nonso Anozie,Adventure Family Fantasy,pan,Hugh Jackman Cara Delevingne Nonso Anozie Joe Wright Adventure Family Fantasy
+502,Timur Bekmambetov,Konstantin Khabenskiy,Aleksey Chadov,Zhanna Friske,Fantasy Thriller,night watch,Konstantin Khabenskiy Aleksey Chadov Zhanna Friske Timur Bekmambetov Fantasy Thriller
+503,unknown,Holly Hunter,Dylan Minnette,Bokeem Woodbine,Drama Fantasy,saving graceÃÂ            ,Holly Hunter Dylan Minnette Bokeem Woodbine unknown Drama Fantasy
+504,William Arntz,Marlee Matlin,Elaine Hendrix,Armin Shimerman,Comedy Documentary Drama Fantasy Mystery Sci-Fi,what the #$*! do we (k)now!?,Marlee Matlin Elaine Hendrix Armin Shimerman William Arntz Comedy Documentary Drama Fantasy Mystery Sci-Fi
+505,Wayne Kramer,Estella Warren,Paul Sorvino,Shawn Hatosy,Crime Drama Fantasy Romance,the cooler,Estella Warren Paul Sorvino Shawn Hatosy Wayne Kramer Crime Drama Fantasy Romance
+506,Michael Tiddes,Ashley Rickards,Essence Atkins,Gabriel Iglesias,Comedy Fantasy,a haunted house 2,Ashley Rickards Essence Atkins Gabriel Iglesias Michael Tiddes Comedy Fantasy
+507,Allison Anders,Salma Hayek,Alicia Witt,Lili Taylor,Comedy Fantasy,four rooms,Salma Hayek Alicia Witt Lili Taylor Allison Anders Comedy Fantasy
+508,Dave McKean,Stephanie Leonidas,Gina McKee,Rob Brydon,Adventure Fantasy,mirrormask,Stephanie Leonidas Gina McKee Rob Brydon Dave McKean Adventure Fantasy
+509,Ruggero Deodato,Michael Berryman,Eva LaRue,Richard Lynch,Adventure Fantasy,the barbarians,Michael Berryman Eva LaRue Richard Lynch Ruggero Deodato Adventure Fantasy
+510,Leos Carax,Kylie Minogue,Leos Carax,Denis Lavant,Drama Fantasy,holy motors,Kylie Minogue Leos Carax Denis Lavant Leos Carax Drama Fantasy
+511,Vincenzo Natali,David Hewlett,Angelo Tsarouchas,Marie-JosÃÂ©e Croze,Comedy Fantasy,nothing,David Hewlett Angelo Tsarouchas Marie-JosÃÂ©e Croze Vincenzo Natali Comedy Fantasy
+512,Michael Gornick,George Kennedy,Holt McCallany,Dorothy Lamour,Comedy Fantasy Horror Thriller,creepshow 2,George Kennedy Holt McCallany Dorothy Lamour Michael Gornick Comedy Fantasy Horror Thriller
+513,Sam Raimi,Ted Raimi,Dan Hicks,Kassie Wesley DePaiva,Comedy Fantasy Horror Thriller,evil dead ii,Ted Raimi Dan Hicks Kassie Wesley DePaiva Sam Raimi Comedy Fantasy Horror Thriller
+514,AndrÃÂ© ÃÂvredal,Otto Jespersen,Johanna MÃÂ¸rck,Glenn Erland Tosterud,Comedy Drama Fantasy Horror,trollhunter,Otto Jespersen Johanna MÃÂ¸rck Glenn Erland Tosterud AndrÃÂ© ÃÂvredal Comedy Drama Fantasy Horror
+515,Warren P. Sonoda,Diahann Carroll,Mykel Shannon Jenkins,Lara Jean Chorostecki,Action Biography Crime Drama Family Fantasy,the masked saint,Diahann Carroll Mykel Shannon Jenkins Lara Jean Chorostecki Warren P. Sonoda Action Biography Crime Drama Family Fantasy
+516,Uwe Boll,Bashar Rahal,Shelly Varod,Ralitsa Paskaleva,Action Adventure Fantasy Thriller,in the name of the king: the last job,Bashar Rahal Shelly Varod Ralitsa Paskaleva Uwe Boll Action Adventure Fantasy Thriller
+517,Frank Capra,Donna Reed,Lionel Barrymore,Thomas Mitchell,Drama Family Fantasy Romance,it's a wonderful life,Donna Reed Lionel Barrymore Thomas Mitchell Frank Capra Drama Family Fantasy Romance
+518,Jack Sholder,Clu Gulager,Robert Rusler,Marshall Bell,Fantasy Horror,a nightmare on elm street 2: freddy's revenge,Clu Gulager Robert Rusler Marshall Bell Jack Sholder Fantasy Horror
+519,Kunihiko Yuyama,Veronica Taylor,Eric Stuart,Lisa Ortiz,Action Adventure Animation Family Fantasy Sci-Fi,pokÃÂ©mon 3: the movie,Veronica Taylor Eric Stuart Lisa Ortiz Kunihiko Yuyama Action Adventure Animation Family Fantasy Sci-Fi
+520,Adam Marcus,Kane Hodder,Leslie Jordan,Erin Gray,Fantasy Horror Thriller,jason goes to hell: the final friday,Kane Hodder Leslie Jordan Erin Gray Adam Marcus Fantasy Horror Thriller
+521,Christopher Leitch,John Astin,Robert Neary,Kim Darby,Comedy Fantasy,teen wolf too,John Astin Robert Neary Kim Darby Christopher Leitch Comedy Fantasy
+522,Don Coscarelli,Angus Scrimm,A. Michael Baldwin,James Le Gros,Action Fantasy Horror Sci-Fi Thriller,phantasm ii,Angus Scrimm A. Michael Baldwin James Le Gros Don Coscarelli Action Fantasy Horror Sci-Fi Thriller
+523,Mel Stuart,Peter Ostrum,Jack Albertson,Julie Dawn Cole,Family Fantasy Musical,willy wonka & the chocolate factory,Peter Ostrum Jack Albertson Julie Dawn Cole Mel Stuart Family Fantasy Musical
+524,Anthony Hickox,Julian Sands,Zach Galligan,Paula Marshall,Fantasy Horror,warlock: the armageddon,Julian Sands Zach Galligan Paula Marshall Anthony Hickox Fantasy Horror
+525,Tim Burton,Johnny Depp,Alan Rickman,Anne Hathaway,Adventure Family Fantasy,alice in wonderland,Johnny Depp Alan Rickman Anne Hathaway Tim Burton Adventure Family Fantasy
+526,Kenneth Branagh,Hayley Atwell,Derek Jacobi,Lily James,Drama Family Fantasy Romance,cinderella,Hayley Atwell Derek Jacobi Lily James Kenneth Branagh Drama Family Fantasy Romance
+527,Richard Donner,Lee Remick,Patrick Troughton,Billie Whitelaw,Fantasy Horror Mystery,the omen,Lee Remick Patrick Troughton Billie Whitelaw Richard Donner Fantasy Horror Mystery
+528,Victor Fleming,Margaret Hamilton,Terry,Billie Burke,Adventure Family Fantasy Musical,the wizard of oz,Margaret Hamilton Terry Billie Burke Victor Fleming Adventure Family Fantasy Musical
+529,Victor Fleming,Spencer Tracy,Esther Williams,Irene Dunne,Drama Fantasy Romance War,a guy named joe,Spencer Tracy Esther Williams Irene Dunne Victor Fleming Drama Fantasy Romance War
+530,Michael Tiddes,Essence Atkins,Alanna Ubach,J.B. Smoove,Comedy Fantasy,a haunted house,Essence Atkins Alanna Ubach J.B. Smoove Michael Tiddes Comedy Fantasy
+531,Jerry Rees,Jon Lovitz,Phil Hartman,Mindy Sterling,Adventure Animation Comedy Family Fantasy Musical,the brave little toaster,Jon Lovitz Phil Hartman Mindy Sterling Jerry Rees Adventure Animation Comedy Family Fantasy Musical
+532,James Algar,Leopold Stokowski,Deems Taylor,unknown,Animation Family Fantasy Music,fantasia,Leopold Stokowski Deems Taylor unknown James Algar Animation Family Fantasy Music
+533,Mitchell Lichtenstein,Jess Weixler,Nathan Parsons,John Hensley,Comedy Fantasy Horror Thriller,teeth,Jess Weixler Nathan Parsons John Hensley Mitchell Lichtenstein Comedy Fantasy Horror Thriller
+534,Bill Muir,Alex Kendrick,Jansen Panettiere,Tiya Sircar,Adventure Family Fantasy,the lost medallion: the adventures of billy stone,Alex Kendrick Jansen Panettiere Tiya Sircar Bill Muir Adventure Family Fantasy
+535,Phil Claydon,MyAnna Buring,James Corden,Silvia Colloca,Action Comedy Fantasy Horror,vampire killers,MyAnna Buring James Corden Silvia Colloca Phil Claydon Action Comedy Fantasy Horror
+536,Paul Bunnell,Kate Maberly,Kevin McCarthy,Paul Williams,Comedy Fantasy Musical Sci-Fi,the ghastly love of johnny x,Kate Maberly Kevin McCarthy Paul Williams Paul Bunnell Comedy Fantasy Musical Sci-Fi
+537,Michael Polish,Peter Coyote,Anthony Edwards,Jon Gries,Drama Fantasy,northfork,Peter Coyote Anthony Edwards Jon Gries Michael Polish Drama Fantasy
+538,Kimberly Peirce,ChloÃÂ« Grace Moretz,Judy Greer,Portia Doubleday,Drama Fantasy Horror,carrie,ChloÃÂ« Grace Moretz Judy Greer Portia Doubleday Kimberly Peirce Drama Fantasy Horror
+539,Benh Zeitlin,QuvenzhanÃÂ© Wallis,Gina Montana,Dwight Henry,Drama Fantasy,beasts of the southern wild,QuvenzhanÃÂ© Wallis Gina Montana Dwight Henry Benh Zeitlin Drama Fantasy
+540,James Wan,Lin Shaye,Barbara Hershey,Philip Friedman,Fantasy Horror Mystery Thriller,insidious,Lin Shaye Barbara Hershey Philip Friedman James Wan Fantasy Horror Mystery Thriller
+541,Bruce Campbell,Ted Raimi,Dan Hicks,Timothy Patrick Quill,Comedy Fantasy,my name is bruce,Ted Raimi Dan Hicks Timothy Patrick Quill Bruce Campbell Comedy Fantasy
+542,Bruce McDonald,Stephen McHattie,Georgina Reilly,Boyd Banks,Fantasy Horror,pontypool,Stephen McHattie Georgina Reilly Boyd Banks Bruce McDonald Fantasy Horror
+543,Rob Zombie,Sid Haig,Dee Wallace,Michael Berryman,Drama Fantasy Horror Thriller,the lords of salem,Sid Haig Dee Wallace Michael Berryman Rob Zombie Drama Fantasy Horror Thriller
+544,David Ray,Nicole MuÃÂ±oz,Sarah Lind,Kyla Wise,Drama Fantasy Romance,fetching cody,Nicole MuÃÂ±oz Sarah Lind Kyla Wise David Ray Drama Fantasy Romance
+545,William Cottrell,Adriana Caselotti,Billy Gilbert,Lucille La Verne,Animation Family Fantasy Musical,snow white and the seven dwarfs,Adriana Caselotti Billy Gilbert Lucille La Verne William Cottrell Animation Family Fantasy Musical
+546,Walter Lang,Spring Byington,Nigel Bruce,Gale Sondergaard,Drama Family Fantasy,the blue bird,Spring Byington Nigel Bruce Gale Sondergaard Walter Lang Drama Family Fantasy
+547,John Carpenter,Jamie Lee Curtis,Hal Holbrook,Janet Leigh,Fantasy Horror,the fog,Jamie Lee Curtis Hal Holbrook Janet Leigh John Carpenter Fantasy Horror
+548,Clive Barker,Andrew Robinson,Ashley Laurence,Clare Higgins,Fantasy Horror,hellraiser,Andrew Robinson Ashley Laurence Clare Higgins Clive Barker Fantasy Horror
+549,Don Coscarelli,Daniel Roebuck,Ossie Davis,Ella Joyce,Comedy Fantasy Mystery,bubba ho-tep,Daniel Roebuck Ossie Davis Ella Joyce Don Coscarelli Comedy Fantasy Mystery
+550,Rob Letterman,Odeya Rush,Dylan Minnette,Ken Marino,Adventure Comedy Family Fantasy Horror,goosebumps,Odeya Rush Dylan Minnette Ken Marino Rob Letterman Adventure Comedy Family Fantasy Horror
+551,Goran Dukic,Leslie Bibb,Patrick Fugit,Chase Ellison,Comedy Drama Fantasy Romance,wristcutters: a love story,Leslie Bibb Patrick Fugit Chase Ellison Goran Dukic Comedy Drama Fantasy Romance
+552,Peter Jackson,Michael Imperioli,AJ Michalka,Tom McCarthy,Drama Fantasy Thriller,the lovely bones,Michael Imperioli AJ Michalka Tom McCarthy Peter Jackson Drama Fantasy Thriller
+553,Craig Mazin,Judy Greer,James Gunn,Jamie Kennedy,Action Comedy Fantasy Sci-Fi,the specials,Judy Greer James Gunn Jamie Kennedy Craig Mazin Action Comedy Fantasy Sci-Fi
+554,A. Raven Cruz,Scott Levy,Vanilla Ice,Jennifer Sky,Action Adventure Comedy Fantasy Sci-Fi,the helix... loaded,Scott Levy Vanilla Ice Jennifer Sky A. Raven Cruz Action Adventure Comedy Fantasy Sci-Fi
+555,Ramaa Mosley,Jack McBrayer,Michael Angarano,Alia Shawkat,Comedy Fantasy Thriller,the brass teapot,Jack McBrayer Michael Angarano Alia Shawkat Ramaa Mosley Comedy Fantasy Thriller
+556,Rich Christiano,Gavin MacLeod,D. David Morin,Hal Linden,Drama Fantasy Sci-Fi,time changer,Gavin MacLeod D. David Morin Hal Linden Rich Christiano Drama Fantasy Sci-Fi
+557,Matt Maiellaro,Tina Fey,Fred Armisen,Chris Kattan,Action Adventure Animation Comedy Fantasy Sci-Fi,aqua teen hunger force colon movie film for theaters,Tina Fey Fred Armisen Chris Kattan Matt Maiellaro Action Adventure Animation Comedy Fantasy Sci-Fi
+558,David S. Goyer,Gary Oldman,Atticus Shaffer,Rachel Brosnahan,Drama Fantasy Horror Mystery Thriller,the unborn,Gary Oldman Atticus Shaffer Rachel Brosnahan David S. Goyer Drama Fantasy Horror Mystery Thriller
+559,Joseph Kosinski,Peter Dinklage,Lauren Cohan,Erick Avari,Action Adventure Fantasy Sci-Fi,destiny,Peter Dinklage Lauren Cohan Erick Avari Joseph Kosinski Action Adventure Fantasy Sci-Fi
+560,Randy Moore,Trey Loney,Lee Armstrong,Amy Lucas,Fantasy Horror,escape from tomorrow,Trey Loney Lee Armstrong Amy Lucas Randy Moore Fantasy Horror
+561,Ryan Smith,Sandra Ellis Lafferty,Madison Lintz,Karolina Wydra,Fantasy Horror Mystery Thriller,after,Sandra Ellis Lafferty Madison Lintz Karolina Wydra Ryan Smith Fantasy Horror Mystery Thriller
+562,Quentin Dupieux,Haley Ramm,Jack Plotnick,Cecelia Antoinette,Comedy Fantasy Horror,rubber,Haley Ramm Jack Plotnick Cecelia Antoinette Quentin Dupieux Comedy Fantasy Horror
+563,Tim Johnson,Jim Parsons,Matt Jones,April Winchell,Adventure Animation Comedy Family Fantasy Sci-Fi,home,Jim Parsons Matt Jones April Winchell Tim Johnson Adventure Animation Comedy Family Fantasy Sci-Fi
+564,Sam Raimi,Tim Holmes,Mila Kunis,James Franco,Adventure Family Fantasy,oz the great and powerful,Tim Holmes Mila Kunis James Franco Sam Raimi Adventure Family Fantasy
+565,Terry Gilliam,Eric Idle,Michael Palin,Terry Jones,Adventure Comedy Fantasy,monty python and the holy grail,Eric Idle Michael Palin Terry Jones Terry Gilliam Adventure Comedy Fantasy
+566,Sue Corcoran,Tony Doupe,Sue Corcoran,David Frederick White,Comedy Fantasy Horror Musical,gory gory hallelujah,Tony Doupe Sue Corcoran David Frederick White Sue Corcoran Comedy Fantasy Horror Musical
+567,unknown,Sendhil Ramamurthy,Masi Oka,Greg Grunberg,Drama Fantasy Sci-Fi Thriller,heroesÃÂ            ,Sendhil Ramamurthy Masi Oka Greg Grunberg unknown Drama Fantasy Sci-Fi Thriller
+568,Sam Raimi,Ted Raimi,Betsy Baker,Ellen Sandweiss,Fantasy Horror,the evil dead,Ted Raimi Betsy Baker Ellen Sandweiss Sam Raimi Fantasy Horror
+569,Gregory Widen,Viggo Mortensen,Adam Goldberg,Virginia Madsen,Action Fantasy Horror Mystery Thriller,the prophecy,Viggo Mortensen Adam Goldberg Virginia Madsen Gregory Widen Action Fantasy Horror Mystery Thriller
+570,Julie Taymor,Jim Sturgess,T.V. Carpio,Robert Clohessy,Drama Fantasy Musical Romance,across the universe,Jim Sturgess T.V. Carpio Robert Clohessy Julie Taymor Drama Fantasy Musical Romance
+571,Bill Plympton,Charis Michelsen,Bill Martone,Richard Spore,Animation Comedy Drama Fantasy Sci-Fi,i married a strange person!,Charis Michelsen Bill Martone Richard Spore Bill Plympton Animation Comedy Drama Fantasy Sci-Fi
+572,Jamin Winans,Eme Ikwuakor,Marty Lindsey,Jessica Duffy,Action Drama Fantasy Sci-Fi,ink,Eme Ikwuakor Marty Lindsey Jessica Duffy Jamin Winans Action Drama Fantasy Sci-Fi
+573,Dan Curtis,Jennifer Jason Leigh,Campbell Scott,Estelle Parsons,Fantasy Romance,the love letter,Jennifer Jason Leigh Campbell Scott Estelle Parsons Dan Curtis Fantasy Romance
+574,James O'Brien,Mark Fantasia,Vivian Lamolli,Greg Jackson,Adventure Drama Fantasy Thriller Western,western religion,Mark Fantasia Vivian Lamolli Greg Jackson James O'Brien Adventure Drama Fantasy Thriller Western
+575,Richard Fleischer,James Mason,Robert J. Wilke,Paul Lukas,Adventure Drama Family Fantasy Sci-Fi,"20,000 leagues under the sea",James Mason Robert J. Wilke Paul Lukas Richard Fleischer Adventure Drama Family Fantasy Sci-Fi
+576,Carl Theodor Dreyer,Hanne Aagesen,Sylvia Eckhausen,Ejner Federspiel,Drama Fantasy,ordet,Hanne Aagesen Sylvia Eckhausen Ejner Federspiel Carl Theodor Dreyer Drama Fantasy
+577,Paul Schrader,Ed Begley Jr.,Ruby Dee,John Heard,Fantasy Horror Thriller,cat people,Ed Begley Jr. Ruby Dee John Heard Paul Schrader Fantasy Horror Thriller
+578,David Lynch,Hal Landon Jr.,Jack Nance,Charlotte Stewart,Fantasy Horror Sci-Fi,eraserhead,Hal Landon Jr. Jack Nance Charlotte Stewart David Lynch Fantasy Horror Sci-Fi
+579,Andrew Leman,Dan Novy,David Mersault,Barry Lynch,Fantasy Horror Mystery Thriller,the call of cthulhu,Dan Novy David Mersault Barry Lynch Andrew Leman Fantasy Horror Mystery Thriller
+580,James Bidgood,Don Brooks,Bobby Kendall,unknown,Drama Fantasy,pink narcissus,Don Brooks Bobby Kendall unknown James Bidgood Drama Fantasy
+581,Joachim RÃÂ¸nning Espen Sandberg,Johnny Depp,Javier Bardem,Geoffrey Rush,Adventure Action Fantasy Comedy,pirates of the caribbean: dead men tell no tales,Johnny Depp Javier Bardem Geoffrey Rush Joachim RÃÂ¸nning Espen Sandberg Adventure Action Fantasy Comedy
+582,Zack Snyder,Ben Affleck,Henry Cavill,Gal Gadot,Action Adventure Fantasy Sci-Fi,justice league,Ben Affleck Henry Cavill Gal Gadot Zack Snyder Action Adventure Fantasy Sci-Fi
+583,Taika Waititi,Chris Hemsworth,Tom Hiddleston,Cate Blanchett,Action Adventure Fantasy Sci-Fi,thor: ragnarok,Chris Hemsworth Tom Hiddleston Cate Blanchett Taika Waititi Action Adventure Fantasy Sci-Fi
+584,Sean McNamara,Pierce Brosnan,William Hurt,Benjamin Walker,Fantasy Action Adventure,the king's daughter,Pierce Brosnan William Hurt Benjamin Walker Sean McNamara Fantasy Action Adventure
+585,Sarik Andreasyan,Anton Pampushnyy,Sanzhar Madiyev,Sebastien Sisak,Action Fantasy Sci-Fi,guardians,Anton Pampushnyy Sanzhar Madiyev Sebastien Sisak Sarik Andreasyan Action Fantasy Sci-Fi
+586,Patty Jenkins,Gal Gadot,Chris Pine,Robin Wright,Action Adventure Fantasy,wonder woman,Gal Gadot Chris Pine Robin Wright Patty Jenkins Action Adventure Fantasy
+587,Aaron Leong,Sean O'Donnell,Alexandria DeBerry,Gary Busey,Comedy Drama Family Fantasy Romance Sci-Fi,mamaboy,Sean O'Donnell Alexandria DeBerry Gary Busey Aaron Leong Comedy Drama Family Fantasy Romance Sci-Fi
+588,Nacho Vigalondo,Anne Hathaway,Jason Sudeikis,Tim Blake Nelson,Action Comedy Drama Fantasy Sci-Fi,colossal,Anne Hathaway Jason Sudeikis Tim Blake Nelson Nacho Vigalondo Action Comedy Drama Fantasy Sci-Fi
+589,Lasse HallstrÃÂ¶m,Dennis Quaid,Britt Robertson,Josh Gad,Comedy Drama Family Fantasy,a dog's purpose,Dennis Quaid Britt Robertson Josh Gad Lasse HallstrÃÂ¶m Comedy Drama Family Fantasy
+590,Alice Lowe,Alice Lowe,Jo Hartley,Kate Dickie,Horror Comedy Drama Thriller Fantasy,prevenge,Alice Lowe Jo Hartley Kate Dickie Alice Lowe Horror Comedy Drama Thriller Fantasy
+591,Chris McKay,Will Arnett,Zach Galifianakis,Michael Cera,Action Animation Comedy Family Fantasy,the lego batman movie,Will Arnett Zach Galifianakis Michael Cera Chris McKay Action Animation Comedy Family Fantasy
+592,Tatsuya Oishi Akiyuki Shinbo,Hiroshi Kamiya,Yui Horie,Maaya Sakamoto,Animation Fantasy Mystery,kizumonogatari part 3: reiketsu,Hiroshi Kamiya Yui Horie Maaya Sakamoto Tatsuya Oishi Akiyuki Shinbo Animation Fantasy Mystery
+593,Jordan Vogt-Roberts,Tom Hiddleston,Samuel L. Jackson,Brie Larson,Action Adventure Fantasy,kong: skull island,Tom Hiddleston Samuel L. Jackson Brie Larson Jordan Vogt-Roberts Action Adventure Fantasy
+594,Guy Ritchie,Charlie Hunnam,Astrid BergÃÂ¨s-Frisbey,Jude Law,Action Drama Fantasy,king arthur: legend of the sword,Charlie Hunnam Astrid BergÃÂ¨s-Frisbey Jude Law Guy Ritchie Action Drama Fantasy
+595,Bill Condon,Emma Watson,Dan Stevens,Luke Evans,Family Fantasy Romance,beauty and the beast,Emma Watson Dan Stevens Luke Evans Bill Condon Family Fantasy Romance
+596,Jay Oliva,Matt Ryan,Jason O'Mara,Camilla Luddington,Action Animation Fantasy Sci-Fi Thriller,justice league dark,Matt Ryan Jason O'Mara Camilla Luddington Jay Oliva Action Animation Fantasy Sci-Fi Thriller
+597,David Lowery,Casey Affleck,Rooney Mara,Will Oldham,Drama Fantasy Romance,a ghost story,Casey Affleck Rooney Mara Will Oldham David Lowery Drama Fantasy Romance
+598,Ben Browder,Gina Gershon,Sean Astin,Sammi Hanratty,Mystery Comedy Thriller Sci-Fi Fantasy,bad kids of crestview academy,Gina Gershon Sean Astin Sammi Hanratty Ben Browder Mystery Comedy Thriller Sci-Fi Fantasy
+599,Stuart Hazeldine,Sam Worthington,Octavia Spencer,Tim McGraw,Drama Fantasy,the shack,Sam Worthington Octavia Spencer Tim McGraw Stuart Hazeldine Drama Fantasy
+600,Andrey Volgin,Agniya Ditkovskite,Denis Shvedov,Anvar Khalilulaev,Action Fantasy,dance to death,Agniya Ditkovskite Denis Shvedov Anvar Khalilulaev Andrey Volgin Action Fantasy
+601,Savage Steve Holland,Jace Norman,Davis Cleveland,Haley Tju,Family Fantasy Comedy,rufus 2,Jace Norman Davis Cleveland Haley Tju Savage Steve Holland Family Fantasy Comedy
+602,Bong Joon-ho,Tilda Swinton,Paul Dano,Ahn Seo-hyun ,Adventure Drama Fantasy Sci-Fi,okja,Tilda Swinton Paul Dano Ahn Seo-hyun  Bong Joon-ho Adventure Drama Fantasy Sci-Fi
+603,Sergey Ginzburg,Konstantin Kryukov,Lera Arefyeva,Aglaya Shilovskaya,Horror Action Fantasy Thriller,vamps,Konstantin Kryukov Lera Arefyeva Aglaya Shilovskaya Sergey Ginzburg Horror Action Fantasy Thriller
+604,Nikolaj Arcel,Idris Elba,Matthew McConaughey,Tom Taylor,Action Western Sci-Fi Fantasy Horror,the dark tower,Idris Elba Matthew McConaughey Tom Taylor Nikolaj Arcel Action Western Sci-Fi Fantasy Horror
+605,Molly Smith Maurice Smith,Karolina Antosik,Amelie Leroy,Tessa McGinn,Fantasy Drama,abduction,Karolina Antosik Amelie Leroy Tessa McGinn Molly Smith Maurice Smith Fantasy Drama
+606,Manuk Depoyan,Arsen Shavlyuk,Vasyl Virastyuk,Ruslana Pysanka,Family Comedy Animation Fantasy Adventure,the dragon spell,Arsen Shavlyuk Vasyl Virastyuk Ruslana Pysanka Manuk Depoyan Family Comedy Animation Fantasy Adventure
+607,John R. Leonetti,Joey King,Ryan Phillippe,Sherilyn Fenn,Fantasy Horror Thriller,wish upon,Joey King Ryan Phillippe Sherilyn Fenn John R. Leonetti Fantasy Horror Thriller
+608,Anshai Lal,Anushka Sharma,Diljit Dosanjh,Suraj Sharma,Fantasy Comedy Romance Drama,phillauri,Anushka Sharma Diljit Dosanjh Suraj Sharma Anshai Lal Fantasy Comedy Romance Drama
+609,"David Zellner, Nathan Zellner",Robert Pattinson,Mia Wasikowska,David Zellner,Fantasy,damsel,"Robert Pattinson Mia Wasikowska David Zellner David Zellner, Nathan Zellner Fantasy"
+610,Boots Riley,LaKeith Stanfield,Tessa Thompson,Jermaine Fowler,Fantasy,sorry to bother you,LaKeith Stanfield Tessa Thompson Jermaine Fowler Boots Riley Fantasy
+611,Eli Roth,Jack Black,Cate Blanchett,Owen Vaccaro,Fantasy,the house with a clock in its walls,Jack Black Cate Blanchett Owen Vaccaro Eli Roth Fantasy
+612,"Lasse HallstrÃ¶m, Joe Johnston",Keira Knightley,Mackenzie Foy,Eugenio Derbez,Fantasy,the nutcracker and the four realms,"Keira Knightley Mackenzie Foy Eugenio Derbez Lasse HallstrÃ¶m, Joe Johnston Fantasy"
+613,David Yates,Eddie Redmayne,Katherine Waterston,Dan Fogler,Fantasy,fantastic beasts: the crimes of grindelwald,Eddie Redmayne Katherine Waterston Dan Fogler David Yates Fantasy
+614,Rob Marshall,Emily Blunt,Lin-Manuel Miranda,Ben Whishaw,Fantasy,mary poppins returns,Emily Blunt Lin-Manuel Miranda Ben Whishaw Rob Marshall Fantasy
+615,Brie Larson ,Brie Larson,Samuel L. Jackson,Joan Cusack,Fantasy,unicorn store,Brie Larson Samuel L. Jackson Joan Cusack Brie Larson  Fantasy
+616,Neil Marshall ,David Harbour,Milla Jovovich,Ian McShane,Fantasy,hellboy,David Harbour Milla Jovovich Ian McShane Neil Marshall  Fantasy
+617,Tom Hooper,James Corden,Judi Dench,Jason Derulo,Fantasy,cats,James Corden Judi Dench Jason Derulo Tom Hooper Fantasy
+618,Stephen Gaghan,Robert Downey Jr.,Antonio Banderas,Michael Sheen,Family Comedy Fantasy Adventure,dolittle,Robert Downey Jr. Antonio Banderas Michael Sheen Stephen Gaghan Family Comedy Fantasy Adventure
+619,Oz Perkins,Sophia Lillis,Sammy Leakey,Charles Babalola,Fantasy Horror Mystery,gretel & hansel,Sophia Lillis Sammy Leakey Charles Babalola Oz Perkins Fantasy Horror Mystery
+620,Tom McCarthy,Winslow Fegley,Ophelia Lovibond,Craig Robinson,Family Mystery Comedy Fantasy,timmy failure: mistakes were made,Winslow Fegley Ophelia Lovibond Craig Robinson Tom McCarthy Family Mystery Comedy Fantasy
+621,Jeff Wadlow,Michael PeÃ±a,Maggie Q,Lucy Hale,Horror Fantasy Adventure Mystery,fantasy island,Michael PeÃ±a Maggie Q Lucy Hale Jeff Wadlow Horror Fantasy Adventure Mystery
+622,Dan Scanlon,Tom Holland,Chris Pratt,Julia Louis-Dreyfus,Family Animation Adventure Comedy Fantasy,onward,Tom Holland Chris Pratt Julia Louis-Dreyfus Dan Scanlon Family Animation Adventure Comedy Fantasy
+623,Walt Dohrn,Anna Kendrick,Justin Timberlake,Rachel Bloom,Family Animation Comedy Fantasy Adventure Music,trolls world tour,Anna Kendrick Justin Timberlake Rachel Bloom Walt Dohrn Family Animation Comedy Fantasy Adventure Music
+624,Kenneth Branagh,Ferdia Shaw,Lara McDonnell,Josh Gad,Adventure Fantasy Science Fiction Family Action,artemis fowl,Ferdia Shaw Lara McDonnell Josh Gad Kenneth Branagh Adventure Fantasy Science Fiction Family Action
+625,Gina Prince-Bythewood,Charlize Theron,KiKi Layne,Marwan Kenzari,Action Fantasy,the old guard,Charlize Theron KiKi Layne Marwan Kenzari Gina Prince-Bythewood Action Fantasy
+626,Eric Bress,Brenton Thwaites,Theo Rossi,Skylar Astin,Horror Thriller War Fantasy,ghosts of war,Brenton Thwaites Theo Rossi Skylar Astin Eric Bress Horror Thriller War Fantasy
+627,Mark Waters,Adam DeVine,Gillian Jacobs,Jeffrey Tambor,Family Fantasy Comedy,magic camp,Adam DeVine Gillian Jacobs Jeffrey Tambor Mark Waters Family Fantasy Comedy
+628,Charlie Kaufman,Jesse Plemons,Jessie Buckley,Toni Collette,Drama Fantasy Mystery Thriller,i'm thinking of ending things,Jesse Plemons Jessie Buckley Toni Collette Charlie Kaufman Drama Fantasy Mystery Thriller
+629,Anna Mastro,Peyton Elizabeth Lee,Skylar Astin,Elodie Yung,Action Adventure Comedy Fantasy,secret society of second-born royals,Peyton Elizabeth Lee Skylar Astin Elodie Yung Anna Mastro Action Adventure Comedy Fantasy
+630,Rachel Talalay,Tamara Smart,Oona Laurence,Tom Felton,Family Fantasy Adventure Comedy,a babysitter's guide to monster hunting,Tamara Smart Oona Laurence Tom Felton Rachel Talalay Family Fantasy Adventure Comedy
+631,Robert Zemeckis,Anne Hathaway,Octavia Spencer,Stanley Tucci,Fantasy Family Horror,the witches,Anne Hathaway Octavia Spencer Stanley Tucci Robert Zemeckis Fantasy Family Horror
+632,Glen Keane,Cathy Ang,Phillipa Soo,Ken Jeong,Animation Adventure Family Fantasy,over the moon,Cathy Ang Phillipa Soo Ken Jeong Glen Keane Animation Adventure Family Fantasy
+633,Zoe Lister-Jones,Cailee Spaeny,Gideon Adlon,Lovie Simone,Horror Drama Fantasy,the craft: legacy,Cailee Spaeny Gideon Adlon Lovie Simone Zoe Lister-Jones Horror Drama Fantasy
+634,Terry Ross,Mark Valeriano,Honey Lauren,John Salandria,Fantasy Horror Thriller,sweet taste of souls,Mark Valeriano Honey Lauren John Salandria Terry Ross Fantasy Horror Thriller
+635,David E. Talbert,Forest Whitaker,Keegan-Michael Key,Hugh Bonneville,Family Fantasy Music,jingle jangle: a christmas journey,Forest Whitaker Keegan-Michael Key Hugh Bonneville David E. Talbert Family Fantasy Music
+636,"Eshom Nelms, Ian Nelms",Mel Gibson,Walton Goggins,Marianne Jean-Baptiste,Action Comedy Fantasy,fatman,"Mel Gibson Walton Goggins Marianne Jean-Baptiste Eshom Nelms, Ian Nelms Action Comedy Fantasy"
+637,Dimitri Logothetis,Alain Moussi,Frank Grillo,JuJu Chan,Action Science Fiction Fantasy,jiu jitsu,Alain Moussi Frank Grillo JuJu Chan Dimitri Logothetis Action Science Fiction Fantasy
+638,Joel Crawford,Nicolas Cage,Emma Stone,Ryan Reynolds,Animation Family Adventure Fantasy Comedy,the croods: a new age,Nicolas Cage Emma Stone Ryan Reynolds Joel Crawford Animation Family Adventure Fantasy Comedy
+639,Chris Columbus,Kurt Russell,Goldie Hawn,Darby Camp,Family Fantasy Adventure Comedy,the christmas chronicles 2,Kurt Russell Goldie Hawn Darby Camp Chris Columbus Family Fantasy Adventure Comedy
+640,Marc Meyers,Jessica Rothe,Harry Shum Jr.,Kyle Allen,Animation Comedy Drama Fantasy,all my life,Jessica Rothe Harry Shum Jr. Kyle Allen Marc Meyers Animation Comedy Drama Fantasy
+641,Sharon Maguire,Isla Fisher,Jillian Bell,Santiago Cabrera,Family Fantasy Comedy,godmothered,Isla Fisher Jillian Bell Santiago Cabrera Sharon Maguire Family Fantasy Comedy
+642,Paul W. S. Anderson,Milla Jovovich,Tony Jaa,"Tip ""T.I."" Harris",Action Fantasy Adventure,monster hunter,"Milla Jovovich Tony Jaa Tip ""T.I."" Harris Paul W. S. Anderson Action Fantasy Adventure"
+643,Patty Jenkins,Gal Gadot,Chris Pine,Kristen Wiig,Action Adventure Fantasy,wonder woman 1984,Gal Gadot Chris Pine Kristen Wiig Patty Jenkins Action Adventure Fantasy
+644,Pete Docter,Jamie Foxx,Tina Fey,Graham Norton,Animation Family Comedy Fantasy,soul,Jamie Foxx Tina Fey Graham Norton Pete Docter Animation Family Comedy Fantasy
+645,Robert Rodriguez,Priyanka Chopra Jonas,Pedro Pascal,YaYa Gosselin,Family Action Fantasy Comedy,we can be heroes,Priyanka Chopra Jonas Pedro Pascal YaYa Gosselin Robert Rodriguez Family Action Fantasy Comedy
+646,Ian Samuels,Kathryn Newton,Kyle Allen,Al Madrigal,Fantasy Romance,the map of tiny perfect things,Kathryn Newton Kyle Allen Al Madrigal Ian Samuels Fantasy Romance
+647,Lena Khan,Matilda Lawler,Alyson Hannigan,Ben Schwartz,Family Adventure Comedy Fantasy,flora & ulysses,Matilda Lawler Alyson Hannigan Ben Schwartz Lena Khan Family Adventure Comedy Fantasy
+648,Tim Hill,Tom Kenny,Awkwafina,Matt Berry,Family Animation Fantasy Adventure Comedy,the spongebob movie: sponge on the run,Tom Kenny Awkwafina Matt Berry Tim Hill Family Animation Fantasy Adventure Comedy
+649,"Don Hall, Carlos LÃ³pez Estrada",Kelly Marie Tran,Awkwafina,Izaac Wang,Animation Family Fantasy Action Adventure,raya and the last dragon,"Kelly Marie Tran Awkwafina Izaac Wang Don Hall, Carlos LÃ³pez Estrada Animation Family Fantasy Action Adventure"
+650,Doug Liman,Daisy Ridley,Tom Holland,Mads Mikkelsen,Fantasy Science Fiction Adventure,chaos walking,Daisy Ridley Tom Holland Mads Mikkelsen Doug Liman Fantasy Science Fiction Adventure
+651,Zack Snyder,Ben Affleck,Henry Cavill,Amy Adams,Action Adventure Fantasy,zack snyder's justice league,Ben Affleck Henry Cavill Amy Adams Zack Snyder Action Adventure Fantasy
+652,Simon McQuoid,Lewis Tan,Jessica McNamee,Josh Lawson,Action Fantasy Adventure,mortal kombat,Lewis Tan Jessica McNamee Josh Lawson Simon McQuoid Action Fantasy Adventure
+653,Chris Appelhans,Jimmy Wong,John Cho,Constance Wu,Animation Family Comedy Fantasy,wish dragon,Jimmy Wong John Cho Constance Wu Chris Appelhans Animation Family Comedy Fantasy
+654,Enrico Casarosa,Jacob Tremblay,Jack Dylan Grazer,Emma Berman,Animation Comedy Fantasy Adventure Family,luca,Jacob Tremblay Jack Dylan Grazer Emma Berman Enrico Casarosa Animation Comedy Fantasy Adventure Family
+655,Josh Ruben,Sam Richardson,Milana Vayntrub,George Basil,Horror Comedy Fantasy,werewolves within,Sam Richardson Milana Vayntrub George Basil Josh Ruben Horror Comedy Fantasy
+656,"Johane Matte, Andrew L. Schmidt, Francisco Ruiz Velasco",Emile Hirsch,Lexi Medrano,Charlie Saxton,Animation Fantasy Family Action Adventure,trollhunters: rise of the titans,"Emile Hirsch Lexi Medrano Charlie Saxton Johane Matte, Andrew L. Schmidt, Francisco Ruiz Velasco Animation Fantasy Family Action Adventure"
+657,Jaume Collet-Serra,Dwayne Johnson,Emily Blunt,Edgar RamÃ­rez,Action Adventure Fantasy,jungle cruise,Dwayne Johnson Emily Blunt Edgar RamÃ­rez Jaume Collet-Serra Action Adventure Fantasy
+658,David Lowery,Dev Patel,Alicia Vikander,Joel Edgerton,Adventure Drama Fantasy,the green knight,Dev Patel Alicia Vikander Joel Edgerton David Lowery Adventure Drama Fantasy
+659,Edson Oda,Winston Duke,Zazie Beetz,Benedict Wong,Drama Fantasy,nine days,Winston Duke Zazie Beetz Benedict Wong Edson Oda Drama Fantasy
+660,Dave Needham,Asher Bishop,David Tennant,Michelle Gomez,Animation Family Comedy Adventure Fantasy,the loud house movie,Asher Bishop David Tennant Michelle Gomez Dave Needham Animation Family Comedy Adventure Fantasy
+661,Dash Shaw,Lake Bell,Michael Cera,Angeliki Papoulia,Animation Fantasy,cryptozoo,Lake Bell Michael Cera Angeliki Papoulia Dash Shaw Animation Fantasy
+662,Kwang Il Han,Theo James,Lara Pulver,Graham McTavish,Animation Action Fantasy,the witcher: nightmare of the wolf,Theo James Lara Pulver Graham McTavish Kwang Il Han Animation Action Fantasy
+663,Stephen Herek,Victoria Justice,Midori Francis,Timothy Renouf,Fantasy Comedy Drama,afterlife of the party,Victoria Justice Midori Francis Timothy Renouf Stephen Herek Fantasy Comedy Drama
+664,Destin Daniel Cretton,Simu Liu,Awkwafina,Meng'er Zhang,Action Adventure Fantasy,shang-chi and the legend of the ten rings,Simu Liu Awkwafina Meng'er Zhang Destin Daniel Cretton Action Adventure Fantasy
+665,Kay Cannon,Camila Cabello,Idina Menzel,Nicholas Galitzine,Romance Fantasy Family Drama,cinderella,Camila Cabello Idina Menzel Nicholas Galitzine Kay Cannon Romance Fantasy Family Drama
+666,David Yarovesky,Winslow Fegley,Lidya Jewett,Krysten Ritter,Fantasy Family Horror,nightbooks,Winslow Fegley Lidya Jewett Krysten Ritter David Yarovesky Fantasy Family Horror
+667,Sion Sono,Nicolas Cage,Sofia Boutella,Bill Moseley,Action Fantasy Horror,prisoners of the ghostland,Nicolas Cage Sofia Boutella Bill Moseley Sion Sono Action Fantasy Horror
+668,"Justin Long, Christian Long",Melanie Lynskey,Judy Greer,Justin Long,Comedy Fantasy,lady of the manor,"Melanie Lynskey Judy Greer Justin Long Justin Long, Christian Long Comedy Fantasy"
+669,"Robert Cullen, Jose Ucha",Vanessa Hudgens,Kimiko Glenn,James Marsden,Animation Family Fantasy Comedy Adventure,my little pony: a new generation,"Vanessa Hudgens Kimiko Glenn James Marsden Robert Cullen, Jose Ucha Animation Family Fantasy Comedy Adventure"
+670,"Conrad Vernon, Greg Tiernan",Oscar Isaac,Charlize Theron,ChloÃ« Grace Moretz,Family Animation Comedy Fantasy Adventure,the addams family 2,"Oscar Isaac Charlize Theron ChloÃ« Grace Moretz Conrad Vernon, Greg Tiernan Family Animation Comedy Fantasy Adventure"
+671,Karen Cinorre,Grace Van Patten,Mia Goth,Havana Rose Liu,Mystery Fantasy Drama,mayday,Grace Van Patten Mia Goth Havana Rose Liu Karen Cinorre Mystery Fantasy Drama
+672,"Philip Gelatt, Morgan Galen King",Richard E. Grant,Lucy Lawless,Patton Oswalt,Animation Fantasy Action Horror,the spine of night,"Richard E. Grant Lucy Lawless Patton Oswalt Philip Gelatt, Morgan Galen King Animation Fantasy Action Horror"
+673,Walt Becker,Jack Whitehall,Darby Camp,Tony Hale,Family Adventure Comedy Fantasy Animation,clifford the big red dog,Jack Whitehall Darby Camp Tony Hale Walt Becker Family Adventure Comedy Fantasy Animation
+674,Jason Reitman,Carrie Coon,Finn Wolfhard,Mckenna Grace,Fantasy Comedy Adventure Science Fiction,ghostbusters: afterlife,Carrie Coon Finn Wolfhard Mckenna Grace Jason Reitman Fantasy Comedy Adventure Science Fiction
+675,"Byron Howard, Jared Bush, Chasire Castro Smith",Stephanie Beatriz,MarÃ­a Cecilia Botero,John Leguizamo,Animation Comedy Family Fantasy,encanto,"Stephanie Beatriz MarÃ­a Cecilia Botero John Leguizamo Byron Howard, Jared Bush, Chasire Castro Smith Animation Comedy Family Fantasy"
+676,Michael Dowse,Neil Patrick Harris,Winslow Fegley,June Diane Raphael,Family Comedy Fantasy,8-bit christmas,Neil Patrick Harris Winslow Fegley June Diane Raphael Michael Dowse Family Comedy Fantasy
+677,Patricia Harris Seeley,Autumn Reeser,Danny Trejo,Antonio Cupo,Family Animation Fantasy Horror,the legend of la llorona,Autumn Reeser Danny Trejo Antonio Cupo Patricia Harris Seeley Family Animation Fantasy Horror
+678,"Derek Drymon, Jennifer Kluska",Andy Samberg,Selena Gomez,Kathryn Hahn,Animation Comedy Family Adventure Fantasy,hotel transylvania: transformania,"Andy Samberg Selena Gomez Kathryn Hahn Derek Drymon, Jennifer Kluska Animation Comedy Family Adventure Fantasy"
+679,Sean McNamara,Pierce Brosnan,Kaya Scodelario,Benjamin Walker,Fantasy Adventure Family,the king's daughter,Pierce Brosnan Kaya Scodelario Benjamin Walker Sean McNamara Fantasy Adventure Family
+680,Roel ReinÃ©,Iko Uwais,Lewis Tan,Lawrence Kao,Action Fantasy,fistful of vengeance,Iko Uwais Lewis Tan Lawrence Kao Roel ReinÃ© Action Fantasy
+681,Erik Peter Carlson,Emily Shenaut,Brian Hull,Gabriel Burrafato,Fantasy Adventure Family,a fairy tale after all,Emily Shenaut Brian Hull Gabriel Burrafato Erik Peter Carlson Fantasy Adventure Family
+682,Domee Shi,Rosalie Chiang,Sandra Oh,Ava Morse,Animation Family Comedy Fantasy,turning red,Rosalie Chiang Sandra Oh Ava Morse Domee Shi Animation Family Comedy Fantasy
+683,Daniel Espinosa,Jared Leto,Matt Smith,Adria Arjona,Action Science Fiction Fantasy,morbius,Jared Leto Matt Smith Adria Arjona Daniel Espinosa Action Science Fiction Fantasy
+684,David Yates,Eddie Redmayne,Jude Law,Ezra Miller,Fantasy Adventure,fantastic beasts: the secrets of dumbledore,Eddie Redmayne Jude Law Ezra Miller David Yates Fantasy Adventure
+685,Robert Eggers,Alexander SkarsgÃ¥rd,Nicole Kidman,Claes Bang,Action Adventure Fantasy,the northman,Alexander SkarsgÃ¥rd Nicole Kidman Claes Bang Robert Eggers Action Adventure Fantasy
+686,Sam Raimi,Benedict Cumberbatch,Elizabeth Olsen,Chiwetel Ejiofor,Fantasy Action Adventure,doctor strange in the multiverse of madness,Benedict Cumberbatch Elizabeth Olsen Chiwetel Ejiofor Sam Raimi Fantasy Action Adventure
+687,Brian Cates,Eddie James,Tommy Woodard,Leigh-Allyn Baker,Comedy Family Fantasy,family camp,Eddie James Tommy Woodard Leigh-Allyn Baker Brian Cates Comedy Family Fantasy
+688,Chris Williams,Karl Urban,Zaris-Angel Hator,Jared Harris,Animation Adventure Family Fantasy,the sea beast,Karl Urban Zaris-Angel Hator Jared Harris Chris Williams Animation Adventure Family Fantasy
+689,Le-Van Kiet,Joey King,Dominic Cooper,Olga Kurylenko,Action Fantasy,the princess,Joey King Dominic Cooper Olga Kurylenko Le-Van Kiet Action Fantasy
+690,Taika Waititi,Chris Hemsworth,Christian Bale,Tessa Thompson,Fantasy Action Comedy,thor: love and thunder,Chris Hemsworth Christian Bale Tessa Thompson Taika Waititi Fantasy Action Comedy
+691,Jennifer N. Linch,Jennifer N. Linch,Noah Sargent,Mark Atkinson,Comedy Fantasy Action,kung fu ghost,Jennifer N. Linch Noah Sargent Mark Atkinson Jennifer N. Linch Comedy Fantasy Action
+692,Peggy Holmes,Eva Noblezada,Simon Pegg,Jane Fonda,Animation Adventure Comedy Fantasy,luck,Eva Noblezada Simon Pegg Jane Fonda Peggy Holmes Animation Adventure Comedy Fantasy
+693,J. J. Perry,Jamie Foxx,Dave Franco,Natasha Liu Bordizzo,Action Fantasy Horror Comedy,day shift,Jamie Foxx Dave Franco Natasha Liu Bordizzo J. J. Perry Action Fantasy Horror Comedy
+694,Katie Aselton,Diane Keaton,Taylour Paige,Elizabeth Lail,Comedy Fantasy Drama,mack & rita,Diane Keaton Taylour Paige Elizabeth Lail Katie Aselton Comedy Fantasy Drama
+695,George Miller,Idris Elba,Tilda Swinton,unknown,Drama Fantasy Romance,three thousand years of longing,Idris Elba Tilda Swinton unknown George Miller Drama Fantasy Romance
+696,Robert Zemeckis,Tom Hanks,Benjamin Evan Ainsworth,Joseph Gordon-Levitt,Animation Family Fantasy,pinocchio,Tom Hanks Benjamin Evan Ainsworth Joseph Gordon-Levitt Robert Zemeckis Animation Family Fantasy
+697,Rob Zombie,Sheri Moon Zombie,Jeff Daniel Phillips,Daniel Roebuck,Comedy Fantasy,the munsters,Sheri Moon Zombie Jeff Daniel Phillips Daniel Roebuck Rob Zombie Comedy Fantasy
+698,Anne Fletcher,Bette Midler,Sarah Jessica Parker,Kathy Najimy,Fantasy Comedy Family,hocus pocus 2,Bette Midler Sarah Jessica Parker Kathy Najimy Anne Fletcher Fantasy Comedy Family
+699,Paul Feig,Sophia Anne Caruso,Sofia Wylie,Laurence Fishburne,Fantasy Comedy Adventure Drama,the school for good and evil,Sophia Anne Caruso Sofia Wylie Laurence Fishburne Paul Feig Fantasy Comedy Adventure Drama
+700,Henry Selick,Keegan-Michael Key,Jordan Peele,Angela Bassett,Animation Comedy Fantasy Horror,wendell & wild,Keegan-Michael Key Jordan Peele Angela Bassett Henry Selick Animation Comedy Fantasy Horror
+701,Nora Twomey,Jacob Tremblay,Gaten Matarazzo,Golshifteh Farahani,Animation Adventure Family Fantasy Comedy,my father's dragon,Jacob Tremblay Gaten Matarazzo Golshifteh Farahani Nora Twomey Animation Adventure Family Fantasy Comedy
+702,"Guillermo del Toro, Mark Gustafson",Ewan McGregor,David Bradley,Gregory Mann,Animation Fantasy Drama,guillermo del toro's pinocchio,Ewan McGregor David Bradley Gregory Mann Guillermo del Toro Mark Gustafson Animation Fantasy Drama
+703,Clay Kaytis,Peter Billingsley,Erinn Hayes,Scott Schwartz,Comedy Family Drama Fantasy,a christmas story christmas,Peter Billingsley Erinn Hayes Scott Schwartz Clay Kaytis Comedy Family Drama Fantasy
+704,Adam Shankman,Amy Adams,Patrick Dempsey,Maya Rudolph,Comedy Family Fantasy,disenchanted,Amy Adams Patrick Dempsey Maya Rudolph Adam Shankman Comedy Family Fantasy
+705,Francis Lawrence,Jason Momoa,Marlow Barkley,Chris O'Dowd,Family Fantasy Comedy,slumberland,Jason Momoa Marlow Barkley Chris O'Dowd Francis Lawrence Family Fantasy Comedy
+706,Stephen Donnelly,Luke Evans,Olivia Colman,Jessie Buckley,Animation Family Fantasy,scrooge: a christmas carol,Luke Evans Olivia Colman Jessie Buckley Stephen Donnelly Animation Family Fantasy
+707,Don Hall,Jake Gyllenhaal,Dennis Quaid,Jaboukie Young-White,Animation Family Adventure Science Fiction Fantasy,strange world,Jake Gyllenhaal Dennis Quaid Jaboukie Young-White Don Hall Animation Family Adventure Science Fiction Fantasy
+708,Tommy Wirkola,David Harbour,John Leguizamo,Alex Hassell,Action Comedy Crime Fantasy,violent night,David Harbour John Leguizamo Alex Hassell Tommy Wirkola Action Comedy Crime Fantasy
+709,Silas Howard,Riele Downs,AuliÃÂ»i Cravalho,Chosen Jacobs,Comedy Fantasy Drama,darby and the dead,Riele Downs AuliÃÂ»i Cravalho Chosen Jacobs Silas Howard Comedy Fantasy Drama
+710,Matthew Warchus,Alisha Weir,Lashana Lynch,Stephen Graham,Family Comedy Fantasy,roald dahl's matilda the musical,Alisha Weir Lashana Lynch Stephen Graham Matthew Warchus Family Comedy Fantasy
+711,Matt Danner,Joshua Bassett,Jamie Demetriou,Alice Isaaz,Animation Comedy Family Fantasy,night at the museum: kahmunrah rises again,Joshua Bassett Jamie Demetriou Alice Isaaz Matt Danner Animation Comedy Family Fantasy
+712,Joel Crawford,Antonio Banderas,Salma Hayek,Harvey GuillÃ©n,Animation Adventure Fantasy Comedy Family,puss in boots: the last wish,Antonio Banderas Salma Hayek Harvey GuillÃ©n Joel Crawford Animation Adventure Fantasy Comedy Family
+713,Nathan Frankowski,Alice Orr-Ewing,Joe Doyle,Eveline Hall,Horror Fantasy Science Fiction Thriller,the devil conspiracy,Alice Orr-Ewing Joe Doyle Eveline Hall Nathan Frankowski Horror Fantasy Science Fiction Thriller
+714,Russell Mulcahy,Tyler Posey,Crystal Reed,Tyler Hoechlin,Action Fantasy TV Movie,teen wolf: the movie,Tyler Posey Crystal Reed Tyler Hoechlin Russell Mulcahy Action Fantasy TV Movie
+715,Christopher Landon,David Harbour,Anthony Mackie,Jahi Di'Allo Winston,Comedy Fantasy Family Adventure Horror,we have a ghost,David Harbour Anthony Mackie Jahi Di'Allo Winston Christopher Landon Comedy Fantasy Family Adventure Horror
+716,David F. Sandberg,Zachary Levi,Asher Angel,Jack Dylan Grazer,Comedy Action Fantasy,shazam! fury of the gods,Zachary Levi Asher Angel Jack Dylan Grazer David F. Sandberg Comedy Action Fantasy
+717,Wendy Rogers,Noah Jupe,Benedict Wong,Sian Clifford,Animation Adventure Family Fantasy Comedy,the magician's elephant,Noah Jupe Benedict Wong Sian Clifford Wendy Rogers Animation Adventure Family Fantasy Comedy
+718,Paul Weitz,Jane Fonda,Lily Tomlin,Malcolm McDowell,Fantasy Animation Adventure,moving on,Jane Fonda Lily Tomlin Malcolm McDowell Paul Weitz Fantasy Animation Adventure
+719,"John Francis Daley, Jonathan Goldstein",Chris Pine,Michelle Rodriguez,RegÃ©-Jean Page,Adventure Fantasy Comedy,dungeons & dragons: honor among thieves,Chris Pine Michelle Rodriguez RegÃ©-Jean Page John Francis Daley Jonathan Goldstein Adventure Fantasy Comedy
+720,"Aaron Horvath, Michael Jelenic",Chris Pratt,Anya Taylor-Joy,Charlie Day,Animation Family Adventure Fantasy Comedy,the super mario bros. movie,"Chris Pratt Anya Taylor-Joy Charlie Day Aaron Horvath, Michael Jelenic Animation Family Adventure Fantasy Comedy"
+721,JonÃ¡s CuarÃ³n,DemiÃ¡n Bichir,Christian Slater,Evan Whitten,Adventure Fantasy Family,chupa,DemiÃ¡n Bichir Christian Slater Evan Whitten JonÃ¡s CuarÃ³n Adventure Fantasy Family
+722,Ari Aster,Joaquin Phoenix,Patti LuPone,Nathan Lane,Comedy Adventure Fantasy,beau is afraid,Joaquin Phoenix Patti LuPone Nathan Lane Ari Aster Comedy Adventure Fantasy
+723,David Lowery,Jude Law,Alexander Molony,Ever Anderson,Family Fantasy Action Adventure,peter pan & wendy,Jude Law Alexander Molony Ever Anderson David Lowery Family Fantasy Action Adventure
+724,Tomasz BagiÃÂski,Mackenyu,Famke Janssen,Madison Iseman,Fantasy Action Adventure,knights of the zodiac,Mackenyu Famke Janssen Madison Iseman Tomasz BagiÃÂski Fantasy Action Adventure
+725,Ryan Stevens Harris,Augie Duke,Haven Lee Harris,Morgana Ignis,Fantasy Horror Drama,moon garden,Augie Duke Haven Lee Harris Morgana Ignis Ryan Stevens Harris Fantasy Horror Drama
+726,Rob Marshall,Halle Bailey,Jonah Hauer-King,Daveed Diggs,Adventure Family Fantasy Romance,the little mermaid,Halle Bailey Jonah Hauer-King Daveed Diggs Rob Marshall Adventure Family Fantasy Romance
+727,Peter Sohn,Leah Lewis,Mamoudou Athie,Ronnie del Carmen,Animation Comedy Family Fantasy Romance,elemental,Leah Lewis Mamoudou Athie Ronnie del Carmen Peter Sohn Animation Comedy Family Fantasy Romance
+728,Vlad Marsavin,Carrie Fisher,Rita Ora,Kiera Milward,Fantasy Family Drama,wonderwell,Carrie Fisher Rita Ora Kiera Milward Vlad Marsavin Fantasy Family Drama
+729,"Kirk DeMicco, Faryn Pearl",Lana Condor,Toni Collette,Annie Murphy,Animation Family Fantasy Comedy,"ruby gillman, teenage kraken","Lana Condor Toni Collette Annie Murphy Kirk DeMicco, Faryn Pearl Animation Family Fantasy Comedy"
+730,Nick Bruno and Troy Quane,ChloÃ« Grace Moretz,Riz Ahmed,Eugene Lee Yang,Adventure Animation Fantasy Family,nimona,ChloÃ« Grace Moretz Riz Ahmed Eugene Lee Yang Nick Bruno and Troy Quane Adventure Animation Fantasy Family
+731,Mel Eslyn,Sterling K. Brown,Mark Duplass,unknown,Comedy Drama Science Fiction Fantasy,biosphere,Sterling K. Brown Mark Duplass unknown Mel Eslyn Comedy Drama Science Fiction Fantasy
+732,Justin Simien,LaKeith Stanfield,Tiffany Haddish,Owen Wilson,Comedy Drama Horror Fantasy,haunted mansion,LaKeith Stanfield Tiffany Haddish Owen Wilson Justin Simien Comedy Drama Horror Fantasy
+733,Anthony Stacchi,Jimmy O. Yang,Lin Jolie Hoang-Rappaport,Bowen Yang,Animation Fantasy Adventure Family Comedy,the monkey king,Jimmy O. Yang Lin Jolie Hoang-Rappaport Bowen Yang Anthony Stacchi Animation Fantasy Adventure Family Comedy
+734,Lindsey Anderson Beer,Jackson White,Jack Mulhern,Henry Thomas,Horror Fantasy,pet sematary: bloodlines,Jackson White Jack Mulhern Henry Thomas Lindsey Anderson Beer Horror Fantasy
+735,David Slade,Casey Likes,E'myri Crutchfield,Dustin Ceithamer,Horror Fantasy Thriller,dark harvest,Casey Likes E'myri Crutchfield Dustin Ceithamer David Slade Horror Fantasy Thriller
+736,Eddie Alcazar,Stephen Dorff,Bella Thorne,Scott Bakula,Fantasy Horror Science Fiction,divinity,Stephen Dorff Bella Thorne Scott Bakula Eddie Alcazar Fantasy Horror Science Fiction
+737,Kristoffer Borgli,Nicolas Cage,Julianne Nicholson,Michael Cera,Comedy Fantasy,dream scenario,Nicolas Cage Julianne Nicholson Michael Cera Kristoffer Borgli Comedy Fantasy
+738,Walt Dohrn,Anna Kendrick,Justin Timberlake,Kenan Thompson,Animation Family Music Fantasy Comedy,trolls band together,Anna Kendrick Justin Timberlake Kenan Thompson Walt Dohrn Animation Family Music Fantasy Comedy
+739,Tim Story,Lil Rel Howery,Ludacris,Madison Skye Validum,Fantasy Family Comedy,dashing through the snow,Lil Rel Howery Ludacris Madison Skye Validum Tim Story Fantasy Family Comedy
+740,"Chris Buck, Fawn Veerasunthorn",Ariana DeBose,Chris Pine,Alan Tudyk,Animation Family Fantasy Adventure,wish,"Ariana DeBose Chris Pine Alan Tudyk Chris Buck, Fawn Veerasunthorn Animation Family Fantasy Adventure"
+741,Sam Boyd,Melissa McCarthy,Paapa Essiedu,DenÃ©e Benton,Fantasy Comedy,genie,Melissa McCarthy Paapa Essiedu DenÃ©e Benton Sam Boyd Fantasy Comedy
+742,McG,Jennifer Garner,Ed Helms,Emma Myers,Comedy Fantasy Family,family switch,Jennifer Garner Ed Helms Emma Myers McG Comedy Fantasy Family
+743,Reginald Hudlin,Eddie Murphy,Tracee Ellis Ross,Jillian Bell,Comedy Fantasy Family,candy cane lane,Eddie Murphy Tracee Ellis Ross Jillian Bell Reginald Hudlin Comedy Fantasy Family
+744,"Matt Burnett, Ben Levin",Philip Solomon,NoÃ«l Wells,H. Michael Croner,Animation Family TV Movie Adventure Comedy Fantasy,craig before the creek,"Philip Solomon NoÃ«l Wells H. Michael Croner Matt Burnett, Ben Levin Animation Family TV Movie Adventure Comedy Fantasy"
+745,Paul King,TimothÃ©e Chalamet,Calah Lane,Keegan-Michael Key,Comedy Family Fantasy,wonka,TimothÃ©e Chalamet Calah Lane Keegan-Michael Key Paul King Comedy Family Fantasy
+746,James Wan,Jason Momoa,Patrick Wilson,Amber Heard,Action Adventure Fantasy,aquaman and the lost kingdom,Jason Momoa Patrick Wilson Amber Heard James Wan Action Adventure Fantasy
+747,S.J. Clarkson,Dakota Johnson,Sydney Sweeney,Isabela Merced,"Action , Adventure , Fantasy , Thriller , Sci-Fi , Superhero",madame web,"Dakota Johnson Sydney Sweeney Isabela Merced S.J. Clarkson Action , Adventure , Fantasy , Thriller , Sci-Fi , Superhero"
+748,Sean Charmatz,Jacob Tremblay,Paul Walter Hauser,Colin Hanks,Animation Family Comedy Fantasy,orion and the dark,Jacob Tremblay Paul Walter Hauser Colin Hanks Sean Charmatz Animation Family Comedy Fantasy
+749,"Raman Hui, Paul Watling, Yong Duk Jhun",Henry Golding,Brandon Soo Hoo,Lucy Liu,Animation Family Fantasy,the tiger's apprentice,"Henry Golding Brandon Soo Hoo Lucy Liu Raman Hui, Paul Watling, Yong Duk Jhun Animation Family Fantasy"
+750,S. J. Clarkson,Dakota Johnson,Sydney Sweeney,Celeste O'Connor,Action Fantasy,madame web,Dakota Johnson Sydney Sweeney Celeste O'Connor S. J. Clarkson Action Fantasy
+751,Kourosh Ahari,Danielle Deadwyler,Aldis Hodge,Edwin Hodge,Science Fiction Fantasy Horror,parallel,Danielle Deadwyler Aldis Hodge Edwin Hodge Kourosh Ahari Science Fiction Fantasy Horror
+752,Mike Mitchell,Jack Black,Awkwafina,Bryan Cranston,Animation Family Fantasy Action,kung fu panda 4,Jack Black Awkwafina Bryan Cranston Mike Mitchell Animation Family Fantasy Action
+753,Juan Carlos Fresnadillo,Millie Bobby Brown,Ray Winstone,Nick Robinson,Fantasy Action Adventure,damsel,Millie Bobby Brown Ray Winstone Nick Robinson Juan Carlos Fresnadillo Fantasy Action Adventure
+754,David W. Allen,Richard Joseph Paul,Juliet Mills,Leon Russom,Science Fiction Fantasy,the primevals,Richard Joseph Paul Juliet Mills Leon Russom David W. Allen Science Fiction Fantasy
+755,Kobi Libbi,Justice Smith,David Alan Grier,An-Li Bogan,Fantasy Comedy,the american society of magical negroes,Justice Smith David Alan Grier An-Li Bogan Kobi Libbi Fantasy Comedy
+756,Janeen Damian,Lindsay Lohan,Ed Speleers,Alexander Vlahos,Romance Comedy Fantasy,irish wish,Lindsay Lohan Ed Speleers Alexander Vlahos Janeen Damian Romance Comedy Fantasy
+757,Gil Kenan,Paul Rudd,Carrie Coon,Finn Wolfhard,Fantasy Adventure Comedy,ghostbusters: frozen empire,Paul Rudd Carrie Coon Finn Wolfhard Gil Kenan Fantasy Adventure Comedy
+758,Weston Razooli,Lio Tipton,Charles Halford,Danielle Hoetmer,Adventure Comedy Fantasy,riddle of fire,Lio Tipton Charles Halford Danielle Hoetmer Weston Razooli Adventure Comedy Fantasy
+759,Diane Foster,Miles Cooper,Diane Foster,Kelly Grant,Horror Comedy Fantasy,easter bloody easter,Miles Cooper Diane Foster Kelly Grant Diane Foster Horror Comedy Fantasy
+760,Vera Drew,Vera Drew,Lynn Downey,Griffin Kramer,Comedy Fantasy,the people's joker,Vera Drew Lynn Downey Griffin Kramer Vera Drew Comedy Fantasy
+761,"Nathan Zellner, David Zellner",Riley Keough,Jesse Eisenberg,unknown,Fantasy Comedy,sasquatch sunset,"Riley Keough Jesse Eisenberg unknown Nathan Zellner, David Zellner Fantasy Comedy"
+762,John Krasinski,Cailey Fleming,Ryan Reynolds,John Krasinski,Comedy Fantasy Family,if,Cailey Fleming Ryan Reynolds John Krasinski John Krasinski Comedy Fantasy Family
+763,"Jared Hess, Lynn Wang",Brittany Howard,Will Forte,Jemaine Clement,Animation Fantasy Family,thelma the unicorn,"Brittany Howard Will Forte Jemaine Clement Jared Hess, Lynn Wang Animation Fantasy Family"
+764,Ritchie Greer,Hayden Hishaw,James Duval,Robert Davi,Fantasy Family,the legend of catclaws mountain,Hayden Hishaw James Duval Robert Davi Ritchie Greer Fantasy Family
+765,L. Van Dyke Siboutszen,Noah LaLonde,Jay J. Bidwell,Arthur Cartwright,Horror Comedy Thriller Fantasy,deer camp '86,Noah LaLonde Jay J. Bidwell Arthur Cartwright L. Van Dyke Siboutszen Horror Comedy Thriller Fantasy
+766,Ishana Night Shyamalan,Dakota Fanning,Georgina Campbell,Olwen FouÃ©rÃ©,Fantasy Mystery Thriller Horror,the watchers,Dakota Fanning Georgina Campbell Olwen FouÃ©rÃ© Ishana Night Shyamalan Fantasy Mystery Thriller Horror
+767,Daina O. PusiÄ,Julia Louis-Dreyfus,Lola Petticrew,Leah Harvey,Drama Fantasy,tuesday,Julia Louis-Dreyfus Lola Petticrew Leah Harvey Daina O. PusiÄ Drama Fantasy
+768,Christian Ditter,Isla Fisher,Greg Kinnear,unknown,Comedy Fantasy Family,the present,Isla Fisher Greg Kinnear unknown Christian Ditter Comedy Fantasy Family
+769,Ali Zamani,Denise Richards,Cuba Gooding Jr.,Randy Couture,Horror Action Fantasy Adventure,angels fallen: warriors of peace,Denise Richards Cuba Gooding Jr. Randy Couture Ali Zamani Horror Action Fantasy Adventure
+770,Carlos Saldanha,Zachary Levi,Lil Rel Howery,Benjamin Bottani,Adventure Family Fantasy Comedy Animation,harold and the purple crayon,Zachary Levi Lil Rel Howery Benjamin Bottani Carlos Saldanha Adventure Family Fantasy Comedy Animation
+771,Albie Hecht,Ryan Kaji,Shion Kaji,Loann Kaji,Family Animation Comedy Fantasy Action,ryan's world the movie: titan universe adventure,Ryan Kaji Shion Kaji Loann Kaji Albie Hecht Family Animation Comedy Fantasy Action
+772,Rupert Sanders,Bill SkarsgÃ¥rd,FKA Twigs,Danny Huston,Fantasy Action Thriller,the crow,Bill SkarsgÃ¥rd FKA Twigs Danny Huston Rupert Sanders Fantasy Action Thriller
+773,Tim Burton,Michael Keaton,Winona Ryder,Catherine O'Hara,Comedy Horror Fantasy,beetlejuice beetlejuice,Michael Keaton Winona Ryder Catherine O'Hara Tim Burton Comedy Horror Fantasy
+774,David Henrie,Mel Gibson,Mason Thames,Lorraine Bracco,Adventure Fantasy Mystery Thriller,monster summer,Mel Gibson Mason Thames Lorraine Bracco David Henrie Adventure Fantasy Mystery Thriller
+775,Jake Kasdan,Dwayne Johnson,Chris Evans,Kiernan Shipka,Adventure Comedy Fantasy,red one,Dwayne Johnson Chris Evans Kiernan Shipka Jake Kasdan Adventure Comedy Fantasy
+776,Jon M. Chu,Cynthia Erivo,Ariana Grande,Michelle Yeoh,Drama Fantasy Romance,wicked,Cynthia Erivo Ariana Grande Michelle Yeoh Jon M. Chu Drama Fantasy Romance
+777,Marielle Heller,Amy Adams,Scoot McNairy,Arleigh Patrick Snowden,Comedy Fantasy Horror,nightbitch,Amy Adams Scoot McNairy Arleigh Patrick Snowden Marielle Heller Comedy Fantasy Horror
+778,Simon Otto,Brian Cox,Fiona Shaw,Jodie Whittaker,Animation Comedy Family Fantasy,that christmas,Brian Cox Fiona Shaw Jodie Whittaker Simon Otto Animation Comedy Family Fantasy
+779,Kenji Kamiyama,Brian Cox,Gaia Wise,Luke Pasqualino,Animation Fantasy Action,the lord of the rings: the war of the rohirrim,Brian Cox Gaia Wise Luke Pasqualino Kenji Kamiyama Animation Fantasy Action
+780,Robert Eggers,Bill SkarsgÃ¥rd,Nicholas Hoult,Lily-Rose Depp,Drama Fantasy Horror,nosferatu,Bill SkarsgÃ¥rd Nicholas Hoult Lily-Rose Depp Robert Eggers Drama Fantasy Horror
