@@ -350,10 +350,39 @@ def fetch_movie_full_data(movie_title_or_id):
         revenue = f"{int(movie_data.get('revenue', 0)):,}" if movie_data.get('revenue') else "N/A"
         original_language = movie_data.get("original_language", "EN").upper()
 
-        # Videos: Trailer & Teaser
+        # Videos: Robust Trailer & Teaser Extraction
         videos = movie_data.get("videos", {}).get("results", [])
-        trailer_key = next((v['key'] for v in videos if v.get("type") == "Trailer" and v.get("site") == "YouTube"), None)
-        teaser_key = next((v['key'] for v in videos if v.get("type") == "Teaser" and v.get("site") == "YouTube"), None)
+        if not videos:
+            try:
+                r_vids = http_session.get(f"{TMDB_BASE_URL}/movie/{movie_id}/videos?api_key={TMDB_API_KEY}&include_video_language=en,null,{original_language.lower()}", timeout=3)
+                if r_vids.status_code == 200:
+                    videos = r_vids.json().get('results', [])
+            except Exception:
+                videos = []
+
+        yt_videos = [v for v in videos if v.get("site", "").lower() == "youtube" and v.get("key")]
+        sorted_yt = sorted(yt_videos, key=lambda v: (1 if v.get("official") else 0, v.get("size", 0)), reverse=True)
+
+        trailers = [v for v in sorted_yt if v.get("type", "").lower() == "trailer"]
+        teasers = [v for v in sorted_yt if v.get("type", "").lower() == "teaser"]
+        clips = [v for v in sorted_yt if v.get("type", "").lower() in ["clip", "featurette", "behind the scenes", "opening credits"]]
+
+        trailer_key = None
+        if trailers:
+            trailer_key = trailers[0]['key']
+        elif teasers:
+            trailer_key = teasers[0]['key']
+        elif sorted_yt:
+            trailer_key = sorted_yt[0]['key']
+
+        teaser_key = None
+        if teasers:
+            teaser_key = teasers[0]['key']
+        elif len(trailers) > 1:
+            teaser_key = trailers[1]['key']
+        elif clips:
+            teaser_key = clips[0]['key']
+
         trailer = f"https://www.youtube.com/embed/{trailer_key}" if trailer_key else None
         teaser = f"https://www.youtube.com/embed/{teaser_key}" if teaser_key else None
 
@@ -518,17 +547,57 @@ def recommend():
 
         def extract_video_id(url):
             if not url or not isinstance(url, str):
-                return ""
+                return None
+            url = url.strip()
+            if not url or url == 'None':
+                return None
             if "youtube.com/watch?v=" in url:
-                return url.split("v=")[-1].split("&")[0]
+                vid = url.split("v=")[-1].split("&")[0].split("?")[0].strip()
+                return vid if vid else None
+            elif "youtube.com/embed/" in url:
+                vid = url.split("embed/")[-1].split("?")[0].split("&")[0].strip()
+                return vid if vid else None
             elif "youtu.be/" in url:
-                return url.split("youtu.be/")[-1].split("?")[0]
-            return ""
+                vid = url.split("youtu.be/")[-1].split("?")[0].split("&")[0].strip()
+                return vid if vid else None
+            elif len(url) == 11 and (url.isalnum() or "-" in url or "_" in url):
+                return url
+            return None
 
         trailer_id = extract_video_id(request.form.get('trailer', ''))
         teaser_id = extract_video_id(request.form.get('teaser', ''))
         trailer_embed = f"https://www.youtube.com/embed/{trailer_id}" if trailer_id else None
         teaser_embed = f"https://www.youtube.com/embed/{teaser_id}" if teaser_id else None
+
+        # Server-side fallback if trailers/teasers not provided by frontend AJAX
+        if (not trailer_embed or not teaser_embed) and movie_id:
+            try:
+                r_vids = http_session.get(f"{TMDB_BASE_URL}/movie/{movie_id}/videos?api_key={TMDB_API_KEY}&include_video_language=en,null", timeout=3)
+                if r_vids.status_code == 200:
+                    v_list = r_vids.json().get('results', [])
+                    yt_vids = [v for v in v_list if v.get("site", "").lower() == "youtube" and v.get("key")]
+                    sorted_vids = sorted(yt_vids, key=lambda v: (1 if v.get("official") else 0, v.get("size", 0)), reverse=True)
+                    trailers = [v for v in sorted_vids if v.get("type", "").lower() == "trailer"]
+                    teasers = [v for v in sorted_vids if v.get("type", "").lower() == "teaser"]
+                    clips = [v for v in sorted_vids if v.get("type", "").lower() in ["clip", "featurette", "behind the scenes"]]
+
+                    if not trailer_embed:
+                        if trailers:
+                            trailer_embed = f"https://www.youtube.com/embed/{trailers[0]['key']}"
+                        elif teasers:
+                            trailer_embed = f"https://www.youtube.com/embed/{teasers[0]['key']}"
+                        elif sorted_vids:
+                            trailer_embed = f"https://www.youtube.com/embed/{sorted_vids[0]['key']}"
+
+                    if not teaser_embed:
+                        if teasers:
+                            teaser_embed = f"https://www.youtube.com/embed/{teasers[0]['key']}"
+                        elif len(trailers) > 1:
+                            teaser_embed = f"https://www.youtube.com/embed/{trailers[1]['key']}"
+                        elif clips:
+                            teaser_embed = f"https://www.youtube.com/embed/{clips[0]['key']}"
+            except Exception as e:
+                logging.warning(f"Error resolving videos: {e}")
 
         watch_providers = safe_convert_list(request.form.get('watch_providers', '[]'))
         watch_provider_logos = safe_convert_list(request.form.get('watch_provider_logos', '[]'))

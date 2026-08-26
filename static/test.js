@@ -9,13 +9,25 @@ function get_movie_details(movie_id, my_api_key, arr, movie_title) {
             let teaser = "";
   
             if (videos && videos.length > 0) {
-                videos.forEach(video => {
-                    if (video.type === "Trailer" && video.site === "YouTube") {
-                        trailer = `https://www.youtube.com/watch?v=${video.key}`;
-                    } else if (video.type === "Teaser" && video.site === "YouTube") {
-                        teaser = `https://www.youtube.com/watch?v=${video.key}`;
-                    }
-                });
+                let ytVideos = videos.filter(v => v.site === "YouTube" && v.key);
+                ytVideos.sort((a, b) => (b.official ? 1 : 0) - (a.official ? 1 : 0));
+                let trailers = ytVideos.filter(v => (v.type || "").toLowerCase() === "trailer");
+                let teasers = ytVideos.filter(v => (v.type || "").toLowerCase() === "teaser");
+                let clips = ytVideos.filter(v => ["clip", "featurette", "behind the scenes"].includes((v.type || "").toLowerCase()));
+
+                if (trailers.length > 0) {
+                    trailer = `https://www.youtube.com/embed/${trailers[0].key}`;
+                } else if (ytVideos.length > 0) {
+                    trailer = `https://www.youtube.com/embed/${ytVideos[0].key}`;
+                }
+
+                if (teasers.length > 0) {
+                    teaser = `https://www.youtube.com/embed/${teasers[0].key}`;
+                } else if (trailers.length > 1) {
+                    teaser = `https://www.youtube.com/embed/${trailers[1].key}`;
+                } else if (clips.length > 0) {
+                    teaser = `https://www.youtube.com/embed/${clips[0].key}`;
+                }
             }
   
             let director = movie_details.credits?.crew?.find(member => member.job === "Director");

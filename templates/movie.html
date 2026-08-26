@@ -282,15 +282,15 @@
         align-items: center;
         justify-content: center;">
           <div class="teaser">
-                {% if teaser %}
+                {% if teaser and teaser != 'None' and 'embed/' in teaser and not teaser.endswith('embed/') %}
                   <h3 style="color: white; margin-top: 20px;">🎥 Watch the Teaser</h3>
-                  <iframe style="margin-bottom: 40px;" width="250" height="315" src="{{ teaser }}" frameborder="0" allowfullscreen></iframe>
+                  <iframe style="margin-bottom: 20px; border-radius: 12px;" width="540" height="300" src="{{ teaser }}" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" loading="lazy"></iframe>
                 {% endif %}
           </div>
           <div class="trailer">
-            {% if trailer %}
-              <h3>🎬 Watch the Trailer</h3>
-              <iframe style="margin-bottom: 20px;" width="560" height="315" src="{{ trailer }}" frameborder="0" allowfullscreen></iframe>
+            {% if trailer and trailer != 'None' and 'embed/' in trailer and not trailer.endswith('embed/') %}
+              <h3 style="color: white; margin-top: 20px;">🎬 Watch the Trailer</h3>
+              <iframe style="margin-bottom: 20px; border-radius: 12px;" width="540" height="300" src="{{ trailer }}" frameborder="0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" loading="lazy"></iframe>
             {% endif %}
           </div>
         </div>

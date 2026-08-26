@@ -295,26 +295,72 @@ h6 {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	backdrop-filter: brightness(50%);
 	position: absolute;
 	bottom: 0px;
 	top: 0px;
 	right: 0px;
 	left: 0px;
 	opacity: 0;
-	-moz-transition: all 0.75s ease;
-    -webkit-transition: all 0.75s ease;
-    transition: all 0.75s ease;
-	border-radius: 50%;
+	-moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+	border-radius: 50% !important;
+    overflow: hidden !important;
 }
 
 .img:hover {
 	opacity: 1;
-	backdrop-filter:br;
-	-moz-transition: all 0.75s ease;
-    -webkit-transition: all 0.75s ease;
-    transition: all 0.75s ease;
-	border-radius: 75%;
+	border-radius: 50% !important;
+}
+
+/* Specific Circular Masking for Cast Photos */
+.cast-imghvr {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+}
+
+.cast-imghvr .cast-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50% !important;
+    object-fit: cover;
+    display: block;
+    transition: filter 0.4s ease;
+}
+
+.cast-imghvr:hover .cast-img {
+    filter: brightness(45%);
+}
+
+.cast-fig-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cast-imghvr:hover .cast-fig-overlay {
+    opacity: 1 !important;
+    border-radius: 50% !important;
 }
 
 .card-btn {
@@ -518,6 +564,8 @@ h6 {
     position: relative;
     padding: 6px;
     border-radius: 12px;
+    width: 75px;
+    min-width: 75px;
 }
 
 .provider:hover {
@@ -525,8 +573,18 @@ h6 {
     text-decoration: none;
 }
 
-.provider img {
-    border-radius: 10px;
+.provider-logo, .provider img {
+    width: 52px !important;
+    height: 52px !important;
+    min-width: 52px !important;
+    min-height: 52px !important;
+    max-width: 52px !important;
+    max-height: 52px !important;
+    object-fit: cover !important;
+    border-radius: 12px !important;
+    display: block !important;
+    margin: 0 auto !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
     transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
@@ -575,9 +633,10 @@ h6 {
 .streaming_platform {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-    margin-top: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 15px;
 }
 
 .vertical-line {
@@ -1042,6 +1101,14 @@ h6 {
         max-width: 140px !important;
         margin: 0 !important;
         scroll-snap-align: start;
+        text-align: center !important;
+    }
+    .cast-card-item .cast-imghvr {
+        width: 120px !important;
+        height: 120px !important;
+        border-radius: 50% !important;
+        overflow: hidden !important;
+        margin: 0 auto !important;
     }
     .cast-card-item .cast-img {
         width: 120px !important;
@@ -1050,6 +1117,12 @@ h6 {
         object-fit: cover !important;
         margin: 0 auto !important;
         display: block !important;
+    }
+    .cast-card-item .cast-fig-overlay {
+        width: 100% !important;
+        height: 100% !important;
+        border-radius: 50% !important;
+        overflow: hidden !important;
     }
 
     /* 1-Line Horizontal Scroll for Recommended Movies on Mobile */
@@ -1090,6 +1163,24 @@ h6 {
         text-align: center !important;
     }
 
+    /* Video Section on Mobile: Teaser and Trailer Exact Same Size */
+    .movie-video-wrapper {
+        width: 100% !important;
+        max-width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        margin: 10px 0 !important;
+    }
+    .movie-video-iframe {
+        width: 90vw !important;
+        max-width: 480px !important;
+        height: 270px !important; /* Equal to trailer mobile view size */
+        border-radius: 12px !important;
+        margin: 0 auto !important;
+        display: block !important;
+    }
+
     /* Streaming Platforms Section on Mobile */
     .streaming-platforms-section {
         flex-direction: column !important;
@@ -1098,6 +1189,41 @@ h6 {
     }
     .streaming-platforms-section .vertical-line {
         display: none !important;
+    }
+    .streaming_platform {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        align-items: flex-start !important;
+        gap: 14px !important;
+        margin-top: 12px !important;
+        width: 100% !important;
+    }
+    .provider {
+        width: 68px !important;
+        min-width: 68px !important;
+        max-width: 68px !important;
+        padding: 4px !important;
+        flex-shrink: 0 !important;
+    }
+    .provider-logo, .provider img {
+        width: 48px !important;
+        height: 48px !important;
+        min-width: 48px !important;
+        min-height: 48px !important;
+        max-width: 48px !important;
+        max-height: 48px !important;
+        border-radius: 10px !important;
+        object-fit: cover !important;
+        display: block !important;
+        margin: 0 auto !important;
+    }
+    .provider p {
+        font-size: 11px !important;
+        line-height: 1.2 !important;
+        margin: 4px 0 0 0 !important;
+        word-break: break-word !important;
+        text-align: center !important;
     }
 
     /* Director Section on Mobile */
@@ -1109,6 +1235,16 @@ h6 {
     .director-section img {
         margin: 0 auto 15px auto !important;
     }
+}
+
+/* Base Video Iframe Styling */
+.movie-video-iframe {
+    width: 540px;
+    height: 300px;
+    max-width: 100%;
+    border-radius: 12px;
+    border: none;
+    display: block;
 }
 
 /* Custom Scrollbar for 1-line horizontal scrolls */

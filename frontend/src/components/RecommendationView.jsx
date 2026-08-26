@@ -230,31 +230,29 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
       {/* 2. Streaming Platforms & Video Section */}
       <div id="streaming-platforms" className="streaming-platforms-section">
         <div id="video-section" style={{ marginTop: '30px', marginRight: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap', gap: '20px' }}>
-          {teaser && (
-            <div className="teaser">
+          {teaser && teaser !== 'None' && teaser.includes('embed/') && !teaser.endsWith('embed/') && (
+            <div className="teaser movie-video-wrapper">
               <h3 style={{ color: 'white', marginTop: '20px', fontSize: '18px' }}>🎥 Watch the Teaser</h3>
               <iframe
-                style={{ marginBottom: '20px', borderRadius: '12px', maxWidth: '100%' }}
-                width="280"
-                height="280"
+                className="movie-video-iframe"
                 src={teaser}
-                frameBorder="0"
+                title={`${title} Teaser`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
-                title="Teaser"
+                loading="lazy"
               />
             </div>
           )}
-          {trailer && (
-            <div className="trailer">
+          {trailer && trailer !== 'None' && trailer.includes('embed/') && !trailer.endsWith('embed/') && (
+            <div className="trailer movie-video-wrapper">
               <h3 style={{ color: 'white', fontSize: '18px' }}>🎬 Watch the Trailer</h3>
               <iframe
-                style={{ marginBottom: '20px', borderRadius: '12px', maxWidth: '100%' }}
-                width="540"
-                height="300"
+                className="movie-video-iframe"
                 src={trailer}
-                frameBorder="0"
+                title={`${title} Trailer`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
-                title="Trailer"
+                loading="lazy"
               />
             </div>
           )}
@@ -277,7 +275,7 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
                     className="provider"
                     title={`Watch "${title}" on ${prov.provider_name}`}
                   >
-                    <img src={prov.logo_path} alt={prov.provider_name} width="50" />
+                    <img src={prov.logo_path} alt={prov.provider_name} className="provider-logo" />
                     <p>{prov.provider_name}</p>
                   </a>
                 );
@@ -372,7 +370,7 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
                     alt={`${c.name} - profile`}
                     src={c.profile || 'https://via.placeholder.com/250x250?text=No+Photo'}
                   />
-                  <figcaption className="img">
+                  <figcaption className="img cast-fig-overlay">
                     <button
                       className="card-btn btn btn-danger"
                       onClick={(e) => {

@@ -246,10 +246,45 @@ def fetch_movie_full_data(movie_title_or_id):
         revenue = f"{int(movie_data.get('revenue', 0)):,}" if movie_data.get('revenue') else "N/A"
         original_language = movie_data.get("original_language", "EN").upper()
 
-        # Videos: Trailer & Teaser
+        # Videos: Robust Trailer & Teaser Extraction
         videos = movie_data.get("videos", {}).get("results", [])
-        trailer_key = next((v['key'] for v in videos if v.get("type") == "Trailer" and v.get("site") == "YouTube"), None)
-        teaser_key = next((v['key'] for v in videos if v.get("type") == "Teaser" and v.get("site") == "YouTube"), None)
+        if not videos:
+            try:
+                r_vids = http_session.get(f"{TMDB_BASE_URL}/movie/{movie_id}/videos?api_key={TMDB_API_KEY}&include_video_language=en,null,{original_language.lower()}", timeout=3)
+                if r_vids.status_code == 200:
+                    videos = r_vids.json().get('results', [])
+            except Exception:
+                videos = []
+
+        yt_videos = [v for v in videos if v.get("site", "").lower() == "youtube" and v.get("key")]
+        
+        # Sort: official first, then highest resolution, latest
+        sorted_yt = sorted(
+            yt_videos,
+            key=lambda v: (1 if v.get("official") else 0, v.get("size", 0)),
+            reverse=True
+        )
+
+        trailers = [v for v in sorted_yt if v.get("type", "").lower() == "trailer"]
+        teasers = [v for v in sorted_yt if v.get("type", "").lower() == "teaser"]
+        clips = [v for v in sorted_yt if v.get("type", "").lower() in ["clip", "featurette", "behind the scenes", "opening credits"]]
+
+        trailer_key = None
+        if trailers:
+            trailer_key = trailers[0]['key']
+        elif teasers:
+            trailer_key = teasers[0]['key']
+        elif sorted_yt:
+            trailer_key = sorted_yt[0]['key']
+
+        teaser_key = None
+        if teasers:
+            teaser_key = teasers[0]['key']
+        elif len(trailers) > 1:
+            teaser_key = trailers[1]['key']
+        elif clips:
+            teaser_key = clips[0]['key']
+
         trailer = f"https://www.youtube.com/embed/{trailer_key}" if trailer_key else None
         teaser = f"https://www.youtube.com/embed/{teaser_key}" if teaser_key else None
 
@@ -484,12 +519,12 @@ def suggestions_endpoint():
 
 @app.route('/api/recommend', methods=['POST', 'GET'])
 def recommend_endpoint():
-    query_title = request.args.get('title') or request.args.get('name')
+    query_title = request.args.get('title') or request.args.get('name') or request.args.get('movie') or request.args.get('query')
     if not query_title and request.is_json:
-        req_data = request.get_json()
-        query_title = req_data.get('title') or req_data.get('name')
+        req_data = request.get_json() or {}
+        query_title = req_data.get('title') or req_data.get('name') or req_data.get('movie') or req_data.get('query')
     if not query_title and request.form:
-        query_title = request.form.get('title') or request.form.get('name')
+        query_title = request.form.get('title') or request.form.get('name') or request.form.get('movie') or request.form.get('query')
 
     if not query_title:
         return jsonify({"error": "Movie title query parameter is required"}), 400
