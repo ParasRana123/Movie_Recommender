@@ -453,34 +453,65 @@ def fetch_movie_full_data(movie_title_or_id):
 
         # Top Cast (top 10)
         cast_raw = movie_data.get("credits", {}).get("cast", [])[:10]
-        casts = {}
+        casts_list = []
+        casts_dict = {}
         cast_details = {}
         for c in cast_raw:
             c_name = c.get("name", "Unknown")
             c_id = str(c.get("id", ""))
             c_char = c.get("character", "")
-            c_profile = f"https://image.tmdb.org/t/p/original{c['profile_path']}" if c.get("profile_path") else "https://via.placeholder.com/240x360"
-            casts[c_name] = [c_id, c_char, c_profile]
+            c_profile = f"https://image.tmdb.org/t/p/original{c['profile_path']}" if c.get("profile_path") else "https://via.placeholder.com/240x360?text=No+Photo"
+            casts_list.append({
+                "id": c_id,
+                "name": c_name,
+                "character": c_char,
+                "profile": c_profile
+            })
+            casts_dict[c_name] = [c_id, c_char, c_profile]
             cast_details[c_name] = [c_id, c_profile, "Unknown", "Unknown", "Biography not available."]
 
-        # Recommendations
+        # Recommendations via ML similarity
         rec_titles = rcmd(title)
         movie_cards = {}
+        recommended_movies = []
         if isinstance(rec_titles, list):
             for rt in rec_titles:
                 try:
-                    r_rt = http_session.get(f"{TMDB_BASE_URL}/search/movie?api_key={TMDB_API_KEY}&query={requests.utils.quote(rt)}", timeout=3)
+                    r_rt = http_session.get(f"{TMDB_BASE_URL}/search/movie?api_key={TMDB_API_KEY}&query={requests.utils.quote(str(rt))}", timeout=3)
                     if r_rt.status_code == 200:
                         rt_res = r_rt.json().get("results", [])
                         if rt_res and rt_res[0].get("poster_path"):
-                            movie_cards[f"https://image.tmdb.org/t/p/w500{rt_res[0]['poster_path']}"] = rt
+                            poster_url = f"https://image.tmdb.org/t/p/w500{rt_res[0]['poster_path']}"
+                            vote_avg = f"{round(float(rt_res[0].get('vote_average', 0)), 1)}" if rt_res[0].get('vote_average') else "N/A"
+                            movie_cards[poster_url] = rt
+                            recommended_movies.append({
+                                "title": rt,
+                                "poster": poster_url,
+                                "vote_average": vote_avg
+                            })
                         else:
-                            movie_cards["https://via.placeholder.com/240x360?text=No+Poster"] = rt
-                except Exception as e:
-                    movie_cards["https://via.placeholder.com/240x360?text=No+Poster"] = rt
+                            fallback_poster = "https://via.placeholder.com/240x360?text=No+Poster"
+                            movie_cards[fallback_poster] = rt
+                            recommended_movies.append({
+                                "title": rt,
+                                "poster": fallback_poster,
+                                "vote_average": "N/A"
+                            })
+                except Exception:
+                    fallback_poster = "https://via.placeholder.com/240x360?text=No+Poster"
+                    movie_cards[fallback_poster] = rt
+                    recommended_movies.append({
+                        "title": rt,
+                        "poster": fallback_poster,
+                        "vote_average": "N/A"
+                    })
 
         # Reviews with ratings and NLP sentiments
         reviews = fetch_reviews_with_sentiments(movie_id, imdb_id)
+
+        # Parse genres as list and string
+        genres_list = [g.strip() for g in genres.split(",") if g.strip()] if isinstance(genres, str) else (genres or [])
+        genres_str = ", ".join(genres_list) if isinstance(genres_list, list) else str(genres)
 
         return {
             'movie_id': movie_id,
@@ -493,10 +524,13 @@ def fetch_movie_full_data(movie_title_or_id):
             'release_date': release_date,
             'runtime': runtime,
             'status': status,
-            'genres': genres,
+            'genres': genres_list,
+            'genres_str': genres_str,
             'movie_cards': movie_cards,
+            'recommended_movies': recommended_movies,
             'reviews': reviews,
-            'casts': casts,
+            'casts': casts_list,
+            'casts_dict': casts_dict,
             'cast_details': cast_details,
             'trailer': trailer,
             'teaser': teaser,

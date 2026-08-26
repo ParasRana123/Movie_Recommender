@@ -40,6 +40,29 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
     recommended_movies = []
   } = movieData;
 
+  // Robust normalization: handle both List and Dict structures
+  let castsList = [];
+  if (Array.isArray(casts) && casts.length > 0) {
+    castsList = casts;
+  } else if (casts && typeof casts === 'object') {
+    castsList = Object.entries(casts).map(([name, details]) => ({
+      id: Array.isArray(details) ? details[0] : (details?.id || ''),
+      name: name,
+      character: Array.isArray(details) ? details[1] : (details?.character || ''),
+      profile: Array.isArray(details) ? details[2] : (details?.profile || 'https://via.placeholder.com/250x250?text=No+Photo')
+    }));
+  }
+
+  let recMoviesList = [];
+  if (Array.isArray(recommended_movies) && recommended_movies.length > 0) {
+    recMoviesList = recommended_movies;
+  } else if (movieData.movie_cards && typeof movieData.movie_cards === 'object') {
+    recMoviesList = Object.entries(movieData.movie_cards).map(([posterUrl, movieTitle]) => ({
+      title: movieTitle,
+      poster: posterUrl
+    }));
+  }
+
   const inWatchlist = isInWatchlist(title);
 
   const handleWatchlistToggle = () => {
@@ -346,7 +369,7 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
       )}
 
       {/* 4. Top Cast Section (Left-aligned IMDb Style, 1 Line Horizontal Scroll on Mobile, Circular Photos) */}
-      {casts && casts.length > 0 && (
+      {castsList && castsList.length > 0 && (
         <div className="section-container" style={{ maxWidth: '1400px', margin: '45px auto 0 auto', padding: '0 20px', width: '100%', boxSizing: 'border-box' }}>
           <div className="section-header-left" style={{ textAlign: 'left', marginBottom: '18px' }}>
             <h3 style={{ color: headingColor, fontWeight: 'bold', fontSize: '26px', margin: 0, display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -355,7 +378,7 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
           </div>
 
           <div className="movie-content cast-content-scroll" style={{ justifyContent: 'flex-start' }}>
-            {casts.map((c, idx) => (
+            {castsList.map((c, idx) => (
               <div
                 key={idx}
                 className="cast-card-item"
@@ -604,7 +627,7 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
       </div>
 
       {/* 7. Recommended Movies Section */}
-      {recommended_movies && recommended_movies.length > 0 && (
+      {recMoviesList && recMoviesList.length > 0 && (
         <div className="section-container" style={{ maxWidth: '1400px', margin: '45px auto 30px auto', padding: '0 20px', width: '100%', boxSizing: 'border-box' }}>
           <div className="section-header-left" style={{ textAlign: 'left', marginBottom: '18px' }}>
             <h3 style={{ color: headingColor, fontWeight: 'bold', fontSize: '26px', margin: 0, display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -613,7 +636,7 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
           </div>
 
           <div className="movie-content recommended-content-scroll">
-            {recommended_movies.map((m, idx) => (
+            {recMoviesList.map((m, idx) => (
               <div
                 key={idx}
                 className="card recommended-card-item"
