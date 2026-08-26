@@ -12,6 +12,7 @@ export default function Navbar({ onSearchMovie, initialQuery = '' }) {
 
   const navigate = useNavigate();
   const searchContainerRef = useRef(null);
+  const isSelectingRef = useRef(false);
 
   useEffect(() => {
     if (initialQuery) {
@@ -31,8 +32,13 @@ export default function Navbar({ onSearchMovie, initialQuery = '' }) {
     return () => { mounted = false; };
   }, []);
 
-  useEffect(() => {
-    const trimmed = query.trim().toLowerCase();
+  // Compute live search suggestions on typing
+  const handleInputChange = (e) => {
+    const val = e.target.value;
+    setQuery(val);
+    isSelectingRef.current = false;
+
+    const trimmed = val.trim().toLowerCase();
     if (trimmed.length < 2) {
       setFilteredSuggestions([]);
       setShowDropdown(false);
@@ -57,7 +63,7 @@ export default function Navbar({ onSearchMovie, initialQuery = '' }) {
     setFilteredSuggestions(combined);
     setShowDropdown(combined.length > 0);
     setSelectedIndex(-1);
-  }, [query, films]);
+  };
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -70,8 +76,11 @@ export default function Navbar({ onSearchMovie, initialQuery = '' }) {
   }, []);
 
   const handleSelect = (selectedTitle) => {
+    isSelectingRef.current = true;
     setQuery(selectedTitle);
     setShowDropdown(false);
+    setFilteredSuggestions([]);
+
     if (onSearchMovie) {
       onSearchMovie(selectedTitle);
     } else {
@@ -123,7 +132,7 @@ export default function Navbar({ onSearchMovie, initialQuery = '' }) {
 
   return (
     <div className="ml-container" style={{ display: 'block' }}>
-      {/* GitHub Corner */}
+      {/* GitHub Corner with wave animation */}
       <a href="https://github.com/ParasRana123/Movie-Recommender-with-Sentiment-Analysis" className="github-corner" title="View source on GitHub">
         <svg data-toggle="tooltip" data-placement="left" width="80" height="80" viewBox="0 0 250 250" style={{ fill: '#e50914', color: '#fff', position: 'fixed', zIndex: 100, top: 0, border: 0, right: 0 }} aria-hidden="true">
           <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
@@ -132,7 +141,7 @@ export default function Navbar({ onSearchMovie, initialQuery = '' }) {
         </svg>
       </a>
 
-      {/* Top Navbar with clean non-colliding layout */}
+      {/* Top Navbar */}
       <nav
         className="form-group shadow-textarea"
         style={{
@@ -150,7 +159,7 @@ export default function Navbar({ onSearchMovie, initialQuery = '' }) {
           zIndex: 1000
         }}
       >
-        {/* Search Bar Input Container */}
+        {/* Search Bar Input Container with animated search icon */}
         <div className="search-container" style={{ position: 'relative', width: '450px', maxWidth: '45vw', margin: 0 }} ref={searchContainerRef}>
           <input
             type="text"
@@ -166,12 +175,21 @@ export default function Navbar({ onSearchMovie, initialQuery = '' }) {
               color: '#181818',
               borderRadius: '5px',
               height: '38px',
-              padding: '6px 12px'
+              padding: '6px 40px 6px 12px',
+              backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' width=\'20\' height=\'20\' fill=\'%23e50914\'%3E%3Cpath d=\'M21.71 20.29l-5.4-5.39A8 8 0 1 0 4 11a8 8 0 0 0 12.31 6.31l5.4 5.4a1 1 0 0 0 1.41-1.41zM6 11a6 6 0 1 1 6 6 6 6 0 0 1-6-6z\'/%3E%3C/svg%3E")',
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: '96% center',
+              backgroundSize: '20px',
+              transition: 'background-position 0.3s ease, box-shadow 0.3s ease'
             }}
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={handleInputChange}
             onKeyDown={handleKeyDown}
-            onFocus={() => { if (filteredSuggestions.length > 0) setShowDropdown(true); }}
+            onFocus={() => {
+              if (!isSelectingRef.current && filteredSuggestions.length > 0) {
+                setShowDropdown(true);
+              }
+            }}
             required="required"
           />
 
@@ -192,7 +210,7 @@ export default function Navbar({ onSearchMovie, initialQuery = '' }) {
           )}
         </div>
 
-        {/* Enter Button (no collision) */}
+        {/* Enter Button */}
         <div style={{ margin: 0 }}>
           <button
             className="btn btn-primary movie-button"
@@ -204,7 +222,8 @@ export default function Navbar({ onSearchMovie, initialQuery = '' }) {
               borderRadius: '5px',
               fontWeight: 'bold',
               margin: 0,
-              cursor: query.trim() ? 'pointer' : 'default'
+              cursor: query.trim() ? 'pointer' : 'default',
+              transition: 'transform 0.2s ease, background-color 0.2s ease'
             }}
             disabled={!query.trim()}
             onClick={handleSubmit}

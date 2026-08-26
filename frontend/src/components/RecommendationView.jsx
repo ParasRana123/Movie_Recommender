@@ -59,8 +59,19 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
 
   return (
     <div id="mycontent" style={{ color: 'white' }}>
-      {/* 1. Hero Movie Overview Section (Exact from recommend.html) */}
-      <div id="mcontent" style={{ position: 'relative', height: '67vh', overflow: 'hidden', marginTop: '-40px' }}>
+      {/* 1. Hero Movie Overview Section with proper top/bottom padding */}
+      <div
+        id="mcontent"
+        style={{
+          position: 'relative',
+          minHeight: '67vh',
+          overflow: 'hidden',
+          marginTop: '0px',
+          padding: '35px 0 45px 0',
+          display: 'flex',
+          alignItems: 'center'
+        }}
+      >
         {/* Background Image with Blur and Darkened Overlay */}
         <div
           style={{
@@ -108,11 +119,11 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
           }}
         />
 
-        {/* Poster Image (Large screen) */}
-        <div className="poster-lg" style={{ position: 'relative', zIndex: 2 }}>
+        {/* Poster Image (Large screen) with comfortable left padding */}
+        <div className="poster-lg" style={{ position: 'relative', zIndex: 2, flexShrink: 0, paddingLeft: '80px' }}>
           <img
             className="poster"
-            style={{ borderRadius: '40px', marginLeft: '90px', marginTop: '40px' }}
+            style={{ borderRadius: '40px', display: 'block' }}
             height="400"
             width="250"
             src={poster || 'https://via.placeholder.com/250x400?text=No+Poster'}
@@ -121,7 +132,7 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
         </div>
 
         {/* Poster Image (Small screen) */}
-        <div className="poster-sm text-center" style={{ position: 'relative', zIndex: 2 }}>
+        <div className="poster-sm text-center" style={{ position: 'relative', zIndex: 2, padding: '20px 0' }}>
           <img
             className="poster"
             style={{ borderRadius: '40px', marginBottom: '5%' }}
@@ -132,24 +143,33 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
           />
         </div>
 
-        {/* Details Section (Text) */}
-        <div id="details" style={{ position: 'relative', zIndex: 3, color: 'white', padding: '20px' }}>
-          <br />
-          <h6 id="title" style={{ zIndex: 3, color: 'white' }}>TITLE: &nbsp;{title}</h6>
-          <h6 id="overview" style={{ maxWidth: '85%', zIndex: 3, color: 'white' }}>
+        {/* Details Section (Text) with generous padding */}
+        <div id="details" style={{ position: 'relative', zIndex: 3, color: 'white', padding: '10px 45px', flex: 1, maxWidth: '85%' }}>
+          <h6 id="title" style={{ zIndex: 3, color: 'white', fontSize: '18px', fontWeight: 'bold', marginBottom: '14px' }}>
+            TITLE: &nbsp;{title}
+          </h6>
+          <h6 id="overview" style={{ maxWidth: '90%', zIndex: 3, color: 'white', lineHeight: '1.6', marginBottom: '14px' }}>
             OVERVIEW: <br /><br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{overview}
           </h6>
-          <h6 id="vote_average" style={{ zIndex: 3, color: 'white' }}>
+          <h6 id="vote_average" style={{ zIndex: 3, color: 'white', marginBottom: '14px' }}>
             RATING: &nbsp;{vote_average}/10 ({vote_count} votes)
           </h6>
-          <h6 id="genres" style={{ zIndex: 3, color: 'white' }}>GENRE: &nbsp;{displayGenres}</h6>
-          <h6 id="date" style={{ zIndex: 3, color: 'white' }}>RELEASE DATE: &nbsp;{release_date}</h6>
-          <h6 id="runtime" style={{ zIndex: 3, color: 'white' }}>RUNTIME: &nbsp;{runtime}</h6>
-          <h6 id="status" style={{ zIndex: 3, color: 'white' }}>STATUS: &nbsp;{status}</h6>
+          <h6 id="genres" style={{ zIndex: 3, color: 'white', marginBottom: '14px' }}>
+            GENRE: &nbsp;{displayGenres}
+          </h6>
+          <h6 id="date" style={{ zIndex: 3, color: 'white', marginBottom: '14px' }}>
+            RELEASE DATE: &nbsp;{release_date}
+          </h6>
+          <h6 id="runtime" style={{ zIndex: 3, color: 'white', marginBottom: '14px' }}>
+            RUNTIME: &nbsp;{runtime}
+          </h6>
+          <h6 id="status" style={{ zIndex: 3, color: 'white', marginBottom: '14px' }}>
+            STATUS: &nbsp;{status}
+          </h6>
 
           {/* Add to Watchlist Button */}
-          <div style={{ marginTop: '15px', zIndex: 4, position: 'relative' }}>
+          <div style={{ marginTop: '18px', zIndex: 4, position: 'relative' }}>
             <button
               id="watchlist-btn"
               className={`btn btn-danger ${inWatchlist ? 'in-watchlist' : ''}`}
