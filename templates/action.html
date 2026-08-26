@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Movie Cards</title>
+  <title>Action Movies - Movie Recommender</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet" />
@@ -17,6 +17,11 @@
 
   <!-- Auto Complete -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/css/autoComplete.min.css" />
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" />
+
+  <script type="text/javascript">
+    var films = {{ suggestions|tojson }};
+  </script>
 
   <style>
     .responsive-img {
@@ -37,10 +42,9 @@
       justify-content: space-between;
       align-items: center;
       padding: 5px;
-      margin: 20px;
+      margin: 20px auto;
       width: 100%;
       padding-left: 80px;
-      margin-right: -4px;
     }
 
     @media (min-width: 1200px) {
@@ -101,23 +105,40 @@
       font-size: 1em;
     }
 
-    .all,
-    .upcoming {
-      position: absolute;
-      background-color: black;
-      color: white;
-      top: 80%;
-      border: 2px solid white;
-      border-radius: 50px;
-      cursor: pointer;
+    .watchlist {
+      position: relative;
+      top: -5px;
+      left: -120px;
+      gap: 8px;
+      display: flex;
+      align-items: center;
+      background-color: #333333;
+      border-radius: 8px;
+      transition: 0.3s;
+      padding: 10px;
+      color: #fff;
+      font-size: 18px;
+      width: fit-content;
     }
 
-    .all {
-      left: 53%;
+    .watchlist:hover {
+      box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
     }
 
-    .upcoming {
-      left: 60%;
+    .watchlist p {
+      margin: 0;
+      margin-right: 10px;
+    }
+
+    .watchlist img {
+      display: block;
+      filter: invert(1);
+      width: 30px;
+      height: auto;
+    }
+
+    .genres {
+      padding: 2px 16px;
     }
 
     /* Responsive Design */
@@ -148,12 +169,33 @@
     }
 
     @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        height: auto !important;
+        padding: 15px 10px;
+      }
+      .search-container {
+        width: 90% !important;
+      }
+      .movie-button {
+        position: static !important;
+        margin-top: 10px;
+      }
+      .watchlist, .genres {
+        left: 0 !important;
+      }
       #movies-container {
         justify-content: center;
       }
-
       .movie-card {
-        width: calc(50% - 20px);
+        width: calc(50% - 10px);
+        height: 220px;
+      }
+      .movie-card img {
+        height: 140px;
+      }
+      .movie-card p {
+        font-size: 12px;
       }
     }
 
@@ -162,45 +204,63 @@
         width: 100%;
       }
     }
-
-    @media (max-width: 768px) {
-  .movie-card {
-    width: calc(50% - 10px); /* Show 2 cards per row */
-    height: 220px; /* Reduce height */
-  }
-
-  .movie-card img {
-    height: 140px; /* Smaller poster size */
-  }
-
-  .movie-card p {
-    font-size: 12px; /* Optional: make text slightly smaller */
-  }
-}
-
   </style>
 </head>
-<body style="background-color: black;">
-  <div class="container1">
-    <div class="img">
-      <img src="{{ url_for('static', filename='images/action.jpg') }}" class="responsive-img" alt="" />
+<body id="content" style="background-color: black;">
+  <!-- Top Navigation Bar -->
+  <nav class="form-group shadow-textarea" style="text-align: center; color: white; display: flex; justify-content: center; align-items: center; background-color: #333333; height: 12vh; margin-bottom: 0;">
+    <div class="search-container" style="position: relative;">
+      <input type="text" name="movie" class="movie form-control" id="autoComplete" autocomplete="off" placeholder="Enter the Movie Name" style="background-color: #ffffff; border-color:#ffffff; width: 60%; color: #181818; border-radius: 5px;" required="required" />
+      <ul id="movie_list"></ul>
     </div>
-    <div class="text">
-      <h2 class="heading">Action</h2>
-      <p class="description">
-        The action genre features fast-paced, thrilling, and intense sequences of physical feats, combat, and excitement. The characters of these stories are involved in daring and often dangerous situations, requiring them to rely on their physical prowess, skills, and quick thinking to overcome challenges and adversaries.
-      </p>
+    <div class="form-group" style="text-align: center;">
+      <button class="btn btn-primary btn-block movie-button" style="background-color: #e50914; text-align: center; border-color: #e50914; width:120px; position: relative; left: -155px; top: 30px;" disabled="true">Enter</button>
     </div>
-  </div>
-  <hr />
-  <center><h2 style="color: red;">Popular Movies</h2></center>
-  <center><p style="color: white;">(Popular Action related movies)</p></center>
+    <div style="color: white; position: relative; left: -125px; top: -5px;"> | </div>
+    <div class="watchlist" style="cursor: pointer;" onclick="window.location.href='/watchlist';">
+      <img src="{{ url_for('static', filename='images/add_bookmark.svg') }}" width="30px" height="auto" alt="Watchlist">
+      <p>WatchList</p>
+    </div>
+    <div class="genres" style="color: white; position: relative; left: -120px; top: -5px; cursor: pointer;" onclick="window.location.href='/genres'">Genre-Wise</div>
+  </nav>
 
-  <div id="movies-container"></div>
+  <!-- Loader & Search Results -->
+  <div id="loader" style="text-align: center; display: none;">
+    <p id="loader-text" style="color: white; font-size:20px; font-weight: 800;">LOADING...</p>
+  </div>
+  <div class="fail" style="display: none; text-align: center; margin-top: 30px;">
+    <h3 style="color: #ffffff;">Sorry! The movie you requested is not in our database.</h3>
+  </div>
+  <div class="results"></div>
+
+  <div id="genre-main-content">
+    <div class="container1">
+      <div class="img">
+        <img src="{{ url_for('static', filename='images/action.jpg') }}" class="responsive-img" alt="Action" />
+      </div>
+      <div class="text">
+        <h2 class="heading">Action</h2>
+        <p class="description">
+          The action genre features fast-paced, thrilling, and intense sequences of physical feats, combat, and excitement. The characters of these stories are involved in daring and often dangerous situations, requiring them to rely on their physical prowess, skills, and quick thinking to overcome challenges and adversaries.
+        </p>
+      </div>
+    </div>
+    <hr />
+    <center><h2 style="color: red;">Popular Movies</h2></center>
+    <center><p style="color: white;">(Popular Action related movies)</p></center>
+
+    <div id="movies-container"></div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/js/autoComplete.min.js"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='autocomplete.js') }}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='recommend.js') }}"></script>
 
   <script>
     window.onload = function () {
-      const movies = {{ movies|tojson }}.slice(0, 20);
+      const movies = {{ movies|tojson if movies is not none else '[]' }}.slice(0, 20);
       const tmdbApiKey = 'fce0af3409e6113c9b3c75aaf49341bb';
       get_movie_posters(movies, tmdbApiKey);
     };
@@ -225,12 +285,11 @@
               const voteAverage = m_data.results[0].vote_average;
               displayMovieCard(movieTitle, posterUrl, voteAverage);
             } else {
-              displayMovieCard(movieTitle, 'placeholder_image_url');
+              displayMovieCard(movieTitle, 'placeholder_image_url', 0);
             }
           })
           .catch((error) => {
             console.error("Error fetching movie data:", error);
-            alert("Error: " + error.message);
           });
       });
     }

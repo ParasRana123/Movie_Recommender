@@ -2,107 +2,249 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Genres</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Genres - Movie Recommender</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/bookmark_tick.svg') }}">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Auto Complete -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/css/autoComplete.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+    <script type="text/javascript">
+        var films = {{ suggestions|tojson }};
+    </script>
+
     <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Noto Sans JP', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .watchlist {
+            position: relative;
+            top: -5px;
+            left: -120px;
+            gap: 8px;
+            display: flex;
+            align-items: center;
+            background-color: #333333;
+            border-radius: 8px;
+            transition: 0.3s;
+            padding: 10px;
+            color: #fff;
+            font-size: 18px;
+            width: fit-content;
+        }
+
+        .watchlist:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .watchlist p {
+            margin: 0;
+            margin-right: 10px;
+        }
+
+        .watchlist img {
+            display: block;
+            filter: invert(1);
+            width: 30px;
+            height: auto;
+        }
+
+        .genres {
+            padding: 2px 16px;
+        }
+
+        .genres-page-title {
+            text-align: center;
+            padding: 30px 20px 10px 20px;
+        }
+
+        .genres-page-title h1 {
+            color: #e50914;
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .genres-page-title p {
+            color: #b3b3b3;
+            font-size: 16px;
+        }
+
         .genres-card {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
-            gap: 30px; /* More space between cards */
-            max-width: 1400px; /* Increased max width */
+            gap: 30px;
+            max-width: 1400px;
             margin: auto;
-            padding: 30px;
+            padding: 20px 30px 40px 30px;
         }
 
         .card {
-            width: 320px; /* Increased width */
-            height: 220px; /* Increased height */
-            box-shadow: 0px 4px 20px rgba(250, 250, 250, 1);
+            width: 320px;
+            height: 220px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
             border-radius: 20px;
             transition: 0.3s;
             background-color: #333;
             color: white;
             text-align: center;
-            overflow: hidden; /* Ensures nothing overflows */
+            overflow: hidden;
             cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .card:hover {
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 25px rgba(229, 9, 20, 0.4);
+            transform: translateY(-5px);
         }
 
         .card-img {
             width: 100%; 
-            height: 160px; /* Increased height */
-            object-fit: cover; /* Ensures proper fit */
+            height: 160px;
+            object-fit: cover;
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
         }
 
-        .genres {
-            /* padding: 15px; */
-            font-size: 20px; 
-            /* font-weight: bold; */
+        .card .genres {
+            font-size: 20px;
+            padding: 10px;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                height: auto !important;
+                padding: 15px 10px;
+            }
+            .search-container {
+                width: 90% !important;
+            }
+            .movie-button {
+                position: static !important;
+                margin-top: 10px;
+            }
+            .watchlist, .genres {
+                left: 0 !important;
+            }
         }
     </style>
 </head>
-<body>
-    <div class="genres-card">
-        <div class="card" onclick="window.location.href='/action';">
-            <img src="{{ url_for('static', filename='images/action1.jpg') }}" alt="Action" class="card-img">
-            <div class="genres"><p>Action</p></div>
+<body id="content">
+    <!-- Top Navigation Bar -->
+    <nav class="form-group shadow-textarea" style="text-align: center; color: white; display: flex; justify-content: center; align-items: center; background-color: #333333; height: 12vh; margin-bottom: 0;">
+        <div class="search-container" style="position: relative;">
+            <input type="text" name="movie" class="movie form-control" id="autoComplete" autocomplete="off" placeholder="Enter the Movie Name" style="background-color: #ffffff; border-color:#ffffff; width: 60%; color: #181818; border-radius: 5px;" required="required" />
+            <ul id="movie_list"></ul>
+        </div>
+        <div class="form-group" style="text-align: center;">
+            <button class="btn btn-primary btn-block movie-button" style="background-color: #e50914; text-align: center; border-color: #e50914; width:120px; position: relative; left: -155px; top: 30px;" disabled="true">Enter</button>
+        </div>
+        <div style="color: white; position: relative; left: -125px; top: -5px;"> | </div>
+        <div class="watchlist" style="cursor: pointer;" onclick="window.location.href='/watchlist';">
+            <img src="{{ url_for('static', filename='images/add_bookmark.svg') }}" width="30px" height="auto" alt="Watchlist">
+            <p>WatchList</p>
+        </div>
+        <div class="genres" style="color: white; position: relative; left: -120px; top: -5px; cursor: pointer;" onclick="window.location.href='/genres'">Genre-Wise</div>
+    </nav>
+
+    <!-- Loader & Search Results -->
+    <div id="loader" style="text-align: center; display: none;">
+        <p id="loader-text" style="color: white; font-size:20px; font-weight: 800;">LOADING...</p>
+    </div>
+    <div class="fail" style="display: none; text-align: center; margin-top: 30px;">
+        <h3 style="color: #ffffff;">Sorry! The movie you requested is not in our database.</h3>
+    </div>
+    <div class="results"></div>
+
+    <div id="genre-main-content">
+        <div class="genres-page-title">
+            <h1>Movie Genres</h1>
+            <p>Explore curated collections across all popular genres</p>
         </div>
 
-        <div class="card" onclick="window.location.href='/horror';">
-            <img src="{{ url_for('static', filename='images/horror.jpg') }}" alt="Horror" class="card-img">
-            <div class="genres"><p>Horror</p></div>
-        </div>
+        <div class="genres-card">
+            <div class="card" onclick="window.location.href='/action';">
+                <img src="{{ url_for('static', filename='images/action1.jpg') }}" alt="Action" class="card-img">
+                <div class="genres"><p>Action</p></div>
+            </div>
 
-        <div class="card" onclick="window.location.href='/romance';">
-            <img src="{{ url_for('static', filename='images/Romance.jpg') }}" alt="Romance" class="card-img">
-            <div class="genres"><p>Romance</p></div>
-        </div>
+            <div class="card" onclick="window.location.href='/horror';">
+                <img src="{{ url_for('static', filename='images/horror.jpg') }}" alt="Horror" class="card-img">
+                <div class="genres"><p>Horror</p></div>
+            </div>
 
-        <div class="card" onclick="window.location.href='/mystery';">
-            <img src="{{ url_for('static', filename='images/mystery.jpg') }}" alt="Mystery" class="card-img">
-            <div class="genres"><p>Mystery</p></div>
-        </div>
+            <div class="card" onclick="window.location.href='/romance';">
+                <img src="{{ url_for('static', filename='images/Romance.jpg') }}" alt="Romance" class="card-img">
+                <div class="genres"><p>Romance</p></div>
+            </div>
 
-        <div class="card" onclick="window.location.href='/history';">
-            <img src="{{ url_for('static', filename='images/history.jpg') }}" alt="History" class="card-img">
-            <div class="genres"><p>History</p></div>
-        </div>
+            <div class="card" onclick="window.location.href='/mystery';">
+                <img src="{{ url_for('static', filename='images/mystery.jpg') }}" alt="Mystery" class="card-img">
+                <div class="genres"><p>Mystery</p></div>
+            </div>
 
-        <div class="card" onclick="window.location.href='/thriller';">
-            <img src="{{ url_for('static', filename='images/Thriller.jpg') }}" alt="Thriller" class="card-img">
-            <div class="genres"><p>Thriller</p></div>
-        </div>
+            <div class="card" onclick="window.location.href='/history';">
+                <img src="{{ url_for('static', filename='images/history.jpg') }}" alt="History" class="card-img">
+                <div class="genres"><p>History</p></div>
+            </div>
 
-        <div class="card" onclick="window.location.href='/comedy';">
-            <img src="{{ url_for('static', filename='images/Comedy.jpg') }}" alt="Comedy" class="card-img">
-            <div class="genres"><p>Comedy</p></div>
-        </div>
+            <div class="card" onclick="window.location.href='/thriller';">
+                <img src="{{ url_for('static', filename='images/Thriller.jpg') }}" alt="Thriller" class="card-img">
+                <div class="genres"><p>Thriller</p></div>
+            </div>
 
-        <div class="card" onclick="window.location.href='/fantasy';">
-            <img src="{{ url_for('static', filename='images/fantasy.jpg') }}" alt="Fantasy" class="card-img">
-            <div class="genres"><p>Fantasy</p></div>
-        </div>
+            <div class="card" onclick="window.location.href='/comedy';">
+                <img src="{{ url_for('static', filename='images/Comedy.jpg') }}" alt="Comedy" class="card-img">
+                <div class="genres"><p>Comedy</p></div>
+            </div>
 
-        <div class="card" onclick="window.location.href='/adventure';">
-            <img src="{{ url_for('static', filename='images/Adventure.jpg') }}" alt="Adventure" class="card-img">
-            <div class="genres"><p>Adventure</p></div>
-        </div>
+            <div class="card" onclick="window.location.href='/fantasy';">
+                <img src="{{ url_for('static', filename='images/fantasy.jpg') }}" alt="Fantasy" class="card-img">
+                <div class="genres"><p>Fantasy</p></div>
+            </div>
 
-        <div class="card" onclick="window.location.href='/documentary';">
-            <img src="{{ url_for('static', filename='images/Documentary.jpg') }}" alt="Documentary" class="card-img">
-            <div class="genres"><p>Documentary</p></div>
-        </div>
+            <div class="card" onclick="window.location.href='/adventure';">
+                <img src="{{ url_for('static', filename='images/Adventure.jpg') }}" alt="Adventure" class="card-img">
+                <div class="genres"><p>Adventure</p></div>
+            </div>
 
-        <div class="card" onclick="window.location.href='/sci_fi';">
-            <img src="{{ url_for('static', filename='images/Sci-Fi.jpg') }}" alt="Sci-Fi" class="card-img">
-            <div class="genres"><p>Sci-Fi</p></div>
+            <div class="card" onclick="window.location.href='/documentary';">
+                <img src="{{ url_for('static', filename='images/Documentary.jpg') }}" alt="Documentary" class="card-img">
+                <div class="genres"><p>Documentary</p></div>
+            </div>
+
+            <div class="card" onclick="window.location.href='/sci_fi';">
+                <img src="{{ url_for('static', filename='images/Sci-Fi.jpg') }}" alt="Sci-Fi" class="card-img">
+                <div class="genres"><p>Sci-Fi</p></div>
+            </div>
         </div>
     </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/js/autoComplete.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='autocomplete.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='recommend.js') }}"></script>
 </body>
 </html>

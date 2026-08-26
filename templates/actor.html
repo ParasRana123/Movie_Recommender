@@ -22,6 +22,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tarekraafat/autocomplete.js@7.2.0/dist/css/autoComplete.min.css">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     
+    <script type="text/javascript">
+        var films = {{ suggestions|tojson }};
+    </script>
+    
     <style>
         body {
             margin: 0;

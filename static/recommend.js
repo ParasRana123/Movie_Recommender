@@ -59,17 +59,23 @@ function load_movie_recommendations(title) {
         $('.fail').css('display', 'block');
         $('.results').css('display', 'none');
       } else {
-        // Hide actor details, underlying movie details, and other static page elements
+        // Hide actor details, underlying movie details, genre content, and other page elements
         $('#actor-main-content').hide();
         $('#movie-main-content').hide();
         $('#page-main-content').hide();
+        $('#genre-main-content').hide();
         $('#mycontent').hide();
         $('#streaming-platforms').hide();
+        $('.genres-card').hide();
+        $('.container1').hide();
+        $('#movies-container').hide();
+        $('.your_watchlist').hide();
 
         $('.fail').css('display', 'none');
         $('.results').html(response);
         $('.results').css('display', 'block');
         $('#autoComplete').val('');
+        $('.movie-button').attr('disabled', true);
         $(window).scrollTop(0);
       }
     },

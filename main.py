@@ -77,11 +77,28 @@ def load_data():
 
 load_data()
     
+SUGGESTIONS_CACHE = None
+
 def get_suggestions():
-    data = pd.read_csv('main_data.csv')
-    return list(data['movie_title'].str.capitalize())
+    global SUGGESTIONS_CACHE
+    if SUGGESTIONS_CACHE is None:
+        try:
+            df = pd.read_csv('main_data.csv')
+            SUGGESTIONS_CACHE = list(df['movie_title'].dropna().str.capitalize().unique())
+        except Exception as e:
+            logging.error(f"Error loading suggestions: {e}")
+            SUGGESTIONS_CACHE = []
+    return SUGGESTIONS_CACHE
 
 app = Flask(__name__)
+
+@app.context_processor
+def inject_suggestions():
+    return dict(suggestions=get_suggestions())
+
+@app.route('/suggestions')
+def suggestions_endpoint():
+    return jsonify(get_suggestions())
 
 @app.route('/favicon.ico')
 def favicon():
@@ -90,8 +107,7 @@ def favicon():
 @app.route("/")
 @app.route("/home")
 def home():
-    suggestions = get_suggestions()
-    return render_template('home.html', suggestions=suggestions)
+    return render_template('home.html')
 
 @app.route("/similarity", methods=["POST"])
 def similarity_route():
