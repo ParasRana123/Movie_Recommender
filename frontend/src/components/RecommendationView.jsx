@@ -345,17 +345,16 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
         </div>
       )}
 
-      {/* 4. Top Cast Section (1 Line Horizontal Scroll on Mobile, Circular Photos) */}
+      {/* 4. Top Cast Section (Left-aligned IMDb Style, 1 Line Horizontal Scroll on Mobile, Circular Photos) */}
       {casts && casts.length > 0 && (
-        <div className="section-container" style={{ marginTop: '40px' }}>
-          <div className="movie" style={{ color: headingColor }}>
-            <center>
-              <h3 style={{ color: headingColor, fontWeight: 'bold' }}>TOP CAST</h3>
-              <h5 style={{ color: subtitleColor }}>(Click on the cast to know more)</h5>
-            </center>
+        <div className="section-container" style={{ maxWidth: '1400px', margin: '45px auto 0 auto', padding: '0 20px', width: '100%', boxSizing: 'border-box' }}>
+          <div className="section-header-left" style={{ textAlign: 'left', marginBottom: '18px' }}>
+            <h3 style={{ color: headingColor, fontWeight: 'bold', fontSize: '26px', margin: 0, display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <span style={{ color: '#e50914', fontSize: '28px', fontWeight: 'bold' }}>|</span> Top Cast
+            </h3>
           </div>
 
-          <div className="movie-content cast-content-scroll">
+          <div className="movie-content cast-content-scroll" style={{ justifyContent: 'flex-start' }}>
             {casts.map((c, idx) => (
               <div
                 key={idx}
@@ -395,220 +394,222 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
         </div>
       )}
 
-      {/* 5. About The Director (Fixed Size Card with See More / Expandable Scroll) */}
-      <div style={{ marginTop: '45px' }}>
-        <h3 style={{ color: headingColor, textAlign: 'center', fontWeight: 'bold', letterSpacing: '0.5px' }}>
-          ABOUT THE DIRECTOR
-        </h3>
-      </div>
+      {/* 5. About The Director (Left-aligned IMDb Style Card - Full Width) */}
+      <div className="section-container" style={{ maxWidth: '1400px', margin: '45px auto 0 auto', padding: '0 20px', width: '100%', boxSizing: 'border-box' }}>
+        <div className="section-header-left" style={{ textAlign: 'left', marginBottom: '18px' }}>
+          <h3 style={{ color: headingColor, fontWeight: 'bold', fontSize: '26px', margin: 0, display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <span style={{ color: '#e50914', fontSize: '28px', fontWeight: 'bold' }}>|</span> About the Director
+          </h3>
+        </div>
 
-      <div className="director-section">
-        {director_image && (
-          <div className="director-image">
-            <img
-              src={director_image}
-              alt={`Director ${director_name}`}
-              onError={(e) => { e.target.src = 'https://via.placeholder.com/220x280?text=No+Photo'; }}
-            />
-          </div>
-        )}
-        <div className="director-info">
-          <h2>Director: {director_name || 'Unknown'}</h2>
-          <div className="director-bio-container">
-            <p style={{ margin: 0 }}>
-              <strong>Bio: </strong>
-              {director_bio && director_bio.length > 280 && !isDirectorBioExpanded
-                ? `${director_bio.slice(0, 280)}...`
-                : (director_bio || 'Biography not available for this director.')}
-              {director_bio && director_bio.length > 280 && (
-                <button
-                  onClick={() => setIsDirectorBioExpanded(!isDirectorBioExpanded)}
-                  className="read-more-btn"
-                  style={{
-                    background: 'none',
-                    border: 'none',
-                    color: '#e50914',
-                    fontWeight: 'bold',
-                    fontSize: '14px',
-                    cursor: 'pointer',
-                    marginLeft: '6px',
-                    padding: 0,
-                    textDecoration: 'underline'
-                  }}
-                >
-                  {isDirectorBioExpanded ? 'Show Less' : 'See More'}
-                </button>
-              )}
-            </p>
+        <div className="director-section" style={{ width: '100%', maxWidth: '100%', margin: '0 0 30px 0', boxSizing: 'border-box' }}>
+          {director_image && (
+            <div className="director-image">
+              <img
+                src={director_image}
+                alt={`Director ${director_name}`}
+                onError={(e) => { e.target.src = 'https://via.placeholder.com/220x280?text=No+Photo'; }}
+              />
+            </div>
+          )}
+          <div className="director-info">
+            <h2>Director: {director_name || 'Unknown'}</h2>
+            <div className="director-bio-container">
+              <p style={{ margin: 0 }}>
+                <strong>Bio: </strong>
+                {director_bio && director_bio.length > 280 && !isDirectorBioExpanded
+                  ? `${director_bio.slice(0, 280)}...`
+                  : (director_bio || 'Biography not available for this director.')}
+                {director_bio && director_bio.length > 280 && (
+                  <button
+                    onClick={() => setIsDirectorBioExpanded(!isDirectorBioExpanded)}
+                    className="read-more-btn"
+                    style={{
+                      background: 'none',
+                      border: 'none',
+                      color: '#e50914',
+                      fontWeight: 'bold',
+                      fontSize: '14px',
+                      cursor: 'pointer',
+                      marginLeft: '6px',
+                      padding: 0,
+                      textDecoration: 'underline'
+                    }}
+                  >
+                    {isDirectorBioExpanded ? 'Show Less' : 'See More'}
+                  </button>
+                )}
+              </p>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* 6. User Reviews Section (Responsive Table on Desktop & Expandable Cards on Mobile) */}
-      <center>
-        <div className="reviews-container" style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <h2 style={{ color: headingColor, margin: '45px 10px 20px 10px', fontWeight: 'bold', letterSpacing: '0.5px' }}>
-            USER REVIEWS
-          </h2>
-          {reviews && reviews.length > 0 ? (
-            <div className="col-md-12 reviews-table-wrapper" style={{ margin: '0 auto', padding: '0 10px' }}>
-              
-              {/* Desktop / Tablet Reviews Table */}
-              <div className="table-responsive reviews-desktop-table" style={{ overflowX: 'auto', WebkitOverflowScrolling: 'touch', width: '100%' }}>
-                <table className="table table-bordered table-custom" bordercolor="white" style={{ color: 'white', minWidth: '650px', borderRadius: '12px', overflow: 'hidden' }}>
-                  <thead>
-                    <tr style={{ backgroundColor: isDark ? '#1f1f1f' : '#2d2d2d' }}>
-                      <th scope="col" style={{ width: '55%', color: '#ffffff', fontSize: '16px', fontWeight: 'bold', textAlign: 'center' }}>
-                        User Comments
-                      </th>
-                      <th scope="col" style={{ width: '22%', color: '#ffffff', fontSize: '16px', fontWeight: 'bold', textAlign: 'center' }}>
-                        Author & Rating
-                      </th>
-                      <th scope="col" style={{ width: '23%', color: '#ffffff', fontSize: '16px', fontWeight: 'bold', textAlign: 'center' }}>
-                        Sentiment Analysis
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {reviews.map((rev, i) => {
-                      const isExpanded = !!expandedReviews[i];
-                      const isLong = rev.content && rev.content.length > 220;
-                      const contentToShow = isLong && !isExpanded ? `${rev.content.slice(0, 220)}...` : rev.content;
+      {/* 6. User Reviews Section (Left-aligned IMDb Style) */}
+      <div className="section-container reviews-container" style={{ maxWidth: '1400px', margin: '45px auto 0 auto', padding: '0 20px', width: '100%', boxSizing: 'border-box', textAlign: 'left' }}>
+        <div className="section-header-left" style={{ textAlign: 'left', marginBottom: '18px' }}>
+          <h3 style={{ color: headingColor, fontWeight: 'bold', fontSize: '26px', margin: 0, display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <span style={{ color: '#e50914', fontSize: '28px', fontWeight: 'bold' }}>|</span> User Reviews
+          </h3>
+        </div>
 
-                      return (
-                        <tr key={i} style={{ backgroundColor: '#e5091485' }}>
-                          <td style={{ textAlign: 'left', padding: '14px 16px', fontSize: '14px', lineHeight: '1.6', color: 'white' }}>
-                            <span>{contentToShow}</span>
-                            {isLong && (
-                              <button
-                                onClick={() => toggleReview(i)}
-                                style={{
-                                  background: 'none',
-                                  border: 'none',
-                                  color: '#ffd700',
-                                  fontWeight: 'bold',
-                                  fontSize: '13px',
-                                  cursor: 'pointer',
-                                  marginLeft: '6px',
-                                  padding: 0,
-                                  textDecoration: 'underline'
-                                }}
-                              >
-                                {isExpanded ? 'Show Less' : 'See More'}
-                              </button>
-                            )}
-                          </td>
-                          <td style={{ verticalAlign: 'middle', textAlign: 'center', color: 'white', padding: '10px' }}>
-                            <strong style={{ fontSize: '15px' }}>{rev.author || 'Anonymous'}</strong><br />
-                            <span style={{ color: '#ffd700', fontSize: '15px', fontWeight: 'bold' }}>
-                              ★ {rev.rating || 'N/A'}
-                            </span>
-                          </td>
-                          <td style={{ verticalAlign: 'middle', textAlign: 'center', fontSize: '15px', color: 'white', padding: '10px' }}>
-                            <strong>{rev.sentiment}</strong> :{' '}
-                            <span style={{ fontSize: '22px' }}>
-                              {rev.sentiment === 'Good' ? '😃' : '😔'}
-                            </span>
-                            {rev.confidence && (
-                              <>
-                                <br />
-                                <small style={{ color: '#f8f9fa' }}>({rev.confidence} confident)</small>
-                              </>
-                            )}
-                          </td>
-                        </tr>
-                      );
-                    })}
-                  </tbody>
-                </table>
-              </div>
+        {reviews && reviews.length > 0 ? (
+          <div className="reviews-table-wrapper" style={{ margin: 0, padding: 0 }}>
+            
+            {/* Desktop / Tablet Reviews Table */}
+            <div className="table-responsive reviews-desktop-table" style={{ overflowX: 'auto', WebkitOverflowScrolling: 'touch', width: '100%' }}>
+              <table className="table table-bordered table-custom" bordercolor="white" style={{ color: 'white', minWidth: '650px', borderRadius: '12px', overflow: 'hidden' }}>
+                <thead>
+                  <tr style={{ backgroundColor: isDark ? '#1f1f1f' : '#2d2d2d' }}>
+                    <th scope="col" style={{ width: '55%', color: '#ffffff', fontSize: '16px', fontWeight: 'bold', textAlign: 'left', paddingLeft: '16px' }}>
+                      User Comments
+                    </th>
+                    <th scope="col" style={{ width: '22%', color: '#ffffff', fontSize: '16px', fontWeight: 'bold', textAlign: 'center' }}>
+                      Author & Rating
+                    </th>
+                    <th scope="col" style={{ width: '23%', color: '#ffffff', fontSize: '16px', fontWeight: 'bold', textAlign: 'center' }}>
+                      Sentiment Analysis
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {reviews.map((rev, i) => {
+                    const isExpanded = !!expandedReviews[i];
+                    const isLong = rev.content && rev.content.length > 220;
+                    const contentToShow = isLong && !isExpanded ? `${rev.content.slice(0, 220)}...` : rev.content;
 
-              {/* Mobile Dedicated Reviews Cards View (Stacking clean cards with 'See More') */}
-              <div className="reviews-mobile-cards">
-                {reviews.map((rev, i) => {
-                  const isExpanded = !!expandedReviews[i];
-                  const isLong = rev.content && rev.content.length > 160;
-                  const contentToShow = isLong && !isExpanded ? `${rev.content.slice(0, 160)}...` : rev.content;
-
-                  return (
-                    <div
-                      key={i}
-                      className="review-mobile-card"
-                      style={{
-                        backgroundColor: '#e5091490',
-                        borderRadius: '16px',
-                        padding: '16px',
-                        marginBottom: '14px',
-                        color: 'white',
-                        textAlign: 'left',
-                        boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
-                        border: '1px solid rgba(255,255,255,0.15)'
-                      }}
-                    >
-                      {/* Header with author, rating, sentiment */}
-                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px', borderBottom: '1px solid rgba(255,255,255,0.2)', paddingBottom: '8px' }}>
-                        <div>
-                          <strong style={{ fontSize: '15px', color: '#ffffff' }}>{rev.author || 'Anonymous'}</strong>
-                          <div style={{ color: '#ffd700', fontSize: '13px', fontWeight: 'bold', marginTop: '2px' }}>
+                    return (
+                      <tr key={i} style={{ backgroundColor: '#e5091485' }}>
+                        <td style={{ textAlign: 'left', padding: '14px 16px', fontSize: '14px', lineHeight: '1.6', color: 'white' }}>
+                          <span>{contentToShow}</span>
+                          {isLong && (
+                            <button
+                              onClick={() => toggleReview(i)}
+                              style={{
+                                background: 'none',
+                                border: 'none',
+                                color: '#ffd700',
+                                fontWeight: 'bold',
+                                fontSize: '13px',
+                                cursor: 'pointer',
+                                marginLeft: '6px',
+                                padding: 0,
+                                textDecoration: 'underline'
+                              }}
+                            >
+                              {isExpanded ? 'Show Less' : 'See More'}
+                            </button>
+                          )}
+                        </td>
+                        <td style={{ verticalAlign: 'middle', textAlign: 'center', color: 'white', padding: '10px' }}>
+                          <strong style={{ fontSize: '15px' }}>{rev.author || 'Anonymous'}</strong><br />
+                          <span style={{ color: '#ffd700', fontSize: '15px', fontWeight: 'bold' }}>
                             ★ {rev.rating || 'N/A'}
-                          </div>
-                        </div>
-                        <div style={{ textAlign: 'right' }}>
-                          <span style={{ fontSize: '13px', fontWeight: 'bold', backgroundColor: 'rgba(0,0,0,0.4)', padding: '3px 8px', borderRadius: '10px', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
-                            {rev.sentiment} {rev.sentiment === 'Good' ? '😃' : '😔'}
+                          </span>
+                        </td>
+                        <td style={{ verticalAlign: 'middle', textAlign: 'center', fontSize: '15px', color: 'white', padding: '10px' }}>
+                          <strong>{rev.sentiment}</strong> :{' '}
+                          <span style={{ fontSize: '22px' }}>
+                            {rev.sentiment === 'Good' ? '😃' : '😔'}
                           </span>
                           {rev.confidence && (
-                            <div style={{ fontSize: '11px', color: '#f0f0f0', marginTop: '2px' }}>
-                              {rev.confidence}
-                            </div>
+                            <>
+                              <br />
+                              <small style={{ color: '#f8f9fa' }}>({rev.confidence} confident)</small>
+                            </>
                           )}
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+
+            {/* Mobile Dedicated Reviews Cards View (Stacking clean cards with 'See More') */}
+            <div className="reviews-mobile-cards">
+              {reviews.map((rev, i) => {
+                const isExpanded = !!expandedReviews[i];
+                const isLong = rev.content && rev.content.length > 160;
+                const contentToShow = isLong && !isExpanded ? `${rev.content.slice(0, 160)}...` : rev.content;
+
+                return (
+                  <div
+                    key={i}
+                    className="review-mobile-card"
+                    style={{
+                      backgroundColor: '#e5091490',
+                      borderRadius: '16px',
+                      padding: '16px',
+                      marginBottom: '14px',
+                      color: 'white',
+                      textAlign: 'left',
+                      boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
+                      border: '1px solid rgba(255,255,255,0.15)'
+                    }}
+                  >
+                    {/* Header with author, rating, sentiment */}
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px', borderBottom: '1px solid rgba(255,255,255,0.2)', paddingBottom: '8px' }}>
+                      <div>
+                        <strong style={{ fontSize: '15px', color: '#ffffff' }}>{rev.author || 'Anonymous'}</strong>
+                        <div style={{ color: '#ffd700', fontSize: '13px', fontWeight: 'bold', marginTop: '2px' }}>
+                          ★ {rev.rating || 'N/A'}
                         </div>
                       </div>
-
-                      {/* Review Body with See More */}
-                      <div style={{ fontSize: '14px', lineHeight: '1.6', color: '#ffffff' }}>
-                        {contentToShow}
-                        {isLong && (
-                          <button
-                            onClick={() => toggleReview(i)}
-                            style={{
-                              background: 'none',
-                              border: 'none',
-                              color: '#ffd700',
-                              fontWeight: 'bold',
-                              fontSize: '13px',
-                              cursor: 'pointer',
-                              marginLeft: '6px',
-                              padding: 0,
-                              textDecoration: 'underline'
-                            }}
-                          >
-                            {isExpanded ? 'Show Less' : 'See More'}
-                          </button>
+                      <div style={{ textAlign: 'right' }}>
+                        <span style={{ fontSize: '13px', fontWeight: 'bold', backgroundColor: 'rgba(0,0,0,0.4)', padding: '3px 8px', borderRadius: '10px', display: 'inline-flex', alignItems: 'center', gap: '4px' }}>
+                          {rev.sentiment} {rev.sentiment === 'Good' ? '😃' : '😔'}
+                        </span>
+                        {rev.confidence && (
+                          <div style={{ fontSize: '11px', color: '#f0f0f0', marginTop: '2px' }}>
+                            {rev.confidence}
+                          </div>
                         )}
                       </div>
                     </div>
-                  );
-                })}
-              </div>
 
+                    {/* Review Body with See More */}
+                    <div style={{ fontSize: '14px', lineHeight: '1.6', color: '#ffffff' }}>
+                      {contentToShow}
+                      {isLong && (
+                        <button
+                          onClick={() => toggleReview(i)}
+                          style={{
+                            background: 'none',
+                            border: 'none',
+                            color: '#ffd700',
+                            fontWeight: 'bold',
+                            fontSize: '13px',
+                            cursor: 'pointer',
+                            marginLeft: '6px',
+                            padding: 0,
+                            textDecoration: 'underline'
+                          }}
+                        >
+                          {isExpanded ? 'Show Less' : 'See More'}
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-          ) : (
-            <div style={{ color: 'white', margin: '30px' }}>
-              <h3 style={{ color: headingColor }}>No reviews available for this movie yet. Stay tuned!</h3>
-            </div>
-          )}
-        </div>
-      </center>
 
-      {/* 7. Recommended Movies (1 Line Horizontal Scroll on Mobile) */}
+          </div>
+        ) : (
+          <div style={{ color: headingColor, margin: '20px 0' }}>
+            <h4 style={{ color: subtitleColor, fontWeight: 'normal' }}>No reviews available for this movie yet. Stay tuned!</h4>
+          </div>
+        )}
+      </div>
+
+      {/* 7. Recommended Movies Section */}
       {recommended_movies && recommended_movies.length > 0 && (
-        <div className="section-container" style={{ marginTop: '45px', marginBottom: '30px' }}>
-          <div className="movie">
-            <center>
-              <h3 style={{ color: headingColor, fontWeight: 'bold' }}>RECOMMENDED MOVIES FOR YOU</h3>
-              <h5 style={{ color: subtitleColor }}>(Click any of the movies to get recommendation)</h5>
-            </center>
+        <div className="section-container" style={{ maxWidth: '1400px', margin: '45px auto 30px auto', padding: '0 20px', width: '100%', boxSizing: 'border-box' }}>
+          <div className="section-header-left" style={{ textAlign: 'left', marginBottom: '18px' }}>
+            <h3 style={{ color: headingColor, fontWeight: 'bold', fontSize: '26px', margin: 0, display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <span style={{ color: '#e50914', fontSize: '28px', fontWeight: 'bold' }}>|</span> More Like This
+            </h3>
           </div>
 
           <div className="movie-content recommended-content-scroll">
@@ -616,7 +617,6 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
               <div
                 key={idx}
                 className="card recommended-card-item"
-                style={{ borderRadius: '18px' }}
                 title={m.title}
                 onClick={() => {
                   if (onSelectRecommendedMovie) {
@@ -634,8 +634,8 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
                     <button className="card-btn btn btn-danger"> Click Me </button>
                   </figcaption>
                 </div>
-                <div className="card-body" style={{ padding: '10px 8px', textAlign: 'center' }}>
-                  <h5 className="card-title" style={{ fontSize: '14px', fontWeight: 'bold', margin: 0, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                <div className="card-body" style={{ padding: '14px 10px', textAlign: 'center' }}>
+                  <h5 className="card-title" style={{ fontSize: '15px', fontWeight: 'bold', margin: 0, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                     {m.title}
                   </h5>
                 </div>

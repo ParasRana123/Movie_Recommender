@@ -129,9 +129,9 @@ export default function HomePage() {
       {!activeMovieData && !loading && (
         <div className="home-feed-container" style={{ maxWidth: '1400px', margin: '0 auto', padding: '20px 25px' }}>
           
-          {/* App Hero Heading */}
+          {/* App Hero Heading (Centered) */}
           <center>
-            <h1 style={{ marginTop: '30px', marginBottom: '8px', fontSize: '38px', fontWeight: 'bold', letterSpacing: '1px' }}>
+            <h1 style={{ marginTop: '30px', marginBottom: '8px', fontSize: '38px', fontWeight: 'bold', letterSpacing: '1px', color: headingColor }}>
               MOVIE RECOMMENDATION SYSTEM
             </h1>
             <p style={{ color: subtitleColor, fontSize: '16px', marginBottom: '45px' }}>
@@ -139,16 +139,13 @@ export default function HomePage() {
             </p>
           </center>
 
-          {/* 1. 🔥 TRENDING MOVIES SECTION */}
+          {/* 1. 🔥 TRENDING MOVIES SECTION (Left-aligned) */}
           <section className="home-section" style={{ marginBottom: '55px' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '20px', borderBottom: `2px solid ${isDark ? '#2a2a2a' : '#eeeeee'}`, paddingBottom: '12px' }}>
-              <div>
+            <div className="section-header-left" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', borderBottom: `2px solid ${isDark ? '#2a2a2a' : '#eeeeee'}`, paddingBottom: '12px' }}>
+              <div style={{ textAlign: 'left' }}>
                 <h3 style={{ color: headingColor, fontWeight: 'bold', margin: 0, fontSize: '26px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <span style={{ color: '#e50914' }}>🔥</span> Trending Movies
+                  <span style={{ color: '#e50914', fontSize: '28px', fontWeight: 'bold' }}>|</span> Trending Movies
                 </h3>
-                <h5 style={{ color: subtitleColor, margin: '6px 0 0 0', fontSize: '15px', fontWeight: 'normal' }}>
-                  Top popular movies this week — click to get instant recommendations
-                </h5>
               </div>
               <span style={{ color: '#e50914', fontSize: '14px', fontWeight: 'bold' }}>
                 IMDb Style Trending
@@ -249,16 +246,13 @@ export default function HomePage() {
             </div>
           </section>
 
-          {/* 2. 🎬 UPCOMING MOVIES SECTION */}
+          {/* 2. 🎬 UPCOMING MOVIES SECTION (Left-aligned) */}
           <section className="home-section" style={{ marginBottom: '55px' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '20px', borderBottom: `2px solid ${isDark ? '#2a2a2a' : '#eeeeee'}`, paddingBottom: '12px' }}>
-              <div>
+            <div className="section-header-left" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', borderBottom: `2px solid ${isDark ? '#2a2a2a' : '#eeeeee'}`, paddingBottom: '12px' }}>
+              <div style={{ textAlign: 'left' }}>
                 <h3 style={{ color: headingColor, fontWeight: 'bold', margin: 0, fontSize: '26px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <span style={{ color: '#e50914' }}>🎬</span> Upcoming Movies
+                  <span style={{ color: '#e50914', fontSize: '28px', fontWeight: 'bold' }}>|</span> Upcoming Movies
                 </h3>
-                <h5 style={{ color: subtitleColor, margin: '6px 0 0 0', fontSize: '15px', fontWeight: 'normal' }}>
-                  Anticipated releases coming soon to theaters & streaming
-                </h5>
               </div>
               <span style={{ color: '#e50914', fontSize: '14px', fontWeight: 'bold' }}>
                 In Theaters & OTT
@@ -356,24 +350,21 @@ export default function HomePage() {
             </div>
           </section>
 
-          {/* 3. ⭐ TRENDING PEOPLE / CELEBRITIES SECTION (Circular Format with Dark Hover & Mobile 1-Line Touch Scroll) */}
+          {/* 3. ⭐ TRENDING CELEBRITIES SECTION (Left-aligned, Circular Format with Dark Hover & Mobile 1-Line Touch Scroll) */}
           {trendingPeople && trendingPeople.length > 0 && (
             <section className="home-section" style={{ marginBottom: '55px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '20px', borderBottom: `2px solid ${isDark ? '#2a2a2a' : '#eeeeee'}`, paddingBottom: '12px' }}>
-                <div>
+              <div className="section-header-left" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', borderBottom: `2px solid ${isDark ? '#2a2a2a' : '#eeeeee'}`, paddingBottom: '12px' }}>
+                <div style={{ textAlign: 'left' }}>
                   <h3 style={{ color: headingColor, fontWeight: 'bold', margin: 0, fontSize: '26px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                    <span style={{ color: '#e50914' }}>⭐</span> Trending Celebrities
+                    <span style={{ color: '#e50914', fontSize: '28px', fontWeight: 'bold' }}>|</span> Trending Celebrities
                   </h3>
-                  <h5 style={{ color: subtitleColor, margin: '6px 0 0 0', fontSize: '15px', fontWeight: 'normal' }}>
-                    Popular actors and actresses trending worldwide — click to view filmography
-                  </h5>
                 </div>
                 <span style={{ color: '#e50914', fontSize: '14px', fontWeight: 'bold' }}>
                   Popular Stars
                 </span>
               </div>
 
-              <div className="movie-content cast-content-scroll home-people-scroll">
+              <div className="movie-content cast-content-scroll home-people-scroll" style={{ justifyContent: 'flex-start' }}>
                 {trendingPeople.slice(0, 12).map((person, idx) => (
                   <div
                     key={idx}
@@ -417,16 +408,13 @@ export default function HomePage() {
             </section>
           )}
 
-          {/* 4. 🎭 POPULAR GENRES SECTION */}
+          {/* 4. 🎭 POPULAR GENRES SECTION (Left-aligned) */}
           <section className="home-section" style={{ marginBottom: '40px' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '20px', borderBottom: `2px solid ${isDark ? '#2a2a2a' : '#eeeeee'}`, paddingBottom: '12px' }}>
-              <div>
+            <div className="section-header-left" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px', borderBottom: `2px solid ${isDark ? '#2a2a2a' : '#eeeeee'}`, paddingBottom: '12px' }}>
+              <div style={{ textAlign: 'left' }}>
                 <h3 style={{ color: headingColor, fontWeight: 'bold', margin: 0, fontSize: '26px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <span style={{ color: '#e50914' }}>🎭</span> Explore by Genre
+                  <span style={{ color: '#e50914', fontSize: '28px', fontWeight: 'bold' }}>|</span> Explore by Genre
                 </h3>
-                <h5 style={{ color: subtitleColor, margin: '6px 0 0 0', fontSize: '15px', fontWeight: 'normal' }}>
-                  Browse hand-picked collections across 11 iconic movie categories
-                </h5>
               </div>
               <button
                 onClick={() => navigate('/genres')}
