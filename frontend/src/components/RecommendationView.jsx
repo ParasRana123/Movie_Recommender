@@ -121,7 +121,7 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
             position: 'absolute',
             top: 0,
             left: 0,
-            width: '40%',
+            width: '45%',
             height: '100%',
             background: 'linear-gradient(to right, black 60%, transparent)',
             zIndex: 1
@@ -155,24 +155,22 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
           />
         </div>
 
-        {/* Poster Image (Small screen) */}
-        <div className="poster-sm text-center" style={{ position: 'relative', zIndex: 2, padding: '20px 0' }}>
+        {/* Poster Image (Small screen / Mobile) */}
+        <div className="poster-sm text-center" style={{ position: 'relative', zIndex: 2, padding: '20px 0', width: '100%' }}>
           <img
             className="poster"
-            style={{ borderRadius: '40px', marginBottom: '5%' }}
-            height="400"
-            width="250"
+            style={{ borderRadius: '30px', margin: '0 auto', maxWidth: '80%', height: 'auto', maxHeight: '350px' }}
             src={poster || 'https://via.placeholder.com/250x400?text=No+Poster'}
             alt={title}
           />
         </div>
 
         {/* Details Section (Text) */}
-        <div id="details" style={{ position: 'relative', zIndex: 3, color: 'white', padding: '10px 45px', flex: 1, maxWidth: '85%' }}>
-          <h6 id="title" style={{ zIndex: 3, color: 'white', fontSize: '18px', fontWeight: 'bold', marginBottom: '14px' }}>
+        <div id="details" className="hero-details" style={{ position: 'relative', zIndex: 3, color: 'white', padding: '10px 45px', flex: 1, maxWidth: '85%' }}>
+          <h6 id="title" style={{ zIndex: 3, color: 'white', fontSize: '20px', fontWeight: 'bold', marginBottom: '14px' }}>
             TITLE: &nbsp;{title}
           </h6>
-          <h6 id="overview" style={{ maxWidth: '90%', zIndex: 3, color: 'white', lineHeight: '1.6', marginBottom: '14px' }}>
+          <h6 id="overview" style={{ maxWidth: '95%', zIndex: 3, color: 'white', lineHeight: '1.6', marginBottom: '14px' }}>
             OVERVIEW: <br /><br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{overview}
           </h6>
@@ -230,15 +228,15 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
       </div>
 
       {/* 2. Streaming Platforms & Video Section */}
-      <div id="streaming-platforms">
-        <div id="video-section" style={{ marginTop: '30px', marginRight: '30px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div id="streaming-platforms" className="streaming-platforms-section">
+        <div id="video-section" style={{ marginTop: '30px', marginRight: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap', gap: '20px' }}>
           {teaser && (
             <div className="teaser">
-              <h3 style={{ color: 'white', marginTop: '20px' }}>🎥 Watch the Teaser</h3>
+              <h3 style={{ color: 'white', marginTop: '20px', fontSize: '18px' }}>🎥 Watch the Teaser</h3>
               <iframe
-                style={{ marginBottom: '40px' }}
-                width="250"
-                height="315"
+                style={{ marginBottom: '20px', borderRadius: '12px', maxWidth: '100%' }}
+                width="280"
+                height="280"
                 src={teaser}
                 frameBorder="0"
                 allowFullScreen
@@ -248,11 +246,11 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
           )}
           {trailer && (
             <div className="trailer">
-              <h3 style={{ color: 'white' }}>🎬 Watch the Trailer</h3>
+              <h3 style={{ color: 'white', fontSize: '18px' }}>🎬 Watch the Trailer</h3>
               <iframe
-                style={{ marginBottom: '20px' }}
-                width="560"
-                height="315"
+                style={{ marginBottom: '20px', borderRadius: '12px', maxWidth: '100%' }}
+                width="540"
+                height="300"
                 src={trailer}
                 frameBorder="0"
                 allowFullScreen
@@ -350,24 +348,25 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
         </div>
       )}
 
-      {/* 4. Top Cast Section */}
+      {/* 4. Top Cast Section (1 Line Horizontal Scroll on Mobile, Circular Photos) */}
       {casts && casts.length > 0 && (
-        <>
-          <div className="movie" style={{ color: headingColor, marginTop: '40px' }}>
+        <div className="section-container" style={{ marginTop: '40px' }}>
+          <div className="movie" style={{ color: headingColor }}>
             <center>
               <h3 style={{ color: headingColor, fontWeight: 'bold' }}>TOP CAST</h3>
               <h5 style={{ color: subtitleColor }}>(Click on the cast to know more)</h5>
             </center>
           </div>
 
-          <div className="movie-content">
+          <div className="movie-content cast-content-scroll">
             {casts.map((c, idx) => (
               <div
                 key={idx}
+                className="cast-card-item"
                 title={`Click to know more about ${c.name}`}
                 onClick={() => setSelectedCastModal(c)}
               >
-                <div className="imghvr">
+                <div className="imghvr cast-imghvr">
                   <img
                     className="card-img-top cast-img"
                     alt={`${c.name} - profile`}
@@ -385,20 +384,18 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
                     </button>
                   </figcaption>
                 </div>
-                <div className="card-body">
-                  <h5 className="card-title">{c.name}</h5>
+                <div className="card-body" style={{ textAlign: 'center', padding: '10px 4px' }}>
+                  <h5 className="card-title" style={{ fontSize: '15px', fontWeight: 'bold', margin: '4px 0' }}>{c.name}</h5>
                   {c.character && (
-                    <h5 className="card-title">
-                      <span style={{ color: isDark ? '#aaa' : '#756969', fontSize: '18px' }}>
-                        Character: {c.character}
-                      </span>
-                    </h5>
+                    <h6 style={{ color: isDark ? '#aaa' : '#756969', fontSize: '13px', margin: 0 }}>
+                      {c.character}
+                    </h6>
                   )}
                 </div>
               </div>
             ))}
           </div>
-        </>
+        </div>
       )}
 
       {/* 5. About The Director */}
@@ -421,51 +418,53 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
       {/* 6. User Reviews Table */}
       <center>
         <div className="reviews-container">
-          <h2 style={{ color: headingColor, margin: '40px', fontWeight: 'bold' }}>USER REVIEWS</h2>
+          <h2 style={{ color: headingColor, margin: '40px 10px', fontWeight: 'bold' }}>USER REVIEWS</h2>
           {reviews && reviews.length > 0 ? (
-            <div className="col-md-12" style={{ margin: '0 auto', marginTop: '25px', maxWidth: '1200px' }}>
-              <table className="table table-bordered table-custom" bordercolor="white" style={{ color: 'white' }}>
-                <thead>
-                  <tr>
-                    <th scope="col" style={{ width: '55%', color: headingColor, fontSize: '18px', fontWeight: 'bold', textAlign: 'center' }}>
-                      User Comments
-                    </th>
-                    <th scope="col" style={{ width: '20%', color: headingColor, fontSize: '18px', fontWeight: 'bold', textAlign: 'center' }}>
-                      Author & Rating
-                    </th>
-                    <th scope="col" style={{ width: '25%', color: headingColor, fontSize: '18px', fontWeight: 'bold', textAlign: 'center' }}>
-                      Sentiment Analysis
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {reviews.map((rev, i) => (
-                    <tr key={i} style={{ backgroundColor: '#e5091485' }}>
-                      <td style={{ textAlign: 'left', padding: '15px', fontSize: '15px', lineHeight: '1.6', color: 'white' }}>
-                        {rev.content}
-                      </td>
-                      <td style={{ verticalAlign: 'middle', textAlign: 'center', color: 'white' }}>
-                        <strong>{rev.author}</strong><br />
-                        <span style={{ color: '#ffd700', fontSize: '17px', fontWeight: 'bold' }}>
-                          ★ {rev.rating}
-                        </span>
-                      </td>
-                      <td style={{ verticalAlign: 'middle', textAlign: 'center', fontSize: '16px', color: 'white' }}>
-                        <strong>{rev.sentiment}</strong> :{' '}
-                        <span style={{ fontSize: '24px' }}>
-                          {rev.sentiment === 'Good' ? '😃' : '😔'}
-                        </span>
-                        {rev.confidence && (
-                          <>
-                            <br />
-                            <small style={{ color: '#f8f9fa' }}>({rev.confidence} confident)</small>
-                          </>
-                        )}
-                      </td>
+            <div className="col-md-12" style={{ margin: '0 auto', marginTop: '25px', maxWidth: '1200px', padding: '0 10px' }}>
+              <div className="table-responsive" style={{ overflowX: 'auto', WebkitOverflowScrolling: 'touch', width: '100%' }}>
+                <table className="table table-bordered table-custom" bordercolor="white" style={{ color: 'white', minWidth: '600px' }}>
+                  <thead>
+                    <tr>
+                      <th scope="col" style={{ width: '55%', color: headingColor, fontSize: '16px', fontWeight: 'bold', textAlign: 'center' }}>
+                        User Comments
+                      </th>
+                      <th scope="col" style={{ width: '20%', color: headingColor, fontSize: '16px', fontWeight: 'bold', textAlign: 'center' }}>
+                        Author & Rating
+                      </th>
+                      <th scope="col" style={{ width: '25%', color: headingColor, fontSize: '16px', fontWeight: 'bold', textAlign: 'center' }}>
+                        Sentiment Analysis
+                      </th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {reviews.map((rev, i) => (
+                      <tr key={i} style={{ backgroundColor: '#e5091485' }}>
+                        <td style={{ textAlign: 'left', padding: '12px', fontSize: '14px', lineHeight: '1.6', color: 'white' }}>
+                          {rev.content}
+                        </td>
+                        <td style={{ verticalAlign: 'middle', textAlign: 'center', color: 'white', padding: '10px' }}>
+                          <strong>{rev.author}</strong><br />
+                          <span style={{ color: '#ffd700', fontSize: '16px', fontWeight: 'bold' }}>
+                            ★ {rev.rating}
+                          </span>
+                        </td>
+                        <td style={{ verticalAlign: 'middle', textAlign: 'center', fontSize: '15px', color: 'white', padding: '10px' }}>
+                          <strong>{rev.sentiment}</strong> :{' '}
+                          <span style={{ fontSize: '22px' }}>
+                            {rev.sentiment === 'Good' ? '😃' : '😔'}
+                          </span>
+                          {rev.confidence && (
+                            <>
+                              <br />
+                              <small style={{ color: '#f8f9fa' }}>({rev.confidence} confident)</small>
+                            </>
+                          )}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
           ) : (
             <div style={{ color: 'white', margin: '30px' }}>
@@ -475,22 +474,22 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
         </div>
       </center>
 
-      {/* 7. Recommended Movies Grid */}
+      {/* 7. Recommended Movies (1 Line Horizontal Scroll on Mobile) */}
       {recommended_movies && recommended_movies.length > 0 && (
-        <>
-          <div className="movie" style={{ marginTop: '45px' }}>
+        <div className="section-container" style={{ marginTop: '45px', marginBottom: '30px' }}>
+          <div className="movie">
             <center>
               <h3 style={{ color: headingColor, fontWeight: 'bold' }}>RECOMMENDED MOVIES FOR YOU</h3>
               <h5 style={{ color: subtitleColor }}>(Click any of the movies to get recommendation)</h5>
             </center>
           </div>
 
-          <div className="movie-content">
+          <div className="movie-content recommended-content-scroll">
             {recommended_movies.map((m, idx) => (
               <div
                 key={idx}
-                className="card"
-                style={{ width: '15rem', borderRadius: '18px', margin: '10px auto' }}
+                className="card recommended-card-item"
+                style={{ borderRadius: '18px' }}
                 title={m.title}
                 onClick={() => {
                   if (onSelectRecommendedMovie) {
@@ -501,8 +500,6 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
                 <div className="imghvr">
                   <img
                     className="card-img-top"
-                    height="360"
-                    width="240"
                     alt={`${m.title} - poster`}
                     src={m.poster || 'https://via.placeholder.com/240x360?text=No+Poster'}
                   />
@@ -510,13 +507,15 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
                     <button className="card-btn btn btn-danger"> Click Me </button>
                   </figcaption>
                 </div>
-                <div className="card-body">
-                  <h5 className="card-title">{m.title}</h5>
+                <div className="card-body" style={{ padding: '10px 8px', textAlign: 'center' }}>
+                  <h5 className="card-title" style={{ fontSize: '14px', fontWeight: 'bold', margin: 0, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                    {m.title}
+                  </h5>
                 </div>
               </div>
             ))}
           </div>
-        </>
+        </div>
       )}
     </div>
   );

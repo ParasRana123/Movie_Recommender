@@ -10,10 +10,13 @@ export default function Navbar({ onSearchMovie, onHomeClick, initialQuery = '' }
   const [filteredSuggestions, setFilteredSuggestions] = useState([]);
   const [showDropdown, setShowDropdown] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(-1);
+  const [showMobileSearch, setShowMobileSearch] = useState(false);
 
   const { theme, toggleTheme, isDark } = useTheme();
   const navigate = useNavigate();
   const searchContainerRef = useRef(null);
+  const mobileSearchRef = useRef(null);
+  const mobileInputRef = useRef(null);
   const isSelectingRef = useRef(false);
 
   useEffect(() => {
@@ -33,6 +36,15 @@ export default function Navbar({ onSearchMovie, onHomeClick, initialQuery = '' }
       .catch(() => {});
     return () => { mounted = false; };
   }, []);
+
+  // Autofocus mobile input when opened
+  useEffect(() => {
+    if (showMobileSearch && mobileInputRef.current) {
+      setTimeout(() => {
+        mobileInputRef.current?.focus();
+      }, 100);
+    }
+  }, [showMobileSearch]);
 
   // Compute live search suggestions on typing
   const handleInputChange = (e) => {
@@ -69,7 +81,8 @@ export default function Navbar({ onSearchMovie, onHomeClick, initialQuery = '' }
 
   useEffect(() => {
     function handleClickOutside(event) {
-      if (searchContainerRef.current && !searchContainerRef.current.contains(event.target)) {
+      if (searchContainerRef.current && !searchContainerRef.current.contains(event.target) &&
+          mobileSearchRef.current && !mobileSearchRef.current.contains(event.target)) {
         setShowDropdown(false);
       }
     }
@@ -82,6 +95,7 @@ export default function Navbar({ onSearchMovie, onHomeClick, initialQuery = '' }
     setQuery(selectedTitle);
     setShowDropdown(false);
     setFilteredSuggestions([]);
+    setShowMobileSearch(false);
 
     if (onSearchMovie) {
       onSearchMovie(selectedTitle);
@@ -106,6 +120,7 @@ export default function Navbar({ onSearchMovie, onHomeClick, initialQuery = '' }
       }
     } else if (e.key === 'Escape') {
       setShowDropdown(false);
+      setShowMobileSearch(false);
     }
   };
 
@@ -134,8 +149,8 @@ export default function Navbar({ onSearchMovie, onHomeClick, initialQuery = '' }
 
   return (
     <div className="ml-container" style={{ display: 'block' }}>
-      {/* GitHub Corner */}
-      <a href="https://github.com/ParasRana123/Movie-Recommender-with-Sentiment-Analysis" className="github-corner" title="View source on GitHub">
+      {/* GitHub Corner (Desktop only) */}
+      <a href="https://github.com/ParasRana123/Movie-Recommender-with-Sentiment-Analysis" className="github-corner desktop-only" title="View source on GitHub">
         <svg data-toggle="tooltip" data-placement="left" width="80" height="80" viewBox="0 0 250 250" style={{ fill: '#e50914', color: '#fff', position: 'fixed', zIndex: 100, top: 0, border: 0, right: 0 }} aria-hidden="true">
           <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
           <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style={{ transformOrigin: '130px 106px' }} className="octo-arm"></path>
@@ -155,16 +170,17 @@ export default function Navbar({ onSearchMovie, onHomeClick, initialQuery = '' }
           backgroundColor: isDark ? '#1a1a1a' : '#333333',
           borderBottom: isDark ? '1px solid #2e2e2e' : 'none',
           height: '12vh',
+          minHeight: '65px',
           margin: 0,
-          padding: '0 20px',
-          gap: '16px',
+          padding: '0 15px',
+          gap: '14px',
           position: 'relative',
           zIndex: 1000,
           transition: 'background-color 0.3s ease'
         }}
       >
-        {/* Search Bar Input Container */}
-        <div className="search-container" style={{ position: 'relative', width: '420px', maxWidth: '38vw', margin: 0 }} ref={searchContainerRef}>
+        {/* Desktop Search Bar Input Container */}
+        <div className="search-container desktop-search-group" style={{ position: 'relative', width: '420px', maxWidth: '36vw', margin: 0 }} ref={searchContainerRef}>
           <input
             type="text"
             name="movie"
@@ -197,7 +213,7 @@ export default function Navbar({ onSearchMovie, onHomeClick, initialQuery = '' }
             required="required"
           />
 
-          {/* Autocomplete Dropdown List */}
+          {/* Desktop Autocomplete Dropdown List */}
           {showDropdown && filteredSuggestions.length > 0 && (
             <ul
               id="movie_list"
@@ -225,8 +241,8 @@ export default function Navbar({ onSearchMovie, onHomeClick, initialQuery = '' }
           )}
         </div>
 
-        {/* Enter Button */}
-        <div style={{ margin: 0 }}>
+        {/* Desktop Enter Button */}
+        <div className="desktop-search-group" style={{ margin: 0 }}>
           <button
             className="btn btn-primary movie-button"
             style={{
@@ -247,7 +263,7 @@ export default function Navbar({ onSearchMovie, onHomeClick, initialQuery = '' }
           </button>
         </div>
 
-        <div style={{ color: 'white', fontSize: '18px', margin: '0 2px' }}> | </div>
+        <div className="desktop-search-group nav-separator" style={{ color: 'white', fontSize: '18px', margin: '0 2px' }}> | </div>
 
         {/* Home Navigation */}
         <div
@@ -259,7 +275,7 @@ export default function Navbar({ onSearchMovie, onHomeClick, initialQuery = '' }
             gap: '6px',
             backgroundColor: 'transparent',
             margin: 0,
-            padding: 0
+            padding: '4px 6px'
           }}
           onClick={() => {
             if (onHomeClick) {
@@ -267,16 +283,16 @@ export default function Navbar({ onSearchMovie, onHomeClick, initialQuery = '' }
             }
             navigate('/');
           }}
-          title="Back to Home Discovery"
+          title="Home"
         >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ verticalAlign: 'middle' }}>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
             <polyline points="9 22 9 12 15 12 15 22"></polyline>
           </svg>
           <p style={{ margin: 0, color: 'white', fontSize: '15px', fontWeight: 500 }}>Home</p>
         </div>
 
-        <div style={{ color: 'white', fontSize: '18px', margin: '0 2px' }}> | </div>
+        <div className="nav-separator" style={{ color: 'white', fontSize: '18px', margin: '0 2px' }}> | </div>
 
         {/* Watchlist Navigation */}
         <div
@@ -285,20 +301,19 @@ export default function Navbar({ onSearchMovie, onHomeClick, initialQuery = '' }
             cursor: 'pointer',
             display: 'flex',
             alignItems: 'center',
-            gap: '8px',
+            gap: '6px',
             backgroundColor: 'transparent',
             margin: 0,
-            padding: 0,
-            top: 0,
-            left: 0
+            padding: '4px 6px'
           }}
           onClick={() => navigate('/watchlist')}
+          title="WatchList"
         >
-          <img src="/images/add_bookmark.svg" width="24px" height="auto" alt="WatchList" style={{ filter: 'invert(1)' }} />
+          <img src="/images/add_bookmark.svg" width="22px" height="auto" alt="WatchList" style={{ filter: 'invert(1)' }} />
           <p style={{ margin: 0, color: 'white', fontSize: '15px' }}>WatchList</p>
         </div>
 
-        <div style={{ color: 'white', fontSize: '18px', margin: '0 2px' }}> | </div>
+        <div className="nav-separator" style={{ color: 'white', fontSize: '18px', margin: '0 2px' }}> | </div>
 
         {/* Genre-Wise Navigation */}
         <div
@@ -309,15 +324,16 @@ export default function Navbar({ onSearchMovie, onHomeClick, initialQuery = '' }
             fontSize: '15px',
             fontWeight: 500,
             margin: 0,
-            padding: 0,
+            padding: '4px 6px',
             position: 'static'
           }}
           onClick={() => navigate('/genres')}
+          title="Genre-Wise"
         >
           Genre-Wise
         </div>
 
-        <div style={{ color: 'white', fontSize: '18px', margin: '0 2px' }}> | </div>
+        <div className="nav-separator" style={{ color: 'white', fontSize: '18px', margin: '0 2px' }}> | </div>
 
         {/* Dark / Light Mode Toggle Button */}
         <div
@@ -326,12 +342,12 @@ export default function Navbar({ onSearchMovie, onHomeClick, initialQuery = '' }
             cursor: 'pointer',
             display: 'flex',
             alignItems: 'center',
-            gap: '6px',
+            gap: '5px',
             backgroundColor: isDark ? '#2e2e2e' : '#444444',
-            padding: '6px 12px',
+            padding: '6px 10px',
             borderRadius: '20px',
             color: 'white',
-            fontSize: '14px',
+            fontSize: '13px',
             fontWeight: 600,
             userSelect: 'none',
             transition: 'all 0.3s ease',
@@ -342,7 +358,142 @@ export default function Navbar({ onSearchMovie, onHomeClick, initialQuery = '' }
         >
           <span>{isDark ? '☀️ Light' : '🌙 Dark'}</span>
         </div>
+
+        {/* Mobile Search Icon Button (Visible only on mobile screens) */}
+        <div
+          className="mobile-search-btn"
+          onClick={() => setShowMobileSearch(true)}
+          style={{
+            cursor: 'pointer',
+            backgroundColor: '#e50914',
+            color: '#ffffff',
+            borderRadius: '50%',
+            width: '38px',
+            height: '38px',
+            display: 'none', // Managed by CSS media query
+            alignItems: 'center',
+            justifyContent: 'center',
+            boxShadow: '0 2px 10px rgba(229, 9, 20, 0.5)',
+            marginLeft: '4px'
+          }}
+          title="Search Movies"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </div>
       </nav>
+
+      {/* Mobile Search Overlay Drawer / Modal */}
+      {showMobileSearch && (
+        <div
+          className="mobile-search-overlay"
+          ref={mobileSearchRef}
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            right: 0,
+            zIndex: 10001,
+            backgroundColor: isDark ? '#1a1a1a' : '#ffffff',
+            boxShadow: '0 10px 30px rgba(0,0,0,0.5)',
+            padding: '16px 14px',
+            borderBottom: `2px solid #e50914`
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <div style={{ position: 'relative', flex: 1 }}>
+              <input
+                ref={mobileInputRef}
+                type="text"
+                className="form-control"
+                placeholder="Search movies (e.g. Avengers)..."
+                value={query}
+                onChange={handleInputChange}
+                onKeyDown={handleKeyDown}
+                style={{
+                  backgroundColor: isDark ? '#2a2a2a' : '#f0f0f0',
+                  color: isDark ? '#ffffff' : '#181818',
+                  borderColor: isDark ? '#444' : '#ccc',
+                  borderRadius: '25px',
+                  padding: '10px 16px',
+                  fontSize: '16px',
+                  width: '100%'
+                }}
+              />
+            </div>
+
+            <button
+              className="btn btn-danger"
+              onClick={handleSubmit}
+              disabled={!query.trim()}
+              style={{
+                backgroundColor: '#e50914',
+                borderColor: '#e50914',
+                borderRadius: '20px',
+                padding: '8px 16px',
+                fontWeight: 'bold',
+                fontSize: '14px'
+              }}
+            >
+              Search
+            </button>
+
+            <button
+              onClick={() => {
+                setShowMobileSearch(false);
+                setShowDropdown(false);
+              }}
+              style={{
+                background: 'none',
+                border: 'none',
+                color: isDark ? '#ffffff' : '#333333',
+                fontSize: '24px',
+                cursor: 'pointer',
+                padding: '0 6px',
+                lineHeight: 1
+              }}
+              title="Close Search"
+            >
+              ✕
+            </button>
+          </div>
+
+          {/* Mobile Search Real-Time Suggestions */}
+          {showDropdown && filteredSuggestions.length > 0 && (
+            <ul
+              style={{
+                maxHeight: '280px',
+                overflowY: 'auto',
+                backgroundColor: isDark ? '#222222' : '#ffffff',
+                margin: '12px 0 0 0',
+                padding: 0,
+                listStyle: 'none',
+                borderRadius: '10px',
+                border: `1px solid ${isDark ? '#333' : '#e0e0e0'}`,
+                boxShadow: '0 6px 20px rgba(0,0,0,0.3)'
+              }}
+            >
+              {filteredSuggestions.map((title, idx) => (
+                <li
+                  key={idx}
+                  onClick={() => handleSelect(title)}
+                  style={{
+                    padding: '12px 16px',
+                    borderBottom: `1px solid ${isDark ? '#2c2c2c' : '#f0f0f0'}`,
+                    color: isDark ? '#f0f0f0' : '#1a1a1a',
+                    fontSize: '15px',
+                    cursor: 'pointer'
+                  }}
+                >
+                  {renderHighlighted(title, query)}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      )}
     </div>
   );
 }
