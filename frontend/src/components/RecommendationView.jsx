@@ -251,10 +251,10 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
 
       {/* 2. Streaming Platforms & Video Section */}
       <div id="streaming-platforms" className="streaming-platforms-section">
-        <div id="video-section" style={{ marginTop: '30px', marginRight: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap', gap: '20px' }}>
+        <div id="video-section">
           {teaser && teaser !== 'None' && teaser.includes('embed/') && !teaser.endsWith('embed/') && (
             <div className="teaser movie-video-wrapper">
-              <h3 style={{ color: 'white', marginTop: '20px', fontSize: '18px' }}>🎥 Watch the Teaser</h3>
+              <h3 style={{ color: 'white', marginTop: '20px', marginBottom: '12px', fontSize: '18px', fontWeight: 'bold', textAlign: 'center' }}>🎥 Watch the Teaser</h3>
               <iframe
                 className="movie-video-iframe"
                 src={teaser}
@@ -267,7 +267,7 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
           )}
           {trailer && trailer !== 'None' && trailer.includes('embed/') && !trailer.endsWith('embed/') && (
             <div className="trailer movie-video-wrapper">
-              <h3 style={{ color: 'white', fontSize: '18px' }}>🎬 Watch the Trailer</h3>
+              <h3 style={{ color: 'white', marginTop: '20px', marginBottom: '12px', fontSize: '18px', fontWeight: 'bold', textAlign: 'center' }}>🎬 Watch the Trailer</h3>
               <iframe
                 className="movie-video-iframe"
                 src={trailer}

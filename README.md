@@ -1,4 +1,4 @@
-# 🎬 Movie Recommendation System (React + Flask)
+# Movie Recommendation System (React + Flask)
 
 A machine-learning and NLP-powered Movie Recommendation web application with a modern React SPA frontend and a high-performance Flask REST API backend.
 
