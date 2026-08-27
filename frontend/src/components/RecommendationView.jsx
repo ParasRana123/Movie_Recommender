@@ -658,7 +658,7 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
                     src={m.poster || 'https://via.placeholder.com/240x360?text=No+Poster'}
                   />
                   <figcaption className="fig">
-                    <button className="card-btn btn btn-danger"> Click Me </button>
+                    <button className="card-btn btn btn-danger"> Explore Movie </button>
                   </figcaption>
                 </div>
                 <div className="card-body" style={{ padding: '14px 10px', textAlign: 'center' }}>

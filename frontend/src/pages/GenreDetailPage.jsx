@@ -81,11 +81,19 @@ export default function GenreDetailPage() {
                 onClick={() => navigate(`/movie/${encodeURIComponent(m.title)}`)}
                 title={m.title}
               >
-                <img
-                  src={m.poster || 'https://via.placeholder.com/240x320?text=No+Poster'}
-                  alt={`${m.title} poster`}
-                />
-                {m.vote_average && m.vote_average !== 'N/A' && (
+                <div className="imghvr">
+                  <img
+                    src={m.poster || 'https://via.placeholder.com/240x320?text=No+Poster'}
+                    alt={`${m.title} poster`}
+                    onError={(e) => { e.target.src = 'https://via.placeholder.com/240x320?text=No+Poster'; }}
+                  />
+                  <figcaption className="fig">
+                    <button className="card-btn btn btn-danger" style={{ backgroundColor: '#e50914', borderColor: '#e50914', fontWeight: 'bold' }}>
+                      Explore Movie
+                    </button>
+                  </figcaption>
+                </div>
+                {m.vote_average && m.vote_average !== 'N/A' && m.vote_average !== 0 && m.vote_average !== '0' && (
                   <p>★ {m.vote_average}</p>
                 )}
                 <h3>{m.title}</h3>

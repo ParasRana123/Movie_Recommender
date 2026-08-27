@@ -219,6 +219,7 @@ h6 {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	background: rgba(0, 0, 0, 0.65);
 	backdrop-filter: brightness(50%);
 	position: absolute;
 	bottom: 0px;
@@ -226,17 +227,20 @@ h6 {
 	right: 0px;
 	left: 0px;
 	opacity: 0;
-	-moz-transition: all 0.75s ease;
-    -webkit-transition: all 0.75s ease;
-    transition: all 0.75s ease;
+	-moz-transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
 }
 
-.fig:hover {
+.fig:hover,
+.imghvr:hover .fig,
+.movie-card:hover .fig,
+.card:hover .fig {
 	opacity: 1;
-	backdrop-filter:br;
-	-moz-transition: all 0.75s ease;
-    -webkit-transition: all 0.75s ease;
-    transition: all 0.75s ease;
+	backdrop-filter: brightness(40%);
+	-moz-transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
 }
 
 .img {
