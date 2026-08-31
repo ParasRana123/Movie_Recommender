@@ -26,9 +26,9 @@ export const getUserWatchlist = async (req, res, next) => {
     });
 
     if (!user) {
-      return res.status(404).json({
-        success: false,
-        error: 'User not found in database.',
+      return res.status(200).json({
+        success: true,
+        data: [],
       });
     }
 
@@ -57,23 +57,45 @@ export const addToWatchlist = async (req, res, next) => {
       });
     }
 
-    const { movieId, movieTitle, posterPath, releaseYear, voteAverage, genres } = req.body;
+    const body = req.body || {};
+    const movieTitle = body.movieTitle || body.title || body.name;
+    const movieId = String(body.movieId || body.id || movieTitle || '');
+    const posterPath = body.posterPath || body.poster || body.poster_path || null;
+    const releaseYear = body.releaseYear || body.release_date || body.date || body.year || null;
+    const voteAverageRaw = body.voteAverage !== undefined ? body.voteAverage : (body.rating !== undefined ? body.rating : body.vote_average);
+    const voteAverage = voteAverageRaw !== undefined && !isNaN(Number(voteAverageRaw)) ? Number(voteAverageRaw) : null;
+    
+    let genres = [];
+    if (Array.isArray(body.genres)) {
+      genres = body.genres;
+    } else if (typeof body.genres === 'string') {
+      genres = body.genres.split(',').map((g) => g.trim()).filter(Boolean);
+    }
 
-    if (!movieId || !movieTitle) {
+    if (!movieTitle) {
       return res.status(400).json({
         success: false,
-        error: 'movieId and movieTitle are required.',
+        error: 'Movie title is required.',
       });
     }
 
-    const user = await prisma.user.findUnique({
+    // Ensure user exists in database
+    let user = await prisma.user.findUnique({
       where: { clerkId },
     });
 
     if (!user) {
-      return res.status(404).json({
-        success: false,
-        error: 'User not found in database. Please sync first.',
+      user = await prisma.user.create({
+        data: {
+          clerkId,
+          email: `${clerkId}@clerk.user`,
+          preferences: {
+            create: {
+              theme: 'dark',
+              favoriteGenres: [],
+            },
+          },
+        },
       });
     }
 
@@ -81,30 +103,32 @@ export const addToWatchlist = async (req, res, next) => {
       where: {
         userId_movieId: {
           userId: user.id,
-          movieId: String(movieId),
+          movieId,
         },
       },
       update: {
         movieTitle,
-        posterPath: posterPath || null,
+        posterPath: posterPath ? String(posterPath) : null,
         releaseYear: releaseYear ? String(releaseYear) : null,
-        voteAverage: voteAverage !== undefined ? Number(voteAverage) : null,
-        genres: Array.isArray(genres) ? genres : [],
+        voteAverage,
+        genres,
       },
       create: {
         userId: user.id,
-        movieId: String(movieId),
+        movieId,
         movieTitle,
-        posterPath: posterPath || null,
+        posterPath: posterPath ? String(posterPath) : null,
         releaseYear: releaseYear ? String(releaseYear) : null,
-        voteAverage: voteAverage !== undefined ? Number(voteAverage) : null,
-        genres: Array.isArray(genres) ? genres : [],
+        voteAverage,
+        genres,
       },
     });
 
+    console.log(`[Watchlist] ✅ Saved "${movieTitle}" for user ${clerkId} in PostgreSQL.`);
+
     return res.status(201).json({
       success: true,
-      message: 'Movie added to watchlist.',
+      message: 'Movie added to database watchlist.',
       data: item,
     });
   } catch (error) {
@@ -135,22 +159,29 @@ export const removeFromWatchlist = async (req, res, next) => {
     });
 
     if (!user) {
-      return res.status(404).json({
-        success: false,
-        error: 'User not found in database.',
+      return res.status(200).json({
+        success: true,
+        message: 'No watchlist to remove from.',
       });
     }
+
+    const decodedParam = decodeURIComponent(movieId);
 
     await prisma.watchlistItem.deleteMany({
       where: {
         userId: user.id,
-        movieId: String(movieId),
+        OR: [
+          { movieId: decodedParam },
+          { movieTitle: { equals: decodedParam, mode: 'insensitive' } },
+        ],
       },
     });
 
+    console.log(`[Watchlist] 🗑️ Removed "${decodedParam}" for user ${clerkId} from PostgreSQL.`);
+
     return res.status(200).json({
       success: true,
-      message: 'Movie removed from watchlist.',
+      message: 'Movie removed from database watchlist.',
     });
   } catch (error) {
     console.error('Error removing from watchlist:', error);
