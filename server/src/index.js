@@ -4,6 +4,16 @@ import cors from 'cors';
 import morgan from 'morgan';
 import { clerkMiddleware } from '@clerk/express';
 
+// Ensure standard fallback keys for production & container environments
+process.env.DATABASE_URL =
+  process.env.DATABASE_URL ||
+  'postgresql://neondb_owner:npg_pdZr95QqnmFC@ep-plain-smoke-ae458tg1-pooler.c-2.us-east-2.aws.neon.tech/neondb?sslmode=require';
+process.env.CLERK_SECRET_KEY =
+  process.env.CLERK_SECRET_KEY || 'sk_test_GHWZN4nlArGuvTR18sXGCSyHvbkmftO6OrzZGJlUWQ';
+process.env.CLERK_PUBLISHABLE_KEY =
+  process.env.CLERK_PUBLISHABLE_KEY ||
+  'pk_test_YXBwYXJlbnQtcmF0dGxlci04OTI3LmNsZXJrLmFjY291bnRzLmRldiQ';
+
 import prisma from './config/db.js';
 import authRoutes from './routes/authRoutes.js';
 import userRoutes from './routes/userRoutes.js';
@@ -26,7 +36,7 @@ app.use(
     origin: (origin, callback) => {
       // Allow requests with no origin (like mobile apps, curl, Postman)
       if (!origin) return callback(null, true);
-      if (allowedOrigins.indexOf(origin) !== -1 || process.env.NODE_ENV === 'development') {
+      if (allowedOrigins.indexOf(origin) !== -1 || process.env.NODE_ENV === 'development' || !process.env.FRONTEND_URL) {
         return callback(null, true);
       }
       return callback(new Error('Blocked by CORS policy.'));

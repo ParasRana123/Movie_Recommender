@@ -1,5 +1,5 @@
 services:
-  # 1. Backend Flask API Web Service
+  # 1. Recommendation Flask Backend API Service
   - type: web
     name: movie-recommender-backend
     runtime: python
@@ -14,7 +14,24 @@ services:
       - key: TMDB_API_KEY
         value: fce0af3409e6113c9b3c75aaf49341bb
 
-  # 2. Frontend React Vite Static Site
+  # 2. Authentication Express + Prisma + PostgreSQL Backend Service
+  - type: web
+    name: movie-recommender-auth
+    runtime: node
+    buildCommand: cd server && npm install && npx prisma generate
+    startCommand: cd server && node src/index.js
+    plan: free
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        value: postgresql://neondb_owner:npg_pdZr95QqnmFC@ep-plain-smoke-ae458tg1-pooler.c-2.us-east-2.aws.neon.tech/neondb?sslmode=require
+      - key: CLERK_PUBLISHABLE_KEY
+        value: pk_test_YXBwYXJlbnQtcmF0dGxlci04OTI3LmNsZXJrLmFjY291bnRzLmRldiQ
+      - key: CLERK_SECRET_KEY
+        value: sk_test_GHWZN4nlArGuvTR18sXGCSyHvbkmftO6OrzZGJlUWQ
+
+  # 3. Frontend React Vite Static Site
   - type: web
     name: movie-recommender-frontend
     runtime: static
@@ -30,3 +47,10 @@ services:
           type: web
           name: movie-recommender-backend
           property: host
+      - key: VITE_AUTH_API_URL
+        fromService:
+          type: web
+          name: movie-recommender-auth
+          property: host
+      - key: VITE_CLERK_PUBLISHABLE_KEY
+        value: pk_test_YXBwYXJlbnQtcmF0dGxlci04OTI3LmNsZXJrLmFjY291bnRzLmRldiQ

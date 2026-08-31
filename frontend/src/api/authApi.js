@@ -20,7 +20,10 @@ export async function syncUserWithBackend(getToken, clerkUser) {
   if (!clerkUser) return null;
   try {
     const headers = await getAuthHeaders(getToken);
-    const primaryEmail = clerkUser.primaryEmailAddress?.emailAddress || clerkUser.emailAddresses?.[0]?.emailAddress;
+    const primaryEmail =
+      clerkUser.primaryEmailAddress?.emailAddress ||
+      clerkUser.emailAddresses?.[0]?.emailAddress ||
+      (clerkUser.id ? `${clerkUser.id}@clerk.user` : 'user@clerk.user');
 
     const payload = {
       email: primaryEmail,
@@ -38,12 +41,14 @@ export async function syncUserWithBackend(getToken, clerkUser) {
 
     if (!res.ok) {
       const errorData = await res.json().catch(() => ({}));
-      throw new Error(errorData.error || 'Failed to sync user with backend');
+      throw new Error(errorData.error || `HTTP ${res.status}: Failed to sync user`);
     }
 
-    return await res.json();
+    const data = await res.json();
+    console.log('✅ [PostgreSQL Sync]: User profile synced successfully:', data);
+    return data;
   } catch (err) {
-    console.error('Error in syncUserWithBackend:', err);
+    console.warn(`⚠️ [PostgreSQL Sync]: Express Auth Backend unreachable at ${AUTH_API_BASE} (${err.message}). If running locally, start the server with "npm run dev" inside /server. If in production, ensure your Express backend is deployed and VITE_AUTH_API_URL is configured.`);
     return null;
   }
 }

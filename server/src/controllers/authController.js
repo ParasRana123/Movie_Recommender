@@ -18,19 +18,13 @@ export const syncUser = async (req, res, next) => {
     }
 
     const { email, firstName, lastName, username, imageUrl } = req.body;
-
-    if (!email) {
-      return res.status(400).json({
-        success: false,
-        error: 'Email is required to sync user with database.',
-      });
-    }
+    const userEmail = email || req.body?.emailAddress || `${clerkId}@clerk.user`;
 
     // Upsert user in Postgres
     const user = await prisma.user.upsert({
       where: { clerkId },
       update: {
-        email,
+        email: userEmail,
         firstName: firstName || null,
         lastName: lastName || null,
         username: username || null,
@@ -38,7 +32,7 @@ export const syncUser = async (req, res, next) => {
       },
       create: {
         clerkId,
-        email,
+        email: userEmail,
         firstName: firstName || null,
         lastName: lastName || null,
         username: username || null,
@@ -58,13 +52,15 @@ export const syncUser = async (req, res, next) => {
       },
     });
 
+    console.log(`[Auth Sync] ✅ Synced user ${clerkId} (${userEmail}) into PostgreSQL database.`);
+
     return res.status(200).json({
       success: true,
       message: 'User synchronized successfully with PostgreSQL database.',
       data: user,
     });
   } catch (error) {
-    console.error('Error syncing user:', error);
+    console.error('Error syncing user in database:', error);
     next(error);
   }
 };
