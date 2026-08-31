@@ -1,13 +1,20 @@
 import prisma from '../config/db.js';
-import { getAuth } from '@clerk/express';
+import { getClerkAuth } from '../middleware/auth.js';
 
 /**
  * Get the authenticated user's watchlist from PostgreSQL
  */
 export const getUserWatchlist = async (req, res, next) => {
   try {
-    const auth = getAuth(req);
-    const clerkId = auth?.userId;
+    const auth = getClerkAuth(req);
+    const clerkId = req.clerkUserId || auth?.userId;
+
+    if (!clerkId) {
+      return res.status(401).json({
+        success: false,
+        error: 'Unauthorized: Missing Clerk session token.',
+      });
+    }
 
     const user = await prisma.user.findUnique({
       where: { clerkId },
@@ -40,8 +47,15 @@ export const getUserWatchlist = async (req, res, next) => {
  */
 export const addToWatchlist = async (req, res, next) => {
   try {
-    const auth = getAuth(req);
-    const clerkId = auth?.userId;
+    const auth = getClerkAuth(req);
+    const clerkId = req.clerkUserId || auth?.userId;
+
+    if (!clerkId) {
+      return res.status(401).json({
+        success: false,
+        error: 'Unauthorized: Missing Clerk session token.',
+      });
+    }
 
     const { movieId, movieTitle, posterPath, releaseYear, voteAverage, genres } = req.body;
 
@@ -104,8 +118,16 @@ export const addToWatchlist = async (req, res, next) => {
  */
 export const removeFromWatchlist = async (req, res, next) => {
   try {
-    const auth = getAuth(req);
-    const clerkId = auth?.userId;
+    const auth = getClerkAuth(req);
+    const clerkId = req.clerkUserId || auth?.userId;
+
+    if (!clerkId) {
+      return res.status(401).json({
+        success: false,
+        error: 'Unauthorized: Missing Clerk session token.',
+      });
+    }
+
     const { movieId } = req.params;
 
     const user = await prisma.user.findUnique({

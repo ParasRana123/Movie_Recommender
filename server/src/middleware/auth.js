@@ -2,11 +2,26 @@ import { getAuth } from '@clerk/express';
 import prisma from '../config/db.js';
 
 /**
+ * Safe helper to extract Clerk authentication object without mutating req.auth
+ */
+export const getClerkAuth = (req) => {
+  try {
+    if (typeof req.auth === 'function') {
+      return req.auth();
+    }
+    return getAuth(req);
+  } catch (err) {
+    console.error('Error resolving Clerk auth:', err.message);
+    return null;
+  }
+};
+
+/**
  * Middleware to enforce authentication using Clerk.
  * If user is not authenticated, returns 401 Unauthorized.
  */
 export const requireUserAuth = (req, res, next) => {
-  const auth = getAuth(req);
+  const auth = getClerkAuth(req);
 
   if (!auth || !auth.userId) {
     return res.status(401).json({
@@ -15,7 +30,8 @@ export const requireUserAuth = (req, res, next) => {
     });
   }
 
-  req.auth = auth;
+  req.clerkUserId = auth.userId;
+  req.clerkAuthData = auth;
   next();
 };
 
@@ -25,15 +41,16 @@ export const requireUserAuth = (req, res, next) => {
  */
 export const attachDbUser = async (req, res, next) => {
   try {
-    const auth = getAuth(req);
-    if (!auth || !auth.userId) {
+    const auth = getClerkAuth(req);
+    const clerkId = req.clerkUserId || auth?.userId;
+
+    if (!clerkId) {
       return res.status(401).json({
         success: false,
         error: 'Unauthorized: No active session found.',
       });
     }
 
-    const clerkId = auth.userId;
     let user = await prisma.user.findUnique({
       where: { clerkId },
       include: {

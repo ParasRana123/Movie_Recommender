@@ -1,5 +1,5 @@
 import prisma from '../config/db.js';
-import { getAuth } from '@clerk/express';
+import { getClerkAuth } from '../middleware/auth.js';
 
 /**
  * Syncs the authenticated Clerk user with PostgreSQL database.
@@ -7,8 +7,8 @@ import { getAuth } from '@clerk/express';
  */
 export const syncUser = async (req, res, next) => {
   try {
-    const auth = getAuth(req);
-    const clerkId = auth?.userId;
+    const auth = getClerkAuth(req);
+    const clerkId = req.clerkUserId || auth?.userId;
 
     if (!clerkId) {
       return res.status(401).json({
@@ -70,8 +70,8 @@ export const syncUser = async (req, res, next) => {
  */
 export const getMe = async (req, res, next) => {
   try {
-    const auth = getAuth(req);
-    const clerkId = auth?.userId;
+    const auth = getClerkAuth(req);
+    const clerkId = req.clerkUserId || auth?.userId;
 
     if (!clerkId) {
       return res.status(401).json({
@@ -116,8 +116,8 @@ export const getMe = async (req, res, next) => {
  */
 export const updatePreferences = async (req, res, next) => {
   try {
-    const auth = getAuth(req);
-    const clerkId = auth?.userId;
+    const auth = getClerkAuth(req);
+    const clerkId = req.clerkUserId || auth?.userId;
 
     if (!clerkId) {
       return res.status(401).json({
