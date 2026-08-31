@@ -64,6 +64,23 @@ app.use(express.urlencoded({ extended: true }));
 // Global Clerk middleware for session detection
 app.use(clerkMiddleware());
 
+// Root Welcome Endpoint
+app.get('/', (req, res) => {
+  res.status(200).json({
+    message: '🚀 Movie Recommender Express Auth Backend is running on Vercel!',
+    status: 'online',
+    healthCheck: '/api/health',
+    endpoints: {
+      health: 'GET /api/health',
+      syncUser: 'POST /api/auth/sync',
+      currentUser: 'GET /api/auth/me',
+      preferences: 'PUT /api/auth/preferences',
+      watchlist: 'GET /api/user/watchlist',
+      webhooks: 'POST /api/webhooks/clerk',
+    },
+  });
+});
+
 // Health Check Endpoint
 app.get('/api/health', async (req, res) => {
   try {
