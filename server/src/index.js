@@ -95,26 +95,28 @@ app.use('/api/webhooks', webhookRoutes);
 app.use(notFoundHandler);
 app.use(errorHandler);
 
-// Server Listen
-const server = app.listen(PORT, () => {
-  console.log(`=============================================`);
-  console.log(`🚀 Express Auth Backend running on port ${PORT}`);
-  console.log(`📡 Health check: http://localhost:${PORT}/api/health`);
-  console.log(`🔐 Clerk Auth & Prisma PostgreSQL connected`);
-  console.log(`=============================================`);
-});
-
-// Graceful shutdown
-const shutdown = async () => {
-  console.log('\nGracefully shutting down server...');
-  server.close(async () => {
-    await prisma.$disconnect();
-    console.log('PostgreSQL connection closed.');
-    process.exit(0);
+// Server Listen (only in standalone Node environments)
+if (!process.env.VERCEL) {
+  const server = app.listen(PORT, () => {
+    console.log(`=============================================`);
+    console.log(`🚀 Express Auth Backend running on port ${PORT}`);
+    console.log(`📡 Health check: http://localhost:${PORT}/api/health`);
+    console.log(`🔐 Clerk Auth & Prisma PostgreSQL connected`);
+    console.log(`=============================================`);
   });
-};
 
-process.on('SIGINT', shutdown);
-process.on('SIGTERM', shutdown);
+  // Graceful shutdown
+  const shutdown = async () => {
+    console.log('\nGracefully shutting down server...');
+    server.close(async () => {
+      await prisma.$disconnect();
+      console.log('PostgreSQL connection closed.');
+      process.exit(0);
+    });
+  };
+
+  process.on('SIGINT', shutdown);
+  process.on('SIGTERM', shutdown);
+}
 
 export default app;
