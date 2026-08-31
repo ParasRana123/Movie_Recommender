@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from '@clerk/clerk-react';
 import localSuggestions from '../data/suggestions.json';
 import { fetchSuggestions } from '../api/movieApi';
 import { useTheme } from '../context/ThemeContext';
@@ -372,6 +373,74 @@ export default function Navbar({ onSearchMovie, onHomeClick, initialQuery = '' }
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
             </svg>
           )}
+        </div>
+
+        <div className="nav-separator" style={{ color: 'white', fontSize: '18px', margin: '0 2px' }}> | </div>
+
+        {/* Clerk Authentication Controls */}
+        <div className="auth-nav-container" style={{ display: 'flex', alignItems: 'center', margin: 0 }}>
+          <SignedOut>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <SignInButton mode="modal">
+                <button
+                  type="button"
+                  style={{
+                    backgroundColor: 'transparent',
+                    border: isDark ? '1px solid #4a4a4a' : '1px solid rgba(255,255,255,0.6)',
+                    color: '#ffffff',
+                    padding: '5px 12px',
+                    borderRadius: '5px',
+                    fontSize: '14px',
+                    fontWeight: 500,
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease',
+                    whiteSpace: 'nowrap'
+                  }}
+                  className="auth-btn-signin"
+                >
+                  Sign In
+                </button>
+              </SignInButton>
+              <SignUpButton mode="modal">
+                <button
+                  type="button"
+                  style={{
+                    backgroundColor: '#e50914',
+                    border: '1px solid #e50914',
+                    color: '#ffffff',
+                    padding: '5px 12px',
+                    borderRadius: '5px',
+                    fontSize: '14px',
+                    fontWeight: 600,
+                    cursor: 'pointer',
+                    boxShadow: '0 2px 6px rgba(229, 9, 20, 0.35)',
+                    transition: 'all 0.2s ease',
+                    whiteSpace: 'nowrap'
+                  }}
+                  className="auth-btn-signup"
+                >
+                  Sign Up
+                </button>
+              </SignUpButton>
+            </div>
+          </SignedOut>
+
+          <SignedIn>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <UserButton
+                afterSignOutUrl="/"
+                appearance={{
+                  elements: {
+                    avatarBox: {
+                      width: '32px',
+                      height: '32px',
+                      border: '2px solid #e50914'
+                    }
+                  }
+                }}
+              />
+            </div>
+          </SignedIn>
         </div>
 
         {/* Mobile Search Icon Button (Clean icon with no red circular background) */}
