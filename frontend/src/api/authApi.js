@@ -8,7 +8,24 @@ const AUTH_API_BASE = import.meta.env.VITE_AUTH_API_URL
  * Helper to build auth headers with Clerk JWT token
  */
 async function getAuthHeaders(getToken) {
-  const token = typeof getToken === 'function' ? await getToken() : getToken;
+  let token = null;
+  if (typeof getToken === 'function') {
+    try {
+      token = await getToken();
+    } catch (e) {
+      console.warn('Error getting Clerk token:', e);
+    }
+  } else if (typeof getToken === 'string') {
+    token = getToken;
+  }
+
+  // Fallback to window.Clerk session if available
+  if (!token && typeof window !== 'undefined' && window.Clerk?.session) {
+    try {
+      token = await window.Clerk.session.getToken();
+    } catch (e) {}
+  }
+
   return {
     'Content-Type': 'application/json',
     ...(token ? { Authorization: `Bearer ${token}` } : {}),
@@ -41,16 +58,15 @@ export async function syncUserWithBackend(getToken, clerkUser) {
       body: JSON.stringify(payload),
     });
 
+    const data = await res.json().catch(() => ({}));
     if (!res.ok) {
-      const errorData = await res.json().catch(() => ({}));
-      throw new Error(errorData.error || `HTTP ${res.status}: Failed to sync user`);
+      throw new Error(data.error || `HTTP ${res.status}: Failed to sync user`);
     }
 
-    const data = await res.json();
     console.log('✅ [PostgreSQL Sync]: User profile synced successfully:', data);
     return data;
   } catch (err) {
-    console.warn(`⚠️ [PostgreSQL Sync]: Express Auth Backend unreachable at ${AUTH_API_BASE} (${err.message}). If running locally, start the server with "npm run dev" inside /server. If in production, ensure your Express backend is deployed and VITE_AUTH_API_URL is configured.`);
+    console.warn(`⚠️ [PostgreSQL Sync]: Express Auth Backend unreachable at ${AUTH_API_BASE} (${err.message}).`);
     return null;
   }
 }
@@ -66,11 +82,12 @@ export async function fetchCurrentUser(getToken) {
       headers,
     });
 
+    const data = await res.json().catch(() => ({}));
     if (!res.ok) {
-      throw new Error('Failed to fetch user profile');
+      throw new Error(data.error || `HTTP ${res.status}: Failed to fetch user profile`);
     }
 
-    return await res.json();
+    return data;
   } catch (err) {
     console.error('Error in fetchCurrentUser:', err);
     return null;
@@ -89,8 +106,9 @@ export async function updateUserPreferences(getToken, preferences) {
       body: JSON.stringify(preferences),
     });
 
-    if (!res.ok) throw new Error('Failed to update preferences');
-    return await res.json();
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) throw new Error(data.error || 'Failed to update preferences');
+    return data;
   } catch (err) {
     console.error('Error in updateUserPreferences:', err);
     throw err;
@@ -103,13 +121,16 @@ export async function updateUserPreferences(getToken, preferences) {
 export async function fetchDbWatchlist(getToken) {
   try {
     const headers = await getAuthHeaders(getToken);
+    // If no auth token is present, user is signed out
+    if (!headers.Authorization) return [];
+
     const res = await fetch(`${AUTH_API_BASE}/user/watchlist`, {
       method: 'GET',
       headers,
     });
 
-    if (!res.ok) throw new Error('Failed to fetch watchlist from database');
-    const data = await res.json();
+    if (!res.ok) return [];
+    const data = await res.json().catch(() => ({}));
     return data.data || [];
   } catch (err) {
     console.error('Error in fetchDbWatchlist:', err);
@@ -123,14 +144,23 @@ export async function fetchDbWatchlist(getToken) {
 export async function addMovieToDbWatchlist(getToken, movie) {
   try {
     const headers = await getAuthHeaders(getToken);
+    if (!headers.Authorization) {
+      // User is not signed in; stored locally only
+      return null;
+    }
+
     const res = await fetch(`${AUTH_API_BASE}/user/watchlist`, {
       method: 'POST',
       headers,
       body: JSON.stringify(movie),
     });
 
-    if (!res.ok) throw new Error('Failed to add movie to database watchlist');
-    return await res.json();
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      throw new Error(data.error || `HTTP ${res.status}: Failed to add movie`);
+    }
+
+    return data;
   } catch (err) {
     console.error('Error in addMovieToDbWatchlist:', err);
     throw err;
@@ -143,13 +173,21 @@ export async function addMovieToDbWatchlist(getToken, movie) {
 export async function removeMovieFromDbWatchlist(getToken, movieId) {
   try {
     const headers = await getAuthHeaders(getToken);
+    if (!headers.Authorization) {
+      return null;
+    }
+
     const res = await fetch(`${AUTH_API_BASE}/user/watchlist/${encodeURIComponent(movieId)}`, {
       method: 'DELETE',
       headers,
     });
 
-    if (!res.ok) throw new Error('Failed to remove movie from database watchlist');
-    return await res.json();
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      throw new Error(data.error || `HTTP ${res.status}: Failed to remove movie`);
+    }
+
+    return data;
   } catch (err) {
     console.error('Error in removeMovieFromDbWatchlist:', err);
     throw err;

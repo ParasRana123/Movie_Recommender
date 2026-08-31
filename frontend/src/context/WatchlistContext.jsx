@@ -34,7 +34,7 @@ export function WatchlistProvider({ children }) {
     let mounted = true;
 
     async function loadDbWatchlist() {
-      if (isSignedIn && getToken) {
+      if (isSignedIn || (typeof window !== 'undefined' && window.Clerk?.session)) {
         try {
           const dbItems = await fetchDbWatchlist(getToken);
           if (mounted && Array.isArray(dbItems) && dbItems.length > 0) {
@@ -109,23 +109,27 @@ export function WatchlistProvider({ children }) {
       return [movieObj, ...prev];
     });
 
-    // Asynchronously persist to PostgreSQL database if user is signed in
-    if (isSignedIn && getToken) {
-      addMovieToDbWatchlist(getToken, {
-        movieId: movie.title,
-        movieTitle: movie.title,
-        posterPath: movieObj.poster,
-        releaseYear: movieObj.release_date,
-        voteAverage: movieObj.rating !== 'N/A' ? Number(movieObj.rating) : null,
-        genres: typeof movieObj.genres === 'string' ? movieObj.genres.split(',').map((s) => s.trim()) : [],
-      })
-        .then((res) => {
+    // Persist to PostgreSQL database
+    const payload = {
+      movieId: movie.title,
+      movieTitle: movie.title,
+      posterPath: movieObj.poster,
+      releaseYear: movieObj.release_date,
+      voteAverage: movieObj.rating !== 'N/A' && !isNaN(Number(movieObj.rating)) ? Number(movieObj.rating) : null,
+      genres: typeof movieObj.genres === 'string'
+        ? movieObj.genres.split(',').map((s) => s.trim()).filter(Boolean)
+        : (Array.isArray(movieObj.genres) ? movieObj.genres : []),
+    };
+
+    addMovieToDbWatchlist(getToken, payload)
+      .then((res) => {
+        if (res) {
           console.log(`✅ [NeonDB] Added "${movie.title}" to PostgreSQL watchlist table:`, res);
-        })
-        .catch((err) => {
-          console.warn(`⚠️ [NeonDB] Could not sync watchlist item to backend:`, err.message);
-        });
-    }
+        }
+      })
+      .catch((err) => {
+        console.warn(`⚠️ [NeonDB] Could not sync watchlist item to backend:`, err.message);
+      });
   };
 
   const removeFromWatchlist = (title) => {
@@ -134,16 +138,16 @@ export function WatchlistProvider({ children }) {
     setWatchlist((prev) => prev.filter((m) => m.title && m.title.toLowerCase() !== title.toLowerCase()));
     showToast(`Removed from Watchlist!`);
 
-    // Asynchronously remove from PostgreSQL database if user is signed in
-    if (isSignedIn && getToken) {
-      removeMovieFromDbWatchlist(getToken, title)
-        .then((res) => {
+    // Remove from PostgreSQL database
+    removeMovieFromDbWatchlist(getToken, title)
+      .then((res) => {
+        if (res) {
           console.log(`✅ [NeonDB] Removed "${title}" from PostgreSQL watchlist table:`, res);
-        })
-        .catch((err) => {
-          console.warn(`⚠️ [NeonDB] Could not remove watchlist item from backend:`, err.message);
-        });
-    }
+        }
+      })
+      .catch((err) => {
+        console.warn(`⚠️ [NeonDB] Could not remove watchlist item from backend:`, err.message);
+      });
   };
 
   const isInWatchlist = (title) => {
