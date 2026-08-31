@@ -1,0 +1,53 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String          @id @default(uuid())
+  clerkId      String          @unique @map("clerk_id")
+  email        String          @unique
+  firstName    String?         @map("first_name")
+  lastName     String?         @map("last_name")
+  username     String?
+  imageUrl     String?         @map("image_url")
+  createdAt    DateTime        @default(now()) @map("created_at")
+  updatedAt    DateTime        @updatedAt @map("updated_at")
+  
+  // Relations
+  watchlist    WatchlistItem[]
+  preferences  UserPreference?
+
+  @@map("users")
+}
+
+model UserPreference {
+  id             String   @id @default(uuid())
+  userId         String   @unique @map("user_id")
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  favoriteGenres String[] @default([]) @map("favorite_genres")
+  theme          String   @default("dark")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+
+  @@map("user_preferences")
+}
+
+model WatchlistItem {
+  id          String   @id @default(uuid())
+  userId      String   @map("user_id")
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  movieId     String   @map("movie_id")
+  movieTitle  String   @map("movie_title")
+  posterPath  String?  @map("poster_path")
+  releaseYear String?  @map("release_year")
+  voteAverage Float?   @map("vote_average")
+  genres      String[] @default([])
+  addedAt     DateTime @default(now()) @map("added_at")
+
+  @@unique([userId, movieId])
+  @@map("watchlist_items")
+}
