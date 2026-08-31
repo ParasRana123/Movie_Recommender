@@ -1,6 +1,8 @@
 const AUTH_API_BASE = import.meta.env.VITE_AUTH_API_URL 
   ? `${import.meta.env.VITE_AUTH_API_URL.replace(/\/$/, '')}/api` 
-  : 'http://localhost:5001/api';
+  : (typeof window !== 'undefined' && window.location.hostname !== 'localhost'
+      ? 'https://movie-recommender-bcaj.vercel.app/api'
+      : 'http://localhost:5001/api');
 
 /**
  * Helper to build auth headers with Clerk JWT token
