@@ -98,6 +98,8 @@ export function WatchlistProvider({ children }) {
       vote_count: movie.vote_count || movie.count || '',
       overview: movie.overview || '',
       genres: movie.genres || '',
+      director: movie.director || movie.director_name || '',
+      casts: movie.casts || movie.stars || movie.cast || [],
     };
 
     setWatchlist((prev) => {

@@ -74,7 +74,12 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
         poster,
         rating: vote_average,
         release_date,
-        genres: genres_str || (Array.isArray(genres) ? genres.join(', ') : genres)
+        runtime,
+        status,
+        overview,
+        genres: genres_str || (Array.isArray(genres) ? genres.join(', ') : genres),
+        director: director_name,
+        casts: castsList.map(c => typeof c === 'string' ? c : (c.name || '')).filter(Boolean)
       });
     }
   };

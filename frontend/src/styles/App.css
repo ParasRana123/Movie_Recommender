@@ -919,114 +919,173 @@ figcaption.img:hover {
     text-align: center;
 }
 
-.your_watchlist h1 {
-    color: #e50914;
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 12px;
+.your_watchlist {
+    width: 100%;
+    max-width: 1100px;
+    padding: 35px 20px 60px 20px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    text-align: center;
 }
 
-.your_watchlist p {
-    color: #b3b3b3;
-    font-size: 16px;
-    max-width: 700px;
-    margin: 0 auto 25px auto;
+.your_watchlist h1 {
+    color: #e50914;
+    font-size: 34px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.your_watchlist p.watchlist-subtitle {
+    color: var(--text-primary);
+    opacity: 0.75;
+    font-size: 15px;
+    max-width: 640px;
+    margin: 0 auto 30px auto;
+    line-height: 1.5;
 }
 
 #watchlist-container {
-    max-width: 1200px;
+    max-width: 1050px;
     margin: 0 auto;
-    padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
 }
 
+/* Watchlist Item Card (IMDb-style layout adapted to theme) */
 .watchlist-card {
     display: flex;
-    gap: 25px;
-    background-color: #1f1f1f;
-    border: 1px solid #333333;
-    border-radius: 14px;
-    padding: 18px;
+    gap: 20px;
+    align-items: flex-start;
+    background-color: var(--card-bg, #1a1a1a);
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+    border-radius: 12px;
+    padding: 16px 20px;
     position: relative;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 14px var(--card-shadow, rgba(0, 0, 0, 0.3));
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     text-align: left;
+    box-sizing: border-box;
+}
+
+[data-theme="dark"] .watchlist-card {
+    background-color: #1a1a1a;
+    border: 1px solid #2e2e2e;
+}
+
+:root:not([data-theme="dark"]) .watchlist-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 .watchlist-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 24px rgba(229, 9, 20, 0.2);
-    border-color: #444444;
+    transform: translateY(-2px);
+    border-color: rgba(229, 9, 20, 0.45);
+    box-shadow: 0 8px 24px rgba(229, 9, 20, 0.15);
 }
 
-.movie-poster-wrap {
+/* Poster Container & Gold Ribbon */
+.watchlist-poster-wrap {
+    position: relative;
     flex-shrink: 0;
-}
-
-.movie-poster {
-    width: 140px;
-    height: 210px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    width: 96px;
+    height: 142px;
+    border-radius: 8px;
+    overflow: hidden;
     cursor: pointer;
+    background-color: #222222;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
 }
 
-.movie-info-wrap {
-    flex-grow: 1;
+.watchlist-poster-ribbon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 32px;
+    background-color: #f5c518;
+    color: #111111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
+    z-index: 3;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
+}
+
+.watchlist-poster-ribbon svg {
+    margin-top: -4px;
+    stroke: #111111;
+}
+
+.watchlist-poster-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+    transition: transform 0.25s ease;
+}
+
+.watchlist-card:hover .watchlist-poster-img {
+    transform: scale(1.04);
+}
+
+/* Info Section */
+.watchlist-info-wrap {
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    gap: 8px;
+    min-width: 0;
 }
 
-.movie-title {
-    color: #ffffff;
-    font-size: 24px;
-    font-weight: bold;
-    margin: 0 0 8px 0;
+/* Header Row: Title & Actions */
+.watchlist-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.watchlist-card-title {
+    color: var(--text-primary, #ffffff);
+    font-size: 19px;
+    font-weight: 700;
+    margin: 0;
     cursor: pointer;
-    transition: color 0.2s;
+    line-height: 1.3;
+    transition: color 0.2s ease;
+    word-break: break-word;
 }
 
-.movie-title:hover {
+.watchlist-card-idx {
+    color: var(--text-primary, #ffffff);
+    opacity: 0.9;
+    font-weight: 700;
+}
+
+.watchlist-card-name {
+    color: var(--text-primary, #ffffff);
+    transition: color 0.2s ease;
+}
+
+.watchlist-card-title:hover .watchlist-card-name {
     color: #e50914;
 }
 
-.movie-meta-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    color: #aaaaaa;
-    font-size: 14px;
-    margin-bottom: 12px;
-}
-
-.movie-meta-item {
+/* Action buttons (Info & Delete) */
+.watchlist-card-actions {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 6px;
+    flex-shrink: 0;
 }
 
-.movie-rating-badge {
-    color: #f5b301;
-    font-weight: bold;
-}
-
-.movie-overview-text {
-    color: #cccccc;
-    font-size: 14px;
-    line-height: 1.6;
-    margin: 0;
-}
-
-.delete-btn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background-color: rgba(229, 9, 20, 0.85);
-    color: #ffffff;
+.watchlist-action-btn {
+    background: transparent;
     border: none;
     border-radius: 50%;
     width: 32px;
@@ -1035,13 +1094,127 @@ figcaption.img:hover {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-size: 14px;
-    font-weight: bold;
-    transition: background-color 0.2s;
+    color: #888888;
+    transition: all 0.2s ease;
+    padding: 0;
 }
 
-.delete-btn:hover {
-    background-color: #ff0f1f;
+.watchlist-info-btn:hover {
+    color: #0070f3;
+    background-color: rgba(0, 112, 243, 0.12);
+    transform: scale(1.1);
+}
+
+.watchlist-delete-btn:hover {
+    color: #e50914;
+    background-color: rgba(229, 9, 20, 0.12);
+    transform: scale(1.1);
+}
+
+/* Metadata Subheader */
+.watchlist-meta-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    color: #999999;
+    font-size: 13.5px;
+    font-weight: 500;
+}
+
+[data-theme="dark"] .watchlist-meta-row {
+    color: #a0a0a0;
+}
+
+:root:not([data-theme="dark"]) .watchlist-meta-row {
+    color: #64748b;
+}
+
+.meta-dot {
+    opacity: 0.5;
+    font-size: 11px;
+}
+
+/* Overview Text */
+.watchlist-card-overview {
+    color: #cccccc;
+    font-size: 13.5px;
+    line-height: 1.55;
+    margin: 2px 0 4px 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+:root:not([data-theme="dark"]) .watchlist-card-overview {
+    color: #334155;
+}
+
+.watchlist-card-overview.muted-placeholder {
+    font-style: italic;
+    opacity: 0.6;
+}
+
+/* Credits Row */
+.watchlist-credits-row {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 13.5px;
+    margin-top: 2px;
+}
+
+.watchlist-credit-group {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+    line-height: 1.4;
+}
+
+.credit-label {
+    font-weight: 700;
+    color: var(--text-primary, #ffffff);
+    min-width: 60px;
+}
+
+.credit-name {
+    color: #94a3b8;
+}
+
+[data-theme="dark"] .credit-name {
+    color: #94a3b8;
+}
+
+:root:not([data-theme="dark"]) .credit-name {
+    color: #475569;
+}
+
+.highlight-link {
+    color: #38bdf8;
+    cursor: pointer;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+:root:not([data-theme="dark"]) .highlight-link {
+    color: #0284c7;
+}
+
+.highlight-link:hover {
+    color: #e50914;
+    text-decoration: underline;
+}
+
+/* Empty state */
+.watchlist-empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: var(--card-bg, #1a1a1a);
+    border: 1px dashed var(--border-color, rgba(255, 255, 255, 0.15));
+    border-radius: 16px;
+    margin: 20px 0;
 }
 
 /* Modal Custom Styles */
@@ -1615,6 +1788,40 @@ figcaption.img:hover {
         width: 100% !important;
         object-fit: cover !important;
     }
+
+    /* Watchlist Cards on Mobile (<= 768px) */
+    .your_watchlist {
+        padding: 20px 12px 40px 12px !important;
+    }
+    .your_watchlist h1 {
+        font-size: 26px !important;
+    }
+    .watchlist-card {
+        padding: 14px 14px !important;
+        gap: 14px !important;
+    }
+    .watchlist-poster-wrap {
+        width: 84px !important;
+        height: 124px !important;
+    }
+    .watchlist-card-title {
+        font-size: 16px !important;
+    }
+    .watchlist-meta-row {
+        font-size: 12.5px !important;
+        gap: 4px !important;
+    }
+    .watchlist-card-overview {
+        font-size: 12.5px !important;
+        -webkit-line-clamp: 2 !important;
+    }
+    .watchlist-credits-row {
+        font-size: 12.5px !important;
+        gap: 3px !important;
+    }
+    .credit-label {
+        min-width: 50px !important;
+    }
 }
 
 @media (max-width: 520px) {
@@ -1647,6 +1854,26 @@ figcaption.img:hover {
         padding: 3px 7px !important;
         font-size: 11.5px !important;
     }
+
+    /* Watchlist on small mobile */
+    .watchlist-card {
+        padding: 12px 10px !important;
+        gap: 10px !important;
+    }
+    .watchlist-poster-wrap {
+        width: 76px !important;
+        height: 112px !important;
+    }
+    .watchlist-poster-ribbon {
+        width: 20px !important;
+        height: 26px !important;
+    }
+    .watchlist-card-title {
+        font-size: 15px !important;
+    }
+    .watchlist-card-overview {
+        -webkit-line-clamp: 2 !important;
+    }
 }
 
 @media (max-width: 400px) {
@@ -1677,6 +1904,21 @@ figcaption.img:hover {
     .auth-btn-signin, .auth-btn-signup {
         padding: 3px 6px !important;
         font-size: 11px !important;
+    }
+
+    .watchlist-card {
+        padding: 10px 8px !important;
+        gap: 8px !important;
+    }
+    .watchlist-poster-wrap {
+        width: 68px !important;
+        height: 100px !important;
+    }
+    .watchlist-card-title {
+        font-size: 14px !important;
+    }
+    .watchlist-credits-row {
+        font-size: 11.5px !important;
     }
 }
 

@@ -133,47 +133,86 @@
 
         .movie-card {
             display: flex;
-            gap: 25px;
-            background-color: #1f1f1f;
-            border: 1px solid #333333;
-            border-radius: 14px;
-            padding: 18px;
+            gap: 20px;
+            align-items: flex-start;
+            background-color: #1a1a1a;
+            border: 1px solid #2e2e2e;
+            border-radius: 12px;
+            padding: 16px 20px;
             position: relative;
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+            text-align: left;
         }
 
         .movie-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 24px rgba(229, 9, 20, 0.2);
-            border-color: #444444;
+            transform: translateY(-2px);
+            border-color: rgba(229, 9, 20, 0.45);
+            box-shadow: 0 8px 24px rgba(229, 9, 20, 0.2);
         }
 
         .movie-poster-wrap {
+            position: relative;
             flex-shrink: 0;
+            width: 96px;
+            height: 142px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            background-color: #222222;
+        }
+
+        .watchlist-poster-ribbon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 24px;
+            height: 32px;
+            background-color: #f5c518;
+            color: #111111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
+            z-index: 3;
+            font-weight: bold;
+            font-size: 13px;
         }
 
         .movie-poster {
-            width: 140px;
-            height: 210px;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            transition: transform 0.25s ease;
+        }
+
+        .movie-card:hover .movie-poster {
+            transform: scale(1.04);
         }
 
         .movie-info-wrap {
             flex-grow: 1;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
+            gap: 6px;
+            min-width: 0;
+        }
+
+        .watchlist-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 10px;
         }
 
         .movie-title {
             color: #ffffff;
-            font-size: 24px;
-            font-weight: bold;
-            margin: 0 0 8px 0;
+            font-size: 19px;
+            font-weight: 700;
+            margin: 0;
             cursor: pointer;
+            line-height: 1.3;
             transition: color 0.2s;
         }
 
@@ -184,40 +223,72 @@
         .movie-meta-row {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
-            color: #aaaaaa;
-            font-size: 14px;
-            margin-bottom: 12px;
-        }
-
-        .movie-meta-item {
-            display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 6px;
+            color: #a0a0a0;
+            font-size: 13.5px;
+            font-weight: 500;
         }
 
-        .movie-rating-badge {
-            color: #f5b301;
-            font-weight: bold;
+        .meta-dot {
+            opacity: 0.5;
+            font-size: 11px;
         }
 
         .movie-overview-text {
             color: #cccccc;
-            font-size: 14px;
-            line-height: 1.6;
-            margin: 0;
+            font-size: 13.5px;
+            line-height: 1.55;
+            margin: 2px 0 4px 0;
             display: -webkit-box;
-            -webkit-line-clamp: 4;
+            -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
 
-        .delete-btn {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background-color: rgba(229, 9, 20, 0.85);
+        .watchlist-credits-row {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            font-size: 13px;
+            margin-top: 2px;
+        }
+
+        .watchlist-credit-group {
+            display: flex;
+            gap: 8px;
+            align-items: baseline;
+            flex-wrap: wrap;
+        }
+
+        .credit-label {
+            font-weight: 700;
             color: #ffffff;
+            min-width: 55px;
+        }
+
+        .credit-name {
+            color: #94a3b8;
+        }
+
+        .highlight-link {
+            color: #38bdf8;
+            cursor: pointer;
+        }
+
+        .highlight-link:hover {
+            color: #e50914;
+            text-decoration: underline;
+        }
+
+        .watchlist-actions {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .action-btn {
+            background: transparent;
             border: none;
             border-radius: 50%;
             width: 32px;
@@ -226,13 +297,13 @@
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            font-size: 14px;
-            font-weight: bold;
-            transition: background-color 0.2s;
+            color: #888888;
+            transition: all 0.2s ease;
         }
 
-        .delete-btn:hover {
-            background-color: #ff0f1f;
+        .action-btn:hover {
+            color: #e50914;
+            background-color: rgba(229, 9, 20, 0.12);
         }
 
         .empty-watchlist {
@@ -374,27 +445,44 @@
                     const movieCard = document.createElement('div');
                     movieCard.classList.add('movie-card');
 
-                    const ratingDisplay = (movie.rating && movie.rating !== 'N/A' && movie.rating !== '0') 
-                        ? `★ ${movie.rating} ${movie.count ? `(${movie.count} votes)` : ''}` 
-                        : 'Rating N/A';
+                    const year = movie.date || movie.release_date || '';
+                    const runtime = movie.runtime && movie.runtime !== 'N/A' ? movie.runtime : '';
+                    const genres = movie.genres || '';
+                    const director = movie.director || '';
+                    const casts = Array.isArray(movie.casts) ? movie.casts : (typeof movie.casts === 'string' ? movie.casts.split(',') : []);
 
                     movieCard.innerHTML = `
-                        <div class="movie-poster-wrap">
+                        <div class="movie-poster-wrap" onclick="window.location.href='/movie/${encodeURIComponent(movie.title)}'">
+                            <div class="watchlist-poster-ribbon" title="In Watchlist">✓</div>
                             <img src="${movie.poster || 'https://via.placeholder.com/140x210?text=No+Poster'}" alt="${movie.title} Poster" class="movie-poster" onerror="this.src='https://via.placeholder.com/140x210?text=No+Poster'">
                         </div>
                         <div class="movie-info-wrap">
-                            <div onclick="window.location.href='/movie/${encodeURIComponent(movie.title)}'">
-                                <h2 class="movie-title">${movie.title}</h2>
+                            <div class="watchlist-header-row">
+                                <h2 class="movie-title" onclick="window.location.href='/movie/${encodeURIComponent(movie.title)}'">
+                                    <span>${index + 1}. </span><span>${movie.title}</span>
+                                </h2>
+                                <div class="watchlist-actions">
+                                    <button class="action-btn" title="View Details" onclick="window.location.href='/movie/${encodeURIComponent(movie.title)}'">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                                    </button>
+                                    <button class="action-btn" title="Remove from Watchlist" onclick="removeFromWatchlist(${index})">✕</button>
+                                </div>
                             </div>
                             <div class="movie-meta-row">
-                                ${movie.date ? `<div class="movie-meta-item"><span>📅 ${movie.date}</span></div>` : ''}
-                                ${movie.runtime && movie.runtime !== 'N/A' ? `<div class="movie-meta-item"><span>⏱ ${movie.runtime}</span></div>` : ''}
-                                ${movie.status ? `<div class="movie-meta-item"><span>🏷 ${movie.status}</span></div>` : ''}
-                                <div class="movie-meta-item movie-rating-badge"><span>${ratingDisplay}</span></div>
+                                ${year ? `<span>${year}</span>` : ''}
+                                ${year && runtime ? `<span class="meta-dot">•</span>` : ''}
+                                ${runtime ? `<span>${runtime}</span>` : ''}
+                                ${(year || runtime) && genres ? `<span class="meta-dot">•</span>` : ''}
+                                ${genres ? `<span>${genres}</span>` : ''}
                             </div>
                             <p class="movie-overview-text">${movie.overview || 'No overview available.'}</p>
+                            ${director || casts.length > 0 ? `
+                                <div class="watchlist-credits-row">
+                                    ${director ? `<div class="watchlist-credit-group"><span class="credit-label">Director</span><span class="credit-name highlight-link" onclick="window.location.href='/movie/${encodeURIComponent(movie.title)}'">${director}</span></div>` : ''}
+                                    ${casts.length > 0 ? `<div class="watchlist-credit-group"><span class="credit-label">Stars</span><span class="credit-name">${casts.slice(0, 4).join(', ')}</span></div>` : ''}
+                                </div>
+                            ` : ''}
                         </div>
-                        <button class="delete-btn" title="Remove from Watchlist" onclick="removeFromWatchlist(${index})">✕</button>
                     `;
 
                     container.appendChild(movieCard);
