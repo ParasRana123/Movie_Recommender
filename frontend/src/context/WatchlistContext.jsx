@@ -5,69 +5,73 @@ import { fetchDbWatchlist, addMovieToDbWatchlist, removeMovieFromDbWatchlist } f
 const WatchlistContext = createContext();
 
 export function WatchlistProvider({ children }) {
-  const { isSignedIn } = useUser();
+  const { isSignedIn, user, isLoaded: isAuthLoaded } = useUser();
   const { getToken } = useAuth();
 
-  const [watchlist, setWatchlist] = useState(() => {
-    try {
-      const saved = localStorage.getItem('watchlist');
-      return saved ? JSON.parse(saved) : [];
-    } catch (e) {
-      console.error('Error reading watchlist from localStorage:', e);
-      return [];
-    }
-  });
-
+  const [watchlist, setWatchlist] = useState([]);
   const [toast, setToast] = useState({ visible: false, message: '' });
 
-  // Sync with localStorage on state changes
-  useEffect(() => {
-    try {
-      localStorage.setItem('watchlist', JSON.stringify(watchlist));
-    } catch (e) {
-      console.error('Error saving watchlist to localStorage:', e);
-    }
-  }, [watchlist]);
-
-  // When user logs in, fetch their database watchlist from PostgreSQL and merge with local
+  // When auth state changes or user logs in/out:
   useEffect(() => {
     let mounted = true;
 
+    if (!isAuthLoaded) return;
+
+    // If user is not signed in, clear the watchlist completely
+    if (!isSignedIn || !user) {
+      setWatchlist([]);
+      try {
+        localStorage.removeItem('watchlist'); // Clean up any stale legacy anonymous items
+      } catch (e) {}
+      return;
+    }
+
+    // If signed in, load user-specific cached list first for instant display
+    const userStorageKey = `watchlist_${user.id}`;
+    let initialList = [];
+    try {
+      const saved = localStorage.getItem(userStorageKey);
+      if (saved) initialList = JSON.parse(saved);
+    } catch (e) {}
+
+    if (initialList.length > 0) {
+      setWatchlist(initialList);
+    }
+
+    // Fetch user's PostgreSQL database watchlist
     async function loadDbWatchlist() {
-      if (isSignedIn || (typeof window !== 'undefined' && window.Clerk?.session)) {
-        try {
-          const dbItems = await fetchDbWatchlist(getToken);
-          if (mounted && Array.isArray(dbItems) && dbItems.length > 0) {
-            setWatchlist((localList) => {
-              // Map DB items to frontend format
-              const formattedDb = dbItems.map((item) => ({
-                title: item.movieTitle,
-                poster: item.posterPath,
-                rating: item.voteAverage !== null ? item.voteAverage : 'N/A',
-                release_date: item.releaseYear || '',
-                genres: item.genres?.join(', ') || '',
-              }));
+      try {
+        const dbItems = await fetchDbWatchlist(getToken);
+        if (mounted && Array.isArray(dbItems)) {
+          const formattedDb = dbItems.map((item) => ({
+            title: item.movieTitle,
+            poster: item.posterPath,
+            rating: item.voteAverage !== null ? item.voteAverage : 'N/A',
+            release_date: item.releaseYear || '',
+            genres: item.genres?.join(', ') || '',
+          }));
 
-              // Merge unique by title
-              const titles = new Set();
-              const merged = [];
+          // Merge unique by title
+          const titles = new Set();
+          const merged = [];
 
-              for (const m of [...formattedDb, ...localList]) {
-                if (m && m.title) {
-                  const key = m.title.toLowerCase();
-                  if (!titles.has(key)) {
-                    titles.add(key);
-                    merged.push(m);
-                  }
-                }
+          for (const m of [...formattedDb, ...initialList]) {
+            if (m && m.title) {
+              const key = m.title.toLowerCase();
+              if (!titles.has(key)) {
+                titles.add(key);
+                merged.push(m);
               }
-
-              return merged;
-            });
+            }
           }
-        } catch (err) {
-          console.warn('Could not fetch DB watchlist on startup:', err.message);
+
+          setWatchlist(merged);
+          try {
+            localStorage.setItem(userStorageKey, JSON.stringify(merged));
+          } catch (e) {}
         }
+      } catch (err) {
+        console.warn('Could not fetch DB watchlist on startup:', err.message);
       }
     }
 
@@ -76,7 +80,16 @@ export function WatchlistProvider({ children }) {
     return () => {
       mounted = false;
     };
-  }, [isSignedIn, getToken]);
+  }, [isSignedIn, user, isAuthLoaded, getToken]);
+
+  // Sync to user-specific localStorage when watchlist changes and user is signed in
+  useEffect(() => {
+    if (isSignedIn && user) {
+      try {
+        localStorage.setItem(`watchlist_${user.id}`, JSON.stringify(watchlist));
+      } catch (e) {}
+    }
+  }, [watchlist, isSignedIn, user]);
 
   const showToast = (message) => {
     setToast({ visible: true, message });
@@ -87,6 +100,11 @@ export function WatchlistProvider({ children }) {
 
   const addToWatchlist = (movie) => {
     if (!movie || !movie.title) return;
+
+    if (!isSignedIn) {
+      showToast('Please sign in to add movies to your Watchlist!');
+      return;
+    }
 
     const movieObj = {
       title: movie.title,
@@ -137,6 +155,11 @@ export function WatchlistProvider({ children }) {
   const removeFromWatchlist = (title) => {
     if (!title) return;
 
+    if (!isSignedIn) {
+      showToast('Please sign in to manage your Watchlist!');
+      return;
+    }
+
     setWatchlist((prev) => prev.filter((m) => m.title && m.title.toLowerCase() !== title.toLowerCase()));
     showToast(`Removed from Watchlist!`);
 
@@ -153,7 +176,7 @@ export function WatchlistProvider({ children }) {
   };
 
   const isInWatchlist = (title) => {
-    if (!title) return false;
+    if (!title || !isSignedIn) return false;
     return watchlist.some((m) => m.title && m.title.toLowerCase() === title.toLowerCase());
   };
 

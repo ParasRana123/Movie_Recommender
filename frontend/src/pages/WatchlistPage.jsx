@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useUser, SignInButton, SignUpButton } from '@clerk/clerk-react';
 import Navbar from '../components/Navbar';
 import { useWatchlist } from '../context/WatchlistContext';
 import { useTheme } from '../context/ThemeContext';
@@ -8,6 +9,7 @@ import { fetchMovieDetails } from '../api/movieApi';
 export default function WatchlistPage() {
   const { watchlist, removeFromWatchlist } = useWatchlist();
   const { isDark } = useTheme();
+  const { isSignedIn, isLoaded: isAuthLoaded } = useUser();
   const navigate = useNavigate();
 
   // Cache for enriched movie details (overview, director, casts, runtime, etc.)
@@ -15,7 +17,7 @@ export default function WatchlistPage() {
 
   useEffect(() => {
     let isMounted = true;
-    if (!watchlist || watchlist.length === 0) return;
+    if (!isSignedIn || !watchlist || watchlist.length === 0) return;
 
     // Asynchronously fetch full details for any movie missing overview or director or runtime
     watchlist.forEach((movie) => {
@@ -49,7 +51,7 @@ export default function WatchlistPage() {
     return () => {
       isMounted = false;
     };
-  }, [watchlist, detailsCache]);
+  }, [watchlist, detailsCache, isSignedIn]);
 
   const formatRuntime = (runtimeStr) => {
     if (!runtimeStr || runtimeStr === 'N/A') return '';
@@ -97,7 +99,127 @@ export default function WatchlistPage() {
         <h1>Your Watchlist</h1>
 
         <div id="watchlist-container">
-          {watchlist && watchlist.length > 0 ? (
+          {!isAuthLoaded ? (
+            /* Auth Loading State */
+            <div style={{ textAlign: 'center', padding: '60px 20px' }}>
+              <div
+                style={{
+                  display: 'inline-block',
+                  width: '36px',
+                  height: '36px',
+                  border: '3px solid rgba(229, 9, 20, 0.2)',
+                  borderTopColor: '#e50914',
+                  borderRadius: '50%',
+                  animation: 'spin 0.8s linear infinite',
+                  marginBottom: '15px'
+                }}
+              />
+              <p style={{ color: isDark ? '#aaaaaa' : '#666666', fontSize: '15px' }}>Checking authentication...</p>
+            </div>
+          ) : !isSignedIn ? (
+            /* Auth Required Gate for Signed-Out Users */
+            <div
+              className="watchlist-auth-gate"
+              style={{
+                maxWidth: '540px',
+                margin: '20px auto',
+                padding: '45px 30px',
+                backgroundColor: isDark ? '#1a1a1a' : '#ffffff',
+                border: `1px solid ${isDark ? '#2e2e2e' : '#e2e8f0'}`,
+                borderRadius: '16px',
+                boxShadow: isDark ? '0 10px 30px rgba(0, 0, 0, 0.5)' : '0 10px 25px rgba(0, 0, 0, 0.06)',
+                textAlign: 'center'
+              }}
+            >
+              <div
+                style={{
+                  width: '64px',
+                  height: '64px',
+                  borderRadius: '50%',
+                  backgroundColor: 'rgba(229, 9, 20, 0.12)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 20px auto'
+                }}
+              >
+                <img
+                  src="/images/add_bookmark.svg"
+                  alt="Watchlist"
+                  width="30"
+                  height="30"
+                  style={{
+                    filter: isDark ? 'invert(1)' : 'none',
+                    opacity: 0.9
+                  }}
+                />
+              </div>
+
+              <h2
+                style={{
+                  fontSize: '24px',
+                  fontWeight: '700',
+                  color: isDark ? '#ffffff' : '#181818',
+                  marginBottom: '12px'
+                }}
+              >
+                Sign in to access your Watchlist
+              </h2>
+
+              <p
+                style={{
+                  fontSize: '15px',
+                  color: isDark ? '#aaaaaa' : '#666666',
+                  lineHeight: '1.6',
+                  maxWidth: '440px',
+                  margin: '0 auto 28px auto'
+                }}
+              >
+                Please sign in or create an account to view and manage your saved movies, get personal recommendations, and sync across all devices.
+              </p>
+
+              <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
+                <SignInButton mode="modal">
+                  <button
+                    type="button"
+                    className="btn btn-primary"
+                    style={{
+                      backgroundColor: '#e50914',
+                      borderColor: '#e50914',
+                      padding: '10px 28px',
+                      borderRadius: '6px',
+                      fontWeight: '700',
+                      fontSize: '15px',
+                      cursor: 'pointer',
+                      boxShadow: '0 4px 14px rgba(229, 9, 20, 0.4)'
+                    }}
+                  >
+                    Sign In
+                  </button>
+                </SignInButton>
+
+                <SignUpButton mode="modal">
+                  <button
+                    type="button"
+                    className="btn"
+                    style={{
+                      backgroundColor: 'transparent',
+                      border: `1px solid ${isDark ? '#444444' : '#cccccc'}`,
+                      color: isDark ? '#ffffff' : '#181818',
+                      padding: '10px 24px',
+                      borderRadius: '6px',
+                      fontWeight: '600',
+                      fontSize: '15px',
+                      cursor: 'pointer'
+                    }}
+                  >
+                    Create Account
+                  </button>
+                </SignUpButton>
+              </div>
+            </div>
+          ) : watchlist && watchlist.length > 0 ? (
+            /* Render Signed-In User's Watchlist */
             watchlist.map((movie, idx) => {
               const key = movie.title ? movie.title.toLowerCase() : '';
               const extra = detailsCache[key] || {};
@@ -306,6 +428,7 @@ export default function WatchlistPage() {
               );
             })
           ) : (
+            /* Empty Watchlist State for Signed-In User */
             <div
               className="watchlist-empty-state"
               style={{
