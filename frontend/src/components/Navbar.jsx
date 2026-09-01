@@ -13,7 +13,7 @@ export default function Navbar({ onSearchMovie, onHomeClick, initialQuery = '' }
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const [showMobileSearch, setShowMobileSearch] = useState(false);
 
-  const { theme, toggleTheme, isDark } = useTheme();
+  const { toggleTheme, isDark } = useTheme();
   const navigate = useNavigate();
   const searchContainerRef = useRef(null);
   const mobileSearchRef = useRef(null);
@@ -180,294 +180,300 @@ export default function Navbar({ onSearchMovie, onHomeClick, initialQuery = '' }
           transition: 'background-color 0.3s ease'
         }}
       >
-        {/* Desktop Search Bar Input Container */}
-        <div className="search-container desktop-search-group" style={{ position: 'relative', width: '420px', maxWidth: '36vw', margin: 0 }} ref={searchContainerRef}>
-          <input
-            type="text"
-            name="movie"
-            className="movie form-control"
-            id="autoComplete"
-            autoComplete="off"
-            placeholder="Enter the Movie Name"
-            style={{
-              backgroundColor: isDark ? '#262626' : '#ffffff',
-              borderColor: isDark ? '#404040' : '#ffffff',
-              width: '100%',
-              color: isDark ? '#ffffff' : '#181818',
-              borderRadius: '5px',
-              height: '38px',
-              padding: '6px 40px 6px 12px',
-              backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' width=\'20\' height=\'20\' fill=\'%23e50914\'%3E%3Cpath d=\'M21.71 20.29l-5.4-5.39A8 8 0 1 0 4 11a8 8 0 0 0 12.31 6.31l5.4 5.4a1 1 0 0 0 1.41-1.41zM6 11a6 6 0 1 1 6 6 6 6 0 0 1-6-6z\'/%3E%3C/svg%3E")',
-              backgroundRepeat: 'no-repeat',
-              backgroundPosition: '96% center',
-              backgroundSize: '20px',
-              transition: 'all 0.3s ease'
-            }}
-            value={query}
-            onChange={handleInputChange}
-            onKeyDown={handleKeyDown}
-            onFocus={() => {
-              if (!isSelectingRef.current && filteredSuggestions.length > 0) {
-                setShowDropdown(true);
-              }
-            }}
-            required="required"
-          />
-
-          {/* Desktop Autocomplete Dropdown List */}
-          {showDropdown && filteredSuggestions.length > 0 && (
-            <ul
-              id="movie_list"
+        {/* Left Navigation Group */}
+        <div className="nav-left-section" style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
+          {/* Desktop Search Bar Input Container */}
+          <div className="search-container desktop-search-group" style={{ position: 'relative', width: '420px', maxWidth: '36vw', margin: 0 }} ref={searchContainerRef}>
+            <input
+              type="text"
+              name="movie"
+              className="movie form-control"
+              id="autoComplete"
+              autoComplete="off"
+              placeholder="Enter the Movie Name"
               style={{
-                display: 'block',
-                backgroundColor: isDark ? '#1f1f1f' : '#ffffff',
-                borderColor: isDark ? '#333333' : 'rgba(0,0,0,0.1)'
+                backgroundColor: isDark ? '#262626' : '#ffffff',
+                borderColor: isDark ? '#404040' : '#ffffff',
+                width: '100%',
+                color: isDark ? '#ffffff' : '#181818',
+                borderRadius: '5px',
+                height: '38px',
+                padding: '6px 40px 6px 12px',
+                backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' width=\'20\' height=\'20\' fill=\'%23e50914\'%3E%3Cpath d=\'M21.71 20.29l-5.4-5.39A8 8 0 1 0 4 11a8 8 0 0 0 12.31 6.31l5.4 5.4a1 1 0 0 0 1.41-1.41zM6 11a6 6 0 1 1 6 6 6 6 0 0 1-6-6z\'/%3E%3C/svg%3E")',
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: '96% center',
+                backgroundSize: '20px',
+                transition: 'all 0.3s ease'
               }}
-            >
-              {filteredSuggestions.map((title, idx) => (
-                <li
-                  key={idx}
-                  className={idx === selectedIndex ? 'selected' : ''}
-                  style={{
-                    color: isDark ? '#e0e0e0' : '#1a1a1a',
-                    borderBottomColor: isDark ? '#2c2c2c' : '#f0f0f0'
-                  }}
-                  onClick={() => handleSelect(title)}
-                  onMouseEnter={() => setSelectedIndex(idx)}
-                >
-                  {renderHighlighted(title, query)}
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
+              value={query}
+              onChange={handleInputChange}
+              onKeyDown={handleKeyDown}
+              onFocus={() => {
+                if (!isSelectingRef.current && filteredSuggestions.length > 0) {
+                  setShowDropdown(true);
+                }
+              }}
+              required="required"
+            />
 
-        {/* Desktop Enter Button */}
-        <div className="desktop-search-group" style={{ margin: 0 }}>
-          <button
-            className="btn btn-primary movie-button"
-            style={{
-              backgroundColor: '#e50914',
-              borderColor: '#e50914',
-              width: '95px',
-              height: '38px',
-              borderRadius: '5px',
-              fontWeight: 'bold',
-              margin: 0,
-              cursor: query.trim() ? 'pointer' : 'default',
-              transition: 'transform 0.2s ease, background-color 0.2s ease'
-            }}
-            disabled={!query.trim()}
-            onClick={handleSubmit}
-          >
-            Enter
-          </button>
-        </div>
-
-        <div className="desktop-search-group nav-separator" style={{ color: 'white', fontSize: '18px', margin: '0 2px' }}> | </div>
-
-        {/* Home Navigation */}
-        <div
-          className="home-nav"
-          style={{
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '6px',
-            backgroundColor: 'transparent',
-            margin: 0,
-            padding: '4px 6px'
-          }}
-          onClick={() => {
-            if (onHomeClick) {
-              onHomeClick();
-            }
-            navigate('/');
-          }}
-          title="Home"
-        >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-            <polyline points="9 22 9 12 15 12 15 22"></polyline>
-          </svg>
-          <p style={{ margin: 0, color: 'white', fontSize: '15px', fontWeight: 500 }}>Home</p>
-        </div>
-
-        <div className="nav-separator" style={{ color: 'white', fontSize: '18px', margin: '0 2px' }}> | </div>
-
-        {/* Watchlist Navigation */}
-        <div
-          className="watchlist"
-          style={{
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '6px',
-            backgroundColor: 'transparent',
-            margin: 0,
-            padding: '4px 6px'
-          }}
-          onClick={() => navigate('/watchlist')}
-          title="WatchList"
-        >
-          <img src="/images/add_bookmark.svg" width="22px" height="auto" alt="WatchList" style={{ filter: 'invert(1)' }} />
-          <p style={{ margin: 0, color: 'white', fontSize: '15px' }}>WatchList</p>
-        </div>
-
-        <div className="nav-separator" style={{ color: 'white', fontSize: '18px', margin: '0 2px' }}> | </div>
-
-        {/* Genre-Wise Navigation */}
-        <div
-          className="genres"
-          style={{
-            color: 'white',
-            cursor: 'pointer',
-            fontSize: '15px',
-            fontWeight: 500,
-            margin: 0,
-            padding: '4px 6px',
-            position: 'static'
-          }}
-          onClick={() => navigate('/genres')}
-          title="Genre-Wise"
-        >
-          Genre-Wise
-        </div>
-
-        <div className="nav-separator" style={{ color: 'white', fontSize: '18px', margin: '0 2px' }}> | </div>
-
-        {/* Dark / Light Mode Toggle Button (Icon only) */}
-        <div
-          className="theme-toggle-btn"
-          style={{
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: 'transparent',
-            padding: '6px',
-            borderRadius: '50%',
-            color: 'white',
-            userSelect: 'none',
-            transition: 'transform 0.2s ease, background-color 0.2s ease',
-            border: 'none',
-            margin: 0
-          }}
-          onClick={toggleTheme}
-          title={`Switch to ${isDark ? 'Light' : 'Dark'} Mode`}
-        >
-          {isDark ? (
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffd700" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="12" cy="12" r="5"></circle>
-              <line x1="12" y1="1" x2="12" y2="3"></line>
-              <line x1="12" y1="21" x2="12" y2="23"></line>
-              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-              <line x1="1" y1="12" x2="3" y2="12"></line>
-              <line x1="21" y1="12" x2="23" y2="12"></line>
-              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-            </svg>
-          ) : (
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-            </svg>
-          )}
-        </div>
-
-        <div className="nav-separator" style={{ color: 'white', fontSize: '18px', margin: '0 2px' }}> | </div>
-
-        {/* Clerk Authentication Controls */}
-        <div className="auth-nav-container" style={{ display: 'flex', alignItems: 'center', margin: 0 }}>
-          <SignedOut>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <SignInButton mode="modal">
-                <button
-                  type="button"
-                  style={{
-                    backgroundColor: 'transparent',
-                    border: isDark ? '1px solid #4a4a4a' : '1px solid rgba(255,255,255,0.6)',
-                    color: '#ffffff',
-                    padding: '5px 12px',
-                    borderRadius: '5px',
-                    fontSize: '14px',
-                    fontWeight: 500,
-                    cursor: 'pointer',
-                    transition: 'all 0.2s ease',
-                    whiteSpace: 'nowrap'
-                  }}
-                  className="auth-btn-signin"
-                >
-                  Sign In
-                </button>
-              </SignInButton>
-              <SignUpButton mode="modal">
-                <button
-                  type="button"
-                  style={{
-                    backgroundColor: '#e50914',
-                    border: '1px solid #e50914',
-                    color: '#ffffff',
-                    padding: '5px 12px',
-                    borderRadius: '5px',
-                    fontSize: '14px',
-                    fontWeight: 600,
-                    cursor: 'pointer',
-                    boxShadow: '0 2px 6px rgba(229, 9, 20, 0.35)',
-                    transition: 'all 0.2s ease',
-                    whiteSpace: 'nowrap'
-                  }}
-                  className="auth-btn-signup"
-                >
-                  Sign Up
-                </button>
-              </SignUpButton>
-            </div>
-          </SignedOut>
-
-          <SignedIn>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <UserButton
-                afterSignOutUrl="/"
-                appearance={{
-                  elements: {
-                    avatarBox: {
-                      width: '32px',
-                      height: '32px',
-                      border: '2px solid #e50914'
-                    }
-                  }
+            {/* Desktop Autocomplete Dropdown List */}
+            {showDropdown && filteredSuggestions.length > 0 && (
+              <ul
+                id="movie_list"
+                style={{
+                  display: 'block',
+                  backgroundColor: isDark ? '#1f1f1f' : '#ffffff',
+                  borderColor: isDark ? '#333333' : 'rgba(0,0,0,0.1)'
                 }}
-              />
-            </div>
-          </SignedIn>
+              >
+                {filteredSuggestions.map((title, idx) => (
+                  <li
+                    key={idx}
+                    className={idx === selectedIndex ? 'selected' : ''}
+                    style={{
+                      color: isDark ? '#e0e0e0' : '#1a1a1a',
+                      borderBottomColor: isDark ? '#2c2c2c' : '#f0f0f0'
+                    }}
+                    onClick={() => handleSelect(title)}
+                    onMouseEnter={() => setSelectedIndex(idx)}
+                  >
+                    {renderHighlighted(title, query)}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+
+          {/* Desktop Enter Button */}
+          <div className="desktop-search-group" style={{ margin: 0 }}>
+            <button
+              className="btn btn-primary movie-button"
+              style={{
+                backgroundColor: '#e50914',
+                borderColor: '#e50914',
+                width: '95px',
+                height: '38px',
+                borderRadius: '5px',
+                fontWeight: 'bold',
+                margin: 0,
+                cursor: query.trim() ? 'pointer' : 'default',
+                transition: 'transform 0.2s ease, background-color 0.2s ease'
+              }}
+              disabled={!query.trim()}
+              onClick={handleSubmit}
+            >
+              Enter
+            </button>
+          </div>
+
+          <div className="desktop-search-group nav-separator" style={{ color: 'white', fontSize: '18px', margin: '0 2px' }}> | </div>
+
+          {/* Home Navigation */}
+          <div
+            className="home-nav"
+            style={{
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              backgroundColor: 'transparent',
+              margin: 0,
+              padding: '4px 6px'
+            }}
+            onClick={() => {
+              if (onHomeClick) {
+                onHomeClick();
+              }
+              navigate('/');
+            }}
+            title="Home"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            <p style={{ margin: 0, color: 'white', fontSize: '15px', fontWeight: 500 }}>Home</p>
+          </div>
+
+          <div className="nav-separator" style={{ color: 'white', fontSize: '18px', margin: '0 2px' }}> | </div>
+
+          {/* Watchlist Navigation */}
+          <div
+            className="watchlist"
+            style={{
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+              backgroundColor: 'transparent',
+              margin: 0,
+              padding: '4px 6px'
+            }}
+            onClick={() => navigate('/watchlist')}
+            title="WatchList"
+          >
+            <img src="/images/add_bookmark.svg" width="22px" height="auto" alt="WatchList" style={{ filter: 'invert(1)' }} />
+            <p style={{ margin: 0, color: 'white', fontSize: '15px' }}>WatchList</p>
+          </div>
+
+          <div className="nav-separator" style={{ color: 'white', fontSize: '18px', margin: '0 2px' }}> | </div>
+
+          {/* Genre-Wise Navigation */}
+          <div
+            className="genres"
+            style={{
+              color: 'white',
+              cursor: 'pointer',
+              fontSize: '15px',
+              fontWeight: 500,
+              margin: 0,
+              padding: '4px 6px',
+              position: 'static'
+            }}
+            onClick={() => navigate('/genres')}
+            title="Genre-Wise"
+          >
+            Genre-Wise
+          </div>
         </div>
 
-        {/* Mobile Search Icon Button (Clean icon with no red circular background) */}
-        <div
-          className="mobile-search-btn"
-          onClick={() => setShowMobileSearch(true)}
-          style={{
-            cursor: 'pointer',
-            backgroundColor: 'transparent',
-            color: '#ffffff',
-            border: 'none',
-            borderRadius: '0',
-            width: 'auto',
-            height: 'auto',
-            display: 'none', // Managed by CSS media query
-            alignItems: 'center',
-            justifyContent: 'center',
-            boxShadow: 'none',
-            padding: '4px 6px',
-            margin: 0
-          }}
-          title="Search Movies"
-        >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-            <circle cx="11" cy="11" r="8"></circle>
-            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-          </svg>
+        <div className="nav-separator" style={{ color: 'white', fontSize: '18px', margin: '0 2px' }}> | </div>
+
+        {/* Right Actions Group (Search, Theme, Auth) */}
+        <div className="nav-right-section" style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          {/* Mobile Search Icon Button */}
+          <button
+            type="button"
+            className="mobile-search-btn"
+            onClick={() => setShowMobileSearch(true)}
+            style={{
+              cursor: 'pointer',
+              backgroundColor: 'transparent',
+              color: '#ffffff',
+              border: 'none',
+              borderRadius: '50%',
+              display: 'none', // Managed by CSS media query
+              alignItems: 'center',
+              justifyContent: 'center',
+              boxShadow: 'none',
+              padding: '6px',
+              margin: 0
+            }}
+            title="Search Movies"
+            aria-label="Search Movies"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </button>
+
+          {/* Dark / Light Mode Toggle Button (Icon only) */}
+          <div
+            className="theme-toggle-btn"
+            style={{
+              cursor: 'pointer',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              backgroundColor: 'transparent',
+              padding: '6px',
+              borderRadius: '50%',
+              color: 'white',
+              userSelect: 'none',
+              transition: 'transform 0.2s ease, background-color 0.2s ease',
+              border: 'none',
+              margin: 0
+            }}
+            onClick={toggleTheme}
+            title={`Switch to ${isDark ? 'Light' : 'Dark'} Mode`}
+          >
+            {isDark ? (
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffd700" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+            ) : (
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+            )}
+          </div>
+
+          <div className="desktop-separator nav-separator" style={{ color: 'white', fontSize: '18px', margin: '0 2px' }}> | </div>
+
+          {/* Clerk Authentication Controls */}
+          <div className="auth-nav-container" style={{ display: 'flex', alignItems: 'center', margin: 0 }}>
+            <SignedOut>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <SignInButton mode="modal">
+                  <button
+                    type="button"
+                    style={{
+                      backgroundColor: 'transparent',
+                      border: isDark ? '1px solid #4a4a4a' : '1px solid rgba(255,255,255,0.6)',
+                      color: '#ffffff',
+                      padding: '5px 12px',
+                      borderRadius: '5px',
+                      fontSize: '14px',
+                      fontWeight: 500,
+                      cursor: 'pointer',
+                      transition: 'all 0.2s ease',
+                      whiteSpace: 'nowrap'
+                    }}
+                    className="auth-btn-signin"
+                  >
+                    Sign In
+                  </button>
+                </SignInButton>
+                <SignUpButton mode="modal">
+                  <button
+                    type="button"
+                    style={{
+                      backgroundColor: '#e50914',
+                      border: '1px solid #e50914',
+                      color: '#ffffff',
+                      padding: '5px 12px',
+                      borderRadius: '5px',
+                      fontSize: '14px',
+                      fontWeight: 600,
+                      cursor: 'pointer',
+                      boxShadow: '0 2px 6px rgba(229, 9, 20, 0.35)',
+                      transition: 'all 0.2s ease',
+                      whiteSpace: 'nowrap'
+                    }}
+                    className="auth-btn-signup"
+                  >
+                    Sign Up
+                  </button>
+                </SignUpButton>
+              </div>
+            </SignedOut>
+
+            <SignedIn>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <UserButton
+                  afterSignOutUrl="/"
+                  appearance={{
+                    elements: {
+                      avatarBox: {
+                        width: '32px',
+                        height: '32px',
+                        border: '2px solid #e50914'
+                      }
+                    }
+                  }}
+                />
+              </div>
+            </SignedIn>
+          </div>
         </div>
       </nav>
 
