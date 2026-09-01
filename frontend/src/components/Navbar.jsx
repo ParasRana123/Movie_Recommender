@@ -184,37 +184,62 @@ export default function Navbar({ onSearchMovie, onHomeClick, initialQuery = '' }
         <div className="nav-left-section" style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
           {/* Desktop Search Bar Input Container */}
           <div className="search-container desktop-search-group" style={{ position: 'relative', width: '420px', maxWidth: '36vw', margin: 0 }} ref={searchContainerRef}>
-            <input
-              type="text"
-              name="movie"
-              className="movie form-control"
-              id="autoComplete"
-              autoComplete="off"
-              placeholder="Enter the Movie Name"
-              style={{
-                backgroundColor: isDark ? '#262626' : '#ffffff',
-                borderColor: isDark ? '#404040' : '#ffffff',
-                width: '100%',
-                color: isDark ? '#ffffff' : '#181818',
-                borderRadius: '5px',
-                height: '38px',
-                padding: '6px 40px 6px 12px',
-                backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' width=\'20\' height=\'20\' fill=\'%23e50914\'%3E%3Cpath d=\'M21.71 20.29l-5.4-5.39A8 8 0 1 0 4 11a8 8 0 0 0 12.31 6.31l5.4 5.4a1 1 0 0 0 1.41-1.41zM6 11a6 6 0 1 1 6 6 6 6 0 0 1-6-6z\'/%3E%3C/svg%3E")',
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: '96% center',
-                backgroundSize: '20px',
-                transition: 'all 0.3s ease'
-              }}
-              value={query}
-              onChange={handleInputChange}
-              onKeyDown={handleKeyDown}
-              onFocus={() => {
-                if (!isSelectingRef.current && filteredSuggestions.length > 0) {
-                  setShowDropdown(true);
-                }
-              }}
-              required="required"
-            />
+            <div style={{ position: 'relative', width: '100%', display: 'flex', alignItems: 'center' }}>
+              <input
+                type="text"
+                name="movie"
+                className="movie form-control"
+                id="autoComplete"
+                autoComplete="off"
+                placeholder="Enter the Movie Name"
+                style={{
+                  backgroundColor: isDark ? '#262626' : '#ffffff',
+                  borderColor: isDark ? '#404040' : '#ffffff',
+                  width: '100%',
+                  color: isDark ? '#ffffff' : '#181818',
+                  borderRadius: '5px',
+                  height: '38px',
+                  padding: '6px 38px 6px 14px',
+                  backgroundImage: 'none',
+                  transition: 'all 0.3s ease'
+                }}
+                value={query}
+                onChange={handleInputChange}
+                onKeyDown={handleKeyDown}
+                onFocus={() => {
+                  if (!isSelectingRef.current && filteredSuggestions.length > 0) {
+                    setShowDropdown(true);
+                  }
+                }}
+                required="required"
+              />
+              <div
+                style={{
+                  position: 'absolute',
+                  right: '12px',
+                  top: '50%',
+                  transform: 'translateY(-50%)',
+                  pointerEvents: 'none',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}
+              >
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#e50914"
+                  strokeWidth="2.4"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <circle cx="11" cy="11" r="7.5" />
+                  <line x1="21" y1="21" x2="16.5" y2="16.5" />
+                </svg>
+              </div>
+            </div>
 
             {/* Desktop Autocomplete Dropdown List */}
             {showDropdown && filteredSuggestions.length > 0 && (
@@ -362,9 +387,9 @@ export default function Navbar({ onSearchMovie, onHomeClick, initialQuery = '' }
             title="Search Movies"
             aria-label="Search Movies"
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e50914" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="11" cy="11" r="7.5"></circle>
+              <line x1="21" y1="21" x2="16.5" y2="16.5"></line>
             </svg>
           </button>
 
