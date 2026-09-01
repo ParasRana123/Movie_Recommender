@@ -2,12 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Loader from '../components/Loader';
+import { useTheme } from '../context/ThemeContext';
 import { fetchGenreMovies } from '../api/movieApi';
 import { GENRES_DATA } from '../data/genresData';
 
 export default function GenreDetailPage() {
   const { genreId } = useParams();
   const navigate = useNavigate();
+  const { isDark } = useTheme();
 
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -45,14 +47,30 @@ export default function GenreDetailPage() {
   }, [cleanGenreId]);
 
   return (
-    <div style={{ backgroundColor: 'black', minHeight: '100vh', color: '#ffffff', paddingBottom: '60px' }}>
+    <div
+      id="content"
+      style={{
+        backgroundColor: isDark ? '#121212' : '#f8f9fa',
+        minHeight: '100vh',
+        color: isDark ? '#ffffff' : '#181818',
+        paddingBottom: '60px',
+        transition: 'background-color 0.3s ease, color 0.3s ease'
+      }}
+    >
       <Navbar onSearchMovie={(title) => navigate(`/movie/${encodeURIComponent(title)}`)} />
 
       {loading && <Loader />}
 
       <div id="genre-main-content">
         {/* Genre Banner */}
-        <div className="container1">
+        <div
+          className="container1"
+          style={{
+            backgroundColor: isDark ? '#1a1a1a' : '#ffffff',
+            border: `1px solid ${isDark ? '#2e2e2e' : '#e2e8f0'}`,
+            boxShadow: isDark ? '0 10px 30px rgba(0,0,0,0.5)' : '0 6px 20px rgba(0,0,0,0.06)'
+          }}
+        >
           <div className="genre-banner-wrapper">
             <img
               src={genreMeta.banner || genreMeta.image}
@@ -61,15 +79,25 @@ export default function GenreDetailPage() {
             />
           </div>
           <div className="text">
-            <h2 className="heading">{genreMeta.heading}</h2>
-            <p className="description">{genreMeta.description}</p>
+            <h2 className="heading" style={{ color: isDark ? '#ffffff' : '#181818' }}>
+              {genreMeta.heading}
+            </h2>
+            <p className="description" style={{ color: isDark ? '#cccccc' : '#4a4a4a' }}>
+              {genreMeta.description}
+            </p>
           </div>
         </div>
 
-        <hr style={{ borderColor: '#333' }} />
+        <hr style={{ borderColor: isDark ? '#2a2a2a' : '#e2e8f0', margin: '30px auto', maxWidth: '1400px' }} />
 
-        <center><h2 style={{ color: 'red', marginTop: '20px', fontWeight: 'bold' }}>Popular Movies</h2></center>
-        <center><p style={{ color: 'white' }}>(Popular {genreMeta.name} related movies)</p></center>
+        <center>
+          <h2 style={{ color: '#e50914', marginTop: '20px', fontWeight: 'bold' }}>Popular Movies</h2>
+        </center>
+        <center>
+          <p style={{ color: isDark ? '#aaaaaa' : '#666666', marginBottom: '25px' }}>
+            (Popular {genreMeta.name} related movies)
+          </p>
+        </center>
 
         {/* Popular Movies (Grid on Desktop, 1-Line Horizontal Scroll on Mobile) */}
         <div id="movies-container" className="genre-movies-scroll">
@@ -80,6 +108,10 @@ export default function GenreDetailPage() {
                 className="movie-card-genre"
                 onClick={() => navigate(`/movie/${encodeURIComponent(m.title)}`)}
                 title={m.title}
+                style={{
+                  backgroundColor: isDark ? '#1f1f1f' : '#ffffff',
+                  borderColor: isDark ? '#333333' : '#e2e8f0'
+                }}
               >
                 <div className="imghvr">
                   <img
@@ -96,7 +128,7 @@ export default function GenreDetailPage() {
                 {m.vote_average && m.vote_average !== 'N/A' && m.vote_average !== 0 && m.vote_average !== '0' && (
                   <p>★ {m.vote_average}</p>
                 )}
-                <h3>{m.title}</h3>
+                <h3 style={{ color: isDark ? '#ffffff' : '#181818' }}>{m.title}</h3>
               </div>
             ))
           )}
