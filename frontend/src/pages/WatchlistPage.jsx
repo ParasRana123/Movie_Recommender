@@ -83,6 +83,7 @@ export default function WatchlistPage() {
 
   return (
     <div
+      id="content"
       style={{
         backgroundColor: isDark ? '#121212' : '#f8f9fa',
         minHeight: '100vh',
@@ -94,11 +95,6 @@ export default function WatchlistPage() {
 
       <div className="your_watchlist">
         <h1>Your Watchlist</h1>
-        <p className="watchlist-subtitle">
-          {watchlist && watchlist.length > 0
-            ? `You have saved ${watchlist.length} movie${watchlist.length === 1 ? '' : 's'} to your list.`
-            : "Here are all the movies you've saved. Search for movies to start building your personal collection."}
-        </p>
 
         <div id="watchlist-container">
           {watchlist && watchlist.length > 0 ? (
@@ -133,8 +129,16 @@ export default function WatchlistPage() {
                 : [];
 
               return (
-                <div key={idx} className="watchlist-card">
-                  {/* Poster Thumbnail with Gold Bookmark Ribbon */}
+                <div
+                  key={idx}
+                  className="watchlist-card"
+                  style={{
+                    backgroundColor: isDark ? '#1a1a1a' : '#ffffff',
+                    borderColor: isDark ? '#2e2e2e' : '#e2e8f0',
+                    boxShadow: isDark ? '0 4px 14px rgba(0, 0, 0, 0.5)' : '0 4px 12px rgba(0, 0, 0, 0.06)'
+                  }}
+                >
+                  {/* Poster Thumbnail with Red Bookmark Ribbon */}
                   <div
                     className="watchlist-poster-wrap"
                     onClick={() => navigate(`/movie/${encodeURIComponent(title)}`)}
@@ -146,7 +150,7 @@ export default function WatchlistPage() {
                         height="13"
                         viewBox="0 0 24 24"
                         fill="none"
-                        stroke="currentColor"
+                        stroke="#ffffff"
                         strokeWidth="3.2"
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -173,8 +177,12 @@ export default function WatchlistPage() {
                         className="watchlist-card-title"
                         onClick={() => navigate(`/movie/${encodeURIComponent(title)}`)}
                       >
-                        <span className="watchlist-card-idx">{idx + 1}. </span>
-                        <span className="watchlist-card-name">{title}</span>
+                        <span className="watchlist-card-idx" style={{ color: isDark ? '#ffffff' : '#181818' }}>
+                          {idx + 1}.{' '}
+                        </span>
+                        <span className="watchlist-card-name" style={{ color: isDark ? '#ffffff' : '#181818' }}>
+                          {title}
+                        </span>
                       </h2>
 
                       <div className="watchlist-card-actions">
@@ -226,7 +234,7 @@ export default function WatchlistPage() {
 
                     {/* Metadata Subheader: Year • Runtime • Genres */}
                     {(releaseYear || runtimeFormatted || genresFormatted) && (
-                      <div className="watchlist-meta-row">
+                      <div className="watchlist-meta-row" style={{ color: isDark ? '#a0a0a0' : '#64748b' }}>
                         {releaseYear && <span className="meta-year">{releaseYear}</span>}
                         {releaseYear && runtimeFormatted && <span className="meta-dot">•</span>}
                         {runtimeFormatted && <span className="meta-runtime">{runtimeFormatted}</span>}
@@ -239,9 +247,17 @@ export default function WatchlistPage() {
 
                     {/* Plot Overview */}
                     {overview ? (
-                      <p className="watchlist-card-overview">{overview}</p>
+                      <p
+                        className="watchlist-card-overview"
+                        style={{ color: isDark ? '#cccccc' : '#334155' }}
+                      >
+                        {overview}
+                      </p>
                     ) : (
-                      <p className="watchlist-card-overview muted-placeholder">
+                      <p
+                        className="watchlist-card-overview muted-placeholder"
+                        style={{ color: isDark ? '#888888' : '#718096' }}
+                      >
                         Plot summary loading or unavailable.
                       </p>
                     )}
@@ -251,9 +267,12 @@ export default function WatchlistPage() {
                       <div className="watchlist-credits-row">
                         {director && (
                           <div className="watchlist-credit-group">
-                            <span className="credit-label">Director</span>
+                            <span className="credit-label" style={{ color: isDark ? '#ffffff' : '#181818' }}>
+                              Director
+                            </span>
                             <span
                               className="credit-name highlight-link"
+                              style={{ color: isDark ? '#38bdf8' : '#0284c7' }}
                               onClick={() => navigate(`/movie/${encodeURIComponent(title)}`)}
                             >
                               {director}
@@ -262,12 +281,15 @@ export default function WatchlistPage() {
                         )}
                         {starsList.length > 0 && (
                           <div className="watchlist-credit-group">
-                            <span className="credit-label">Stars</span>
-                            <span className="credit-name">
+                            <span className="credit-label" style={{ color: isDark ? '#ffffff' : '#181818' }}>
+                              Stars
+                            </span>
+                            <span className="credit-name" style={{ color: isDark ? '#94a3b8' : '#475569' }}>
                               {starsList.slice(0, 4).map((star, sIdx) => (
                                 <span
                                   key={sIdx}
                                   className="highlight-link"
+                                  style={{ color: isDark ? '#38bdf8' : '#0284c7' }}
                                   onClick={() => navigate(`/movie/${encodeURIComponent(title)}`)}
                                 >
                                   {star}
@@ -284,7 +306,13 @@ export default function WatchlistPage() {
               );
             })
           ) : (
-            <div className="watchlist-empty-state">
+            <div
+              className="watchlist-empty-state"
+              style={{
+                backgroundColor: isDark ? '#1a1a1a' : '#ffffff',
+                borderColor: isDark ? 'rgba(255, 255, 255, 0.15)' : 'rgba(0, 0, 0, 0.15)'
+              }}
+            >
               <img
                 src="/images/add_bookmark.svg"
                 width="64"

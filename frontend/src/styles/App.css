@@ -3,22 +3,29 @@
    ========================================================= */
 
 /* Core Theme Variables */
-:root {
+:root,
+[data-theme="light"],
+html[data-theme="light"],
+body[data-theme="light"],
+body.light-mode {
   --bg-primary: #ffffff;
   --text-primary: #181818;
   --text-heading: #333333;
   --card-bg: #ffffff;
-  --card-shadow: rgba(68, 66, 66, 0.3);
+  --card-shadow: rgba(68, 66, 66, 0.15);
   --table-header-color: #333333;
   --fail-color: #333333;
   --border-color: rgba(0, 0, 0, 0.1);
 }
 
-[data-theme="dark"] {
+[data-theme="dark"],
+html[data-theme="dark"],
+body[data-theme="dark"],
+body.dark-mode {
   --bg-primary: #121212;
   --text-primary: #ffffff;
   --text-heading: #ffffff;
-  --card-bg: #1c1c1c;
+  --card-bg: #1a1a1a;
   --card-shadow: rgba(0, 0, 0, 0.7);
   --table-header-color: #ffffff;
   --fail-color: #ffffff;
@@ -922,7 +929,7 @@ figcaption.img:hover {
 .your_watchlist {
     width: 100%;
     max-width: 1100px;
-    padding: 35px 20px 60px 20px;
+    padding: 30px 20px 60px 20px;
     box-sizing: border-box;
     margin: 0 auto;
     text-align: center;
@@ -932,17 +939,8 @@ figcaption.img:hover {
     color: #e50914;
     font-size: 34px;
     font-weight: 800;
-    margin-bottom: 8px;
+    margin-bottom: 25px;
     letter-spacing: -0.5px;
-}
-
-.your_watchlist p.watchlist-subtitle {
-    color: var(--text-primary);
-    opacity: 0.75;
-    font-size: 15px;
-    max-width: 640px;
-    margin: 0 auto 30px auto;
-    line-height: 1.5;
 }
 
 #watchlist-container {
@@ -964,17 +962,19 @@ figcaption.img:hover {
     padding: 16px 20px;
     position: relative;
     box-shadow: 0 4px 14px var(--card-shadow, rgba(0, 0, 0, 0.3));
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, background-color 0.3s ease;
     text-align: left;
     box-sizing: border-box;
 }
 
-[data-theme="dark"] .watchlist-card {
+[data-theme="dark"] .watchlist-card,
+body.dark-mode .watchlist-card {
     background-color: #1a1a1a;
     border: 1px solid #2e2e2e;
 }
 
-:root:not([data-theme="dark"]) .watchlist-card {
+:root:not([data-theme="dark"]) .watchlist-card,
+body.light-mode .watchlist-card {
     background-color: #ffffff;
     border: 1px solid #e2e8f0;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
@@ -986,7 +986,7 @@ figcaption.img:hover {
     box-shadow: 0 8px 24px rgba(229, 9, 20, 0.15);
 }
 
-/* Poster Container & Gold Ribbon */
+/* Poster Container & Red Ribbon */
 .watchlist-poster-wrap {
     position: relative;
     flex-shrink: 0;
@@ -1005,19 +1005,19 @@ figcaption.img:hover {
     left: 0;
     width: 24px;
     height: 32px;
-    background-color: #f5c518;
-    color: #111111;
+    background-color: #e50914;
+    color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 80%, 0 100%);
     z-index: 3;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 2px 6px rgba(229, 9, 20, 0.45);
 }
 
 .watchlist-poster-ribbon svg {
     margin-top: -4px;
-    stroke: #111111;
+    stroke: #ffffff;
 }
 
 .watchlist-poster-img {

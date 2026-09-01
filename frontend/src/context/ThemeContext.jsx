@@ -15,11 +15,16 @@ export function ThemeProvider({ children }) {
   useEffect(() => {
     try {
       localStorage.setItem('app_theme', theme);
+      document.documentElement.setAttribute('data-theme', theme);
       document.body.setAttribute('data-theme', theme);
       if (theme === 'dark') {
+        document.documentElement.classList.add('dark-mode');
+        document.documentElement.classList.remove('light-mode');
         document.body.classList.add('dark-mode');
         document.body.classList.remove('light-mode');
       } else {
+        document.documentElement.classList.add('light-mode');
+        document.documentElement.classList.remove('dark-mode');
         document.body.classList.add('light-mode');
         document.body.classList.remove('dark-mode');
       }
