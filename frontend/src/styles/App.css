@@ -39,12 +39,17 @@ body.dark-mode {
 html, body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
+  font-family: 'Noto Sans JP', sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
   margin: 0;
   padding: 0;
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6, input, button, select, textarea {
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 #root {
@@ -125,7 +130,7 @@ html, body {
 }
 
 h1 {
-    font-family: 'Netflix Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
     color: #e50914;
     font-weight: bold;
     margin-top: 30px;
@@ -936,11 +941,12 @@ figcaption.img:hover {
 }
 
 .your_watchlist h1 {
+    font-family: 'Noto Sans JP', sans-serif;
     color: #e50914;
-    font-size: 34px;
-    font-weight: 800;
+    font-size: 36px;
+    font-weight: 700;
     margin-bottom: 25px;
-    letter-spacing: -0.5px;
+    letter-spacing: 0.5px;
 }
 
 #watchlist-container {
