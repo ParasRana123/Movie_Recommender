@@ -249,22 +249,24 @@
         .watchlist-credits-row {
             display: flex;
             flex-direction: column;
-            gap: 4px;
-            font-size: 13px;
-            margin-top: 2px;
+            gap: 8px;
+            font-size: 13.5px;
+            margin-top: 4px;
         }
 
         .watchlist-credit-group {
             display: flex;
-            gap: 8px;
-            align-items: baseline;
+            align-items: center;
             flex-wrap: wrap;
+            gap: 12px;
         }
 
         .credit-label {
             font-weight: 700;
             color: #ffffff;
-            min-width: 55px;
+            min-width: 60px;
+            font-size: 13.5px;
+            letter-spacing: 0.3px;
         }
 
         .credit-name {
@@ -274,11 +276,132 @@
         .highlight-link {
             color: #38bdf8;
             cursor: pointer;
+            transition: color 0.2s ease, text-decoration 0.2s ease;
         }
 
         .highlight-link:hover {
             color: #e50914;
             text-decoration: underline;
+        }
+
+        /* Director Pill with Avatar */
+        .watchlist-director-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            padding: 3px 10px 3px 4px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.25s ease;
+        }
+
+        .watchlist-director-pill:hover {
+            background: rgba(229, 9, 20, 0.12);
+            border-color: rgba(229, 9, 20, 0.4);
+            transform: translateY(-1px);
+        }
+
+        .watchlist-director-pill:hover .credit-name {
+            color: #e50914 !important;
+        }
+
+        .watchlist-credit-avatar-img {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1.5px solid rgba(255, 255, 255, 0.2);
+            display: block;
+        }
+
+        .watchlist-credit-avatar-fallback {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e50914, #990000);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        /* Cast Circular Avatars */
+        .watchlist-cast-avatars {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .watchlist-actor-avatar-wrap {
+            position: relative;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            background: #1f1f1f;
+            border: 2px solid #2e2e2e;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+            flex-shrink: 0;
+        }
+
+        .watchlist-actor-avatar-wrap:hover {
+            transform: scale(1.22) translateY(-2px);
+            border-color: #e50914;
+            box-shadow: 0 6px 16px rgba(229, 9, 20, 0.45);
+            z-index: 10;
+        }
+
+        .watchlist-actor-avatar-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .watchlist-actor-avatar-fallback {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2b2b2b, #151515);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* +Rem more badge */
+        .watchlist-cast-more-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 32px;
+            padding: 0 11px;
+            border-radius: 16px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            background: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+            border: 1px solid rgba(56, 189, 248, 0.25);
+            transition: all 0.2s ease;
+            letter-spacing: 0.3px;
+        }
+
+        .watchlist-cast-more-badge:hover {
+            background: rgba(229, 9, 20, 0.18);
+            color: #e50914;
+            border-color: rgba(229, 9, 20, 0.45);
+            transform: scale(1.06) translateY(-1px);
         }
 
         .watchlist-actions {
@@ -424,6 +547,19 @@
     <script>
         let lastRemovedMovie = null;
         let lastRemovedIndex = null;
+        const expandedWatchlistState = {};
+
+        function getInitials(name) {
+            if (!name) return '?';
+            const parts = name.trim().split(/\s+/);
+            if (parts.length >= 2) return (parts[0][0] + parts[1][0]).toUpperCase();
+            return name.slice(0, 2).toUpperCase();
+        }
+
+        function toggleSsrExpand(idx) {
+            expandedWatchlistState[idx] = !expandedWatchlistState[idx];
+            renderWatchlist();
+        }
 
         function renderWatchlist() {
             const watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];
@@ -448,11 +584,21 @@
                     const year = movie.date || movie.release_date || '';
                     const runtime = movie.runtime && movie.runtime !== 'N/A' ? movie.runtime : '';
                     const genres = movie.genres || '';
+                    const director = movie.director || '';
+                    const directorImg = movie.director_image || '';
                     const rawCasts = Array.isArray(movie.casts) ? movie.casts : (typeof movie.casts === 'string' ? movie.casts.split(',') : []);
                     const parsedCasts = rawCasts.map(c => {
-                        if (typeof c === 'string') return { name: c.trim(), id: '' };
-                        return { name: c.name || '', id: c.id ? String(c.id) : '' };
+                        if (typeof c === 'string') return { name: c.trim(), id: '', profile: '' };
+                        return {
+                            name: c.name || '',
+                            id: c.id ? String(c.id) : '',
+                            profile: c.profile || ''
+                        };
                     }).filter(c => Boolean(c.name));
+
+                    const isExpanded = !!expandedWatchlistState[index];
+                    const visibleCasts = isExpanded ? parsedCasts : parsedCasts.slice(0, 3);
+                    const remCount = Math.max(0, parsedCasts.length - 3);
 
                     movieCard.innerHTML = `
                         <div class="movie-poster-wrap" onclick="window.location.href='/movie/${encodeURIComponent(movie.title)}'">
@@ -481,13 +627,32 @@
                             <p class="movie-overview-text">${movie.overview || 'No overview available.'}</p>
                             ${director || parsedCasts.length > 0 ? `
                                 <div class="watchlist-credits-row">
-                                    ${director ? `<div class="watchlist-credit-group"><span class="credit-label">Director</span><span class="credit-name highlight-link" onclick="window.location.href='/actor/${encodeURIComponent(director)}'">${director}</span></div>` : ''}
+                                    ${director ? `
+                                        <div class="watchlist-credit-group">
+                                            <span class="credit-label">Director</span>
+                                            <div class="watchlist-director-pill" onclick="window.location.href='/actor/${encodeURIComponent(director)}'" title="View ${director}'s biography & filmography">
+                                                ${directorImg ? `<img src="${directorImg}" alt="${director}" class="watchlist-credit-avatar-img" onerror="this.style.display='none'; if (this.nextElementSibling) this.nextElementSibling.style.display='flex';">` : ''}
+                                                <div class="watchlist-credit-avatar-fallback" style="${directorImg ? 'display:none;' : 'display:flex;'}">${getInitials(director)}</div>
+                                                <span class="credit-name highlight-link">${director}</span>
+                                            </div>
+                                        </div>
+                                    ` : ''}
                                     ${parsedCasts.length > 0 ? `
                                         <div class="watchlist-credit-group">
                                             <span class="credit-label">Stars</span>
-                                            <span class="credit-name">
-                                                ${parsedCasts.slice(0, 4).map((c, i) => `<span class="highlight-link" title="View details for ${c.name}" onclick="window.location.href='/actor/${encodeURIComponent(c.id || c.name)}'">${c.name}</span>${i < Math.min(parsedCasts.length, 4) - 1 ? ', ' : ''}`).join('')}
-                                            </span>
+                                            <div class="watchlist-cast-avatars">
+                                                ${visibleCasts.map(c => `
+                                                    <div class="watchlist-actor-avatar-wrap" onclick="window.location.href='/actor/${encodeURIComponent(c.id || c.name)}'" title="${c.name} (Click to view profile)">
+                                                        ${c.profile ? `<img src="${c.profile}" alt="${c.name}" class="watchlist-actor-avatar-img" loading="lazy" onerror="this.style.display='none'; if (this.nextElementSibling) this.nextElementSibling.style.display='flex';">` : ''}
+                                                        <div class="watchlist-actor-avatar-fallback" style="${c.profile ? 'display:none;' : 'display:flex;'}">${getInitials(c.name)}</div>
+                                                    </div>
+                                                `).join('')}
+                                                ${parsedCasts.length > 3 ? `
+                                                    <button type="button" class="watchlist-cast-more-badge" onclick="toggleSsrExpand(${index})" title="${isExpanded ? 'Show fewer actors' : 'View ' + remCount + ' more actors'}">
+                                                        ${isExpanded ? 'Show less' : '+' + remCount + ' more'}
+                                                    </button>
+                                                ` : ''}
+                                            </div>
                                         </div>
                                     ` : ''}
                                 </div>

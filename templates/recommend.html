@@ -380,10 +380,11 @@ function toggleWatchlist() {
         overview: {{ overview | tojson | safe }},
         genres: {{ genres | tojson | safe if genres is defined else "''" }},
         director: {{ director_name | tojson | safe if director_name is defined else "''" }},
+        director_image: {{ director_image | tojson | safe if director_image is defined else "''" }},
         casts: [
             {% if casts is defined and casts %}
                 {% for name, details in casts.items() if not casts.hidden %}
-                    { name: {{ name | tojson | safe }}, id: {{ details[0] | tojson | safe }} },
+                    { name: {{ name | tojson | safe }}, id: {{ details[0] | tojson | safe }}, character: {{ details[1] | tojson | safe }}, profile: {{ details[2] | tojson | safe }} },
                 {% endfor %}
             {% endif %}
         ]

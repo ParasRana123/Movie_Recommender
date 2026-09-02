@@ -79,9 +79,12 @@ export default function RecommendationView({ movieData, onSelectRecommendedMovie
         overview,
         genres: genres_str || (Array.isArray(genres) ? genres.join(', ') : genres),
         director: director_name,
+        director_image: director_image || '',
         casts: castsList.map(c => ({
           id: c && c.id ? String(c.id) : '',
-          name: typeof c === 'string' ? c : (c.name || '')
+          name: typeof c === 'string' ? c : (c.name || ''),
+          profile: c && c.profile ? c.profile : '',
+          character: c && c.character ? c.character : ''
         })).filter(c => Boolean(c.name))
       });
     }

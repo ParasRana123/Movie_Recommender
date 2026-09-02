@@ -117,6 +117,7 @@ export function WatchlistProvider({ children }) {
       overview: movie.overview || '',
       genres: movie.genres || '',
       director: movie.director || movie.director_name || '',
+      director_image: movie.director_image || '',
       casts: movie.casts || movie.stars || movie.cast || [],
     };
 

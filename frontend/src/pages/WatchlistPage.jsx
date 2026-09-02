@@ -14,6 +14,22 @@ export default function WatchlistPage() {
 
   // Cache for enriched movie details (overview, director, casts, runtime, etc.)
   const [detailsCache, setDetailsCache] = useState({});
+  const [expandedCasts, setExpandedCasts] = useState({});
+
+  const toggleExpandCast = (idx, e) => {
+    e.stopPropagation();
+    setExpandedCasts((prev) => ({
+      ...prev,
+      [idx]: !prev[idx]
+    }));
+  };
+
+  const getInitials = (name) => {
+    if (!name) return '?';
+    const parts = name.trim().split(/\s+/);
+    if (parts.length >= 2) return `${parts[0][0]}${parts[1][0]}`.toUpperCase();
+    return name.slice(0, 2).toUpperCase();
+  };
 
   useEffect(() => {
     let isMounted = true;
@@ -34,18 +50,24 @@ export default function WatchlistPage() {
                 [key]: {
                   overview: data.overview || '',
                   director: data.director_name || '',
+                  director_image: data.director_image || '',
+                  director_id: data.director_id || '',
                   runtime: data.runtime || '',
                   release_date: data.release_date || '',
                   genres: data.genres || data.genres_str || '',
                   casts: Array.isArray(data.casts)
                     ? data.casts.map((c) => ({
                         name: typeof c === 'string' ? c : (c.name || ''),
-                        id: c && c.id ? String(c.id) : ''
+                        id: c && c.id ? String(c.id) : '',
+                        profile: c && c.profile ? c.profile : '',
+                        character: c && c.character ? c.character : ''
                       })).filter((c) => Boolean(c.name))
                     : (data.casts && typeof data.casts === 'object'
                         ? Object.entries(data.casts).map(([name, val]) => ({
                             name,
-                            id: Array.isArray(val) && val[0] ? String(val[0]) : ''
+                            id: Array.isArray(val) && val[0] ? String(val[0]) : '',
+                            character: Array.isArray(val) && val[1] ? String(val[1]) : '',
+                            profile: Array.isArray(val) && val[2] ? String(val[2]) : ''
                           }))
                         : [])
                 }
@@ -258,11 +280,21 @@ export default function WatchlistPage() {
                       const matched = Array.isArray(extra.casts)
                         ? extra.casts.find((ec) => ec.name && ec.name.toLowerCase() === c.toLowerCase())
                         : null;
-                      return { name: c, id: matched?.id || '' };
+                      return {
+                        name: c,
+                        id: matched?.id || '',
+                        profile: matched?.profile || '',
+                        character: matched?.character || ''
+                      };
                     }
+                    const matched = Array.isArray(extra.casts)
+                      ? extra.casts.find((ec) => ec.name && ec.name.toLowerCase() === (c.name || '').toLowerCase())
+                      : null;
                     return {
                       name: c.name || '',
-                      id: c.id ? String(c.id) : ''
+                      id: c.id ? String(c.id) : (matched?.id || ''),
+                      profile: c.profile || matched?.profile || '',
+                      character: c.character || matched?.character || ''
                     };
                   }).filter((c) => Boolean(c.name))
                 : typeof rawCasts === 'string'
@@ -271,9 +303,19 @@ export default function WatchlistPage() {
                     const matched = Array.isArray(extra.casts)
                       ? extra.casts.find((ec) => ec.name && ec.name.toLowerCase() === name.toLowerCase())
                       : null;
-                    return { name, id: matched?.id || '' };
+                    return {
+                      name,
+                      id: matched?.id || '',
+                      profile: matched?.profile || '',
+                      character: matched?.character || ''
+                    };
                   }).filter((c) => Boolean(c.name))
                 : [];
+
+              const directorImg = extra.director_image || movie.director_image || '';
+              const isExpanded = !!expandedCasts[idx];
+              const visibleStars = isExpanded ? starsList : starsList.slice(0, 3);
+              const remainingCount = Math.max(0, starsList.length - 3);
 
               return (
                 <div
@@ -409,7 +451,7 @@ export default function WatchlistPage() {
                       </p>
                     )}
 
-                    {/* Key Credits: Director & Stars */}
+                    {/* Key Credits: Director & Stars with Circular Avatars */}
                     {(director || starsList.length > 0) && (
                       <div className="watchlist-credits-row">
                         {director && (
@@ -417,41 +459,89 @@ export default function WatchlistPage() {
                             <span className="credit-label" style={{ color: isDark ? '#ffffff' : '#181818' }}>
                               Director
                             </span>
-                            <span
-                              className="credit-name highlight-link"
-                              style={{ color: isDark ? '#38bdf8' : '#0284c7', cursor: 'pointer' }}
+                            <div
+                              className="watchlist-director-pill"
                               onClick={(e) => {
                                 e.stopPropagation();
                                 navigate(`/actor/${encodeURIComponent(director)}`);
                               }}
                               title={`View ${director}'s biography & filmography`}
                             >
-                              {director}
-                            </span>
+                              {directorImg && !directorImg.includes('placeholder') ? (
+                                <img
+                                  src={directorImg}
+                                  alt={director}
+                                  className="watchlist-credit-avatar-img"
+                                  onError={(e) => {
+                                    e.target.style.display = 'none';
+                                    if (e.target.nextSibling) e.target.nextSibling.style.display = 'flex';
+                                  }}
+                                />
+                              ) : null}
+                              <div
+                                className="watchlist-credit-avatar-fallback"
+                                style={{ display: directorImg && !directorImg.includes('placeholder') ? 'none' : 'flex' }}
+                              >
+                                {getInitials(director)}
+                              </div>
+                              <span className="credit-name highlight-link" style={{ color: isDark ? '#38bdf8' : '#0284c7' }}>
+                                {director}
+                              </span>
+                            </div>
                           </div>
                         )}
+
                         {starsList.length > 0 && (
                           <div className="watchlist-credit-group">
                             <span className="credit-label" style={{ color: isDark ? '#ffffff' : '#181818' }}>
                               Stars
                             </span>
-                            <span className="credit-name" style={{ color: isDark ? '#94a3b8' : '#475569' }}>
-                              {starsList.slice(0, 4).map((star, sIdx) => (
-                                <span
-                                  key={sIdx}
-                                  className="highlight-link"
-                                  style={{ color: isDark ? '#38bdf8' : '#0284c7', cursor: 'pointer' }}
-                                  onClick={(e) => {
-                                    e.stopPropagation();
-                                    navigate(`/actor/${star.id || encodeURIComponent(star.name)}`);
-                                  }}
-                                  title={`View ${star.name}'s biography & filmography`}
+                            <div className="watchlist-cast-avatars">
+                              {visibleStars.map((star, sIdx) => {
+                                const hasProfile = star.profile && !star.profile.includes('placeholder') && star.profile !== 'https://via.placeholder.com/240x360?text=No+Photo';
+                                return (
+                                  <div
+                                    key={sIdx}
+                                    className="watchlist-actor-avatar-wrap"
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      navigate(`/actor/${star.id || encodeURIComponent(star.name)}`);
+                                    }}
+                                    title={`${star.name}${star.character ? ` as ${star.character}` : ''} (Click to view profile)`}
+                                  >
+                                    {hasProfile ? (
+                                      <img
+                                        src={star.profile}
+                                        alt={star.name}
+                                        className="watchlist-actor-avatar-img"
+                                        loading="lazy"
+                                        onError={(e) => {
+                                          e.target.style.display = 'none';
+                                          if (e.target.nextSibling) e.target.nextSibling.style.display = 'flex';
+                                        }}
+                                      />
+                                    ) : null}
+                                    <div
+                                      className="watchlist-actor-avatar-fallback"
+                                      style={{ display: hasProfile ? 'none' : 'flex' }}
+                                    >
+                                      {getInitials(star.name)}
+                                    </div>
+                                  </div>
+                                );
+                              })}
+
+                              {starsList.length > 3 && (
+                                <button
+                                  type="button"
+                                  className="watchlist-cast-more-badge"
+                                  onClick={(e) => toggleExpandCast(idx, e)}
+                                  title={isExpanded ? 'Show fewer actors' : `View ${remainingCount} more actors`}
                                 >
-                                  {star.name}
-                                  {sIdx < Math.min(starsList.length, 4) - 1 ? ', ' : ''}
-                                </span>
-                              ))}
-                            </span>
+                                  {isExpanded ? 'Show less' : `+${remainingCount} more`}
+                                </button>
+                              )}
+                            </div>
                           </div>
                         )}
                       </div>
