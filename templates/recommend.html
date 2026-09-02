@@ -377,7 +377,16 @@ function toggleWatchlist() {
         runtime: {{ runtime | tojson | safe }},
         rating: {{ vote_average | tojson | safe }},
         count: {{ vote_count | tojson | safe }},
-        overview: {{ overview | tojson | safe }}
+        overview: {{ overview | tojson | safe }},
+        genres: {{ genres | tojson | safe if genres is defined else "''" }},
+        director: {{ director_name | tojson | safe if director_name is defined else "''" }},
+        casts: [
+            {% if casts is defined and casts %}
+                {% for name, details in casts.items() if not casts.hidden %}
+                    { name: {{ name | tojson | safe }}, id: {{ details[0] | tojson | safe }} },
+                {% endfor %}
+            {% endif %}
+        ]
     };
 
     let watchlist = JSON.parse(localStorage.getItem('watchlist')) || [];

@@ -692,9 +692,31 @@ def recommend():
         logging.error(f"Critical error in recommendation function: {e}", exc_info=True)
         return "<div class='fail'><center><h3>An error occurred while processing recommendations.</h3></center></div>"
 
-def fetch_actor_from_tmdb(actor_id):
-    """Fetch actor details and movie credits from TMDB using a numeric actor_id."""
+def fetch_actor_from_tmdb(actor_identifier):
+    """Fetch actor details and movie credits from TMDB using a numeric actor_id or actor name."""
     try:
+        if not actor_identifier or str(actor_identifier).strip().lower() in ['none', 'null', '']:
+            return None, []
+
+        identifier_str = str(actor_identifier).strip()
+        actor_id = None
+
+        # Try numeric ID first
+        try:
+            actor_id = int(float(identifier_str))
+        except (ValueError, TypeError):
+            # If not numeric, query TMDB Search Person API to find actor ID by name
+            search_url = f"{TMDB_BASE_URL}/search/person?api_key={TMDB_API_KEY}&query={requests.utils.quote(identifier_str)}"
+            s_res = http_session.get(search_url, timeout=5)
+            if s_res.status_code == 200:
+                results = s_res.json().get("results", [])
+                if results:
+                    actor_id = results[0].get("id")
+
+        if not actor_id:
+            logging.error(f"Could not resolve TMDB actor ID for identifier: {actor_identifier}")
+            return None, []
+
         url = f"{TMDB_BASE_URL}/person/{actor_id}?api_key={TMDB_API_KEY}&language=en-US&append_to_response=movie_credits"
         response = http_session.get(url, timeout=5)
 
@@ -769,18 +791,13 @@ def fetch_actor_from_tmdb(actor_id):
 @app.route("/actor/<actor_id>")
 def actor_details(actor_id):
     try:
-        actor_id = escape(actor_id)
-
-        try:
-            if not actor_id or actor_id.lower() == 'none':
-                raise ValueError("Empty or None actor_id")
-            numeric_actor_id = int(float(actor_id))
-        except ValueError:
+        actor_id_clean = escape(actor_id)
+        if not actor_id_clean or actor_id_clean.lower() == 'none':
             return render_template("error.html", message="Invalid actor ID in URL.")
 
-        actor_data, actor_movies = fetch_actor_from_tmdb(numeric_actor_id)
+        actor_data, actor_movies = fetch_actor_from_tmdb(actor_id_clean)
         if not actor_data:
-            return render_template("error.html", message=f"Could not fetch details for Actor ID {actor_id} from TMDB.")
+            return render_template("error.html", message=f"Could not fetch details for actor '{actor_id}' from TMDB.")
 
         return render_template("actor.html", actor=actor_data, actor_movies=actor_movies[:15])
 
@@ -900,10 +917,9 @@ def api_actor_details(actor_id):
         return jsonify({"status": "ok"}), 200
     try:
         actor_id_clean = escape(actor_id)
-        numeric_actor_id = int(float(actor_id_clean))
-        actor_info, actor_movies = fetch_actor_from_tmdb(numeric_actor_id)
+        actor_info, actor_movies = fetch_actor_from_tmdb(actor_id_clean)
         if not actor_info:
-            return jsonify({"error": f"Actor ID '{actor_id}' not found"}), 404
+            return jsonify({"error": f"Actor '{actor_id}' not found"}), 404
         return jsonify({
             "actor": actor_info,
             "movies": actor_movies[:15]

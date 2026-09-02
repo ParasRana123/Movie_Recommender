@@ -448,8 +448,11 @@
                     const year = movie.date || movie.release_date || '';
                     const runtime = movie.runtime && movie.runtime !== 'N/A' ? movie.runtime : '';
                     const genres = movie.genres || '';
-                    const director = movie.director || '';
-                    const casts = Array.isArray(movie.casts) ? movie.casts : (typeof movie.casts === 'string' ? movie.casts.split(',') : []);
+                    const rawCasts = Array.isArray(movie.casts) ? movie.casts : (typeof movie.casts === 'string' ? movie.casts.split(',') : []);
+                    const parsedCasts = rawCasts.map(c => {
+                        if (typeof c === 'string') return { name: c.trim(), id: '' };
+                        return { name: c.name || '', id: c.id ? String(c.id) : '' };
+                    }).filter(c => Boolean(c.name));
 
                     movieCard.innerHTML = `
                         <div class="movie-poster-wrap" onclick="window.location.href='/movie/${encodeURIComponent(movie.title)}'">
@@ -476,10 +479,17 @@
                                 ${genres ? `<span>${genres}</span>` : ''}
                             </div>
                             <p class="movie-overview-text">${movie.overview || 'No overview available.'}</p>
-                            ${director || casts.length > 0 ? `
+                            ${director || parsedCasts.length > 0 ? `
                                 <div class="watchlist-credits-row">
-                                    ${director ? `<div class="watchlist-credit-group"><span class="credit-label">Director</span><span class="credit-name highlight-link" onclick="window.location.href='/movie/${encodeURIComponent(movie.title)}'">${director}</span></div>` : ''}
-                                    ${casts.length > 0 ? `<div class="watchlist-credit-group"><span class="credit-label">Stars</span><span class="credit-name">${casts.slice(0, 4).join(', ')}</span></div>` : ''}
+                                    ${director ? `<div class="watchlist-credit-group"><span class="credit-label">Director</span><span class="credit-name highlight-link" onclick="window.location.href='/actor/${encodeURIComponent(director)}'">${director}</span></div>` : ''}
+                                    ${parsedCasts.length > 0 ? `
+                                        <div class="watchlist-credit-group">
+                                            <span class="credit-label">Stars</span>
+                                            <span class="credit-name">
+                                                ${parsedCasts.slice(0, 4).map((c, i) => `<span class="highlight-link" title="View details for ${c.name}" onclick="window.location.href='/actor/${encodeURIComponent(c.id || c.name)}'">${c.name}</span>${i < Math.min(parsedCasts.length, 4) - 1 ? ', ' : ''}`).join('')}
+                                            </span>
+                                        </div>
+                                    ` : ''}
                                 </div>
                             ` : ''}
                         </div>

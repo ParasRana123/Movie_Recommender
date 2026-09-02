@@ -38,8 +38,16 @@ export default function WatchlistPage() {
                   release_date: data.release_date || '',
                   genres: data.genres || data.genres_str || '',
                   casts: Array.isArray(data.casts)
-                    ? data.casts.map((c) => (typeof c === 'string' ? c : (c.name || ''))).filter(Boolean)
-                    : (data.casts && typeof data.casts === 'object' ? Object.keys(data.casts) : [])
+                    ? data.casts.map((c) => ({
+                        name: typeof c === 'string' ? c : (c.name || ''),
+                        id: c && c.id ? String(c.id) : ''
+                      })).filter((c) => Boolean(c.name))
+                    : (data.casts && typeof data.casts === 'object'
+                        ? Object.entries(data.casts).map(([name, val]) => ({
+                            name,
+                            id: Array.isArray(val) && val[0] ? String(val[0]) : ''
+                          }))
+                        : [])
                 }
               }));
             }
@@ -245,9 +253,26 @@ export default function WatchlistPage() {
               const director = movie.director || movie.director_name || extra.director || '';
               const rawCasts = movie.casts || movie.stars || extra.casts || [];
               const starsList = Array.isArray(rawCasts)
-                ? rawCasts.map((c) => (typeof c === 'string' ? c : (c.name || ''))).filter(Boolean)
+                ? rawCasts.map((c) => {
+                    if (typeof c === 'string') {
+                      const matched = Array.isArray(extra.casts)
+                        ? extra.casts.find((ec) => ec.name && ec.name.toLowerCase() === c.toLowerCase())
+                        : null;
+                      return { name: c, id: matched?.id || '' };
+                    }
+                    return {
+                      name: c.name || '',
+                      id: c.id ? String(c.id) : ''
+                    };
+                  }).filter((c) => Boolean(c.name))
                 : typeof rawCasts === 'string'
-                ? rawCasts.split(',').map((s) => s.trim()).filter(Boolean)
+                ? rawCasts.split(',').map((s) => {
+                    const name = s.trim();
+                    const matched = Array.isArray(extra.casts)
+                      ? extra.casts.find((ec) => ec.name && ec.name.toLowerCase() === name.toLowerCase())
+                      : null;
+                    return { name, id: matched?.id || '' };
+                  }).filter((c) => Boolean(c.name))
                 : [];
 
               return (
@@ -394,8 +419,12 @@ export default function WatchlistPage() {
                             </span>
                             <span
                               className="credit-name highlight-link"
-                              style={{ color: isDark ? '#38bdf8' : '#0284c7' }}
-                              onClick={() => navigate(`/movie/${encodeURIComponent(title)}`)}
+                              style={{ color: isDark ? '#38bdf8' : '#0284c7', cursor: 'pointer' }}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                navigate(`/actor/${encodeURIComponent(director)}`);
+                              }}
+                              title={`View ${director}'s biography & filmography`}
                             >
                               {director}
                             </span>
@@ -411,10 +440,14 @@ export default function WatchlistPage() {
                                 <span
                                   key={sIdx}
                                   className="highlight-link"
-                                  style={{ color: isDark ? '#38bdf8' : '#0284c7' }}
-                                  onClick={() => navigate(`/movie/${encodeURIComponent(title)}`)}
+                                  style={{ color: isDark ? '#38bdf8' : '#0284c7', cursor: 'pointer' }}
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    navigate(`/actor/${star.id || encodeURIComponent(star.name)}`);
+                                  }}
+                                  title={`View ${star.name}'s biography & filmography`}
                                 >
-                                  {star}
+                                  {star.name}
                                   {sIdx < Math.min(starsList.length, 4) - 1 ? ', ' : ''}
                                 </span>
                               ))}
